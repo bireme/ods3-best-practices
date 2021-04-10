@@ -1,0 +1,55 @@
+security:
+    encoders:
+        Proethos2\ModelBundle\Entity\User:
+            algorithm: bcrypt
+
+    providers:
+        our_db_provider:
+            entity:
+                class: Proethos2ModelBundle:User
+                property: username
+
+        user_checker_provider:
+            id: app.user_checker_provider
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt|error)|css|images|js)/
+            security: false
+
+        login_firewall:
+            pattern:   ^/login$
+            anonymous: ~
+
+        public_firewall:
+            pattern:   ^/public/
+            anonymous: ~
+
+        locale_firewall:
+            pattern:   ^/locale/
+            anonymous: ~
+
+        oauth2_firewall:
+            pattern:   ^/login/oauth2
+            anonymous: ~
+
+        form_firewall:
+            pattern:   ^/login/sanitize
+            anonymous: ~
+
+        default:
+            provider: user_checker_provider
+            pattern:    ^/
+            http_basic: ~
+            form_login:
+                login_path: /login
+                check_path: /login_check
+                csrf_token_generator: security.csrf.token_manager
+            logout:
+                path:   /logout
+                target: /
+                success_handler: logout_success_handler
+
+    # access_control:
+    #     - { path: ^/, role: ROLE_USER }
+    #     - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
