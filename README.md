@@ -1,1 +1,1 @@
-# ods3-good-practices
+# ods3-best-practices
