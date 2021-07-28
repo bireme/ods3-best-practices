@@ -1,0 +1,73 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{% trans %}New submission{% endtrans %}{% endblock %}
+
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="row">
+            <div class='col-md-12'>
+                <h1 class="page-header">{% trans %}New submission{% endtrans %}</h1>
+            </div>
+        </div>
+
+        {% include 'Proethos2CoreBundle:NewSubmission:meta.html.twig' %}
+
+        <div class='new-submission-tab-content'>
+            <form class='form' method='POST' id='form-sixty' action='{{ path("submission_new_sixth_step", {submission_id: submission.id}) }}'>
+
+                <input type="hidden" name="token" value="{{ csrf_token('submission-sixth-step') }}"/>
+                <input type='hidden' name='submission_id' value='{{ submission.id }}'>
+
+                <div class='block'>
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <h2 class='sub-header'>{% trans %}Information about products and sources{% endtrans %}</h2>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <div class="form-group required">
+                                <label for="textarea-products-information">{% trans %}Please provide information about products (resources, documents of the initiative/project) generated/associated to this Best Practice{% endtrans %} ({% trans %}hyperlinks only{% endtrans %}):</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <textarea rows="6" class="form-control" name='products_information' id='textarea-products-information' placeholder="{% trans %}Please add one hyperlink per line{% endtrans %}" required>{{ submission.productsInformation }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <div class="form-group required">
+                                <label for="textarea-other-sources-information">{% trans %}Other information sources{% endtrans %} ({% trans %}hyperlinks only{% endtrans %}):</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <textarea rows="6" class="form-control" name='other_sources_information' id='textarea-other-sources-information' placeholder="{% trans %}Please add one hyperlink per line{% endtrans %}" required>{{ submission.otherSourcesInformation }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='block'>
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <h2 class='sub-header'>{% trans %}Comments for PAHO{% endtrans %}</h2>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="textarea-paho-comments">{% trans %}Any comment for the Secretariat of the Pan American Health Organization{% endtrans %}?</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <textarea rows="6" class="form-control" name='paho_comments' id='textarea-paho-comments'>{{ submission.pahoComments }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='submission-button-controls'>
+                    <button type='submit' class='btn btn-primary'>{% trans %}Save and next{% endtrans %}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -6,97 +6,6 @@
                     <i class='glyphicon glyphicon-minus'></i>
                 </small>
                 
-                {% trans %}Team{% endtrans %}
-            </h2>
-        </div>
-    </div>
-
-    <div class='row'>
-        <div class="col-md-12">
-            <table class='table table-hover table-condensed' id='table-team'>
-                
-                <thead>
-                    <tr>
-                        <th width="40%">{% trans %}Name{% endtrans %}</th>
-                        <th>{% trans %}E-mail{% endtrans %}</th>
-                        <th>{% trans %}Institution{% endtrans %}</th>
-                        <th>{% trans %}Role{% endtrans %}</th>
-                        <th>{% trans %}Country{% endtrans %}</th>
-                        <th>{% trans %}Main?{% endtrans %}</th>
-                        <!-- <th>{% trans %}Actions{% endtrans %}</th> -->
-                    </tr>
-                </thead>
-                
-                <tbody>
-                    <tr>
-                        <td>{{ protocol.mainSubmission.owner.name }}</td>
-                        <td><a href='{{ protocol.mainSubmission.owner.email }}'>{{ protocol.mainSubmission.owner.email }}</a></td>
-                        <td>{{ protocol.mainSubmission.owner.institution }}</td>
-                        <td>{{ protocol.mainSubmission.owner.submissionTeamRole(protocol.mainSubmission) }}</td>
-                        <td>{{ protocol.mainSubmission.owner.country }}</td>
-                        <td><label class='label label-success'>{% trans %}Yes{% endtrans %}</label></td>
-                        <!-- <td>-</td>  -->
-                    </tr>
-                    {% for team_user in protocol.mainSubmission.team %}
-                        <tr>
-                            <td>
-                                <input type='hidden' name='team_user[]' value='{{ team_user.id }}'>
-                                {{ team_user.name }}
-                            </td> 
-                            <td><a href='{{ team_user.email }}'>{{ team_user.email }}</a></td>
-                            <td>{{ team_user.institution }}</td>
-                            <td>{{ team_user.submissionTeamRole(protocol.mainSubmission) }}</td>
-                            <td>{{ team_user.country }}</td>
-                            <td><label class='label label-default'>{% trans %}No{% endtrans %}</label></td>
-                            <!-- <td><a href='#' class='btn btn-default btn-xs button-remove-team'><i class='glyphicon glyphicon-trash'></i></a></td>  -->
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-
-            <!-- <a href='#' class='btn btn-default' data-toggle="modal" data-target="#modal-new-investigator">
-                {% trans %}New Investigator{% endtrans %}
-            </a> -->
-        </div>
-    </div>
-</div>
-
-{% if 'secretary' in app.user.getRolesSlug %}
-<div class='block'>
-    <div class='row'>
-        <div class="col-md-12">
-            <h2 class='sub-header toggle-block'>
-                <small class='pull-right'>
-                    <i class='glyphicon glyphicon-minus'></i>
-                </small>
-                
-                {% trans %}Contacts{% endtrans %}:
-            </h2>
-        </div>
-    </div>
-
-    <div class='row'>
-        <div class="col-md-12">
-            <form method="POST" id='form-contacts' action="">
-                <input type="hidden" name="token" value="{{ csrf_token('add-contacts') }}"/>
-                <div class="form-group form-contacts">
-                    <input name="contacts" placeholder="{% trans %}insert emails here{% endtrans %}" value="{{ protocol.contacts }}">
-                </div>
-                <button type="submit" class="btn btn-default">{% trans %}Save Contacts{% endtrans %}</button>
-            </form>
-        </div>
-    </div>
-</div>
-{% endif %}
-
-<div class='block'>
-    <div class='row'>
-        <div class="col-md-12">
-            <h2 class='sub-header toggle-block'>
-                <small class='pull-right'>
-                    <i class='glyphicon glyphicon-minus'></i>
-                </small>
-                
                 {% trans %}File submission{% endtrans %}:
             </h2>
         </div>
@@ -123,7 +32,7 @@
                             <td>{{ file.uploadType }}</td>
                             <td>{{ file.submissionNumber }}</td>
                             <td>{{ file.user }}</td>
-                            <td>{% if file.uploadType.slug in ['protocol'] %}{{ file.filename }}{% else %}{{ file }}{% endif %}</td> 
+                            <td>{% if file.uploadType.slug in ['protocol'] %}{{ file.simpleFilename }}{% else %}{{ file }}{% endif %}</td> 
                             <td>{{ file.created|date("d/m/Y H:i") }}</td> 
                             <td>
                                 <a href='{{ asset(file.uri) }}' target="_blank" class='btn btn-default btn-xs' target="_blank">
@@ -144,7 +53,7 @@
                 <a href='{{ path("protocol_new_attachment", {'protocol_id': protocol.id }) }}' class='btn btn-default' data-toggle="modal" data-target="#modal-new-file">{% trans %}New Attachment{% endtrans %}</a>
             {% endif %}
             {% if is_granted("ROLE_USER") and ('secretary' in app.user.rolesSlug or 'member-of-committee' in app.user.rolesSlug)  %}
-                <a href='{{ path("protocol_generate_report", {'protocol_id': protocol.id}) }}' class='btn btn-default' target='_blank'>{% trans %}Create Report{% endtrans %}</a>
+                <!-- <a href='{{ path("protocol_generate_report", {'protocol_id': protocol.id}) }}' class='btn btn-default' target='_blank'>{% trans %}Create Report{% endtrans %}</a> -->
             {% endif %}
         </div>
     </div>

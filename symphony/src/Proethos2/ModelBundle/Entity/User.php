@@ -88,6 +88,12 @@ class User extends Base implements UserInterface, \Serializable
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\NotBlank()
      */
+    private $job_title;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank()
+     */
     private $institution;
 
     /**
@@ -485,5 +491,29 @@ class User extends Base implements UserInterface, \Serializable
         }
 
         return $submission_team_role;
+    }
+
+    /**
+     * Set jobTitle
+     *
+     * @param string $jobTitle
+     *
+     * @return User
+     */
+    public function setJobTitle($jobTitle)
+    {
+        $this->job_title = $jobTitle;
+
+        return $this;
+    }
+
+    /**
+     * Get jobTitle
+     *
+     * @return string
+     */
+    public function getJobTitle()
+    {
+        return $this->job_title;
     }
 }

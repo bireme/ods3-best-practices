@@ -17,79 +17,96 @@
 
             <div class='row'>
                 <div class='col-md-12'>
-                    <form id="first_step_created_protocol" class='form' method='POST' action='{{ path("submission_new_first_created_protocol_step", {submission_id: submission.id}) }}'>
+                    <form id="form-first-created" class='form' method='POST' action='{{ path("submission_new_first_created_protocol_step", {submission_id: submission.id}) }}'>
 
                         <input type="hidden" name="token" value="{{ csrf_token('submission-first-step-created') }}"/>
 
                         <fieldset>
-                            <legend>{% trans %}Language{% endtrans %}</legend>
+                            <legend>{% trans %}Basic Information{% endtrans %}</legend>
+
                             <div class="form-group required">
-                                <label for="select-language">{% trans %}Submission Language{% endtrans %}:</label>
-                                <a href="{{ path("crud_admin_help_show", {help_id: 198} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <select class='form-control select2' id='select-language' name='language'>
+                                <label for="input_title">{% trans %}Title of the Best Practice{% endtrans %}:</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <input type="text" class="form-control" name='title' id='input_title' value="{{ submission.title }}" required>
+                            </div>
+
+                            <div class="form-group required">
+                                <label for="select-best-practice-type">{% trans %}This Best Practice is related to{% endtrans %}:</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <select class='form-control selectpicker' id='select-best-practice-type' name='best_practice_type' data-size="5" data-live-search="true" required>
                                     <option value="">-</option>
-                                    <option value="pt_BR" {% if submission.language == 'pt_BR' %}selected{% endif %}>Português</option>
-                                    <option value="es_ES" {% if submission.language == 'es_ES' %}selected{% endif %}>Español</option>
-                                    <option value="en" {% if submission.language == 'en' %}selected{% endif %}>English</option>
-                                    <option value="fr_FR" {% if submission.language == 'fr_FR' %}selected{% endif %}>Français</option>
+                                    {% for bp_type in best_practice_type %}
+                                        <option value="{{ bp_type.id }}" data-slug="{{ bp_type.slug }}" {% if submission.type.id == bp_type.id %}selected{% endif %}>{{ bp_type.name }}</option>
+                                    {% endfor %}
                                 </select>
                             </div>
-                        </fieldset>
 
-                        <fieldset>
-                            <legend>{% trans %}Clinical Trial{% endtrans %}</legend>
                             <div class="form-group required">
-                                <label for="">{% trans %}Clinical Trial{% endtrans %}?</label>
-                                <a href="{{ path("crud_admin_help_show", {help_id: 13} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <div class="radio">
-                                    <label><input type="radio" name="is_clinical_trial" id="radio_clinical_trial_yes" value="yes" required {% if submission.isClinicalTrial %}checked{% endif %}> {% trans %}Yes{% endtrans %}</label>
-                                    <label><input type="radio" name="is_clinical_trial" id="radio_clinical_trial_no" value="no" required {% if not submission.isClinicalTrial %}checked{% endif %}> {% trans %}No{% endtrans %}</label>
-                                </div>
+                                <label for="select-best-practice-role">{% trans %}What's your role on this Best Practice{% endtrans %}?</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <select class='form-control selectpicker' id='select-best-practice-role' name='best_practice_role' data-size="5" data-live-search="true" required>
+                                    <option value="">-</option>
+                                    {% for bp_role in best_practice_role %}
+                                        <option value="{{ bp_role.id }}" data-slug="{{ bp_role.slug }}" {% if submission.role.id == bp_role.id %}selected{% endif %}>{{ bp_role.name }}</option>
+                                    {% endfor %}
+                                </select>
                             </div>
-                        </fieldset>
 
-                        <fieldset>
-                            <legend>{% trans %}Consultation{% endtrans %}</legend>
-                            <div class="form-group required">
-                                <label for="">{% trans %}Consultation{% endtrans %}?</label>
-                                <a href="{{ path("crud_admin_help_show", {help_id: 199} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <div class="radio">
-                                    <label><input type="radio" name="is_consultation" id="radio_consultation_yes" value="yes" required {% if submission.isConsultation %}checked{% endif %}> {% trans %}Yes{% endtrans %}</label>
-                                    <label><input type="radio" name="is_consultation" id="radio_consultation_no" value="no" required {% if not submission.isConsultation %}checked{% endif %}> {% trans %}No{% endtrans %}</label>
-                                </div>
-                            </div>
-                        </fieldset>
-
-                        <fieldset>
-                            <legend>{% trans %}Is this a substudy of a larger project?{% endtrans %}</legend>
-                            <div class="form-group required">
-                                <label for="">{% trans %}Is this a substudy of a larger project?{% endtrans %}?</label>
-                                <div class="radio">
-                                    <label><input type="radio" name="is_substudy" id="radio_substudy_yes" value="yes" required {% if submission.isSubstudy %}checked{% endif %}> {% trans %}Yes{% endtrans %}</label>
-                                    <label><input type="radio" name="is_substudy" id="radio_substudy_no" value="no" required {% if not submission.isSubstudy %}checked{% endif %}> {% trans %}No{% endtrans %}</label>
-                                </div>
-                            </div>
-                        </fieldset>
-
-                        <fieldset>
-                            <legend>{% trans %}Project Title{% endtrans %}</legend>
-
-                            <div class="form-group required">
-                                <label for="input_scientific_title">{% trans %}Scientific Title{% endtrans %}:</label>
-                                <a href="{{ path("crud_admin_help_show", {help_id: 14} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <input type="text" class="form-control" name='scientific_title' id='input_scientific_title' value="{{ submission.scientificTitle }}" required>
+                            <div class="form-group {% if submission.role.slug != "other" %}hide{% endif %} required">
+                                <label for="input_other_best_practice_role">{% trans %}Other Role{% endtrans %}:</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <input type="text" class="form-control" name='other_best_practice_role' id='input_other_best_practice_role' value="{{ submission.otherRole }}" {% if submission.role.slug == "other" %}required{% endif %}>
                             </div>
 
                             <div class="form-group required">
-                                <label for="input_public_title">{% trans %}Public title{% endtrans %}:</label>
-                                <a href="{{ path("crud_admin_help_show", {help_id: 15} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <input type="text" class="form-control" name='public_title' id='input_public_title' value="{{ submission.publicTitle }}" required>
+                                <label for="select-institution">{% trans %}Institution reporting the Best Practice{% endtrans %}:</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <select class='form-control selectpicker' id='select-institution' name='institution' data-size="5" data-live-search="true" required>
+                                    <option value="">-</option>
+                                    {% for inst in institution %}
+                                        <option value="{{ inst.id }}" data-slug="{{ inst.slug }}" {% if submission.institution.id == inst.id %}selected{% endif %}>{{ inst.name }}</option>
+                                    {% endfor %}
+                                </select>
                             </div>
 
-                            <div class="form-group">
-                                <label for="input_title_acronym">{% trans %}Title Acronym{% endtrans %}:</label>
-                                <a href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <input type="text" class="form-control" name='title_acronym' value="{{ submission.titleAcronym }}" id='input_title_acronym'>
+                            <div class="form-group {% if submission.institution.slug != "other" %}hide{% endif %} required">
+                                <label for="input_other_institution">{% trans %}Other Institution{% endtrans %}:</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <input type="text" class="form-control" name='other_institution' id='input_other_institution' value="{{ submission.otherInstitution }}" {% if submission.institution.slug == "other" %}required{% endif %}>
+                            </div>
+
+                            <div class="form-group required">
+                                <label for="select-stakeholder">{% trans %}Stakeholder{% endtrans %}:</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <select class='form-control selectpicker' id='select-stakeholder' name='stakeholder' data-size="5" data-live-search="true" required>
+                                    <option value="">-</option>
+                                    {% for sh in stakeholder %}
+                                        <option value="{{ sh.id }}" data-slug="{{ sh.slug }}" {% if submission.stakeholder.id == sh.id %}selected{% endif %}>{{ sh.name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+
+                            <div class="form-group {% if submission.stakeholder.slug != "other" %}hide{% endif %} required">
+                                <label for="input_other_stakeholder">{% trans %}Other Stakeholder{% endtrans %}:</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <input type="text" class="form-control" name='other_stakeholder' id='input_other_stakeholder' value="{{ submission.otherStakeholder }}" {% if submission.stakeholder.slug == "other" %}required{% endif %}>
+                            </div>
+
+                            <div class="form-group {% if submission.type.slug != "paho-who-technical-cooperation" %}hide{% endif %} required">
+                                <label for="select-best-practice-entity">{% trans %}Entity (PAHO){% endtrans %}:</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <select class='form-control selectpicker' id='select-best-practice-entity' name='best_practice_entity' data-size="5" data-live-search="true" {% if submission.type.slug == "paho-who-technical-cooperation" %}required{% endif %}>
+                                    <option value="">-</option>
+                                    {% for bp_entity in best_practice_entity %}
+                                        <option value="{{ bp_entity.id }}" {% if submission.entity.id == bp_entity.id %}selected{% endif %}>{{ bp_entity.name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+
+                            <div class="form-group {% if submission.type.slug != "paho-who-technical-cooperation" %}hide{% endif %} required">
+                                <label for="input_reference_number">{% trans %}Reference Number of the Technical Cooperation{% endtrans %} (e.g. TC80, Grant#OVI314, CUB-27, BRA-76):</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <input type="text" class="form-control" name='reference_number' id='input_reference_number' value='{{ submission.referenceNumber }}' {% if submission.type.slug == "paho-who-technical-cooperation" %}required{% endif %}>
                             </div>
                         </fieldset>
 
@@ -101,4 +118,58 @@
             </div>
         </div>
 
+{% endblock %}
+
+{% block script %}
+    <script>
+        $(function(){
+            $( "#select-best-practice-type" ).on( "change", function() {
+                var slug = $(this).find(':selected').data('slug');
+                if ( 'paho-who-technical-cooperation' == slug ) {
+                    $("#select-best-practice-entity").parent().parent().removeClass("hide");
+                    $("#select-best-practice-entity").prop('required',true);
+                    $("#input_reference_number").parent().removeClass("hide");
+                    $("#input_reference_number").prop('required',true);
+                } else {
+                    $("#select-best-practice-entity").parent().parent().addClass("hide");
+                    $("#select-best-practice-entity").prop('required',false);
+                    $("#input_reference_number").parent().addClass("hide");
+                    $("#input_reference_number").prop('required',false);
+                }
+            });
+
+            $( "#select-best-practice-role" ).on( "change", function() {
+                var slug = $(this).find(':selected').data('slug');
+                if ( 'other' == slug ) {
+                    $("#input_other_best_practice_role").parent().removeClass("hide");
+                    $("#input_other_best_practice_role").prop('required',true);
+                } else {
+                    $("#input_other_best_practice_role").parent().addClass("hide");
+                    $("#input_other_best_practice_role").prop('required',false);
+                }
+            });
+
+            $( "#select-institution" ).on( "change", function() {
+                var slug = $(this).find(':selected').data('slug');
+                if ( 'other' == slug ) {
+                    $("#input_other_institution").parent().removeClass("hide");
+                    $("#input_other_institution").prop('required',true);
+                } else {
+                    $("#input_other_institution").parent().addClass("hide");
+                    $("#input_other_institution").prop('required',false);
+                }
+            });
+
+            $( "#select-stakeholder" ).on( "change", function() {
+                var slug = $(this).find(':selected').data('slug');
+                if ( 'other' == slug ) {
+                    $("#input_other_stakeholder").parent().removeClass("hide");
+                    $("#input_other_stakeholder").prop('required',true);
+                } else {
+                    $("#input_other_stakeholder").parent().addClass("hide");
+                    $("#input_other_stakeholder").prop('required',false);
+                }
+            });
+        });
+    </script>
 {% endblock %}

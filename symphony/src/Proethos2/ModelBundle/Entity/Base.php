@@ -19,10 +19,16 @@ namespace Proethos2\ModelBundle\Entity;
  
 use Doctrine\ORM\Mapping as ORM; 
 use Symfony\Component\Validator\Constraints as Assert; 
- 
+
+use JMS\Serializer\Annotation\ExclusionPolicy;
+use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\Exclude;
+
+
 /** 
  * Base abstract class 
  * @ORM\MappedSuperclass 
+ * @ExclusionPolicy("all")
  */ 
 abstract class Base 
 { 

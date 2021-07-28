@@ -1,6 +1,6 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}{% trans %}Protocol options{% endtrans %}{% endblock %}
+{% block title %}{% trans %}Best Practice options{% endtrans %}{% endblock %}
 
 {% block content %}
 
@@ -32,8 +32,8 @@
                     <div class="col-md-12">
                         <div class="form-group" id='niec-manual'>
                             <label for="input-opinion-required">{% trans %}Opinions Required{% endtrans %}:</label>
-                            <a href="{{ path("crud_admin_help_show", {help_id: 122} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                            <input type='number' class="form-control" id='input-opinion-required' name="opinion-required" min="0" value="{{ protocol.opinionRequired }}" required>
+                            <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 122} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                            <input type='number' class="form-control" id='input-opinion-required' name="opinion-required" min="0" value="{{ protocol.opinionRequired }}">
                         </div>
                     </div>
                 </div>
@@ -52,6 +52,7 @@
                         <thead>
                             <tr>
                                 <th width="30%">{% trans %}Name{% endtrans %}</th>
+                                <th>{% trans %}Role{% endtrans %}</th>
                                 <th>{% trans %}Institution{% endtrans %}</th>
                                 <th>{% trans %}E-mail{% endtrans %}</th>
                                 <th>{% trans %}Country{% endtrans %}</th>
@@ -65,6 +66,7 @@
                             {% for revision in protocol.revision %}
                                 <tr>
                                     <td>{{ revision.member.name }}</td>
+                                    <td>{% if role_member_of_committee in revision.member.proethos2Roles %}{% trans %}Member of Committee{% endtrans %}{% else %}{% trans %}Member Ad-Hoc{% endtrans %}{% endif %}</td>
                                     <td>{{ revision.member.institution }}</td>
                                     <td><a href='{{ revision.member.email }}'>{{ revision.member.email }}</a></td>
                                     <td>{{ revision.member.country }}</td>
@@ -100,9 +102,9 @@
                     <div class="col-md-12">
                         <div class="form-group" id='rejeitar-group'>
                             <label for="select-meeting">{% trans %}Select meeting{% endtrans %}:</label>
-                            <a href="{{ path("crud_admin_help_show", {help_id: 123} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                            <a class="help-text" ref="{{ path("crud_admin_help_show", {help_id: 123} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                             <select class='form-control selectpicker' id="select-meeting" name="meeting" data-live-search="true">
-                                <option></option>
+                                <option value="">-</option>
                                 {% for meeting in meetings %}
                                     <option value="{{ meeting.id }}" {% if protocol.meeting == meeting %}selected{% endif %}>{{ meeting.date|date("d/m/Y") }} - {{ meeting.subject }}</option>
                                 {% endfor %}

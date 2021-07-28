@@ -236,6 +236,18 @@ img.logo {
     max-width: 500px;
 }
 
+.help-text {
+    display: none;
+}
+
+.checkbox .icheckbox_square-blue {
+    margin-right: 10px;
+}
+
+.hide {
+    display: none;
+}
+
 .form-contacts .tagify {
   --tag-bg                  : #2C93D9;
   --tag-hover               : #CE0078;

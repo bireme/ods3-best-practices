@@ -2,7 +2,7 @@
     <div class='row'>
         <div class='col-md-12'>
             <div class='alert alert-warning'>
-                <h4>{% trans %}Reason that this protocol was rejected{% endtrans %}</h4>
+                <h4>{% trans %}Reason that this best practice was rejected{% endtrans %}</h4>
                 {{ submission.protocol.rejectReason }}
             </div>
         </div>
@@ -46,33 +46,35 @@
     </div>
 {% endif %}
 
+{% set step = 1 %}
+
 <div class='row'>
     <div class='col-md-12'>
         <ul class="nav nav-tabs" id='new-submission-tab'>
-            <!-- <li role="presentation">
-                <a href="javascript:void(0)" title="{% trans %}First Information{% endtrans %}">
-                    {% trans %}First Information{% endtrans %}
-                </a>
-            </li> -->
             <li role="presentation" {% if app.request.get('_route') == "submission_new_first_created_protocol_step" %}class='active'{% endif %}>
-                <a href="{{ path('submission_new_first_created_protocol_step', {'submission_id': submission.id }) }}" title="{% trans %}First Information{% endtrans %}">{% trans %}First Information{% endtrans %}</a>
+                <a href="{{ path('submission_new_first_created_protocol_step', {'submission_id': submission.id }) }}" title="{% trans %}Step{% endtrans %} {{ step }}">{% trans %}Step{% endtrans %} {{ step }}</a>
             </li>
+            {% set step = step + 1 %}
             <li role="presentation" {% if app.request.get('_route') == "submission_new_second_step" %}class='active'{% endif %}>
-                <a href="{{ path('submission_new_second_step', {'submission_id': submission.id }) }}" title="{% trans %}About Project{% endtrans %}">{% trans %}About Project{% endtrans %}</a>
+                <a href="{{ path('submission_new_second_step', {'submission_id': submission.id }) }}" title="{% trans %}Step{% endtrans %} {{ step }}">{% trans %}Step{% endtrans %} {{ step }}</a>
             </li>
-            {% if not submission.isConsultation %}
+            {% set step = step + 1 %}
                 <li role="presentation" {% if app.request.get('_route') == "submission_new_third_step" %}class='active'{% endif %}>
-                    <a href="{{ path('submission_new_third_step', {'submission_id': submission.id }) }}" title='{% trans %}Clinical study{% endtrans %}'>{% trans %}Clinical study{% endtrans %}</a>
+                    <a href="{{ path('submission_new_third_step', {'submission_id': submission.id }) }}" title='{% trans %}Step{% endtrans %} {{ step }}'>{% trans %}Step{% endtrans %} {{ step }}</a>
                 </li>
+            {% if submission.type.slug == "paho-who-technical-cooperation" %}
+                {% set step = step + 1 %}
                 <li role="presentation" {% if app.request.get('_route') == "submission_new_fourth_step" %}class='active'{% endif %}>
-                    <a href="{{ path('submission_new_fourth_step', {'submission_id': submission.id }) }}" title='{% trans %}Additional Information{% endtrans %}'>{% trans %}Additional Information{% endtrans %}</a>
-                </li>
-                <li role="presentation" {% if app.request.get('_route') == "submission_new_fifth_step" %}class='active'{% endif %}>
-                    <a href="{{ path('submission_new_fifth_step', {'submission_id': submission.id }) }}" title='{% trans %}Bibliography{% endtrans %}'>{% trans %}Bibliography{% endtrans %}</a>
+                    <a href="{{ path('submission_new_fourth_step', {'submission_id': submission.id }) }}" title='{% trans %}Step{% endtrans %} {{ step }}'>{% trans %}Step{% endtrans %} {{ step }}</a>
                 </li>
             {% endif %}
+            {% set step = step + 1 %}
+            <li role="presentation" {% if app.request.get('_route') == "submission_new_fifth_step" %}class='active'{% endif %}>
+                <a href="{{ path('submission_new_fifth_step', {'submission_id': submission.id }) }}" title='{% trans %}Step{% endtrans %} {{ step }}'>{% trans %}Step{% endtrans %} {{ step }}</a>
+            </li>
+            {% set step = step + 1 %}
             <li role="presentation" {% if app.request.get('_route') == "submission_new_sixth_step" %}class='active'{% endif %}>
-                <a href="{{ path('submission_new_sixth_step', {'submission_id': submission.id }) }}" title='{% trans %}Attached Files{% endtrans %}'>{% trans %}Attached Files{% endtrans %}</a>
+                <a href="{{ path('submission_new_sixth_step', {'submission_id': submission.id }) }}" title='{% trans %}Step{% endtrans %} {{ step }}'>{% trans %}Step{% endtrans %} {{ step }}</a>
             </li>
             <li role="presentation" {% if app.request.get('_route') == "submission_new_seventh_step" %}class='active'{% endif %}>
                 <a href="{{ path('submission_new_seventh_step', {'submission_id': submission.id }) }}" title='{% trans %}Revision{% endtrans %}'>{% trans %}Revision{% endtrans %}</a>
@@ -90,17 +92,9 @@
 
             <div class='col-md-5'>
                 <div class='block'>
-                    <div class='label'>{% trans %}Project Title{% endtrans %}</div>
+                    <div class='label'>{% trans %}Best Practice Title{% endtrans %}</div>
                     <h2>
-                        {{ submission.publicTitle }}
-                        {% if submission.isTranslation %}
-                            <small>
-                                {% trans %}translation{% endtrans %}{% endif %}:
-                                {% if submission.language == 'pt_BR' %}Português{% endif %}
-                                {% if submission.language == 'es_ES' %}Español{% endif %}
-                                {% if submission.language == 'en' %}English{% endif %}
-                                {% if submission.language == 'fr_FR' %}Français{% endif %}
-                            </small>
+                        {{ submission.title }}
                     </h2>
                 </div>
             </div>

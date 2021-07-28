@@ -34,258 +34,186 @@
         </style>
     </head>
     <body>
-        <h1>
-            {{ submission.scientificTitle }}
-            (<small>{% if submission.language == 'pt_BR' %}Português{% endif %}{% if submission.language == 'es_ES' %}Español{% endif %}{% if submission.language == 'en' %}English{% endif %}{% if submission.language == 'fr_FR' %}Français{% endif %}</small>)
-        </h1>
+        <h1>{{ submission.title }}</h1>
 
         {% if protocol_code %}
-            <h2>{% trans %}Protocol Code{% endtrans %}</h2>
+            <h3>{% trans %}Best Practice Code{% endtrans %}</h3>
             <p>{{ protocol_code }}</p>
         {% endif %}
 
-        <h2>{% trans %}Public Title{% endtrans %}</h2>
-        <p>{{ submission.publicTitle }}</p>
+        <h3>{% trans %}This Best Practice is related to{% endtrans %}:</h3>
+        <p>{{ submission.type.name }}</p>
 
-        <h2>{% trans %}Team{% endtrans %}</h2>
-        <table>
-            <tr>
-                <th>{% trans %}Name{% endtrans %}</th>
-                <th>{% trans %}E-mail{% endtrans %}</th>
-                <th>{% trans %}Country{% endtrans %}</th>
-                <th>{% trans %}Contact{% endtrans %}</th>
-            </tr>
+        <h3>{% trans %}What's your role on this Best Practice{% endtrans %}?</h3>
+        <p>{{ submission.role.name }}</p>
 
-            <tr>
-                <td>{{ submission.owner.name }}</td>
-                <td>{{ submission.owner.email }}</td>
-                <td>{{ submission.owner.country }}</td>
-                <td></td>
-            </tr>
-            {% for member in submission.team %}
-                <tr>
-                    <td>{{ member.name }}</td>
-                    <td>{{ member.email }}</td>
-                    <td>{{ member.country }}</td>
-                    <td></td>
-                </tr>
-            {% endfor %}
-        </table>
+        {% if submission.role.slug == "other" %}
 
-        <h2>{% trans %}Abstract{% endtrans %}</h2>
-        <div>{{ submission.abstract|raw }}</div>
+            <h3>{% trans %}Other Role{% endtrans %}:</h3>
+            <p>{{ submission.otherRole }}</p>
 
-        <h2>{% trans %}Keywords{% endtrans %}</h2>
-        <p>{{ submission.keywords }}</p>
-
-        <h2>{% trans %}Introduction{% endtrans %}</h2>
-        <div>{{ submission.introduction|raw }}</div>
-
-        <h2>{% trans %}Justification{% endtrans %}</h2>
-        <div>{{ submission.justification|raw }}</div>
-
-        <h2>{% trans %}Goals{% endtrans %}</h2>
-        <div>{{ submission.goals|raw }}</div>
-
-        <h2>{% trans %}Is this a substudy of a larger project?{% endtrans %}</h2>
-        <p>
-            {% if submission.isSubstudy %}
-                {% trans %}yes{% endtrans %}
-            {% else %}
-                {% trans %}no{% endtrans %}
-            {% endif %}
-        </p>
-
-        {% if not submission.isConsultation %}
-
-            <h2>{% trans %}Study Design{% endtrans %}</h2>
-            <div>{{ submission.studyDesign|raw }}</div>
-
-            <h2>{% trans %}Health Condition or Problem Studied{% endtrans %}</h2>
-            <div>{{ submission.healthCondition|raw }}</div>
-
-            {% if not submission.getIsMultipleClinicalStudy %}
-
-                <h2>{% trans %}Target sample size{% endtrans %}</h2>
-                <p>{{ submission.sampleSize }}</p>
-
-                <h2>{% trans %}Inclusion criteria{% endtrans %}</h2>
-                <div>{{ submission.inclusionCriteria|raw }}</div>
-
-                <h2>{% trans %}Exclusion criteria{% endtrans %}</h2>
-                <div>{{ submission.exclusionCriteria|raw }}</div>
-
-                <h2>{% trans %}Estimated date of initial recruitment{% endtrans %}</h2>
-                <p>{{ submission.recruitmentInitDate|date("d/m/Y") }}</p>
-
-                <h2>{% trans %}Recruitment Status{% endtrans %}</h2>
-                <p>{{ submission.recruitmentStatus }}</p>
-
-            {% else %}
-
-                {% if submission_clinical_study %}
-
-                    <h2>{% trans %}Clinical Study Activities{% endtrans %}</h2>
-
-                    {% for activity in submission_clinical_study %}
-
-                        <h3>{% trans %}Activity{% endtrans %} {{ loop.index }}</h3>
-
-                        <h4>{% trans %}Description{% endtrans %}</h4>
-                        <p>{{ activity.description }}</p>
-
-                        <h4>{% trans %}Target sample size{% endtrans %}</h4>
-                        <p>{{ activity.sampleSize }}</p>
-
-                        <h4>{% trans %}Inclusion criteria{% endtrans %}</h4>
-                        <div>{{ activity.inclusionCriteria|raw }}</div>
-
-                        <h4>{% trans %}Exclusion criteria{% endtrans %}</h4>
-                        <div>{{ activity.exclusionCriteria|raw }}</div>
-
-                        <h4>{% trans %}Estimated date of initial recruitment{% endtrans %}</h4>
-                        <p>{{ activity.recruitmentInitDate|date("d/m/Y") }}</p>
-
-                        <h4>{% trans %}Recruitment Status{% endtrans %}</h4>
-                        <p>{{ activity.recruitmentStatus }}</p>
-
-                    {% endfor %}
-                
-                {% endif %}
-
-            {% endif %}
-
-            <h2>{% trans %}Recruitment Country{% endtrans %}</h2>
-            <table>
-                <tr>
-                    <th>{% trans %}Country{% endtrans %}</th>
-                    <th>{% trans %}Total of Participants{% endtrans %}</th>
-                </tr>
-
-                {% for item in submission.country %}
-                    <tr>
-                        <td>{{ item.country }}</td>
-                        <td>{{ item.participants }}</td>
-                    </tr>
-                {% endfor %}
-            </table>
-
-            <h2>{% trans %}Interventions{% endtrans %}</h2>
-            <div>{{ submission.interventions|raw }}</div>
-
-            <h2>{% trans %}Primary outcomes{% endtrans %}</h2>
-            <div>{{ submission.primaryOutcome|raw }}</div>
-
-            <h2>{% trans %}Secondary outcomes{% endtrans %}</h2>
-            <div>{{ submission.secondaryOutcome|raw }}</div>
-
-            <h2>{% trans %}General Procedures{% endtrans %}</h2>
-            <div>{{ submission.generalProcedures|raw }}</div>
-
-            <h2>{% trans %}Analysis Plan{% endtrans %}</h2>
-            <div>{{ submission.analysisPlan|raw }}</div>
-
-            {% if submission.isClinicalTrial %}
-                <h2>{% trans %}Clinical Trial{% endtrans %}</h2>
-                <table>
-                    <tr>
-                        <th>{% trans %}Registry Name{% endtrans %}</th>
-                        <th>{% trans %}Registry Number{% endtrans %}</th>
-                        <th>{% trans %}Date{% endtrans %}</th>
-                    </tr>
-
-                    {% for item in submission.clinicalTrial %}
-                        <tr>
-                            <td>{{ item.name }}</td>
-                            <td>{{ item.number }}</td>
-                            <td>{{ item.date|date("d/m/Y") }}</td>
-                        </tr>
-                    {% endfor %}
-                </table>
-
-                <h2>{% trans %}Secondary Registry{% endtrans %}</h2>
-                <p>{{ submission.clinicalTrialSecondary }}</p>
-
-            {% endif %}
-
-            <h2>{% trans %}Funding source{% endtrans %}</h2>
-            <p>{{ submission.fundingSource }}</p>
-
-            <h2>{% trans %}Primary Sponsor{% endtrans %}</h2>
-            <p>{{ submission.primarySponsor }}</p>
-
-            <h2>{% trans %}Secondary Sponsor{% endtrans %}</h2>
-            <p>{{ submission.secondarySponsor }}</p>
-
-            <h2>{% trans %}Schedule{% endtrans %}</h2>
-            <table>
-                <tr>
-                    <th>{% trans %}Activity{% endtrans %}</th>
-                    <th>{% trans %}Start{% endtrans %}</th>
-                    <th>{% trans %}End{% endtrans %}</th>
-                </tr>
-
-                {% for item in submission.schedule %}
-                    <tr>
-                        <td>{{ item.description }}</td>
-                        <td>{{ item.init|date("d/m/Y") }}</td>
-                        <td>{{ item.end|date("d/m/Y") }}</td>
-                    </tr>
-                {% endfor %}
-            </table>
-
-            <h2>{% trans %}Budget{% endtrans %}</h2>
-            <table>
-                <tr>
-                    <th>{% trans %}Description{% endtrans %}</th>
-                    <th>{% trans %}Unit Cost{% endtrans %}</th>
-                    <th>{% trans %}Quantity{% endtrans %}</th>
-                    <th>{% trans %}Total{% endtrans %}</th>
-                </tr>
-
-                {% for item in submission.budget %}
-                    <tr>
-                        <td>{{ item.description }}</td>
-                        <td>{{ symbol }} {{ item.unitCost }}</td>
-                        <td>{{ item.quantity }}</td>
-                        <td>{{ symbol }} {{ item.unitCost * item.quantity }}</td>
-                    </tr>
-                {% endfor %}
-            </table>
-
-            <h2>{% trans %}Bibliography{% endtrans %}</h2>
-            <div>{{ submission.bibliography|raw }}</div>
-
-            <h2>{% trans %}Scientific Contact{% endtrans %}</h2>
-            <p>{{ submission.sscientificContact }}</p>
-
-            <h2>{% trans %}Prior Ethical Approval{% endtrans %}</h2>
-            <p>
-                {% if submission.priorEthicalApproval %}
-                    {% trans %}yes{% endtrans %}
-                {% else %}
-                    {% trans %}no{% endtrans %}
-                {% endif %}
-            </p>
-            
         {% endif %}
 
-        <h2>{% trans %}Upload Files{% endtrans %}</h2>
+        <h3>{% trans %}Institution reporting the Best Practice{% endtrans %}:</h3>
+        <p>{{ submission.institution.name }}</p>
+
+        {% if submission.institution.slug == "other" %}
+
+            <h3>{% trans %}Other Institution{% endtrans %}:</h3>
+            <p>{{ submission.otherInstitution }}</p>
+
+        {% endif %}
+
+        <h3>{% trans %}Stakeholder{% endtrans %}:</h3>
+        <p>{{ submission.stakeholder.name }}</p>
+
+        {% if submission.stakeholder.slug == "other" %}
+
+            <h3>{% trans %}Other Stakeholder{% endtrans %}:</h3>
+            <p>{{ submission.otherStakeholder }}</p>
+
+        {% endif %}
+
+        <h3>{% trans %}Entity (PAHO){% endtrans %}:</h3>
+        <p>{{ submission.entity.name }}</p>
+
+        <h3>{% trans %}Reference Number of the Technical Cooperation{% endtrans %}:</h3>
+        <p>{{ submission.referenceNumber }}</p>
+
+        <h3>{% trans %}Technical Matters{% endtrans %}:</h3>
+        <p>{{ submission.technicalMatter|join('; ') }}</p>
+
+        <h3>{% trans %}Interventions{% endtrans %}:</h3>
+        <p>{{ submission.intervention|join('; ') }}</p>
+
+        <h3>{% trans %}Start Date{% endtrans %}:</h3>
+        <p>{{ submission.startDate|date("Y-m-d") }}</p>
+
+        <h3>{% trans %}End Date{% endtrans %}:</h3>
+        <p>{{ submission.endDate|date("Y-m-d") }}</p>
+
+        <h3>{% trans %}Country/Territory receiving the cooperation{% endtrans %}:</h3>
+        <p>{{ submission.country.name }}</p>
+
+        <h3>{% trans %}Sub Region{% endtrans %}:</h3>
+        <p>{{ submission.subregion.name }}</p>
+
+        <h3>{% trans %}This is respective to the following Targets of the SDGs{% endtrans %}:</h3>
+        <p>{{ submission.target|join('; ') }}</p>
+
+        <h3>{% trans %}Any specific population group{% endtrans %}?</h3>
+        <p>{{ submission.populationGroup.name }}</p>
+
+        {% if submission.populationGroup.slug == "other" %}
+
+            <h3>{% trans %}Other Population Group{% endtrans %}:</h3>
+            <p>{{ submission.otherPopulationGroup }}</p>
+
+        {% endif %}
+
+        <h3>{% trans %}Brief Introduction{% endtrans %}:</h3>
+        <p>{{ submission.introduction }}</p>
+
+        <h3>{% trans %}Objectives of the Best Practice{% endtrans %}:</h3>
+        <p>{{ submission.objectives }}</p>
+
+        <h3>{% trans %}Implementation/Activities{% endtrans %}:</h3>
+        <p>{{ submission.activities }}</p>
+
+        <h3>{% trans %}Main Results/Products and Impact{% endtrans %}:</h3>
+        <p>{{ submission.mainResults }}</p>
+
+        <h3>{% trans %}Enabling Factors and Restrictions{% endtrans %}:</h3>
+        <p>{{ submission.factors }}</p>
+
+        <h3>{% trans %}In your opinion, the resources assigned to the accomplishment of this Best Practice (financial, technological and/or manpower) were implement in an efficient way{% endtrans %}?</h3>
+        <p>{{ likert[submission.resourcesAssigned] }}</p>
+
+        <h3>{% trans %}Support information about the outcome and impact results{% endtrans %}:</h3>
+        <p>{{ submission.outcomeInformation }}</p>
+
+        <h3>{% trans %}Was the BP able to transfer technologies, and/or to disseminate useful knowledge adaptable to other realities, and could it be scaled up{% endtrans %}?</h3>
+        <p>{{ likert[submission.scalability] }}</p>
+
+        <h3>{% trans %}Does the development of this BP have adaptability and replicability potential{% endtrans %}?</h3>
+        <p>{{ likert[submission.adaptabilityReplicability] }}</p>
+
+        <h3>{% trans %}Could these successful BP be demonstrated in other contexts{% endtrans %}?</h3>
+        <p>{{ likert[submission.otherContextsDemo] }}</p>
+
+        <h3>{% trans %}Please describe how{% endtrans %}:</h3>
+        <p>{{ submission.describeHow }}</p>
+
+        {% if submission.type.slug == "paho-who-technical-cooperation" %}
+
+            <h3>{% trans %}Did it contribute to strengthen the health system, the achievement of PAHO SP 20-25 and SHAA 2030{% endtrans %}?</h3>
+            <p>{{ likert[submission.healthSystemContribution] }}</p>
+
+            <h3>{% trans %}Is the BP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization{% endtrans %}?</h3>
+            <p>{{ likert[submission.valueChainOrganization] }}</p>
+
+            <h3>{% trans %}What public health issue (or opportunity) led the Organization to participate/request this Technical Cooperation project/initiative{% endtrans %}?</h3>
+            <p>{{ submission.publicHealthIssue }}</p>
+
+            <h3>{% trans %}Was the Technical Cooperation planned considering the health situation of the target population{% endtrans %}?</h3>
+            <p>{{ submission.planningInformation }}</p>
+
+            <h3>{% trans %}Please provide additional information about the relevance{% endtrans %}:</h3>
+            <p>{{ submission.relevanceInformation }}</p>
+
+            <h3>{% trans %}In your opinion, the counterpart(s) recognized PAHO's Technical Cooperation{% endtrans %}?</h3>
+            <p>{{ likert[submission.counterpartRecognized] }}</p>
+
+            <h3>{% trans %}In your opinion, PAHO played a catalytic role on the added value of Technical Cooperation{% endtrans %}?</h3>
+            <p>{{ likert[submission.catalyticRole] }}</p>
+
+            <h3>{% trans %}In your opinion, PAHO played a neutral role in negotiations{% endtrans %}</h3>
+            <p>{{ likert[submission.neutralRole] }}</p>
+
+            <h3>{% trans %}Please provide support information about PAHO's Technical Cooperation recognition{% endtrans %}:</h3>
+            <p>{{ submission.recognitionInformation }}</p>
+
+            <h3>{% trans %}In your opinion, PAHO's Technical Cooperation was planned considering the cross-cutting approach (human rights, gender, ethnicity and race){% endtrans %}?</h3>
+            <p>{{ likert[submission.crossCuttingApproach] }}</p>
+
+            <h3>{% trans %}Please provide support information. For example, information on how PAHO's Technical Cooperation contributed to strengthen capacity and address health inequities and inequalities, and gender and culturally sensitive approaches to health within a human rights framework; to engage in an intersectoral action with an equity and rights focus{% endtrans %}:</h3>
+            <p>{{ submission.engagementInformation }}</p>
+
+        {% endif %}
+
+        <h3>{% trans %}Upload Files{% endtrans %}:</h3>
         <table>
             <tr>
-                <th>{% trans %}Type{% endtrans %}</th>
                 <th>{% trans %}File name{% endtrans %}</th>
                 <th>{% trans %}Date{% endtrans %}</th>
             </tr>
 
-            {% for item in submission.attachments %}
+            {% for file in submission.attachments %}
                 <tr>
-                    <td>{{ item.uploadType }}</td>
-                    <td>{{ item.filename }}</td>
-                    <td>{{ item.created|date("d/m/Y H:i:s") }}</td>
+                    <td><a href='{{ home_url }}{{ asset(file.uri) }}' target="_blank">{% if file.uploadType.slug in ['protocol'] %}{{ file.simpleFilename }}{% else %}{{ file }}{% endif %}</a></td>
+                    <td>{{ file.created|date("d/m/Y H:i:s") }}</td>
                 </tr>
             {% endfor %}
         </table>
+
+        <h3>{% trans %}Please provide information about products (resources, documents of the initiative/project) generated/associated to this Best Practice{% endtrans %}:</h3>
+        {% for url in submission.productsInformationLinks %}
+            <p><a href="{{ url }}" target="_blank">{{ url }}</a></p>
+        {% endfor %}
+
+        <h3>{% trans %}Other information sources{% endtrans %}:</h3>
+        {% for url in submission.otherSourcesInformationLinks %}
+            <p><a href="{{ url }}" target="_blank">{{ url }}</a></p>
+        {% endfor %}
+
+        <h3>{% trans %}What obstacles or challenges faced during the implementation of this best practice/initiative{% endtrans %}?</h3>
+        <p>{{ submission.challengesInformation }}</p>
+
+        <h3>{% trans %}What are the lessons learned for that will improve our expertise and add value to the Organization{% endtrans %}?</h3>
+        <p>{{ submission.lessonsInformation }}</p>
+
+        <h3>{% trans %}Any comment for the Secretariat of the Pan American Health Organization{% endtrans %}?</h3>
+        <p>{{ submission.pahoComments }}</p>
 
         <footer>{% trans %}Created in{% endtrans %} {{ "now"|date("d/m/Y H:i:s") }}</footer>
     </body>

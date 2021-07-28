@@ -27,7 +27,7 @@
                         
                         <tbody>
                             {% for configuration in configurations %}
-                                {% if configuration.key != 'protocol.checklist' %}
+                                {% if configuration.key != 'protocol.checklist' and configuration.key != 'country.locale' %}
                                     {% if configuration.key == 'country.locale' %}
                                         <tr>
                                             <td>{{ configuration.description }}</td>

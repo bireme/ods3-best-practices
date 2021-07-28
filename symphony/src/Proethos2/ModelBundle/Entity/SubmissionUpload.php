@@ -22,6 +22,11 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\ArrayCollection;
 use Cocur\Slugify\Slugify;
 
+use JMS\Serializer\Annotation\ExclusionPolicy;
+use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\Exclude;
+
+
 /**
  * SubmissionUpload
  *
@@ -40,6 +45,7 @@ class SubmissionUpload extends Base
     private $id;
 
     /**
+     * @Exclude
      * @ORM\ManyToOne(targetEntity="User")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=true, onDelete="SET NULL")
      * @Assert\NotBlank
@@ -66,6 +72,7 @@ class SubmissionUpload extends Base
     private $filename;
 
     /**
+     * @Exclude
      * @ORM\Column(type="string", length=1023)
      */
     private $filepath;
@@ -236,6 +243,13 @@ class SubmissionUpload extends Base
 
         return $this;
 
+    }
+
+    public function getSimpleFilename()
+    {
+        $filename = explode('-', $this->filename);
+        $sfilename = array_pop($filename);
+        return $sfilename;
     }
 
     public function setMigratedFile($filepath) {

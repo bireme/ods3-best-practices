@@ -32,7 +32,7 @@
 
                                 <thead>
                                     <tr>
-                                        <th class='center'>{% trans %}Field{% endtrans %}</th>
+                                        <th class='center'>{% trans %}Fields{% endtrans %}</th>
                                         <th class='center'>{% trans %}Check{% endtrans %}</th>
                                     </tr>
                                 </thead>
@@ -67,7 +67,7 @@
                                 <div class="checkbox">
                                     <label for='input-accept-terms'>
                                         <input type='checkbox' name='accept-terms' id='input-accept-terms'>
-                                        {% trans %}I agree with the terms and conditions{% endtrans %}
+                                        {% trans %}I agree with the{% endtrans %} <a href="https://politicas.bireme.org/terminos/en/index.html" target="_blank">{% trans %}Terms of Use{% endtrans %}</a> {% trans %}and{% endtrans %} <a href="https://politicas.bireme.org/privacidad/en/index.html" target="_blank">{% trans %}Privacy Policy{% endtrans %}</a>
                                     </label>
                                 </div>
                             </div>
@@ -81,7 +81,7 @@
                         {% if submission.isTranslation %}
                             <a href='{{ path("submission_new_first_translation_protocol_step", {submission_id: submission.originalSubmission.id}) }}' class='btn btn-default'>{% trans %}Submit translation{% endtrans %}</a>
                         {% else %}
-                            <a href='{{ path("submission_new_first_translation_protocol_step", {submission_id: submission.id}) }}' class='btn btn-default'>{% trans %}Submit translation{% endtrans %}</a>
+                            <!-- <a href='{{ path("submission_new_first_translation_protocol_step", {submission_id: submission.id}) }}' class='btn btn-default'>{% trans %}Submit translation{% endtrans %}</a> -->
                         {% endif %}
                     {% endif %}
                     {% if submission.isTranslation %}

@@ -21,6 +21,11 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\ArrayCollection;
 
+use JMS\Serializer\Annotation\ExclusionPolicy;
+use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\Exclude;
+
+
 /**
  * Protocol
  *
@@ -54,6 +59,7 @@ class Protocol extends Base
     /**
      * @var User
      *
+     * @Exclude
      * @ORM\ManyToOne(targetEntity="User", inversedBy="users")
      * @ORM\JoinColumn(name="owner_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      * @Assert\NotBlank
@@ -70,6 +76,7 @@ class Protocol extends Base
     /**
      * @var ArrayCollection
      *
+     * @Exclude
      * @ORM\OneToMany(targetEntity="ProtocolHistory", mappedBy="protocol", cascade={"remove"})
      */
     private $history;
@@ -77,6 +84,7 @@ class Protocol extends Base
     /**
      * @var ArrayCollection
      *
+     * @Exclude
      * @ORM\OneToMany(targetEntity="ProtocolComment", mappedBy="protocol", cascade={"remove"})
      */
     private $comment;
@@ -137,6 +145,7 @@ class Protocol extends Base
     /**
      * @var ProtocolRevision
      *
+     * @Exclude
      * @ORM\OneToMany(targetEntity="ProtocolRevision", mappedBy="protocol", cascade={"remove"})
      */
     private $revision;
