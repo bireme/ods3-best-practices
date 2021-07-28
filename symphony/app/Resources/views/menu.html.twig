@@ -29,10 +29,10 @@
                     </li>
                 {% endif %}
 
-                <li class="active"><a href="{{ path("home") }}">{% trans %}Dashboard{% endtrans %}</a></li>
+                <!-- <li class="active"><a href="{{ path("home") }}">{% trans %}Dashboard{% endtrans %}</a></li> -->
 
                 {% if is_granted("ROLE_USER") and 'investigator' in app.user.rolesSlug %}
-                    <li class=""><a href="{{ path("crud_investigator_protocol_list") }}">{% trans %}Protocols{% endtrans %}</a></li>
+                    <li class=""><a href="{{ path("crud_investigator_protocol_list") }}">{% trans %}Best Practices{% endtrans %}</a></li>
                 {% endif %}
 
                 {% if is_granted("ROLE_USER") and ('secretary' in app.user.rolesSlug or 'member-of-committee' in app.user.rolesSlug or 'member-ad-hoc' in app.user.rolesSlug)  %}
@@ -43,22 +43,22 @@
                         </a>
 
                         <ul class="dropdown-menu">
-                            <li><a href="{{ path('crud_committee_protocol_list') }}">{% trans %}Protocols{% endtrans %}</a></li>
+                            <li><a href="{{ path('crud_committee_protocol_list') }}">{% trans %}Best Practices{% endtrans %}</a></li>
                             {% if 'secretary' in app.user.rolesSlug %}
                                 <li role="separator" class="divider"></li>
                                 <li><a href="{{ path('crud_committee_faq_list') }}">{% trans %}FAQ{% endtrans %}</a></li>
                                 <li><a href="{{ path('crud_committee_user_list') }}">{% trans %}Users{% endtrans %}</a></li>
                                 <li><a href="{{ path('crud_committee_meeting_list') }}">{% trans %}Meetings{% endtrans %}</a></li>
                                 <li><a href="{{ path('crud_committee_document_list') }}">{% trans %}Documents{% endtrans %}</a></li>
-                                <li><a href="{{ path('crud_committee_protocol_checklist_show') }}" data-toggle='modal' data-target='#modal-show-protocol-checklist'>{% trans %}Protocol Checklist{% endtrans %}</a></li>
+                                <!-- <li><a href="{{ path('crud_committee_protocol_checklist_show') }}" data-toggle='modal' data-target='#modal-show-protocol-checklist'>{% trans %}Protocol Checklist{% endtrans %}</a></li> -->
                             {% endif %}
                         </ul>
                     </li>
                 {% endif %}
 
-                <li class=""><a href="{{ path('crud_faq_list') }}">{% trans %}FAQ{% endtrans %}</a></li>
+                <li class=""><a href="{{ path('crud_faq_list') }}" {% if is_granted("ROLE_USER") %}target="_blank"{% endif %}>{% trans %}FAQ{% endtrans %}</a></li>
 
-                {% if is_granted("ROLE_USER") %}
+                {% if is_granted("ROLE_USER") and 'secretary' in app.user.rolesSlug %}
                     <li class=""><a href="{{ path('crud_document_list') }}">{% trans %}Documents{% endtrans %}</a></li>
                 {% endif %}
 
@@ -80,12 +80,9 @@
                             <li class="dropdown-submenu">
                                 <a tabindex="-1" href="#">{% trans %}Controlled Lists{% endtrans %}</a>
                                 <ul class="dropdown-menu">
+                                    <li><a tabindex="-1" href="{{ path('crud_admin_controlled_list_best_practice_role_list') }}">{% trans %}Best Practice Roles{% endtrans %}</a></li>
                                     <li><a tabindex="-1" href="{{ path('crud_admin_controlled_list_upload_type_list') }}">{% trans %}Upload Types{% endtrans %}</a></li>
                                     <li><a tabindex="-1" href="{{ path('crud_admin_controlled_list_upload_type_extension_list') }}">{% trans %}Upload Extension Types{% endtrans %}</a></li>
-                                    <li><a tabindex="-1" href="{{ path('crud_admin_controlled_list_recruitment_status_list') }}">{% trans %}Recruitment Status{% endtrans %}</a></li>
-                                    <li><a tabindex="-1" href="{{ path('crud_admin_controlled_list_monitoring_action_list') }}">{% trans %}Monitoring Actions{% endtrans %}</a></li>
-                                    <li><a tabindex="-1" href="{{ path('crud_admin_controlled_list_clinical_trial_name_list') }}">{% trans %}Clinical Trial Names{% endtrans %}</a></li>
-                                    <li><a tabindex="-1" href="{{ path('crud_admin_controlled_list_gender_list') }}">{% trans %}Genders{% endtrans %}</a></li>
                                 </ul>
                             </li>
                             <li><a href="{{ path('crud_admin_configuration_list') }}">{% trans %}Configurations{% endtrans %}</a></li>

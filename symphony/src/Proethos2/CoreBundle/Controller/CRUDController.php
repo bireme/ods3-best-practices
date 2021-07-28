@@ -33,10 +33,7 @@ use Proethos2\ModelBundle\Entity\Document;
 use Proethos2\ModelBundle\Entity\User;
 use Proethos2\ModelBundle\Entity\UploadTypeExtension;
 use Proethos2\ModelBundle\Entity\UploadType;
-use Proethos2\ModelBundle\Entity\RecruitmentStatus;
-use Proethos2\ModelBundle\Entity\MonitoringAction;
-use Proethos2\ModelBundle\Entity\ClinicalTrialName;
-use Proethos2\ModelBundle\Entity\Gender;
+use Proethos2\ModelBundle\Entity\BestPracticeRole;
 
 
 class CRUDController extends Controller
@@ -284,19 +281,37 @@ class CRUDController extends Controller
 
         $protocol_repository = $em->getRepository('Proethos2ModelBundle:Protocol');
 
+        // getting best practice type list
+        $best_practice_type_repository = $em->getRepository('Proethos2ModelBundle:BestPracticeType');
+        $best_practice_type = $best_practice_type_repository->findByStatus(true);
+        $output['best_practice_type'] = $best_practice_type;
+
         // serach  and status parameter
         $status_array = array('S', 'R', 'I', 'E', 'H', "F", "A", "N", "C", "X", "T");
         $search_query = $request->query->get('q');
         $status_query = $request->query->get('status');
+        $type_query = intval($request->query->get('type'));
+        $type_object = $best_practice_type_repository->find($type_query);
 
         if(!empty($status_query))
             $status_array = array($status_query);
 
-        $query = $protocol_repository->createQueryBuilder('p')->join('p.main_submission', 's')
-           ->where("s.publicTitle LIKE :query AND p.status IN (:status)")
-           ->orderBy("p.created", 'DESC')
-           ->setParameter('query', "%". $search_query ."%")
-           ->setParameter('status', $status_array);
+        if( $type_object ) {
+            $query = $protocol_repository->createQueryBuilder('p')
+               ->join('p.main_submission', 's')
+               ->where("s.title LIKE :query AND p.status IN (:status) AND s.type = :type")
+               ->orderBy("p.created", 'DESC')
+               ->setParameter('query', "%". $search_query ."%")
+               ->setParameter('status', $status_array)
+               ->setParameter('type', $type_object);
+        } else {
+            $query = $protocol_repository->createQueryBuilder('p')
+               ->join('p.main_submission', 's')
+               ->where("s.title LIKE :query AND p.status IN (:status)")
+               ->orderBy("p.created", 'DESC')
+               ->setParameter('query', "%". $search_query ."%")
+               ->setParameter('status', $status_array);
+        }
 
         $protocols = $query->getQuery()->getResult();
         $output['protocols'] = $protocols;
@@ -304,24 +319,24 @@ class CRUDController extends Controller
         // output parameter
         $output_parameter = $request->query->get('output');
         if($output_parameter == 'csv') {
-            $csv_headers = array('CODE', 'ID', 'OWNER', 'STATUS', 'PUBLIC TITLE', 'TYPE', 'RECRUITMENT INIT DATE',
+            $csv_headers = array('CODE', 'ID', 'OWNER', 'STATUS', 'TITLE', 'TYPE', 'RECRUITMENT INIT DATE',
                 'REJECT REASON', 'COMMITTEE SCREENING', 'OPINIONS REQUIRED', 'DATE INFORMED', 'UPDATED IN', 'REVISED IN',
                 'DECISION IN', 'MEETING', 'MONITORING ACTION', 'NEXT DATE OF MONITORING ACTION');
             $csv_output = array();
             foreach($protocols as $protocol) {
-                $type = "Research";
-                if ( $protocol->getMainSubmission()->getIsClinicalTrial() ) { $type = "Clinical Trial"; }
-                if ( $protocol->getMainSubmission()->getIsConsultation() ) { $type = "Consultation"; }
+                if ( 'paho-who-technical-cooperation' == $protocol->getMainSubmission()->getType()->getSlug() ) {
+                    $type = "Technical Cooperation";
+                } else {
+                    $type = "Best Practice";
+                }
 
                 $current_line = array();
                 $current_line[] = $protocol->getCode();
                 $current_line[] = $protocol->getId();
                 $current_line[] = $protocol->getOwner()->getUsername();
                 $current_line[] = $protocol->getStatusLabel();
-                $current_line[] = $protocol->getMainSubmission()->getPublicTitle();
-                // $current_line[] = $protocol->getMainSubmission()->getIsClinicalTrial() ? "Clinical Trial" : "Research";
+                $current_line[] = $protocol->getMainSubmission()->getTitle();
                 $current_line[] = $type;
-                $current_line[] = $protocol->getMainSubmission()->getRecruitmentInitDate() ? $protocol->getMainSubmission()->getRecruitmentInitDate()->format("Y-m-d H:i") : "";
                 $current_line[] = $protocol->getRejectReason();
                 $current_line[] = $protocol->getCommitteeScreening();
                 $current_line[] = $protocol->getOpinionRequired();
@@ -399,7 +414,7 @@ class CRUDController extends Controller
            ->join('p.main_submission', 's')
            ->leftJoin('s.team', 't')
            ->leftJoin('p.revision', 'r')
-           ->where("s.publicTitle LIKE :query AND p.status IN (:status) AND ((s.owner = :owner OR t = :owner) OR r.member = :owner)")
+           ->where("s.title LIKE :query AND p.status IN (:status) AND ((s.owner = :owner OR t = :owner) OR r.member = :owner)")
            ->orderBy("p.created", 'DESC')
            ->setParameter('query', "%". $search_query ."%")
            ->setParameter('status', $status_array)
@@ -2209,6 +2224,8 @@ class CRUDController extends Controller
 
             if(isset($post_data['status']) and $post_data['status'] == "true") {
                 $item->setStatus(true);
+            } else {
+                $item->setStatus(false);   
             }
 
             $em->persist($item);
@@ -2377,6 +2394,8 @@ class CRUDController extends Controller
 
             if(isset($post_data['status']) and $post_data['status'] == "true") {
                 $item->setStatus(true);
+            } else {
+                $item->setStatus(false);   
             }
 
             $em->persist($item);
@@ -2518,6 +2537,8 @@ class CRUDController extends Controller
 
             if(isset($post_data['status']) and $post_data['status'] == "true") {
                 $item->setStatus(true);
+            } else {
+                $item->setStatus(false);   
             }
 
             $em->persist($item);
@@ -2659,6 +2680,8 @@ class CRUDController extends Controller
 
             if(isset($post_data['status']) and $post_data['status'] == "true") {
                 $item->setStatus(true);
+            } else {
+                $item->setStatus(false);   
             }
 
             $em->persist($item);
@@ -2802,6 +2825,8 @@ class CRUDController extends Controller
 
             if(isset($post_data['status']) and $post_data['status'] == "true") {
                 $item->setStatus(true);
+            } else {
+                $item->setStatus(false);   
             }
 
             $em->persist($item);
@@ -2943,6 +2968,8 @@ class CRUDController extends Controller
 
             if(isset($post_data['status']) and $post_data['status'] == "true") {
                 $item->setStatus(true);
+            } else {
+                $item->setStatus(false);   
             }
 
             $em->persist($item);
@@ -2950,6 +2977,125 @@ class CRUDController extends Controller
 
             $session->getFlashBag()->add('success', $translator->trans("Item updated with success."));
             return $this->redirectToRoute('crud_admin_controlled_list_gender_list', array(), 301);
+        }
+
+        return $output;
+    }
+
+    /**
+     * @Route("/admin/controlled-list/best-practice-role", name="crud_admin_controlled_list_best_practice_role_list")
+     * @Template()
+     */
+    public function listControlledListBestPracticeRoleAction()
+    {
+        $output = array();
+        $request = $this->getRequest();
+        $session = $request->getSession();
+        $translator = $this->get('translator');
+        $em = $this->getDoctrine()->getManager();
+
+        $item_repository = $em->getRepository('Proethos2ModelBundle:BestPracticeRole');
+        $trans_repository = $em->getRepository('Gedmo\\Translatable\\Entity\\Translation');
+
+        $items = $item_repository->findAll();
+        $output['items'] = $items;
+
+        // checking if was a post request
+        if($this->getRequest()->isMethod('POST')) {
+
+            // getting post data
+            $post_data = $request->request->all();
+
+            // checking required files
+            foreach(array('name') as $field) {
+
+                if(!isset($post_data[$field]) or empty($post_data[$field])) {
+                    $session->getFlashBag()->add('error', $translator->trans("Field '%field%' is required.", array("%field%" => $field)));
+                    return $output;
+                }
+            }
+
+            $item = new BestPracticeRole();
+            $item->setTranslatableLocale('en');
+
+            $item->setName($post_data['name']);
+
+            foreach(array('pt_BR', 'es_ES', 'fr_FR') as $locale) {
+                if(!empty($post_data["name-$locale"])) {
+                    $trans_repository = $trans_repository->translate($item, 'name', $locale, $post_data["name-$locale"]);
+                }
+            }
+
+            $em->persist($item);
+            $em->flush();
+
+            $session->getFlashBag()->add('success', $translator->trans("Item created with success."));
+            return $this->redirectToRoute('crud_admin_controlled_list_best_practice_role_list', array(), 301);
+        }
+
+        return $output;
+    }
+
+    /**
+     * @Route("/admin/controlled-list/best-practice-role/{item_id}", name="crud_admin_controlled_list_best_practice_role_update")
+     * @Template()
+     */
+    public function updateControlledListBestPracticeRoleAction($item_id)
+    {
+        $output = array();
+        $request = $this->getRequest();
+        $session = $request->getSession();
+        $translator = $this->get('translator');
+        $em = $this->getDoctrine()->getManager();
+
+        $item_repository = $em->getRepository('Proethos2ModelBundle:BestPracticeRole');
+        $trans_repository = $em->getRepository('Gedmo\\Translatable\\Entity\\Translation');
+
+        $item = $item_repository->find($item_id);
+
+        if (!$item) {
+            throw $this->createNotFoundException($translator->trans('No item found'));
+        }
+        $output['item'] = $item;
+
+        $translations = $trans_repository->findTranslations($item);
+        $output['translations'] = $translations;
+
+        // checking if was a post request
+        if($this->getRequest()->isMethod('POST')) {
+
+            // getting post data
+            $post_data = $request->request->all();
+
+            // checking required files
+            foreach(array('name') as $field) {
+                if(!isset($post_data[$field]) or empty($post_data[$field])) {
+                    $session->getFlashBag()->add('error', $translator->trans("Field '%field%' is required.", array("%field%" => $field)));
+                    return $output;
+                }
+            }
+
+            $item->setTranslatableLocale('en');
+
+            $item->setName($post_data['name']);
+
+            foreach(array('pt_BR', 'es_ES', 'fr_FR') as $locale) {
+                if(!empty($post_data["name-$locale"])) {
+                    $trans_repository = $trans_repository->translate($item, 'name', $locale, $post_data["name-$locale"]);
+                }
+            }
+
+            if(isset($post_data['status']) and $post_data['status'] == "true") {
+                $item->setStatus(true);
+            } else {
+                $item->setStatus(false);   
+            }
+
+            $em->persist($item);
+            $em->flush();
+
+            $session->getFlashBag()->add('success', $translator->trans("Item updated with success."));
+            return $this->redirectToRoute('crud_admin_controlled_list_best_practice_role_list', array(), 301);
         }
 
         return $output;
