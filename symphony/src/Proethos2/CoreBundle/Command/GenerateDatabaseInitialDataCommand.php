@@ -46,6 +46,16 @@ class GenerateDatabaseInitialDataCommand extends ContainerAwareCommand
 
         $tables = array(
             'configuration',
+            'list_best_practice_entity',
+            'list_best_practice_role',
+            'list_best_practice_type',
+            'list_institution',
+            'list_intervention',
+            'list_population_group',
+            'list_stakeholder',
+            'list_subregion',
+            'list_target',
+            'list_technical_matter',
             'list_clinical_trial_name',
             'list_country',
             'list_gender',

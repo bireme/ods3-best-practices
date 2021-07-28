@@ -37,6 +37,10 @@ security:
             pattern:   ^/login/sanitize
             anonymous: ~
 
+        api_firewall:
+            pattern:   ^/api/
+            anonymous: ~
+
         default:
             provider: user_checker_provider
             pattern:    ^/
