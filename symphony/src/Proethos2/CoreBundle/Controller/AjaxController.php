@@ -25,21 +25,23 @@ use Symfony\Component\Serializer\Encoder\XmlEncoder;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use JMS\Serializer\SerializerBuilder;
+use JMS\Serializer\SerializationContext;
 
-use Proethos2\ModelBundle\Entity\User;
 
-
+/**
+ * @Route("/api", name="api")
+ * @Template()
+ */
 class AjaxController extends Controller
 {
     /**
-     * @Route("/api/users/get/", name="api_get_user_by_id")
+     * @Route("/user", name="api_get_user_by_id")
      * @Template()
      */
     public function getUserByIdAction()
     {
-
         $data = array();
-
         $request = $this->getRequest();
         $encoders = array(new JsonEncoder());
         $normalizers = array(new GetSetMethodNormalizer());
@@ -54,12 +56,59 @@ class AjaxController extends Controller
             $em = $this->getDoctrine()->getManager();
             $user_repository = $em->getRepository('Proethos2ModelBundle:User');
             $data = $user_repository->find($post_data['id']);
+
         }
 
         $jsonContent = $serializer->serialize($data, 'json');
-        var_dump($jsonContent);
         $response = new JsonResponse();
         $response->setContent($jsonContent);
+
+        return $response;
+    }
+
+    /**
+     * @Route("/bp/{protocol_id}", defaults={"protocol_id"=null}, methods={"GET"}, name="api_get_best_practice")
+     * @Template()
+     */
+    public function getBestPracticeAction($protocol_id)
+    {
+
+        $data = array();
+        $request = $this->getRequest();
+        $serializer = SerializerBuilder::create()->build();
+
+        // getting post data
+        $post_data = $request->query->all();
+
+        $lang = $post_data["lang"] ? $post_data["lang"] : 'en';
+        $limit = $post_data["limit"] ? $post_data["limit"] : 10;
+        $offset = $post_data["offset"] ? $post_data["offset"] : null;
+        $orderBy = array();
+        if ($post_data["sort"] and $post_data["order"]) {
+            $orderBy = array($post_data["sort"], $post_data["order"]);
+        }
+
+        $locale = array('pt_BR', 'es_ES', 'fr_FR', 'en');
+        if ( in_array($lang, $locale) ) {
+            $this->container->get('gedmo.listener.translatable')->setTranslatableLocale($lang);
+        } else {
+            $this->container->get('gedmo.listener.translatable')->setTranslatableLocale('en');
+        }
+
+        $em = $this->getDoctrine()->getManager();
+        $protocol_repository = $em->getRepository('Proethos2ModelBundle:Protocol');
+
+        if ( $protocol_id ) {
+            $data = $protocol_repository->findBy(array('id' => $protocol_id, 'status' => 'A'));
+        } else {
+            $protocols = $protocol_repository->findBy(array('status' => 'A'), $orderBy, $limit, $offset);
+            $data['total'] = count($protocols);
+            $data['items'] = $protocols;
+        }
+
+        $json = $serializer->serialize($data, 'json');
+        $response = new JsonResponse();
+        $response->setContent($json);
 
         return $response;
     }
