@@ -17,6 +17,7 @@
 
 namespace Proethos2\CoreBundle\Util;
 
+
 class Util {
 
     var $container;

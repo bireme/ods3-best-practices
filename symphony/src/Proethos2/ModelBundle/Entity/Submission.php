@@ -1781,30 +1781,6 @@ class Submission extends Base
     }
 
     /**
-     * Set target
-     *
-     * @param \Proethos2\ModelBundle\Entity\Target $target
-     *
-     * @return Submission
-     */
-    public function setTarget(\Proethos2\ModelBundle\Entity\Target $target = null)
-    {
-        $this->target = $target;
-
-        return $this;
-    }
-
-    /**
-     * Get target
-     *
-     * @return \Proethos2\ModelBundle\Entity\Target
-     */
-    public function getTarget()
-    {
-        return $this->target;
-    }
-
-    /**
      * Set populationGroup
      *
      * @param \Proethos2\ModelBundle\Entity\PopulationGroup $populationGroup
@@ -2028,5 +2004,27 @@ class Submission extends Base
     public function removeTarget(\Proethos2\ModelBundle\Entity\Target $target)
     {
         $this->target->removeElement($target);
+    }
+
+    /**
+     * Get target
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTarget()
+    {
+        return $this->target;
+    }
+
+    public function getTargetList() {
+        $targets = array();
+        
+        if ( $this->target ) {
+            foreach($this->target as $target) {
+                $targets[] = $target->getName();
+            }
+        }
+
+        return $targets;
     }
 }

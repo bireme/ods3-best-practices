@@ -600,8 +600,13 @@ class NewSubmissionController extends Controller
             $em->persist($submission);
             $em->flush();
 
+            $route = 'submission_new_fifth_step';
+            if ( 'paho-who-technical-cooperation' == $submission->getType()->getSlug() ) {
+                $route = 'submission_new_fourth_step';
+            } 
+
             $session->getFlashBag()->add('success', $translator->trans("Third step saved with success."));
-            return $this->redirectToRoute('submission_new_fourth_step', array('submission_id' => $submission->getId()), 301);
+            return $this->redirectToRoute($route, array('submission_id' => $submission->getId()), 301);
         }
 
         return $output;
@@ -808,7 +813,12 @@ class NewSubmissionController extends Controller
             $em->persist($submission);
             $em->flush();
 
-            $session->getFlashBag()->add('success', $translator->trans("Fifth step saved with success."));
+            $msg = $translator->trans("Fourth step saved with success.");
+            if ( 'paho-who-technical-cooperation' == $submission->getType()->getSlug() ) {
+                $msg = $translator->trans("Fifth step saved with success.");
+            }
+
+            $session->getFlashBag()->add('success', $msg);
             return $this->redirectToRoute('submission_new_sixth_step', array('submission_id' => $submission->getId()), 301);
         }
 
@@ -872,7 +882,12 @@ class NewSubmissionController extends Controller
             $em->persist($submission);
             $em->flush();
 
-            $session->getFlashBag()->add('success', $translator->trans("Sixth step saved with success."));
+            $msg = $translator->trans("Fifth step saved with success.");
+            if ( 'paho-who-technical-cooperation' == $submission->getType()->getSlug() ) {
+                $msg = $translator->trans("Sixth step saved with success.");
+            }
+
+            $session->getFlashBag()->add('success', $msg);
             return $this->redirectToRoute('submission_new_seventh_step', array('submission_id' => $submission->getId()), 301);
         }
 
