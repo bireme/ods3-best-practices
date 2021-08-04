@@ -24,6 +24,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\HttpFoundation\Response;
 
 use Proethos2\CoreBundle\Util\Util;
+use Proethos2\CoreBundle\Util\Solr;
 
 use Proethos2\ModelBundle\Entity\ProtocolComment;
 use Proethos2\ModelBundle\Entity\ProtocolHistory;
@@ -1338,6 +1339,20 @@ class ProtocolController extends Controller
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($protocol->getMainSubmission());
                 $em->flush();
+            }
+
+            // send data to Solr index
+            if ( 'A' == $post_data['final-decision'] ) {
+                $solr = new Solr($this->container, $this->getDoctrine());
+                $responseCode = $solr->update($protocol);
+
+                // if ($responseCode == 200) {
+                //     throw $this->createNotFoundException('['.$responseCode.'] Solr query time: '.$output->responseHeader->QTime.'ms');
+                // }
+
+                if ($responseCode != 200) {
+                    throw $this->createNotFoundException('['.$responseCode.'] Solr error: '.$output->error->msg);
+                }
             }
 
             // setting the Scheduled status
