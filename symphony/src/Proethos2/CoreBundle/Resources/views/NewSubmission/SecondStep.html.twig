@@ -20,15 +20,16 @@
 
                 <div class='block'>
                     <div class='row'>
-                        <div class="col-md-12">
-                            <h2 class='sub-header'>{% trans %}Type of Best Practice{% endtrans %}</h2>
+                        <div class="col-md-12 help-block">
+                            <h2 class='sub-header'>{% trans %}Type{% endtrans %}</h2>
+                            <a href="{{ path("crud_admin_help_show", {help_id: 222} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                         </div>
                     </div>
 
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="form-group required">
-                                <label for="select-technical-matter">{% trans %}Technical Matters{% endtrans %} ({% trans %}choose one or more options{% endtrans %}):</label>
+                                <label for="select-technical-matter">{% trans %}Main Topics/Themes{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <div>
                                     <select class='form-control selectpicker' id='select-technical-matter' name='technical_matter[]' data-size="5" data-width="fit" data-live-search="true" title="{% trans %}Choose one of the following...{% endtrans %}" multiple required>
@@ -44,7 +45,7 @@
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="form-group required">
-                                <label for="select-intervention">{% trans %}Interventions{% endtrans %} ({% trans %}choose one or more options{% endtrans %}):</label>
+                                <label for="select-intervention">{% trans %}Interventions{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <div>
                                     <select class='form-control selectpicker' id='select-intervention' name='intervention[]' data-size="5" data-width="fit" data-live-search="true" title="{% trans %}Choose one of the following...{% endtrans %}" multiple required>
@@ -61,7 +62,7 @@
                 <div class='block'>
                     <div class='row'>
                         <div class="col-md-12">
-                            <h2 class='sub-header'>{% trans %}Identifying the Best Practice{% endtrans %}</h2>
+                            <h2 class='sub-header'>{% trans %}Description{% endtrans %}</h2>
                         </div>
                     </div>
 
@@ -75,10 +76,10 @@
                         </div>
 
                         <div class="col-md-2">
-                            <div class="form-group required">
-                                <label for="input-end-date">{% trans %}End Date{% endtrans %}:</label>
+                            <div class="form-group">
+                                <label for="input-end-date">{% trans %}End Date{% endtrans %} / {% trans %}Ongoing{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 25} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <input type="text" class='form-control datepicker' id='input-end-date' name='end-date' value='{% if submission.endDate %}{{ submission.endDate|date("Y-m-d") }}{% endif %}' required>
+                                <input type="text" class='form-control datepicker' id='input-end-date' name='end-date' value='{% if submission.endDate %}{{ submission.endDate|date("Y-m-d") }}{% endif %}'>
                             </div>
                         </div>
                     </div>
@@ -86,7 +87,7 @@
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="form-group required">
-                                <label for="select-country">{% trans %}Country/Territory receiving the cooperation{% endtrans %}:</label>
+                                <label for="select-country">{% trans %}Country/Territory receiving/providing the cooperation{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <select class='form-control selectpicker' id='select-country' name='country' data-size="5" data-live-search="true" required>
                                     <option value="">-</option>
@@ -116,8 +117,8 @@
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="form-group required">
-                                <label for="select-target">{% trans %}This is respective to the following Targets of the SDGs{% endtrans %} ({% trans %}choose one or more options{% endtrans %}):</label>
-                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <label for="select-target">{% trans %}Sustainable Developing Goals (and targets){% endtrans %}:</label>
+                                <a href="{{ path("crud_admin_help_show", {help_id: 223} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <div>
                                     <select class='form-control selectpicker' id='select-target' name='target[]' data-size="5" data-width="fit" data-live-search="true" title="{% trans %}Choose one of the following...{% endtrans %}" multiple required>
                                         {% for t in target %}
@@ -132,7 +133,7 @@
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="form-group required">
-                                <label for="select-population-group">{% trans %}Any specific population group{% endtrans %}?</label>
+                                <label for="select-population-group">{% trans %}Specific/Target population group{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <select class='form-control selectpicker' id='select-population-group' name='population_group' data-size="5" data-live-search="true" required>
                                     <option value="">-</option>
@@ -167,7 +168,7 @@
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="form-group required">
-                                <label for="textarea-objectives">{% trans %}Objectives of the Best Practice{% endtrans %}:</label>
+                                <label for="textarea-objectives">{% trans %}Main Objectives{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <textarea rows="6" class="form-control" name='objectives' id='textarea-objectives' required>{{ submission.objectives }}</textarea>
                             </div>
@@ -176,10 +177,10 @@
 
                     <div class='row'>
                         <div class="col-md-12">
-                            <div class="form-group required">
-                                <label for="textarea-activities">{% trans %}Implementation/Activities{% endtrans %}:</label>
+                            <div class="form-group">
+                                <label for="textarea-activities">{% trans %}Implementation{% endtrans %}/{% trans %}Activities{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <textarea rows="6" class="form-control" name='activities' id='textarea-activities' required>{{ submission.activities }}</textarea>
+                                <textarea rows="6" class="form-control" name='activities' id='textarea-activities'>{{ submission.activities }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -187,7 +188,7 @@
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="form-group required">
-                                <label for="textarea-main-results">{% trans %}Main Results/Products and Impact{% endtrans %}:</label>
+                                <label for="textarea-main-results">{% trans %}Main Results: Products and Impact{% endtrans %}</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <textarea rows="6" class="form-control" name='main_results' id='textarea-main-results' required>{{ submission.mainResults }}</textarea>
                             </div>
@@ -196,10 +197,10 @@
 
                     <div class='row'>
                         <div class="col-md-12">
-                            <div class="form-group required">
-                                <label for="textarea-factors">{% trans %}Enabling Factors and Restrictions{% endtrans %}:</label>
+                            <div class="form-group">
+                                <label for="textarea-factors">{% trans %}Limitations and Hindrances{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <textarea rows="6" class="form-control" name='factors' id='textarea-factors' required>{{ submission.factors }}</textarea>
+                                <textarea rows="6" class="form-control" name='factors' id='textarea-factors'>{{ submission.factors }}</textarea>
                             </div>
                         </div>
                     </div>

@@ -20,17 +20,16 @@
 
                 <div class='block'>
                     <div class='row'>
-                        <div class="col-md-12">
-                            <h2 class='sub-header'>{% trans %}Illustrating the Best Practice{% endtrans %}:</h2>
+                        <div class="col-md-12 help-block">
+                            <h2 class='sub-header'>{% trans %}Multimedia{% endtrans %}</h2>
+                            <a href="{{ path("crud_admin_help_show", {help_id: 224} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                         </div>
                     </div>
 
                     <div class='row'>
                         <div class="col-md-12">
                             <fieldset>
-                                <legend>{% trans %}Photos that can illustrate the Best Practice, please be sure you have the copyrights{% endtrans %}:</legend>
                                 <table class='table table-hover table-condensed' id='table-attachment'>
-
                                     <thead>
                                         <tr>
                                             <th>{% trans %}File name{% endtrans %}</th>
@@ -38,7 +37,6 @@
                                             <th>{% trans %}Actions{% endtrans %}</th>
                                         </tr>
                                     </thead>
-
                                     <tbody>
                                         {% for file in submission.attachments %}
                                             <tr>
@@ -66,14 +64,14 @@
                 <div class='block'>
                     <div class='row'>
                         <div class="col-md-12">
-                            <h2 class='sub-header'>{% trans %}Conclusion - Final Comments{% endtrans %}</h2>
+                            <h2 class='sub-header'>{% trans %}Conclusion{% endtrans %}</h2>
                         </div>
                     </div>
 
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="form-group required">
-                                <label for="textarea-challenges-information">{% trans %}What obstacles or challenges faced during the implementation of this best practice/initiative{% endtrans %}?</label>
+                                <label for="textarea-challenges-information">{% trans %}What were the obstacles or challenges faced during the implementation of this best practice/initiative{% endtrans %}?</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <textarea rows="6" class="form-control" name='challenges_information' id='textarea-challenges-information' required>{{ submission.challengesInformation }}</textarea>
                             </div>
@@ -83,7 +81,7 @@
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="form-group required">
-                                <label for="textarea-lessons-information">{% trans %}What are the lessons learned for that will improve our expertise and add value to the Organization{% endtrans %}?</label>
+                                <label for="textarea-lessons-information">{% trans %}What were the lessons learned for that will improve our expertise and add value to the Organization{% endtrans %}?</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <textarea rows="6" class="form-control" name='lessons_information' id='textarea-lessons-information' required>{{ submission.lessonsInformation }}</textarea>
                             </div>

@@ -432,16 +432,13 @@ class NewSubmissionController extends Controller
                 'technical_matter',
                 'intervention',
                 'start-date',
-                'end-date',
                 'country',
                 'subregion',
                 'target',
                 'population_group',
                 'introduction',
                 'objectives',
-                'activities',
-                'main_results',
-                'factors'
+                'main_results'
             );
 
             foreach($required_fields as $field) {
@@ -516,7 +513,7 @@ class NewSubmissionController extends Controller
             $submission->setFactors($post_data['factors']);
             $submission->setOtherPopulationGroup($post_data['other_population_group']);
             $submission->setStartDate(new \DateTime($post_data['start-date']));
-            $submission->setEnddate(new \DateTime($post_data['end-date']));
+            if ( $post_data['end-date'] ) $submission->setEnddate(new \DateTime($post_data['end-date']));
 
             $em->persist($submission);
             $em->flush();
@@ -579,7 +576,7 @@ class NewSubmissionController extends Controller
             $post_data = $request->request->all();
 
             // checking required files
-            $required_fields = array('resources_assigned', 'outcome_information', 'scalability', 'adaptability_replicability', 'other_contexts_demo', 'describe_how');
+            $required_fields = array('resources_assigned', 'scalability', 'adaptability_replicability', 'other_contexts_demo');
 
             foreach($required_fields as $field) {
                 if(!isset($post_data[$field]) or empty($post_data[$field])) {
@@ -666,9 +663,7 @@ class NewSubmissionController extends Controller
             $required_fields = array(
                 'health_system_contribution',
                 'value_chain_organization',
-                'public_health_issue',
-                'planning_information',
-                'relevance_information',
+                // 'relevance_information',
                 'counterpart_recognized',
                 'catalytic_role',
                 'neutral_role',
@@ -689,7 +684,7 @@ class NewSubmissionController extends Controller
             $submission->setValueChainOrganization($post_data['value_chain_organization']);
             $submission->setPublicHealthIssue($post_data['public_health_issue']);
             $submission->setPlanningInformation($post_data['planning_information']);
-            $submission->setRelevanceInformation($post_data['relevance_information']);
+            // $submission->setRelevanceInformation($post_data['relevance_information']);
             $submission->setCounterpartRecognized($post_data['counterpart_recognized']);
             $submission->setCatalyticRole($post_data['catalytic_role']);
             $submission->setNeutralRole($post_data['neutral_role']);
@@ -864,7 +859,7 @@ class NewSubmissionController extends Controller
 
             // getting post data
             $post_data = $request->request->all();
-
+/*
             // checking required files
             $required_fields = array('products_information', 'other_sources_information');
             foreach($required_fields as $field) {
@@ -873,7 +868,7 @@ class NewSubmissionController extends Controller
                     return $output;
                 }
             }
-
+*/
             $submission->setProductsInformation($post_data['products_information']);
             $submission->setOtherSourcesInformation($post_data['other_sources_information']);
             $submission->setPahoComments($post_data['paho_comments']);
@@ -1039,7 +1034,7 @@ class NewSubmissionController extends Controller
 
         $text = $translator->trans('Technical Matters');
         $item = array('text' => $text, 'status' => true);
-        if(empty($submission->getTechnicalMatter())) {
+        if(empty($submission->getTechnicalMatterList())) {
             $item = array('text' => $text, 'status' => false);
             $final_status = false;
         }
@@ -1047,7 +1042,7 @@ class NewSubmissionController extends Controller
 
         $text = $translator->trans('Interventions');
         $item = array('text' => $text, 'status' => true);
-        if(empty($submission->getIntervention())) {
+        if(empty($submission->getInterventionList())) {
             $item = array('text' => $text, 'status' => false);
             $final_status = false;
         }
@@ -1060,7 +1055,7 @@ class NewSubmissionController extends Controller
             $final_status = false;
         }
         $revisions[] = $item;
-
+/*
         $text = $translator->trans('End Date');
         $item = array('text' => $text, 'status' => true);
         if(empty($submission->getEndDate())) {
@@ -1068,7 +1063,7 @@ class NewSubmissionController extends Controller
             $final_status = false;
         }
         $revisions[] = $item;
-
+*/
         $text = $translator->trans('Country');
         $item = array('text' => $text, 'status' => true);
         if(empty($submission->getCountry())) {
@@ -1087,7 +1082,7 @@ class NewSubmissionController extends Controller
 
         $text = $translator->trans('Target');
         $item = array('text' => $text, 'status' => true);
-        if(empty($submission->getTarget())) {
+        if(empty($submission->getTargetList())) {
             $item = array('text' => $text, 'status' => false);
             $final_status = false;
         }
@@ -1128,7 +1123,7 @@ class NewSubmissionController extends Controller
             $final_status = false;
         }
         $revisions[] = $item;
-
+/*
         $text = $translator->trans('Activities');
         $item = array('text' => $text, 'status' => true);
         if(empty($submission->getActivities())) {
@@ -1136,7 +1131,7 @@ class NewSubmissionController extends Controller
             $final_status = false;
         }
         $revisions[] = $item;
-
+*/
         $text = $translator->trans('Main Results');
         $item = array('text' => $text, 'status' => true);
         if(empty($submission->getMainResults())) {
@@ -1144,7 +1139,7 @@ class NewSubmissionController extends Controller
             $final_status = false;
         }
         $revisions[] = $item;
-
+/*
         $text = $translator->trans('Factors');
         $item = array('text' => $text, 'status' => true);
         if(empty($submission->getFactors())) {
@@ -1152,7 +1147,7 @@ class NewSubmissionController extends Controller
             $final_status = false;
         }
         $revisions[] = $item;
-
+*/
         $text = $translator->trans('Resources Assigned');
         $item = array('text' => $text, 'status' => true);
         if(empty($submission->getResourcesAssigned())) {
@@ -1160,7 +1155,7 @@ class NewSubmissionController extends Controller
             $final_status = false;
         }
         $revisions[] = $item;
-
+/*
         $text = $translator->trans('Outcome Information');
         $item = array('text' => $text, 'status' => true);
         if(empty($submission->getOutcomeInformation())) {
@@ -1168,7 +1163,7 @@ class NewSubmissionController extends Controller
             $final_status = false;
         }
         $revisions[] = $item;
-
+*/
         $text = $translator->trans('Scalability');
         $item = array('text' => $text, 'status' => true);
         if(empty($submission->getScalability())) {
@@ -1192,7 +1187,7 @@ class NewSubmissionController extends Controller
             $final_status = false;
         }
         $revisions[] = $item;
-
+/*
         $text = $translator->trans('Describe How');
         $item = array('text' => $text, 'status' => true);
         if(empty($submission->getDescribeHow())) {
@@ -1200,7 +1195,7 @@ class NewSubmissionController extends Controller
             $final_status = false;
         }
         $revisions[] = $item;
-
+*/
         if ( 'paho-who-technical-cooperation' == $submission->getType()->getSlug() ) {
 
             $text = $translator->trans('Health System Contribution');
@@ -1218,7 +1213,7 @@ class NewSubmissionController extends Controller
                 $final_status = false;
             }
             $revisions[] = $item;
-
+/*
             $text = $translator->trans('Public Health Issue');
             $item = array('text' => $text, 'status' => true);
             if(empty($submission->getPublicHealthIssue())) {
@@ -1242,7 +1237,7 @@ class NewSubmissionController extends Controller
                 $final_status = false;
             }
             $revisions[] = $item;
-
+*/
             $text = $translator->trans('Counterpart');
             $item = array('text' => $text, 'status' => true);
             if(empty($submission->getCounterpartRecognized())) {
@@ -1303,7 +1298,7 @@ class NewSubmissionController extends Controller
             $final_status = false;
         }
         $revisions[] = $item;
-
+/*
         $text = $translator->trans('Products Information');
         $item = array('text' => $text, 'status' => true);
         if(empty($submission->getProductsInformation())) {
@@ -1319,7 +1314,7 @@ class NewSubmissionController extends Controller
             $final_status = false;
         }
         $revisions[] = $item;
-
+*/
         $text = $translator->trans('Challenges Information');
         $item = array('text' => $text, 'status' => true);
         if(empty($submission->getChallengesInformation())) {
