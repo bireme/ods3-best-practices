@@ -113,12 +113,6 @@ class User extends Base implements UserInterface, \Serializable
      */
     private $submission_team;
 
-
-    public function __toString()
-    {
-        return $this->getName();
-    }
-
     public function __construct()
     {
         parent::__construct();
@@ -126,7 +120,12 @@ class User extends Base implements UserInterface, \Serializable
         $this->isActive = true;
         // may not be needed, see section on salt below
         // $this->salt = md5(uniqid(null, true));
-    }    
+    }
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
 
     public function getUsername()
     {

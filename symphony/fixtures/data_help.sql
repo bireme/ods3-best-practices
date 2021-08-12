@@ -63,3 +63,6 @@ REPLACE INTO `help` (`id`, `created`, `updated`, `status`, `type`, `message`) VA
 
 REPLACE INTO `help` (`id`, `created`, `updated`, `status`, `type`, `message`) VALUES (220,'2019-02-21 15:42:08','2019-02-21 15:42:08',1,'help','Clinical study activity');
 REPLACE INTO `help` (`id`, `created`, `updated`, `status`, `type`, `message`) VALUES (221,'2019-02-21 15:42:08','2019-02-21 15:42:08',1,'help','Activity description');
+REPLACE INTO `help` (`id`, `created`, `updated`, `status`, `type`, `message`) VALUES (222,'2016-06-16 14:11:29','2016-06-16 14:11:29',1,'help','First, select the health topic [keyword(s)] which better represents this BP. You may select as many as needed');
+REPLACE INTO `help` (`id`, `created`, `updated`, `status`, `type`, `message`) VALUES (223,'2016-06-16 14:11:29','2016-06-16 14:11:29',1,'help','Please choose the most appropriated target under the SDG3. You can also select other SDG(s) if this BP goes beyond the health sector');
+REPLACE INTO `help` (`id`, `created`, `updated`, `status`, `type`, `message`) VALUES (224,'2016-06-16 14:11:29','2016-06-16 14:11:29',1,'help','Please upload images that can illustrate this BP. We need to be sure you have the copyright so we can use them publicly. If you have any, we will select a generic image for this BP');

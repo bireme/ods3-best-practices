@@ -12,7 +12,7 @@
             <div class='col-md-12'>
                 <div class="form-group required">
                     <label for="input-name">{% trans %}Name{% endtrans %}:</label> 
-                    <a href="{{ path("crud_admin_help_show", {help_id: 74} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                    <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 74} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                     <input type='text' class='form-control' id="input-name" name="name" value="{{ user.name }}" required>
                 </div>
             </div>
@@ -31,7 +31,7 @@
             <div class='col-md-12'>
                 <div class="form-group required">
                     <label for="select-country">{% trans %}Country{% endtrans %}:</label> 
-                    <a href="{{ path("crud_admin_help_show", {help_id: 75} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                    <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 75} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                     <select class='form-control select-select2' id="select-country" name="country" required>
                         <option value="">{% trans %}Select country{% endtrans %}</option>
                         {% for country in countries %}
@@ -46,8 +46,18 @@
             <div class='col-md-12'>
                 <div class="form-group">
                     <label for="input-institution">{% trans %}Institution{% endtrans %}:</label> 
-                    <a href="{{ path("crud_admin_help_show", {help_id: 76} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                    <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 76} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                     <input type='text' class='form-control' id="input-institution" name="institution" value="{{ user.institution }}">
+                </div>
+            </div>
+        </div>
+
+        <div class='row'>
+            <div class='col-md-12'>
+                <div class="form-group">
+                    <label for="input-job-title">{% trans %}Job Title{% endtrans %}:</label>
+                    <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 77} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                    <input type='text' class='form-control' id="input-job-title" name="job-title" value="{{ user.jobTitle }}">
                 </div>
             </div>
         </div>
@@ -58,7 +68,7 @@
                     <div class="checkbox">
                         <label for="input-status">
                             <input type="checkbox" id='input-status' name='status' value="true" {% if user.isActive %}checked{% endif %}> {% trans %}Active?{% endtrans %}
-                            <a href="{{ path("crud_admin_help_show", {help_id: 77} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                            <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 78} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                         </label>
                     </div>
                 </div>

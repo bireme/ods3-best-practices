@@ -1018,7 +1018,7 @@ class CRUDController extends Controller
         // output parameter
         $output_parameter = $request->query->get('output');
         if($output_parameter == 'csv') {
-            $csv_headers = array('USERNAME', 'ID', 'EMAIL', 'ROLES', 'ACTIVE?', 'NAME', 'COUNTRY', 'INSTITUTION');
+            $csv_headers = array('USERNAME', 'ID', 'EMAIL', 'ROLES', 'ACTIVE?', 'NAME', 'COUNTRY', 'INSTITUTION', 'JOB TITLE');
             $csv_output = array();
             foreach($users as $user) {
                 $current_line = array();
@@ -1030,6 +1030,7 @@ class CRUDController extends Controller
                 $current_line[] = $user->getName();
                 $current_line[] = $user->getCountry() ? $user->getCountry()->getName() : '';
                 $current_line[] = $user->getInstitution();
+                $current_line[] = $user->getJobTitle();
                 $csv_output[] = $current_line;
             }
 
@@ -1088,6 +1089,7 @@ class CRUDController extends Controller
             $user->setUsername($post_data['username']);
             $user->setEmail($post_data['email']);
             $user->setInstitution($post_data['institution']);
+            $user->setJobTitle($post_data['job-title']);
             $user->setFirstAccess(false);
 
             if(isset($post_data['status'])) {
@@ -1201,6 +1203,7 @@ class CRUDController extends Controller
             $user->setName($post_data['name']);
             $user->setEmail($post_data['email']);
             $user->setInstitution($post_data['institution']);
+            $user->setJobTitle($post_data['job-title']);
 
             $em->persist($user);
             $em->flush();
@@ -1293,6 +1296,7 @@ class CRUDController extends Controller
             $user->setName($post_data['name']);
             $user->setEmail($post_data['email']);
             $user->setInstitution($post_data['institution']);
+            $user->setJobTitle($post_data['job-title']);
 
             $user->setIsActive(false);
             if(isset($post_data['status'])) {

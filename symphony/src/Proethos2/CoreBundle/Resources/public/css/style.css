@@ -240,6 +240,15 @@ img.logo {
     display: none;
 }
 
+.help-block {
+    display: flex;
+    align-items: center;
+}
+
+.help-block h2.sub-header {
+    padding-right: 5px;
+}
+
 .checkbox .icheckbox_square-blue {
     margin-right: 10px;
 }

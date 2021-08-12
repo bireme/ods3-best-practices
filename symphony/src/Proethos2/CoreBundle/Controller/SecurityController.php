@@ -684,6 +684,7 @@ class SecurityController extends Controller
             $user->setUsername($post_data['username']);
             $user->setEmail($post_data['email']);
             $user->setInstitution($post_data['institution']);
+            $user->setJobTitle($post_data['job-title']);
             $user->setFirstAccess(false);
             $user->setIsActive(false);
 

@@ -1732,29 +1732,6 @@ class Submission extends Base
         return $this->stakeholder;
     }
 
-    /**
-     * Set intervention
-     *
-     * @param \Proethos2\ModelBundle\Entity\Intervention $intervention
-     *
-     * @return Submission
-     */
-    public function setIntervention(\Proethos2\ModelBundle\Entity\Intervention $intervention = null)
-    {
-        $this->intervention = $intervention;
-
-        return $this;
-    }
-
-    /**
-     * Get intervention
-     *
-     * @return \Proethos2\ModelBundle\Entity\Intervention
-     */
-    public function getIntervention()
-    {
-        return $this->intervention;
-    }
 
     /**
      * Set subregion
@@ -1850,6 +1827,28 @@ class Submission extends Base
     public function removeIntervention(\Proethos2\ModelBundle\Entity\Intervention $intervention)
     {
         $this->intervention->removeElement($intervention);
+    }
+
+    /**
+     * Get intervention
+     *
+     * @return \Proethos2\ModelBundle\Entity\Intervention
+     */
+    public function getIntervention()
+    {
+        return $this->intervention;
+    }
+
+    public function getInterventionList() {
+        $interventions = array();
+        
+        if ( $this->intervention ) {
+            foreach($this->intervention as $intervention) {
+                $interventions[] = $intervention->getName();
+            }
+        }
+
+        return $interventions;
     }
 
     /**
@@ -1956,6 +1955,18 @@ class Submission extends Base
     public function getTechnicalMatter()
     {
         return $this->technical_matter;
+    }
+
+    public function getTechnicalMatterList() {
+        $technical_matters = array();
+        
+        if ( $this->technical_matter ) {
+            foreach($this->technical_matter as $technical_matter) {
+                $technical_matters[] = $technical_matter->getName();
+            }
+        }
+
+        return $technical_matters;
     }
 
     /**

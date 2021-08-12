@@ -10,37 +10,19 @@
     </div>
 
     <div class='row'>
-        <div class='col-md-4'>
+        <div class='col-md-3'>
             <div class='label'>{% trans %}Identification{% endtrans %}</div>
             <h3>{{ '%06d'|format(protocol.id) }}</h3>
         </div>
 
-        <div class='col-md-4'>
+        <div class='col-md-3'>
             <div class='label'>{% trans %}Best Practice{% endtrans %}</div>
             <h3>{{ protocol.code }}</h3>
         </div>
 
-        <div class='col-md-4'>
-            <div class='label'>{% trans %}Best Practice  Type{% endtrans %}</div>
-            <h3>
-                {% if protocol.mainSubmission.type.slug == "paho-who-technical-cooperation" %}
-                    {% trans %}Technical Cooperation{% endtrans %}
-                {% else %}
-                    {% trans %}Best Practice{% endtrans %}
-                {% endif %}
-            </h3>
-        </div>
-    </div>
-
-    <div class='row'>
-        <div class='col-md-4'>
-            <div class='label'>{% trans %}Institution{% endtrans %}</div>
-            <h3>{{ protocol.mainSubmission.owner.institution }}</h3>
-        </div>
-
-        <div class='col-md-4'>
-            <div class='label'>{% trans %}Country{% endtrans %}</div>
-            <h3>{{ protocol.mainSubmission.owner.country }}</h3>
+        <div class='col-md-3'>
+            <div class='label'>{% trans %}Best Practice Type{% endtrans %}</div>
+            <h3>{{ protocol.mainSubmission.type.name }}</h3>
         </div>
 
         <div class='col-md-3'>
@@ -51,13 +33,35 @@
 
     <div class='row'>
         <div class='col-md-3'>
+            <div class='label'>{% trans %}Respondent Name{% endtrans %}</div>
+            <h3>{{ protocol.mainSubmission.owner.name }}</h3>
+        </div>
+
+        <div class='col-md-3'>
+            <div class='label'>{% trans %}Contact{% endtrans %}</div>
+            <h3>{{ protocol.mainSubmission.owner.email }}</h3>
+        </div>
+
+        <div class='col-md-3'>
+            <div class='label'>{% trans %}Country{% endtrans %}</div>
+            <h3>{{ protocol.mainSubmission.owner.country }}</h3>
+        </div>
+
+        <div class='col-md-3'>
+            <div class='label'>{% trans %}Job Title{% endtrans %}</div>
+            <h3>{{ protocol.mainSubmission.owner.jobTitle }}</h3>
+        </div>
+    </div>
+
+    <div class='row'>
+        <div class='col-md-3'>
             <div class='label'>{% trans %}Accepted in{% endtrans %}</div>
-            <h3>{{ protocol.dateInformed|date("d/m/Y") }}</h3>
+            <h3>{% if protocol.dateInformed %}{{ protocol.dateInformed|date("d/m/Y") }}{% else %}-{% endif %}</h3>
         </div>
 
         <div class='col-md-3'>
             <div class='label'>{% trans %}Updated in{% endtrans %}</div>
-            <h3>{{ protocol.updatedIn|date("d/m/Y") }}</h3>
+            <h3>{% if protocol.updatedIn %}{{ protocol.updatedIn|date("d/m/Y") }}{% else %}-{% endif %}</h3>
         </div>
 
         <div class='col-md-3'>
