@@ -4,8 +4,6 @@
 
 {% block content %}
 
-    {% set step = 1 %}
-
     <div class="container-fluid main-content">
         <div class="row">
             <div class='col-md-12'>
@@ -16,46 +14,42 @@
         <div class='row'>
             <div class='col-md-12'>
                 <ul class="nav nav-tabs" id='new-submission-tab'>
-                    <li role="presentation" class='active'>
-                        <a href="{{ path("submission_new_first_step") }}" title="{% trans %}Step{% endtrans %} {{ step }}">
-                            {% trans %}Step{% endtrans %} {{ step }}
-                        </a>
-                    </li>
-                    {% set step = step + 1 %}
-                    <li role="presentation">
-                        <a href="javascript:void(0)" title="{% trans %}Step{% endtrans %} {{ step }}">{% trans %}Step{% endtrans %} {{ step }}</a>
-                    </li>
-                    {% set step = step + 1 %}
-                    <li role="presentation"><a href="javascript:void(0)">{% trans %}Step{% endtrans %} {{ step }}</a></li>
-                    {% set step = step + 1 %}
-                    <li role="presentation"><a href="javascript:void(0)">{% trans %}Step{% endtrans %} {{ step }}</a></li>
-                    {% set step = step + 1 %}
-                    <li role="presentation"><a href="javascript:void(0)">{% trans %}Step{% endtrans %} {{ step }}</a></li>
-                    {% set step = step + 1 %}
-                    <li role="presentation"><a href="javascript:void(0)">{% trans %}Step{% endtrans %} {{ step }}</a></li>
-                    <li role="presentation"><a href="javascript:void(0)">{% trans %}Revision{% endtrans %}</a></li>
+                    <li role="presentation" class='active'><a href="javascript:void(0)" title="{% trans %}Basic Information{% endtrans %}">{% trans %}Basic Information{% endtrans %}</a></li>
+                    <li role="presentation"><a href="javascript:void(0)" title="{% trans %}Type / Description{% endtrans %}">{% trans %}Type / Description{% endtrans %}</a></li>
+                    <li role="presentation"><a href="javascript:void(0)" title="{% trans %}Effectiveness / Efficiency / Adaptability / Replicability{% endtrans %}">{% trans %}Effectiveness / Efficiency / Adaptability / Replicability{% endtrans %}</a></li>
+                    <li role="presentation"><a href="javascript:void(0)" title="{% trans %}Relevance / Recognition / Engagement{% endtrans %}">{% trans %}Relevance / Recognition / Engagement{% endtrans %}</a></li>
+                    <li role="presentation"><a href="javascript:void(0)" title="{% trans %}Multimedia / Conclusion{% endtrans %}">{% trans %}Multimedia / Conclusion{% endtrans %}</a></li>
+                    <li role="presentation"><a href="javascript:void(0)" title="{% trans %}Sources / Comments{% endtrans %}">{% trans %}Sources / Comments{% endtrans %}</a></li>
+                    <li role="presentation"><a href="javascript:void(0)" title="{% trans %}Revision{% endtrans %}">{% trans %}Revision{% endtrans %}</a></li>
                 </ul>
             </div>
         </div>
 
         <div class='new-submission-tab-content'>
-            <div class='row submission-meta'> </div>
+            <div class='row submission-meta'></div>
+            <form id="form-first" class='form' method='POST' action='{{ path("submission_new_first_step") }}'>
 
-            <div class='row'>
-                <div class='col-md-12'>
-                    <form id="form-first" class='form' method='POST' action='{{ path("submission_new_first_step") }}'>
+                <input type="hidden" name="token" value="{{ csrf_token('submission-first-step') }}"/>
 
-                        <input type="hidden" name="token" value="{{ csrf_token('submission-first-step') }}"/>
+                <div class='block'>
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <h2 class='sub-header'>{% trans %}Basic Information{% endtrans %}</h2>
+                        </div>
+                    </div>
 
-                        <fieldset>
-                            <legend>{% trans %}Basic Information{% endtrans %}</legend>
-
+                    <div class='row'>
+                        <div class="col-md-12">
                             <div class="form-group required">
                                 <label for="input_title">{% trans %}Title of the Best Practice{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <input type="text" class="form-control" name='title' id='input_title' value='{% if post_data.title %}{{ post_data.title }}{% endif %}' required>
                             </div>
+                        </div>
+                    </div>
 
+                    <div class='row'>
+                        <div class="col-md-12">
                             <div class="form-group required">
                                 <label for="select-best-practice-type">{% trans %}This Best Practice is related to{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
@@ -66,7 +60,11 @@
                                     {% endfor %}
                                 </select>
                             </div>
+                        </div>
+                    </div>
 
+                    <div class='row'>
+                        <div class="col-md-12">
                             <div class="form-group required">
                                 <label for="select-best-practice-role">{% trans %}What's your role on this Best Practice{% endtrans %}?</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
@@ -77,13 +75,21 @@
                                     {% endfor %}
                                 </select>
                             </div>
+                        </div>
+                    </div>
 
+                    <div class='row'>
+                        <div class="col-md-12">
                             <div class="form-group hide required">
                                 <label for="input_other_best_practice_role">{% trans %}Other Role{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <input type="text" class="form-control" name='other_best_practice_role' id='input_other_best_practice_role'>
                             </div>
+                        </div>
+                    </div>
 
+                    <div class='row'>
+                        <div class="col-md-12">
                             <div class="form-group required">
                                 <label for="select-institution">{% trans %}Institution reporting the Best Practice{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
@@ -94,13 +100,21 @@
                                     {% endfor %}
                                 </select>
                             </div>
+                        </div>
+                    </div>
 
+                    <div class='row'>
+                        <div class="col-md-12">
                             <div class="form-group hide required">
                                 <label for="input_other_institution">{% trans %}Other Institution{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <input type="text" class="form-control" name='other_institution' id='input_other_institution'>
                             </div>
+                        </div>
+                    </div>
 
+                    <div class='row'>
+                        <div class="col-md-12">
                             <div class="form-group required">
                                 <label for="select-stakeholder">{% trans %}Stakeholder{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
@@ -111,13 +125,21 @@
                                     {% endfor %}
                                 </select>
                             </div>
+                        </div>
+                    </div>
 
+                    <div class='row'>
+                        <div class="col-md-12">
                             <div class="form-group hide required">
                                 <label for="input_other_stakeholder">{% trans %}Other Stakeholder{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <input type="text" class="form-control" name='other_stakeholder' id='input_other_stakeholder'>
                             </div>
+                        </div>
+                    </div>
 
+                    <div class='row'>
+                        <div class="col-md-12">
                             <div class="form-group hide required">
                                 <label for="select-best-practice-entity">{% trans %}Entity (PAHO){% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
@@ -128,20 +150,24 @@
                                     {% endfor %}
                                 </select>
                             </div>
+                        </div>
+                    </div>
 
+                    <div class='row'>
+                        <div class="col-md-12">
                             <div class="form-group hide required">
                                 <label for="input_reference_number">{% trans %}Reference Number of the Technical Cooperation{% endtrans %} (e.g. TC80, Grant#OVI314, CUB-27, BRA-76):</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <input type="text" class="form-control" name='reference_number' id='input_reference_number' value='{% if post_data.reference_number %}{{ post_data.reference_number }}{% endif %}'>
                             </div>
-                        </fieldset>
-
-                        <div class='submission-button-controls'>
-                            <button type='submit' class='btn btn-primary'>{% trans %}Save and next{% endtrans %}</button>
                         </div>
-                    </form>
+                    </div>
                 </div>
-            </div>
+
+                <div class='submission-button-controls'>
+                    <button type='submit' class='btn btn-primary'>{% trans %}Save and next{% endtrans %}</button>
+                </div>
+            </form>
         </div>
 
 {% endblock %}

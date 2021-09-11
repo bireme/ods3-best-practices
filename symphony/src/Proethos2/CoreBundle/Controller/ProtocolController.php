@@ -1343,16 +1343,16 @@ class ProtocolController extends Controller
 
             // send data to Solr index
             if ( 'A' == $post_data['final-decision'] ) {
-                $solr = new Solr($this->container, $this->getDoctrine());
-                $responseCode = $solr->update($protocol);
+                $solr = new Solr();
+                list($response, $responseCode) = $solr->update($protocol);
+                
+                if ($responseCode != 200) {
+                    throw $this->createNotFoundException('['.$responseCode.'] Solr error: '.$response->error->msg);
+                }
 
                 // if ($responseCode == 200) {
-                //     throw $this->createNotFoundException('['.$responseCode.'] Solr query time: '.$output->responseHeader->QTime.'ms');
+                //     throw $this->createNotFoundException('['.$responseCode.'] Solr query time: '.$response->responseHeader->QTime.'ms');
                 // }
-
-                if ($responseCode != 200) {
-                    throw $this->createNotFoundException('['.$responseCode.'] Solr error: '.$output->error->msg);
-                }
             }
 
             // setting the Scheduled status

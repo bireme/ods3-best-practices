@@ -13,23 +13,29 @@
         {% include 'Proethos2CoreBundle:NewSubmission:meta.html.twig' %}
 
         <div class='new-submission-tab-content'>
-            <div class='row submission-meta'> </div>
+            <form id="form-first-created" class='form' method='POST' action='{{ path("submission_new_first_created_protocol_step", {submission_id: submission.id}) }}'>
 
-            <div class='row'>
-                <div class='col-md-12'>
-                    <form id="form-first-created" class='form' method='POST' action='{{ path("submission_new_first_created_protocol_step", {submission_id: submission.id}) }}'>
+                <input type="hidden" name="token" value="{{ csrf_token('submission-first-step-created') }}"/>
 
-                        <input type="hidden" name="token" value="{{ csrf_token('submission-first-step-created') }}"/>
+                <div class='block'>
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <h2 class='sub-header'>{% trans %}Basic Information{% endtrans %}</h2>
+                        </div>
+                    </div>
 
-                        <fieldset>
-                            <legend>{% trans %}Basic Information{% endtrans %}</legend>
-
+                    <div class='row'>
+                        <div class="col-md-12">
                             <div class="form-group required">
                                 <label for="input_title">{% trans %}Title of the Best Practice{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <input type="text" class="form-control" name='title' id='input_title' value="{{ submission.title }}" required>
                             </div>
+                        </div>
+                    </div>
 
+                    <div class='row'>
+                        <div class="col-md-12">
                             <div class="form-group required">
                                 <label for="select-best-practice-type">{% trans %}This Best Practice is related to{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
@@ -40,7 +46,11 @@
                                     {% endfor %}
                                 </select>
                             </div>
+                        </div>
+                    </div>
 
+                    <div class='row'>
+                        <div class="col-md-12">
                             <div class="form-group required">
                                 <label for="select-best-practice-role">{% trans %}What's your role on this Best Practice{% endtrans %}?</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
@@ -51,13 +61,21 @@
                                     {% endfor %}
                                 </select>
                             </div>
+                        </div>
+                    </div>
 
+                    <div class='row'>
+                        <div class="col-md-12">
                             <div class="form-group {% if submission.role.slug != "other" %}hide{% endif %} required">
                                 <label for="input_other_best_practice_role">{% trans %}Other Role{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <input type="text" class="form-control" name='other_best_practice_role' id='input_other_best_practice_role' value="{{ submission.otherRole }}" {% if submission.role.slug == "other" %}required{% endif %}>
                             </div>
+                        </div>
+                    </div>
 
+                    <div class='row'>
+                        <div class="col-md-12">
                             <div class="form-group required">
                                 <label for="select-institution">{% trans %}Institution reporting the Best Practice{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
@@ -68,13 +86,21 @@
                                     {% endfor %}
                                 </select>
                             </div>
+                        </div>
+                    </div>
 
+                    <div class='row'>
+                        <div class="col-md-12">
                             <div class="form-group {% if submission.institution.slug != "other" %}hide{% endif %} required">
                                 <label for="input_other_institution">{% trans %}Other Institution{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <input type="text" class="form-control" name='other_institution' id='input_other_institution' value="{{ submission.otherInstitution }}" {% if submission.institution.slug == "other" %}required{% endif %}>
                             </div>
+                        </div>
+                    </div>
 
+                    <div class='row'>
+                        <div class="col-md-12">
                             <div class="form-group required">
                                 <label for="select-stakeholder">{% trans %}Stakeholder{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
@@ -85,13 +111,21 @@
                                     {% endfor %}
                                 </select>
                             </div>
+                        </div>
+                    </div>
 
+                    <div class='row'>
+                        <div class="col-md-12">
                             <div class="form-group {% if submission.stakeholder.slug != "other" %}hide{% endif %} required">
                                 <label for="input_other_stakeholder">{% trans %}Other Stakeholder{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <input type="text" class="form-control" name='other_stakeholder' id='input_other_stakeholder' value="{{ submission.otherStakeholder }}" {% if submission.stakeholder.slug == "other" %}required{% endif %}>
                             </div>
+                        </div>
+                    </div>
 
+                    <div class='row'>
+                        <div class="col-md-12">
                             <div class="form-group {% if submission.type.slug != "paho-who-technical-cooperation" %}hide{% endif %} required">
                                 <label for="select-best-practice-entity">{% trans %}Entity (PAHO){% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
@@ -102,20 +136,24 @@
                                     {% endfor %}
                                 </select>
                             </div>
+                        </div>
+                    </div>
 
+                    <div class='row'>
+                        <div class="col-md-12">
                             <div class="form-group {% if submission.type.slug != "paho-who-technical-cooperation" %}hide{% endif %} required">
                                 <label for="input_reference_number">{% trans %}Reference Number of the Technical Cooperation{% endtrans %} (e.g. TC80, Grant#OVI314, CUB-27, BRA-76):</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <input type="text" class="form-control" name='reference_number' id='input_reference_number' value='{{ submission.referenceNumber }}' {% if submission.type.slug == "paho-who-technical-cooperation" %}required{% endif %}>
                             </div>
-                        </fieldset>
-
-                        <div class='submission-button-controls'>
-                            <button type='submit' class='btn btn-primary'>{% trans %}Save and next{% endtrans %}</button>
                         </div>
-                    </form>
+                    </div>
                 </div>
-            </div>
+
+                <div class='submission-button-controls'>
+                    <button type='submit' class='btn btn-primary'>{% trans %}Save and next{% endtrans %}</button>
+                </div>
+            </form>
         </div>
 
 {% endblock %}
