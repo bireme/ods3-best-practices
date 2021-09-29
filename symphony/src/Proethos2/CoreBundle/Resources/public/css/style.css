@@ -257,6 +257,39 @@ img.logo {
     display: none;
 }
 
+.navbar-default {
+    background-color: #05548b !important;
+    border-bottom: 5px solid #ed742c;
+    color: #fff !important;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
+.card {
+    background-color: #05548b !important;
+    border-top: 5px solid #ed742c;
+    color: #fff !important;
+}
+.card h1 {
+    color: #fff !important;
+}
+.card a {
+    color: #ddd;
+}
+.card a:hover {
+    color: #999;
+    text-decoration: none;
+}
+.card h2 {
+    color: #fff !important;
+}
+img.logo {
+    width: 300px;
+}
+.card .required > label {
+    color: #fff !important;
+}
+
 .form-contacts .tagify {
   --tag-bg                  : #2C93D9;
   --tag-hover               : #CE0078;
