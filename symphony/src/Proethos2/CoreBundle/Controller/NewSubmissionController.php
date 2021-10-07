@@ -1293,7 +1293,7 @@ class NewSubmissionController extends Controller
         $upload_type = $upload_type_repository->findOneBy(array('slug' => 'image'));
         $upload_type_id = $upload_type->getId();
         $submission_data = $submission_upload_repository->findBy(array('submission' => $submission->getId(), 'upload_type' => $upload_type_id));
-        if( !$submission_data or count($submission_data) != 1 ) {
+        if( !$submission_data ) {
             $item = array('text' => $text, 'status' => false);
             $final_status = false;
         }
