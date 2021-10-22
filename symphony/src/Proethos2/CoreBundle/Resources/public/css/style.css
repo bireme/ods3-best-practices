@@ -176,8 +176,9 @@ h5 {
 .dropdown-submenu.pull-left{float:none;}.dropdown-submenu.pull-left>.dropdown-menu{left:-100%;margin-left:10px;-webkit-border-radius:6px 0 6px 6px;-moz-border-radius:6px 0 6px 6px;border-radius:6px 0 6px 6px;}
 
 img.logo {
+    width: 300px;
     max-width: 300px;
-    max-height: 140px;
+    max-height: 150px;
 }
 .nav>li>a>img.logo {
     max-height: 18px;
@@ -283,8 +284,8 @@ img.logo {
 .card h2 {
     color: #fff !important;
 }
-img.logo {
-    width: 300px;
+.nav img.logo {
+    width: 150px;
 }
 .card .required > label {
     color: #fff !important;

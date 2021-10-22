@@ -46,23 +46,15 @@ class IndexController extends Controller
 
         $user = $this->get('security.token_storage')->getToken()->getUser();
 
-        $roles = array('secretary', 'member-of-committee', 'member-ad-hoc');
-        $roles_intersect = array_intersect($roles, $user->getRolesSlug());
-
-        if ( $roles_intersect ) {
-            return $this->redirectToRoute('crud_committee_protocol_list', array(), 301);
-        } else {
-            return $this->redirectToRoute('crud_investigator_protocol_list', array(), 301);
+        if ( count($user->getRolesSlug()) == 1 and 'administrator' == $user->getRolesSlug()[0] ) {
+            return $this->redirectToRoute('crud_admin_configuration_list', array(), 301);
         }
 
         $revisions = array();
         foreach($protocol_revision_repository->findBy(array("member" => $user)) as $revision) {
-            if($revision->getProtocol()->getStatus() == 'E') {
+            if (in_array($revision->getProtocol()->getStatus(), array('E', 'H'))) {
                 $revisions[] = $revision->getProtocol();
             }
-        }
-        foreach($protocol_repository->findBy(array("status" => "I")) as $protocol) {
-            $revisions[] = $protocol;
         }
         $output['revisions'] = $revisions;
         

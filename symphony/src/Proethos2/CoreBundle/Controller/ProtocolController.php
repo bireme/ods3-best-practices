@@ -1142,7 +1142,7 @@ class ProtocolController extends Controller
             if(!$protocol_revision->getIsFinalRevision()) {
 
                 // checking required files
-                foreach(array('decision', 'suggestions') as $field) {
+                foreach(array('decision') as $field) {
                     if(!isset($post_data[$field]) or empty($post_data[$field])) {
                         $session->getFlashBag()->add('error', $translator->trans("Field '%field%' is required.", array("%field%" => $field)));
                         return $output;
@@ -1154,12 +1154,6 @@ class ProtocolController extends Controller
                 }
 
                 $protocol_revision->setDecision($post_data['decision']);
-                $protocol_revision->setSocialValue($post_data['social-value']);
-                $protocol_revision->setSscientificValidity($post_data['sscientific-validity']);
-                $protocol_revision->setFairParticipantSelection($post_data['fair-participant-selection']);
-                $protocol_revision->setFavorableBalance($post_data['favorable-balance']);
-                $protocol_revision->setInformedConsent($post_data['informed-consent']);
-                $protocol_revision->setRespectForParticipants($post_data['respect-for-participants']);
                 $protocol_revision->setOtherComments($post_data['other-comments']);
                 $protocol_revision->setSuggestions($post_data['suggestions']);
 

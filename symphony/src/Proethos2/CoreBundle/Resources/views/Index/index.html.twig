@@ -93,7 +93,7 @@
                                     {% for revision in revisions %}
                                         <tr>
                                             <th>{% if revision.code %}{{ revision.code }}{% else %}-{% endif %}</th>
-                                            <td>{{ revision.mainSubmission.publicTitle }}</td>
+                                            <td>{{ revision.mainSubmission.title }}</td>
                                             <td>
                                                 {% if revision.mainSubmission.isClinicalTrial %}
                                                     <span class='label label-warning'>{% trans %}Clinical Trial{% endtrans %}</span>
@@ -105,7 +105,7 @@
                                             <td>{{ revision.statusLabel }}</td>
                                             <td>
                                                 <a href='{{ path("protocol_show_protocol", {protocol_id: revision.id}) }}' class='btn btn-default btn-xs' data-toggle="tooltip" data-placement="top" title="{% trans %}See protocol{% endtrans %}"><i class='glyphicon glyphicon-eye-open'></i></a>
-                                                <a href='{{ path("protocol_initial_committee_review_revisor", {protocol_id: revision.id}) }}' class='btn btn-default btn-xs' data-toggle="tooltip" data-placement="top" title="{% trans %}Send protocol revision{% endtrans %}"><i class='glyphicon glyphicon-list-alt'></i></a>
+                                                {% if revision.status in ["E","H"] and app.user in revision.revisionUsers %}<a href='{{ path("protocol_initial_committee_review_revisor", {protocol_id: revision.id}) }}' class='btn btn-default btn-xs' data-toggle="tooltip" data-placement="top" title="{% trans %}Send protocol revision{% endtrans %}"><i class='glyphicon glyphicon-list-alt'></i></a>{% endif %}
                                             </td>
                                         </tr>
                                     {% endfor %}
@@ -117,7 +117,7 @@
             </div>
         {% endif %}
 
-        {% if 'secretary' in app.user.rolesSlug %}
+        {% if 'secretary' in app.user.rolesSlug or 'member-of-committee' in app.user.rolesSlug %}
             <div class='block'>
                 <div class='row'>
                     <div class="col-md-12">
