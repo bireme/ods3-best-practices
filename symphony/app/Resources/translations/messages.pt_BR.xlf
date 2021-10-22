@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2021-09-10T18:01:28Z" source-language="en" target-language="pt_BR" datatype="plaintext" original="not.available">
+  <file date="2021-10-22T00:57:55Z" source-language="en" target-language="pt_BR" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -85,6 +85,10 @@
       <trans-unit id="6a72085653e4c5be8c7640c868ef787cbcf063d1" resname="All">
         <source>All</source>
         <target>Todo</target>
+      </trans-unit>
+      <trans-unit id="1383ee78cdff6ac039737379b3cccf430b37191e" resname="All contributions must be original. Contributors warrant that they have the necessary rights, including the necessary licenses, for the use of any copyrighted material in the submission. Furthermore, contributors warrant that all necessary permissions and consents have been obtained for all materials depicting identifiable human subjects.">
+        <source>All contributions must be original. Contributors warrant that they have the necessary rights, including the necessary licenses, for the use of any copyrighted material in the submission. Furthermore, contributors warrant that all necessary permissions and consents have been obtained for all materials depicting identifiable human subjects.</source>
+        <target>All contributions must be original. Contributors warrant that they have the necessary rights, including the necessary licenses, for the use of any copyrighted material in the submission. Furthermore, contributors warrant that all necessary permissions and consents have been obtained for all materials depicting identifiable human subjects.</target>
       </trans-unit>
       <trans-unit id="c8f667a27fdcf4a8cfc5c2662471139f333b46fa" resname="Amendment submitted with success!">
         <source>Amendment submitted with success!</source>
@@ -298,6 +302,14 @@
         <source>Brief Introduction</source>
         <target>Brief Introduction</target>
       </trans-unit>
+      <trans-unit id="ae4093c5963b70a69b74ca82666b417cd4ade537" resname="By submitting a contribution, contributors grant PAHO and related partners a free perpetual non-exclusive license to use, edit and publish the contribution for noncommercial purposes.">
+        <source>By submitting a contribution, contributors grant PAHO and related partners a free perpetual non-exclusive license to use, edit and publish the contribution for noncommercial purposes.</source>
+        <target>By submitting a contribution, contributors grant PAHO and related partners a free perpetual non-exclusive license to use, edit and publish the contribution for noncommercial purposes.</target>
+      </trans-unit>
+      <trans-unit id="2f790fc25087685b09605ffe432f64c7b2300ee8" resname="By submitting this contribution, contributors confirm that they have read, understood, and accepted these conditions.">
+        <source>By submitting this contribution, contributors confirm that they have read, understood, and accepted these conditions.</source>
+        <target>By submitting this contribution, contributors confirm that they have read, understood, and accepted these conditions.</target>
+      </trans-unit>
       <trans-unit id="de3b994d22deb924dfef0da44d5ab981fccb8f0d" resname="CSRF token not valid">
         <source>CSRF token not valid</source>
         <target>CSRF token not valid</target>
@@ -413,6 +425,10 @@
       <trans-unit id="4f9be057f0ea5d2ba72fd2c810e8d7b9aa98b469" resname="Content">
         <source>Content</source>
         <target>Conteúdo</target>
+      </trans-unit>
+      <trans-unit id="5ce5873edb578221b4a6880fd3d605b63da91d7e" resname="Contributors agree to identify, defend, and hold PAHO and related partners harmless from any actions or claims brought against them pertaining to the alleged infringement arising in connection with the contribution.">
+        <source>Contributors agree to identify, defend, and hold PAHO and related partners harmless from any actions or claims brought against them pertaining to the alleged infringement arising in connection with the contribution.</source>
+        <target>Contributors agree to identify, defend, and hold PAHO and related partners harmless from any actions or claims brought against them pertaining to the alleged infringement arising in connection with the contribution.</target>
       </trans-unit>
       <trans-unit id="c63d7dc26fc32ada5170c80598c4c75aefdcc105" resname="Controlled Lists">
         <source>Controlled Lists</source>
@@ -700,18 +716,6 @@
         <source>FAQ</source>
         <target>Perguntas mais frequentes</target>
       </trans-unit>
-      <trans-unit id="7e31e3de14faae36e2214dae4bfad37026be9704" resname="Fair Participant Selection">
-        <source>Fair Participant Selection</source>
-        <target>Justa seleção dos participantes</target>
-      </trans-unit>
-      <trans-unit id="0e270486f3548a1a38ea7a4d4a8391e5af7f4472" resname="Fair participant selection">
-        <source>Fair participant selection</source>
-        <target>Justa seleção dos participantes</target>
-      </trans-unit>
-      <trans-unit id="a5240021081059e13ee2b3cc8d97ae85ab3b0bbb" resname="Favorable balance of benefits and risks">
-        <source>Favorable balance of benefits and risks</source>
-        <target>Saldo favorável dos riscos e benefícios</target>
-      </trans-unit>
       <trans-unit id="29edab558d15607b66e55efa5a814497a53ee8c9" resname="Field '%field%' is required.">
         <source>Field '%field%' is required.</source>
         <target>O campo '%field%' é obrigatório</target>
@@ -907,10 +911,6 @@
       <trans-unit id="15782c7351818e74c159d0530853a5e7f4ff1be2" resname="Inclusion criteria">
         <source>Inclusion criteria</source>
         <target>Critérios de inclusão</target>
-      </trans-unit>
-      <trans-unit id="bd8ff0629222bd23d2321fbbdf1f09d29921cbaa" resname="Informed Consent">
-        <source>Informed Consent</source>
-        <target>Consentimento informado </target>
       </trans-unit>
       <trans-unit id="34af284908ff7b3e717d1a14042d2de27ef42327" resname="Initial Committee Review">
         <source>Initial Committee Review</source>
@@ -1392,10 +1392,6 @@
         <source>Original Submission</source>
         <target>Apresentação original </target>
       </trans-unit>
-      <trans-unit id="b22ddf1e04606d5919c237c76b0f7b5d800fe8d5" resname="Other Comments">
-        <source>Other Comments</source>
-        <target>Outros comentários</target>
-      </trans-unit>
       <trans-unit id="01429eba5f01b4607805135ebd7aaf61ef360001" resname="Other Contexts">
         <source>Other Contexts</source>
         <target>Other Contexts</target>
@@ -1424,6 +1420,10 @@
         <source>PAHO Comments</source>
         <target>PAHO Comments</target>
       </trans-unit>
+      <trans-unit id="1f8003a9dffac03fe78d168ac7e6e0ffbf3683a1" resname="PAHO and related partners reserve the right, at their sole discretion, to determine which contributions will be included in the portal or used in other institutional material.">
+        <source>PAHO and related partners reserve the right, at their sole discretion, to determine which contributions will be included in the portal or used in other institutional material.</source>
+        <target>PAHO and related partners reserve the right, at their sole discretion, to determine which contributions will be included in the portal or used in other institutional material.</target>
+      </trans-unit>
       <trans-unit id="97fdd5490df99ffa64c2b7a0a31614eff19d9a8e" resname="PAHOERC Secretariat">
         <source>PAHOERC Secretariat</source>
         <target>PAHOERC Secretariat</target>
@@ -1432,9 +1432,9 @@
         <source>PAHOERC@paho.org</source>
         <target>PAHOERC@paho.org</target>
       </trans-unit>
-      <trans-unit id="5ef849c72cc4d216fc7f81d5be20df7369d797a0" resname="Pan American Health Organization, 2013. All rights reserved.">
-        <source>Pan American Health Organization, 2013. All rights reserved.</source>
-        <target>Organização Pan-Americana da Saúde, 2013. Todos os direitos reservados</target>
+      <trans-unit id="cbe9f373b4cb9d1ead54f819901f9ec2e7a6aebf" resname="Pan American Health Organization, 2021. All rights reserved.">
+        <source>Pan American Health Organization, 2021. All rights reserved.</source>
+        <target>Pan American Health Organization, 2021. All rights reserved.</target>
       </trans-unit>
       <trans-unit id="8be3c943b1609fffbfc51aad666d0a04adf83c9d" resname="Password">
         <source>Password</source>
@@ -1652,10 +1652,6 @@
         <source>Resources Assigned</source>
         <target>Resources Assigned</target>
       </trans-unit>
-      <trans-unit id="ce535921787104e778f659c7d7f0046d4807cfb8" resname="Respect for participants">
-        <source>Respect for participants</source>
-        <target>Respeito pelos participantes </target>
-      </trans-unit>
       <trans-unit id="cd78077e58c44f25e53bcd83903b32c524bf46cc" resname="Respondent Name">
         <source>Respondent Name</source>
         <target>Respondent Name</target>
@@ -1731,10 +1727,6 @@
       <trans-unit id="efb9234d17b6bdc26322f7104103574db219055f" resname="Scientific Title">
         <source>Scientific Title</source>
         <target>Título científico </target>
-      </trans-unit>
-      <trans-unit id="4f9d11bcc9be784e7e05c8309de566ebe4087f5d" resname="Scientific Validity">
-        <source>Scientific Validity</source>
-        <target>Validez científica </target>
       </trans-unit>
       <trans-unit id="bce06414177f72ab70e6387b6af9f8ceef0d6049" resname="Search">
         <source>Search</source>
@@ -1867,10 +1859,6 @@
       <trans-unit id="da581f85e0b26a16cba2c19d07dc95d9cdc81d4f" resname="Sixth step saved with success.">
         <source>Sixth step saved with success.</source>
         <target>Sixth step saved with success.</target>
-      </trans-unit>
-      <trans-unit id="ebc53bf2b48ba5c9a92abced07c57ae6fce40fe6" resname="Social Value">
-        <source>Social Value</source>
-        <target>Valor social </target>
       </trans-unit>
       <trans-unit id="2eb56be3c2d93cdab0c52e677e3167dfddb30ac5" resname="Sources">
         <source>Sources</source>
