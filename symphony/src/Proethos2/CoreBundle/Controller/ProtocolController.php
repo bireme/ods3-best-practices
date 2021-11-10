@@ -113,7 +113,7 @@ class ProtocolController extends Controller
 
                 $help = $help_repository->find(218);
                 $translations = $trans_repository->findTranslations($help);
-                $text = $translations[$locale];
+                $text = $translations[$submission->getLanguage()];
                 $body = $text['message'];
                 $body = str_replace("%protocol_url%", $url, $body);
                 $body = str_replace("\r\n", "<br />", $body);
@@ -209,7 +209,7 @@ class ProtocolController extends Controller
 
             $help = $help_repository->find(218);
             $translations = $trans_repository->findTranslations($help);
-            $text = $translations[$locale];
+            $text = $translations[$submission->getLanguage()];
             $body = $text['message'];
             $body = str_replace("%protocol_url%", $url, $body);
             $body = str_replace("\r\n", "<br />", $body);
@@ -397,7 +397,7 @@ class ProtocolController extends Controller
         $output['protocol'] = $protocol;
 
         $mail_translator = $this->get('translator');
-        $mail_translator->setLocale($locale);
+        $mail_translator->setLocale($submission->getLanguage());
 
         $trans_repository = $em->getRepository('Gedmo\\Translatable\\Entity\\Translation');
         $help_repository = $em->getRepository('Proethos2ModelBundle:Help');
@@ -428,7 +428,7 @@ class ProtocolController extends Controller
 
                 $help = $help_repository->find(209);
                 $translations = $trans_repository->findTranslations($help);
-                $text = $translations[$locale];
+                $text = $translations[$submission->getLanguage()];
                 $body = $text['message'];
                 $body = str_replace("%protocol_url%", $url, $body);
                 $body = str_replace("\r\n", "<br />", $body);
@@ -553,7 +553,7 @@ class ProtocolController extends Controller
 
                     $help = $help_repository->find(210);
                     $translations = $trans_repository->findTranslations($help);
-                    $text = $translations[$locale];
+                    $text = $translations[$submission->getLanguage()];
                     $body = $text['message'];
                     $body = str_replace("%protocol_url%", $url, $body);
                     $body = str_replace("%protocol_code%", $protocol->getCode(), $body);
@@ -618,7 +618,7 @@ class ProtocolController extends Controller
 
                         $help = $help_repository->find(211);
                         $translations = $trans_repository->findTranslations($help);
-                        $text = $translations[$locale];
+                        $text = $translations[$submission->getLanguage()];
                         $body = $text['message'];
                         $body = str_replace("%protocol_url%", $url, $body);
                         $body = str_replace("%protocol_code%", $protocol->getCode(), $body);
@@ -704,7 +704,7 @@ class ProtocolController extends Controller
         $output['protocol'] = $protocol;
 
         $mail_translator = $this->get('translator');
-        $mail_translator->setLocale($locale);
+        $mail_translator->setLocale($submission->getLanguage());
 
         $trans_repository = $em->getRepository('Gedmo\\Translatable\\Entity\\Translation');
         $help_repository = $em->getRepository('Proethos2ModelBundle:Help');
@@ -755,7 +755,7 @@ class ProtocolController extends Controller
                     if ( $post_data['committee-screening'] ) {
                         $help = $help_repository->find(212);
                         $translations = $trans_repository->findTranslations($help);
-                        $text = $translations[$locale];
+                        $text = $translations[$submission->getLanguage()];
                         $body = $text['message'];
                         $body = str_replace("%protocol_url%", $url, $body);
                         $body = str_replace("%protocol_code%", $protocol->getCode(), $body);
@@ -765,7 +765,7 @@ class ProtocolController extends Controller
                     } else {
                         $help = $help_repository->find(213);
                         $translations = $trans_repository->findTranslations($help);
-                        $text = $translations[$locale];
+                        $text = $translations[$submission->getLanguage()];
                         $body = $text['message'];
                         $body = str_replace("%protocol_url%", $url, $body);
                         $body = str_replace("%protocol_code%", $protocol->getCode(), $body);
@@ -863,7 +863,7 @@ class ProtocolController extends Controller
 
                 $help = $help_repository->find(214);
                 $translations = $trans_repository->findTranslations($help);
-                $text = $translations[$locale];
+                $text = $translations[$submission->getLanguage()];
                 $body = $text['message'];
                 $body = str_replace("%protocol_url%", $url, $body);
                 $body = str_replace("%protocol_code%", $protocol->getCode(), $body);
@@ -945,7 +945,7 @@ class ProtocolController extends Controller
         $output['total_final_revisions'] = $total_final_revisions;
 
         $mail_translator = $this->get('translator');
-        $mail_translator->setLocale($locale);
+        $mail_translator->setLocale($submission->getLanguage());
 
         $trans_repository = $em->getRepository('Gedmo\\Translatable\\Entity\\Translation');
         $help_repository = $em->getRepository('Proethos2ModelBundle:Help');
@@ -1012,7 +1012,7 @@ class ProtocolController extends Controller
 
                             $help = $help_repository->find(215);
                             $translations = $trans_repository->findTranslations($help);
-                            $text = $translations[$locale];
+                            $text = $translations[$submission->getLanguage()];
                             $body = $text['message'];
                             $body = str_replace("%protocol_url%", $url, $body);
                             $body = str_replace("%protocol_code%", $protocol->getCode(), $body);
@@ -1107,7 +1107,7 @@ class ProtocolController extends Controller
         $output['protocol'] = $protocol;
 
         $mail_translator = $this->get('translator');
-        $mail_translator->setLocale($locale);
+        $mail_translator->setLocale($submission->getLanguage());
 
         $trans_repository = $em->getRepository('Gedmo\\Translatable\\Entity\\Translation');
         $help_repository = $em->getRepository('Proethos2ModelBundle:Help');
@@ -1169,7 +1169,7 @@ class ProtocolController extends Controller
 
                     $help = $help_repository->find(219);
                     $translations = $trans_repository->findTranslations($help);
-                    $text = $translations[$locale];
+                    $text = $translations[$submission->getLanguage()];
                     $body = $text['message'];
                     $body = str_replace("%protocol_url%", $url, $body);
                     $body = str_replace("%protocol_code%", $protocol->getCode(), $body);
@@ -1265,7 +1265,7 @@ class ProtocolController extends Controller
         $output['protocol'] = $protocol;
 
         $mail_translator = $this->get('translator');
-        $mail_translator->setLocale($locale);
+        $mail_translator->setLocale($submission->getLanguage());
 
         $trans_repository = $em->getRepository('Gedmo\\Translatable\\Entity\\Translation');
         $help_repository = $em->getRepository('Proethos2ModelBundle:Help');
@@ -1414,7 +1414,7 @@ class ProtocolController extends Controller
 
             $help = $help_repository->find(216);
             $translations = $trans_repository->findTranslations($help);
-            $text = $translations[$locale];
+            $text = $translations[$submission->getLanguage()];
             $body = $text['message'];
             $body = str_replace("%protocol_url%", $url, $body);
             $body = str_replace("%protocol_code%", $protocol->getCode(), $body);

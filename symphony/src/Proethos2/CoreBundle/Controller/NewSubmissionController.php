@@ -51,6 +51,7 @@ class NewSubmissionController extends Controller
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
+        $locale = $request->getSession()->get('_locale');
 
         $user = $this->get('security.token_storage')->getToken()->getUser();
 
@@ -92,7 +93,7 @@ class NewSubmissionController extends Controller
             $post_data = $request->request->all();
 
             // checking required files
-            foreach(array('title', 'best_practice_type', 'best_practice_role', 'institution', 'stakeholder') as $field) {
+            foreach(array('language', 'title', 'best_practice_type', 'best_practice_role', 'institution', 'stakeholder') as $field) {
                 if(!isset($post_data[$field]) or empty($post_data[$field])) {
                     $session->getFlashBag()->add('error', $translator->trans("Field '%field%' is required.", array("%field%" => $field)));
                     return $post_data;
@@ -111,6 +112,7 @@ class NewSubmissionController extends Controller
             $submission->setOtherInstitution($post_data['other_institution']);
             $submission->setOtherStakeholder($post_data['other_stakeholder']);
             $submission->setReferenceNumber($post_data['reference_number']);
+            $submission->setLanguage(($post_data['language']) ? $post_data['language'] : $locale);
             $submission->setProtocol($protocol);
             $submission->setNumber(1);
 
@@ -162,6 +164,7 @@ class NewSubmissionController extends Controller
         $session = $request->getSession();
         $translator = $this->get('translator');
         $em = $this->getDoctrine()->getManager();
+        $locale = $request->getSession()->get('_locale');
 
         $submission_repository = $em->getRepository('Proethos2ModelBundle:Submission');
         $user_repository = $em->getRepository('Proethos2ModelBundle:User');
@@ -217,7 +220,7 @@ class NewSubmissionController extends Controller
             $post_data = $request->request->all();
 
             // checking required files
-            foreach(array('title', 'best_practice_type', 'best_practice_role', 'institution', 'stakeholder') as $field) {
+            foreach(array('language', 'title', 'best_practice_type', 'best_practice_role', 'institution', 'stakeholder') as $field) {
                 if(!isset($post_data[$field]) or empty($post_data[$field])) {
                     $session->getFlashBag()->add('error', $translator->trans("Field '%field%' is required.", array("%field%" => $field)));
                     return $output;
@@ -229,6 +232,7 @@ class NewSubmissionController extends Controller
             $submission->setOtherInstitution($post_data['other_institution']);
             $submission->setOtherStakeholder($post_data['other_stakeholder']);
             $submission->setReferenceNumber($post_data['reference_number']);
+            $submission->setLanguage(($post_data['language']) ? $post_data['language'] : $locale);
 
             // best practice type
             $selected_best_practice_type = $best_practice_type_repository->find($post_data['best_practice_type']);
@@ -915,7 +919,7 @@ class NewSubmissionController extends Controller
         $output['submission'] = $submission;
 
         $mail_translator = $this->get('translator');
-        $mail_translator->setLocale($locale);
+        $mail_translator->setLocale($submission->getLanguage());
 
         $trans_repository = $em->getRepository('Gedmo\\Translatable\\Entity\\Translation');
         $help_repository = $em->getRepository('Proethos2ModelBundle:Help');
@@ -1484,7 +1488,7 @@ class NewSubmissionController extends Controller
 
                         $help = $help_repository->find(201);
                         $translations = $trans_repository->findTranslations($help);
-                        $text = $translations[$locale];
+                        $text = $translations[$submission->getLanguage()];
                         $body = $text['message'];
                         $body = str_replace("%protocol_url%", $url, $body);
                         $body = str_replace("%protocol_code%", $protocol->getCode(), $body);
@@ -1522,7 +1526,7 @@ class NewSubmissionController extends Controller
                         if ( $total_submissions == 1 ) {
                             $help = $help_repository->find(202);
                             $translations = $trans_repository->findTranslations($help);
-                            $text = $translations[$locale];
+                            $text = $translations[$submission->getLanguage()];
                             $body = $text['message'];
                             $body = str_replace("%protocol_url%", $url, $body);
                             $body = str_replace("\r\n", "<br />", $body);
@@ -1545,7 +1549,7 @@ class NewSubmissionController extends Controller
 
                         $help = $help_repository->find(217);
                         $translations = $trans_repository->findTranslations($help);
-                        $text = $translations[$locale];
+                        $text = $translations[$submission->getLanguage()];
                         $body = $text['message'];
                         $body = str_replace("%home_url%", $home_url, $body);
                         $body = str_replace("%protocol_url%", $url, $body);

@@ -88,6 +88,15 @@
                     <div class='label'>{% trans %}Best Practice Title{% endtrans %}</div>
                     <h2>
                         {{ submission.title }}
+                        {% if submission.isTranslation %}
+                            <small>
+                                {% trans %}translation{% endtrans %}:
+                                {% if submission.language == 'pt_BR' %}Português{% endif %}
+                                {% if submission.language == 'es_ES' %}Español{% endif %}
+                                {% if submission.language == 'en' %}English{% endif %}
+                                {% if submission.language == 'fr_FR' %}Français{% endif %}
+                            </small>
+                        {% endif %}
                     </h2>
                 </div>
             </div>

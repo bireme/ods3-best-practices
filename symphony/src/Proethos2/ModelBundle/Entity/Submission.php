@@ -104,6 +104,13 @@ class Submission extends Base
     /**
      * @var string
      *
+     * @ORM\Column(name="language", type="string", nullable=true, length=255)
+     */
+    private $language;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="title", type="string", length=510)
      * @Assert\NotBlank
      */
@@ -2037,5 +2044,29 @@ class Submission extends Base
         }
 
         return $targets;
+    }
+
+    /**
+     * Set language
+     *
+     * @param string $language
+     *
+     * @return Submission
+     */
+    public function setLanguage($language)
+    {
+        $this->language = $language;
+
+        return $this;
+    }
+
+    /**
+     * Get language
+     *
+     * @return string
+     */
+    public function getLanguage()
+    {
+        return $this->language;
     }
 }

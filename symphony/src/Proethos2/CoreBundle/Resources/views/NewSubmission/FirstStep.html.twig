@@ -37,12 +37,28 @@
                             <h2 class='sub-header'>{% trans %}Basic Information{% endtrans %}</h2>
                         </div>
                     </div>
-
+{#
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <div class="form-group required">
+                                <label for="select-language">{% trans %}Language{% endtrans %}:</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <select class='form-control selectpicker' id='select-language' name='language' data-size="5" required>
+                                    <option value="">-</option>
+                                    <option value="pt_BR" {% if app.request.locale == 'pt_BR' %}selected{% endif %}>Português</option>
+                                    <option value="es_ES" {% if app.request.locale == 'es_ES' %}selected{% endif %}>Español</option>
+                                    <option value="en" {% if app.request.locale == 'en' %}selected{% endif %}>English</option>
+                                    <option value="fr_FR" {% if app.request.locale == 'fr_FR' %}selected{% endif %}>Français</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+#}
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="form-group required">
                                 <label for="input_title">{% trans %}Title of the Best Practice{% endtrans %}:</label>
-                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <input type="text" class="form-control" name='title' id='input_title' value='{% if post_data.title %}{{ post_data.title }}{% endif %}' required>
                             </div>
                         </div>
@@ -52,7 +68,7 @@
                         <div class="col-md-12">
                             <div class="form-group required">
                                 <label for="select-best-practice-type">{% trans %}This Best Practice is related to{% endtrans %}:</label>
-                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <select class='form-control selectpicker' id='select-best-practice-type' name='best_practice_type' data-size="5" data-live-search="true" required>
                                     <option value="">-</option>
                                     {% for bp_type in best_practice_type %}
