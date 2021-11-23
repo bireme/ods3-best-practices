@@ -63,6 +63,8 @@ class GenerateDatabaseInitialDataCommand extends ContainerAwareCommand
             'list_recruitment_status',
             'list_role',
             'upload_type',
+            'upload_type_extension',
+            'upload_type_upload_type_extension',
             'help',
             'faq',
         );
