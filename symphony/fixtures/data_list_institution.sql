@@ -1,0 +1,10 @@
+REPLACE INTO `list_institution` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (1,'2021-06-23 01:42:51','2021-06-23 01:42:51','Government','government',1);
+REPLACE INTO `list_institution` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (2,'2021-06-23 01:43:11','2021-06-23 01:43:11','United Nations (UN System)','united-nations-un-system',1);
+REPLACE INTO `list_institution` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (3,'2021-06-23 01:43:41','2021-06-23 01:43:41','Intergovernmental Organization','intergovernmental-organization',1);
+REPLACE INTO `list_institution` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (4,'2021-06-23 01:44:23','2021-06-23 01:44:23','National/Local Government','national-local-government',1);
+REPLACE INTO `list_institution` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (5,'2021-06-23 01:45:17','2021-06-23 01:45:17','Civil Society Organization','civil-society-organization',1);
+REPLACE INTO `list_institution` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (6,'2021-06-23 01:45:40','2021-06-23 01:45:40','Academic Institution','academic-institution',1);
+REPLACE INTO `list_institution` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (7,'2021-06-23 01:46:27','2021-06-23 01:46:27','Scientific Community','scientific-community',1);
+REPLACE INTO `list_institution` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (8,'2021-06-23 01:46:41','2021-06-23 01:46:41','Private Sector','private-sector',1);
+REPLACE INTO `list_institution` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (9,'2021-06-23 01:46:55','2021-06-23 01:46:55','Philanthropic Organization','philanthropic-organization',1);
+REPLACE INTO `list_institution` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (10,'2021-06-23 01:47:06','2021-06-23 01:47:06','Other','other',1);

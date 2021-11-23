@@ -1,0 +1,5 @@
+REPLACE INTO `list_stakeholder` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (1,'2021-06-23 01:51:36','2021-06-23 01:51:36','National Institution (ministry of health, institute of health, laboratory, etc)','national-institution-ministry-of-health-institute-of-health-laboratory-etc',1);
+REPLACE INTO `list_stakeholder` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (2,'2021-06-23 01:51:55','2021-06-23 01:51:55','Strategic Partner/Donor','strategic-partner-donor',1);
+REPLACE INTO `list_stakeholder` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (3,'2021-06-23 01:52:21','2021-06-23 01:52:21','Academic Sector (university, faculty, etc.)','academic-sector-university-faculty-etc',1);
+REPLACE INTO `list_stakeholder` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (4,'2021-06-23 01:52:37','2021-06-23 01:52:37','PAHO/WHO Collaborating Centre','paho-who-collaborating-centre',1);
+REPLACE INTO `list_stakeholder` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (5,'2021-06-23 01:52:45','2021-06-23 01:52:45','Other','other',1);

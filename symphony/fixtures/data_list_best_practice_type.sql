@@ -1,0 +1,3 @@
+REPLACE INTO `list_best_practice_type` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (1,'2021-06-21 22:37:32','2021-06-21 22:37:32','Country/Territory Experience on SDGs','country-territory-experience-on-sdgs',1);
+REPLACE INTO `list_best_practice_type` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (2,'2021-06-21 22:37:43','2021-06-21 22:37:43','PAHO/WHO Technical Cooperation','paho-who-technical-cooperation',1);
+REPLACE INTO `list_best_practice_type` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (3,'2021-08-06 14:50:23','2021-08-06 14:50:23','Other','other',1);
