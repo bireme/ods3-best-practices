@@ -93,7 +93,7 @@ class NewSubmissionController extends Controller
             $post_data = $request->request->all();
 
             // checking required files
-            foreach(array('language', 'title', 'best_practice_type', 'best_practice_role', 'institution', 'stakeholder') as $field) {
+            foreach(array('title', 'best_practice_type', 'best_practice_role', 'institution', 'stakeholder') as $field) {
                 if(!isset($post_data[$field]) or empty($post_data[$field])) {
                     $session->getFlashBag()->add('error', $translator->trans("Field '%field%' is required.", array("%field%" => $field)));
                     return $post_data;
@@ -220,7 +220,7 @@ class NewSubmissionController extends Controller
             $post_data = $request->request->all();
 
             // checking required files
-            foreach(array('language', 'title', 'best_practice_type', 'best_practice_role', 'institution', 'stakeholder') as $field) {
+            foreach(array('title', 'best_practice_type', 'best_practice_role', 'institution', 'stakeholder') as $field) {
                 if(!isset($post_data[$field]) or empty($post_data[$field])) {
                     $session->getFlashBag()->add('error', $translator->trans("Field '%field%' is required.", array("%field%" => $field)));
                     return $output;
@@ -604,7 +604,7 @@ class NewSubmissionController extends Controller
             $route = 'submission_new_fifth_step';
             if ( 'paho-who-technical-cooperation' == $submission->getType()->getSlug() ) {
                 $route = 'submission_new_fourth_step';
-            } 
+            }
 
             $session->getFlashBag()->add('success', $translator->trans("Third step saved with success."));
             return $this->redirectToRoute($route, array('submission_id' => $submission->getId()), 301);
@@ -703,7 +703,7 @@ class NewSubmissionController extends Controller
             $session->getFlashBag()->add('success', $translator->trans("Fourth step saved with success."));
             return $this->redirectToRoute('submission_new_fifth_step', array('submission_id' => $submission->getId()), 301);
         }
-        
+
         return $output;
     }
 
@@ -1531,9 +1531,9 @@ class NewSubmissionController extends Controller
                             $body = str_replace("%protocol_url%", $url, $body);
                             $body = str_replace("\r\n", "<br />", $body);
                             $body .= "<br /><br />";
-                        
+
                             $recipient = $protocol->getMainSubmission()->getOwner();
-                            
+
                             $message = \Swift_Message::newInstance()
                             ->setSubject("[proethos2] " . $mail_translator->trans("Your best practice was sent to review."))
                             ->setFrom($util->getConfiguration('committee.email'))
