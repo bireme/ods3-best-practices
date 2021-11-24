@@ -135,22 +135,14 @@
                             <div class="form-group required">
                                 <label for="select-population-group">{% trans %}Specific/Target population group{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <select class='form-control selectpicker' id='select-population-group' name='population_group' data-size="5" data-live-search="true" required>
-                                    <option value="">-</option>
-                                    {% for pg in population_group %}
-                                        <option value="{{ pg.id }}" data-slug="{{ pg.slug }}" {% if submission.populationGroup.id == pg.id %}selected{% endif %}>{{ pg.name }}</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class='row {% if submission.populationGroup.slug != "other" %}hide{% endif %}'>
-                        <div class="col-md-12">
-                            <div class="form-group required">
-                                <label for="input_other_population_group">{% trans %}Other Population Group{% endtrans %}:</label>
-                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <input type="text" class="form-control" name='other_population_group' id='input_other_population_group' value="{{ submission.otherPopulationGroup }}" {% if submission.populationGroup.slug == "other" %}required{% endif %}>
+                                <div>
+                                    <select class='form-control selectpicker' id='select-population-group' name='population_group[]' data-size="5" data-width="fit" data-live-search="true" title="{% trans %}Choose one of the following...{% endtrans %}" multiple required>
+                                        <option value="">-</option>
+                                        {% for pg in population_group %}
+                                            <option value="{{ pg.id }}" data-slug="{{ pg.slug }}" {% if pg in submission.populationGroup %}selected{% endif %}>{{ pg.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -217,17 +209,6 @@
 {% block script %}
     <script>
         $(function(){
-            $( "#select-population-group" ).on( "change", function() {
-                var slug = $(this).find(':selected').data('slug');
-                if ( 'other' == slug ) {
-                    $("#input_other_population_group").parent().parent().parent().removeClass("hide");
-                    $("#input_other_population_group").prop('required',true);
-                } else {
-                    $("#input_other_population_group").parent().parent().parent().addClass("hide");
-                    $("#input_other_population_group").prop('required',false);
-                }
-            });
-
             $('.selectpicker').selectpicker({
                 multipleSeparator: '; '
             }).on('changed.bs.select', function() {

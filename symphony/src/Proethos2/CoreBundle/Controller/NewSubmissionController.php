@@ -377,6 +377,7 @@ class NewSubmissionController extends Controller
         // getting population group list
         $population_group_repository = $em->getRepository('Proethos2ModelBundle:PopulationGroup');
         $population_group = $population_group_repository->findByStatus(true);
+        // $population_group = $population_group_repository->findBy(array('status' => true), array('name' => 'ASC'));
         $output['population_group'] = $population_group;
 
         // getting countries list
@@ -460,9 +461,19 @@ class NewSubmissionController extends Controller
             $selected_subregion = $subregion_repository->find($post_data['subregion']);
             $submission->setSubregion($selected_subregion);
 
-            // population group
-            $selected_population_group = $population_group_repository->find($post_data['population_group']);
-            $submission->setPopulationGroup($selected_population_group);
+            // removing all population groups to re-add
+            if ($submission->getPopulationGroup()) {
+                foreach($submission->getPopulationGroup() as $population_group) {
+                    $submission->removePopulationGroup($population_group);
+                }
+            }
+            // re-add population groups
+            if(isset($post_data['population_group'])) {
+                foreach($post_data['population_group'] as $population_group) {
+                    $population_group = $population_group_repository->find($population_group);
+                    $submission->addPopulationGroup($population_group);
+                }
+            }
 
             // removing all technical matters to re-add
             if ($submission->getTechnicalMatter()) {
@@ -470,7 +481,6 @@ class NewSubmissionController extends Controller
                     $submission->removeTechnicalMatter($technical_matter);
                 }
             }
-
             // re-add technical matters
             if(isset($post_data['technical_matter'])) {
                 foreach($post_data['technical_matter'] as $technical_matter) {
@@ -485,7 +495,6 @@ class NewSubmissionController extends Controller
                     $submission->removeIntervention($intervention);
                 }
             }
-
             // re-add interventions
             if(isset($post_data['intervention'])) {
                 foreach($post_data['intervention'] as $intervention) {
@@ -500,7 +509,6 @@ class NewSubmissionController extends Controller
                     $submission->removeTarget($target);
                 }
             }
-
             // re-add targets
             if(isset($post_data['target'])) {
                 foreach($post_data['target'] as $target) {
@@ -515,7 +523,6 @@ class NewSubmissionController extends Controller
             $submission->setActivities($post_data['activities']);
             $submission->setMainResults($post_data['main_results']);
             $submission->setFactors($post_data['factors']);
-            $submission->setOtherPopulationGroup($post_data['other_population_group']);
             $submission->setStartDate(new \DateTime($post_data['start-date']));
             if ( $post_data['end-date'] ) $submission->setEnddate(new \DateTime($post_data['end-date']));
 
@@ -1094,23 +1101,11 @@ class NewSubmissionController extends Controller
 
         $text = $translator->trans('Population Group');
         $item = array('text' => $text, 'status' => true);
-        if(empty($submission->getPopulationGroup())) {
+        if(empty($submission->getPopulationGroupList())) {
             $item = array('text' => $text, 'status' => false);
             $final_status = false;
         }
         $revisions[] = $item;
-
-        if ( $submission->getPopulationGroup() and 'other' == $submission->getPopulationGroup()->getSlug() ) {
-
-            $text = $translator->trans('Other Population Group');
-            $item = array('text' => $text, 'status' => true);
-            if(empty($submission->getOtherPopulationGroup())) {
-                $item = array('text' => $text, 'status' => false);
-                $final_status = false;
-            }
-            $revisions[] = $item;
-
-        }
 
         $text = $translator->trans('Introduction');
         $item = array('text' => $text, 'status' => true);
@@ -1633,7 +1628,6 @@ class NewSubmissionController extends Controller
         );
 
         $output['likert'] = $likert;
-
 
         if (!$submission or ($submission->getCanBeEdited() and !in_array('investigator', $user->getRolesSlug()))) {
             throw $this->createNotFoundException($translator->trans('No submission found'));

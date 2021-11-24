@@ -244,8 +244,9 @@ class Submission extends Base
     /**
      * @var PopulationGroup
      *
-     * @ORM\ManyToOne(targetEntity="PopulationGroup")
-     * @ORM\JoinColumn(name="population_group_id", referencedColumnName="id", onDelete="SET NULL")
+     * @ORM\ManyToMany(targetEntity="PopulationGroup", inversedBy="submissions")
+     * @ORM\JoinTable(name="submission_population_group")
+     * @Assert\NotBlank
      */
     private $population_group;
 
@@ -1765,30 +1766,6 @@ class Submission extends Base
     }
 
     /**
-     * Set populationGroup
-     *
-     * @param \Proethos2\ModelBundle\Entity\PopulationGroup $populationGroup
-     *
-     * @return Submission
-     */
-    public function setPopulationGroup(\Proethos2\ModelBundle\Entity\PopulationGroup $populationGroup = null)
-    {
-        $this->population_group = $populationGroup;
-
-        return $this;
-    }
-
-    /**
-     * Get populationGroup
-     *
-     * @return \Proethos2\ModelBundle\Entity\PopulationGroup
-     */
-    public function getPopulationGroup()
-    {
-        return $this->population_group;
-    }
-
-    /**
      * Set otherStakeholder
      *
      * @param string $otherStakeholder
@@ -1848,7 +1825,7 @@ class Submission extends Base
 
     public function getInterventionList() {
         $interventions = array();
-        
+
         if ( $this->intervention ) {
             foreach($this->intervention as $intervention) {
                 $interventions[] = $intervention->getName();
@@ -1966,7 +1943,7 @@ class Submission extends Base
 
     public function getTechnicalMatterList() {
         $technical_matters = array();
-        
+
         if ( $this->technical_matter ) {
             foreach($this->technical_matter as $technical_matter) {
                 $technical_matters[] = $technical_matter->getName();
@@ -1974,30 +1951,6 @@ class Submission extends Base
         }
 
         return $technical_matters;
-    }
-
-    /**
-     * Set otherPopulationGroup
-     *
-     * @param string $otherPopulationGroup
-     *
-     * @return Submission
-     */
-    public function setOtherPopulationGroup($otherPopulationGroup)
-    {
-        $this->other_population_group = $otherPopulationGroup;
-
-        return $this;
-    }
-
-    /**
-     * Get otherPopulationGroup
-     *
-     * @return string
-     */
-    public function getOtherPopulationGroup()
-    {
-        return $this->other_population_group;
     }
 
     /**
@@ -2036,7 +1989,7 @@ class Submission extends Base
 
     public function getTargetList() {
         $targets = array();
-        
+
         if ( $this->target ) {
             foreach($this->target as $target) {
                 $targets[] = $target->getName();
@@ -2068,5 +2021,75 @@ class Submission extends Base
     public function getLanguage()
     {
         return $this->language;
+    }
+
+    /**
+     * Set otherPopulationGroup
+     *
+     * @param string $otherPopulationGroup
+     *
+     * @return Submission
+     */
+    public function setOtherPopulationGroup($otherPopulationGroup)
+    {
+        $this->other_population_group = $otherPopulationGroup;
+
+        return $this;
+    }
+
+    /**
+     * Get otherPopulationGroup
+     *
+     * @return string
+     */
+    public function getOtherPopulationGroup()
+    {
+        return $this->other_population_group;
+    }
+
+    /**
+     * Add populationGroup
+     *
+     * @param \Proethos2\ModelBundle\Entity\PopulationGroup $populationGroup
+     *
+     * @return Submission
+     */
+    public function addPopulationGroup(\Proethos2\ModelBundle\Entity\PopulationGroup $populationGroup)
+    {
+        $this->population_group[] = $populationGroup;
+
+        return $this;
+    }
+
+    /**
+     * Remove populationGroup
+     *
+     * @param \Proethos2\ModelBundle\Entity\PopulationGroup $populationGroup
+     */
+    public function removePopulationGroup(\Proethos2\ModelBundle\Entity\PopulationGroup $populationGroup)
+    {
+        $this->population_group->removeElement($populationGroup);
+    }
+
+    /**
+     * Get populationGroup
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPopulationGroup()
+    {
+        return $this->population_group;
+    }
+
+    public function getPopulationGroupList() {
+        $population_groups = array();
+
+        if ( $this->population_group ) {
+            foreach($this->population_group as $population_group) {
+                $population_groups[] = $population_group->getName();
+            }
+        }
+
+        return $population_groups;
     }
 }

@@ -7,4 +7,3 @@ REPLACE INTO `list_population_group` (`id`, `created`, `updated`, `name`, `slug`
 REPLACE INTO `list_population_group` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (7,'2021-07-27 16:58:42','2021-07-27 16:58:42','Men','men',1);
 REPLACE INTO `list_population_group` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (8,'2021-07-27 16:58:55','2021-07-27 16:58:55','Adolescents/Youth','adolescents-youth',1);
 REPLACE INTO `list_population_group` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (9,'2021-07-27 16:59:27','2021-07-27 16:59:27','Children','children',1);
-REPLACE INTO `list_population_group` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (10,'2021-07-27 17:00:03','2021-07-27 17:00:03','Other','other',1);

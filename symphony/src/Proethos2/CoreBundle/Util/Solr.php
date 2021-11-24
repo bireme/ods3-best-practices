@@ -1,19 +1,19 @@
 <?php
 
-// This file is part of the ProEthos Software. 
-// 
+// This file is part of the ProEthos Software.
+//
 // Copyright 2013, PAHO. All rights reserved. You can redistribute it and/or modify
 // ProEthos under the terms of the ProEthos License as published by PAHO, which
-// restricts commercial use of the Software. 
-// 
+// restricts commercial use of the Software.
+//
 // ProEthos is distributed in the hope that it will be useful, but WITHOUT ANY
 // WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
-// PARTICULAR PURPOSE. See the ProEthos License for more details. 
-// 
+// PARTICULAR PURPOSE. See the ProEthos License for more details.
+//
 // You should have received a copy of the ProEthos License along with the ProEthos
 // Software. If not, see
 // https://github.com/bireme/proethos2/blob/master/LICENSE.txt
- 
+
 
 namespace Proethos2\CoreBundle\Util;
 
@@ -30,7 +30,7 @@ class Solr {
         global $kernel;
         $em = $kernel->getContainer()->get('doctrine')->getManager();
         $trans_repository = $em->getRepository('Gedmo\\Translatable\\Entity\\Translation');
-        
+
         $submission = $protocol->getMainSubmission();
 
         $data = array();
@@ -147,17 +147,17 @@ class Solr {
         }
 
         // population group field
-        if ( $submission->getOtherPopulationGroup() ) {
-            $data['population_group'] = $submission->getOtherPopulationGroup();
-        } else {
-            $population_group = $submission->getPopulationGroup();
-            $population_group->setTranslatableLocale('en');
-            $em->refresh($population_group);
+        $population_group = $submission->getPopulationGroup();
+        $data['population_group'] = array();
+
+        foreach ($population_group as $pg) {
+            $pg->setTranslatableLocale('en');
+            $em->refresh($pg);
 
             // population group translations
-            $translations = $trans_repository->findTranslations($population_group);
+            $translations = $trans_repository->findTranslations($pg);
             $texts = array();
-            $texts['en'] = 'en^'.$population_group->getName();
+            $texts['en'] = 'en^'.$pg->getName();
             foreach(array('pt_BR', 'es_ES', 'fr_FR') as $_locale) {
                 if ( array_key_exists($_locale, $translations) ) {
                     $text = $translations[$_locale];
@@ -165,7 +165,7 @@ class Solr {
                     $texts[$_locale] = $_locale.'^'.$text['name'];
                 }
             }
-            $data['population_group'] = implode('|', $texts);
+            $data['population_group'][] = implode('|', $texts);
         }
 
         // intervention field
