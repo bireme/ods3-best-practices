@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2021-10-22T00:57:56Z" source-language="en" target-language="es_ES" datatype="plaintext" original="not.available">
+  <file date="2021-12-09T12:57:43Z" source-language="en" target-language="es_ES" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -24,23 +24,23 @@
       </trans-unit>
       <trans-unit id="669da8aff3aa4ff59f63de87673a76bb4fe7a13b" resname="A new best practice has been submitted.">
         <source>A new best practice has been submitted.</source>
-        <target>A new best practice has been submitted.</target>
+        <target>Se ha enviado una nueva buena práctica.</target>
       </trans-unit>
       <trans-unit id="0f4679c979a95b886c19fafcc73f4b7361867198" resname="A new best practice needs your analysis.">
         <source>A new best practice needs your analysis.</source>
-        <target>A new best practice needs your analysis.</target>
+        <target>Una nueva buena práctica necesita su análisis.</target>
       </trans-unit>
       <trans-unit id="fb25d175b3fc0278c66813115d356e6df18f83bd" resname="A new best practice review was submitted">
         <source>A new best practice review was submitted</source>
-        <target>A new best practice review was submitted</target>
+        <target>Se ha enviado una nueva revisión de buena práctica.</target>
       </trans-unit>
       <trans-unit id="fe1f2c4d494fc40392e39bec35686602dd971e3b" resname="A new monitoring action has been submitted.">
         <source>A new monitoring action has been submitted.</source>
-        <target>Se ha presentado una nueva acción de monitoreo</target>
+        <target>Se ha enviado una nueva acción de monitoreo.</target>
       </trans-unit>
       <trans-unit id="f8305e030f96d910b8adfa5d7f1623ea1d07b001" resname="Accept Submission">
         <source>Accept Submission</source>
-        <target>Aceptar presentación</target>
+        <target>Aceptar envío</target>
       </trans-unit>
       <trans-unit id="0182636f85cc5ca30cc8e676ea978384c7029bb8" resname="Accept as Notification">
         <source>Accept as Notification</source>
@@ -60,7 +60,7 @@
       </trans-unit>
       <trans-unit id="e58f7f889902c81b8879128fede278022f0e459c" resname="Activities">
         <source>Activities</source>
-        <target>Activities</target>
+        <target>Actividades</target>
       </trans-unit>
       <trans-unit id="81c0d915fa6d82fd30661c5e66e204cea52bb2b5" resname="Activity">
         <source>Activity</source>
@@ -68,11 +68,11 @@
       </trans-unit>
       <trans-unit id="0007bbcb150c3dd5e7be6b1cfb9b0d9c6423d79e" resname="Adaptability &amp; Replicability">
         <source><![CDATA[Adaptability & Replicability]]></source>
-        <target><![CDATA[Adaptability & Replicability]]></target>
+        <target>Aplicación y replicación</target>
       </trans-unit>
       <trans-unit id="700814821dcde8ca11faab60392c0669d2a46c8a" resname="Adaptability and Replicability">
         <source>Adaptability and Replicability</source>
-        <target>Adaptability and Replicability</target>
+        <target>Aplicación y replicación</target>
       </trans-unit>
       <trans-unit id="61cc55aa0453184734c3fa0b621eda6fa874bd83" resname="Add">
         <source>Add</source>
@@ -88,11 +88,11 @@
       </trans-unit>
       <trans-unit id="1383ee78cdff6ac039737379b3cccf430b37191e" resname="All contributions must be original. Contributors warrant that they have the necessary rights, including the necessary licenses, for the use of any copyrighted material in the submission. Furthermore, contributors warrant that all necessary permissions and consents have been obtained for all materials depicting identifiable human subjects.">
         <source>All contributions must be original. Contributors warrant that they have the necessary rights, including the necessary licenses, for the use of any copyrighted material in the submission. Furthermore, contributors warrant that all necessary permissions and consents have been obtained for all materials depicting identifiable human subjects.</source>
-        <target>All contributions must be original. Contributors warrant that they have the necessary rights, including the necessary licenses, for the use of any copyrighted material in the submission. Furthermore, contributors warrant that all necessary permissions and consents have been obtained for all materials depicting identifiable human subjects.</target>
+        <target>Todas las contribuciones deben ser originales. Los colaboradores garantizan que cuentan con los derechos, incluidas las licencias necesarias, para el uso de cualquier material que contenga derechos de autor en el envío. Además, los colaboradores garantizan que han obtenido todos los permisos y consentimientos necesarios para todos los materiales que representen a sujetos humanos identificables.</target>
       </trans-unit>
       <trans-unit id="c8f667a27fdcf4a8cfc5c2662471139f333b46fa" resname="Amendment submitted with success!">
         <source>Amendment submitted with success!</source>
-        <target>Enmienda presentada exitosamente</target>
+        <target>¡Enmienda enviada exitosamente!</target>
       </trans-unit>
       <trans-unit id="0e524de0b8226a149e73a5ad0308dee279154e71" resname="Analyze">
         <source>Analyze</source>
@@ -100,11 +100,11 @@
       </trans-unit>
       <trans-unit id="606e26f487dcd77b1abd9f7ceb09b2ad08ec86a8" resname="Analyze Best Practice">
         <source>Analyze Best Practice</source>
-        <target>Analyze Best Practice</target>
+        <target>Analizar buena práctica</target>
       </trans-unit>
       <trans-unit id="a6d7558ae5ba27352d597f8e265f726fc9947ee0" resname="Analyze best practice">
         <source>Analyze best practice</source>
-        <target>Analyze best practice</target>
+        <target>Analizar buena práctica</target>
       </trans-unit>
       <trans-unit id="a16a4eda7cb2c8e91d7edd25e809ae9d392c7498" resname="Answer">
         <source>Answer</source>
@@ -128,11 +128,11 @@
       </trans-unit>
       <trans-unit id="973ba784d9189d1b41478cd8b4d25af0d0bc85e8" resname="Any comment for the Secretariat of the Pan American Health Organization">
         <source>Any comment for the Secretariat of the Pan American Health Organization</source>
-        <target>Any comment for the Secretariat of the Pan American Health Organization</target>
+        <target>Cualquier comentario para la Secretaría de la Organización Panamericana de la Salud.</target>
       </trans-unit>
       <trans-unit id="42637da5a6d5928cf56568b0ca5e0799a79f2350" resname="Any specific population group">
         <source>Any specific population group</source>
-        <target>Any specific population group</target>
+        <target>Cualquier grupo poblacional específico</target>
       </trans-unit>
       <trans-unit id="41b81eb8db1b97e812a8fc182e3a5b3ce0f3aacb" resname="Approved">
         <source>Approved</source>
@@ -140,47 +140,47 @@
       </trans-unit>
       <trans-unit id="34aa13c4a94b2035f8e21c545051a3469b75f72e" resname="Are you sure that you want to delete this best practice?">
         <source>Are you sure that you want to delete this best practice?</source>
-        <target>Are you sure that you want to delete this best practice?</target>
+        <target>¿Está seguro de que desea eliminar esta buena práctica?</target>
       </trans-unit>
       <trans-unit id="9e4803f32f8b294ce70e2587d474369b2121e3f0" resname="Are you sure that you want to end this best practice evaluation?">
         <source>Are you sure that you want to end this best practice evaluation?</source>
-        <target>Are you sure that you want to end this best practice evaluation?</target>
+        <target>¿Está seguro de que desea finalizar la evaluación de esta buena práctica?</target>
       </trans-unit>
       <trans-unit id="82a015d57a9b653f5938e233e81618c31955e00e" resname="Are you sure that you want to end this protocol evaluation?">
         <source>Are you sure that you want to end this protocol evaluation?</source>
-        <target>¿Esta seguro que desea finalizar la evaluación de este protocolo?</target>
+        <target>¿Está seguro de que desea finalizar la evaluación de este protocolo?</target>
       </trans-unit>
       <trans-unit id="3d0e6589cf988b9b7df265be8361e1f5ee2d4692" resname="Are you sure that you want to go to the next step without any revisions?">
         <source>Are you sure that you want to go to the next step without any revisions?</source>
-        <target>¿Está seguro que desea pasar al siguiente paso sin ninguna revisión?</target>
+        <target>¿Está seguro de que desea pasar al siguiente paso sin ninguna revisión?</target>
       </trans-unit>
       <trans-unit id="dd6b9d135d02dd80558c1ab472b0b7ca16db0fd0" resname="Are you sure that you want to reject this submission?">
         <source>Are you sure that you want to reject this submission?</source>
-        <target>Are you sure that you want to reject this submission?</target>
+        <target>¿Está seguro de que desea rechazar el envío?</target>
       </trans-unit>
       <trans-unit id="129d86112d0f124b04a96f1e06036d1b66e8e4b2" resname="Are you sure that you want to remove this member?">
         <source>Are you sure that you want to remove this member?</source>
-        <target>¿Está seguro que desea remover a este miembro?</target>
+        <target>¿Está seguro de que desea remover a este miembro?</target>
       </trans-unit>
       <trans-unit id="7b1d1b51dc63b9983b7b2422b2cb96eb397ba5da" resname="Are you sure that you want to retrieve this best practice?">
         <source>Are you sure that you want to retrieve this best practice?</source>
-        <target>Are you sure that you want to retrieve this best practice?</target>
+        <target>¿Está seguro de que desea recuperar esta buena práctica?</target>
       </trans-unit>
       <trans-unit id="c065427871e41b6b6783b908973f9db65960fa60" resname="Are you sure that you want to set this best practice as Exempt?">
         <source>Are you sure that you want to set this best practice as Exempt?</source>
-        <target>Are you sure that you want to set this best practice as Exempt?</target>
+        <target>¿Está seguro de que desea establecer esta buena práctica como Exenta?</target>
       </trans-unit>
       <trans-unit id="287a62cdebe1d3d7ac46913b5cd023196a081135" resname="Are you sure that you want to withdraw this best practice?">
         <source>Are you sure that you want to withdraw this best practice?</source>
-        <target>Are you sure that you want to withdraw this best practice?</target>
+        <target>¿Está seguro de que desea retirar esta buena práctica?</target>
       </trans-unit>
       <trans-unit id="8de6e73ba7b7e7a2c5f18e2bc38d0a44a17be1d3" resname="Are you sure you want to continue?">
         <source>Are you sure you want to continue?</source>
-        <target>¿Está seguro que desea continuar?</target>
+        <target>¿Está seguro de que desea continuar?</target>
       </trans-unit>
       <trans-unit id="74292c5c3fa7f0a7edf788e12ba867ab3847a6a8" resname="Are you sure you want to remove this reviewer?">
         <source>Are you sure you want to remove this reviewer?</source>
-        <target>¿Está seguro que desea remover a este revisor?</target>
+        <target>¿Está seguro de que desea remover a este revisor?</target>
       </trans-unit>
       <trans-unit id="410bf23a3f080def9c7a976a16305bcde7943ed1" resname="Are you sure?">
         <source>Are you sure?</source>
@@ -192,11 +192,11 @@
       </trans-unit>
       <trans-unit id="6771ade6e8965a499bc298107ffb52e9a18dd7e3" resname="Attachments">
         <source>Attachments</source>
-        <target>Attachments</target>
+        <target>Archivos adjuntos</target>
       </trans-unit>
       <trans-unit id="6e89f4e5fd8a00366a1ce436153a6bcc3f939578" resname="Authentication type not valid">
         <source>Authentication type not valid</source>
-        <target>Authentication type not valid</target>
+        <target>Tipo de autenticación no válido</target>
       </trans-unit>
       <trans-unit id="5fda23d62015b99fb2a9f86b38bcdf2bdf7609c8" resname="Author">
         <source>Author</source>
@@ -208,111 +208,111 @@
       </trans-unit>
       <trans-unit id="b7b1912e68e770be70d934e37738c3ace052e09c" resname="Back to original to save and finish">
         <source>Back to original to save and finish</source>
-        <target>¿Volver al original para guardar y terminar?</target>
+        <target>Volver al original para guardar y finalizar</target>
       </trans-unit>
       <trans-unit id="b0d5be39ae3904e3170e3f4b8d82f80ea03213d3" resname="Basic Information">
         <source>Basic Information</source>
-        <target>Basic Information</target>
+        <target>Información básica</target>
       </trans-unit>
       <trans-unit id="d8cb09e158212bf209b199530d94686ab9de6f8c" resname="Best Practice">
         <source>Best Practice</source>
-        <target>Best Practice</target>
+        <target>Buena práctica</target>
       </trans-unit>
       <trans-unit id="8ba4172c096a23d336cb0b1c7e7d1697503ab6f2" resname="Best Practice Code">
         <source>Best Practice Code</source>
-        <target>Best Practice Code</target>
+        <target>Código de la buena práctica</target>
       </trans-unit>
       <trans-unit id="8f69732ee2bfd66d19acfaef00f0c357582e802d" resname="Best Practice Entities">
         <source>Best Practice Entities</source>
-        <target>Best Practice Entities</target>
+        <target>Entidades de la buena práctica</target>
       </trans-unit>
       <trans-unit id="1221306f768463dbf8b93d6a0842f8668c68634c" resname="Best Practice Roles">
         <source>Best Practice Roles</source>
-        <target>Best Practice Roles</target>
+        <target>Roles en la buena práctica</target>
       </trans-unit>
       <trans-unit id="92b05230bc81530aad035ac715cd4ade281f6d73" resname="Best Practice Title">
         <source>Best Practice Title</source>
-        <target>Best Practice Title</target>
+        <target>Título de la buena práctica</target>
       </trans-unit>
       <trans-unit id="0b60066c9338da5388db51bac7ac4c46012852f5" resname="Best Practice Type">
         <source>Best Practice Type</source>
-        <target>Best Practice Type</target>
+        <target>Tipo de buena práctica</target>
       </trans-unit>
       <trans-unit id="dc0926f675bdf52a0855c8622482476ea0358c1c" resname="Best Practice Types">
         <source>Best Practice Types</source>
-        <target>Best Practice Types</target>
+        <target>Tipos de buena práctica</target>
       </trans-unit>
       <trans-unit id="aedf7a1635bb4e0367005e7d924e291b989b1e97" resname="Best Practice options">
         <source>Best Practice options</source>
-        <target>Best Practice options</target>
+        <target>Opciones de la buena práctica</target>
       </trans-unit>
       <trans-unit id="36de90e22d47f94d755a4b1bb70aaddc1bb47593" resname="Best Practices">
         <source>Best Practices</source>
-        <target>Best Practices</target>
+        <target>Buenas prácticas</target>
       </trans-unit>
       <trans-unit id="1d0f623140067265033491d9a5de850affbd3159" resname="Best practice accepted for review by %user% and investigators notified.">
         <source>Best practice accepted for review by %user% and investigators notified.</source>
-        <target>Best practice accepted for review by %user% and investigators notified.</target>
+        <target>Buena práctica aceptada para revisión por %user%. Los investigadores han sido notificados.</target>
       </trans-unit>
       <trans-unit id="b7e00139843cc412e84e3027d051454e8ee4d063" resname="Best practice finalized by %user% under option &quot;%option%&quot;.">
         <source>Best practice finalized by %user% under option "%option%".</source>
-        <target>Best practice finalized by %user% under option "%option%".</target>
+        <target>Buena práctica finalizada por %user% bajo la opción "%option%".</target>
       </trans-unit>
       <trans-unit id="49cf8616e3fb7c12bba970bbf0ba4516411fe460" resname="Best practice rejected with success!">
         <source>Best practice rejected with success!</source>
-        <target>Best practice rejected with success!</target>
+        <target>Buena práctica rechazada exitosamente.</target>
       </trans-unit>
       <trans-unit id="813d5749c6e202383632da553fd1d2e4542ff264" resname="Best practice status has been modified.">
         <source>Best practice status has been modified.</source>
-        <target>Best practice status has been modified.</target>
+        <target>El estado de la buena práctica ha sido modificado.</target>
       </trans-unit>
       <trans-unit id="4aecca2b4fec9f6d7b323a95dc01399e31c12315" resname="Best practice status modified by %user%.">
         <source>Best practice status modified by %user%.</source>
-        <target>Best practice status modified by %user%.</target>
+        <target>Estado de la buena práctica modificado por %user%.</target>
       </trans-unit>
       <trans-unit id="04710d796296b52b915d66bfc1703210cfb70b0b" resname="Best practice submitted with success!">
         <source>Best practice submitted with success!</source>
-        <target>Best practice submitted with success!</target>
+        <target>Buena práctica enviada exitosamente.</target>
       </trans-unit>
       <trans-unit id="9034bdeb699649396b3d09f711532e8c2cc136cf" resname="Best practice updated with success!">
         <source>Best practice updated with success!</source>
-        <target>Best practice updated with success!</target>
+        <target>Buena práctica actualizada exitosamente.</target>
       </trans-unit>
       <trans-unit id="629d83bbec827d6048b3161ccc3c5b399c8a6328" resname="Best practice was concluded as Exempt.">
         <source>Best practice was concluded as Exempt.</source>
-        <target>Best practice was concluded as Exempt.</target>
+        <target>Buena práctica finalizada como Exenta.</target>
       </trans-unit>
       <trans-unit id="d85efdbeb2cef126c04f1f8389f7d97c12edb7c9" resname="Best practice was finalized with success!">
         <source>Best practice was finalized with success!</source>
-        <target>Best practice was finalized with success!</target>
+        <target>Buena práctica finalizada exitosamente.</target>
       </trans-unit>
       <trans-unit id="1f8d15fb786fb9d5d2432c6bd91adb13205668e3" resname="Best practice was rejected by %user% with this justification &quot;%justify%&quot;.">
         <source>Best practice was rejected by %user% with this justification "%justify%".</source>
-        <target>Best practice was rejected by %user% with this justification "%justify%".</target>
+        <target>Buena práctica rechazada por %user% con la justificación "%justify%".</target>
       </trans-unit>
       <trans-unit id="6333568eb51f6b87298cdff61d6d8ea9fd67c07a" resname="Best practice was removed with success!">
         <source>Best practice was removed with success!</source>
-        <target>Best practice was removed with success!</target>
+        <target>Buena práctica eliminada exitosamente.</target>
       </trans-unit>
       <trans-unit id="a47b3ccc3258837a5779b3ab973f887bbaf74e7a" resname="Best practice was sent to comittee for initial analysis by %user%.">
         <source>Best practice was sent to comittee for initial analysis by %user%.</source>
-        <target>Best practice was sent to comittee for initial analysis by %user%.</target>
+        <target>Buena práctica enviada al comité para análisis preliminar por %user%.</target>
       </trans-unit>
       <trans-unit id="34748fd115780943acf491b51433c429e5545276" resname="Brief Introduction">
         <source>Brief Introduction</source>
-        <target>Brief Introduction</target>
+        <target>Breve introducción</target>
       </trans-unit>
       <trans-unit id="ae4093c5963b70a69b74ca82666b417cd4ade537" resname="By submitting a contribution, contributors grant PAHO and related partners a free perpetual non-exclusive license to use, edit and publish the contribution for noncommercial purposes.">
         <source>By submitting a contribution, contributors grant PAHO and related partners a free perpetual non-exclusive license to use, edit and publish the contribution for noncommercial purposes.</source>
-        <target>By submitting a contribution, contributors grant PAHO and related partners a free perpetual non-exclusive license to use, edit and publish the contribution for noncommercial purposes.</target>
+        <target>Al enviar una contribución, usted otorga a la OPS y a socios relacionados una licencia gratuita, perpetua y no exclusiva para usar, editar y publicar la contribución con fines no comerciales.</target>
       </trans-unit>
       <trans-unit id="2f790fc25087685b09605ffe432f64c7b2300ee8" resname="By submitting this contribution, contributors confirm that they have read, understood, and accepted these conditions.">
         <source>By submitting this contribution, contributors confirm that they have read, understood, and accepted these conditions.</source>
-        <target>By submitting this contribution, contributors confirm that they have read, understood, and accepted these conditions.</target>
+        <target>Al enviar esta contribución, usted confirma que ha leído, entendido y aceptado estas condiciones.</target>
       </trans-unit>
       <trans-unit id="de3b994d22deb924dfef0da44d5ab981fccb8f0d" resname="CSRF token not valid">
         <source>CSRF token not valid</source>
-        <target>CSRF token not valid</target>
+        <target>Token CSRF no válido.</target>
       </trans-unit>
       <trans-unit id="77dfd2135f4db726c47299bb55be26f7f4525a46" resname="Cancel">
         <source>Cancel</source>
@@ -320,11 +320,11 @@
       </trans-unit>
       <trans-unit id="7422e12309795a571d83e7f9ddfb1cac4f6f1d22" resname="Catalytic Role">
         <source>Catalytic Role</source>
-        <target>Catalytic Role</target>
+        <target>Rol catalizador</target>
       </trans-unit>
       <trans-unit id="ef2024f56242daf1b5f9c4407050f39dc2e999c5" resname="Challenges Information">
         <source>Challenges Information</source>
-        <target>Challenges Information</target>
+        <target>Información sobre desafíos</target>
       </trans-unit>
       <trans-unit id="28470c0b8f4ee501e5f9def0b06aa336ee72886e" resname="Change My Password">
         <source>Change My Password</source>
@@ -344,7 +344,7 @@
       </trans-unit>
       <trans-unit id="465a9db729818b213bb949672ba46a45241cebff" resname="Choose one of the following...">
         <source>Choose one of the following...</source>
-        <target>Choose one of the following...</target>
+        <target>Elija uno de los siguientes...</target>
       </trans-unit>
       <trans-unit id="802718b260cba37555c0799ad7c73f3a3bcd15df" resname="Choose reviewers">
         <source>Choose reviewers</source>
@@ -368,7 +368,7 @@
       </trans-unit>
       <trans-unit id="a91012d2bc0e6b884a40d22f02f6e2dc8e01a150" resname="Comment was created with sucess.">
         <source>Comment was created with sucess.</source>
-        <target>Comentario creado exitosamente</target>
+        <target>Comentario creado exitosamente.</target>
       </trans-unit>
       <trans-unit id="fce06e20e5f7f74aacccab40b59b75a56c8f7305" resname="Comments">
         <source>Comments</source>
@@ -376,7 +376,7 @@
       </trans-unit>
       <trans-unit id="73b865787eb4d202e61bfe91ffdc0ac8a5f7b175" resname="Comments for PAHO">
         <source>Comments for PAHO</source>
-        <target>Comments for PAHO</target>
+        <target>Comentarios para la OPS</target>
       </trans-unit>
       <trans-unit id="f43dba5677dfd5e3e6793095b56bfab6f533b68f" resname="Committee">
         <source>Committee</source>
@@ -384,15 +384,15 @@
       </trans-unit>
       <trans-unit id="4c5fc09da89297883dd5bec04bb40aef96b22971" resname="Committee Screening">
         <source>Committee Screening</source>
-        <target>Revisión inicial del comité</target>
+        <target>Evaluación del comité</target>
       </trans-unit>
       <trans-unit id="e39262defe80a83fac1b793497417432c8b1a879" resname="Conclusion">
         <source>Conclusion</source>
-        <target>Conclusion</target>
+        <target>Conclusión</target>
       </trans-unit>
       <trans-unit id="fe94b8af05dd4894d73db1b0d03998be2568e24c" resname="Configuration updated with success.">
         <source>Configuration updated with success.</source>
-        <target>Configuración actualizada exitosamente</target>
+        <target>Configuración actualizada exitosamente.</target>
       </trans-unit>
       <trans-unit id="145ed2984d4b8f8b13f15846f7f3a1a3ec7d1be2" resname="Configurations">
         <source>Configurations</source>
@@ -420,7 +420,7 @@
       </trans-unit>
       <trans-unit id="210a39e4784afc8e24d9a33930a903c63ed1c22f" resname="Contacts updated with success.">
         <source>Contacts updated with success.</source>
-        <target>Contacts updated with success.</target>
+        <target>Contactos actualizados exitosamente.</target>
       </trans-unit>
       <trans-unit id="4f9be057f0ea5d2ba72fd2c810e8d7b9aa98b469" resname="Content">
         <source>Content</source>
@@ -428,7 +428,7 @@
       </trans-unit>
       <trans-unit id="5ce5873edb578221b4a6880fd3d605b63da91d7e" resname="Contributors agree to identify, defend, and hold PAHO and related partners harmless from any actions or claims brought against them pertaining to the alleged infringement arising in connection with the contribution.">
         <source>Contributors agree to identify, defend, and hold PAHO and related partners harmless from any actions or claims brought against them pertaining to the alleged infringement arising in connection with the contribution.</source>
-        <target>Contributors agree to identify, defend, and hold PAHO and related partners harmless from any actions or claims brought against them pertaining to the alleged infringement arising in connection with the contribution.</target>
+        <target>Los colaboradores están de acuerdo en identificar, defender y eximir a la OPS y socios relacionados de cualquier acción o reclamo que pueda presentarse en su contra si llegara a surgir alguna infracción derivada de la contribución.</target>
       </trans-unit>
       <trans-unit id="c63d7dc26fc32ada5170c80598c4c75aefdcc105" resname="Controlled Lists">
         <source>Controlled Lists</source>
@@ -436,11 +436,11 @@
       </trans-unit>
       <trans-unit id="c3041c97d5858cc44b6c247f11607669a0ec010a" resname="Could these successful BP be demonstrated in other contexts">
         <source>Could these successful BP be demonstrated in other contexts</source>
-        <target>Could these successful BP be demonstrated in other contexts</target>
+        <target>¿Podría demostrar estas buenas prácticas en otros contextos?</target>
       </trans-unit>
       <trans-unit id="8a8a5babf4649d70c303eed31a0e144e4fc47302" resname="Counterpart">
         <source>Counterpart</source>
-        <target>Counterpart</target>
+        <target>Contrapartes</target>
       </trans-unit>
       <trans-unit id="d523ebbd10146cdfd39dee077f04c9d08468d0bc" resname="Country">
         <source>Country</source>
@@ -448,19 +448,19 @@
       </trans-unit>
       <trans-unit id="e56694782cf57703b66419839c5705c77cec6cf8" resname="Country code already registered">
         <source>Country code already registered</source>
-        <target>Country code already registered</target>
+        <target>Código de país ya registrado</target>
       </trans-unit>
       <trans-unit id="20dcc2dc53cf3681af374ce5fcd83e077ae3559d" resname="Country/Territory">
         <source>Country/Territory</source>
-        <target>Country/Territory</target>
+        <target>País/territorio</target>
       </trans-unit>
       <trans-unit id="2e1b3f94a68dd44f1fb789b7d36105a2098bcf98" resname="Country/Territory receiving the cooperation">
         <source>Country/Territory receiving the cooperation</source>
-        <target>Country/Territory receiving the cooperation</target>
+        <target>País/territorio que recibe la cooperación</target>
       </trans-unit>
       <trans-unit id="34739fc8d0812e43624f37810a42e4c499b761e9" resname="Country/Territory receiving/providing the cooperation">
         <source>Country/Territory receiving/providing the cooperation</source>
-        <target>Country/Territory receiving/providing the cooperation</target>
+        <target>País/territorio que recibe/provee la cooperación</target>
       </trans-unit>
       <trans-unit id="a18c88be99735cca7be4fbae031e40387c909692" resname="Create PDF">
         <source>Create PDF</source>
@@ -468,7 +468,7 @@
       </trans-unit>
       <trans-unit id="446ee714891ab85c5e9451271539e1f7ca59c8e3" resname="Create Report">
         <source>Create Report</source>
-        <target>Create Report</target>
+        <target>Crear reporte</target>
       </trans-unit>
       <trans-unit id="3f4f547d73646d774e8f690b36333e8c9572894b" resname="Create an account">
         <source>Create an account</source>
@@ -488,7 +488,7 @@
       </trans-unit>
       <trans-unit id="62806858cd95f62e1c4e2bd6a2e8e23bd0bb2984" resname="Cross Cutting Approach">
         <source>Cross Cutting Approach</source>
-        <target>Cross Cutting Approach</target>
+        <target>Enfoque transversal</target>
       </trans-unit>
       <trans-unit id="e070de224434a2acd352b35cec46f34f9e08e1b2" resname="Currency">
         <source>Currency</source>
@@ -524,11 +524,11 @@
       </trans-unit>
       <trans-unit id="4b6346c43f02f1557a8c2662912ec55ad54a3db0" resname="Delete Activity">
         <source>Delete Activity</source>
-        <target>Delete Activity</target>
+        <target>Eliminar actividad</target>
       </trans-unit>
       <trans-unit id="379c5c481322f95beecbb9a492c7a58c94d7a9e4" resname="Delete Attachment">
         <source>Delete Attachment</source>
-        <target>Eliminar adjunto</target>
+        <target>Eliminar archivo adjunto</target>
       </trans-unit>
       <trans-unit id="ff420b1aaf835a138e71ff3ea0366de04bfbc587" resname="Delete Document">
         <source>Delete Document</source>
@@ -548,7 +548,7 @@
       </trans-unit>
       <trans-unit id="dc23bac92fd631f9d45e31be0488c8d2e4a036b4" resname="Delete this best practice">
         <source>Delete this best practice</source>
-        <target>Delete this best practice</target>
+        <target>Eliminar esta buena práctica</target>
       </trans-unit>
       <trans-unit id="55f8ebc805e65b5b71ddafdae390e3be2bcd69af" resname="Description">
         <source>Description</source>
@@ -556,35 +556,35 @@
       </trans-unit>
       <trans-unit id="b5bce527d62efe22daa1b44d58fbb7a63205d459" resname="Description in English">
         <source>Description in English</source>
-        <target>Description in English</target>
+        <target>Descripción en inglés</target>
       </trans-unit>
       <trans-unit id="57e2ec6d82b7280a245b907da05ff9a41175afea" resname="Description in French">
         <source>Description in French</source>
-        <target>Description in French</target>
+        <target>Descripción en francés</target>
       </trans-unit>
       <trans-unit id="d7cc2ebc013edff660bb7e782e237ba5a8752727" resname="Description in Portuguese">
         <source>Description in Portuguese</source>
-        <target>Description in Portuguese</target>
+        <target>Descripción en portugués</target>
       </trans-unit>
       <trans-unit id="508d877710ccfcc5225e8ced5d46fb25dfa63fa2" resname="Description in Spanish">
         <source>Description in Spanish</source>
-        <target>Description in Spanish</target>
+        <target>Descripción en español</target>
       </trans-unit>
       <trans-unit id="c14bcb61daff86c092aaca32637236471f31ce12" resname="Did it contribute to strengthen the health system, the achievement of PAHO SP 20-25 and SHAA 2030">
         <source>Did it contribute to strengthen the health system, the achievement of PAHO SP 20-25 and SHAA 2030</source>
-        <target>Did it contribute to strengthen the health system, the achievement of PAHO SP 20-25 and SHAA 2030</target>
+        <target>¿Contribuyó al fortalecimiento del sistema de salud y a la ejecución del Plan Estratégico de la OPS 2020-2025 y de SHAA 2030?</target>
       </trans-unit>
       <trans-unit id="961f36de4c326fdd7cb4cc66ab04a5bd2188e0c3" resname="Do you confirm the exclusion of this attachment?">
         <source>Do you confirm the exclusion of this attachment?</source>
-        <target>¿Confirma la exclusión de este adjunto?</target>
+        <target>¿Confirma la exclusión de este archivo adjunto?</target>
       </trans-unit>
       <trans-unit id="1ba3f7b24b33d4429e8627ee88886fafbcf3a27e" resname="Document deleted with success.">
         <source>Document deleted with success.</source>
-        <target>Documento eliminado exitosamente</target>
+        <target>Documento eliminado exitosamente.</target>
       </trans-unit>
       <trans-unit id="f683c3602f8770569d6651cb4518e4a6cdd9f202" resname="Document updated with success.">
         <source>Document updated with success.</source>
-        <target>Documento actualizado exitosamente</target>
+        <target>Documento actualizado exitosamente.</target>
       </trans-unit>
       <trans-unit id="687c82861c956e47456186f6522cfc8dbadb8ef6" resname="Documents">
         <source>Documents</source>
@@ -592,7 +592,7 @@
       </trans-unit>
       <trans-unit id="49e9d459d43aba2f8f42b0c866b0932fd1513b3b" resname="Does the development of this BP have adaptability and replicability potential">
         <source>Does the development of this BP have adaptability and replicability potential</source>
-        <target>Does the development of this BP have adaptability and replicability potential</target>
+        <target>¿El desarrollo de esta buena práctica tiene potencial de adaptación y replicación?</target>
       </trans-unit>
       <trans-unit id="23d33e22acfcb9ecddb4a85f10607dc4ff49e23c" resname="Draft">
         <source>Draft</source>
@@ -600,11 +600,11 @@
       </trans-unit>
       <trans-unit id="cacd05fb0a808efa582e9264c3c8b99054426d8e" resname="Draft Opinion">
         <source>Draft Opinion</source>
-        <target>Opinion en borrador</target>
+        <target>Opinión en borrador</target>
       </trans-unit>
       <trans-unit id="0d01e2e86669e98441ab4dce5520696c318b7098" resname="E-mail">
         <source>E-mail</source>
-        <target>E-mail</target>
+        <target>Correo electrónico</target>
       </trans-unit>
       <trans-unit id="4d32f9f7a82dd68da666475cd6c1355d1220879b" resname="Edit roles">
         <source>Edit roles</source>
@@ -620,35 +620,35 @@
       </trans-unit>
       <trans-unit id="d70b3ea3e84b4f8448caec39d2a35bd566fd9a1b" resname="Effectiveness &amp; Efficiency">
         <source><![CDATA[Effectiveness & Efficiency]]></source>
-        <target><![CDATA[Effectiveness & Efficiency]]></target>
+        <target>Efectividad y eficiencia</target>
       </trans-unit>
       <trans-unit id="306ef6ab00e51c04ff850304467a14691bc859d9" resname="Effectiveness / Efficiency / Adaptability / Replicability">
         <source>Effectiveness / Efficiency / Adaptability / Replicability</source>
-        <target>Effectiveness / Efficiency / Adaptability / Replicability</target>
+        <target>Efectividad / eficiencia / adaptación / replicación</target>
       </trans-unit>
       <trans-unit id="84add5b2952787581cb9a8851eef63d1ec75d22b" resname="Email">
         <source>Email</source>
-        <target>E-mail</target>
+        <target>Correo electrónico</target>
       </trans-unit>
       <trans-unit id="384e05cd4ae1fdea062631985ba89e818de0c74c" resname="Email already registered">
         <source>Email already registered</source>
-        <target>Email already registered</target>
+        <target>Correo electrónico ya registrado.</target>
       </trans-unit>
       <trans-unit id="362d89094c1e98ea30a0aa49c2156a209d863afe" resname="Email already registered in platform.">
         <source>Email already registered in platform.</source>
-        <target>Email already registered in platform.</target>
+        <target>Correo electrónico ya registrado en la plataforma.</target>
       </trans-unit>
       <trans-unit id="74b613213d25264324d85f0a3f84765ad3a37e4c" resname="Email not registered in platform.">
         <source>Email not registered in platform.</source>
-        <target>E-mail no registrado en la plataforma</target>
+        <target>Correo electrónico no registrado en la plataforma.</target>
       </trans-unit>
       <trans-unit id="e7a44d54f45b2ea0dd355b192f1342b5dc3cd652" resname="Enabling Factors and Restrictions">
         <source>Enabling Factors and Restrictions</source>
-        <target>Enabling Factors and Restrictions</target>
+        <target>Factores habilitadores y restricciones</target>
       </trans-unit>
       <trans-unit id="84b1478125890bad1cc4b36d6d3781773b3fde5a" resname="End Date">
         <source>End Date</source>
-        <target>End Date</target>
+        <target>Fecha de finalización</target>
       </trans-unit>
       <trans-unit id="e55d313325bffb54c173c2b24b2c71a494954346" resname="End Review">
         <source>End Review</source>
@@ -656,15 +656,15 @@
       </trans-unit>
       <trans-unit id="a8ed1bccc727585042055883b479665616c35d7a" resname="End best practice review">
         <source>End best practice review</source>
-        <target>End best practice review</target>
+        <target>Finalizar revisión de buena práctica</target>
       </trans-unit>
       <trans-unit id="9a9a2120f83b9825c6e620b55639ee6d880797e6" resname="Engagement Information">
         <source>Engagement Information</source>
-        <target>Engagement Information</target>
+        <target>Información del compromiso</target>
       </trans-unit>
       <trans-unit id="94e48ae09f8d82186d2d3b019cb35756b1c41b68" resname="Engagement with the Priorities Organization's Cross-Cutting Themes">
         <source>Engagement with the Priorities Organization's Cross-Cutting Themes</source>
-        <target>Engagement with the Priorities Organization's Cross-Cutting Themes</target>
+        <target>Compromiso con las prioridades transversales de la Organización</target>
       </trans-unit>
       <trans-unit id="649df08a448ee3fa90f3746baaf6b0907df42c91" resname="English">
         <source>English</source>
@@ -676,19 +676,19 @@
       </trans-unit>
       <trans-unit id="a166815f9de31e89ef2508f1f0e36d9df260fd98" resname="Enter registered email">
         <source>Enter registered email</source>
-        <target>Ingrese e-mail registrado</target>
+        <target>Ingrese correo electrónico registrado</target>
       </trans-unit>
       <trans-unit id="c7fb3177257942197ffaf1f26b2e8b00b4f667b2" resname="Entity">
         <source>Entity</source>
-        <target>Entity</target>
+        <target>Entidad</target>
       </trans-unit>
       <trans-unit id="ee648d224e61b29ba04e7ecb587976ad9ede6d24" resname="Entity (PAHO)">
         <source>Entity (PAHO)</source>
-        <target>Entity (PAHO)</target>
+        <target>Entidad (OPS)</target>
       </trans-unit>
       <trans-unit id="de84c6a03697e058ca921b8cc68aefced20e72b4" resname="Estimated date of initial recruitment">
         <source>Estimated date of initial recruitment</source>
-        <target>Fecha estimada de inicio del reclutamiento</target>
+        <target>Fecha estimada para el inicio del reclutamiento</target>
       </trans-unit>
       <trans-unit id="67690c75c03cd0e07da2b8ad46be269eb2c39a62" resname="Exclude user">
         <source>Exclude user</source>
@@ -716,55 +716,55 @@
       </trans-unit>
       <trans-unit id="29edab558d15607b66e55efa5a814497a53ee8c9" resname="Field '%field%' is required.">
         <source>Field '%field%' is required.</source>
-        <target>El campo "%field%"es requerido</target>
+        <target>El campo "%field%"es requerido.</target>
       </trans-unit>
       <trans-unit id="197b6c42e9671e1abdb4f7603440a85d4e7a6c0f" resname="Field 'file' is required.">
         <source>Field 'file' is required.</source>
-        <target>El campo "archivo" es requerido</target>
+        <target>El campo "archivo" es requerido.</target>
       </trans-unit>
       <trans-unit id="269730af8d96cb165bdc6273f2f9c2457f2e4b2c" resname="Field 'new-atachment-type' is required.">
         <source>Field 'new-atachment-type' is required.</source>
-        <target>El campo "nuevo tipo de adjunto" es requerido</target>
+        <target>El campo "nuevo tipo de archivo adjunto" es requerido.</target>
       </trans-unit>
       <trans-unit id="e8b685271238adf161cffed3c91f54d97023262b" resname="Fields">
         <source>Fields</source>
-        <target>Fields</target>
+        <target>Campos</target>
       </trans-unit>
       <trans-unit id="c9ea0663c137973c825c818a01d2cff964bedd61" resname="Fields answered with success!">
         <source>Fields answered with success!</source>
-        <target>Campos respondidos exitosamente</target>
+        <target>Campos respondidos exitosamente.</target>
       </trans-unit>
       <trans-unit id="86c8dc33250a9cfdbb164a6b52e2712adf345c87" resname="Fifth step saved with success.">
         <source>Fifth step saved with success.</source>
-        <target>Fifth step saved with success.</target>
+        <target>Quinto paso guardado exitosamente.</target>
       </trans-unit>
       <trans-unit id="2c3cafa4db3f3e1e51b3dff4303502dbe42b7a89" resname="File">
         <source>File</source>
-        <target>Archivo</target>
+        <target>Documento</target>
       </trans-unit>
       <trans-unit id="0c5472914bcf454c54852dc5ee8c21edcb5267e2" resname="File extension not allowed">
         <source>File extension not allowed</source>
-        <target>File extension not allowed</target>
+        <target>Extensión de archivo no permitida.</target>
       </trans-unit>
       <trans-unit id="09979a78c9954035af250cb7f4619ed9d606f0ef" resname="File name">
         <source>File name</source>
-        <target>Nombre de archivo</target>
+        <target>Nombre de documento</target>
       </trans-unit>
       <trans-unit id="2250a0bb9f850e4cafc7d8be703e99cb9a1ea76a" resname="File removed with sucess.">
         <source>File removed with sucess.</source>
-        <target>Archivo eliminado exitosamente</target>
+        <target>Documento eliminado exitosamente.</target>
       </trans-unit>
       <trans-unit id="014776fef86e430eda7cf9fc73a0619d4870f73e" resname="File submission">
         <source>File submission</source>
-        <target>Presentación de archivo</target>
+        <target>Envío de documento</target>
       </trans-unit>
       <trans-unit id="647519f4a3c1523cb00f8ce1fa2221e927a5c4f0" resname="File uploaded with success.">
         <source>File uploaded with success.</source>
-        <target>File uploaded with success.</target>
+        <target>Documento cargado exitosamente.</target>
       </trans-unit>
       <trans-unit id="db5c22087ee09cabed1cc8ecd52b217f72cf2781" resname="File uploaded with sucess.">
         <source>File uploaded with sucess.</source>
-        <target>Archivo subido exitosamente</target>
+        <target>Documento cargado exitosamente.</target>
       </trans-unit>
       <trans-unit id="a9660077b2bf17b83d5eb8b6dcc2a608c2102572" resname="Final Revision">
         <source>Final Revision</source>
@@ -772,7 +772,7 @@
       </trans-unit>
       <trans-unit id="60487a353f0b064f6b068021a9b346a0031ca213" resname="Find best practices">
         <source>Find best practices</source>
-        <target>Find best practices</target>
+        <target>Encontrar buenas prácticas</target>
       </trans-unit>
       <trans-unit id="0b2524216fdd23203c0429eb00e528a14e18fdfc" resname="First Author">
         <source>First Author</source>
@@ -780,7 +780,7 @@
       </trans-unit>
       <trans-unit id="e6aa62241a28ff638a1f8e537203ff4d5f651876" resname="First step saved with success.">
         <source>First step saved with success.</source>
-        <target>First step saved with success.</target>
+        <target>Primer paso guardado exitosamente.</target>
       </trans-unit>
       <trans-unit id="ac5a8da5a06d99f0081933da88851572f26389a9" resname="Forgot My Password">
         <source>Forgot My Password</source>
@@ -792,7 +792,7 @@
       </trans-unit>
       <trans-unit id="e43268269e7edeb3cfcac1024e0ff4c1cb9363a6" resname="Fourth step saved with success.">
         <source>Fourth step saved with success.</source>
-        <target>Fourth step saved with success.</target>
+        <target>Cuarto paso guardado exitosamente.</target>
       </trans-unit>
       <trans-unit id="44389f6a466eaabf5c1db729e369511134e2b03b" resname="French">
         <source>French</source>
@@ -820,11 +820,11 @@
       </trans-unit>
       <trans-unit id="9d8ba69ea37ad3dd3008e8b89eb6046f51780130" resname="Have an error with captcha. Please try again.">
         <source>Have an error with captcha. Please try again.</source>
-        <target>Hay un error con captcha. Por favor trate nuevamente</target>
+        <target>Hay un error con captcha. Por favor intente nuevamente.</target>
       </trans-unit>
       <trans-unit id="a2e4890f2aec3e7441a50d279b43bd4129eb26eb" resname="Health System Contribution">
         <source>Health System Contribution</source>
-        <target>Health System Contribution</target>
+        <target>Contribución del Sistema de Salud</target>
       </trans-unit>
       <trans-unit id="c47ae15370cfe1ed2781eedc1dc2547d12d9e972" resname="Help">
         <source>Help</source>
@@ -844,27 +844,27 @@
       </trans-unit>
       <trans-unit id="6a151a67b752846da1ab12e8e274cba5d6ec978c" resname="I agree">
         <source>I agree</source>
-        <target>I agree</target>
+        <target>Estoy de acuerdo</target>
       </trans-unit>
       <trans-unit id="1ef32f06f0721d026545a2bf2b164efbd5064b88" resname="I agree with the">
         <source>I agree with the</source>
-        <target>I agree with the</target>
+        <target>Estoy de acuerdo con</target>
       </trans-unit>
       <trans-unit id="898f163d287922a3bb76998856c38620f1f408fc" resname="I can't say">
         <source>I can't say</source>
-        <target>I can't say</target>
+        <target>No sabría decir</target>
       </trans-unit>
       <trans-unit id="6ad8cb8f4e89a719b732419a8866326be4a144ef" resname="I disagree">
         <source>I disagree</source>
-        <target>I disagree</target>
+        <target>Estoy en desacuerdo</target>
       </trans-unit>
       <trans-unit id="5d083b642ce88692fb524754d18c998132610c34" resname="I fully agree">
         <source>I fully agree</source>
-        <target>I fully agree</target>
+        <target>Estoy totalmente de acuerdo</target>
       </trans-unit>
       <trans-unit id="81a40662972a560a6ecf31c6d8f1d4baf4832d9c" resname="I totally disagree">
         <source>I totally disagree</source>
-        <target>I totally disagree</target>
+        <target>Estoy totalmente en desacuerdo</target>
       </trans-unit>
       <trans-unit id="89f89c02cf47e091e726a4e07b88af0966806897" resname="ID">
         <source>ID</source>
@@ -876,35 +876,35 @@
       </trans-unit>
       <trans-unit id="8781d615fd77be9578225c40ac67b9471394cced" resname="Implementation">
         <source>Implementation</source>
-        <target>Implementation</target>
+        <target>Implementación</target>
       </trans-unit>
       <trans-unit id="b0453528ac235311f4feb6e1a660c459b118b8b3" resname="Implementation/Activities">
         <source>Implementation/Activities</source>
-        <target>Implementation/Activities</target>
+        <target>Implementación/actividades</target>
       </trans-unit>
       <trans-unit id="4c05835cf89afee841c2033dbc84eb128aafbb79" resname="In your opinion, PAHO played a catalytic role on the added value of Technical Cooperation">
         <source>In your opinion, PAHO played a catalytic role on the added value of Technical Cooperation</source>
-        <target>In your opinion, PAHO played a catalytic role on the added value of Technical Cooperation</target>
+        <target>En su opinión, ¿la OPS jugó un rol catalizador sobre el valor agregado de la Cooperación Técnica?</target>
       </trans-unit>
       <trans-unit id="9898a929c3693b2bf954cf6a828ff25cbeb70622" resname="In your opinion, PAHO played a neutral role in negotiations">
         <source>In your opinion, PAHO played a neutral role in negotiations</source>
-        <target>In your opinion, PAHO played a neutral role in negotiations</target>
+        <target>En su opinión, ¿la OPS jugó un rol neutral en las negociaciones?</target>
       </trans-unit>
       <trans-unit id="1035bc7755a2bc4db9b7d5b570d5e51ca2fd242b" resname="In your opinion, PAHO's Technical Cooperation was planned considering the cross-cutting approach (human rights, gender, ethnicity and race)">
         <source>In your opinion, PAHO's Technical Cooperation was planned considering the cross-cutting approach (human rights, gender, ethnicity and race)</source>
-        <target>In your opinion, PAHO's Technical Cooperation was planned considering the cross-cutting approach (human rights, gender, ethnicity and race)</target>
+        <target>En su opinión, ¿la Cooperación Técnica de la OPS fue planeada considerando un enfoque transversal (derechos humanos, género, etnicidad y raza)?</target>
       </trans-unit>
       <trans-unit id="1c9d3be359166a4a6ebcdddc7205d25945ea0c25" resname="In your opinion, the counterpart(s) recognized PAHO's Technical Cooperation">
         <source>In your opinion, the counterpart(s) recognized PAHO's Technical Cooperation</source>
-        <target>In your opinion, the counterpart(s) recognized PAHO's Technical Cooperation</target>
+        <target>En su opinión, ¿las contrapartes reconocieron la Cooperación Técnica de la OPS?</target>
       </trans-unit>
       <trans-unit id="91df7435c710a06415733c7c09fcf4cf2eed766d" resname="In your opinion, the resources assigned to the accomplishment of this Best Practice (financial, technological and/or manpower) were implement in an efficient way">
         <source>In your opinion, the resources assigned to the accomplishment of this Best Practice (financial, technological and/or manpower) were implement in an efficient way</source>
-        <target>In your opinion, the resources assigned to the accomplishment of this Best Practice (financial, technological and/or manpower) were implement in an efficient way</target>
+        <target>En su opinión, ¿los recursos asignados al logro de esta buena práctica (financieros, tecnológicos y/o recursos humanos) fueron implementados en una forma eficiente?</target>
       </trans-unit>
       <trans-unit id="013dcdb66b14b0fbb2f5393c8f52a72509f21819" resname="Inactive account. Please try again later.">
         <source>Inactive account. Please try again later.</source>
-        <target>Inactive account. Please try again later.</target>
+        <target>Cuenta inactiva. Por favor intente más tarde.</target>
       </trans-unit>
       <trans-unit id="15782c7351818e74c159d0530853a5e7f4ff1be2" resname="Inclusion criteria">
         <source>Inclusion criteria</source>
@@ -916,11 +916,11 @@
       </trans-unit>
       <trans-unit id="91bf74d821f50065919a9c202be4787c9b3710b5" resname="Initial Committee Screening">
         <source>Initial Committee Screening</source>
-        <target>Revisión inicial del comité</target>
+        <target>Evaluación inicial del comité</target>
       </trans-unit>
       <trans-unit id="b91714208b2a583fc023ea1270476f75bcca4c41" resname="Initial commitee screening">
         <source>Initial commitee screening</source>
-        <target>Initial commitee screening</target>
+        <target>Evaluación inicial del comité</target>
       </trans-unit>
       <trans-unit id="1a3fae1a69fcdaab82d1737fcf3346a46cf50ac5" resname="Initial committee review">
         <source>Initial committee review</source>
@@ -928,7 +928,7 @@
       </trans-unit>
       <trans-unit id="618eea33ca57a4f3cc226f2f8dceec8fb290a1bd" resname="Initial committee screening">
         <source>Initial committee screening</source>
-        <target>Revisión inicial del comité</target>
+        <target>Evaluación inicial del comité</target>
       </trans-unit>
       <trans-unit id="429f9450eaee6957c9b1461227b45d94079f2cac" resname="Institution">
         <source>Institution</source>
@@ -936,15 +936,15 @@
       </trans-unit>
       <trans-unit id="d2f1d082fb2c9421c5221f4823666ac570d2dd7c" resname="Institution reporting the Best Practice">
         <source>Institution reporting the Best Practice</source>
-        <target>Institution reporting the Best Practice</target>
+        <target>Institución que reporta la buena práctica</target>
       </trans-unit>
       <trans-unit id="dcd439a7322864e79ebb16b566f6870d846c27d2" resname="Institutions">
         <source>Institutions</source>
-        <target>Institutions</target>
+        <target>Instituciones</target>
       </trans-unit>
       <trans-unit id="9233558115eef0fcfc733ff8993c4e6df7a62e86" resname="Instructions have been sent to your email.">
         <source>Instructions have been sent to your email.</source>
-        <target>Se han enviado instrucciones a su e-mail.</target>
+        <target>Se han enviado instrucciones a su correo electrónico.</target>
       </trans-unit>
       <trans-unit id="952103bb8973f96d62678656499879f262c97a6b" resname="Interventions">
         <source>Interventions</source>
@@ -956,19 +956,19 @@
       </trans-unit>
       <trans-unit id="49af6d68308b58e6682dc7d3d0408209ece925d0" resname="Invalid hashcode">
         <source>Invalid hashcode</source>
-        <target>Hashcode inválido</target>
+        <target>Código hash inválido</target>
       </trans-unit>
       <trans-unit id="7c5e840da8b6c77ca27eb105a9a320224b963d2b" resname="Invalid login.">
         <source>Invalid login.</source>
-        <target>Invalid login.</target>
+        <target>Acceso inválido</target>
       </trans-unit>
       <trans-unit id="92ad62b2d524bb2844f4351853e093b20a61022c" resname="Invalid state.">
         <source>Invalid state.</source>
-        <target>Invalid state.</target>
+        <target>Estado inválido</target>
       </trans-unit>
       <trans-unit id="84aef2d04caf4e6d39cfef13093c4ee6252c4e82" resname="Is the BP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization">
         <source>Is the BP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization</source>
-        <target>Is the BP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization</target>
+        <target>¿Está la buena práctica alineada con la cadena de valores de la OPS (misión, visión, mandatos y estratégias) y muestra la importancia del proyecto no solo para una entidad en particular sino para la Organización?</target>
       </trans-unit>
       <trans-unit id="76a38180859b3024f9cb90bc039aee77b0e5e7d5" resname="Is this a confidential comment?">
         <source>Is this a confidential comment?</source>
@@ -984,7 +984,7 @@
       </trans-unit>
       <trans-unit id="d4297792511794487e9d5d68553fa85cdc117a43" resname="Job Title">
         <source>Job Title</source>
-        <target>Job Title</target>
+        <target>Título profesional</target>
       </trans-unit>
       <trans-unit id="7d2a7bff0abb0d0de4946434ea191a1498465dec" resname="Justification">
         <source>Justification</source>
@@ -1004,7 +1004,7 @@
       </trans-unit>
       <trans-unit id="57a818852e3c66c583dc19666957a43085a4a074" resname="Last best practices in which you are part of the research team">
         <source>Last best practices in which you are part of the research team</source>
-        <target>Last best practices in which you are part of the research team</target>
+        <target>Últimas buenas prácticas en las que usted sea parte del equipo de investigación.</target>
       </trans-unit>
       <trans-unit id="0b195394b8549f42280b07339af6a05fc3a795e8" resname="Last protocols that you reviewed">
         <source>Last protocols that you reviewed</source>
@@ -2326,6 +2326,10 @@
       <trans-unit id="d436a3f40e3ecce896010be99dcf00a577b909aa" resname="inactive">
         <source>inactive</source>
         <target>inactivo</target>
+      </trans-unit>
+      <trans-unit id="efd7fd7f2954713c1ee7facf9750fe53e8cf589c" resname="translation">
+        <source>translation</source>
+        <target>translation</target>
       </trans-unit>
       <trans-unit id="6c8872c54edb32ec392c8c7110ab1fb2b1a4cec5" resname="with this justification:">
         <source>with this justification:</source>
