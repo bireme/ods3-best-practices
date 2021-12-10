@@ -395,7 +395,7 @@ class Submission extends Base
      */
     private $recognition_information;
 
-    /******************** ENGAGEMENT WITH THE PRIORITIES ORGANIZATION'S CROSS-CUTTING THEMES ********************/
+    /******************** ENGAGEMENT WITH THE CROSS-CUTTING PRIORITIES OF THE ORGANIZATION ********************/
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
