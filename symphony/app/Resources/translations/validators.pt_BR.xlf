@@ -8,7 +8,7 @@
     <body>
       <trans-unit id="0b0ef6e618768ac365b06ac988ae171ba773bbc1" resname="Email already taken">
         <source>Email already taken</source>
-        <target>Email already taken</target>
+        <target>E-mail já recebido.</target>
       </trans-unit>
     </body>
   </file>
