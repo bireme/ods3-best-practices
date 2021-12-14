@@ -797,7 +797,7 @@ class NewSubmissionController extends Controller
 
                     $em->remove($submission_upload);
                     $em->flush();
-                    $session->getFlashBag()->add('success', $translator->trans("File removed with sucess."));
+                    $session->getFlashBag()->add('success', $translator->trans("File removed with success."));
                     return $this->redirectToRoute('submission_new_fifth_step', array('submission_id' => $submission->getId()), 301);
                 }
             }

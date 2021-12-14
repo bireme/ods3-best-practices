@@ -137,7 +137,7 @@ class ProtocolController extends Controller
 
                 $send = $this->get('mailer')->send($message);
 
-                $session->getFlashBag()->add('success', $translator->trans("Comment was created with sucess."));
+                $session->getFlashBag()->add('success', $translator->trans("Comment was created with success."));
             }
         }
 
@@ -245,7 +245,7 @@ class ProtocolController extends Controller
 
             $send = $this->get('mailer')->send($message);
 
-            $session->getFlashBag()->add('success', $translator->trans("Comment was created with sucess."));
+            $session->getFlashBag()->add('success', $translator->trans("Comment was created with success."));
         }
 
         return $this->redirect($referer, 301);
@@ -341,7 +341,7 @@ class ProtocolController extends Controller
                 $em->persist($submission);
                 $em->flush();
 
-                $session->getFlashBag()->add('success', $translator->trans("File uploaded with sucess."));
+                $session->getFlashBag()->add('success', $translator->trans("File uploaded with success."));
 
             }
 
@@ -358,9 +358,9 @@ class ProtocolController extends Controller
 
                     $em->remove($submission_upload);
                     $em->flush();
-                    $session->getFlashBag()->add('success', $translator->trans("File removed with sucess."));
+                    $session->getFlashBag()->add('success', $translator->trans("File removed with success."));
                 }
-                
+
             }
 
             return $this->redirect($referer, 301);
@@ -455,7 +455,7 @@ class ProtocolController extends Controller
                 );
 
                 $send = $this->get('mailer')->send($message);
-                
+
                 if($protocol->getMonitoringAction()) {
 
                     $protocol_history = new ProtocolHistory();
@@ -1298,7 +1298,7 @@ class ProtocolController extends Controller
             }
 
             $file = $request->files->get('draft-opinion');
-            
+
             // if(empty($file)) {
             //     $session->getFlashBag()->add('error', $translator->trans("You have to upload a decision."));
             //     return $output;
@@ -1339,7 +1339,7 @@ class ProtocolController extends Controller
             if ( 'A' == $post_data['final-decision'] ) {
                 $solr = new Solr();
                 list($response, $responseCode) = $solr->update($protocol);
-                
+
                 if ($responseCode != 200) {
                     throw $this->createNotFoundException('['.$responseCode.'] Solr error: '.$response->error->msg);
                 }
