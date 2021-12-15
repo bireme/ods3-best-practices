@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2021-12-14T21:06:18Z" source-language="en" target-language="pt_BR" datatype="plaintext" original="not.available">
+  <file date="2021-12-14T21:36:13Z" source-language="en" target-language="pt_BR" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -1948,9 +1948,9 @@
         <source>Support information about the outcome and impact results</source>
         <target>Support information about the outcome and impact results</target>
       </trans-unit>
-      <trans-unit id="55abba0b5a3f74976be45a26594aac51ea9a8510" resname="Sustainable Developing Goals (and targets)">
-        <source>Sustainable Developing Goals (and targets)</source>
-        <target>Sustainable Developing Goals (and targets)</target>
+      <trans-unit id="0715dda954d17286931a0515be1910852ef7de6d" resname="Sustainable Development Goals (and targets)">
+        <source>Sustainable Development Goals (and targets)</source>
+        <target>Sustainable Development Goals (and targets)</target>
       </trans-unit>
       <trans-unit id="b6b05aacb4d07a138b2f32456e6da19b65529491" resname="System Management">
         <source>System Management</source>
@@ -2198,13 +2198,13 @@
         <source>Welcome to the Proethos2 platform!</source>
         <target>Bem-vindo à plataforma ProEthos2</target>
       </trans-unit>
-      <trans-unit id="d86cfc5e30e8bc197111a6668a42a991bd23aac4" resname="What are the lessons learned for that will improve our expertise and add value to the Organization">
-        <source>What are the lessons learned for that will improve our expertise and add value to the Organization</source>
-        <target>What are the lessons learned for that will improve our expertise and add value to the Organization</target>
+      <trans-unit id="e963862c68a22182c57f2c2ad1f84d8c3b35293e" resname="What are the lessons learned that will improve our expertise and add value to the Organization">
+        <source>What are the lessons learned that will improve our expertise and add value to the Organization</source>
+        <target>What are the lessons learned that will improve our expertise and add value to the Organization</target>
       </trans-unit>
-      <trans-unit id="140f3ab249d0453c617ae286c0bf6d2ae4a8ef66" resname="What obstacles or challenges faced during the implementation of this best practice/initiative">
-        <source>What obstacles or challenges faced during the implementation of this best practice/initiative</source>
-        <target>What obstacles or challenges faced during the implementation of this best practice/initiative</target>
+      <trans-unit id="9457f9d397c05c513d8cb8e1ee0c44412a066ad6" resname="What obstacles or challenges were faced during the implementation of this best practice/initiative">
+        <source>What obstacles or challenges were faced during the implementation of this best practice/initiative</source>
+        <target>What obstacles or challenges were faced during the implementation of this best practice/initiative</target>
       </trans-unit>
       <trans-unit id="14d520f5f1495b8af101e1fb1034b8b58c1391cd" resname="What public health issue (or opportunity) led PAHO to participate on this Technical Cooperation project/initiative">
         <source>What public health issue (or opportunity) led PAHO to participate on this Technical Cooperation project/initiative</source>
@@ -2214,13 +2214,9 @@
         <source>What public health issue (or opportunity) led the Organization to participate/request this Technical Cooperation project/initiative</source>
         <target>What public health issue (or opportunity) led the Organization to participate/request this Technical Cooperation project/initiative</target>
       </trans-unit>
-      <trans-unit id="0a81e73b669802e645bc82656257e43c3aeb9cba" resname="What were the lessons learned for that will improve our expertise and add value to the Organization">
-        <source>What were the lessons learned for that will improve our expertise and add value to the Organization</source>
-        <target>What were the lessons learned for that will improve our expertise and add value to the Organization</target>
-      </trans-unit>
-      <trans-unit id="0767544a57234b34f7e42cacb5d3434eb57b58aa" resname="What were the obstacles or challenges faced during the implementation of this best practice/initiative">
-        <source>What were the obstacles or challenges faced during the implementation of this best practice/initiative</source>
-        <target>What were the obstacles or challenges faced during the implementation of this best practice/initiative</target>
+      <trans-unit id="379baa7d81d5d5851cf268be243a2400ba50db94" resname="What were the lessons learned that will improve our expertise and add value to the Organization">
+        <source>What were the lessons learned that will improve our expertise and add value to the Organization</source>
+        <target>What were the lessons learned that will improve our expertise and add value to the Organization</target>
       </trans-unit>
       <trans-unit id="e358dd01e8e48d60ea4f4148f7f7334aad8f7f6e" resname="What's your role on this Best Practice">
         <source>What's your role on this Best Practice</source>
