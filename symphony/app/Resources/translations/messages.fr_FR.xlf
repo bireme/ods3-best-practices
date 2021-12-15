@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2021-12-14T19:00:50Z" source-language="en" target-language="fr_FR" datatype="plaintext" original="not.available">
+  <file date="2021-12-14T21:06:20Z" source-language="en" target-language="fr_FR" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -1082,9 +1082,9 @@
         <source>Meetings</source>
         <target>Meetings</target>
       </trans-unit>
-      <trans-unit id="899b356fcf8470dd91456b1473fddc91aabc4335" resname="Member Ad-Hoc">
-        <source>Member Ad-Hoc</source>
-        <target>Member Ad-Hoc</target>
+      <trans-unit id="4f13f48c673e321605ea39070297d7099f85664a" resname="Member Ad Hoc">
+        <source>Member Ad Hoc</source>
+        <target>Member Ad Hoc</target>
       </trans-unit>
       <trans-unit id="4014afc56173e7dda855348d627c2ccd839bf610" resname="Member has been removed with success!">
         <source>Member has been removed with success!</source>
@@ -1758,9 +1758,9 @@
         <source>See protocol</source>
         <target>See protocol</target>
       </trans-unit>
-      <trans-unit id="60b8efb0f9c942c7851b7737fa07e21babe55542" resname="Select Members Ad-Hoc">
-        <source>Select Members Ad-Hoc</source>
-        <target>Select Members Ad-Hoc</target>
+      <trans-unit id="c135ca2ba6ef7f544f8d9e2e09088dd911ead717" resname="Select Members Ad Hoc">
+        <source>Select Members Ad Hoc</source>
+        <target>Select Members Ad Hoc</target>
       </trans-unit>
       <trans-unit id="760f9df06db95a28b99e075c59b970b8685671a5" resname="Select Members Of Committee">
         <source>Select Members Of Committee</source>
