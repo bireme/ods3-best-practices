@@ -4293,6 +4293,8 @@ class CRUDController extends Controller
         $translations = $trans_repository->findTranslations($item);
         $output['translations'] = $translations;
 
+	$referer = $request->headers->get('referer');
+
         // checking if was a post request
         if($this->getRequest()->isMethod('POST')) {
 
