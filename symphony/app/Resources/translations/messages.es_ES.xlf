@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2022-01-07T23:55:55Z" source-language="en" target-language="es_ES" datatype="plaintext" original="not.available">
+  <file date="2022-01-08T00:13:23Z" source-language="en" target-language="es_ES" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -1276,7 +1276,7 @@
       </trans-unit>
       <trans-unit id="ddfdb6753bca11895853f6104046bfc63fe6b23a" resname="New amendment submitted by">
         <source>New amendment submitted by</source>
-        <target>New amendment submitted by</target>
+        <target>Nueva enmienda enviada por</target>
       </trans-unit>
       <trans-unit id="bb960e9c73715c458a976bd2d21ad295b133a9bf" resname="New comment on Proethos2">
         <source>New comment on Proethos2</source>
@@ -1948,7 +1948,7 @@
       </trans-unit>
       <trans-unit id="0715dda954d17286931a0515be1910852ef7de6d" resname="Sustainable Development Goals (and targets)">
         <source>Sustainable Development Goals (and targets)</source>
-        <target>Sustainable Development Goals (and targets)</target>
+        <target>Objetivos de Desarrollo Sostenible (y metas).</target>
       </trans-unit>
       <trans-unit id="b6b05aacb4d07a138b2f32456e6da19b65529491" resname="System Management">
         <source>System Management</source>
