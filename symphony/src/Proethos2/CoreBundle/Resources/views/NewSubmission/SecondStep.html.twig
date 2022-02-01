@@ -137,7 +137,6 @@
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <div>
                                     <select class='form-control selectpicker' id='select-population-group' name='population_group[]' data-size="5" data-width="fit" data-live-search="true" title="{% trans %}Choose one of the following...{% endtrans %}" multiple required>
-                                        <option value="">-</option>
                                         {% for pg in population_group %}
                                             <option value="{{ pg.id }}" data-slug="{{ pg.slug }}" {% if pg in submission.populationGroup %}selected{% endif %}>{{ pg.name }}</option>
                                         {% endfor %}

@@ -26,8 +26,8 @@ use Cocur\Slugify\Slugify;
 /**
  * PopulationGroup
  *
- * @ORM\Entity
  * @ORM\Table(name="list_population_group")
+ * @ORM\Entity
  */
 class PopulationGroup extends Base
 {
