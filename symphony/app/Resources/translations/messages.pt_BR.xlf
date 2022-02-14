@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2022-01-08T00:13:22Z" source-language="en" target-language="pt_BR" datatype="plaintext" original="not.available">
+  <file date="2022-02-09T16:55:27Z" source-language="en" target-language="pt_BR" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -24,7 +24,7 @@
       </trans-unit>
       <trans-unit id="669da8aff3aa4ff59f63de87673a76bb4fe7a13b" resname="A new best practice has been submitted.">
         <source>A new best practice has been submitted.</source>
-        <target>Uma nova boa prática foi submetida.</target>
+        <target>Uma nova boa prática foi enviada.</target>
       </trans-unit>
       <trans-unit id="0f4679c979a95b886c19fafcc73f4b7361867198" resname="A new best practice needs your analysis.">
         <source>A new best practice needs your analysis.</source>
@@ -32,11 +32,11 @@
       </trans-unit>
       <trans-unit id="fb25d175b3fc0278c66813115d356e6df18f83bd" resname="A new best practice review was submitted">
         <source>A new best practice review was submitted</source>
-        <target>Uma nova revisão de boas práticas foi submetida.</target>
+        <target>Uma nova revisão de boa prática foi enviada.</target>
       </trans-unit>
       <trans-unit id="fe1f2c4d494fc40392e39bec35686602dd971e3b" resname="A new monitoring action has been submitted.">
         <source>A new monitoring action has been submitted.</source>
-        <target>Uma nova ação de monitoramento foi submetida.</target>
+        <target>Uma nova ação de monitoramento foi enviada.</target>
       </trans-unit>
       <trans-unit id="f8305e030f96d910b8adfa5d7f1623ea1d07b001" resname="Accept Submission">
         <source>Accept Submission</source>
@@ -100,11 +100,12 @@
       </trans-unit>
       <trans-unit id="606e26f487dcd77b1abd9f7ceb09b2ad08ec86a8" resname="Analyze Best Practice">
         <source>Analyze Best Practice</source>
-        <target>Analisar Boas Práticas</target>
+        <target>Analisar Boa Prática</target>
       </trans-unit>
       <trans-unit id="a6d7558ae5ba27352d597f8e265f726fc9947ee0" resname="Analyze best practice">
         <source>Analyze best practice</source>
-        <target>Analisar boas práticas</target>
+        <target xml:space="preserve">Analisar boa prática
+</target>
       </trans-unit>
       <trans-unit id="a16a4eda7cb2c8e91d7edd25e809ae9d392c7498" resname="Answer">
         <source>Answer</source>
@@ -933,7 +934,7 @@
       </trans-unit>
       <trans-unit id="d2f1d082fb2c9421c5221f4823666ac570d2dd7c" resname="Institution reporting the Best Practice">
         <source>Institution reporting the Best Practice</source>
-        <target>Instituição que relata as Boas Práticas</target>
+        <target>Instituição que relata as Boa Prática</target>
       </trans-unit>
       <trans-unit id="dcd439a7322864e79ebb16b566f6870d846c27d2" resname="Institutions">
         <source>Institutions</source>
@@ -1181,7 +1182,7 @@
       </trans-unit>
       <trans-unit id="1b85600fd20c9a8d47e006d1e7ccd77daa5cf53a" resname="New Best Practice Entity">
         <source>New Best Practice Entity</source>
-        <target>Nova Entidade de Boas Práticas</target>
+        <target>Nova Entidade de Boa Prática</target>
       </trans-unit>
       <trans-unit id="dbf7521da562da765a5e736536276f741b3884b9" resname="New Best Practice Role">
         <source>New Best Practice Role</source>
@@ -1277,7 +1278,7 @@
       </trans-unit>
       <trans-unit id="ddfdb6753bca11895853f6104046bfc63fe6b23a" resname="New amendment submitted by">
         <source>New amendment submitted by</source>
-        <target>Nova emenda submetida por</target>
+        <target>Nova emenda enviada por</target>
       </trans-unit>
       <trans-unit id="bb960e9c73715c458a976bd2d21ad295b133a9bf" resname="New comment on Proethos2">
         <source>New comment on Proethos2</source>
@@ -1841,7 +1842,7 @@
       </trans-unit>
       <trans-unit id="e2331d9a6bf7b5cbf88547b1adf2cfa99eadbefd" resname="Show Best Practice">
         <source>Show Best Practice</source>
-        <target>Mostrar Boas Práticas</target>
+        <target>Mostrar Boa Prática</target>
       </trans-unit>
       <trans-unit id="56860002c2285b9bff80391678937a3f082e20e5" resname="Sincerely">
         <source>Sincerely</source>
@@ -1929,16 +1930,16 @@
       </trans-unit>
       <trans-unit id="2e00359b9802d1fa28aa05450482d8df1c0cf61f" resname="Submitted">
         <source>Submitted</source>
-        <target>Submetido</target>
+        <target>Enviado</target>
       </trans-unit>
       <trans-unit id="f009ec946bc9f7bc7d0226dca9925c94a6efea17" resname="Submitted Best Practices">
         <source>Submitted Best Practices</source>
-        <target xml:space="preserve">Boas Práticas submetidas.
+        <target xml:space="preserve">Boas Práticas enviadas.
 </target>
       </trans-unit>
       <trans-unit id="046485aa309a8f023e2e4f75a5e5856f99c1dde8" resname="Submitted by">
         <source>Submitted by</source>
-        <target>Submetido por</target>
+        <target>Enviado por</target>
       </trans-unit>
       <trans-unit id="861edba00547bc9ce7a08df78d4378766418179f" resname="Suggestions">
         <source>Suggestions</source>
@@ -2224,7 +2225,7 @@
       </trans-unit>
       <trans-unit id="e8882f03370bbcb5bad8d28d7e71e4ad9795e8a6" resname="Withdraw best practice">
         <source>Withdraw best practice</source>
-        <target>Retirar as boas práticas?</target>
+        <target>Retirar boa prática?</target>
       </trans-unit>
       <trans-unit id="ab014c3271737b4543fd454e943e9e1066532f7a" resname="Withdrawn">
         <source>Withdrawn</source>
@@ -2260,7 +2261,7 @@
       </trans-unit>
       <trans-unit id="f97ee1c0fb0835a8ea6a1fe728dfab1373a58dde" resname="Your Best Practices">
         <source>Your Best Practices</source>
-        <target>Suas Boa Práticas</target>
+        <target>Suas Boas Práticas</target>
       </trans-unit>
       <trans-unit id="21c7fe92b8e2c31b06b3e871a2c2e9c168813a64" resname="Your Profile">
         <source>Your Profile</source>
