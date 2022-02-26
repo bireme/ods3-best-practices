@@ -1329,7 +1329,7 @@ class NewSubmissionController extends Controller
             $final_status = false;
         }
         $revisions[] = $item;
-
+/*
         $text = $translator->trans('PAHO Comments');
         $item = array('text' => $text, 'status' => true);
         if(empty($submission->getPahoComments())) {
@@ -1337,7 +1337,7 @@ class NewSubmissionController extends Controller
             $final_status = false;
         }
         $revisions[] = $item;
-
+*/
         $output['revisions'] = $revisions;
         $output['final_status'] = $final_status;
 
