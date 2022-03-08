@@ -107,6 +107,13 @@
         <h3>{% trans %}Any specific population group{% endtrans %}?</h3>
         <p>{{ submission.populationGroup|join('; ') }}</p>
 
+        {% if submission.otherPopulationGroup %}
+
+            <h3>{% trans %}Other Population Group{% endtrans %}:</h3>
+            <p>{{ submission.otherPopulationGroup }}</p>
+
+        {% endif %}
+
         <h3>{% trans %}Brief Introduction{% endtrans %}:</h3>
         <p>{{ submission.introduction }}</p>
 
