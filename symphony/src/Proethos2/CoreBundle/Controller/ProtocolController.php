@@ -1645,6 +1645,18 @@ class ProtocolController extends Controller
             }
 
             if($post_data['are-you-sure'] == 'yes') {
+                // send data to Solr index
+                $solr = new Solr();
+                list($response, $responseCode) = $solr->delete($protocol);
+
+                if ($responseCode != 200) {
+                    throw $this->createNotFoundException('['.$responseCode.'] Solr error: '.$response->error->msg);
+                }
+
+                // if ($responseCode == 200) {
+                //     throw $this->createNotFoundException('['.$responseCode.'] Solr query time: '.$response->responseHeader->QTime.'ms');
+                // }
+
                 $em->remove($protocol);
                 $em->flush();
 

@@ -230,10 +230,10 @@ class Solr {
 
     }
 
-    public function delete()
+    public function delete($protocol)
     {
-
-        $json = "{'delete': {'query': '*:*'}}";
+        $query = ( $protocol ) ? 'id:'.$protocol->getId() : '*:*';
+        $json = "{'delete': {'query': '".$query."'}}";
         $ch = curl_init($this->solr_service.'?commit=true');
 
         curl_setopt($ch, CURLOPT_POST, true);
