@@ -153,6 +153,12 @@ class Submission extends Base
     private $other_institution;
 
     /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank()
+     */
+    private $institution_name;
+
+    /**
      * @var Stakeholder
      *
      * @ORM\ManyToOne(targetEntity="Stakeholder")
@@ -2091,5 +2097,29 @@ class Submission extends Base
         }
 
         return $population_groups;
+    }
+
+    /**
+     * Set institutionName
+     *
+     * @param string $institutionName
+     *
+     * @return Submission
+     */
+    public function setInstitutionName($institutionName)
+    {
+        $this->institution_name = $institutionName;
+
+        return $this;
+    }
+
+    /**
+     * Get institutionName
+     *
+     * @return string
+     */
+    public function getInstitutionName()
+    {
+        return $this->institution_name;
     }
 }

@@ -93,7 +93,7 @@ class NewSubmissionController extends Controller
             $post_data = $request->request->all();
 
             // checking required files
-            foreach(array('title', 'best_practice_type', 'best_practice_role', 'institution', 'stakeholder') as $field) {
+            foreach(array('title', 'best_practice_type', 'best_practice_role', 'institution', 'institution_name', 'stakeholder') as $field) {
                 if(!isset($post_data[$field]) or empty($post_data[$field])) {
                     $session->getFlashBag()->add('error', $translator->trans("Field '%field%' is required.", array("%field%" => $field)));
                     return $post_data;
@@ -110,6 +110,7 @@ class NewSubmissionController extends Controller
             $submission->setTitle($post_data['title']);
             $submission->setOtherRole($post_data['other_best_practice_role']);
             $submission->setOtherInstitution($post_data['other_institution']);
+            $submission->setInstitutionName($post_data['institution_name']);
             $submission->setOtherStakeholder($post_data['other_stakeholder']);
             $submission->setReferenceNumber($post_data['reference_number']);
             $submission->setLanguage(($post_data['language']) ? $post_data['language'] : $locale);
@@ -220,7 +221,7 @@ class NewSubmissionController extends Controller
             $post_data = $request->request->all();
 
             // checking required files
-            foreach(array('title', 'best_practice_type', 'best_practice_role', 'institution', 'stakeholder') as $field) {
+            foreach(array('title', 'best_practice_type', 'best_practice_role', 'institution', 'institution_name', 'stakeholder') as $field) {
                 if(!isset($post_data[$field]) or empty($post_data[$field])) {
                     $session->getFlashBag()->add('error', $translator->trans("Field '%field%' is required.", array("%field%" => $field)));
                     return $output;
@@ -230,6 +231,7 @@ class NewSubmissionController extends Controller
             $submission->setTitle($post_data['title']);
             $submission->setOtherRole($post_data['other_best_practice_role']);
             $submission->setOtherInstitution($post_data['other_institution']);
+            $submission->setInstitutionName($post_data['institution_name']);
             $submission->setOtherStakeholder($post_data['other_stakeholder']);
             $submission->setReferenceNumber($post_data['reference_number']);
             $submission->setLanguage(($post_data['language']) ? $post_data['language'] : $locale);
@@ -1002,6 +1004,14 @@ class NewSubmissionController extends Controller
             $revisions[] = $item;
 
         }
+
+        $text = $translator->trans('Institution Name');
+        $item = array('text' => $text, 'status' => true);
+        if(empty($submission->getInstitutionName())) {
+            $item = array('text' => $text, 'status' => false);
+            $final_status = false;
+        }
+        $revisions[] = $item;
 
         $text = $translator->trans('Stakeholder');
         $item = array('text' => $text, 'status' => true);
