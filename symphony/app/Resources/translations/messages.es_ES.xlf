@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2022-01-08T00:13:23Z" source-language="en" target-language="es_ES" datatype="plaintext" original="not.available">
+  <file date="2022-03-08T01:37:55Z" source-language="en" target-language="es_ES" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -412,7 +412,7 @@
       </trans-unit>
       <trans-unit id="d52e960b454b197a5f1ae19eb2f19c5e7240310c" resname="Confirmation of valid access to the Proethos2 platform">
         <source>Confirmation of valid access to the Proethos2 platform</source>
-        <target>Confirmación de acceso válido a la plataforma Proethos2</target>
+        <target>Confirmación de acceso válido a la plataforma Buenas Prácticas</target>
       </trans-unit>
       <trans-unit id="b37456c4530be810dc040f50da72eda09addfb0a" resname="Contact">
         <source>Contact</source>
@@ -573,6 +573,10 @@
       <trans-unit id="c14bcb61daff86c092aaca32637236471f31ce12" resname="Did it contribute to strengthen the health system, the achievement of PAHO SP 20-25 and SHAA 2030">
         <source>Did it contribute to strengthen the health system, the achievement of PAHO SP 20-25 and SHAA 2030</source>
         <target>¿Contribuyó al fortalecimiento del sistema de salud y a la ejecución del Plan Estratégico de la OPS 2020-2025 y de SHAA 2030?</target>
+      </trans-unit>
+      <trans-unit id="2b7d1f0c4120bd2bff52a318ddc863e50782af78" resname="Did it contribute to strengthen the health system, the achievement of Strategic Plan of the Pan American Health Organization 2020-2025 (SP 20-25) and Sustainable Health Agenda for the Americas 2018-2030 (SHAA 2030)?">
+        <source>Did it contribute to strengthen the health system, the achievement of Strategic Plan of the Pan American Health Organization 2020-2025 (SP 20-25) and Sustainable Health Agenda for the Americas 2018-2030 (SHAA 2030)?</source>
+        <target>Did it contribute to strengthen the health system, the achievement of Strategic Plan of the Pan American Health Organization 2020-2025 (SP 20-25) and Sustainable Health Agenda for the Americas 2018-2030 (SHAA 2030)?</target>
       </trans-unit>
       <trans-unit id="961f36de4c326fdd7cb4cc66ab04a5bd2188e0c3" resname="Do you confirm the exclusion of this attachment?">
         <source>Do you confirm the exclusion of this attachment?</source>
@@ -814,6 +818,14 @@
         <source>Get user's link to change password</source>
         <target>Obtener enlace de usuario para cambiar contraseña</target>
       </trans-unit>
+      <trans-unit id="9fe00acebc106e4dba1611cdd1d7dc308a244991" resname="Goal">
+        <source>Goal</source>
+        <target>Goal</target>
+      </trans-unit>
+      <trans-unit id="48d8c627be3c12fac8a0a9ddb9ceaa5e126cf358" resname="Goals">
+        <source>Goals</source>
+        <target>Goals</target>
+      </trans-unit>
       <trans-unit id="9d8ba69ea37ad3dd3008e8b89eb6046f51780130" resname="Have an error with captcha. Please try again.">
         <source>Have an error with captcha. Please try again.</source>
         <target>Hay un error con captcha. Por favor intente nuevamente.</target>
@@ -929,6 +941,10 @@
       <trans-unit id="429f9450eaee6957c9b1461227b45d94079f2cac" resname="Institution">
         <source>Institution</source>
         <target>Institución</target>
+      </trans-unit>
+      <trans-unit id="b65443035075ad39d244206abb64eeaba9e7d289" resname="Institution Name">
+        <source>Institution Name</source>
+        <target>Institution Name</target>
       </trans-unit>
       <trans-unit id="d2f1d082fb2c9421c5221f4823666ac570d2dd7c" resname="Institution reporting the Best Practice">
         <source>Institution reporting the Best Practice</source>
@@ -1214,6 +1230,10 @@
         <source>New Gender</source>
         <target>Nuevo género</target>
       </trans-unit>
+      <trans-unit id="5e816484934c5b3f66b0fa79c3df0b0c1ecfe641" resname="New Goal">
+        <source>New Goal</source>
+        <target>New Goal</target>
+      </trans-unit>
       <trans-unit id="947ce86bed0a9a05a460ce619418ca795e6b44b0" resname="New Institution">
         <source>New Institution</source>
         <target>Nueva institución</target>
@@ -1229,6 +1249,10 @@
       <trans-unit id="cac08db1ad677c19c4e82d917ecc4c4e59c4b565" resname="New Monitoring Action">
         <source>New Monitoring Action</source>
         <target>Nueva acción de monitoreo</target>
+      </trans-unit>
+      <trans-unit id="452333629400940f887e8af83175f4a51bd5b13d" resname="New Outcome">
+        <source>New Outcome</source>
+        <target>New Outcome</target>
       </trans-unit>
       <trans-unit id="4894cb39ee419a77b480060f3e4a6d0a4d0fa01f" resname="New Password">
         <source>New Password</source>
@@ -1280,7 +1304,7 @@
       </trans-unit>
       <trans-unit id="bb960e9c73715c458a976bd2d21ad295b133a9bf" resname="New comment on Proethos2">
         <source>New comment on Proethos2</source>
-        <target>Nuevo comentario en Proethos2</target>
+        <target>Nuevo comentario en Buenas Prácticas</target>
       </trans-unit>
       <trans-unit id="505235c949c23571ad04e474dce1649c0dd150e7" resname="New submission">
         <source>New submission</source>
@@ -1288,7 +1312,7 @@
       </trans-unit>
       <trans-unit id="2bc04be017f3b93c433108b00d2e4393852e3f8b" resname="New user on Proethos2 platform">
         <source>New user on Proethos2 platform</source>
-        <target>Nuevo usuario en plataforma ProEthos2</target>
+        <target>Nuevo usuario en plataforma Buenas Prácticas</target>
       </trans-unit>
       <trans-unit id="907961cea29c6ad5f0736a8170a68e6b48ebab82" resname="Next meetings">
         <source>Next meetings</source>
@@ -1406,9 +1430,13 @@
         <source>Other information sources</source>
         <target>Otras fuentes de información</target>
       </trans-unit>
-      <trans-unit id="c561dec852a39fafb9b6e60f96924b3083bbce54" resname="PAHO Comments">
-        <source>PAHO Comments</source>
-        <target>Comentarios de la OPS</target>
+      <trans-unit id="d3f0610632bbef35bfaa389ca89023fd50c6dd62" resname="Outcome">
+        <source>Outcome</source>
+        <target>Outcome</target>
+      </trans-unit>
+      <trans-unit id="6848ce552eefdb4708bb7274612f44308492fee2" resname="Outcomes">
+        <source>Outcomes</source>
+        <target>Outcomes</target>
       </trans-unit>
       <trans-unit id="1f8003a9dffac03fe78d168ac7e6e0ffbf3683a1" resname="PAHO and related partners reserve the right, at their sole discretion, to determine which contributions will be included in the portal or used in other institutional material.">
         <source>PAHO and related partners reserve the right, at their sole discretion, to determine which contributions will be included in the portal or used in other institutional material.</source>
@@ -1477,6 +1505,14 @@
       <trans-unit id="b9d562d1e72303736f85f83ecf4a333a05a3e9be" resname="Please provide support information. For example, information on how PAHO's Technical Cooperation contributed to strengthen capacity and address health inequities and inequalities, and gender and culturally sensitive approaches to health within a human rights framework; to engage in an intersectoral action with an equity and rights focus">
         <source>Please provide support information. For example, information on how PAHO's Technical Cooperation contributed to strengthen capacity and address health inequities and inequalities, and gender and culturally sensitive approaches to health within a human rights framework; to engage in an intersectoral action with an equity and rights focus</source>
         <target>Proporcione información de apoyo. Por ejemplo, información sobre cómo la Cooperación Técnica de la OPS ha contribuido a fortalecer la capacidad y a abordar las inequidades y desigualdades en salud y los enfoques de salud con sensibilidad cultural dentro de un marco de derechos humanos para participar en una acción intersectorial con un enfoque de equidad y derechos.</target>
+      </trans-unit>
+      <trans-unit id="8c7d412b8f2344fe81a12bc1bc3257d8a589d82b" resname="Please select the most appropriate Goal:">
+        <source>Please select the most appropriate Goal:</source>
+        <target>Please select the most appropriate Goal:</target>
+      </trans-unit>
+      <trans-unit id="5d931e156d7196ced3f7d8065fb39b4725e2f2ac" resname="Please select the most appropriate Outcome:">
+        <source>Please select the most appropriate Outcome:</source>
+        <target>Please select the most appropriate Outcome:</target>
       </trans-unit>
       <trans-unit id="eb8f3ce2a98e81099989307e96c36e37ec881384" resname="Population Group">
         <source>Population Group</source>
@@ -2193,7 +2229,7 @@
       </trans-unit>
       <trans-unit id="477bc7417793d2bd9001b1ab4e8087d6c09fc5d4" resname="Welcome to the Proethos2 platform!">
         <source>Welcome to the Proethos2 platform!</source>
-        <target>¡Bienvenido a la plataforma ProEthos2!</target>
+        <target>¡Bienvenido a la plataforma Buenas Prácticas!</target>
       </trans-unit>
       <trans-unit id="e963862c68a22182c57f2c2ad1f84d8c3b35293e" resname="What are the lessons learned that will improve our expertise and add value to the Organization">
         <source>What are the lessons learned that will improve our expertise and add value to the Organization</source>
