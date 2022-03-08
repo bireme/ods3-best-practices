@@ -348,6 +348,14 @@ class Submission extends Base
     private $health_system_contribution;
 
     /**
+     * @var Outcomes
+     *
+     * @ORM\ManyToOne(targetEntity="Outcomes")
+     * @ORM\JoinColumn(name="outcomes_id", referencedColumnName="id", onDelete="SET NULL")
+     */
+    private $outcomes;
+
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\NotBlank()
      */
@@ -2121,5 +2129,29 @@ class Submission extends Base
     public function getInstitutionName()
     {
         return $this->institution_name;
+    }
+
+    /**
+     * Set outcomes
+     *
+     * @param \Proethos2\ModelBundle\Entity\Outcomes $outcomes
+     *
+     * @return Submission
+     */
+    public function setOutcomes(\Proethos2\ModelBundle\Entity\Outcomes $outcomes = null)
+    {
+        $this->outcomes = $outcomes;
+
+        return $this;
+    }
+
+    /**
+     * Get outcomes
+     *
+     * @return \Proethos2\ModelBundle\Entity\Outcomes
+     */
+    public function getOutcomes()
+    {
+        return $this->outcomes;
     }
 }

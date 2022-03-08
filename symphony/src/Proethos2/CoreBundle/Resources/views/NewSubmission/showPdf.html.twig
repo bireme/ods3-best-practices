@@ -145,6 +145,9 @@
             <h3>{% trans %}Did it contribute to strengthen the health system, the achievement of PAHO SP 20-25 and SHAA 2030{% endtrans %}?</h3>
             <p>{{ likert[submission.healthSystemContribution] }}</p>
 
+            <h3>{% trans %}Outcome{% endtrans %}:</h3>
+            <p>{{ submission.outcomes.name }}</p>
+
             <h3>{% trans %}Is the BP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization{% endtrans %}?</h3>
             <p>{{ likert[submission.valueChainOrganization] }}</p>
 

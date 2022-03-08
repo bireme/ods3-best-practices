@@ -56,6 +56,7 @@ class GenerateDatabaseInitialDataCommand extends ContainerAwareCommand
             'list_subregion',
             'list_target',
             'list_technical_matter',
+            'list_outcomes',
             'list_clinical_trial_name',
             'list_country',
             'list_gender',

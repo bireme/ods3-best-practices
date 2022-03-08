@@ -639,6 +639,11 @@ class NewSubmissionController extends Controller
 
         $user = $this->get('security.token_storage')->getToken()->getUser();
 
+        // getting outcomes list
+        $outcomes_repository = $em->getRepository('Proethos2ModelBundle:Outcomes');
+        $outcomes = $outcomes_repository->findByStatus(true);
+        $output['outcomes'] = $outcomes;
+
         // likert options
         $likert = array(
             "A" => $translator->trans("I fully agree"),
@@ -676,6 +681,7 @@ class NewSubmissionController extends Controller
             $required_fields = array(
                 'health_system_contribution',
                 'value_chain_organization',
+                'outcomes',
                 // 'relevance_information',
                 'counterpart_recognized',
                 'catalytic_role',
@@ -704,6 +710,10 @@ class NewSubmissionController extends Controller
             $submission->setRecognitionInformation($post_data['recognition_information']);
             $submission->setCrossCuttingApproach($post_data['cross_cutting_approach']);
             $submission->setEngagementInformation($post_data['engagement_information']);
+
+            // outcomes
+            $selected_outcomes = $outcomes_repository->find($post_data['outcomes']);
+            $submission->setOutcomes($selected_outcomes);
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($submission);
@@ -1210,6 +1220,14 @@ class NewSubmissionController extends Controller
             $text = $translator->trans('Health System Contribution');
             $item = array('text' => $text, 'status' => true);
             if(empty($submission->getHealthSystemContribution())) {
+                $item = array('text' => $text, 'status' => false);
+                $final_status = false;
+            }
+            $revisions[] = $item;
+
+            $text = $translator->trans('Outcomes');
+            $item = array('text' => $text, 'status' => true);
+            if(empty($submission->getOutcomes())) {
                 $item = array('text' => $text, 'status' => false);
                 $final_status = false;
             }
