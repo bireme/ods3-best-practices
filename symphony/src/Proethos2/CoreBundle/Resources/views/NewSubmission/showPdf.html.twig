@@ -148,6 +148,9 @@
             <h3>{% trans %}Outcome{% endtrans %}:</h3>
             <p>{{ submission.outcomes.name }}</p>
 
+            <h3>{% trans %}Goal{% endtrans %}:</h3>
+            <p>{{ submission.goals.name }}</p>
+
             <h3>{% trans %}Is the BP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization{% endtrans %}?</h3>
             <p>{{ likert[submission.valueChainOrganization] }}</p>
 

@@ -356,6 +356,14 @@ class Submission extends Base
     private $outcomes;
 
     /**
+     * @var Goals
+     *
+     * @ORM\ManyToOne(targetEntity="Goals")
+     * @ORM\JoinColumn(name="goals_id", referencedColumnName="id", onDelete="SET NULL")
+     */
+    private $goals;
+
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\NotBlank()
      */
@@ -2153,5 +2161,29 @@ class Submission extends Base
     public function getOutcomes()
     {
         return $this->outcomes;
+    }
+
+    /**
+     * Set goals
+     *
+     * @param \Proethos2\ModelBundle\Entity\Goals $goals
+     *
+     * @return Submission
+     */
+    public function setGoals(\Proethos2\ModelBundle\Entity\Goals $goals = null)
+    {
+        $this->goals = $goals;
+
+        return $this;
+    }
+
+    /**
+     * Get goals
+     *
+     * @return \Proethos2\ModelBundle\Entity\Goals
+     */
+    public function getGoals()
+    {
+        return $this->goals;
     }
 }

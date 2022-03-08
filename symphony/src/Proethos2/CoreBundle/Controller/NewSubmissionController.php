@@ -644,6 +644,11 @@ class NewSubmissionController extends Controller
         $outcomes = $outcomes_repository->findByStatus(true);
         $output['outcomes'] = $outcomes;
 
+        // getting goals list
+        $goals_repository = $em->getRepository('Proethos2ModelBundle:Goals');
+        $goals = $goals_repository->findByStatus(true);
+        $output['goals'] = $goals;
+
         // likert options
         $likert = array(
             "A" => $translator->trans("I fully agree"),
@@ -682,6 +687,7 @@ class NewSubmissionController extends Controller
                 'health_system_contribution',
                 'value_chain_organization',
                 'outcomes',
+                'goals',
                 // 'relevance_information',
                 'counterpart_recognized',
                 'catalytic_role',
@@ -714,6 +720,10 @@ class NewSubmissionController extends Controller
             // outcomes
             $selected_outcomes = $outcomes_repository->find($post_data['outcomes']);
             $submission->setOutcomes($selected_outcomes);
+
+            // goals
+            $selected_goals = $goals_repository->find($post_data['goals']);
+            $submission->setGoals($selected_goals);
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($submission);
@@ -1228,6 +1238,14 @@ class NewSubmissionController extends Controller
             $text = $translator->trans('Outcomes');
             $item = array('text' => $text, 'status' => true);
             if(empty($submission->getOutcomes())) {
+                $item = array('text' => $text, 'status' => false);
+                $final_status = false;
+            }
+            $revisions[] = $item;
+
+            $text = $translator->trans('Goals');
+            $item = array('text' => $text, 'status' => true);
+            if(empty($submission->getGoals())) {
                 $item = array('text' => $text, 'status' => false);
                 $final_status = false;
             }

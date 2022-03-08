@@ -57,6 +57,7 @@ class LoadDatabaseInitialDataCommand extends ContainerAwareCommand
             'list_target',
             'list_technical_matter',
             'list_outcomes',
+            'list_goals',
             'list_clinical_trial_name',
             'list_country',
             'list_gender',

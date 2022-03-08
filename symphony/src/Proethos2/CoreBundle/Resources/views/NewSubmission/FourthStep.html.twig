@@ -58,6 +58,21 @@
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="form-group required">
+                                <label for="select-goals">{% trans %}Please select the most appropriate Goal{% endtrans %}:</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <select class='form-control selectpicker' id='select-goals' name='goals' data-size="5" data-live-search="true" required>
+                                    <option value="">-</option>
+                                    {% for goal in goals %}
+                                        <option value="{{ goal.id }}" data-slug="{{ goal.slug }}" {% if submission.goals.id == goal.id %}selected{% endif %}>{{ goal.name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <div class="form-group required">
                                 <label for="select-value-chain-organization">{% trans %}Is the BP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization{% endtrans %}?</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <select class='form-control selectpicker' id='select-value-chain-organization' name='value_chain_organization' data-size="6" data-live-search="true" required>
