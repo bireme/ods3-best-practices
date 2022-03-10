@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2022-03-08T15:09:33Z" source-language="en" target-language="es_ES" datatype="plaintext" original="not.available">
+  <file date="2022-03-10T01:11:45Z" source-language="en" target-language="es_ES" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -354,6 +354,10 @@
         <source>Choose reviewers</source>
         <target>Elegir revisores</target>
       </trans-unit>
+      <trans-unit id="b46c77fa44760067b496d3820ee234412eb7cde5" resname="Choose your login">
+        <source>Choose your login</source>
+        <target>Choose your login</target>
+      </trans-unit>
       <trans-unit id="a4781b4e531e406a69c0092ff5dcf176feecc6dd" resname="Clinical Trial">
         <source>Clinical Trial</source>
         <target>Ensayo clínico</target>
@@ -474,10 +478,6 @@
         <source>Create Report</source>
         <target>Crear reporte</target>
       </trans-unit>
-      <trans-unit id="3f4f547d73646d774e8f690b36333e8c9572894b" resname="Create an account">
-        <source>Create an account</source>
-        <target>Crear una cuenta</target>
-      </trans-unit>
       <trans-unit id="ca2c15d02a64d61457720b0c98ea7f3c4fbeb8a4" resname="Create new User">
         <source>Create new User</source>
         <target>Crear un usuario nuevo</target>
@@ -485,6 +485,10 @@
       <trans-unit id="bdbcfa0af077ff0fd7655acc59af92887124997a" resname="Create user">
         <source>Create user</source>
         <target>Crear usuario</target>
+      </trans-unit>
+      <trans-unit id="8ecafd1e8875c0776431554897c6fdf506c2e45b" resname="Create your password">
+        <source>Create your password</source>
+        <target>Create your password</target>
       </trans-unit>
       <trans-unit id="de06a1fbeb64e7f4b184e68b9e8b95b2fb6469c0" resname="Created in">
         <source>Created in</source>
@@ -809,6 +813,10 @@
       <trans-unit id="d790b402d79ac1a723c790313bcd679999474630" resname="Frequently Asked Questions">
         <source>Frequently Asked Questions</source>
         <target>Preguntas frecuentes</target>
+      </trans-unit>
+      <trans-unit id="64346b483c0adcfb6e6d4c2e4ce19f1cd2cde025" resname="Full Name">
+        <source>Full Name</source>
+        <target>Full Name</target>
       </trans-unit>
       <trans-unit id="8a754c61c2ced0c5ff79a1827e02c9d643d6d926" resname="Gender">
         <source>Gender</source>
@@ -1318,6 +1326,10 @@
         <source>New user on Proethos2 platform</source>
         <target>Nuevo usuario en plataforma Buenas Prácticas</target>
       </trans-unit>
+      <trans-unit id="6353049937c27ac2f99e782658c52f29e91fd4f2" resname="New user? Start here.">
+        <source>New user? Start here.</source>
+        <target>New user? Start here.</target>
+      </trans-unit>
       <trans-unit id="907961cea29c6ad5f0736a8170a68e6b48ebab82" resname="Next meetings">
         <source>Next meetings</source>
         <target>Próximas reuniones</target>
@@ -1458,13 +1470,9 @@
         <source>PAHOERC@paho.org</source>
         <target>PAHOERC@paho.org</target>
       </trans-unit>
-      <trans-unit id="cbe9f373b4cb9d1ead54f819901f9ec2e7a6aebf" resname="Pan American Health Organization, 2021. All rights reserved.">
-        <source>Pan American Health Organization, 2021. All rights reserved.</source>
-        <target>Organización Panamericana de Salud Pública, 2021. Todos los derechos reservados.</target>
-      </trans-unit>
-      <trans-unit id="8be3c943b1609fffbfc51aad666d0a04adf83c9d" resname="Password">
-        <source>Password</source>
-        <target>Contraseña</target>
+      <trans-unit id="2289a8a246f7b81936db44bb94258173fa9daee0" resname="Pan American Health Organization. All rights reserved.">
+        <source>Pan American Health Organization. All rights reserved.</source>
+        <target>Pan American Health Organization. All rights reserved.</target>
       </trans-unit>
       <trans-unit id="e4d64aa6b64e302e5b6b2c82be0fd71cc0cc8624" resname="Password changed with success.">
         <source>Password changed with success.</source>
@@ -1641,6 +1649,10 @@
       <trans-unit id="b2bb68d52366fa57401e8807b764b7ac4e94e9b0" resname="Reference Number of the Technical Cooperation">
         <source>Reference Number of the Technical Cooperation</source>
         <target>Número de referencia de la cooperación técnica</target>
+      </trans-unit>
+      <trans-unit id="248b110422fb7ca5f331047755fd8d29dcd8621c" resname="Regional Office for the Americas of the World Health Organization">
+        <source>Regional Office for the Americas of the World Health Organization</source>
+        <target>Regional Office for the Americas of the World Health Organization</target>
       </trans-unit>
       <trans-unit id="2b03b59293b6fc7101306f5d9ae1e96327bb419a" resname="Reject">
         <source>Reject</source>
