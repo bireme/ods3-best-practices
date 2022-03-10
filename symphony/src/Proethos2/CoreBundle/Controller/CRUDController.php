@@ -1127,7 +1127,7 @@ class CRUDController extends Controller
             $body .= "<br /><br />";
 
             $message = \Swift_Message::newInstance()
-            ->setSubject("[proethos2] " . $translator->trans("Set your password"))
+            ->setSubject("[BP] " . $translator->trans("Set your password"))
             ->setFrom($util->getConfiguration('committee.email'))
             ->setTo($post_data['email'])
             ->setBody(
@@ -1322,7 +1322,7 @@ class CRUDController extends Controller
                 $body .= "<br /><br />";
 
                 $message = \Swift_Message::newInstance()
-                ->setSubject("[proethos2] " . $translator->trans("Confirmation of valid access to the Proethos2 platform"))
+                ->setSubject("[BP] " . $translator->trans("Confirmation of valid access to the Proethos2 platform"))
                 ->setFrom($util->getConfiguration('committee.email'))
                 ->setTo($user->getEmail())
                 ->setBody(
@@ -1563,7 +1563,7 @@ class CRUDController extends Controller
             $body .= "<br /><br />";
 
             $message = \Swift_Message::newInstance()
-            ->setSubject("[proethos2] " . $translator->trans("Message from plataform."))
+            ->setSubject("[BP] " . $translator->trans("Message from plataform."))
             ->setFrom($output['committee_email'])
             ->setTo($output['committee_email'])
             ->setBody(

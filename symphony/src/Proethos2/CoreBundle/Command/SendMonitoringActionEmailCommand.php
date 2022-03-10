@@ -95,7 +95,7 @@ class SendMonitoringActionEmailCommand extends ContainerAwareCommand
             $translator->setLocale($protocol->getMainSubmission()->getLanguage());
 
             $message = \Swift_Message::newInstance()
-            ->setSubject("[proethos2] " . $translator->trans("You have a pending monitoring action to %date%", array("%date%" => $date)))
+            ->setSubject("[BP] " . $translator->trans("You have a pending monitoring action to %date%", array("%date%" => $date)))
             ->setFrom($util->getConfiguration('committee.email'))
             ->setTo($email)
             ->setBody(
