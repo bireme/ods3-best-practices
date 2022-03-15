@@ -57,6 +57,16 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="input_other_intervention">{% trans %}Other Intervention{% endtrans %} {% trans %}(please specify){% endtrans %}:</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <input type="text" class="form-control" name='other_intervention' id='input_other_intervention' value="{{ submission.otherIntervention }}">
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class='block'>

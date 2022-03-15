@@ -206,6 +206,12 @@ class Submission extends Base
      */
     private $intervention;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank()
+     */
+    private $other_intervention;
+
     /******************** IDENTIFYING THE BEST PRACTICE ********************/
 
     /**
@@ -2185,5 +2191,29 @@ class Submission extends Base
     public function getGoals()
     {
         return $this->goals;
+    }
+
+    /**
+     * Set otherIntervention
+     *
+     * @param string $otherIntervention
+     *
+     * @return Submission
+     */
+    public function setOtherIntervention($otherIntervention)
+    {
+        $this->other_intervention = $otherIntervention;
+
+        return $this;
+    }
+
+    /**
+     * Get otherIntervention
+     *
+     * @return string
+     */
+    public function getOtherIntervention()
+    {
+        return $this->other_intervention;
     }
 }
