@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2022-03-10T01:11:44Z" source-language="en" target-language="pt_BR" datatype="plaintext" original="not.available">
+  <file date="2022-03-15T15:25:17Z" source-language="en" target-language="pt_BR" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -8,7 +8,7 @@
     <body>
       <trans-unit id="9c6014edd87406246968b687073a3900ecbac4ab" resname="(please specify)">
         <source>(please specify)</source>
-        <target>(please specify)</target>
+        <target>(por favor especifique)</target>
       </trans-unit>
       <trans-unit id="f7fae9b58ef582a295b2bbe3ffcf73705281cd4b" resname="12 months">
         <source>12 months</source>
@@ -133,7 +133,7 @@
       </trans-unit>
       <trans-unit id="973ba784d9189d1b41478cd8b4d25af0d0bc85e8" resname="Any comment for the Secretariat of the Pan American Health Organization">
         <source>Any comment for the Secretariat of the Pan American Health Organization</source>
-        <target>Qualquer comentário para o Secretariado da Organização Pan-Americana da Saúde.</target>
+        <target>Algum comentário para o Secretariado da Organização Pan-Americana da Saúde</target>
       </trans-unit>
       <trans-unit id="42637da5a6d5928cf56568b0ca5e0799a79f2350" resname="Any specific population group">
         <source>Any specific population group</source>
@@ -305,7 +305,7 @@
       </trans-unit>
       <trans-unit id="34748fd115780943acf491b51433c429e5545276" resname="Brief Introduction">
         <source>Brief Introduction</source>
-        <target>Breve introdução.</target>
+        <target>Breve introdução</target>
       </trans-unit>
       <trans-unit id="ae4093c5963b70a69b74ca82666b417cd4ade537" resname="By submitting a contribution, contributors grant PAHO and related partners a free perpetual non-exclusive license to use, edit and publish the contribution for noncommercial purposes.">
         <source>By submitting a contribution, contributors grant PAHO and related partners a free perpetual non-exclusive license to use, edit and publish the contribution for noncommercial purposes.</source>
@@ -357,7 +357,7 @@
       </trans-unit>
       <trans-unit id="b46c77fa44760067b496d3820ee234412eb7cde5" resname="Choose your login">
         <source>Choose your login</source>
-        <target>Choose your login</target>
+        <target>Escolha seu login</target>
       </trans-unit>
       <trans-unit id="a4781b4e531e406a69c0092ff5dcf176feecc6dd" resname="Clinical Trial">
         <source>Clinical Trial</source>
@@ -445,7 +445,7 @@
       </trans-unit>
       <trans-unit id="c3041c97d5858cc44b6c247f11607669a0ec010a" resname="Could these successful BP be demonstrated in other contexts">
         <source>Could these successful BP be demonstrated in other contexts</source>
-        <target>Essas Boas Práticas bem-sucedidas poderiam ser demonstradas em outros contextos?</target>
+        <target>Essa Boa Prática bem-sucedida poderia ser demonstrada em outros contextos</target>
       </trans-unit>
       <trans-unit id="8a8a5babf4649d70c303eed31a0e144e4fc47302" resname="Counterpart">
         <source>Counterpart</source>
@@ -469,7 +469,7 @@
       </trans-unit>
       <trans-unit id="34739fc8d0812e43624f37810a42e4c499b761e9" resname="Country/Territory receiving/providing the cooperation">
         <source>Country/Territory receiving/providing the cooperation</source>
-        <target>País/Território que recebe/fornece a cooperação.</target>
+        <target>País/Território que recebe/fornece a cooperação</target>
       </trans-unit>
       <trans-unit id="a18c88be99735cca7be4fbae031e40387c909692" resname="Create PDF">
         <source>Create PDF</source>
@@ -489,7 +489,7 @@
       </trans-unit>
       <trans-unit id="8ecafd1e8875c0776431554897c6fdf506c2e45b" resname="Create your password">
         <source>Create your password</source>
-        <target>Create your password</target>
+        <target>Crie sua senha</target>
       </trans-unit>
       <trans-unit id="de06a1fbeb64e7f4b184e68b9e8b95b2fb6469c0" resname="Created in">
         <source>Created in</source>
@@ -581,11 +581,11 @@
       </trans-unit>
       <trans-unit id="c14bcb61daff86c092aaca32637236471f31ce12" resname="Did it contribute to strengthen the health system, the achievement of PAHO SP 20-25 and SHAA 2030">
         <source>Did it contribute to strengthen the health system, the achievement of PAHO SP 20-25 and SHAA 2030</source>
-        <target>Contribuiu para o fortalecimento do sistema de saúde, para o cumprimento do Plano Estratégico da Organização Pan-Americana da Saúde 2020-2025 e da Agenda de Saúde Sustentável para as Américas 2018-2030 (SHAA2030)</target>
+        <target>Contribuiu para o fortalecimento do sistema de saúde, para o cumprimento do Plano Estratégico da Organização Pan-Americana da Saúde 2020-2025 (SP 20-25) e da Agenda de Saúde Sustentável para as Américas 2018-2030 (ASSA 2030)</target>
       </trans-unit>
       <trans-unit id="2b7d1f0c4120bd2bff52a318ddc863e50782af78" resname="Did it contribute to strengthen the health system, the achievement of Strategic Plan of the Pan American Health Organization 2020-2025 (SP 20-25) and Sustainable Health Agenda for the Americas 2018-2030 (SHAA 2030)?">
         <source>Did it contribute to strengthen the health system, the achievement of Strategic Plan of the Pan American Health Organization 2020-2025 (SP 20-25) and Sustainable Health Agenda for the Americas 2018-2030 (SHAA 2030)?</source>
-        <target>Did it contribute to strengthen the health system, the achievement of Strategic Plan of the Pan American Health Organization 2020-2025 (SP 20-25) and Sustainable Health Agenda for the Americas 2018-2030 (SHAA 2030)?</target>
+        <target>Contribuiu para o fortalecimento do sistema de saúde, para o cumprimento do Plano Estratégico da Organização Pan-Americana da Saúde 2020-2025 (SP 20-25) e da Agenda de Saúde Sustentável para as Américas 2018-2030 (ASSA 2030)</target>
       </trans-unit>
       <trans-unit id="961f36de4c326fdd7cb4cc66ab04a5bd2188e0c3" resname="Do you confirm the exclusion of this attachment?">
         <source>Do you confirm the exclusion of this attachment?</source>
@@ -605,7 +605,7 @@
       </trans-unit>
       <trans-unit id="49e9d459d43aba2f8f42b0c866b0932fd1513b3b" resname="Does the development of this BP have adaptability and replicability potential">
         <source>Does the development of this BP have adaptability and replicability potential</source>
-        <target>O desenvolvimento desta Boa Prática tem potencial de replicabilidade e adaptabilidade?</target>
+        <target>O desenvolvimento desta Boa Prática tem potencial de replicabilidade e adaptabilidade</target>
       </trans-unit>
       <trans-unit id="23d33e22acfcb9ecddb4a85f10607dc4ff49e23c" resname="Draft">
         <source>Draft</source>
@@ -818,7 +818,7 @@
       </trans-unit>
       <trans-unit id="64346b483c0adcfb6e6d4c2e4ce19f1cd2cde025" resname="Full Name">
         <source>Full Name</source>
-        <target>Full Name</target>
+        <target>Nome completo</target>
       </trans-unit>
       <trans-unit id="8a754c61c2ced0c5ff79a1827e02c9d643d6d926" resname="Gender">
         <source>Gender</source>
@@ -906,23 +906,23 @@
       </trans-unit>
       <trans-unit id="4c05835cf89afee841c2033dbc84eb128aafbb79" resname="In your opinion, PAHO played a catalytic role on the added value of Technical Cooperation">
         <source>In your opinion, PAHO played a catalytic role on the added value of Technical Cooperation</source>
-        <target>Em sua opinião, a OPAS desempenhou um papel catalisador no valor agregado da Cooperação Técnica?</target>
+        <target>Na sua opinião, a OPAS desempenhou um papel catalisador no valor agregado da Cooperação Técnica</target>
       </trans-unit>
       <trans-unit id="9898a929c3693b2bf954cf6a828ff25cbeb70622" resname="In your opinion, PAHO played a neutral role in negotiations">
         <source>In your opinion, PAHO played a neutral role in negotiations</source>
-        <target>Em sua opinião, a OPAS teve um papel neutro nas negociações?</target>
+        <target>Na sua opinião, a OPAS teve um papel neutro nas negociações</target>
       </trans-unit>
       <trans-unit id="1035bc7755a2bc4db9b7d5b570d5e51ca2fd242b" resname="In your opinion, PAHO's Technical Cooperation was planned considering the cross-cutting approach (human rights, gender, ethnicity and race)">
         <source>In your opinion, PAHO's Technical Cooperation was planned considering the cross-cutting approach (human rights, gender, ethnicity and race)</source>
-        <target>Em sua opinião, a Cooperação Técnica da OPAS foi planejada considerando o enfoque transversal (direitos humanos, gênero, etnia e raça)?</target>
+        <target>Na sua opinião, a Cooperação Técnica da OPAS foi planejada considerando o enfoque transversal (direitos humanos, gênero, etnia e raça)?</target>
       </trans-unit>
       <trans-unit id="1c9d3be359166a4a6ebcdddc7205d25945ea0c25" resname="In your opinion, the counterpart(s) recognized PAHO's Technical Cooperation">
         <source>In your opinion, the counterpart(s) recognized PAHO's Technical Cooperation</source>
-        <target>Em sua opinião, a(s) contraparte(s) reconheceu(m) a Cooperação Técnica da OPAS?</target>
+        <target>Na sua opinião, a contraparte reconheceu a Cooperação Técnica da OPAS</target>
       </trans-unit>
       <trans-unit id="91df7435c710a06415733c7c09fcf4cf2eed766d" resname="In your opinion, the resources assigned to the accomplishment of this Best Practice (financial, technological and/or manpower) were implement in an efficient way">
         <source>In your opinion, the resources assigned to the accomplishment of this Best Practice (financial, technological and/or manpower) were implement in an efficient way</source>
-        <target>Na sua opinião, os recursos alocados para o cumprimento desta Boa Prática (financeiros, tecnológicos e/ou mão-de-obra) foram implementados de forma eficiente?</target>
+        <target>Na sua opinião, os recursos utilizados para o cumprimento desta Boa Prática (financeiro, tecnológico e/ou humano) foram implementados de forma eficiente?</target>
       </trans-unit>
       <trans-unit id="013dcdb66b14b0fbb2f5393c8f52a72509f21819" resname="Inactive account. Please try again later.">
         <source>Inactive account. Please try again later.</source>
@@ -962,7 +962,7 @@
       </trans-unit>
       <trans-unit id="d2f1d082fb2c9421c5221f4823666ac570d2dd7c" resname="Institution reporting the Best Practice">
         <source>Institution reporting the Best Practice</source>
-        <target>Instituição que relata as Boa Prática</target>
+        <target>Instituição que relata a Boa Prática</target>
       </trans-unit>
       <trans-unit id="dcd439a7322864e79ebb16b566f6870d846c27d2" resname="Institutions">
         <source>Institutions</source>
@@ -994,7 +994,7 @@
       </trans-unit>
       <trans-unit id="84aef2d04caf4e6d39cfef13093c4ee6252c4e82" resname="Is the BP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization">
         <source>Is the BP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization</source>
-        <target>A BP está alinhada com os valores da Organização (missão, visão, mandatos e estratégias) e mostra a importância do projeto não apenas para uma entidade específica, mas para a Organização</target>
+        <target>A BP está alinhada com os valores da Organização (missão, visão, mandatos e estratégias) e mostra a importância do projeto não para a entidade em particular, mas para a Organização?</target>
       </trans-unit>
       <trans-unit id="76a38180859b3024f9cb90bc039aee77b0e5e7d5" resname="Is this a confidential comment?">
         <source>Is this a confidential comment?</source>
@@ -1330,7 +1330,7 @@
       </trans-unit>
       <trans-unit id="6353049937c27ac2f99e782658c52f29e91fd4f2" resname="New user? Start here.">
         <source>New user? Start here.</source>
-        <target>New user? Start here.</target>
+        <target>Novo usuário? Comece aqui.</target>
       </trans-unit>
       <trans-unit id="907961cea29c6ad5f0736a8170a68e6b48ebab82" resname="Next meetings">
         <source>Next meetings</source>
@@ -1438,7 +1438,7 @@
       </trans-unit>
       <trans-unit id="68e2a1e0230efc5edc8fd67df99569e90858afc6" resname="Other Population Group">
         <source>Other Population Group</source>
-        <target>Other Population Group</target>
+        <target>Outro grupo (por favor, especifique)</target>
       </trans-unit>
       <trans-unit id="8f45a7c1d59f06b2be8fc48e87a712ec64e61b5f" resname="Other Role">
         <source>Other Role</source>
@@ -1474,7 +1474,7 @@
       </trans-unit>
       <trans-unit id="2289a8a246f7b81936db44bb94258173fa9daee0" resname="Pan American Health Organization. All rights reserved.">
         <source>Pan American Health Organization. All rights reserved.</source>
-        <target>Pan American Health Organization. All rights reserved.</target>
+        <target>Organização Pan-Americana da Saúde. Todos os direitos reservados.</target>
       </trans-unit>
       <trans-unit id="e4d64aa6b64e302e5b6b2c82be0fd71cc0cc8624" resname="Password changed with success.">
         <source>Password changed with success.</source>
@@ -1498,19 +1498,19 @@
       </trans-unit>
       <trans-unit id="9659d2209800df4696b83c11b5eecd2978cbec8e" resname="Please provide a short description to support your answer">
         <source>Please provide a short description to support your answer</source>
-        <target>Por favor, forneça uma breve descrição para apoiar sua resposta.</target>
+        <target>Por favor, forneça uma breve explicação para apoiar sua resposta acima</target>
       </trans-unit>
       <trans-unit id="40d0dccb47034a99fa8cfaab680d0a6121f39b57" resname="Please provide a short description to support your previous three answers (dissemination, adaptability/replicability and context)">
         <source>Please provide a short description to support your previous three answers (dissemination, adaptability/replicability and context)</source>
-        <target>Por favor, forneça uma breve descrição para apoiar suas três respostas anteriores (disseminação, adaptabilidade/replicabilidade e contexto).</target>
+        <target>Por favor, forneça uma breve descrição para apoiar suas três respostas anteriores (disseminação, adaptabilidade/replicabilidade e contexto)</target>
       </trans-unit>
       <trans-unit id="e6bbcd107e976fb8ba6a0d9cbd939618fa7c7806" resname="Please provide information">
         <source>Please provide information</source>
-        <target>Por favor, forneça informações.</target>
+        <target>Por favor, explique</target>
       </trans-unit>
       <trans-unit id="de488d134e3dd4a6d8fc58ecd6d708f732cb9495" resname="Please provide information about products (resources, documents of the initiative/project) generated/associated to this Best Practice">
         <source>Please provide information about products (resources, documents of the initiative/project) generated/associated to this Best Practice</source>
-        <target>Por favor, forneça informações sobre produtos (recursos, documentos da iniciativa/projeto) gerados/ associados a esta Boa Prática.</target>
+        <target>Por favor, forneça informações sobre produtos (recursos, documentos da iniciativa/projeto) gerados/associados a esta Boa Prática.</target>
       </trans-unit>
       <trans-unit id="ae9562e69f06d9bea444634d62087e1c297daba7" resname="Please provide sources and documents of the initiative/project generated/associated to this Best Practice">
         <source>Please provide sources and documents of the initiative/project generated/associated to this Best Practice</source>
@@ -1518,27 +1518,27 @@
       </trans-unit>
       <trans-unit id="6645a4fa2df1f0ed95118b279c5482574d8670c4" resname="Please provide support information about PAHO's Technical Cooperation recognition">
         <source>Please provide support information about PAHO's Technical Cooperation recognition</source>
-        <target>Por favor, forneça informações de apoio sobre o reconhecimento de Cooperação Técnica da OPAS.</target>
+        <target>Explique, por favor, sobre como a Cooperação Técnica da OPAS foi reconhecida pela contraparte </target>
       </trans-unit>
       <trans-unit id="b9d562d1e72303736f85f83ecf4a333a05a3e9be" resname="Please provide support information. For example, information on how PAHO's Technical Cooperation contributed to strengthen capacity and address health inequities and inequalities, and gender and culturally sensitive approaches to health within a human rights framework; to engage in an intersectoral action with an equity and rights focus">
         <source>Please provide support information. For example, information on how PAHO's Technical Cooperation contributed to strengthen capacity and address health inequities and inequalities, and gender and culturally sensitive approaches to health within a human rights framework; to engage in an intersectoral action with an equity and rights focus</source>
-        <target>Por favor, forneça informações de suporte. Por exemplo, informações sobre como a Cooperação Técnica da OPAS contribuiu para fortalecer a capacidade e abordar as iniquidades e desigualdades em saúde e enfoques de gênero e culturalmente sensíveis à saúde dentro de uma estrutura de direitos humanos; engajar-se em uma ação intersetorial com foco na equidade e nos direitos.</target>
+        <target>Por exemplo, informações sobre como a Cooperação Técnica da OPAS contribui para fortalecer a capacidade e abordar as iniquidades e desigualdades em saúde e abordagens culturalmente sensíveis à saúde, dentro de uma estrutura de direitos humanos para se engajar em ações intersetoriais com equidade e direitos</target>
       </trans-unit>
       <trans-unit id="8c7d412b8f2344fe81a12bc1bc3257d8a589d82b" resname="Please select the most appropriate Goal:">
         <source>Please select the most appropriate Goal:</source>
-        <target>Please select the most appropriate Goal:</target>
+        <target>Por favor, selecione o Objetivo mais apropriado</target>
       </trans-unit>
       <trans-unit id="5d931e156d7196ced3f7d8065fb39b4725e2f2ac" resname="Please select the most appropriate Outcome:">
         <source>Please select the most appropriate Outcome:</source>
-        <target>Please select the most appropriate Outcome:</target>
+        <target>Por favor, selecione o Resultado mais adequado</target>
       </trans-unit>
       <trans-unit id="eb8f3ce2a98e81099989307e96c36e37ec881384" resname="Population Group">
         <source>Population Group</source>
-        <target>Grupo Populacional</target>
+        <target>Grupo populacional</target>
       </trans-unit>
       <trans-unit id="e744dd6b3c48af417bc6eb39dca6cfe62210fda8" resname="Population Groups">
         <source>Population Groups</source>
-        <target>Grupo Populacional</target>
+        <target>Grupos Populacionais</target>
       </trans-unit>
       <trans-unit id="23882c575954a0789bf02aba9e6dd01f539bc738" resname="Portuguese">
         <source>Portuguese</source>
@@ -1654,7 +1654,7 @@
       </trans-unit>
       <trans-unit id="248b110422fb7ca5f331047755fd8d29dcd8621c" resname="Regional Office for the Americas of the World Health Organization">
         <source>Regional Office for the Americas of the World Health Organization</source>
-        <target>Regional Office for the Americas of the World Health Organization</target>
+        <target>Escritório Regional para as Américas da Organização Mundial da Saúde</target>
       </trans-unit>
       <trans-unit id="2b03b59293b6fc7101306f5d9ae1e96327bb419a" resname="Reject">
         <source>Reject</source>
@@ -2007,7 +2007,7 @@
       </trans-unit>
       <trans-unit id="0715dda954d17286931a0515be1910852ef7de6d" resname="Sustainable Development Goals (and targets)">
         <source>Sustainable Development Goals (and targets)</source>
-        <target>Objetivos de desenvolvimento sustentável (e metas).</target>
+        <target>Objetivos de desenvolvimento sustentável (e metas)</target>
       </trans-unit>
       <trans-unit id="b6b05aacb4d07a138b2f32456e6da19b65529491" resname="System Management">
         <source>System Management</source>
@@ -2241,15 +2241,15 @@
       </trans-unit>
       <trans-unit id="a1e9ffe709b8851a2df91210212c0f7ab4ff53ed" resname="Was the BP able to transfer technologies, and/or to disseminate useful knowledge adaptable to other realities, and could it be scaled up">
         <source>Was the BP able to transfer technologies, and/or to disseminate useful knowledge adaptable to other realities, and could it be scaled up</source>
-        <target>A BP conseguiu transferir tecnologias e/ou disseminar conhecimento útil adaptável para outras realidades e poderia ser ampliada? </target>
+        <target>A BP conseguiu transferir tecnologias e/ou disseminar conhecimento útil e adaptável para outras realidades, e poderia ser ampliada</target>
       </trans-unit>
       <trans-unit id="6bb998bf794b7bf71004a9b20c4adfb0b9e6b6f8" resname="Was the TC planned considering the health situation of the target population">
         <source>Was the TC planned considering the health situation of the target population</source>
-        <target>A Cooperação Técnica foi planejada considerando a situação de saúde da população-alvo?</target>
+        <target>A Cooperação Técnica foi planejada considerando a situação de saúde da população alvo</target>
       </trans-unit>
       <trans-unit id="0c69e6db46da6784db175fbfa8ca808935e02e8c" resname="Was the Technical Cooperation planned considering the health situation of the target population">
         <source>Was the Technical Cooperation planned considering the health situation of the target population</source>
-        <target>A Cooperação Técnica foi planejada considerando a situação de saúde da população-alvo?</target>
+        <target>A Cooperação Técnica foi planejada considerando a situação de saúde da população alvo</target>
       </trans-unit>
       <trans-unit id="477bc7417793d2bd9001b1ab4e8087d6c09fc5d4" resname="Welcome to the Proethos2 platform!">
         <source>Welcome to the Proethos2 platform!</source>
@@ -2261,11 +2261,11 @@
       </trans-unit>
       <trans-unit id="9457f9d397c05c513d8cb8e1ee0c44412a066ad6" resname="What obstacles or challenges were faced during the implementation of this best practice/initiative">
         <source>What obstacles or challenges were faced during the implementation of this best practice/initiative</source>
-        <target>Quais obstáculos ou desafios foram enfrentados durante a implementação desta boa prática/iniciativa?</target>
+        <target>Quais limitações ou desafios foram enfrentados durante a implementação desta boa prática</target>
       </trans-unit>
       <trans-unit id="14d520f5f1495b8af101e1fb1034b8b58c1391cd" resname="What public health issue (or opportunity) led PAHO to participate on this Technical Cooperation project/initiative">
         <source>What public health issue (or opportunity) led PAHO to participate on this Technical Cooperation project/initiative</source>
-        <target>Que questão de saúde pública (ou oportunidade) levou a OPAS a participar deste projeto/iniciativa de Cooperação Técnica?</target>
+        <target>Qual desafio (ou oportunidade) de saúde pública levou a OPAS a participar deste projeto/iniciativa de Cooperação Técnica?</target>
       </trans-unit>
       <trans-unit id="343cb422c61a60f2acde9fdfcb3236a84037d605" resname="What public health issue (or opportunity) led the Organization to participate/request this Technical Cooperation project/initiative">
         <source>What public health issue (or opportunity) led the Organization to participate/request this Technical Cooperation project/initiative</source>
@@ -2273,15 +2273,15 @@
       </trans-unit>
       <trans-unit id="379baa7d81d5d5851cf268be243a2400ba50db94" resname="What were the lessons learned that will improve our expertise and add value to the Organization">
         <source>What were the lessons learned that will improve our expertise and add value to the Organization</source>
-        <target>Quais foram as lições aprendidas que aprimorarão nossa experiência e agregar valor à Organização?</target>
+        <target>Quais foram as lições aprendidas que irão aprimorar nossa expertise e agregarão valor à Organização</target>
       </trans-unit>
       <trans-unit id="e358dd01e8e48d60ea4f4148f7f7334aad8f7f6e" resname="What's your role on this Best Practice">
         <source>What's your role on this Best Practice</source>
-        <target>Qual é a sua função nesta Boa Prática?</target>
+        <target>Qual é a sua função nesta Boa Prática</target>
       </trans-unit>
       <trans-unit id="e8882f03370bbcb5bad8d28d7e71e4ad9795e8a6" resname="Withdraw best practice">
         <source>Withdraw best practice</source>
-        <target>Retirar boa prática?</target>
+        <target>Retirar boa prática</target>
       </trans-unit>
       <trans-unit id="ab014c3271737b4543fd454e943e9e1066532f7a" resname="Withdrawn">
         <source>Withdrawn</source>
@@ -2289,11 +2289,11 @@
       </trans-unit>
       <trans-unit id="c5ba25bc32c6a2e0d3b2fce10ca6ccd436d9e613" resname="You cannot edit this best practice">
         <source>You cannot edit this best practice</source>
-        <target>Você não pode editar esta boa prática.</target>
+        <target>Você não pode editar esta boa prática</target>
       </trans-unit>
       <trans-unit id="696751f041de5e60a1187c72223bdd4aa7d6f40c" resname="You don't have access to do this">
         <source>You don't have access to do this</source>
-        <target>Você não tem acesso para fazer isso.</target>
+        <target>Você não tem acesso para fazer isso</target>
       </trans-unit>
       <trans-unit id="e6db71f9a22af4ba3d27582f7210c70f81953220" resname="You have a pending monitoring action to %date%">
         <source>You have a pending monitoring action to %date%</source>
