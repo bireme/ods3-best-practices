@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2022-03-10T01:11:46Z" source-language="en" target-language="fr_FR" datatype="plaintext" original="not.available">
+  <file date="2022-03-15T19:32:46Z" source-language="en" target-language="fr_FR" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -450,6 +450,10 @@
         <source>Counterpart</source>
         <target>Counterpart</target>
       </trans-unit>
+      <trans-unit id="eeb7584ee304cec318090cf7c53257e02a270ab4" resname="Counterparts and Partnerships">
+        <source>Counterparts and Partnerships</source>
+        <target>Counterparts and Partnerships</target>
+      </trans-unit>
       <trans-unit id="d523ebbd10146cdfd39dee077f04c9d08468d0bc" resname="Country">
         <source>Country</source>
         <target>Country</target>
@@ -582,9 +586,9 @@
         <source>Did it contribute to strengthen the health system, the achievement of PAHO SP 20-25 and SHAA 2030</source>
         <target>Did it contribute to strengthen the health system, the achievement of PAHO SP 20-25 and SHAA 2030</target>
       </trans-unit>
-      <trans-unit id="2b7d1f0c4120bd2bff52a318ddc863e50782af78" resname="Did it contribute to strengthen the health system, the achievement of Strategic Plan of the Pan American Health Organization 2020-2025 (SP 20-25) and Sustainable Health Agenda for the Americas 2018-2030 (SHAA 2030)?">
-        <source>Did it contribute to strengthen the health system, the achievement of Strategic Plan of the Pan American Health Organization 2020-2025 (SP 20-25) and Sustainable Health Agenda for the Americas 2018-2030 (SHAA 2030)?</source>
-        <target>Did it contribute to strengthen the health system, the achievement of Strategic Plan of the Pan American Health Organization 2020-2025 (SP 20-25) and Sustainable Health Agenda for the Americas 2018-2030 (SHAA 2030)?</target>
+      <trans-unit id="2c31e917929ab86580f758f11da1fa2a7320a388" resname="Did it contribute to strengthen the health system, the achievement of the Pan American Health Organization Strategic Plan 2020-2025 (SP 20-25) and/or the Sustainable Health Agenda for the Americas 2018-2030 (SHAA 2030)">
+        <source>Did it contribute to strengthen the health system, the achievement of the Pan American Health Organization Strategic Plan 2020-2025 (SP 20-25) and/or the Sustainable Health Agenda for the Americas 2018-2030 (SHAA 2030)</source>
+        <target>Did it contribute to strengthen the health system, the achievement of the Pan American Health Organization Strategic Plan 2020-2025 (SP 20-25) and/or the Sustainable Health Agenda for the Americas 2018-2030 (SHAA 2030)</target>
       </trans-unit>
       <trans-unit id="961f36de4c326fdd7cb4cc66ab04a5bd2188e0c3" resname="Do you confirm the exclusion of this attachment?">
         <source>Do you confirm the exclusion of this attachment?</source>
@@ -954,13 +958,9 @@
         <source>Institution</source>
         <target>Institution</target>
       </trans-unit>
-      <trans-unit id="b65443035075ad39d244206abb64eeaba9e7d289" resname="Institution Name">
-        <source>Institution Name</source>
-        <target>Institution Name</target>
-      </trans-unit>
-      <trans-unit id="d2f1d082fb2c9421c5221f4823666ac570d2dd7c" resname="Institution reporting the Best Practice">
-        <source>Institution reporting the Best Practice</source>
-        <target>Institution reporting the Best Practice</target>
+      <trans-unit id="9bdded06e81fa16253537c5e2398044318410aeb" resname="Institution's Name">
+        <source>Institution's Name</source>
+        <target>Institution's Name</target>
       </trans-unit>
       <trans-unit id="dcd439a7322864e79ebb16b566f6870d846c27d2" resname="Institutions">
         <source>Institutions</source>
@@ -1430,9 +1430,17 @@
         <source>Other Contexts</source>
         <target>Other Contexts</target>
       </trans-unit>
+      <trans-unit id="4eba05884978ba3203c0c77671d2b3d5f8da7831" resname="Other Counterparts and Partnerships">
+        <source>Other Counterparts and Partnerships</source>
+        <target>Other Counterparts and Partnerships</target>
+      </trans-unit>
       <trans-unit id="5e68e3ff3f90ea811366a90205411faf2b055573" resname="Other Institution">
         <source>Other Institution</source>
         <target>Other Institution</target>
+      </trans-unit>
+      <trans-unit id="a677f208bec4da8df49f5da3453a0df480ef92b9" resname="Other Intervention">
+        <source>Other Intervention</source>
+        <target>Other Intervention</target>
       </trans-unit>
       <trans-unit id="68e2a1e0230efc5edc8fd67df99569e90858afc6" resname="Other Population Group">
         <source>Other Population Group</source>
@@ -1441,10 +1449,6 @@
       <trans-unit id="8f45a7c1d59f06b2be8fc48e87a712ec64e61b5f" resname="Other Role">
         <source>Other Role</source>
         <target>Other Role</target>
-      </trans-unit>
-      <trans-unit id="b5a78143f1a0623490ab2090594235dd0be2f99e" resname="Other Stakeholder">
-        <source>Other Stakeholder</source>
-        <target>Other Stakeholder</target>
       </trans-unit>
       <trans-unit id="f87773db69357a19def39024a9e6ce18499fc611" resname="Other information sources">
         <source>Other information sources</source>
@@ -1522,13 +1526,13 @@
         <source>Please provide support information. For example, information on how PAHO's Technical Cooperation contributed to strengthen capacity and address health inequities and inequalities, and gender and culturally sensitive approaches to health within a human rights framework; to engage in an intersectoral action with an equity and rights focus</source>
         <target>Please provide support information. For example, information on how PAHO's Technical Cooperation contributed to strengthen capacity and address health inequities and inequalities, and gender and culturally sensitive approaches to health within a human rights framework; to engage in an intersectoral action with an equity and rights focus</target>
       </trans-unit>
-      <trans-unit id="8c7d412b8f2344fe81a12bc1bc3257d8a589d82b" resname="Please select the most appropriate Goal:">
-        <source>Please select the most appropriate Goal:</source>
-        <target>Please select the most appropriate Goal:</target>
+      <trans-unit id="e3fa8b0bee9c09c0f88f2bd00512e962fb62b30e" resname="Please select the most appropriate goal of the SHAA 2030:">
+        <source>Please select the most appropriate goal of the SHAA 2030:</source>
+        <target>Please select the most appropriate goal of the SHAA 2030:</target>
       </trans-unit>
-      <trans-unit id="5d931e156d7196ced3f7d8065fb39b4725e2f2ac" resname="Please select the most appropriate Outcome:">
-        <source>Please select the most appropriate Outcome:</source>
-        <target>Please select the most appropriate Outcome:</target>
+      <trans-unit id="d5337a7b5942566108d876f6a2624cbd2cfb147e" resname="Please select the most appropriate outcome of the SP 20-25:">
+        <source>Please select the most appropriate outcome of the SP 20-25:</source>
+        <target>Please select the most appropriate outcome of the SP 20-25:</target>
       </trans-unit>
       <trans-unit id="eb8f3ce2a98e81099989307e96c36e37ec881384" resname="Population Group">
         <source>Population Group</source>
@@ -1926,10 +1930,6 @@
         <source>Specific/Target population group</source>
         <target>Specific/Target population group</target>
       </trans-unit>
-      <trans-unit id="0a03ad2d5af9bcd113772494b8a16f774fbb3221" resname="Stakeholder">
-        <source>Stakeholder</source>
-        <target>Stakeholder</target>
-      </trans-unit>
       <trans-unit id="5493e68cb4d6d088d7665c093d2ba3aed447c1b2" resname="Stakeholders">
         <source>Stakeholders</source>
         <target>Stakeholders</target>
@@ -1945,10 +1945,6 @@
       <trans-unit id="85bda000935513fa9aaaaa1cd8dbc468a4f847b8" resname="Status created with success.">
         <source>Status created with success.</source>
         <target>Status created with success.</target>
-      </trans-unit>
-      <trans-unit id="3146afa2694d79a157e9be887d487da0a5aaf9ef" resname="Sub Region">
-        <source>Sub Region</source>
-        <target>Sub Region</target>
       </trans-unit>
       <trans-unit id="8909352bab24e7987ba0d29eb3d481bc7e000853" resname="Sub Regions">
         <source>Sub Regions</source>
@@ -1993,6 +1989,10 @@
       <trans-unit id="046485aa309a8f023e2e4f75a5e5856f99c1dde8" resname="Submitted by">
         <source>Submitted by</source>
         <target>Submitted by</target>
+      </trans-unit>
+      <trans-unit id="e3fc6e92f405dce30b18e6fab32a474d7ebafa45" resname="Subregion">
+        <source>Subregion</source>
+        <target>Subregion</target>
       </trans-unit>
       <trans-unit id="861edba00547bc9ce7a08df78d4378766418179f" resname="Suggestions">
         <source>Suggestions</source>
@@ -2111,6 +2111,10 @@
       <trans-unit id="2d3b51cfc8bc85852c46ed567bf44bf846a5747f" resname="Type / Description">
         <source>Type / Description</source>
         <target>Type / Description</target>
+      </trans-unit>
+      <trans-unit id="322a217631e8d638bf3516b8804721ddb5833bb2" resname="Type of institution reporting the Best Practice">
+        <source>Type of institution reporting the Best Practice</source>
+        <target>Type of institution reporting the Best Practice</target>
       </trans-unit>
       <trans-unit id="0e2d9b0777a485c1276de0803c12a7d76fbc5c39" resname="URL">
         <source>URL</source>
@@ -2359,6 +2363,10 @@
       <trans-unit id="b2ad1ca2e30fb080a5ad3d2c5549d502bc5e2236" resname="contact form">
         <source>contact form</source>
         <target>contact form</target>
+      </trans-unit>
+      <trans-unit id="c3499c2729730a7f807efb8676a92dcb6f8a3f8f" resname="example">
+        <source>example</source>
+        <target>example</target>
       </trans-unit>
       <trans-unit id="4c6dd761f24c4ac4fb95bb1bd183d4815802bfc7" resname="go on">
         <source>go on</source>
