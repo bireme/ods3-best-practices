@@ -1006,7 +1006,7 @@ class NewSubmissionController extends Controller
 
         }
 
-        $text = $translator->trans('Institution');
+        $text = $translator->trans('Type of institution reporting the Best Practice');
         $item = array('text' => $text, 'status' => true);
         if(empty($submission->getInstitution())) {
             $item = array('text' => $text, 'status' => false);
@@ -1026,7 +1026,7 @@ class NewSubmissionController extends Controller
 
         }
 
-        $text = $translator->trans('Institution Name');
+        $text = $translator->trans("Institution's Name");
         $item = array('text' => $text, 'status' => true);
         if(empty($submission->getInstitutionName())) {
             $item = array('text' => $text, 'status' => false);
@@ -1034,7 +1034,7 @@ class NewSubmissionController extends Controller
         }
         $revisions[] = $item;
 
-        $text = $translator->trans('Stakeholder');
+        $text = $translator->trans('Counterparts and Partnerships');
         $item = array('text' => $text, 'status' => true);
         if(empty($submission->getStakeholder())) {
             $item = array('text' => $text, 'status' => false);
@@ -1044,7 +1044,7 @@ class NewSubmissionController extends Controller
 
         if ( 'other' == $submission->getStakeholder()->getSlug() ) {
 
-            $text = $translator->trans('Other Stakeholder');
+            $text = $translator->trans('Other Counterparts and Partnerships');
             $item = array('text' => $text, 'status' => true);
             if(empty($submission->getOtherStakeholder())) {
                 $item = array('text' => $text, 'status' => false);
@@ -1114,7 +1114,7 @@ class NewSubmissionController extends Controller
         }
         $revisions[] = $item;
 
-        $text = $translator->trans('Sub Region');
+        $text = $translator->trans('Subregion');
         $item = array('text' => $text, 'status' => true);
         if(empty($submission->getSubRegion())) {
             $item = array('text' => $text, 'status' => false);

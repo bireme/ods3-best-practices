@@ -54,7 +54,7 @@
 
         {% endif %}
 
-        <h3>{% trans %}Institution reporting the Best Practice{% endtrans %}:</h3>
+        <h3>{% trans %}Type of institution reporting the Best Practice{% endtrans %}:</h3>
         <p>{{ submission.institution.name }}</p>
 
         {% if submission.institution.slug == "other" %}
@@ -64,15 +64,15 @@
 
         {% endif %}
 
-        <h3>{% trans %}Institution Name{% endtrans %}:</h3>
+        <h3>{% trans %}Institution's Name{% endtrans %}:</h3>
         <p>{{ submission.institutionName }}</p>
 
-        <h3>{% trans %}Stakeholder{% endtrans %}:</h3>
+        <h3>{% trans %}Counterparts and Partnerships{% endtrans %}:</h3>
         <p>{{ submission.stakeholder.name }}</p>
 
         {% if submission.stakeholder.slug == "other" %}
 
-            <h3>{% trans %}Other Stakeholder{% endtrans %}:</h3>
+            <h3>{% trans %}Other Counterparts and Partnerships{% endtrans %}:</h3>
             <p>{{ submission.otherStakeholder }}</p>
 
         {% endif %}
@@ -98,7 +98,7 @@
         <h3>{% trans %}Country/Territory receiving the cooperation{% endtrans %}:</h3>
         <p>{{ submission.country.name }}</p>
 
-        <h3>{% trans %}Sub Region{% endtrans %}:</h3>
+        <h3>{% trans %}Subregion{% endtrans %}:</h3>
         <p>{{ submission.subregion.name }}</p>
 
         <h3>{% trans %}This is respective to the following Targets of the SDGs{% endtrans %}:</h3>
