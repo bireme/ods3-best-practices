@@ -521,7 +521,7 @@ class NewSubmissionController extends Controller
 
             // adding fields to model
             $submission->setOtherPopulationGroup($post_data['other_population_group']);
-            $submission->setOtherPopulationGroup($post_data['other_intervention']);
+            $submission->setOtherIntervention($post_data['other_intervention']);
             $submission->setIntroduction($post_data['introduction']);
             $submission->setObjectives($post_data['objectives']);
             $submission->setActivities($post_data['activities']);
