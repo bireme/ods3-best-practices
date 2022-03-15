@@ -89,7 +89,7 @@
         <h3>{% trans %}Interventions{% endtrans %}:</h3>
         <p>{{ submission.intervention|join('; ') }}</p>
 
-        {% if "other-please-specify" in submission.intervention %}
+        {% if "other-please-specify" in submission.interventionSlugList %}
 
             <h3>{% trans %}Other Intervention{% endtrans %}:</h3>
             <p>{{ submission.otherIntervention }}</p>

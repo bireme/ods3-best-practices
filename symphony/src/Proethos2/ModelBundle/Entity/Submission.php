@@ -1863,6 +1863,18 @@ class Submission extends Base
         return $interventions;
     }
 
+    public function getInterventionSlugList() {
+        $interventions = array();
+
+        if ( $this->intervention ) {
+            foreach($this->intervention as $intervention) {
+                $interventions[] = $intervention->getSlug();
+            }
+        }
+
+        return $interventions;
+    }
+
     /**
      * Set entity
      *
