@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2022-03-15T19:32:43Z" source-language="en" target-language="pt_BR" datatype="plaintext" original="not.available">
+  <file date="2022-03-17T22:48:38Z" source-language="en" target-language="pt_BR" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -453,7 +453,7 @@
       </trans-unit>
       <trans-unit id="eeb7584ee304cec318090cf7c53257e02a270ab4" resname="Counterparts and Partnerships">
         <source>Counterparts and Partnerships</source>
-        <target>Counterparts and Partnerships</target>
+        <target>Contrapartes e Alianças</target>
       </trans-unit>
       <trans-unit id="d523ebbd10146cdfd39dee077f04c9d08468d0bc" resname="Country">
         <source>Country</source>
@@ -962,7 +962,7 @@
       </trans-unit>
       <trans-unit id="9bdded06e81fa16253537c5e2398044318410aeb" resname="Institution's Name">
         <source>Institution's Name</source>
-        <target>Institution's Name</target>
+        <target>Nome da Instituição</target>
       </trans-unit>
       <trans-unit id="dcd439a7322864e79ebb16b566f6870d846c27d2" resname="Institutions">
         <source>Institutions</source>
@@ -1434,7 +1434,7 @@
       </trans-unit>
       <trans-unit id="4eba05884978ba3203c0c77671d2b3d5f8da7831" resname="Other Counterparts and Partnerships">
         <source>Other Counterparts and Partnerships</source>
-        <target>Other Counterparts and Partnerships</target>
+        <target>Outras Contrapartes e Alianças</target>
       </trans-unit>
       <trans-unit id="5e68e3ff3f90ea811366a90205411faf2b055573" resname="Other Institution">
         <source>Other Institution</source>
@@ -2117,7 +2117,7 @@
       </trans-unit>
       <trans-unit id="322a217631e8d638bf3516b8804721ddb5833bb2" resname="Type of institution reporting the Best Practice">
         <source>Type of institution reporting the Best Practice</source>
-        <target>Type of institution reporting the Best Practice</target>
+        <target>Categoria de instituição que relata a Boa Prática</target>
       </trans-unit>
       <trans-unit id="0e2d9b0777a485c1276de0803c12a7d76fbc5c39" resname="URL">
         <source>URL</source>
