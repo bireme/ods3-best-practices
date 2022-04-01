@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2022-03-17T22:48:38Z" source-language="en" target-language="pt_BR" datatype="plaintext" original="not.available">
+  <file date="2022-03-25T00:56:34Z" source-language="en" target-language="pt_BR" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -589,7 +589,7 @@
       </trans-unit>
       <trans-unit id="2c31e917929ab86580f758f11da1fa2a7320a388" resname="Did it contribute to strengthen the health system, the achievement of the Pan American Health Organization Strategic Plan 2020-2025 (SP 20-25) and/or the Sustainable Health Agenda for the Americas 2018-2030 (SHAA 2030)">
         <source>Did it contribute to strengthen the health system, the achievement of the Pan American Health Organization Strategic Plan 2020-2025 (SP 20-25) and/or the Sustainable Health Agenda for the Americas 2018-2030 (SHAA 2030)</source>
-        <target>Did it contribute to strengthen the health system, the achievement of the Pan American Health Organization Strategic Plan 2020-2025 (SP 20-25) and/or the Sustainable Health Agenda for the Americas 2018-2030 (SHAA 2030)</target>
+        <target>Contribuiu para fortalecer o sistema de saúde, o cumprimento do Plano Estratégico da Organização Pan-Americana da Saúde 2020-2025 (SP 20-25) e/ou a Agenda de Saúde Sustentável para as Américas 2018-2030 (SHAA 2030)</target>
       </trans-unit>
       <trans-unit id="961f36de4c326fdd7cb4cc66ab04a5bd2188e0c3" resname="Do you confirm the exclusion of this attachment?">
         <source>Do you confirm the exclusion of this attachment?</source>
@@ -2117,7 +2117,7 @@
       </trans-unit>
       <trans-unit id="322a217631e8d638bf3516b8804721ddb5833bb2" resname="Type of institution reporting the Best Practice">
         <source>Type of institution reporting the Best Practice</source>
-        <target>Categoria de instituição que relata a Boa Prática</target>
+        <target>Categoria da instituição que relata a Boa Prática</target>
       </trans-unit>
       <trans-unit id="0e2d9b0777a485c1276de0803c12a7d76fbc5c39" resname="URL">
         <source>URL</source>
@@ -2369,7 +2369,7 @@
       </trans-unit>
       <trans-unit id="c3499c2729730a7f807efb8676a92dcb6f8a3f8f" resname="example">
         <source>example</source>
-        <target>example</target>
+        <target>exemplo</target>
       </trans-unit>
       <trans-unit id="4c6dd761f24c4ac4fb95bb1bd183d4815802bfc7" resname="go on">
         <source>go on</source>
