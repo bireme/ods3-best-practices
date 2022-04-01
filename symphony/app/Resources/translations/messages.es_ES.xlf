@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2022-03-15T19:32:44Z" source-language="en" target-language="es_ES" datatype="plaintext" original="not.available">
+  <file date="2022-03-31T23:18:32Z" source-language="en" target-language="es_ES" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -1030,9 +1030,9 @@
         <source>Last best practices in which you are part of the research team</source>
         <target>Últimas buenas prácticas en las que usted forma parte del equipo de investigación.</target>
       </trans-unit>
-      <trans-unit id="0b195394b8549f42280b07339af6a05fc3a795e8" resname="Last protocols that you reviewed">
-        <source>Last protocols that you reviewed</source>
-        <target>Últimos protocolos que usted revisó</target>
+      <trans-unit id="19ab1666077961d47c07654781ff53880e9c7b3d" resname="Last best practices that you reviewed">
+        <source>Last best practices that you reviewed</source>
+        <target>Last best practices that you reviewed</target>
       </trans-unit>
       <trans-unit id="47d263da05d6890962e8877a8c9d6b6c81187ea8" resname="Lessons Information">
         <source>Lessons Information</source>
@@ -1566,10 +1566,6 @@
         <source>Project Title</source>
         <target>Título del proyecto</target>
       </trans-unit>
-      <trans-unit id="1ed77c3f7ffc41a33eadccef5727dc7c97079235" resname="Protocol">
-        <source>Protocol</source>
-        <target>Protocolo</target>
-      </trans-unit>
       <trans-unit id="ae5a2f232ea1d568ed630dedbe448ace8256dd9d" resname="Protocol Checklist">
         <source>Protocol Checklist</source>
         <target>Lista de verificación del protocolo</target>
@@ -1869,10 +1865,6 @@
       <trans-unit id="8c86d73c34f67918b3131fa1eb594dbbeafac78e" resname="Send me instructions">
         <source>Send me instructions</source>
         <target>Enviarme instrucciones</target>
-      </trans-unit>
-      <trans-unit id="484ceee1920316eccd11f67ae2f6140ce196897a" resname="Send protocol revision">
-        <source>Send protocol revision</source>
-        <target>Enviar revisión del protocolo</target>
       </trans-unit>
       <trans-unit id="f4150af6b13029b733c888779a3d9c66fd5853e8" resname="Send to Ethical Review">
         <source>Send to Ethical Review</source>
