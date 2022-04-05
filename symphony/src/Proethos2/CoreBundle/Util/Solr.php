@@ -53,7 +53,7 @@ class Solr {
         $type->setTranslatableLocale('en');
         $em->refresh($type);
 
-        // population group translations
+        // type translations
         $translations = $trans_repository->findTranslations($type);
         $texts = array();
         $texts['en'] = 'en^'.$type->getName();
@@ -188,6 +188,28 @@ class Solr {
                 }
             }
             $data['intervention'][] = implode('|', $texts);
+        }
+
+        // technical matter field
+        $technical_matter = $submission->getTechnicalMatter();
+        $data['technical_matter'] = array();
+
+        foreach ($technical_matter as $tm) {
+            $tm->setTranslatableLocale('en');
+            $em->refresh($tm);
+
+            // technical matter translations
+            $translations = $trans_repository->findTranslations($tm);
+            $texts = array();
+            $texts['en'] = 'en^'.$tm->getName();
+            foreach(array('pt_BR', 'es_ES', 'fr_FR') as $_locale) {
+                if ( array_key_exists($_locale, $translations) ) {
+                    $text = $translations[$_locale];
+                    $_locale = substr($_locale, 0, 2);
+                    $texts[$_locale] = $_locale.'^'.$text['name'];
+                }
+            }
+            $data['technical_matter'][] = implode('|', $texts);
         }
 
         // target field
