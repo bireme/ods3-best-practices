@@ -48,7 +48,7 @@ class Target extends Base
 
     /**
      * @Gedmo\Translatable
-     * @ORM\Column(type="string", length=510)
+     * @ORM\Column(type="string", length=510, nullable=true)
      */
     private $subtext;
 
