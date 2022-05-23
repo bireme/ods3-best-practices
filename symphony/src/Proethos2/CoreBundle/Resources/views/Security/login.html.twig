@@ -83,7 +83,7 @@
                         <a href="{{ path('login_oauth2') }}" class="btn btn-lg btn-primary btn-block btn-signin">Sign in</a>
                     </div>
                 {% else %}
-                    <form class="form-signin" action="{{ path('login_check') }}" method="post">
+                    <form class="form-signin" action="{{ path('login_check') }}" method="post" autocomplete="off">
                         <input type="hidden" name="_target_path" value="default_security_target" />
                         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
 
