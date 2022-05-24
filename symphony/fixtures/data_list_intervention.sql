@@ -2,4 +2,4 @@ REPLACE INTO `list_intervention` (`id`, `created`, `updated`, `name`, `slug`, `s
 REPLACE INTO `list_intervention` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (2,'2021-07-02 00:12:55','2021-07-02 00:12:55','Emergencies and Preparedness - International Health Regulations','emergencies-and-preparedness-international-health-regulations',1);
 REPLACE INTO `list_intervention` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (3,'2021-07-02 00:13:46','2021-07-02 00:13:46','Innovation and new opportunities','innovation-and-new-opportunities',1);
 REPLACE INTO `list_intervention` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (4,'2021-07-02 00:13:59','2021-07-02 00:13:59','Problem solving','problem-solving',1);
-REPLACE INTO `list_intervention` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (5,'2022-03-02 17:16:18','2022-03-02 17:16:18','Other (please specify)','other-please-specify',1);
+REPLACE INTO `list_intervention` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (5,'2022-03-02 17:16:18','2022-03-02 17:16:18','Other','other',1);

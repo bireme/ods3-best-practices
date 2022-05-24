@@ -198,6 +198,12 @@ class Submission extends Base
     private $technical_matter;
 
     /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank()
+     */
+    private $other_technical_matter;
+
+    /**
      * @var Intervention
      *
      * @ORM\ManyToMany(targetEntity="Intervention", inversedBy="submissions")
@@ -1993,6 +1999,18 @@ class Submission extends Base
         return $technical_matters;
     }
 
+    public function getTechnicalMatterSlugList() {
+        $technical_matters = array();
+
+        if ( $this->technical_matter ) {
+            foreach($this->technical_matter as $technical_matter) {
+                $technical_matters[] = $technical_matters->getSlug();
+            }
+        }
+
+        return $technical_matters;
+    }
+
     /**
      * Add target
      *
@@ -2227,5 +2245,29 @@ class Submission extends Base
     public function getOtherIntervention()
     {
         return $this->other_intervention;
+    }
+
+    /**
+     * Set otherTechnicalMatter
+     *
+     * @param string $otherTechnicalMatter
+     *
+     * @return Submission
+     */
+    public function setOtherTechnicalMatter($otherTechnicalMatter)
+    {
+        $this->other_technical_matter = $otherTechnicalMatter;
+
+        return $this;
+    }
+
+    /**
+     * Get otherTechnicalMatter
+     *
+     * @return string
+     */
+    public function getOtherTechnicalMatter()
+    {
+        return $this->other_technical_matter;
     }
 }

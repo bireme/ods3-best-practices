@@ -391,14 +391,14 @@ class NewSubmissionController extends Controller
 
         // getting technical matter list
         $technical_matter_repository = $em->getRepository('Proethos2ModelBundle:TechnicalMatter');
-        // $technical_matter = $technical_matter_repository->findByStatus(true);
-        $technical_matter = $technical_matter_repository->findBy(array('status' => true), array('name' => 'ASC'));
+        $technical_matter = $technical_matter_repository->findByStatus(true);
+        // $technical_matter = $technical_matter_repository->findBy(array('status' => true), array('name' => 'ASC'));
         $output['technical_matter'] = $technical_matter;
 
         // getting intervention list
         $intervention_repository = $em->getRepository('Proethos2ModelBundle:Intervention');
-        // $intervention = $intervention_repository->findByStatus(true);
-        $intervention = $intervention_repository->findBy(array('status' => true), array('name' => 'ASC'));
+        $intervention = $intervention_repository->findByStatus(true);
+        // $intervention = $intervention_repository->findBy(array('status' => true), array('name' => 'ASC'));
         $output['intervention'] = $intervention;
 
         // getting target list
@@ -521,6 +521,7 @@ class NewSubmissionController extends Controller
 
             // adding fields to model
             $submission->setOtherPopulationGroup($post_data['other_population_group']);
+            $submission->setOtherTechnicalMatter($post_data['other_technical_matter']);
             $submission->setOtherIntervention($post_data['other_intervention']);
             $submission->setIntroduction($post_data['introduction']);
             $submission->setObjectives($post_data['objectives']);

@@ -57,7 +57,7 @@
         <h3>{% trans %}Type of institution reporting the Best Practice{% endtrans %}:</h3>
         <p>{{ submission.institution.name }}</p>
 
-        {% if submission.institution.slug == "other-please-specify" %}
+        {% if submission.institution.slug == "other" %}
 
             <h3>{% trans %}Other Institution{% endtrans %}:</h3>
             <p>{{ submission.otherInstitution }}</p>
@@ -86,10 +86,17 @@
         <h3>{% trans %}Technical Matters{% endtrans %}:</h3>
         <p>{{ submission.technicalMatter|join('; ') }}</p>
 
+        {% if submission.otherTechnicalMatter %}
+
+            <h3>{% trans %}Other Main Topic/Theme{% endtrans %}:</h3>
+            <p>{{ submission.otherTechnicalMatter }}</p>
+
+        {% endif %}
+
         <h3>{% trans %}Interventions{% endtrans %}:</h3>
         <p>{{ submission.intervention|join('; ') }}</p>
 
-        {% if "other-please-specify" in submission.interventionSlugList %}
+        {% if submission.otherIntervention %}
 
             <h3>{% trans %}Other Intervention{% endtrans %}:</h3>
             <p>{{ submission.otherIntervention }}</p>

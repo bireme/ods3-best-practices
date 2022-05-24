@@ -9,4 +9,4 @@ REPLACE INTO `list_population_group` (`id`, `created`, `updated`, `name`, `slug`
 REPLACE INTO `list_population_group` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (9,'2021-07-27 16:59:27','2021-07-27 16:59:27','Children','children',0);
 REPLACE INTO `list_population_group` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (13,'2021-11-24 20:58:01','2021-11-24 20:58:01','Persons with disabilities ','persons-with-disabilities',1);
 REPLACE INTO `list_population_group` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (14,'2021-11-24 22:32:26','2021-11-24 22:32:26','Migrants, refugees, and/or asylum-seekers ','migrants-refugees-and-or-asylum-seekers',1);
-REPLACE INTO `list_population_group` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (15,'2022-03-02 17:16:18','2022-03-02 17:16:18','Other (please specify)','other-please-specify',1);
+REPLACE INTO `list_population_group` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (15,'2022-03-02 17:16:18','2022-03-02 17:16:18','Other','other',1);
