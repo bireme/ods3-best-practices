@@ -1334,7 +1334,7 @@ class NewSubmissionController extends Controller
             $revisions[] = $item;
 
         }
-
+/*
         $text = $translator->trans('Attachments');
         $item = array('text' => $text, 'status' => true);
         $upload_type = $upload_type_repository->findOneBy(array('slug' => 'image'));
@@ -1345,7 +1345,7 @@ class NewSubmissionController extends Controller
             $final_status = false;
         }
         $revisions[] = $item;
-/*
+
         $text = $translator->trans('Products Information');
         $item = array('text' => $text, 'status' => true);
         if(empty($submission->getProductsInformation())) {
