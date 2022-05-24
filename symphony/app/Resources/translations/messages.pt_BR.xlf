@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2022-04-29T15:08:47Z" source-language="en" target-language="pt_BR" datatype="plaintext" original="not.available">
+  <file date="2022-05-24T16:47:04Z" source-language="en" target-language="pt_BR" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -133,7 +133,7 @@
       </trans-unit>
       <trans-unit id="973ba784d9189d1b41478cd8b4d25af0d0bc85e8" resname="Any comment for the Secretariat of the Pan American Health Organization">
         <source>Any comment for the Secretariat of the Pan American Health Organization</source>
-        <target>Algum comentário para o Secretariado da Organização Pan-Americana da Saúde</target>
+        <target>Algum comentário para a Secretaria da Organização Pan-Americana da Saúde</target>
       </trans-unit>
       <trans-unit id="42637da5a6d5928cf56568b0ca5e0799a79f2350" resname="Any specific population group">
         <source>Any specific population group</source>
@@ -589,7 +589,7 @@
       </trans-unit>
       <trans-unit id="2c31e917929ab86580f758f11da1fa2a7320a388" resname="Did it contribute to strengthen the health system, the achievement of the Pan American Health Organization Strategic Plan 2020-2025 (SP 20-25) and/or the Sustainable Health Agenda for the Americas 2018-2030 (SHAA 2030)">
         <source>Did it contribute to strengthen the health system, the achievement of the Pan American Health Organization Strategic Plan 2020-2025 (SP 20-25) and/or the Sustainable Health Agenda for the Americas 2018-2030 (SHAA 2030)</source>
-        <target>Contribuiu para fortalecer o sistema de saúde, o cumprimento do Plano Estratégico da Organização Pan-Americana da Saúde 2020-2025 (SP 20-25) e/ou a Agenda de Saúde Sustentável para as Américas 2018-2030 (SHAA 2030)</target>
+        <target>Contribuiu para fortalecer o sistema de saúde, o cumprimento do Plano Estratégico da Organização Pan-Americana da Saúde 2020-2025 e/ou a Agenda de Saúde Sustentável para as Américas 2018-2030 (ASSA 2030)</target>
       </trans-unit>
       <trans-unit id="961f36de4c326fdd7cb4cc66ab04a5bd2188e0c3" resname="Do you confirm the exclusion of this attachment?">
         <source>Do you confirm the exclusion of this attachment?</source>
@@ -918,7 +918,7 @@
       </trans-unit>
       <trans-unit id="1035bc7755a2bc4db9b7d5b570d5e51ca2fd242b" resname="In your opinion, PAHO's Technical Cooperation was planned considering the cross-cutting approach (human rights, gender, ethnicity and race)">
         <source>In your opinion, PAHO's Technical Cooperation was planned considering the cross-cutting approach (human rights, gender, ethnicity and race)</source>
-        <target>Na sua opinião, a Cooperação Técnica da OPAS foi planejada considerando o enfoque transversal (direitos humanos, gênero, etnia e raça)?</target>
+        <target>Na sua opinião, a Cooperação Técnica da OPAS foi planejada considerando o enfoque transversal (direitos humanos, gênero, etnia e raça)</target>
       </trans-unit>
       <trans-unit id="1c9d3be359166a4a6ebcdddc7205d25945ea0c25" resname="In your opinion, the counterpart(s) recognized PAHO's Technical Cooperation">
         <source>In your opinion, the counterpart(s) recognized PAHO's Technical Cooperation</source>
@@ -926,7 +926,7 @@
       </trans-unit>
       <trans-unit id="91df7435c710a06415733c7c09fcf4cf2eed766d" resname="In your opinion, the resources assigned to the accomplishment of this Best Practice (financial, technological and/or manpower) were implement in an efficient way">
         <source>In your opinion, the resources assigned to the accomplishment of this Best Practice (financial, technological and/or manpower) were implement in an efficient way</source>
-        <target>Na sua opinião, os recursos utilizados para o cumprimento desta Boa Prática (financeiro, tecnológico e/ou humano) foram implementados de forma eficiente?</target>
+        <target>Na sua opinião, os recursos utilizados para o cumprimento desta Boa Prática (financeiro, tecnológico e/ou humano) foram implementados de forma eficiente</target>
       </trans-unit>
       <trans-unit id="013dcdb66b14b0fbb2f5393c8f52a72509f21819" resname="Inactive account. Please try again later.">
         <source>Inactive account. Please try again later.</source>
@@ -1446,7 +1446,7 @@
       </trans-unit>
       <trans-unit id="68e2a1e0230efc5edc8fd67df99569e90858afc6" resname="Other Population Group">
         <source>Other Population Group</source>
-        <target>Outro grupo (por favor, especifique)</target>
+        <target>Outro grupo</target>
       </trans-unit>
       <trans-unit id="8f45a7c1d59f06b2be8fc48e87a712ec64e61b5f" resname="Other Role">
         <source>Other Role</source>
@@ -1518,23 +1518,23 @@
       </trans-unit>
       <trans-unit id="ae9562e69f06d9bea444634d62087e1c297daba7" resname="Please provide sources and documents of the initiative/project generated/associated to this Best Practice">
         <source>Please provide sources and documents of the initiative/project generated/associated to this Best Practice</source>
-        <target>Por favor, forneça fontes e documentos da iniciativa/projeto gerado/associado a esta Boa Prática.</target>
+        <target>Por favor, forneça fontes e documentos da iniciativa/projeto gerado/associado a esta Boa Prática</target>
       </trans-unit>
       <trans-unit id="6645a4fa2df1f0ed95118b279c5482574d8670c4" resname="Please provide support information about PAHO's Technical Cooperation recognition">
         <source>Please provide support information about PAHO's Technical Cooperation recognition</source>
-        <target>Explique, por favor, sobre como a Cooperação Técnica da OPAS foi reconhecida pela contraparte </target>
+        <target>Explique, por favor, sobre como a Cooperação Técnica da OPAS foi reconhecida pela contraparte</target>
       </trans-unit>
       <trans-unit id="b9d562d1e72303736f85f83ecf4a333a05a3e9be" resname="Please provide support information. For example, information on how PAHO's Technical Cooperation contributed to strengthen capacity and address health inequities and inequalities, and gender and culturally sensitive approaches to health within a human rights framework; to engage in an intersectoral action with an equity and rights focus">
         <source>Please provide support information. For example, information on how PAHO's Technical Cooperation contributed to strengthen capacity and address health inequities and inequalities, and gender and culturally sensitive approaches to health within a human rights framework; to engage in an intersectoral action with an equity and rights focus</source>
-        <target>Por exemplo, informações sobre como a Cooperação Técnica da OPAS contribui para fortalecer a capacidade e abordar as iniquidades e desigualdades em saúde e abordagens culturalmente sensíveis à saúde, dentro de uma estrutura de direitos humanos para se engajar em ações intersetoriais com equidade e direitos</target>
+        <target>Por favor, forneça as informações de suporte. Por exemplo, informações sobre como a Cooperação Técnica da OPAS contribuiu para fortalecer a capacidade e abordar as iniquidades e desigualdades em saúde, e abordagens de gênero e culturalmente sensíveis à saúde dentro de uma estrutura de direitos humanos; se engajar em uma ação intersetorial com foco em equidade e direitos</target>
       </trans-unit>
       <trans-unit id="e3fa8b0bee9c09c0f88f2bd00512e962fb62b30e" resname="Please select the most appropriate goal of the SHAA 2030:">
         <source>Please select the most appropriate goal of the SHAA 2030:</source>
-        <target>Please select the most appropriate goal of the SHAA 2030:</target>
+        <target>Por favor, selecione o objetivo mais adequado da ASSA 2030</target>
       </trans-unit>
       <trans-unit id="d5337a7b5942566108d876f6a2624cbd2cfb147e" resname="Please select the most appropriate outcome of the SP 20-25:">
         <source>Please select the most appropriate outcome of the SP 20-25:</source>
-        <target>Please select the most appropriate outcome of the SP 20-25:</target>
+        <target>Por favor, selecione o resultado mais apropriado do Plano Estratégico</target>
       </trans-unit>
       <trans-unit id="eb8f3ce2a98e81099989307e96c36e37ec881384" resname="Population Group">
         <source>Population Group</source>
@@ -1987,7 +1987,7 @@
       </trans-unit>
       <trans-unit id="e3fc6e92f405dce30b18e6fab32a474d7ebafa45" resname="Subregion">
         <source>Subregion</source>
-        <target>Subregion</target>
+        <target>Sub-região</target>
       </trans-unit>
       <trans-unit id="861edba00547bc9ce7a08df78d4378766418179f" resname="Suggestions">
         <source>Suggestions</source>
@@ -2261,7 +2261,7 @@
       </trans-unit>
       <trans-unit id="14d520f5f1495b8af101e1fb1034b8b58c1391cd" resname="What public health issue (or opportunity) led PAHO to participate on this Technical Cooperation project/initiative">
         <source>What public health issue (or opportunity) led PAHO to participate on this Technical Cooperation project/initiative</source>
-        <target>Qual desafio (ou oportunidade) de saúde pública levou a OPAS a participar deste projeto/iniciativa de Cooperação Técnica?</target>
+        <target>Qual desafio (ou oportunidade) de saúde pública levou a OPAS a participar deste projeto/iniciativa de Cooperação Técnica</target>
       </trans-unit>
       <trans-unit id="343cb422c61a60f2acde9fdfcb3236a84037d605" resname="What public health issue (or opportunity) led the Organization to participate/request this Technical Cooperation project/initiative">
         <source>What public health issue (or opportunity) led the Organization to participate/request this Technical Cooperation project/initiative</source>
