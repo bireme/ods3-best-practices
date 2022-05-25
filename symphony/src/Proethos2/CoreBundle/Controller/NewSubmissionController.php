@@ -1172,7 +1172,7 @@ class NewSubmissionController extends Controller
 
         $text = $translator->trans('Subregion');
         $item = array('text' => $text, 'status' => true);
-        if(empty($submission->getSubRegionList())) {
+        if(empty($submission->getSubregionList())) {
             $item = array('text' => $text, 'status' => false);
             $final_status = false;
         }

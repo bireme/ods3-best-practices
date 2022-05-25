@@ -40,7 +40,7 @@
                                 <tbody>
                                     {% for revision in revisions %}
                                         <tr class='{% if not revision.status %}error{% endif %}'>
-                                            <td>{{ revision.text }}</td>
+                                            <td>{{ revision.text|trans }}</td>
                                             {% if revision.status %}
                                                 <td class='center'><i class='glyphicon glyphicon-ok'></i></td>
                                             {% else %}
