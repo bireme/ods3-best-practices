@@ -68,6 +68,7 @@ class NewSubmissionController extends Controller
         // getting best practice entity list
         $best_practice_entity_repository = $em->getRepository('Proethos2ModelBundle:BestPracticeEntity');
         $best_practice_entity = $best_practice_entity_repository->findByStatus(true);
+        // $best_practice_entity = $best_practice_entity_repository->findBy(array('status' => true), array('name' => 'ASC'));
         $output['best_practice_entity'] = $best_practice_entity;
 
         // getting institution list
@@ -78,6 +79,7 @@ class NewSubmissionController extends Controller
         // getting stakeholder list
         $stakeholder_repository = $em->getRepository('Proethos2ModelBundle:Stakeholder');
         $stakeholder = $stakeholder_repository->findByStatus(true);
+        // $stakeholder = $stakeholder_repository->findBy(array('status' => true), array('name' => 'ASC'));
         $output['stakeholder'] = $stakeholder;
 
         // checking if was a post request
@@ -127,17 +129,37 @@ class NewSubmissionController extends Controller
             $selected_best_practice_role = $best_practice_role_repository->find($post_data['best_practice_role']);
             $submission->setRole($selected_best_practice_role);
 
-            // best practice entity
-            $selected_best_practice_entity = $best_practice_entity_repository->find($post_data['best_practice_entity']);
-            $submission->setEntity($selected_best_practice_entity);
-
             // institution
             $selected_institution = $institution_repository->find($post_data['institution']);
             $submission->setInstitution($selected_institution);
 
-            // stakeholder
-            $selected_stakeholder = $stakeholder_repository->find($post_data['stakeholder']);
-            $submission->setStakeholder($selected_stakeholder);
+            // removing all stakeholders to re-add
+            if ($submission->getStakeholder()) {
+                foreach($submission->getStakeholder() as $stakeholder) {
+                    $submission->removeStakeholder($stakeholder);
+                }
+            }
+            // re-add stakeholders
+            if(isset($post_data['stakeholder'])) {
+                foreach($post_data['stakeholder'] as $stakeholder) {
+                    $stakeholder = $stakeholder_repository->find($stakeholder);
+                    $submission->addStakeholder($stakeholder);
+                }
+            }
+
+            // removing all entities to re-add
+            if ($submission->getEntity()) {
+                foreach($submission->getEntity() as $entity) {
+                    $submission->removeEntity($entity);
+                }
+            }
+            // re-add entities
+            if(isset($post_data['best_practice_entity'])) {
+                foreach($post_data['best_practice_entity'] as $entity) {
+                    $entity = $best_practice_entity_repository->find($entity);
+                    $submission->addEntity($entity);
+                }
+            }
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($submission);
@@ -185,6 +207,7 @@ class NewSubmissionController extends Controller
         // getting best practice entity list
         $best_practice_entity_repository = $em->getRepository('Proethos2ModelBundle:BestPracticeEntity');
         $best_practice_entity = $best_practice_entity_repository->findByStatus(true);
+        // $best_practice_entity = $best_practice_entity_repository->findBy(array('status' => true), array('name' => 'ASC'));
         $output['best_practice_entity'] = $best_practice_entity;
 
         // getting institution list
@@ -195,6 +218,7 @@ class NewSubmissionController extends Controller
         // getting stakeholder list
         $stakeholder_repository = $em->getRepository('Proethos2ModelBundle:Stakeholder');
         $stakeholder = $stakeholder_repository->findByStatus(true);
+        // $stakeholder = $stakeholder_repository->findBy(array('status' => true), array('name' => 'ASC'));
         $output['stakeholder'] = $stakeholder;
 
         // getting the current submission
@@ -220,6 +244,8 @@ class NewSubmissionController extends Controller
             // getting post data
             $post_data = $request->request->all();
 
+            // echo "<pre>"; print_r($post_data); echo "</pre>"; die();
+
             // checking required files
             foreach(array('title', 'best_practice_type', 'best_practice_role', 'institution', 'institution_name', 'stakeholder') as $field) {
                 if(!isset($post_data[$field]) or empty($post_data[$field])) {
@@ -244,17 +270,37 @@ class NewSubmissionController extends Controller
             $selected_best_practice_role = $best_practice_role_repository->find($post_data['best_practice_role']);
             $submission->setRole($selected_best_practice_role);
 
-            // best practice entity
-            $selected_best_practice_entity = $best_practice_entity_repository->find($post_data['best_practice_entity']);
-            $submission->setEntity($selected_best_practice_entity);
-
             // institution
             $selected_institution = $institution_repository->find($post_data['institution']);
             $submission->setInstitution($selected_institution);
 
-            // stakeholder
-            $selected_stakeholder = $stakeholder_repository->find($post_data['stakeholder']);
-            $submission->setStakeholder($selected_stakeholder);
+            // removing all stakeholders to re-add
+            if ($submission->getStakeholder()) {
+                foreach($submission->getStakeholder() as $stakeholder) {
+                    $submission->removeStakeholder($stakeholder);
+                }
+            }
+            // re-add stakeholders
+            if(isset($post_data['stakeholder'])) {
+                foreach($post_data['stakeholder'] as $stakeholder) {
+                    $stakeholder = $stakeholder_repository->find($stakeholder);
+                    $submission->addStakeholder($stakeholder);
+                }
+            }
+
+            // removing all entities to re-add
+            if ($submission->getEntity()) {
+                foreach($submission->getEntity() as $entity) {
+                    $submission->removeEntity($entity);
+                }
+            }
+            // re-add entities
+            if(isset($post_data['best_practice_entity'])) {
+                foreach($post_data['best_practice_entity'] as $entity) {
+                    $entity = $best_practice_entity_repository->find($entity);
+                    $submission->addEntity($entity);
+                }
+            }
 
             $em->persist($submission);
             $em->flush();
@@ -374,6 +420,7 @@ class NewSubmissionController extends Controller
         // getting subregion list
         $subregion_repository = $em->getRepository('Proethos2ModelBundle:SubRegion');
         $subregion = $subregion_repository->findByStatus(true);
+        // $subregion = $subregion_repository->findBy(array('status' => true), array('name' => 'ASC'));
         $output['subregion'] = $subregion;
 
         // getting population group list
@@ -384,10 +431,9 @@ class NewSubmissionController extends Controller
 
         // getting countries list
         $country_repository = $em->getRepository('Proethos2ModelBundle:Country');
+        // $country = $country_repository->findByStatus(true);
         $countries = $country_repository->findBy(array('status' => true), array('name' => 'asc'));
         $output['countries'] = $countries;
-
-        // echo "<pre>"; print_r($countries[0]); echo "</pre>"; die();
 
         // getting technical matter list
         $technical_matter_repository = $em->getRepository('Proethos2ModelBundle:TechnicalMatter');
@@ -455,13 +501,33 @@ class NewSubmissionController extends Controller
                 }
             }
 
-            // country
-            $selected_country = $country_repository->find($post_data['country']);
-            $submission->setCountry($selected_country);
+            // removing all countries to re-add
+            if ($submission->getCountry()) {
+                foreach($submission->getCountry() as $country) {
+                    $submission->removeCountry($country);
+                }
+            }
+            // re-add countries
+            if(isset($post_data['country'])) {
+                foreach($post_data['country'] as $country) {
+                    $country = $country_repository->find($country);
+                    $submission->addCountry($country);
+                }
+            }
 
-            // subregion
-            $selected_subregion = $subregion_repository->find($post_data['subregion']);
-            $submission->setSubregion($selected_subregion);
+            // removing all subregions to re-add
+            if ($submission->getSubregion()) {
+                foreach($submission->getSubregion() as $subregion) {
+                    $submission->removeSubregion($subregion);
+                }
+            }
+            // re-add subregions
+            if(isset($post_data['subregion'])) {
+                foreach($post_data['subregion'] as $subregion) {
+                    $subregion = $subregion_repository->find($subregion);
+                    $submission->addSubregion($subregion);
+                }
+            }
 
             // removing all population groups to re-add
             if ($submission->getPopulationGroup()) {
@@ -870,7 +936,7 @@ class NewSubmissionController extends Controller
 
         $submission_repository = $em->getRepository('Proethos2ModelBundle:Submission');
         $user_repository = $em->getRepository('Proethos2ModelBundle:User');
-        $submission_country_repository = $em->getRepository('Proethos2ModelBundle:SubmissionCountry');
+        // $submission_country_repository = $em->getRepository('Proethos2ModelBundle:SubmissionCountry');
 
         $user = $this->get('security.token_storage')->getToken()->getUser();
 
@@ -1038,29 +1104,17 @@ class NewSubmissionController extends Controller
 
         $text = $translator->trans('Counterparts and Partnerships');
         $item = array('text' => $text, 'status' => true);
-        if(empty($submission->getStakeholder())) {
+        if(empty($submission->getStakeholderList())) {
             $item = array('text' => $text, 'status' => false);
             $final_status = false;
         }
         $revisions[] = $item;
 
-        if ( 'other' == $submission->getStakeholder()->getSlug() ) {
-
-            $text = $translator->trans('Other Counterparts and Partnerships');
-            $item = array('text' => $text, 'status' => true);
-            if(empty($submission->getOtherStakeholder())) {
-                $item = array('text' => $text, 'status' => false);
-                $final_status = false;
-            }
-            $revisions[] = $item;
-
-        }
-
         if ( 'paho-who-technical-cooperation' == $submission->getType()->getSlug() ) {
 
             $text = $translator->trans('Entity');
             $item = array('text' => $text, 'status' => true);
-            if(empty($submission->getEntity())) {
+            if(empty($submission->getEntityList())) {
                 $item = array('text' => $text, 'status' => false);
                 $final_status = false;
             }
@@ -1110,7 +1164,7 @@ class NewSubmissionController extends Controller
 */
         $text = $translator->trans('Country');
         $item = array('text' => $text, 'status' => true);
-        if(empty($submission->getCountry())) {
+        if(empty($submission->getCountryList())) {
             $item = array('text' => $text, 'status' => false);
             $final_status = false;
         }
@@ -1118,7 +1172,7 @@ class NewSubmissionController extends Controller
 
         $text = $translator->trans('Subregion');
         $item = array('text' => $text, 'status' => true);
-        if(empty($submission->getSubRegion())) {
+        if(empty($submission->getSubRegionList())) {
             $item = array('text' => $text, 'status' => false);
             $final_status = false;
         }

@@ -68,9 +68,9 @@
         <p>{{ submission.institutionName }}</p>
 
         <h3>{% trans %}Counterparts and Partnerships{% endtrans %}:</h3>
-        <p>{{ submission.stakeholder.name }}</p>
+        <p>{{ submission.stakeholder|join('; ') }}</p>
 
-        {% if submission.stakeholder.slug == "other" %}
+        {% if submission.otherStakeholder %}
 
             <h3>{% trans %}Other Counterparts and Partnerships{% endtrans %}:</h3>
             <p>{{ submission.otherStakeholder }}</p>
@@ -78,17 +78,17 @@
         {% endif %}
 
         <h3>{% trans %}Entity (PAHO){% endtrans %}:</h3>
-        <p>{{ submission.entity.name }}</p>
+        <p>{{ submission.entity|join('; ') }}</p>
 
         <h3>{% trans %}Reference Number of the Technical Cooperation{% endtrans %}:</h3>
         <p>{{ submission.referenceNumber }}</p>
 
-        <h3>{% trans %}Technical Matters{% endtrans %}:</h3>
+        <h3>{% trans %}Main Topics/Themes{% endtrans %}:</h3>
         <p>{{ submission.technicalMatter|join('; ') }}</p>
 
         {% if submission.otherTechnicalMatter %}
 
-            <h3>{% trans %}Other Main Topic/Theme{% endtrans %}:</h3>
+            <h3>{% trans %}Other Main Topics/Themes{% endtrans %}:</h3>
             <p>{{ submission.otherTechnicalMatter }}</p>
 
         {% endif %}
@@ -98,7 +98,7 @@
 
         {% if submission.otherIntervention %}
 
-            <h3>{% trans %}Other Intervention{% endtrans %}:</h3>
+            <h3>{% trans %}Other Interventions{% endtrans %}:</h3>
             <p>{{ submission.otherIntervention }}</p>
 
         {% endif %}
@@ -110,10 +110,10 @@
         <p>{{ submission.endDate|date("Y-m-d") }}</p>
 
         <h3>{% trans %}Country/Territory receiving the cooperation{% endtrans %}:</h3>
-        <p>{{ submission.country.name }}</p>
+        <p>{{ submission.country|join('; ') }}</p>
 
         <h3>{% trans %}Subregion{% endtrans %}:</h3>
-        <p>{{ submission.subregion.name }}</p>
+        <p>{{ submission.subregion|join('; ') }}</p>
 
         <h3>{% trans %}This is respective to the following Targets of the SDGs{% endtrans %}:</h3>
         <p>{{ submission.target|join('; ') }}</p>

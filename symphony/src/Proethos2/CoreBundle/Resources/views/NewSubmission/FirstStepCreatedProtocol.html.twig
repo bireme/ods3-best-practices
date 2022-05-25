@@ -130,22 +130,23 @@
                             <div class="form-group required">
                                 <label for="select-stakeholder">{% trans %}Counterparts and Partnerships{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <select class='form-control selectpicker' id='select-stakeholder' name='stakeholder' data-size="5" data-live-search="true" required>
-                                    <option value="">-</option>
-                                    {% for sh in stakeholder %}
-                                        <option value="{{ sh.id }}" data-slug="{{ sh.slug }}" {% if submission.stakeholder.id == sh.id %}selected{% endif %}>{{ sh.name }}</option>
-                                    {% endfor %}
-                                </select>
+                                <div>
+                                    <select class='form-control selectpicker' id='select-stakeholder' name='stakeholder[]' data-size="5" data-width="fit" data-live-search="true" title="{% trans %}Choose one of the following...{% endtrans %}" multiple required>
+                                        {% for sh in stakeholder %}
+                                            <option value="{{ sh.id }}" data-slug="{{ sh.slug }}" {% if sh in submission.stakeholder %}selected{% endif %}>{{ sh.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <div class='row'>
                         <div class="col-md-12">
-                            <div class="form-group {% if submission.stakeholder.slug != "other" %}hide{% endif %} required">
-                                <label for="input_other_stakeholder">{% trans %}Other Counterparts and Partnerships{% endtrans %}:</label>
+                            <div class="form-group">
+                                <label for="input_other_stakeholder">{% trans %}Other Counterparts and Partnerships{% endtrans %} {% trans %}(please specify){% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <input type="text" class="form-control" name='other_stakeholder' id='input_other_stakeholder' value="{{ submission.otherStakeholder }}" {% if submission.stakeholder.slug == "other" %}required{% endif %}>
+                                <input type="text" class="form-control" name='other_stakeholder' id='input_other_stakeholder' value="{{ submission.otherStakeholder }}">
                             </div>
                         </div>
                     </div>
@@ -155,12 +156,13 @@
                             <div class="form-group {% if submission.type.slug != "paho-who-technical-cooperation" %}hide{% endif %} required">
                                 <label for="select-best-practice-entity">{% trans %}Entity (PAHO){% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <select class='form-control selectpicker' id='select-best-practice-entity' name='best_practice_entity' data-size="5" data-live-search="true" {% if submission.type.slug == "paho-who-technical-cooperation" %}required{% endif %}>
-                                    <option value="">-</option>
-                                    {% for bp_entity in best_practice_entity %}
-                                        <option value="{{ bp_entity.id }}" {% if submission.entity.id == bp_entity.id %}selected{% endif %}>{{ bp_entity.name }}</option>
-                                    {% endfor %}
-                                </select>
+                                <div>
+                                    <select class='form-control selectpicker' id='select-best-practice-entity' name='best_practice_entity[]' data-size="5" data-width="fit" data-live-search="true" title="{% trans %}Choose one of the following...{% endtrans %}" multiple required>
+                                        {% for bp_entity in best_practice_entity %}
+                                            <option value="{{ bp_entity.id }}" {% if bp_entity in submission.entity %}selected{% endif %}>{{ bp_entity.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -221,17 +223,6 @@
                 } else {
                     $("#input_other_institution").parent().addClass("hide");
                     $("#input_other_institution").prop('required',false);
-                }
-            });
-
-            $( "#select-stakeholder" ).on( "change", function() {
-                var slug = $(this).find(':selected').data('slug');
-                if ( 'other' == slug ) {
-                    $("#input_other_stakeholder").parent().removeClass("hide");
-                    $("#input_other_stakeholder").prop('required',true);
-                } else {
-                    $("#input_other_stakeholder").parent().addClass("hide");
-                    $("#input_other_stakeholder").prop('required',false);
                 }
             });
         });

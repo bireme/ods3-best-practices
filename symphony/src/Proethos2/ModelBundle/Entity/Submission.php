@@ -161,8 +161,9 @@ class Submission extends Base
     /**
      * @var Stakeholder
      *
-     * @ORM\ManyToOne(targetEntity="Stakeholder")
-     * @ORM\JoinColumn(name="stakeholder_id", referencedColumnName="id", onDelete="SET NULL")
+     * @ORM\ManyToMany(targetEntity="Stakeholder", inversedBy="submissions")
+     * @ORM\JoinTable(name="submission_stakeholder")
+     * @Assert\NotBlank
      */
     private $stakeholder;
 
@@ -175,8 +176,9 @@ class Submission extends Base
     /**
      * @var Entity
      *
-     * @ORM\ManyToOne(targetEntity="BestPracticeEntity")
-     * @ORM\JoinColumn(name="entity_id", referencedColumnName="id", onDelete="SET NULL")
+     * @ORM\ManyToMany(targetEntity="BestPracticeEntity", inversedBy="submissions")
+     * @ORM\JoinTable(name="submission_entity")
+     * @Assert\NotBlank
      */
     private $entity;
 
@@ -237,16 +239,18 @@ class Submission extends Base
     /**
      * @var Country
      *
-     * @ORM\ManyToOne(targetEntity="Country")
-     * @ORM\JoinColumn(name="country_id", referencedColumnName="id", onDelete="SET NULL")
+     * @ORM\ManyToMany(targetEntity="Country", inversedBy="submissions")
+     * @ORM\JoinTable(name="submission_country")
+     * @Assert\NotBlank
      */
     private $country;
 
     /**
      * @var SubRegion
      *
-     * @ORM\ManyToOne(targetEntity="SubRegion")
-     * @ORM\JoinColumn(name="subregion_id", referencedColumnName="id", onDelete="SET NULL")
+     * @ORM\ManyToMany(targetEntity="SubRegion", inversedBy="submissions")
+     * @ORM\JoinTable(name="submission_subregion")
+     * @Assert\NotBlank
      */
     private $subregion;
 
@@ -1751,55 +1755,6 @@ class Submission extends Base
     }
 
     /**
-     * Set stakeholder
-     *
-     * @param \Proethos2\ModelBundle\Entity\Stakeholder $stakeholder
-     *
-     * @return Submission
-     */
-    public function setStakeholder(\Proethos2\ModelBundle\Entity\Stakeholder $stakeholder = null)
-    {
-        $this->stakeholder = $stakeholder;
-
-        return $this;
-    }
-
-    /**
-     * Get stakeholder
-     *
-     * @return \Proethos2\ModelBundle\Entity\Stakeholder
-     */
-    public function getStakeholder()
-    {
-        return $this->stakeholder;
-    }
-
-
-    /**
-     * Set subregion
-     *
-     * @param \Proethos2\ModelBundle\Entity\SubRegion $subregion
-     *
-     * @return Submission
-     */
-    public function setSubregion(\Proethos2\ModelBundle\Entity\SubRegion $subregion = null)
-    {
-        $this->subregion = $subregion;
-
-        return $this;
-    }
-
-    /**
-     * Get subregion
-     *
-     * @return \Proethos2\ModelBundle\Entity\SubRegion
-     */
-    public function getSubregion()
-    {
-        return $this->subregion;
-    }
-
-    /**
      * Set otherStakeholder
      *
      * @param string $otherStakeholder
@@ -1879,54 +1834,6 @@ class Submission extends Base
         }
 
         return $interventions;
-    }
-
-    /**
-     * Set entity
-     *
-     * @param \Proethos2\ModelBundle\Entity\BestPracticeEntity $entity
-     *
-     * @return Submission
-     */
-    public function setEntity(\Proethos2\ModelBundle\Entity\BestPracticeEntity $entity = null)
-    {
-        $this->entity = $entity;
-
-        return $this;
-    }
-
-    /**
-     * Get entity
-     *
-     * @return \Proethos2\ModelBundle\Entity\BestPracticeEntity
-     */
-    public function getEntity()
-    {
-        return $this->entity;
-    }
-
-    /**
-     * Set country
-     *
-     * @param \Proethos2\ModelBundle\Entity\Country $country
-     *
-     * @return Submission
-     */
-    public function setCountry(\Proethos2\ModelBundle\Entity\Country $country = null)
-    {
-        $this->country = $country;
-
-        return $this;
-    }
-
-    /**
-     * Get country
-     *
-     * @return \Proethos2\ModelBundle\Entity\Country
-     */
-    public function getCountry()
-    {
-        return $this->country;
     }
 
     /**
@@ -2269,5 +2176,237 @@ class Submission extends Base
     public function getOtherTechnicalMatter()
     {
         return $this->other_technical_matter;
+    }
+
+    /**
+     * Add stakeholder
+     *
+     * @param \Proethos2\ModelBundle\Entity\Stakeholder $stakeholder
+     *
+     * @return Submission
+     */
+    public function addStakeholder(\Proethos2\ModelBundle\Entity\Stakeholder $stakeholder)
+    {
+        $this->stakeholder[] = $stakeholder;
+
+        return $this;
+    }
+
+    /**
+     * Remove stakeholder
+     *
+     * @param \Proethos2\ModelBundle\Entity\Stakeholder $stakeholder
+     */
+    public function removeStakeholder(\Proethos2\ModelBundle\Entity\Stakeholder $stakeholder)
+    {
+        $this->stakeholder->removeElement($stakeholder);
+    }
+
+    /**
+     * Get stakeholder
+     *
+     * @return \Proethos2\ModelBundle\Entity\Stakeholder
+     */
+    public function getStakeholder()
+    {
+        return $this->stakeholder;
+    }
+
+    public function getStakeholderList() {
+        $stakeholders = array();
+
+        if ( $this->stakeholder ) {
+            foreach($this->stakeholder as $stakeholder) {
+                $stakeholders[] = $stakeholder->getName();
+            }
+        }
+
+        return $stakeholders;
+    }
+
+    public function getStakeholderSlugList() {
+        $stakeholders = array();
+
+        if ( $this->stakeholder ) {
+            foreach($this->stakeholder as $stakeholder) {
+                $stakeholders[] = $stakeholder->getSlug();
+            }
+        }
+
+        return $stakeholders;
+    }
+
+    /**
+     * Add entity
+     *
+     * @param \Proethos2\ModelBundle\Entity\BestPracticeEntity $entity
+     *
+     * @return Submission
+     */
+    public function addEntity(\Proethos2\ModelBundle\Entity\BestPracticeEntity $entity)
+    {
+        $this->entity[] = $entity;
+
+        return $this;
+    }
+
+    /**
+     * Remove entity
+     *
+     * @param \Proethos2\ModelBundle\Entity\BestPracticeEntity $entity
+     */
+    public function removeEntity(\Proethos2\ModelBundle\Entity\BestPracticeEntity $entity)
+    {
+        $this->entity->removeElement($entity);
+    }
+
+    /**
+     * Get entity
+     *
+     * @return \Proethos2\ModelBundle\Entity\Stakeholder
+     */
+    public function getEntity()
+    {
+        return $this->entity;
+    }
+
+    public function getEntityList() {
+        $entities = array();
+
+        if ( $this->entity ) {
+            foreach($this->entity as $entity) {
+                $entities[] = $entity->getName();
+            }
+        }
+
+        return $entities;
+    }
+
+    public function getEntitySlugList() {
+        $entities = array();
+
+        if ( $this->entity ) {
+            foreach($this->entity as $entity) {
+                $entities[] = $entity->getSlug();
+            }
+        }
+
+        return $entities;
+    }
+
+    /**
+     * Add country
+     *
+     * @param \Proethos2\ModelBundle\Entity\Country $country
+     *
+     * @return Submission
+     */
+    public function addCountry(\Proethos2\ModelBundle\Entity\Country $country)
+    {
+        $this->country[] = $country;
+
+        return $this;
+    }
+
+    /**
+     * Remove country
+     *
+     * @param \Proethos2\ModelBundle\Entity\Country $country
+     */
+    public function removeCountry(\Proethos2\ModelBundle\Entity\Country $country)
+    {
+        $this->country->removeElement($country);
+    }
+
+    /**
+     * Get country
+     *
+     * @return \Proethos2\ModelBundle\Entity\Stakeholder
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    public function getCountryList() {
+        $countries = array();
+
+        if ( $this->country ) {
+            foreach($this->country as $country) {
+                $countries[] = $country->getName();
+            }
+        }
+
+        return $countries;
+    }
+
+    public function getCountrySlugList() {
+        $countries = array();
+
+        if ( $this->country ) {
+            foreach($this->country as $country) {
+                $countries[] = $country->getSlug();
+            }
+        }
+
+        return $countries;
+    }
+
+    /**
+     * Add subregion
+     *
+     * @param \Proethos2\ModelBundle\Entity\SubRegion $subregion
+     *
+     * @return Submission
+     */
+    public function addSubregion(\Proethos2\ModelBundle\Entity\SubRegion $subregion)
+    {
+        $this->subregion[] = $subregion;
+
+        return $this;
+    }
+
+    /**
+     * Remove subregion
+     *
+     * @param \Proethos2\ModelBundle\Entity\SubRegion $subregion
+     */
+    public function removeSubregion(\Proethos2\ModelBundle\Entity\SubRegion $subregion)
+    {
+        $this->subregion->removeElement($subregion);
+    }
+
+    /**
+     * Get subregion
+     *
+     * @return \Proethos2\ModelBundle\Entity\Stakeholder
+     */
+    public function getSubregion()
+    {
+        return $this->subregion;
+    }
+
+    public function getSubregionList() {
+        $subregions = array();
+
+        if ( $this->subregion ) {
+            foreach($this->subregion as $subregion) {
+                $subregions[] = $subregion->getName();
+            }
+        }
+
+        return $subregions;
+    }
+
+    public function getSubregionSlugList() {
+        $subregions = array();
+
+        if ( $this->subregion ) {
+            foreach($this->subregion as $subregion) {
+                $subregions[] = $subregion->getSlug();
+            }
+        }
+
+        return $subregions;
     }
 }

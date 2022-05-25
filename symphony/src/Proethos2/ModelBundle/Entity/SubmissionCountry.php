@@ -21,12 +21,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\ArrayCollection;
 
-/**
- * Country
- *
- * @ORM\Table(name="submission_country")
- * @ORM\Entity
- */
+
 class SubmissionCountry extends Base
 {
     /**
