@@ -206,12 +206,12 @@
             $( "#select-best-practice-type" ).on( "change", function() {
                 var slug = $(this).find(':selected').data('slug');
                 if ( 'paho-who-technical-cooperation' == slug ) {
-                    $("#select-best-practice-entity").parent().parent().removeClass("hide");
+                    $("#select-best-practice-entity").parent().parent().parent().removeClass("hide");
                     $("#select-best-practice-entity").prop('required',true);
                     $("#input_reference_number").parent().removeClass("hide");
                     $("#input_reference_number").prop('required',true);
                 } else {
-                    $("#select-best-practice-entity").parent().parent().addClass("hide");
+                    $("#select-best-practice-entity").parent().parent().parent().addClass("hide");
                     $("#select-best-practice-entity").prop('required',false);
                     $("#input_reference_number").parent().addClass("hide");
                     $("#input_reference_number").prop('required',false);
