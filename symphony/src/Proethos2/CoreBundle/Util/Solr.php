@@ -66,42 +66,6 @@ class Solr {
         }
         $data['type'] = implode('|', $texts);
 
-        // country field
-        $country = $submission->getCountry();
-        $country->setTranslatableLocale('en');
-        $em->refresh($country);
-
-        // country translations
-        $translations = $trans_repository->findTranslations($country);
-        $texts = array();
-        $texts['en'] = 'en^'.$country->getName();
-        foreach(array('pt_BR', 'es_ES', 'fr_FR') as $_locale) {
-            if ( array_key_exists($_locale, $translations) ) {
-                $text = $translations[$_locale];
-                $_locale = substr($_locale, 0, 2);
-                $texts[$_locale] = $_locale.'^'.$text['name'];
-            }
-        }
-        $data['country'] = implode('|', $texts);
-
-        // subregion field
-        $subregion = $submission->getSubRegion();
-        $subregion->setTranslatableLocale('en');
-        $em->refresh($subregion);
-
-        // subregion translations
-        $translations = $trans_repository->findTranslations($subregion);
-        $texts = array();
-        $texts['en'] = 'en^'.$subregion->getName();
-        foreach(array('pt_BR', 'es_ES', 'fr_FR') as $_locale) {
-            if ( array_key_exists($_locale, $translations) ) {
-                $text = $translations[$_locale];
-                $_locale = substr($_locale, 0, 2);
-                $texts[$_locale] = $_locale.'^'.$text['name'];
-            }
-        }
-        $data['subregion'] = implode('|', $texts);
-
         // institution field
         if ( $submission->getOtherInstitution() ) {
             $data['institution'] = $submission->getOtherInstitution();
@@ -124,18 +88,17 @@ class Solr {
             $data['institution'] = implode('|', $texts);
         }
 
-        // stakeholder field
-        if ( $submission->getOtherStakeholder() ) {
-            $data['stakeholder'] = $submission->getOtherStakeholder();
-        } else {
-            $stakeholder = $submission->getStakeholder();
-            $stakeholder->setTranslatableLocale('en');
-            $em->refresh($stakeholder);
+        // entity field
+        $entity = $submission->getEntity();
+        $data['entity'] = array();
+        foreach ($entity as $e) {
+            $e->setTranslatableLocale('en');
+            $em->refresh($e);
 
-            // stakeholder translations
-            $translations = $trans_repository->findTranslations($stakeholder);
+            // entity translations
+            $translations = $trans_repository->findTranslations($e);
             $texts = array();
-            $texts['en'] = 'en^'.$stakeholder->getName();
+            $texts['en'] = 'en^'.$e->getName();
             foreach(array('pt_BR', 'es_ES', 'fr_FR') as $_locale) {
                 if ( array_key_exists($_locale, $translations) ) {
                     $text = $translations[$_locale];
@@ -143,13 +106,75 @@ class Solr {
                     $texts[$_locale] = $_locale.'^'.$text['name'];
                 }
             }
-            $data['stakeholder'] = implode('|', $texts);
+            $data['entity'][] = implode('|', $texts);
+        }
+
+        // country field
+        $country = $submission->getCountry();
+        $data['country'] = array();
+        foreach ($country as $c) {
+            $c->setTranslatableLocale('en');
+            $em->refresh($c);
+
+            // country translations
+            $translations = $trans_repository->findTranslations($c);
+            $texts = array();
+            $texts['en'] = 'en^'.$c->getName();
+            foreach(array('pt_BR', 'es_ES', 'fr_FR') as $_locale) {
+                if ( array_key_exists($_locale, $translations) ) {
+                    $text = $translations[$_locale];
+                    $_locale = substr($_locale, 0, 2);
+                    $texts[$_locale] = $_locale.'^'.$text['name'];
+                }
+            }
+            $data['country'][] = implode('|', $texts);
+        }
+
+        // subregion field
+        $subregion = $submission->getSubregion();
+        $data['subregion'] = array();
+        foreach ($subregion as $sub) {
+            $sub->setTranslatableLocale('en');
+            $em->refresh($sub);
+
+            // subregion translations
+            $translations = $trans_repository->findTranslations($sub);
+            $texts = array();
+            $texts['en'] = 'en^'.$sub->getName();
+            foreach(array('pt_BR', 'es_ES', 'fr_FR') as $_locale) {
+                if ( array_key_exists($_locale, $translations) ) {
+                    $text = $translations[$_locale];
+                    $_locale = substr($_locale, 0, 2);
+                    $texts[$_locale] = $_locale.'^'.$text['name'];
+                }
+            }
+            $data['subregion'][] = implode('|', $texts);
+        }
+
+        // stakeholder field
+        $stakeholder = $submission->getStakeholder();
+        $data['stakeholder'] = array();
+        foreach ($stakeholder as $sh) {
+            $sh->setTranslatableLocale('en');
+            $em->refresh($sh);
+
+            // stakeholder translations
+            $translations = $trans_repository->findTranslations($sh);
+            $texts = array();
+            $texts['en'] = 'en^'.$sh->getName();
+            foreach(array('pt_BR', 'es_ES', 'fr_FR') as $_locale) {
+                if ( array_key_exists($_locale, $translations) ) {
+                    $text = $translations[$_locale];
+                    $_locale = substr($_locale, 0, 2);
+                    $texts[$_locale] = $_locale.'^'.$text['name'];
+                }
+            }
+            $data['stakeholder'][] = implode('|', $texts);
         }
 
         // population group field
         $population_group = $submission->getPopulationGroup();
         $data['population_group'] = array();
-
         foreach ($population_group as $pg) {
             $pg->setTranslatableLocale('en');
             $em->refresh($pg);
@@ -171,7 +196,6 @@ class Solr {
         // intervention field
         $intervention = $submission->getIntervention();
         $data['intervention'] = array();
-
         foreach ($intervention as $i) {
             $i->setTranslatableLocale('en');
             $em->refresh($i);
@@ -193,7 +217,6 @@ class Solr {
         // technical matter field
         $technical_matter = $submission->getTechnicalMatter();
         $data['technical_matter'] = array();
-
         foreach ($technical_matter as $tm) {
             $tm->setTranslatableLocale('en');
             $em->refresh($tm);
@@ -215,7 +238,6 @@ class Solr {
         // target field
         $target = $submission->getTarget();
         $data['target'] = array();
-
         foreach ($target as $t) {
             $t->setTranslatableLocale('en');
             $em->refresh($t);
