@@ -24,7 +24,7 @@ class Solr {
 
     public function __construct() {}
 
-    public function update($protocol)
+    public function update($protocol='')
     {
 
         global $kernel;
@@ -274,7 +274,7 @@ class Solr {
 
     }
 
-    public function delete($protocol)
+    public function delete($protocol='')
     {
         $query = ( $protocol ) ? 'id:'.$protocol->getId() : '*:*';
         $json = "{'delete': {'query': '".$query."'}}";
