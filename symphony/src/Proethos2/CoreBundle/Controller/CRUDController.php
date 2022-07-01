@@ -1094,7 +1094,8 @@ class CRUDController extends Controller
             $user->setJobTitle($post_data['job-title']);
             $user->setFirstAccess(false);
 
-            if(isset($post_data['status'])) {
+            $user->setIsActive(false);
+            if ( isset($post_data['status']) ) {
                 $user->setIsActive(true);
             }
 
@@ -1107,39 +1108,41 @@ class CRUDController extends Controller
             $password = $encoder->encodePassword(md5(date("YmdHis")), $salt);
             $user->setPassword($password);
 
-            // Send email to created user with the link to change the first password
-            $baseurl = $request->getScheme() . '://' . $request->getHttpHost() . $request->getBasePath();
+            if ( isset($post_data['status']) ) {
+                // Send email to created user with the link to change the first password
+                $baseurl = $request->getScheme() . '://' . $request->getHttpHost() . $request->getBasePath();
 
-            $hashcode = $user->generateHashcode();
-            $em->persist($user);
-            $em->flush();
+                $hashcode = $user->generateHashcode();
+                $em->persist($user);
+                $em->flush();
 
-            // TODO need to get the relative path
-            $url = $baseurl . "/public/account/reset_my_password?hashcode=" . $hashcode;
-            
-            $locale = $request->getSession()->get('_locale');
-            $help = $help_repository->find(203);
-            $translations = $trans_repository->findTranslations($help);
-            $text = $translations[$locale];
-            $body = $text['message'];
-            $body = str_replace("%reset_password_url%", $url, $body);
-            $body = str_replace("\r\n", "<br />", $body);
-            $body .= "<br /><br />";
+                // TODO need to get the relative path
+                $url = $baseurl . "/public/account/reset_my_password?hashcode=" . $hashcode;
+                
+                $locale = $request->getSession()->get('_locale');
+                $help = $help_repository->find(203);
+                $translations = $trans_repository->findTranslations($help);
+                $text = $translations[$locale];
+                $body = $text['message'];
+                $body = str_replace("%reset_password_url%", $url, $body);
+                $body = str_replace("\r\n", "<br />", $body);
+                $body .= "<br /><br />";
 
-            $message = \Swift_Message::newInstance()
-            ->setSubject("[BP] " . $translator->trans("Set your password"))
-            ->setFrom($util->getConfiguration('committee.email'))
-            ->setTo($post_data['email'])
-            ->setBody(
-                $body
-                ,
-                'text/html'
-            );
+                $message = \Swift_Message::newInstance()
+                ->setSubject("[BP] " . $translator->trans("Set your password"))
+                ->setFrom($util->getConfiguration('committee.email'))
+                ->setTo($post_data['email'])
+                ->setBody(
+                    $body
+                    ,
+                    'text/html'
+                );
 
-            $send = $this->get('mailer')->send($message);
+                $send = $this->get('mailer')->send($message);
 
-            $em->persist($user);
-            $em->flush();
+                $em->persist($user);
+                $em->flush();
+            }
 
             $session->getFlashBag()->add('success', $translator->trans("User created with success."));
             return $this->redirectToRoute('crud_committee_user_list', array(), 301);
