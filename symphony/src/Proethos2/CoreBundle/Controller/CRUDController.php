@@ -1094,7 +1094,8 @@ class CRUDController extends Controller
             $user->setJobTitle($post_data['job-title']);
             $user->setFirstAccess(false);
 
-            if(isset($post_data['status'])) {
+            $user->setIsActive(false);
+            if ( isset($post_data['status']) ) {
                 $user->setIsActive(true);
             }
 
@@ -1116,7 +1117,7 @@ class CRUDController extends Controller
 
             // TODO need to get the relative path
             $url = $baseurl . "/public/account/reset_my_password?hashcode=" . $hashcode;
-            
+
             $locale = $request->getSession()->get('_locale');
             $help = $help_repository->find(203);
             $translations = $trans_repository->findTranslations($help);
