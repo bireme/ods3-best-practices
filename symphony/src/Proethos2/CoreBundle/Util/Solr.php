@@ -52,7 +52,6 @@ class Solr {
         $type = $submission->getType();
         $type->setTranslatableLocale('en');
         $em->refresh($type);
-
         // type translations
         $translations = $trans_repository->findTranslations($type);
         $texts = array();
@@ -65,6 +64,23 @@ class Solr {
             }
         }
         $data['type'] = implode('|', $texts);
+
+        // outcome field
+        $outcome = $submission->getOutcome();
+        $outcome->setTranslatableLocale('en');
+        $em->refresh($outcome);
+        // outcome translations
+        $translations = $trans_repository->findTranslations($outcome);
+        $texts = array();
+        $texts['en'] = 'en^'.$outcome->getName();
+        foreach(array('pt_BR', 'es_ES', 'fr_FR') as $_locale) {
+            if ( array_key_exists($_locale, $translations) ) {
+                $text = $translations[$_locale];
+                $_locale = substr($_locale, 0, 2);
+                $texts[$_locale] = $_locale.'^'.$text['name'];
+            }
+        }
+        $data['outcome'] = implode('|', $texts);
 
         // institution field
         if ( $submission->getOtherInstitution() ) {
