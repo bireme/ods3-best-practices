@@ -66,7 +66,7 @@ class Solr {
         $data['type'] = implode('|', $texts);
 
         // outcome field
-        $outcome = $submission->getOutcome();
+        $outcome = $submission->getOutcomes();
         $outcome->setTranslatableLocale('en');
         $em->refresh($outcome);
         // outcome translations
