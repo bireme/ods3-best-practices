@@ -186,7 +186,7 @@ class Solr {
         // stakeholder field
         $data['stakeholder'] = array();
         $stakeholder = $submission->getStakeholder();
-        if ( $stakeholder) {
+        if ( $stakeholder ) {
             foreach ($stakeholder as $sh) {
                 $sh->setTranslatableLocale('en');
                 $em->refresh($sh);
@@ -273,6 +273,7 @@ class Solr {
                 }
                 $data['technical_matter'][] = implode('|', $texts);
             }
+        }
 
         // target field
         $data['target'] = array();
