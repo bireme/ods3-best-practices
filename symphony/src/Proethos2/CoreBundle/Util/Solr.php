@@ -49,7 +49,6 @@ class Solr {
         if ( $submission->getEndDate() ) $data['end_date'] = $submission->getEndDate()->format('Y-m-d H:i:s');
 
         // type field
-        $data['type'] = '';
         $type = $submission->getType();
         if ( $type ) {
             $type->setTranslatableLocale('en');
@@ -69,7 +68,6 @@ class Solr {
         }
 
         // outcomes field
-        $data['outcomes'] = '';
         $outcomes = $submission->getOutcomes();
         if ( $outcomes ) {
             $outcomes->setTranslatableLocale('en');
@@ -92,7 +90,6 @@ class Solr {
         if ( $submission->getOtherInstitution() ) {
             $data['institution'] = $submission->getOtherInstitution();
         } else {
-            $data['institution'] = array();
             $institution = $submission->getInstitution();
             if ( $institution ) {
                 $institution->setTranslatableLocale('en');
@@ -114,7 +111,6 @@ class Solr {
         }
 
         // entity field
-        $data['entity'] = array();
         $entity = $submission->getEntity();
         if ( $entity ) {
             $data['entity'] = array();
@@ -138,9 +134,9 @@ class Solr {
         }
 
         // country field
-        $data['country'] = array();
         $country = $submission->getCountry();
         if ( $country ) {
+            $data['country'] = array();
             foreach ($country as $c) {
                 $c->setTranslatableLocale('en');
                 $em->refresh($c);
@@ -161,9 +157,9 @@ class Solr {
         }
 
         // subregion field
-        $data['subregion'] = array();
         $subregion = $submission->getSubregion();
         if ( $subregion ) {
+            $data['subregion'] = array();
             foreach ($subregion as $sub) {
                 $sub->setTranslatableLocale('en');
                 $em->refresh($sub);
@@ -184,9 +180,9 @@ class Solr {
         }
 
         // stakeholder field
-        $data['stakeholder'] = array();
         $stakeholder = $submission->getStakeholder();
         if ( $stakeholder ) {
+            $data['stakeholder'] = array();
             foreach ($stakeholder as $sh) {
                 $sh->setTranslatableLocale('en');
                 $em->refresh($sh);
@@ -207,9 +203,9 @@ class Solr {
         }
 
         // population group field
-        $data['population_group'] = array();
         $population_group = $submission->getPopulationGroup();
         if ( $population_group ) {
+            $data['population_group'] = array();
             foreach ($population_group as $pg) {
                 $pg->setTranslatableLocale('en');
                 $em->refresh($pg);
@@ -230,9 +226,9 @@ class Solr {
         }
 
         // intervention field
-        $data['intervention'] = array();
         $intervention = $submission->getIntervention();
         if ( $intervention ) {
+            $data['intervention'] = array();
             foreach ($intervention as $i) {
                 $i->setTranslatableLocale('en');
                 $em->refresh($i);
@@ -253,9 +249,9 @@ class Solr {
         }
 
         // technical matter field
-        $data['technical_matter'] = array();
         $technical_matter = $submission->getTechnicalMatter();
         if ( $technical_matter ) {
+            $data['technical_matter'] = array();
             foreach ($technical_matter as $tm) {
                 $tm->setTranslatableLocale('en');
                 $em->refresh($tm);
@@ -276,9 +272,9 @@ class Solr {
         }
 
         // target field
-        $data['target'] = array();
         $target = $submission->getTarget();
         if ( $target ) {
+            $data['target'] = array();
             foreach ($target as $t) {
                 $t->setTranslatableLocale('en');
                 $em->refresh($t);
