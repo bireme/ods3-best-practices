@@ -70,14 +70,14 @@ class Solr {
 
         // outcomes field
         $data['outcomes'] = '';
-        $outcome = $submission->getOutcomes();
-        if ( $outcome ) {
-            $outcome->setTranslatableLocale('en');
-            $em->refresh($outcome);
+        $outcomes = $submission->getOutcomes();
+        if ( $outcomes ) {
+            $outcomes->setTranslatableLocale('en');
+            $em->refresh($outcomes);
             // outcomes translations
-            $translations = $trans_repository->findTranslations($outcome);
+            $translations = $trans_repository->findTranslations($outcomes);
             $texts = array();
-            $texts['en'] = 'en^'.$outcome->getName();
+            $texts['en'] = 'en^'.$outcomes->getName();
             foreach(array('pt_BR', 'es_ES', 'fr_FR') as $_locale) {
                 if ( array_key_exists($_locale, $translations) ) {
                     $text = $translations[$_locale];
