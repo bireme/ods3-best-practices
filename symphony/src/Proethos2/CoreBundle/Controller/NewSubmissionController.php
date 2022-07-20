@@ -82,6 +82,15 @@ class NewSubmissionController extends Controller
         // $stakeholder = $stakeholder_repository->findBy(array('status' => true), array('name' => 'ASC'));
         $output['stakeholder'] = $stakeholder;
 
+        // modality options
+        $coop_modality = array(
+            "A" => $translator->trans("North-North"),
+            "B" => $translator->trans("North-South"),
+            "C" => $translator->trans("South-South"),
+            "D" => $translator->trans("Triangular Cooperation"),
+        );
+        $output['coop_modality'] = $coop_modality;
+
         // checking if was a post request
         if($this->getRequest()->isMethod('POST')) {
 
@@ -110,6 +119,7 @@ class NewSubmissionController extends Controller
 
             $submission = new Submission();
             $submission->setTitle($post_data['title']);
+            $submission->setCoopModality($post_data['coop_modality']);
             $submission->setOtherRole($post_data['other_best_practice_role']);
             $submission->setOtherInstitution($post_data['other_institution']);
             $submission->setInstitutionName($post_data['institution_name']);
@@ -232,6 +242,15 @@ class NewSubmissionController extends Controller
         $users = $user_repository->findAll();
         $output['users'] = $users;
 
+        // modality options
+        $coop_modality = array(
+            "A" => $translator->trans("North-North"),
+            "B" => $translator->trans("North-South"),
+            "C" => $translator->trans("South-South"),
+            "D" => $translator->trans("Triangular Cooperation"),
+        );
+        $output['coop_modality'] = $coop_modality;
+
         // checking if was a post request
         if($this->getRequest()->isMethod('POST')) {
 
@@ -255,6 +274,7 @@ class NewSubmissionController extends Controller
             }
 
             $submission->setTitle($post_data['title']);
+            $submission->setCoopModality($post_data['coop_modality']);
             $submission->setOtherRole($post_data['other_best_practice_role']);
             $submission->setOtherInstitution($post_data['other_institution']);
             $submission->setInstitutionName($post_data['institution_name']);
@@ -674,6 +694,7 @@ class NewSubmissionController extends Controller
             $submission->setAdaptabilityReplicability($post_data['adaptability_replicability']);
             $submission->setOtherContextsDemo($post_data['other_contexts_demo']);
             $submission->setDescribeHow($post_data['describe_how']);
+            $submission->setSustainability($post_data['sustainability']);
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($submission);
@@ -903,6 +924,7 @@ class NewSubmissionController extends Controller
             }
 
              // adding fields to model
+            $submission->setDescriptors($post_data['descriptors']);
             $submission->setChallengesInformation($post_data['challenges_information']);
             $submission->setLessonsInformation($post_data['lessons_information']);
 
@@ -1729,8 +1751,16 @@ class NewSubmissionController extends Controller
             "D" => $translator->trans("I disagree"),
             "E" => $translator->trans("I totally disagree")
         );
-
         $output['likert'] = $likert;
+
+        // modality options
+        $coop_modality = array(
+            "A" => $translator->trans("North-North"),
+            "B" => $translator->trans("North-South"),
+            "C" => $translator->trans("South-South"),
+            "D" => $translator->trans("Triangular Cooperation"),
+        );
+        $output['coop_modality'] = $coop_modality;
 
         if (!$submission or ($submission->getCanBeEdited() and !in_array('investigator', $user->getRolesSlug()))) {
             throw $this->createNotFoundException($translator->trans('No submission found'));

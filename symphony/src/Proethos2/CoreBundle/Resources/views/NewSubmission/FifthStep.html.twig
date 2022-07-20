@@ -64,6 +64,25 @@
                 <div class='block'>
                     <div class='row'>
                         <div class="col-md-12">
+                            <h2 class='sub-header'>{% trans %}Keywords{% endtrans %}</h2>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="input_descriptors">{% trans %}Select DeCS descriptors (Health Sciences Descriptors){% endtrans %}:</label>
+                                <input type="text" class="form-control" name='descriptors' id='input_descriptors' placeholder="{% trans %}insert descriptors here{% endtrans %}" value="{{ submission.descriptors }}" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href='#' class='btn btn-default' id="button-descriptors" onclick="javascript:decs_search();">{% trans %}Add Descriptor{% endtrans %}</a>
+                </div>
+
+                <div class='block'>
+                    <div class='row'>
+                        <div class="col-md-12">
                             <h2 class='sub-header'>{% trans %}Conclusion{% endtrans %}</h2>
                         </div>
                     </div>
@@ -162,6 +181,10 @@
 {% block script %}
     <script>
         $(function(){
+            // $('[name=descriptors]').tagify();
+            var descriptors = document.querySelector('[name=descriptors]');
+            var tagify = new Tagify(descriptors);
+
             $("#table-attachment").on("click", ".button-delete-attachment", function(e){
                 var id = $(this).data('id');
                 $("#hidden-delete-attachment").val(id);
@@ -170,6 +193,28 @@
             $('#modal-delete-attachment').on('hidden.bs.modal', function () {
                 $("#hidden-delete-attachment").val("");
             });
+
+            var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+            var eventer = window[eventMethod];
+            var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+
+            // Listen to message from child window
+            eventer(messageEvent,function(e) {
+                var decs_data = e.data;
+                var pipe_pos = decs_data.lastIndexOf('|');
+                var decs_text = decs_data.substring(0, pipe_pos);
+                var decs_code = decs_data.substring(pipe_pos+1);
+
+                // set text for the new descriptor
+                var tags = [];
+                tags.push(decs_text);
+                tagify.addTags(tags);
+            },false);
         });
+
+        function decs_search(){
+            var decs_lookup = 'https://pesquisa.bvsalud.org/portal/decs-locator/?mode=dataentry';
+            window.open(decs_lookup+'&lang={{ app.request.locale|slice(0, 2) }}', 'decslookup', 'scrollbars=1,width=850,height=700');
+        }
     </script>
 {% endblock %}

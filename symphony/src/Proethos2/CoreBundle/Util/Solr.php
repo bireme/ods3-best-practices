@@ -36,6 +36,7 @@ class Solr {
         $data = array();
         $data['id'] = $protocol->getId();
         $data['title'] = $submission->getTitle();
+        $data['coop_modality'] = $submission->getCoopModality();
         $data['introduction'] = $submission->getIntroduction();
         $data['objectives'] = $submission->getObjectives();
         $data['activities'] = $submission->getActivities();
@@ -45,6 +46,8 @@ class Solr {
         $data['describe_how'] = $submission->getDescribeHow();
         $data['challenges_information'] = $submission->getChallengesInformation();
         $data['lessons_information'] = $submission->getLessonsInformation();
+        $data['sustainability'] = $submission->getSustainability();
+        $data['keywords'] = $submission->getDescriptorsList();
         $data['start_date'] = $submission->getStartDate()->format('Y-m-d H:i:s');
         if ( $submission->getEndDate() ) $data['end_date'] = $submission->getEndDate()->format('Y-m-d H:i:s');
 

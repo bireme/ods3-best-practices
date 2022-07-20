@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2022-05-25T01:32:38Z" source-language="en" target-language="fr_FR" datatype="plaintext" original="not.available">
+  <file date="2022-07-20T00:16:40Z" source-language="en" target-language="fr_FR" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -81,6 +81,10 @@
       <trans-unit id="61cc55aa0453184734c3fa0b621eda6fa874bd83" resname="Add">
         <source>Add</source>
         <target>Add</target>
+      </trans-unit>
+      <trans-unit id="5c1f023a5941d06628f3af56eccace4f0fce781f" resname="Add Descriptor">
+        <source>Add Descriptor</source>
+        <target>Add Descriptor</target>
       </trans-unit>
       <trans-unit id="e86236c36d191296130926022e655c7aca7ee34a" resname="Add a monitoring action">
         <source>Add a monitoring action</source>
@@ -638,6 +642,10 @@
         <source>Effectiveness / Efficiency / Adaptability / Replicability</source>
         <target>Effectiveness / Efficiency / Adaptability / Replicability</target>
       </trans-unit>
+      <trans-unit id="e903ebd23211f400e7c8082ba37ba9fb619f4085" resname="Effectiveness / Efficiency / Adaptability / Replicability / Sustainability">
+        <source>Effectiveness / Efficiency / Adaptability / Replicability / Sustainability</source>
+        <target>Effectiveness / Efficiency / Adaptability / Replicability / Sustainability</target>
+      </trans-unit>
       <trans-unit id="84add5b2952787581cb9a8851eef63d1ec75d22b" resname="Email">
         <source>Email</source>
         <target>Email</target>
@@ -1010,6 +1018,10 @@
         <source>Justification</source>
         <target>Justification</target>
       </trans-unit>
+      <trans-unit id="f530db58b3e5088dc7412c6d2298ba3f8456bdeb" resname="Keywords">
+        <source>Keywords</source>
+        <target>Keywords</target>
+      </trans-unit>
       <trans-unit id="53ec6d7dfa2c6ed480e8ec1293af8d6b2cf0a512" resname="Label translations">
         <source>Label translations</source>
         <target>Label translations</target>
@@ -1137,6 +1149,10 @@
       <trans-unit id="b93912e1b0e723ebedacd2eafe94ca333f944a96" resname="Minimum Age">
         <source>Minimum Age</source>
         <target>Minimum Age</target>
+      </trans-unit>
+      <trans-unit id="6b453fd089dd98e4b503c3d82f7d59c05dcdedaa" resname="Modality of Cooperation">
+        <source>Modality of Cooperation</source>
+        <target>Modality of Cooperation</target>
       </trans-unit>
       <trans-unit id="27ddd4451a74d65f11ab49d95c9599f13a62e57d" resname="Monitoring Action">
         <source>Monitoring Action</source>
@@ -1386,6 +1402,14 @@
         <source>No user found</source>
         <target>No user found</target>
       </trans-unit>
+      <trans-unit id="61d65980bd46a399e16e6ffd10da991f079d3378" resname="North-North">
+        <source>North-North</source>
+        <target>North-North</target>
+      </trans-unit>
+      <trans-unit id="141c5ca53274ca9a1f53b8f9d53a84972bc94e3e" resname="North-South">
+        <source>North-South</source>
+        <target>North-South</target>
+      </trans-unit>
       <trans-unit id="1759be7d1ee5f0675567c09987cd4419ba474561" resname="Not approved">
         <source>Not approved</source>
         <target>Not approved</target>
@@ -1533,6 +1557,10 @@
       <trans-unit id="d5337a7b5942566108d876f6a2624cbd2cfb147e" resname="Please select the most appropriate outcome of the SP 20-25:">
         <source>Please select the most appropriate outcome of the SP 20-25:</source>
         <target>Please select the most appropriate outcome of the SP 20-25:</target>
+      </trans-unit>
+      <trans-unit id="e2324e388e085003f2a5f1c0cd0b3e6d454feaf4" resname="Please, describe the sustainability aspect of the project/initiative being described in this Best Practice">
+        <source>Please, describe the sustainability aspect of the project/initiative being described in this Best Practice</source>
+        <target>Please, describe the sustainability aspect of the project/initiative being described in this Best Practice</target>
       </trans-unit>
       <trans-unit id="eb8f3ce2a98e81099989307e96c36e37ec881384" resname="Population Group">
         <source>Population Group</source>
@@ -1814,6 +1842,10 @@
         <source>See protocol</source>
         <target>See protocol</target>
       </trans-unit>
+      <trans-unit id="348974b72cb4b86d4d7fa44f65eb5ad6713998fb" resname="Select DeCS descriptors (Health Sciences Descriptors)">
+        <source>Select DeCS descriptors (Health Sciences Descriptors)</source>
+        <target>Select DeCS descriptors (Health Sciences Descriptors)</target>
+      </trans-unit>
       <trans-unit id="c135ca2ba6ef7f544f8d9e2e09088dd911ead717" resname="Select Members Ad Hoc">
         <source>Select Members Ad Hoc</source>
         <target>Select Members Ad Hoc</target>
@@ -1910,6 +1942,10 @@
         <source>Sources / Comments</source>
         <target>Sources / Comments</target>
       </trans-unit>
+      <trans-unit id="18264d135c5c3e77166e061b832cc9ffc55f4c64" resname="South-South">
+        <source>South-South</source>
+        <target>South-South</target>
+      </trans-unit>
       <trans-unit id="8df7f1b361b2af42d36011e00d22c0f9891ec0b0" resname="Spanish">
         <source>Spanish</source>
         <target>Spanish</target>
@@ -1993,6 +2029,10 @@
       <trans-unit id="bda7dbdf25da49b74d2ce451f062424e9edabcbb" resname="Support information about the outcome and impact results">
         <source>Support information about the outcome and impact results</source>
         <target>Support information about the outcome and impact results</target>
+      </trans-unit>
+      <trans-unit id="31bc1b17f9808c0c47226bf731833f8ffc20f53d" resname="Sustainability">
+        <source>Sustainability</source>
+        <target>Sustainability</target>
       </trans-unit>
       <trans-unit id="0715dda954d17286931a0515be1910852ef7de6d" resname="Sustainable Development Goals (and targets)">
         <source>Sustainable Development Goals (and targets)</source>
@@ -2095,6 +2135,10 @@
       <trans-unit id="8ac88fd30be182cc81abfba1d4ddb3d974e62853" resname="Title of the Best Practice">
         <source>Title of the Best Practice</source>
         <target>Title of the Best Practice</target>
+      </trans-unit>
+      <trans-unit id="7daa14977c986dc3336a31cdcf7b037d87109179" resname="Triangular Cooperation">
+        <source>Triangular Cooperation</source>
+        <target>Triangular Cooperation</target>
       </trans-unit>
       <trans-unit id="3deb7456519697ecf4eefc455516c969a3681bae" resname="Type">
         <source>Type</source>
@@ -2371,6 +2415,10 @@
       <trans-unit id="d436a3f40e3ecce896010be99dcf00a577b909aa" resname="inactive">
         <source>inactive</source>
         <target>inactive</target>
+      </trans-unit>
+      <trans-unit id="27bd80948d4be79948b3b704a68d335cf2f353e8" resname="insert descriptors here">
+        <source>insert descriptors here</source>
+        <target>insert descriptors here</target>
       </trans-unit>
       <trans-unit id="efd7fd7f2954713c1ee7facf9750fe53e8cf589c" resname="translation">
         <source>translation</source>

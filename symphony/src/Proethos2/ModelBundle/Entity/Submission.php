@@ -125,6 +125,12 @@ class Submission extends Base
     private $type;
 
     /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank()
+     */
+    private $coop_modality;
+
+    /**
      * @var Role
      *
      * @ORM\ManyToOne(targetEntity="BestPracticeRole")
@@ -355,6 +361,13 @@ class Submission extends Base
      */
     private $describe_how;
 
+    /**
+     * @var text
+     *
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $sustainability;
+
     /******************** RELEVANCE FOR PAHO'S TECHNICAL COOPERATION ********************/
 
     /**
@@ -493,6 +506,13 @@ class Submission extends Base
      * @ORM\Column(type="text", nullable=true)
      */
     private $paho_comments;
+
+    /**
+     * @var text
+     *
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $descriptors;
 
 
     public function __construct() {
@@ -2408,5 +2428,91 @@ class Submission extends Base
         }
 
         return $subregions;
+    }
+
+    /**
+     * Set coopModality
+     *
+     * @param string $coopModality
+     *
+     * @return Submission
+     */
+    public function setCoopModality($coopModality)
+    {
+        $this->coop_modality = $coopModality;
+
+        return $this;
+    }
+
+    /**
+     * Get coopModality
+     *
+     * @return string
+     */
+    public function getCoopModality()
+    {
+        return $this->coop_modality;
+    }
+
+    /**
+     * Set sustainability
+     *
+     * @param string $sustainability
+     *
+     * @return Submission
+     */
+    public function setSustainability($sustainability)
+    {
+        $this->sustainability = $sustainability;
+
+        return $this;
+    }
+
+    /**
+     * Get sustainability
+     *
+     * @return string
+     */
+    public function getSustainability()
+    {
+        return $this->sustainability;
+    }
+
+    /**
+     * Set descriptors
+     *
+     * @param string $descriptors
+     *
+     * @return Submission
+     */
+    public function setDescriptors($descriptors)
+    {
+        $this->descriptors = $descriptors;
+
+        return $this;
+    }
+
+    /**
+     * Get descriptors
+     *
+     * @return string
+     */
+    public function getDescriptors()
+    {
+        return $this->descriptors;
+    }
+
+    public function getDescriptorsList() {
+        $descriptors = array();
+
+        if ( $this->descriptors ) {
+            $descriptors_list = json_decode($this->descriptors);
+            
+            foreach($descriptors_list as $descriptor) {
+                $descriptors[] = $descriptor->value;
+            }
+        }
+
+        return $descriptors;
     }
 }

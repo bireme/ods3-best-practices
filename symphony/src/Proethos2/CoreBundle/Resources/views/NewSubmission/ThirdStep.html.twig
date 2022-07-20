@@ -114,6 +114,24 @@
                     </div>
                 </div>
 
+                <div class='block'>
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <h2 class='sub-header'>{% trans %}Sustainability{% endtrans %}</h2>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="textarea-sustainability">{% trans %}Please, describe the sustainability aspect of the project/initiative being described in this Best Practice{% endtrans %}:</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <textarea rows="6" class="form-control" name='sustainability' id='textarea-sustainability' required>{{ submission.sustainability }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class='submission-button-controls'>
                     <button type='submit' class='btn btn-primary'>{% trans %}Save and next{% endtrans %}</button>
                 </div>

@@ -56,7 +56,7 @@
                 <a href="{{ path('submission_new_second_step', {'submission_id': submission.id }) }}" title="{% trans %}Type / Description{% endtrans %}">{% trans %}Type / Description{% endtrans %}</a>
             </li>
             <li role="presentation" {% if app.request.get('_route') == "submission_new_third_step" %}class='active'{% endif %}>
-                <a href="{{ path('submission_new_third_step', {'submission_id': submission.id }) }}" title='{% trans %}Effectiveness / Efficiency / Adaptability / Replicability{% endtrans %}'>{% trans %}Effectiveness / Efficiency / Adaptability / Replicability{% endtrans %}</a>
+                <a href="{{ path('submission_new_third_step', {'submission_id': submission.id }) }}" title='{% trans %}Effectiveness / Efficiency / Adaptability / Replicability{% endtrans %}'>{% trans %}Effectiveness / Efficiency / Adaptability / Replicability / Sustainability{% endtrans %}</a>
             </li>
             {% if submission.type.slug == "paho-who-technical-cooperation" %}
                 <li role="presentation" {% if app.request.get('_route') == "submission_new_fourth_step" %}class='active'{% endif %}>

@@ -44,6 +44,9 @@
         <h3>{% trans %}This Best Practice is related to{% endtrans %}:</h3>
         <p>{{ submission.type.name }}</p>
 
+        <h3>{% trans %}Modality of Cooperation{% endtrans %}:</h3>
+        <p>{{ coop_modality[submission.coopModality] }}</p>
+
         <h3>{% trans %}What's your role on this Best Practice{% endtrans %}?</h3>
         <p>{{ submission.role.name }}</p>
 
@@ -161,6 +164,9 @@
         <h3>{% trans %}Please describe how{% endtrans %}:</h3>
         <p>{{ submission.describeHow }}</p>
 
+        <h3>{% trans %}Sustainability{% endtrans %}:</h3>
+        <p>{{ submission.sustainability }}</p>
+
         {% if submission.type.slug == "paho-who-technical-cooperation" %}
 
             <h3>{% trans %}Did it contribute to strengthen the health system, the achievement of PAHO SP 20-25 and SHAA 2030{% endtrans %}?</h3>
@@ -228,6 +234,9 @@
         {% for url in submission.otherSourcesInformationLinks %}
             <p><a href="{{ url }}" target="_blank">{{ url }}</a></p>
         {% endfor %}
+
+        <h3>{% trans %}Keywords{% endtrans %}:</h3>
+        <p>{{ submission.descriptorsList|join('; ') }}</p>
 
         <h3>{% trans %}What obstacles or challenges were faced during the implementation of this best practice/initiative{% endtrans %}?</h3>
         <p>{{ submission.challengesInformation }}</p>
