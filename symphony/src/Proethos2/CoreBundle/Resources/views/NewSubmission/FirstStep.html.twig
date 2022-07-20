@@ -81,10 +81,10 @@
 
                     <div class='row'>
                         <div class="col-md-12">
-                            <div class="form-group required">
+                            <div class="form-group">
                                 <label for="select-coop-modality">{% trans %}Modality of Cooperation{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <select class='form-control selectpicker' id='select-coop-modality' name='coop_modality' data-size="6" data-live-search="true" required>
+                                <select class='form-control selectpicker' id='select-coop-modality' name='coop_modality' data-size="6" data-live-search="true">
                                     <option value="">-</option>
                                     {% for code, name in coop_modality %}
                                         <option value="{{ code }}" {% if post_data.coop_modality == code %}selected{% endif %}>{{ name }}</option>
