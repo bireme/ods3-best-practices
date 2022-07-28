@@ -16,7 +16,6 @@
             <div class='row'>
                 <div class="col-md-12">
                     <table class='table table-hover table-condensed'>
-                        
                         <thead>
                             <tr>
                                 {% if not app.request.get('id') %}<th>ID</th>{% endif %}
@@ -24,12 +23,11 @@
                                 <th>{% trans %}Actions{% endtrans %}</th>
                             </tr>
                         </thead>
-                        
                         <tbody>
                             {% for help in helps %}
                                 <tr>
                                     {% if not app.request.get('id') %}<td>{{ loop.index }}</td>{% endif %}
-                                    <td>{{ help.message }}</td> 
+                                    <td>{{ help.message|nl2br }}</td> 
                                     <td>
                                         <a href='{{ path('crud_admin_help_show', {help_id: help.id} ) }}' data-toggle='modal' data-target='#modal-help' class='btn btn-default btn-xs'><i class='glyphicon glyphicon-eye-open'></i></a>
                                         <a href='{{ path('crud_admin_help_update', {help_id: help.id} ) }}' data-toggle='modal' data-target='#modal-update-help' class='btn btn-default btn-xs'><i class='glyphicon glyphicon-pencil'></i></a>
@@ -37,11 +35,11 @@
                                     </td> 
                                 </tr>
                             {% endfor %}
-                            
                         </tbody>
                     </table>
                 </div>
             </div>
+        </div>
     </div>
     
     <!-- Modal Update Help -->

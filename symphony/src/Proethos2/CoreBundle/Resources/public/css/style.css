@@ -237,6 +237,26 @@ img.logo {
     max-width: 500px;
 }
 
+.new-submission-tab-content .form-group label {
+    font-weight: bold;
+}
+
+.top-buffer {
+    margin-top: 1rem;
+}
+
+.bottom-buffer {
+    margin-bottom: 1rem;
+}
+
+.left-buffer {
+    margin-left: 1rem;
+}
+
+.right-buffer {
+    margin-right: 1rem;
+}
+
 .help-text {
     display: none;
 }

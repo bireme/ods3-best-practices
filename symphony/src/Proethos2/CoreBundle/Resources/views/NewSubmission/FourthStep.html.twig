@@ -27,8 +27,8 @@
 
                     <div class='row'>
                         <div class="col-md-12">
-                            <div class="form-group required">
-                                <label for="select-health-system-contribution">{% trans %}Did it contribute to strengthen the health system, the achievement of the Pan American Health Organization Strategic Plan 2020-2025 (SP 20-25) and/or the Sustainable Health Agenda for the Americas 2018-2030 (SHAA 2030){% endtrans %}?</label>
+                            <div class="form-group">
+                                <label for="select-health-system-contribution">*{% trans %}Did it contribute to strengthen the health system, the achievement of the Pan American Health Organization Strategic Plan 2020-2025 (SP 20-25) and/or the Sustainable Health Agenda for the Americas 2018-2030 (SHAA 2030){% endtrans %}?</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <select class='form-control selectpicker' id='select-health-system-contribution' name='health_system_contribution' data-size="6" data-live-search="true" required>
                                     <option value="">-</option>
@@ -42,8 +42,8 @@
 
                     <div class='row'>
                         <div class="col-md-12">
-                            <div class="form-group required">
-                                <label for="select-outcomes">{% trans %}Please select the most appropriate outcome of the SP 20-25:{% endtrans %}</label>
+                            <div class="form-group">
+                                <label for="select-outcomes">*{% trans %}Please select the most appropriate outcome of the SP 20-25:{% endtrans %}</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <select class='form-control selectpicker' id='select-outcomes' name='outcomes' data-size="5" data-live-search="true" required>
                                     <option value="">-</option>
@@ -57,8 +57,8 @@
 
                     <div class='row'>
                         <div class="col-md-12">
-                            <div class="form-group required">
-                                <label for="select-goals">{% trans %}Please select the most appropriate goal of the SHAA 2030:{% endtrans %}</label>
+                            <div class="form-group">
+                                <label for="select-goals">*{% trans %}Please select the most appropriate goal of the SHAA 2030:{% endtrans %}</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <select class='form-control selectpicker' id='select-goals' name='goals' data-size="5" data-live-search="true" required>
                                     <option value="">-</option>
@@ -72,8 +72,8 @@
 
                     <div class='row'>
                         <div class="col-md-12">
-                            <div class="form-group required">
-                                <label for="select-value-chain-organization">{% trans %}Is the BP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization{% endtrans %}?</label>
+                            <div class="form-group">
+                                <label for="select-value-chain-organization">*{% trans %}Is the BP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization{% endtrans %}?</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <select class='form-control selectpicker' id='select-value-chain-organization' name='value_chain_organization' data-size="6" data-live-search="true" required>
                                     <option value="">-</option>
@@ -107,8 +107,8 @@
 {#
                     <div class='row'>
                         <div class="col-md-12">
-                            <div class="form-group required">
-                                <label for="textarea-relevance-information">{% trans %}Please provide additional information about the relevance{% endtrans %}:</label>
+                            <div class="form-group">
+                                <label for="textarea-relevance-information">*{% trans %}Please provide additional information about the relevance{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <textarea rows="6" class="form-control" name='relevance_information' id='textarea-relevance-information' required>{{ submission.relevanceInformation }}</textarea>
                             </div>
@@ -126,8 +126,8 @@
 
                     <div class='row'>
                         <div class="col-md-12">
-                            <div class="form-group required">
-                                <label for="select-counterpart-recognized">{% trans %}In your opinion, the counterpart(s) recognized PAHO's Technical Cooperation{% endtrans %}?</label>
+                            <div class="form-group">
+                                <label for="select-counterpart-recognized">*{% trans %}In your opinion, the counterpart(s) recognized PAHO's Technical Cooperation{% endtrans %}?</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <select class='form-control selectpicker' id='select-counterpart-recognized' name='counterpart_recognized' data-size="6" data-live-search="true" required>
                                     <option value="">-</option>
@@ -141,8 +141,8 @@
 
                     <div class='row'>
                         <div class="col-md-12">
-                            <div class="form-group required">
-                                <label for="select-catalytic-role">{% trans %}In your opinion, PAHO played a catalytic role on the added value of Technical Cooperation{% endtrans %}?</label>
+                            <div class="form-group">
+                                <label for="select-catalytic-role">*{% trans %}In your opinion, PAHO played a catalytic role on the added value of Technical Cooperation{% endtrans %}?</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <select class='form-control selectpicker' id='select-catalytic-role' name='catalytic_role' data-size="6" data-live-search="true" required>
                                     <option value="">-</option>
@@ -156,8 +156,8 @@
 
                     <div class='row'>
                         <div class="col-md-12">
-                            <div class="form-group required">
-                                <label for="select-neutral-role">{% trans %}In your opinion, PAHO played a neutral role in negotiations{% endtrans %}?</label>
+                            <div class="form-group">
+                                <label for="select-neutral-role">*{% trans %}In your opinion, PAHO played a neutral role in negotiations{% endtrans %}?</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <select class='form-control selectpicker' id='select-neutral-role' name='neutral_role' data-size="6" data-live-search="true" required>
                                     <option value="">-</option>
@@ -171,8 +171,8 @@
 
                     <div class='row'>
                         <div class="col-md-12">
-                            <div class="form-group required">
-                                <label for="textarea-recognition-information">{% trans %}Please provide support information about PAHO's Technical Cooperation recognition{% endtrans %}:</label>
+                            <div class="form-group">
+                                <label for="textarea-recognition-information">*{% trans %}Please provide support information about PAHO's Technical Cooperation recognition{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <textarea rows="6" class="form-control" name='recognition_information' id='textarea-recognition-information' required>{{ submission.recognitionInformation }}</textarea>
                             </div>
@@ -189,8 +189,8 @@
 
                     <div class='row'>
                         <div class="col-md-12">
-                            <div class="form-group required">
-                                <label for="select-cross-cutting-approach">{% trans %}In your opinion, PAHO's Technical Cooperation was planned considering the cross-cutting approach (human rights, gender, ethnicity and race){% endtrans %}?</label>
+                            <div class="form-group">
+                                <label for="select-cross-cutting-approach">*{% trans %}In your opinion, PAHO's Technical Cooperation was planned considering the cross-cutting approach (human rights, gender, ethnicity and race){% endtrans %}?</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <select class='form-control selectpicker' id='select-cross-cutting-approach' name='cross_cutting_approach' data-size="6" data-live-search="true" required>
                                     <option value="">-</option>
@@ -204,13 +204,17 @@
 
                     <div class='row'>
                         <div class="col-md-12">
-                            <div class="form-group required">
-                                <label for="textarea-engagement-information">{% trans %}Please provide support information. For example, information on how PAHO's Technical Cooperation contributed to strengthen capacity and address health inequities and inequalities, and gender and culturally sensitive approaches to health within a human rights framework; to engage in an intersectoral action with an equity and rights focus{% endtrans %}:</label>
+                            <div class="form-group">
+                                <label for="textarea-engagement-information">*{% trans %}Please provide support information. For example, information on how PAHO's Technical Cooperation contributed to strengthen capacity and address health inequities and inequalities, and gender and culturally sensitive approaches to health within a human rights framework; to engage in an intersectoral action with an equity and rights focus{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <textarea rows="6" class="form-control" name='engagement_information' id='textarea-engagement-information' required>{{ submission.engagementInformation }}</textarea>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class='row top-buffer bottom-buffer'>
+                    <div class="col-md-12">*{% trans %}Mandatory fields{% endtrans %}</div>
                 </div>
 
                 <div class='submission-button-controls'>

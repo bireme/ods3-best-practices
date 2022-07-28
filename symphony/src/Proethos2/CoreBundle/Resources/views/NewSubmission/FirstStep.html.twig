@@ -40,8 +40,8 @@
 {#
                     <div class='row'>
                         <div class="col-md-12">
-                            <div class="form-group required">
-                                <label for="select-language">{% trans %}Language{% endtrans %}:</label>
+                            <div class="form-group">
+                                <label for="select-language">*{% trans %}Language{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <select class='form-control selectpicker' id='select-language' name='language' data-size="5" required>
                                     <option value="">-</option>
@@ -56,8 +56,8 @@
 #}
                     <div class='row'>
                         <div class="col-md-12">
-                            <div class="form-group required">
-                                <label for="input_title">{% trans %}Title of the Best Practice{% endtrans %}:</label>
+                            <div class="form-group">
+                                <label for="input_title">*{% trans %}Title of the Best Practice{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <input type="text" class="form-control" name='title' id='input_title' value='{% if post_data.title %}{{ post_data.title }}{% endif %}' required>
                             </div>
@@ -66,8 +66,8 @@
 
                     <div class='row'>
                         <div class="col-md-12">
-                            <div class="form-group required">
-                                <label for="select-best-practice-type">{% trans %}This Best Practice is related to{% endtrans %}:</label>
+                            <div class="form-group">
+                                <label for="select-best-practice-type">*{% trans %}This Best Practice is related to{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <select class='form-control selectpicker' id='select-best-practice-type' name='best_practice_type' data-size="5" data-live-search="true" required>
                                     <option value="">-</option>
@@ -96,8 +96,8 @@
 
                     <div class='row'>
                         <div class="col-md-12">
-                            <div class="form-group required">
-                                <label for="select-best-practice-role">{% trans %}What's your role on this Best Practice{% endtrans %}?</label>
+                            <div class="form-group">
+                                <label for="select-best-practice-role">*{% trans %}What's your role on this Best Practice{% endtrans %}?</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <select class='form-control selectpicker' id='select-best-practice-role' name='best_practice_role' data-size="5" data-live-search="true" required>
                                     <option value="">-</option>
@@ -111,8 +111,8 @@
 
                     <div class='row'>
                         <div class="col-md-12">
-                            <div class="form-group hide required">
-                                <label for="input_other_best_practice_role">{% trans %}Other Role{% endtrans %}:</label>
+                            <div class="form-group hide">
+                                <label for="input_other_best_practice_role">*{% trans %}Other Role{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <input type="text" class="form-control" name='other_best_practice_role' id='input_other_best_practice_role'>
                             </div>
@@ -121,8 +121,8 @@
 
                     <div class='row'>
                         <div class="col-md-12">
-                            <div class="form-group required">
-                                <label for="select-institution">{% trans %}Type of institution reporting the Best Practice{% endtrans %}:</label>
+                            <div class="form-group">
+                                <label for="select-institution">*{% trans %}Type of institution reporting the Best Practice{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <select class='form-control selectpicker' id='select-institution' name='institution' data-size="5" data-live-search="true" required>
                                     <option value="">-</option>
@@ -136,8 +136,8 @@
 
                     <div class='row'>
                         <div class="col-md-12">
-                            <div class="form-group hide required">
-                                <label for="input_other_institution">{% trans %}Other Institution{% endtrans %}:</label>
+                            <div class="form-group hide">
+                                <label for="input_other_institution">*{% trans %}Other Institution{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <input type="text" class="form-control" name='other_institution' id='input_other_institution'>
                             </div>
@@ -146,8 +146,8 @@
 
                     <div class='row'>
                         <div class="col-md-12">
-                            <div class="form-group required">
-                                <label for="input_institution_name">{% trans %}Institution's Name{% endtrans %}:</label>
+                            <div class="form-group">
+                                <label for="input_institution_name">*{% trans %}Institution's Name{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <input type="text" class="form-control" name='institution_name' id='input_institution_name' required>
                             </div>
@@ -156,8 +156,8 @@
 
                     <div class='row'>
                         <div class="col-md-12">
-                            <div class="form-group required">
-                                <label for="select-stakeholder">{% trans %}Counterparts and Partnerships{% endtrans %}:</label>
+                            <div class="form-group">
+                                <label for="select-stakeholder">*{% trans %}Counterparts and Partnerships{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <div>
                                     <select class='form-control selectpicker' id='select-stakeholder' name='stakeholder[]' data-size="5" data-width="fit" data-live-search="true" title="{% trans %}Choose one of the following...{% endtrans %}" multiple required>
@@ -182,8 +182,8 @@
 
                     <div class='row'>
                         <div class="col-md-12">
-                            <div class="form-group hide required">
-                                <label for="select-best-practice-entity">{% trans %}Entity (PAHO){% endtrans %}:</label>
+                            <div class="form-group hide">
+                                <label for="select-best-practice-entity">*{% trans %}Entity (PAHO){% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <div>
                                     <select class='form-control selectpicker' id='select-best-practice-entity' name='best_practice_entity[]' data-size="5" data-width="fit" data-live-search="true" title="{% trans %}Choose one of the following...{% endtrans %}" multiple required>
@@ -198,13 +198,17 @@
 
                     <div class='row'>
                         <div class="col-md-12">
-                            <div class="form-group hide required">
-                                <label for="input_reference_number">{% trans %}Reference Number of the Technical Cooperation{% endtrans %} ({% trans %}example{% endtrans %}: TC80, Grant#OVI314, CUB-27, BRA-76):</label>
+                            <div class="form-group hide">
+                                <label for="input_reference_number">*{% trans %}Reference Number of the Technical Cooperation{% endtrans %} ({% trans %}example{% endtrans %}: TC80, Grant#OVI314, CUB-27, BRA-76):</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <input type="text" class="form-control" name='reference_number' id='input_reference_number' value='{% if post_data.reference_number %}{{ post_data.reference_number }}{% endif %}'>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class='row top-buffer bottom-buffer'>
+                    <div class="col-md-12">*{% trans %}Mandatory fields{% endtrans %}</div>
                 </div>
 
                 <div class='submission-button-controls'>
