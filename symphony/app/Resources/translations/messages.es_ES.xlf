@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2022-07-28T15:47:07Z" source-language="en" target-language="es_ES" datatype="plaintext" original="not.available">
+  <file date="2022-08-02T21:38:15Z" source-language="en" target-language="es_ES" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -84,7 +84,7 @@
       </trans-unit>
       <trans-unit id="5c1f023a5941d06628f3af56eccace4f0fce781f" resname="Add Descriptor">
         <source>Add Descriptor</source>
-        <target>Add Descriptor</target>
+        <target>Agregar Descriptor</target>
       </trans-unit>
       <trans-unit id="e86236c36d191296130926022e655c7aca7ee34a" resname="Add a monitoring action">
         <source>Add a monitoring action</source>
@@ -902,6 +902,10 @@
         <source>Identification</source>
         <target>Identificación</target>
       </trans-unit>
+      <trans-unit id="b8fbfb602df62738f2e518a3f3619361cb81e8e3" resname="If you do not see the email in your inbox, please check your junk mail folder or spam folder. If you do not receive any emails, then write to bp@paho.org. We will do our best to answer your request as soon as possible.">
+        <source>If you do not see the email in your inbox, please check your junk mail folder or spam folder. If you do not receive any emails, then write to bp@paho.org. We will do our best to answer your request as soon as possible.</source>
+        <target>If you do not see the email in your inbox, please check your junk mail folder or spam folder. If you do not receive any emails, then write to bp@paho.org. We will do our best to answer your request as soon as possible.</target>
+      </trans-unit>
       <trans-unit id="8781d615fd77be9578225c40ac67b9471394cced" resname="Implementation">
         <source>Implementation</source>
         <target>Implementación</target>
@@ -1020,7 +1024,7 @@
       </trans-unit>
       <trans-unit id="f530db58b3e5088dc7412c6d2298ba3f8456bdeb" resname="Keywords">
         <source>Keywords</source>
-        <target>Keywords</target>
+        <target>Palabras clave</target>
       </trans-unit>
       <trans-unit id="53ec6d7dfa2c6ed480e8ec1293af8d6b2cf0a512" resname="Label translations">
         <source>Label translations</source>
@@ -1848,7 +1852,7 @@
       </trans-unit>
       <trans-unit id="348974b72cb4b86d4d7fa44f65eb5ad6713998fb" resname="Select DeCS descriptors (Health Sciences Descriptors)">
         <source>Select DeCS descriptors (Health Sciences Descriptors)</source>
-        <target>Select DeCS descriptors (Health Sciences Descriptors)</target>
+        <target>Seleccionar los descriptores DeCS (Descriptores en Ciencias de la Salud)</target>
       </trans-unit>
       <trans-unit id="c135ca2ba6ef7f544f8d9e2e09088dd911ead717" resname="Select Members Ad Hoc">
         <source>Select Members Ad Hoc</source>
@@ -2418,10 +2422,6 @@
       <trans-unit id="d436a3f40e3ecce896010be99dcf00a577b909aa" resname="inactive">
         <source>inactive</source>
         <target>inactivo</target>
-      </trans-unit>
-      <trans-unit id="27bd80948d4be79948b3b704a68d335cf2f353e8" resname="insert descriptors here">
-        <source>insert descriptors here</source>
-        <target>insert descriptors here</target>
       </trans-unit>
       <trans-unit id="efd7fd7f2954713c1ee7facf9750fe53e8cf589c" resname="translation">
         <source>translation</source>

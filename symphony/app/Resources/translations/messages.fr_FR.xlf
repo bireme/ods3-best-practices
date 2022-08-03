@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2022-07-28T15:44:28Z" source-language="en" target-language="fr_FR" datatype="plaintext" original="not.available">
+  <file date="2022-08-02T21:38:16Z" source-language="en" target-language="fr_FR" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -901,6 +901,10 @@
       <trans-unit id="9d2c7063088793c055fe015d3841d0cc2df8e788" resname="Identification">
         <source>Identification</source>
         <target>Identification</target>
+      </trans-unit>
+      <trans-unit id="b8fbfb602df62738f2e518a3f3619361cb81e8e3" resname="If you do not see the email in your inbox, please check your junk mail folder or spam folder. If you do not receive any emails, then write to bp@paho.org. We will do our best to answer your request as soon as possible.">
+        <source>If you do not see the email in your inbox, please check your junk mail folder or spam folder. If you do not receive any emails, then write to bp@paho.org. We will do our best to answer your request as soon as possible.</source>
+        <target>If you do not see the email in your inbox, please check your junk mail folder or spam folder. If you do not receive any emails, then write to bp@paho.org. We will do our best to answer your request as soon as possible.</target>
       </trans-unit>
       <trans-unit id="8781d615fd77be9578225c40ac67b9471394cced" resname="Implementation">
         <source>Implementation</source>
@@ -2419,10 +2423,6 @@
       <trans-unit id="d436a3f40e3ecce896010be99dcf00a577b909aa" resname="inactive">
         <source>inactive</source>
         <target>inactive</target>
-      </trans-unit>
-      <trans-unit id="27bd80948d4be79948b3b704a68d335cf2f353e8" resname="insert descriptors here">
-        <source>insert descriptors here</source>
-        <target>insert descriptors here</target>
       </trans-unit>
       <trans-unit id="efd7fd7f2954713c1ee7facf9750fe53e8cf589c" resname="translation">
         <source>translation</source>
