@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2022-08-02T21:39:16Z" source-language="en" target-language="pt_BR" datatype="plaintext" original="not.available">
+  <file date="2022-08-18T03:50:27Z" source-language="en" target-language="pt_BR" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -2113,9 +2113,9 @@
         <source>This is a translated version.</source>
         <target>Esta é uma versão traduzida.</target>
       </trans-unit>
-      <trans-unit id="f6d239fe41caac7e5b846d7290a507a5cbb0bb35" resname="This is respective to the following Targets of the SDGs">
-        <source>This is respective to the following Targets of the SDGs</source>
-        <target>Isso se refere às seguintes Metas dos ODS.</target>
+      <trans-unit id="a2874a53bfe5a6dfed00fb87378d4679926b2779" resname="This is related to the following Targets of the SDGs">
+        <source>This is related to the following Targets of the SDGs</source>
+        <target>Isso se refere às seguintes Metas dos ODS</target>
       </trans-unit>
       <trans-unit id="60ee41a6d8c54b4fcdf27977e61e995bf2aa4709" resname="This is to remind you that protocol &lt;b&gt;%protocol%&lt;/b&gt; has a pending&#10;                                                   monitoring action that is due on &lt;b&gt;%date%&lt;/b&gt;.">
         <source><![CDATA[This is to remind you that protocol <b>%protocol%</b> has a pending
