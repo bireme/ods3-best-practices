@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2022-08-18T03:50:55Z" source-language="en" target-language="es_ES" datatype="plaintext" original="not.available">
+  <file date="2022-08-18T04:05:50Z" source-language="en" target-language="es_ES" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -922,9 +922,9 @@
         <source>In your opinion, PAHO played a neutral role in negotiations</source>
         <target>En su opinión, ¿ha desempeñado la OPS un rol neutral en las negociaciones</target>
       </trans-unit>
-      <trans-unit id="1035bc7755a2bc4db9b7d5b570d5e51ca2fd242b" resname="In your opinion, PAHO's Technical Cooperation was planned considering the cross-cutting approach (human rights, gender, ethnicity and race)">
-        <source>In your opinion, PAHO's Technical Cooperation was planned considering the cross-cutting approach (human rights, gender, ethnicity and race)</source>
-        <target>En su opinión, ¿la Cooperación Técnica de la OPS fue diseñada considerando un enfoque transversal (derechos humanos, género, etnicidad y raza)</target>
+      <trans-unit id="0565eb0bb010e043e113c1a7e634f22c33408a85" resname="In your opinion, PAHO's Technical Cooperation was planned considering the cross-cutting approach (Human Rights, Gender Equity and Ethnicity (Cultural Diversity))">
+        <source>In your opinion, PAHO's Technical Cooperation was planned considering the cross-cutting approach (Human Rights, Gender Equity and Ethnicity (Cultural Diversity))</source>
+        <target>En su opinión, ¿la Cooperación Técnica de la OPS fue diseñada considerando un enfoque transversal (Derechos Humanos, Equidad de Género y Etnicidad (Diversidad Cultural))</target>
       </trans-unit>
       <trans-unit id="1c9d3be359166a4a6ebcdddc7205d25945ea0c25" resname="In your opinion, the counterpart(s) recognized PAHO's Technical Cooperation">
         <source>In your opinion, the counterpart(s) recognized PAHO's Technical Cooperation</source>
