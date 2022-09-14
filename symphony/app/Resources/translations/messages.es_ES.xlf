@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2022-08-18T04:05:50Z" source-language="en" target-language="es_ES" datatype="plaintext" original="not.available">
+  <file date="2022-09-13T23:42:15Z" source-language="en" target-language="es_ES" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -902,9 +902,9 @@
         <source>Identification</source>
         <target>Identificación</target>
       </trans-unit>
-      <trans-unit id="b8fbfb602df62738f2e518a3f3619361cb81e8e3" resname="If you do not see the email in your inbox, please check your junk mail folder or spam folder. If you do not receive any emails, then write to bp@paho.org. We will do our best to answer your request as soon as possible.">
-        <source>If you do not see the email in your inbox, please check your junk mail folder or spam folder. If you do not receive any emails, then write to bp@paho.org. We will do our best to answer your request as soon as possible.</source>
-        <target>Si no puede encontrar el correo electrónico en su bandeja de entrada, revise su carpeta de correo no deseado o spam. Si no recibe ningún correo electrónico, por favor escriba a bp@paho.org. Haremos todo lo posible para responder a su solicitud lo más rápido posible.</target>
+      <trans-unit id="2deebc09c13d79d6939c25a8b7a5f10c3fd70b73" resname="If you do not see the confirmation email in your inbox, please check your junk mail folder or spam folder. If you do not receive any email, then write to bp@paho.org. The Best Practices Portal team will do their best to answer your request as soon as possible.">
+        <source>If you do not see the confirmation email in your inbox, please check your junk mail folder or spam folder. If you do not receive any email, then write to bp@paho.org. The Best Practices Portal team will do their best to answer your request as soon as possible.</source>
+        <target>Si no puede encontrar el correo electrónico de confirmación en su bandeja de entrada, revise su carpeta de correo no deseado o spam. Si no recibe ningún correo electrónico, por favor escriba a bp@paho.org. El equipo del Portal Buenas Prácticas hará todo lo posible para responder a su solicitud lo más rápido posible.</target>
       </trans-unit>
       <trans-unit id="8781d615fd77be9578225c40ac67b9471394cced" resname="Implementation">
         <source>Implementation</source>
