@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2022-09-13T23:36:40Z" source-language="en" target-language="fr_FR" datatype="plaintext" original="not.available">
+  <file date="2022-10-13T20:33:09Z" source-language="en" target-language="fr_FR" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -1745,6 +1745,10 @@
       <trans-unit id="a5c6c50c2aa87d3ca138c44ec18716e67238d29e" resname="Return reason">
         <source>Return reason</source>
         <target>Return reason</target>
+      </trans-unit>
+      <trans-unit id="e29a79fe0c349724caeaa1762fa917f5543248ca" resname="Review">
+        <source>Review</source>
+        <target>Review</target>
       </trans-unit>
       <trans-unit id="c2b90e0cf183a4d16219a17b8e74e556cc4b12c1" resname="Reviewer's evaluation">
         <source>Reviewer's evaluation</source>
