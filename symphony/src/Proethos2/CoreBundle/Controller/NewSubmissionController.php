@@ -104,7 +104,7 @@ class NewSubmissionController extends Controller
             $post_data = $request->request->all();
 
             // checking required files
-            foreach(array('title', 'best_practice_type', 'best_practice_role', 'institution', 'institution_name', 'stakeholder') as $field) {
+            foreach(array('title', 'proposal', 'best_practice_type', 'best_practice_role', 'institution', 'institution_name', 'stakeholder') as $field) {
                 if(!isset($post_data[$field]) or empty($post_data[$field])) {
                     $session->getFlashBag()->add('error', $translator->trans("Field '%field%' is required.", array("%field%" => $field)));
                     return $post_data;
@@ -119,6 +119,8 @@ class NewSubmissionController extends Controller
 
             $submission = new Submission();
             $submission->setTitle($post_data['title']);
+            $submission->setProposal($post_data['proposal']);
+            $submission->setOtherProposal($post_data['other_proposal']);
             $submission->setCoopModality($post_data['coop_modality']);
             $submission->setOtherRole($post_data['other_best_practice_role']);
             $submission->setOtherInstitution($post_data['other_institution']);
@@ -266,7 +268,7 @@ class NewSubmissionController extends Controller
             // echo "<pre>"; print_r($post_data); echo "</pre>"; die();
 
             // checking required files
-            foreach(array('title', 'best_practice_type', 'best_practice_role', 'institution', 'institution_name', 'stakeholder') as $field) {
+            foreach(array('title', 'proposal', 'best_practice_type', 'best_practice_role', 'institution', 'institution_name', 'stakeholder') as $field) {
                 if(!isset($post_data[$field]) or empty($post_data[$field])) {
                     $session->getFlashBag()->add('error', $translator->trans("Field '%field%' is required.", array("%field%" => $field)));
                     return $output;
@@ -274,6 +276,8 @@ class NewSubmissionController extends Controller
             }
 
             $submission->setTitle($post_data['title']);
+            $submission->setProposal($post_data['proposal']);
+            $submission->setOtherProposal($post_data['other_proposal']);
             $submission->setCoopModality($post_data['coop_modality']);
             $submission->setOtherRole($post_data['other_best_practice_role']);
             $submission->setOtherInstitution($post_data['other_institution']);
@@ -1068,6 +1072,14 @@ class NewSubmissionController extends Controller
         }
         $revisions[] = $item;
 
+        $text = $translator->trans('Proposal');
+        $item = array('text' => $text, 'status' => true);
+        if(empty($submission->getProposal())) {
+            $item = array('text' => $text, 'status' => false);
+            $final_status = false;
+        }
+        $revisions[] = $item;
+
         $text = $translator->trans('Type');
         $item = array('text' => $text, 'status' => true);
         if(empty($submission->getType())) {
@@ -1478,6 +1490,18 @@ class NewSubmissionController extends Controller
             // getting post data
             $post_data = $request->request->all();
 
+            // echo "<pre>"; print_r($post_data); echo "</pre>"; die();
+
+            // checking required files
+            $required_fields = array('interest_conflicts');
+
+            foreach($required_fields as $field) {
+                if(!isset($post_data[$field]) or empty($post_data[$field])) {
+                    $session->getFlashBag()->add('error', $translator->trans("Field '%field%' is required.", array("%field%" => $field)));
+                    return $output;
+                }
+            }
+
             if($final_status) {
 
                 if($post_data['accept-terms'] == 'on') {
@@ -1590,6 +1614,9 @@ class NewSubmissionController extends Controller
                     $em->persist($protocol);
                     $em->flush();
 
+                    // adding fields to model
+                    $submission->setInterestConflicts($post_data['interest_conflicts']);
+                    $submission->setOtherInterestConflicts($post_data['other_interest_conflicts']);
                     $submission->setIsSended(true);
                     $em->persist($submission);
                     $em->flush();

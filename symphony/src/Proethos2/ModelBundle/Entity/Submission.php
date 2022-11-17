@@ -117,6 +117,19 @@ class Submission extends Base
     private $title;
 
     /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank()
+     */
+    private $proposal;
+
+    /**
+     * @var text
+     *
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $other_proposal;
+
+    /**
      * @var Type
      *
      * @ORM\ManyToOne(targetEntity="BestPracticeType")
@@ -513,6 +526,19 @@ class Submission extends Base
      * @ORM\Column(type="text", nullable=true)
      */
     private $descriptors;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank()
+     */
+    private $interest_conflicts;
+
+    /**
+     * @var text
+     *
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $other_interest_conflicts;
 
 
     public function __construct() {
@@ -2514,5 +2540,101 @@ class Submission extends Base
         }
 
         return $descriptors;
+    }
+
+    /**
+     * Set proposal
+     *
+     * @param string $proposal
+     *
+     * @return Submission
+     */
+    public function setProposal($proposal)
+    {
+        $this->proposal = $proposal;
+
+        return $this;
+    }
+
+    /**
+     * Get proposal
+     *
+     * @return string
+     */
+    public function getProposal()
+    {
+        return $this->proposal;
+    }
+
+    /**
+     * Set otherProposal
+     *
+     * @param string $otherProposal
+     *
+     * @return Submission
+     */
+    public function setOtherProposal($otherProposal)
+    {
+        $this->other_proposal = $otherProposal;
+
+        return $this;
+    }
+
+    /**
+     * Get otherProposal
+     *
+     * @return string
+     */
+    public function getOtherProposal()
+    {
+        return $this->other_proposal;
+    }
+
+    /**
+     * Set interestConflicts
+     *
+     * @param string $interestConflicts
+     *
+     * @return Submission
+     */
+    public function setInterestConflicts($interestConflicts)
+    {
+        $this->interest_conflicts = $interestConflicts;
+
+        return $this;
+    }
+
+    /**
+     * Get interestConflicts
+     *
+     * @return string
+     */
+    public function getInterestConflicts()
+    {
+        return $this->interest_conflicts;
+    }
+
+    /**
+     * Set otherInterestConflicts
+     *
+     * @param string $otherInterestConflicts
+     *
+     * @return Submission
+     */
+    public function setOtherInterestConflicts($otherInterestConflicts)
+    {
+        $this->other_interest_conflicts = $otherInterestConflicts;
+
+        return $this;
+    }
+
+    /**
+     * Get otherInterestConflicts
+     *
+     * @return string
+     */
+    public function getOtherInterestConflicts()
+    {
+        return $this->other_interest_conflicts;
     }
 }

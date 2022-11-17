@@ -58,7 +58,7 @@
                             <div class="form-group">
                                 <label for="textarea-paho-comments">{% trans %}Any comment to the Secretariat of PAHO's Best Practice Portal{% endtrans %}?</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <textarea rows="6" class="form-control" name='paho_comments' id='textarea-paho-comments'>{{ submission.pahoComments }}</textarea>
+                                <textarea rows="6" class="form-control" name='paho_comments' id='textarea-paho-comments' placeholder="{% trans %}500 words maximum{% endtrans%}">{{ submission.pahoComments }}</textarea>
                             </div>
                         </div>
                     </div>

@@ -21,7 +21,7 @@
                 <div class='block'>
                     <div class='row'>
                         <div class="col-md-12">
-                            <h2 class='sub-header'>{% trans %}Effectiveness & Efficiency{% endtrans %}</h2>
+                            <h2 class='sub-header'>{% trans %}Effectiveness, Cost-Effectivess and Efficiency{% endtrans %}</h2>
                         </div>
                     </div>
 
@@ -45,7 +45,7 @@
                             <div class="form-group">
                                 <label for="textarea-outcome-information">*{% trans %}Please provide a short description to support your answer{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <textarea rows="6" class="form-control" name='outcome_information' id='textarea-outcome-information' required>{{ submission.outcomeInformation }}</textarea>
+                                <textarea rows="6" class="form-control" name='outcome_information' id='textarea-outcome-information' placeholder="{% trans %}500 words maximum{% endtrans%}" required>{{ submission.outcomeInformation }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -108,7 +108,7 @@
                             <div class="form-group">
                                 <label for="textarea-describe-how">{% trans %}Please provide a short description to support your previous three answers (dissemination, adaptability/replicability and context){% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <textarea rows="6" class="form-control" name='describe_how' id='textarea-describe-how'>{{ submission.describeHow }}</textarea>
+                                <textarea rows="6" class="form-control" name='describe_how' id='textarea-describe-how' placeholder="{% trans %}500 words maximum{% endtrans%}">{{ submission.describeHow }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -126,7 +126,7 @@
                             <div class="form-group">
                                 <label for="textarea-sustainability">{% trans %}Please, describe the sustainability aspect of the project/initiative being described in this Best Practice{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <textarea rows="6" class="form-control" name='sustainability' id='textarea-sustainability'>{{ submission.sustainability }}</textarea>
+                                <textarea rows="6" class="form-control" name='sustainability' id='textarea-sustainability' placeholder="{% trans %}500 words maximum{% endtrans%}">{{ submission.sustainability }}</textarea>
                             </div>
                         </div>
                     </div>

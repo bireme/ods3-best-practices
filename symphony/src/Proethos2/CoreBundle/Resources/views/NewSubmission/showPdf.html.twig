@@ -41,6 +41,20 @@
             <p>{{ protocol_code }}</p>
         {% endif %}
 
+        <h3>{% trans %}Is this Best Practice being submitted in response to a call for proposals{% endtrans %}?</h3>
+        {% if submission.proposal == "yes" %}
+            <p>{% trans %}Yes{% endtrans %}</p>
+        {% else %}
+            <p>{% trans %}No{% endtrans %}</p>
+        {% endif %}
+
+        {% if submission.proposal == "yes" %}
+
+            <h3>{% trans %}Please specify the name of the call{% endtrans %}:</h3>
+            <p>{{ submission.otherProposal }}</p>
+
+        {% endif %}
+
         <h3>{% trans %}This Best Practice is related to{% endtrans %}:</h3>
         <p>{{ submission.type.name }}</p>
 
@@ -143,7 +157,7 @@
         <h3>{% trans %}Main Results/Products and Impact{% endtrans %}:</h3>
         <p>{{ submission.mainResults }}</p>
 
-        <h3>{% trans %}Enabling Factors and Restrictions{% endtrans %}:</h3>
+        <h3>{% trans %}Limitations and Obstacles{% endtrans %}:</h3>
         <p>{{ submission.factors }}</p>
 
         <h3>{% trans %}In your opinion, the resources assigned to the accomplishment of this Best Practice (financial, technological and/or manpower) were implement in an efficient way{% endtrans %}?</h3>
@@ -246,6 +260,20 @@
 
         <h3>{% trans %}Any comment to the Secretariat of PAHO's Best Practice Portal{% endtrans %}?</h3>
         <p>{{ submission.pahoComments }}</p>
+
+        <h3>{% trans %}Do you have any Conflicts of Interest to disclose regarding the contents of your submission (Including personal/professional interests and funding sources){% endtrans %}?</h3>
+        {% if submission.interestConflicts == "yes" %}
+            <p>{% trans %}Yes{% endtrans %}</p>
+        {% else %}
+            <p>{% trans %}No{% endtrans %}</p>
+        {% endif %}
+
+        {% if submission.interestConflicts == "yes" %}
+
+            <h3>{% trans %}Please specify{% endtrans %}:</h3>
+            <p>{{ submission.otherInterestConflicts }}</p>
+
+        {% endif %}
 
         <footer>{% trans %}Created in{% endtrans %} {{ "now"|date("d/m/Y H:i:s") }}</footer>
     </body>

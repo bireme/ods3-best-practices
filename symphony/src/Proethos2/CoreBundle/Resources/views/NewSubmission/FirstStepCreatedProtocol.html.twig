@@ -52,6 +52,30 @@
 
                     <div class='row'>
                         <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="select-proposal">*{% trans %}Is this Best Practice being submitted in response to a call for proposals{% endtrans %}?</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <select class='form-control selectpicker' id='select-proposal' name='proposal' data-size="6" data-live-search="true" required>
+                                    <option value="">-</option>
+                                    <option value="yes" {% if submission.proposal == 'yes' %}selected{% endif %}>{% trans %}Yes{% endtrans %}</option>
+                                    <option value="no" {% if submission.proposal == 'no' %}selected{% endif %}>{% trans %}No{% endtrans %}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <div class="form-group {% if not submission.proposal or submission.proposal == "no" %}hide{% endif %}"">
+                                <label for="input_other_proposal">{% trans %}Please specify the name of the call{% endtrans %}:</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <textarea rows="6" class="form-control" name='other_proposal' id='textarea-other-proposal' placeholder="{% trans %}500 words maximum{% endtrans%}">{{ submission.otherProposal }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class="col-md-12">
                             <div class="form-group ">
                                 <label for="select-best-practice-type">*{% trans %}This Best Practice is related to{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
@@ -97,8 +121,8 @@
 
                     <div class='row'>
                         <div class="col-md-12">
-                            <div class="form-group {% if submission.role.slug != "other" %}hide{% endif %} required">
-                                <label for="input_other_best_practice_role">{% trans %}Other Role{% endtrans %}:</label>
+                            <div class="form-group {% if submission.role.slug != "other" %}hide{% endif %}">
+                                <label for="input_other_best_practice_role">*{% trans %}Other Role{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <input type="text" class="form-control" name='other_best_practice_role' id='input_other_best_practice_role' value="{{ submission.otherRole }}" {% if submission.role.slug == "other" %}required{% endif %}>
                             </div>
@@ -172,7 +196,7 @@
                                 <label for="select-best-practice-entity">*{% trans %}Entity (PAHO){% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <div>
-                                    <select class='form-control selectpicker' id='select-best-practice-entity' name='best_practice_entity[]' data-size="5" data-width="fit" data-live-search="true" title="{% trans %}Choose one of the following...{% endtrans %}" multiple required>
+                                    <select class='form-control selectpicker' id='select-best-practice-entity' name='best_practice_entity[]' data-size="5" data-width="fit" data-live-search="true" title="{% trans %}Choose one of the following...{% endtrans %}" multiple {% if submission.type.slug == "paho-who-technical-cooperation" %}required{% endif %}>
                                         {% for bp_entity in best_practice_entity %}
                                             <option value="{{ bp_entity.id }}" {% if bp_entity in submission.entity %}selected{% endif %}>{{ bp_entity.name }}</option>
                                         {% endfor %}
@@ -242,6 +266,15 @@
                 } else {
                     $("#input_other_institution").parent().addClass("hide");
                     $("#input_other_institution").prop('required',false);
+                }
+            });
+
+            $( "#select-proposal" ).on( "change", function() {
+                var val = $(this).val();
+                if ( 'yes' == val ) {
+                    $("#textarea-other-proposal").parent().removeClass("hide");
+                } else {
+                    $("#textarea-other-proposal").parent().addClass("hide");
                 }
             });
         });

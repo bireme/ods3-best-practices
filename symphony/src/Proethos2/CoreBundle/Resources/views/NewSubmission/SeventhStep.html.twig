@@ -57,6 +57,38 @@
                 <div class='block'>
                     <div class='row'>
                         <div class="col-md-12">
+                            <h2 class='sub-header'>{% trans %}Conflicts of Interest{% endtrans %}</h2>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="select-interest-conflicts">*{% trans %}Do you have any Conflicts of Interest to disclose regarding the contents of your submission (Including personal/professional interests and funding sources){% endtrans %}?</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <select class='form-control selectpicker' id='select-interest-conflicts' name='interest_conflicts' data-size="6" data-live-search="true" required>
+                                    <option value="">-</option>
+                                    <option value="yes">{% trans %}Yes{% endtrans %}</option>
+                                    <option value="no">{% trans %}No{% endtrans %}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <div class="form-group hide">
+                                <label for="textarea-other-interest-conflicts">{% trans %}Please specify{% endtrans %}:</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <textarea rows="6" class="form-control" name='other_interest_conflicts' id='textarea-other-interest-conflicts' placeholder="{% trans %}500 words maximum{% endtrans%}"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='block'>
+                    <div class='row'>
+                        <div class="col-md-12">
                             <h2 class='sub-header'>{% trans %}Terms and conditions{% endtrans %}:</h2>
                         </div>
                     </div>
@@ -88,7 +120,6 @@
                         </div>
                     </div>
                 </div>
-                </div>
 
                 <div class='submission-button-controls'>
                     <a href='{{ path("submission_generate_pdf", {submission_id: submission.id}) }}' class='btn btn-default' target='_blank'>{% trans %}Create PDF{% endtrans %}</a>
@@ -114,6 +145,15 @@
 {% block script %}
     <script>
         $(function(){
+
+            $( "#select-interest-conflicts" ).on( "change", function() {
+                var val = $(this).val();
+                if ( 'yes' == val ) {
+                    $("#textarea-other-interest-conflicts").parent().removeClass("hide");
+                } else {
+                    $("#textarea-other-interest-conflicts").parent().addClass("hide");
+                }
+            });
 
         });
     </script>

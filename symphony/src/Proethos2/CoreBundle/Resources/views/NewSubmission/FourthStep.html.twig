@@ -90,7 +90,7 @@
                             <div class="form-group">
                                 <label for="textarea-public-health-issue">{% trans %}What public health issue (or opportunity) led PAHO to participate on this Technical Cooperation project/initiative{% endtrans %}?</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <textarea rows="6" class="form-control" name='public_health_issue' id='textarea-public-health-issue'>{{ submission.publicHealthIssue }}</textarea>
+                                <textarea rows="6" class="form-control" name='public_health_issue' id='textarea-public-health-issue' placeholder="{% trans %}500 words maximum{% endtrans%}">{{ submission.publicHealthIssue }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -100,7 +100,7 @@
                             <div class="form-group">
                                 <label for="textarea-planning-information">{% trans %}Was the TC planned considering the health situation of the target population{% endtrans %}? {% trans %}Please provide information{% endtrans %}.</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <textarea rows="6" class="form-control" name='planning_information' id='textarea-planning-information'>{{ submission.planningInformation }}</textarea>
+                                <textarea rows="6" class="form-control" name='planning_information' id='textarea-planning-information' placeholder="{% trans %}500 words maximum{% endtrans%}">{{ submission.planningInformation }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -110,7 +110,7 @@
                             <div class="form-group">
                                 <label for="textarea-relevance-information">*{% trans %}Please provide additional information about the relevance{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <textarea rows="6" class="form-control" name='relevance_information' id='textarea-relevance-information' required>{{ submission.relevanceInformation }}</textarea>
+                                <textarea rows="6" class="form-control" name='relevance_information' id='textarea-relevance-information' placeholder="{% trans %}500 words maximum{% endtrans%}" required>{{ submission.relevanceInformation }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -174,7 +174,7 @@
                             <div class="form-group">
                                 <label for="textarea-recognition-information">*{% trans %}Please provide support information about PAHO's Technical Cooperation recognition{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <textarea rows="6" class="form-control" name='recognition_information' id='textarea-recognition-information' required>{{ submission.recognitionInformation }}</textarea>
+                                <textarea rows="6" class="form-control" name='recognition_information' id='textarea-recognition-information' placeholder="{% trans %}500 words maximum{% endtrans%}" required>{{ submission.recognitionInformation }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -207,7 +207,7 @@
                             <div class="form-group">
                                 <label for="textarea-engagement-information">*{% trans %}Please provide support information. For example, information on how PAHO's Technical Cooperation contributed to strengthen capacity and address health inequities and inequalities, and gender and culturally sensitive approaches to health within a human rights framework; to engage in an intersectoral action with an equity and rights focus{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <textarea rows="6" class="form-control" name='engagement_information' id='textarea-engagement-information' required>{{ submission.engagementInformation }}</textarea>
+                                <textarea rows="6" class="form-control" name='engagement_information' id='textarea-engagement-information' placeholder="{% trans %}500 words maximum{% endtrans%}" required>{{ submission.engagementInformation }}</textarea>
                             </div>
                         </div>
                     </div>
