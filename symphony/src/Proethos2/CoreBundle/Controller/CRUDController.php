@@ -363,7 +363,7 @@ class CRUDController extends Controller
             }
 
             $response = new CSVResponse( $csv_output, 200, $csv_headers );
-            $response->setFilename( "proethos2-protocols.csv" );
+            $response->setFilename( "best-practices.csv" );
             return $response;
         }
 
@@ -1037,7 +1037,7 @@ class CRUDController extends Controller
             }
 
             $response = new CSVResponse( $csv_output, 200, $csv_headers );
-            $response->setFilename( "proethos2-users.csv" );
+            $response->setFilename( "best-practices-users.csv" );
             return $response;
         }
 
@@ -1323,7 +1323,7 @@ class CRUDController extends Controller
                 $body .= "<br /><br />";
 
                 $message = \Swift_Message::newInstance()
-                ->setSubject("[BP] " . $translator->trans("Confirmation of valid access to the Proethos2 platform"))
+                ->setSubject("[BP] " . $translator->trans("Confirmation of valid access to the Best Practices platform"))
                 ->setFrom($util->getConfiguration('committee.email'))
                 ->setTo($user->getEmail())
                 ->setBody(
