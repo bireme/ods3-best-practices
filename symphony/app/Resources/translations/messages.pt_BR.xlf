@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2022-11-17T01:33:55Z" source-language="en" target-language="pt_BR" datatype="plaintext" original="not.available">
+  <file date="2023-02-04T00:20:25Z" source-language="en" target-language="pt_BR" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -423,9 +423,9 @@
         <source>Confirm?</source>
         <target>Confirmar?</target>
       </trans-unit>
-      <trans-unit id="d52e960b454b197a5f1ae19eb2f19c5e7240310c" resname="Confirmation of valid access to the Proethos2 platform">
-        <source>Confirmation of valid access to the Proethos2 platform</source>
-        <target>Confirmação de acesso válido à plataforma Boas Práticas</target>
+      <trans-unit id="68d56a97ccfc509bd4837fe0de8602e7d2ec3195" resname="Confirmation of valid access to the Best Practices platform">
+        <source>Confirmation of valid access to the Best Practices platform</source>
+        <target>Confirmation of valid access to the Best Practices platform</target>
       </trans-unit>
       <trans-unit id="184822ecb4734c964a62ae2e06e95f198b762b22" resname="Conflicts of Interest">
         <source>Conflicts of Interest</source>
@@ -1356,17 +1356,17 @@
         <source>New amendment submitted by</source>
         <target>Nova emenda enviada por</target>
       </trans-unit>
-      <trans-unit id="bb960e9c73715c458a976bd2d21ad295b133a9bf" resname="New comment on Proethos2">
-        <source>New comment on Proethos2</source>
-        <target>Novo comentário na plataforma Boas Práticas</target>
+      <trans-unit id="ed408d43df25dc8d2b42ba5c386d7c403c766cc1" resname="New comment on Best Practices platform">
+        <source>New comment on Best Practices platform</source>
+        <target>New comment on Best Practices platform</target>
       </trans-unit>
       <trans-unit id="505235c949c23571ad04e474dce1649c0dd150e7" resname="New submission">
         <source>New submission</source>
         <target>Nova submissão</target>
       </trans-unit>
-      <trans-unit id="2bc04be017f3b93c433108b00d2e4393852e3f8b" resname="New user on Proethos2 platform">
-        <source>New user on Proethos2 platform</source>
-        <target>Novo usuário na plataforma Boas Práticas</target>
+      <trans-unit id="7701256dda2266c33492ea7abdf11157214f4d1b" resname="New user on Best Practices platform">
+        <source>New user on Best Practices platform</source>
+        <target>New user on Best Practices platform</target>
       </trans-unit>
       <trans-unit id="6353049937c27ac2f99e782658c52f29e91fd4f2" resname="New user? Start here.">
         <source>New user? Start here.</source>
@@ -2339,9 +2339,9 @@
         <source>Was the Technical Cooperation planned considering the health situation of the target population</source>
         <target>A Cooperação Técnica foi planejada considerando a situação de saúde da população alvo</target>
       </trans-unit>
-      <trans-unit id="477bc7417793d2bd9001b1ab4e8087d6c09fc5d4" resname="Welcome to the Proethos2 platform!">
-        <source>Welcome to the Proethos2 platform!</source>
-        <target>Bem-vindo à plataforma Boas Práticas!</target>
+      <trans-unit id="7a40f890f218c3b5fc9f155f20a7e99da5915158" resname="Welcome to the Best Practices platform!">
+        <source>Welcome to the Best Practices platform!</source>
+        <target>Welcome to the Best Practices platform!</target>
       </trans-unit>
       <trans-unit id="e963862c68a22182c57f2c2ad1f84d8c3b35293e" resname="What are the lessons learned that will improve our expertise and add value to the Organization">
         <source>What are the lessons learned that will improve our expertise and add value to the Organization</source>
