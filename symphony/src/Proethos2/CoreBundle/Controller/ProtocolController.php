@@ -116,6 +116,7 @@ class ProtocolController extends Controller
                 $text = $translations[$submission->getLanguage()];
                 $body = $text['message'];
                 $body = str_replace("%protocol_url%", $url, $body);
+                $body = str_replace("%protocol_code%", $protocol->getCode(), $body);
                 $body = str_replace("\r\n", "<br />", $body);
                 $body .= "<br /><br />";
 
@@ -212,6 +213,7 @@ class ProtocolController extends Controller
             $text = $translations[$submission->getLanguage()];
             $body = $text['message'];
             $body = str_replace("%protocol_url%", $url, $body);
+            $body = str_replace("%protocol_code%", $protocol->getCode(), $body);
             $body = str_replace("\r\n", "<br />", $body);
             $body .= "<br /><br />";
 
@@ -431,6 +433,7 @@ class ProtocolController extends Controller
                 $text = $translations[$submission->getLanguage()];
                 $body = $text['message'];
                 $body = str_replace("%protocol_url%", $url, $body);
+                $body = str_replace("%protocol_code%", $protocol->getCode(), $body);
                 $body = str_replace("\r\n", "<br />", $body);
                 $body .= "<br /><br />";
 
@@ -527,12 +530,13 @@ class ProtocolController extends Controller
                 return $this->redirectToRoute('protocol_show_protocol', array('protocol_id' => $protocol->getId()), 301);
 
             } else {
-
                 // generate the code
-                $committee_prefix = $util->getConfiguration('committee.prefix');
-                $total_submissions = count($protocol->getSubmission());
-                $protocol_code = sprintf('%s.%04d.%02d', $committee_prefix, $protocol->getId(), $total_submissions);
-                $protocol->setCode($protocol_code);
+                if ( !$protocol->getCode() ) {
+                    $committee_prefix = $util->getConfiguration('committee.prefix');
+                    $total_submissions = count($protocol->getSubmission());
+                    $protocol_code = sprintf('%s.%04d.%02d', $committee_prefix, $protocol->getId(), $total_submissions);
+                    $protocol->setCode($protocol_code);
+                }
 
                 if($post_data['send-to'] == "comittee") {
 
@@ -1334,7 +1338,7 @@ class ProtocolController extends Controller
                 $em->persist($protocol->getMainSubmission());
                 $em->flush();
             }
-
+/*
             // send data to Solr index
             if ( 'A' == $post_data['final-decision'] ) {
                 $solr = new Solr();
@@ -1348,7 +1352,7 @@ class ProtocolController extends Controller
                 //     throw $this->createNotFoundException('['.$responseCode.'] Solr query time: '.$response->responseHeader->QTime.'ms');
                 // }
             }
-
+*/
             // setting the Scheduled status
             $protocol->setStatus($post_data['final-decision']);
             $protocol->setMonitoringAction(NULL);
@@ -1645,6 +1649,7 @@ class ProtocolController extends Controller
             }
 
             if($post_data['are-you-sure'] == 'yes') {
+/*
                 // send data to Solr index
                 $solr = new Solr();
                 list($response, $responseCode) = $solr->delete($protocol);
@@ -1656,7 +1661,7 @@ class ProtocolController extends Controller
                 // if ($responseCode == 200) {
                 //     throw $this->createNotFoundException('['.$responseCode.'] Solr query time: '.$response->responseHeader->QTime.'ms');
                 // }
-
+*/
                 $em->remove($protocol);
                 $em->flush();
 

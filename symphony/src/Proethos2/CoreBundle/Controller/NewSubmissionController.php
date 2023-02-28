@@ -55,6 +55,8 @@ class NewSubmissionController extends Controller
 
         $user = $this->get('security.token_storage')->getToken()->getUser();
 
+        $util = new Util($this->container, $this->getDoctrine());
+
         // getting best practice type list
         $best_practice_type_repository = $em->getRepository('Proethos2ModelBundle:BestPracticeType');
         $best_practice_type = $best_practice_type_repository->findByStatus(true);
@@ -180,6 +182,12 @@ class NewSubmissionController extends Controller
             $protocol->setMainSubmission($submission);
             $em->persist($protocol);
             $em->flush();
+
+            // generate the code
+            $committee_prefix = $util->getConfiguration('committee.prefix');
+            $total_submissions = count($protocol->getSubmission());
+            $protocol_code = sprintf('%s.%04d.%02d', $committee_prefix, $protocol->getId(), $total_submissions);
+            $protocol->setCode($protocol_code);
 
             $session->getFlashBag()->add('success', $translator->trans("Submission started with success."));
             return $this->redirectToRoute('submission_new_second_step', array('submission_id' => $submission->getId()), 301);
@@ -1508,6 +1516,33 @@ class NewSubmissionController extends Controller
 
                     // gerando um novo pdf da submission original
                     try {
+                        $baseurl = $request->getScheme() . '://' . $request->getHttpHost() . $request->getBasePath();
+                        $url = $baseurl . $this->generateUrl('home');
+                        $output['home_url'] = rtrim($url, '/');
+
+                        $submission->setInterestConflicts($post_data['interest_conflicts']);
+                        $submission->setOtherInterestConflicts($post_data['other_interest_conflicts']);
+                        $output['submission'] = $submission;
+
+                        // likert options
+                        $likert = array(
+                            "A" => $translator->trans("I fully agree"),
+                            "B" => $translator->trans("I agree"),
+                            "C" => $translator->trans("I can't say"),
+                            "D" => $translator->trans("I disagree"),
+                            "E" => $translator->trans("I totally disagree")
+                        );
+                        $output['likert'] = $likert;
+
+                        // modality options
+                        $coop_modality = array(
+                            "A" => $translator->trans("North-North"),
+                            "B" => $translator->trans("North-South"),
+                            "C" => $translator->trans("South-South"),
+                            "D" => $translator->trans("Triangular Cooperation"),
+                        );
+                        $output['coop_modality'] = $coop_modality;
+
                         $html = $this->renderView(
                             'Proethos2CoreBundle:NewSubmission:showPdf.html.twig',
                             $output
@@ -1614,6 +1649,14 @@ class NewSubmissionController extends Controller
                     $em->persist($protocol);
                     $em->flush();
 
+                    // generate the code
+                    if ( !$protocol->getCode() ) {
+                        $committee_prefix = $util->getConfiguration('committee.prefix');
+                        $total_submissions = count($protocol->getSubmission());
+                        $protocol_code = sprintf('%s.%04d.%02d', $committee_prefix, $protocol->getId(), $total_submissions);
+                        $protocol->setCode($protocol_code);
+                    }
+
                     // adding fields to model
                     $submission->setInterestConflicts($post_data['interest_conflicts']);
                     $submission->setOtherInterestConflicts($post_data['other_interest_conflicts']);
@@ -1676,6 +1719,7 @@ class NewSubmissionController extends Controller
                             $text = $translations[$submission->getLanguage()];
                             $body = $text['message'];
                             $body = str_replace("%protocol_url%", $url, $body);
+                            $body = str_replace("%protocol_code%", $protocol->getCode(), $body);
                             $body = str_replace("\r\n", "<br />", $body);
                             $body .= "<br /><br />";
 
@@ -1700,6 +1744,7 @@ class NewSubmissionController extends Controller
                         $body = $text['message'];
                         $body = str_replace("%home_url%", $home_url, $body);
                         $body = str_replace("%protocol_url%", $url, $body);
+                        $body = str_replace("%protocol_code%", $protocol->getCode(), $body);
                         $body = str_replace("\r\n", "<br />", $body);
                         $body .= "<br /><br />";
 
