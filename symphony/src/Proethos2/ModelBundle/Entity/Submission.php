@@ -123,6 +123,14 @@ class Submission extends Base
     private $proposal;
 
     /**
+     * @var Call
+     *
+     * @ORM\ManyToOne(targetEntity="Call")
+     * @ORM\JoinColumn(name="type_id", referencedColumnName="id", onDelete="SET NULL")
+     */
+    private $call;
+
+    /**
      * @var text
      *
      * @ORM\Column(type="text", nullable=true)
@@ -2636,5 +2644,29 @@ class Submission extends Base
     public function getOtherInterestConflicts()
     {
         return $this->other_interest_conflicts;
+    }
+
+    /**
+     * Set call
+     *
+     * @param \Proethos2\ModelBundle\Entity\Call $call
+     *
+     * @return Submission
+     */
+    public function setCall(\Proethos2\ModelBundle\Entity\Call $call = null)
+    {
+        $this->call = $call;
+
+        return $this;
+    }
+
+    /**
+     * Get call
+     *
+     * @return \Proethos2\ModelBundle\Entity\Call
+     */
+    public function getCall()
+    {
+        return $this->call;
     }
 }

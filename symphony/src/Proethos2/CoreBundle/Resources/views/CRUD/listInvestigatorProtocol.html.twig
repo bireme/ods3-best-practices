@@ -19,7 +19,7 @@
 
             <form class="form-group" id='form-filter'>
                 <div class='row'>
-                    <div class="col-md-8">
+                    <div class="col-md-7">
                         <div class="form-group">
                             <label for="input-filter-q">{% trans %}Find best practices{% endtrans %}:</label>
                             <a href="{{ path("crud_admin_help_show", {help_id: 72} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
@@ -27,7 +27,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <div class="form-group">
                             <label for="select-filter-status">{% trans %}Status{% endtrans %}:</label>
                             <a href="{{ path("crud_admin_help_show", {help_id: 73} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
@@ -42,6 +42,19 @@
                                 <option value="T" {% if app.request.get('status') == "T" %}selected{% endif %}>{% trans %}Withdrawn{% endtrans %}</option>
                                 <option value="A" {% if app.request.get('status') == "A" %}selected{% endif %}>{% trans %}Approved{% endtrans %}</option>
                                 <option value="N" {% if app.request.get('status') == "N" %}selected{% endif %}>{% trans %}Not approved{% endtrans %}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="select-filter-type">{% trans %}Call{% endtrans %}:</label>
+                            <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 83} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                            <select class='form-control selectpicker submit-on-change' id="select-filter-call" name="call" data-live-search="true">
+                                <option value="">-</option>
+                                {% for call in best_practice_call %}
+                                <option value="{{ call.id }}" {% if app.request.get('call') == call.id %}selected{% endif %}>{{ call.name }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                     </div>
@@ -64,6 +77,7 @@
                             <tr>
                                 <th width="10%">{% trans %}ID{% endtrans %}</th>
                                 <th width="50%">{% trans %}Title{% endtrans %}</th>
+                                <th>{% trans %}Call{% endtrans %}</th>
                                 <th>{% trans %}Type{% endtrans %}</th>
                                 <th>{% trans %}Last Update{% endtrans %}</th>
                                 <th>{% trans %}Status{% endtrans %}</th>
@@ -76,6 +90,7 @@
                                 <tr>
                                     <th>{% if protocol.code %}{{ protocol.code }}{% else %}-{% endif %}</th>
                                     <td>{{ protocol.mainSubmission.title }}</td>
+                                    <td>{{ protocol.mainSubmission.call.name }}</td>
                                     <td>
                                         {% if protocol.mainSubmission.type.slug == "paho-who-technical-cooperation" %}
                                             <span class='label label-success'>{% trans %}TC{% endtrans %}</span>

@@ -51,7 +51,7 @@
         {% if submission.proposal == "yes" %}
 
             <h3>{% trans %}Please specify the name of the call{% endtrans %}:</h3>
-            <p>{{ submission.otherProposal }}</p>
+            <p>{{ submission.call.name }}</p>
 
         {% endif %}
 

@@ -46,6 +46,7 @@ use Proethos2\ModelBundle\Entity\Target;
 use Proethos2\ModelBundle\Entity\TechnicalMatter;
 use Proethos2\ModelBundle\Entity\Outcomes;
 use Proethos2\ModelBundle\Entity\Goals;
+use Proethos2\ModelBundle\Entity\Call;
 
 
 class CRUDController extends Controller
@@ -298,24 +299,50 @@ class CRUDController extends Controller
         $best_practice_type = $best_practice_type_repository->findByStatus(true);
         $output['best_practice_type'] = $best_practice_type;
 
+        // getting calls for best practices
+        $best_practice_call_repository = $em->getRepository('Proethos2ModelBundle:Call');
+        $best_practice_call = $best_practice_call_repository->findByStatus(true);
+        $output['best_practice_call'] = $best_practice_call;
+
         // serach  and status parameter
         $status_array = array('S', 'R', 'I', 'E', 'H', "F", "A", "N", "C", "X", "T");
         $search_query = $request->query->get('q');
         $status_query = $request->query->get('status');
-        $type_query = intval($request->query->get('type'));
-        $type_object = $best_practice_type_repository->find($type_query);
+        $type_query   = intval($request->query->get('type'));
+        $type_object  = $best_practice_type_repository->find($type_query);
+        $call_query   = intval($request->query->get('call'));
+        $call_object  = $best_practice_call_repository->find($call_query);
 
         if(!empty($status_query))
             $status_array = array($status_query);
 
-        if( $type_object ) {
+        if( $type_object && $call_object ) {
             $query = $protocol_repository->createQueryBuilder('p')
                ->join('p.main_submission', 's')
-               ->where("s.title LIKE :query AND p.status IN (:status) AND s.type = :type")
+               ->where("s.title LIKE :query AND p.status IN (:status) AND s.type = :type AND s.call = :call")
                ->orderBy("p.created", 'DESC')
                ->setParameter('query', "%". $search_query ."%")
                ->setParameter('status', $status_array)
-               ->setParameter('type', $type_object);
+               ->setParameter('type', $type_object)
+               ->setParameter('call', $call_object);
+        } elseif ( $type_object || $call_object ) {
+            if ( $type_object ) {
+                $query  = "s.type = :type";
+                $param  = 'type';
+                $object = $type_object;
+            }
+            if ( $call_object ) {
+                $query = "s.call = :call";
+                $param  = 'call';
+                $object = $call_object;
+            }
+            $query = $protocol_repository->createQueryBuilder('p')
+               ->join('p.main_submission', 's')
+               ->where("s.title LIKE :query AND p.status IN (:status) AND " . $query)
+               ->orderBy("p.created", 'DESC')
+               ->setParameter('query', "%". $search_query ."%")
+               ->setParameter('status', $status_array)
+               ->setParameter($param, $object);
         } else {
             $query = $protocol_repository->createQueryBuilder('p')
                ->join('p.main_submission', 's')
@@ -397,6 +424,11 @@ class CRUDController extends Controller
         $trans_repository = $em->getRepository('Gedmo\\Translatable\\Entity\\Translation');
         $configuration_repository = $em->getRepository('Proethos2ModelBundle:Configuration');
 
+        // getting calls for best practices
+        $best_practice_call_repository = $em->getRepository('Proethos2ModelBundle:Call');
+        $best_practice_call = $best_practice_call_repository->findByStatus(true);
+        $output['best_practice_call'] = $best_practice_call;
+
         $protocol_checklist = $configuration_repository->findOneBy(array('key' => 'protocol.checklist'));
         $translations = $trans_repository->findTranslations($protocol_checklist);
         $text = $translations[$locale];
@@ -418,19 +450,34 @@ class CRUDController extends Controller
         $status_array = array('D', 'S', 'R', 'I', 'E', 'H', 'F', 'A', 'N', 'C', 'X', "T");
         $search_query = $request->query->get('q');
         $status_query = $request->query->get('status');
+        $call_query   = intval($request->query->get('call'));
+        $call_object  = $best_practice_call_repository->find($call_query);
 
         if(!empty($status_query))
             $status_array = array($status_query);
 
-        $query = $protocol_repository->createQueryBuilder('p')
-           ->join('p.main_submission', 's')
-           ->leftJoin('s.team', 't')
-           ->leftJoin('p.revision', 'r')
-           ->where("s.title LIKE :query AND p.status IN (:status) AND ((s.owner = :owner OR t = :owner) OR r.member = :owner)")
-           ->orderBy("p.created", 'DESC')
-           ->setParameter('query', "%". $search_query ."%")
-           ->setParameter('status', $status_array)
-           ->setParameter('owner', $user);
+        if ( $call_object ) {
+            $query = $protocol_repository->createQueryBuilder('p')
+               ->join('p.main_submission', 's')
+               ->leftJoin('s.team', 't')
+               ->leftJoin('p.revision', 'r')
+               ->where("s.title LIKE :query AND p.status IN (:status) AND s.call = :call AND ((s.owner = :owner OR t = :owner) OR r.member = :owner)")
+               ->orderBy("p.created", 'DESC')
+               ->setParameter('query', "%". $search_query ."%")
+               ->setParameter('status', $status_array)
+               ->setParameter('call', $call_object)
+               ->setParameter('owner', $user);
+        } else {
+            $query = $protocol_repository->createQueryBuilder('p')
+               ->join('p.main_submission', 's')
+               ->leftJoin('s.team', 't')
+               ->leftJoin('p.revision', 'r')
+               ->where("s.title LIKE :query AND p.status IN (:status) AND ((s.owner = :owner OR t = :owner) OR r.member = :owner)")
+               ->orderBy("p.created", 'DESC')
+               ->setParameter('query', "%". $search_query ."%")
+               ->setParameter('status', $status_array)
+               ->setParameter('owner', $user);
+        }
 
         $protocols = $query->getQuery()->getResult();
         $output['protocols'] = $protocols;
@@ -4580,6 +4627,125 @@ class CRUDController extends Controller
 
             $session->getFlashBag()->add('success', $translator->trans("Item updated with success."));
             return $this->redirectToRoute('crud_admin_controlled_list_goals_list', array(), 301);
+        }
+
+        return $output;
+    }
+
+    /**
+     * @Route("/admin/controlled-list/call", name="crud_admin_controlled_list_call_list")
+     * @Template()
+     */
+    public function listControlledListCallAction()
+    {
+        $output = array();
+        $request = $this->getRequest();
+        $session = $request->getSession();
+        $translator = $this->get('translator');
+        $em = $this->getDoctrine()->getManager();
+
+        $item_repository = $em->getRepository('Proethos2ModelBundle:Call');
+        $trans_repository = $em->getRepository('Gedmo\\Translatable\\Entity\\Translation');
+
+        $items = $item_repository->findAll();
+        $output['items'] = $items;
+
+        // checking if was a post request
+        if($this->getRequest()->isMethod('POST')) {
+
+            // getting post data
+            $post_data = $request->request->all();
+
+            // checking required files
+            foreach(array('name') as $field) {
+
+                if(!isset($post_data[$field]) or empty($post_data[$field])) {
+                    $session->getFlashBag()->add('error', $translator->trans("Field '%field%' is required.", array("%field%" => $field)));
+                    return $output;
+                }
+            }
+
+            $item = new Call();
+            $item->setTranslatableLocale('en');
+
+            $item->setName($post_data['name']);
+
+            foreach(array('pt_BR', 'es_ES', 'fr_FR') as $locale) {
+                if(!empty($post_data["name-$locale"])) {
+                    $trans_repository = $trans_repository->translate($item, 'name', $locale, $post_data["name-$locale"]);
+                }
+            }
+
+            $em->persist($item);
+            $em->flush();
+
+            $session->getFlashBag()->add('success', $translator->trans("Item created with success."));
+            return $this->redirectToRoute('crud_admin_controlled_list_call_list', array(), 301);
+        }
+
+        return $output;
+    }
+
+    /**
+     * @Route("/admin/controlled-list/call/{item_id}", name="crud_admin_controlled_list_call_update")
+     * @Template()
+     */
+    public function updateControlledListCallAction($item_id)
+    {
+        $output = array();
+        $request = $this->getRequest();
+        $session = $request->getSession();
+        $translator = $this->get('translator');
+        $em = $this->getDoctrine()->getManager();
+
+        $item_repository = $em->getRepository('Proethos2ModelBundle:Call');
+        $trans_repository = $em->getRepository('Gedmo\\Translatable\\Entity\\Translation');
+
+        $item = $item_repository->find($item_id);
+
+        if (!$item) {
+            throw $this->createNotFoundException($translator->trans('No item found'));
+        }
+        $output['item'] = $item;
+
+        $translations = $trans_repository->findTranslations($item);
+        $output['translations'] = $translations;
+
+        // checking if was a post request
+        if($this->getRequest()->isMethod('POST')) {
+
+            // getting post data
+            $post_data = $request->request->all();
+
+            // checking required files
+            foreach(array('name') as $field) {
+                if(!isset($post_data[$field]) or empty($post_data[$field])) {
+                    $session->getFlashBag()->add('error', $translator->trans("Field '%field%' is required.", array("%field%" => $field)));
+                    return $output;
+                }
+            }
+
+            $item->setTranslatableLocale('en');
+
+            $item->setName($post_data['name']);
+
+            foreach(array('pt_BR', 'es_ES', 'fr_FR') as $locale) {
+                if(!empty($post_data["name-$locale"])) {
+                    $trans_repository = $trans_repository->translate($item, 'name', $locale, $post_data["name-$locale"]);
+                }
+            }
+
+            if(isset($post_data['status']) and $post_data['status'] == "true") {
+                $item->setStatus(true);
+            } else {
+                $item->setStatus(false);   
+            }
+
+            $em->persist($item);
+            $em->flush();
+
+            $session->getFlashBag()->add('success', $translator->trans("Item updated with success."));
+            return $this->redirectToRoute('crud_admin_controlled_list_call_list', array(), 301);
         }
 
         return $output;

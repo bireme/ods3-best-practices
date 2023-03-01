@@ -60,11 +60,13 @@ class NewSubmissionController extends Controller
         // getting best practice type list
         $best_practice_type_repository = $em->getRepository('Proethos2ModelBundle:BestPracticeType');
         $best_practice_type = $best_practice_type_repository->findByStatus(true);
+        // $best_practice_type = $best_practice_type_repository->findBy(array('status' => true), array('name' => 'ASC'));
         $output['best_practice_type'] = $best_practice_type;
 
         // getting best practice role list
         $best_practice_role_repository = $em->getRepository('Proethos2ModelBundle:BestPracticeRole');
         $best_practice_role = $best_practice_role_repository->findByStatus(true);
+        // $best_practice_role = $best_practice_role_repository->findBy(array('status' => true), array('name' => 'ASC'));
         $output['best_practice_role'] = $best_practice_role;
 
         // getting best practice entity list
@@ -73,9 +75,16 @@ class NewSubmissionController extends Controller
         // $best_practice_entity = $best_practice_entity_repository->findBy(array('status' => true), array('name' => 'ASC'));
         $output['best_practice_entity'] = $best_practice_entity;
 
+        // getting calls for best practices
+        $best_practice_call_repository = $em->getRepository('Proethos2ModelBundle:Call');
+        $best_practice_call = $best_practice_call_repository->findByStatus(true);
+        // $best_practice_call = $best_practice_call_repository->findBy(array('status' => true), array('name' => 'ASC'));
+        $output['best_practice_call'] = $best_practice_call;
+
         // getting institution list
         $institution_repository = $em->getRepository('Proethos2ModelBundle:Institution');
         $institution = $institution_repository->findByStatus(true);
+        // $institution = $institution_repository->findBy(array('status' => true), array('name' => 'ASC'));
         $output['institution'] = $institution;
 
         // getting stakeholder list
@@ -142,6 +151,10 @@ class NewSubmissionController extends Controller
             // best practice role
             $selected_best_practice_role = $best_practice_role_repository->find($post_data['best_practice_role']);
             $submission->setRole($selected_best_practice_role);
+
+            // call for best practices
+            $selected_call = $best_practice_call_repository->find($post_data['best_practice_call']);
+            $submission->setCall($selected_call);
 
             // institution
             $selected_institution = $institution_repository->find($post_data['institution']);
@@ -217,11 +230,13 @@ class NewSubmissionController extends Controller
         // getting best practice type list
         $best_practice_type_repository = $em->getRepository('Proethos2ModelBundle:BestPracticeType');
         $best_practice_type = $best_practice_type_repository->findByStatus(true);
+        // $best_practice_type = $best_practice_type_repository->findBy(array('status' => true), array('name' => 'ASC'));
         $output['best_practice_type'] = $best_practice_type;
 
         // getting best practice role list
         $best_practice_role_repository = $em->getRepository('Proethos2ModelBundle:BestPracticeRole');
         $best_practice_role = $best_practice_role_repository->findByStatus(true);
+        // $best_practice_role = $best_practice_role_repository->findBy(array('status' => true), array('name' => 'ASC'));
         $output['best_practice_role'] = $best_practice_role;
 
         // getting best practice entity list
@@ -230,9 +245,16 @@ class NewSubmissionController extends Controller
         // $best_practice_entity = $best_practice_entity_repository->findBy(array('status' => true), array('name' => 'ASC'));
         $output['best_practice_entity'] = $best_practice_entity;
 
+        // getting calls for best practices
+        $best_practice_call_repository = $em->getRepository('Proethos2ModelBundle:Call');
+        $best_practice_call = $best_practice_call_repository->findByStatus(true);
+        // $best_practice_call = $best_practice_call_repository->findBy(array('status' => true), array('name' => 'ASC'));
+        $output['best_practice_call'] = $best_practice_call;
+
         // getting institution list
         $institution_repository = $em->getRepository('Proethos2ModelBundle:Institution');
         $institution = $institution_repository->findByStatus(true);
+        // $institution = $institution_repository->findBy(array('status' => true), array('name' => 'ASC'));
         $output['institution'] = $institution;
 
         // getting stakeholder list
@@ -301,6 +323,10 @@ class NewSubmissionController extends Controller
             // best practice role
             $selected_best_practice_role = $best_practice_role_repository->find($post_data['best_practice_role']);
             $submission->setRole($selected_best_practice_role);
+
+            // call for best practices
+            $selected_call = $best_practice_call_repository->find($post_data['best_practice_call']);
+            $submission->setCall($selected_call);
 
             // institution
             $selected_institution = $institution_repository->find($post_data['institution']);

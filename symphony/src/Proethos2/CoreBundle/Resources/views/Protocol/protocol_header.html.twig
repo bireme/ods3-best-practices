@@ -75,4 +75,11 @@
         </div>
     </div>
 
+    <div class='row'>
+        <div class='col-md-12'>
+            <div class='label'>{% trans %}Call for Best Practices{% endtrans %}</div>
+            <h3>{% if protocol.mainSubmission.call %}{{ protocol.mainSubmission.call.name }}{% else %}-{% endif %}</h3>
+        </div>
+    </div>
+
 </div>

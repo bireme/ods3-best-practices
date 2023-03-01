@@ -66,10 +66,15 @@
 
                     <div class='row'>
                         <div class="col-md-12">
-                            <div class="form-group {% if not submission.proposal or submission.proposal == "no" %}hide{% endif %}"">
-                                <label for="input_other_proposal">{% trans %}Please specify the name of the call{% endtrans %}:</label>
+                            <div class="form-group {% if submission.proposal != "yes" %}hide{% endif %}">
+                                <label for="input_call">{% trans %}Please specify the name of the call{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <textarea rows="6" class="form-control" name='other_proposal' id='textarea-other-proposal' placeholder="{% trans %}500 words maximum{% endtrans%}">{{ submission.otherProposal }}</textarea>
+                                <select class='form-control selectpicker' id='select-call' name='best_practice_call' data-size="5" data-live-search="true" {% if submission.proposal == "yes" %}required{% endif %}>
+                                    <option value="">-</option>
+                                    {% for call in best_practice_call %}
+                                        <option value="{{ call.id }}" data-slug="{{ call.slug }}" {% if submission.call.id == call.id %}selected{% endif %}>{{ call.name }}</option>
+                                    {% endfor %}
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -272,9 +277,11 @@
             $( "#select-proposal" ).on( "change", function() {
                 var val = $(this).val();
                 if ( 'yes' == val ) {
-                    $("#textarea-other-proposal").parent().removeClass("hide");
+                    $("#select-call").parent().parent().removeClass("hide");
+                    $("#select-call").prop('required',true);
                 } else {
-                    $("#textarea-other-proposal").parent().addClass("hide");
+                    $("#select-call").parent().parent().addClass("hide");
+                    $("#select-call").prop('required',false);
                 }
             });
         });
