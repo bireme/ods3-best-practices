@@ -126,7 +126,7 @@ class Submission extends Base
      * @var Call
      *
      * @ORM\ManyToOne(targetEntity="Call")
-     * @ORM\JoinColumn(name="type_id", referencedColumnName="id", onDelete="SET NULL")
+     * @ORM\JoinColumn(name="call_id", referencedColumnName="id", onDelete="SET NULL")
      */
     private $call;
 
