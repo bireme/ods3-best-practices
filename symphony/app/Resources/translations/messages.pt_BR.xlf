@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2023-02-10T13:38:12Z" source-language="en" target-language="pt_BR" datatype="plaintext" original="not.available">
+  <file date="2023-03-03T03:25:19Z" source-language="en" target-language="pt_BR" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -323,6 +323,18 @@
         <source>CSRF token not valid</source>
         <target>Token CSRF inválido.</target>
       </trans-unit>
+      <trans-unit id="291a0a58dfa6c640a90c1d868d2af190775ea219" resname="Call">
+        <source>Call</source>
+        <target>Call</target>
+      </trans-unit>
+      <trans-unit id="d93bb984a59de1a67a4f325d86085bfa422f4dc1" resname="Call for Best Practices">
+        <source>Call for Best Practices</source>
+        <target>Call for Best Practices</target>
+      </trans-unit>
+      <trans-unit id="0133904116086b3dac69e8a7b5cfe65e43e3d3b9" resname="Calls for Best Practices">
+        <source>Calls for Best Practices</source>
+        <target>Calls for Best Practices</target>
+      </trans-unit>
       <trans-unit id="77dfd2135f4db726c47299bb55be26f7f4525a46" resname="Cancel">
         <source>Cancel</source>
         <target>Cancelar</target>
@@ -423,9 +435,9 @@
         <source>Confirm?</source>
         <target>Confirmar?</target>
       </trans-unit>
-      <trans-unit id="68d56a97ccfc509bd4837fe0de8602e7d2ec3195" resname="Confirmation of valid access to the Best Practices platform">
-        <source>Confirmation of valid access to the Best Practices platform</source>
-        <target>Confirmation of valid access to the Best Practices platform</target>
+      <trans-unit id="526a72271e8d209c61f7e6e6cd7fa0b6945154e8" resname="Confirmation of valid access to the Best Practices Portal">
+        <source>Confirmation of valid access to the Best Practices Portal</source>
+        <target>Confirmation of valid access to the Best Practices Portal</target>
       </trans-unit>
       <trans-unit id="184822ecb4734c964a62ae2e06e95f198b762b22" resname="Conflicts of Interest">
         <source>Conflicts of Interest</source>
@@ -827,10 +839,6 @@
       <trans-unit id="e43268269e7edeb3cfcac1024e0ff4c1cb9363a6" resname="Fourth step saved with success.">
         <source>Fourth step saved with success.</source>
         <target>Quarta etapa salva com sucesso.</target>
-      </trans-unit>
-      <trans-unit id="44389f6a466eaabf5c1db729e369511134e2b03b" resname="French">
-        <source>French</source>
-        <target>Francês</target>
       </trans-unit>
       <trans-unit id="cec7d6c2129c9fe6a0dc554c6a825727af0a1055" resname="French message">
         <source>French message</source>
@@ -1260,6 +1268,10 @@
         <source>New Best Practice Type</source>
         <target>Nova categoria de boa prática</target>
       </trans-unit>
+      <trans-unit id="306fe2789904f1b757b6973ea3fe462ccc1cecd0" resname="New Call">
+        <source>New Call</source>
+        <target>New Call</target>
+      </trans-unit>
       <trans-unit id="361196c7eb76a27c9bf49e06dd1c649149961e16" resname="New Clinical Trial Name">
         <source>New Clinical Trial Name</source>
         <target>Novo nome do ensaio clínico</target>
@@ -1356,17 +1368,17 @@
         <source>New amendment submitted by</source>
         <target>Nova emenda enviada por</target>
       </trans-unit>
-      <trans-unit id="ed408d43df25dc8d2b42ba5c386d7c403c766cc1" resname="New comment on Best Practices platform">
-        <source>New comment on Best Practices platform</source>
-        <target>New comment on Best Practices platform</target>
+      <trans-unit id="a71b26f6fb125a0373f9ad518c104a4b2c586b1e" resname="New comment on Best Practices Portal">
+        <source>New comment on Best Practices Portal</source>
+        <target>New comment on Best Practices Portal</target>
       </trans-unit>
       <trans-unit id="505235c949c23571ad04e474dce1649c0dd150e7" resname="New submission">
         <source>New submission</source>
         <target>Nova submissão</target>
       </trans-unit>
-      <trans-unit id="7701256dda2266c33492ea7abdf11157214f4d1b" resname="New user on Best Practices platform">
-        <source>New user on Best Practices platform</source>
-        <target>New user on Best Practices platform</target>
+      <trans-unit id="f0ad3f063101b02902dc58d837bddb977632f48e" resname="New user on Best Practices Portal">
+        <source>New user on Best Practices Portal</source>
+        <target>New user on Best Practices Portal</target>
       </trans-unit>
       <trans-unit id="6353049937c27ac2f99e782658c52f29e91fd4f2" resname="New user? Start here.">
         <source>New user? Start here.</source>
@@ -2339,9 +2351,9 @@
         <source>Was the Technical Cooperation planned considering the health situation of the target population</source>
         <target>A Cooperação Técnica foi planejada considerando a situação de saúde da população alvo</target>
       </trans-unit>
-      <trans-unit id="7a40f890f218c3b5fc9f155f20a7e99da5915158" resname="Welcome to the Best Practices platform!">
-        <source>Welcome to the Best Practices platform!</source>
-        <target>Welcome to the Best Practices platform!</target>
+      <trans-unit id="f01899bfa26597e1f43dcb313aae1087efc4bdd8" resname="Welcome to the Best Practices Portal!">
+        <source>Welcome to the Best Practices Portal!</source>
+        <target>Welcome to the Best Practices Portal!</target>
       </trans-unit>
       <trans-unit id="e963862c68a22182c57f2c2ad1f84d8c3b35293e" resname="What are the lessons learned that will improve our expertise and add value to the Organization">
         <source>What are the lessons learned that will improve our expertise and add value to the Organization</source>
