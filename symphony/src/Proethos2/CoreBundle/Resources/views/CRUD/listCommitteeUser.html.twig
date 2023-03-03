@@ -74,7 +74,7 @@
                                         <!-- <td>{{ user.institution }}</td> -->
 
                                         <td>
-                                            {% for role in user.proethos2Roles %}
+                                            {% for role in user.proethos2Roles if role.slug != 'member-ad-hoc' %}
                                                 <span class='label label-default' data-toggle='tooltip' data-placement='top' title='{{ role.name }}'>{{ role.slug|first|upper }}</span>
                                             {% endfor %}
                                         </td>

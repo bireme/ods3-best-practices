@@ -8,7 +8,7 @@
     </div>
     <div class="modal-body">
         
-        {% for role in roles %}
+        {% for role in roles if role.slug != 'member-ad-hoc' %}
             <div class='row'>
                 <div class='col-md-12'>
                     <div class="form-group">
