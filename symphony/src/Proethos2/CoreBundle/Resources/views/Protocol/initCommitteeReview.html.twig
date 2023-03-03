@@ -52,7 +52,7 @@
                         <thead>
                             <tr>
                                 <th width="30%">{% trans %}Name{% endtrans %}</th>
-                                <th>{% trans %}Role{% endtrans %}</th>
+                                {# <th>{% trans %}Role{% endtrans %}</th> #}
                                 <th>{% trans %}Institution{% endtrans %}</th>
                                 <th>{% trans %}E-mail{% endtrans %}</th>
                                 <th>{% trans %}Country{% endtrans %}</th>
@@ -66,7 +66,7 @@
                             {% for revision in protocol.revision %}
                                 <tr>
                                     <td>{{ revision.member.name }}</td>
-                                    <td>{% if role_member_of_committee in revision.member.proethos2Roles %}{% trans %}Member of Committee{% endtrans %}{% else %}{% trans %}Member Ad Hoc{% endtrans %}{% endif %}</td>
+                                    {# <td>{% if role_member_of_committee in revision.member.proethos2Roles %}{% trans %}Member of Committee{% endtrans %}{% else %}{% trans %}Member Ad Hoc{% endtrans %}{% endif %}</td> #}
                                     <td>{{ revision.member.institution }}</td>
                                     <td><a href='{{ revision.member.email }}'>{{ revision.member.email }}</a></td>
                                     <td>{{ revision.member.country }}</td>
@@ -87,7 +87,7 @@
                     </table>
 
                     <a href='#' class='btn btn-default' data-toggle="modal" data-target="#modal-select-members-of-commitee">{% trans %}Select Members Of Committee{% endtrans %}</a>
-                    <a href='#' class='btn btn-default' data-toggle="modal" data-target="#modal-select-members-ad-hoc">{% trans %}Select Members Ad Hoc{% endtrans %}</a>
+                    {# <a href='#' class='btn btn-default' data-toggle="modal" data-target="#modal-select-members-ad-hoc">{% trans %}Select Members Ad Hoc{% endtrans %}</a> #}
                 </div>
             </div>
 
