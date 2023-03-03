@@ -1370,7 +1370,7 @@ class CRUDController extends Controller
                 $body .= "<br /><br />";
 
                 $message = \Swift_Message::newInstance()
-                ->setSubject("[BP] " . $translator->trans("Confirmation of valid access to the Best Practices platform"))
+                ->setSubject("[BP] " . $translator->trans("Confirmation of valid access to the Best Practices Portal"))
                 ->setFrom($util->getConfiguration('committee.email'))
                 ->setTo($user->getEmail())
                 ->setBody(
