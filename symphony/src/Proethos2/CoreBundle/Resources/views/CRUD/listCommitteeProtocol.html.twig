@@ -38,7 +38,7 @@
                                 <option value="S" {% if app.request.get('status') == "S" %}selected{% endif %}>{% trans %}Submitted{% endtrans %}</option>
                                 <option value="R" {% if app.request.get('status') == "R" %}selected{% endif %}>{% trans %}Rejected{% endtrans %}</option>
                                 <option value="I" {% if app.request.get('status') == "I" %}selected{% endif %}>{% trans %}Waiting for initial evaluation{% endtrans %}</option>
-                                <option value="E" {% if app.request.get('status') == "E" %}selected{% endif %}>{% trans %}Waiting for Committee{% endtrans %}</option>
+                                <option value="E" {% if app.request.get('status') == "E" %}selected{% endif %}>{% trans %}Waiting for Technical Assessment{% endtrans %}</option>
                                 <option value="H" {% if app.request.get('status') == "H" %}selected{% endif %}>{% trans %}Scheduled{% endtrans %}</option>
                                 <option value="T" {% if app.request.get('status') == "T" %}selected{% endif %}>{% trans %}Withdrawn{% endtrans %}</option>
                                 <option value="A" {% if app.request.get('status') == "A" %}selected{% endif %}>{% trans %}Approved{% endtrans %}</option>
@@ -121,7 +121,7 @@
                                     <td>
                                         {% if 'administrator' in app.user.getRolesSlug and protocol.isMigrated %}<a href='{{ path("submission_new_second_step", {submission_id: protocol.mainSubmission.id}) }}' class='btn btn-warning btn-xs' data-toggle="tooltip" data-placement="top" title="{% trans %}This is a migrated best practice. You can edit some informations.{% endtrans %}"><i class='glyphicon glyphicon-pencil'></i></a>{% endif %}
                                         <a href='{{ path("protocol_show_protocol", {protocol_id: protocol.id}) }}' class='btn btn-default btn-xs' data-toggle="tooltip" data-placement="top" title="{% trans %}See best practice{% endtrans %}"><i class='glyphicon glyphicon-eye-open'></i></a>
-                                        {% if protocol.status == "S" and 'secretary' in app.user.getRolesSlug %}<a href='{{ path("protocol_analyze_protocol", {protocol_id: protocol.id}) }}' class='btn btn-default btn-xs' data-toggle="tooltip" data-placement="top" title="{% trans %}Analyze best practice{% endtrans %}"><i class='glyphicon glyphicon-pencil'></i></a>{% endif %}
+                                        {% if protocol.status == "S" and 'secretary' in app.user.getRolesSlug %}<a href='{{ path("protocol_analyze_protocol", {protocol_id: protocol.id}) }}' class='btn btn-default btn-xs' data-toggle="tooltip" data-placement="top" title="{% trans %}Basic Screening{% endtrans %}"><i class='glyphicon glyphicon-pencil'></i></a>{% endif %}
                                         <!--
                                         {% if protocol.status == "I" and 'secretary' in app.user.getRolesSlug %}<a href='{{ path("protocol_initial_committee_screening", {protocol_id: protocol.id}) }}' class='btn btn-default btn-xs' data-toggle="tooltip" data-placement="top" title="{% trans %}Initial Committee Screening{% endtrans %}"><i class='glyphicon glyphicon-pencil'></i></a>{% endif %}
                                         -->

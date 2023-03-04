@@ -298,12 +298,12 @@ class Protocol extends Base
             case 'S': return "Submitted"; break;
             case 'R': return "Rejected"; break;
             case 'I': return "Waiting for initial evaluation"; break;
-            case 'E': return "Waiting for Committee"; break;
+            case 'E': return "Waiting for Technical Assessment"; break;
             case 'H': return "Scheduled"; break;
             case 'F': return "Exempted"; break;
             case 'A': return "Approved"; break;
             case 'N': return "Not approved"; break;
-            case 'C': return "Observations to address"; break;
+            case 'C': return "Revisions required"; break;
             case 'X': return "Expedite Approval"; break;
             case 'T': return "Withdrawn"; break;
         }

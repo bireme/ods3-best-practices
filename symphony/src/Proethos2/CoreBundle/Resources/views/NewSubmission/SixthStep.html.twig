@@ -28,7 +28,7 @@
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="textarea-products-information">{% trans %}Please provide sources and documents of the initiative/project generated/associated to this Best Practice{% endtrans %} ({% trans %}hyperlinks only{% endtrans %}):</label>
+                                <label for="textarea-products-information">{% trans %}Please provide hyperlinks to sources/documents associated with the Best Practice{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <textarea rows="6" class="form-control" name='products_information' id='textarea-products-information' placeholder="{% trans %}Please add one hyperlink per line{% endtrans %}">{{ submission.productsInformation }}</textarea>
                             </div>
@@ -49,14 +49,14 @@
                 <div class='block'>
                     <div class='row'>
                         <div class="col-md-12">
-                            <h2 class='sub-header'>{% trans %}Comments for PAHO{% endtrans %}</h2>
+                            <h2 class='sub-header'>{% trans %}Comments for the Pan American Health Organization{% endtrans %}</h2>
                         </div>
                     </div>
 
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="textarea-paho-comments">{% trans %}Any comment to the Secretariat of PAHO's Best Practice Portal{% endtrans %}?</label>
+                                <label for="textarea-paho-comments">{% trans %}Please provide comments for the PAHO's Best Practices Secretariat (optional){% endtrans %}?</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <textarea rows="6" class="form-control" name='paho_comments' id='textarea-paho-comments' placeholder="{% trans %}500 words maximum{% endtrans%}">{{ submission.pahoComments }}</textarea>
                             </div>

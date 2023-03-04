@@ -23,6 +23,7 @@
                         <div class="col-md-12 help-block">
                             <h2 class='sub-header'>{% trans %}Multimedia{% endtrans %}</h2>
                             <a href="{{ path("crud_admin_help_show", {help_id: 224} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                            <p>{% trans %}The submitter must declare that each image provided has copyright permission to allow PAHO to use the image if the BP is approved. Please note that you might not be able to delete a file once uploaded.{% endtrans %}</p>
                         </div>
                     </div>
 
@@ -34,7 +35,7 @@
                                         <tr>
                                             <th>{% trans %}File name{% endtrans %}</th>
                                             <th>{% trans %}Date & Time{% endtrans %}</th>
-                                            <th>{% trans %}Actions{% endtrans %}</th>
+                                            <th>{% trans %}View{% endtrans %}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -71,7 +72,7 @@
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="input_descriptors">{% trans %}Select DeCS descriptors (Health Sciences Descriptors){% endtrans %}:</label>
+                                <label for="input_descriptors">{% trans %}Please select from three to ten keywords that best describe your Best Practice{% endtrans %}:</label>
                                 <a href="{{ path("crud_admin_help_show", {help_id: 221} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <input type="text" class="form-control" name='descriptors' id='input_descriptors' value="{{ submission.descriptors }}" />
                             </div>
@@ -101,7 +102,7 @@
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="textarea-lessons-information">*{% trans %}What were the lessons learned that will improve our expertise and add value to the Organization{% endtrans %}?</label>
+                                <label for="textarea-lessons-information">*{% trans %}What were the lessons learned you would consider important for an institution and for PAHO's Technical Cooperation to learn from and adapt the Best Practice{% endtrans %}?</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <textarea rows="6" class="form-control" name='lessons_information' id='textarea-lessons-information' placeholder="{% trans %}500 words maximum{% endtrans%}" required>{{ submission.lessonsInformation }}</textarea>
                             </div>

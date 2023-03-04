@@ -264,6 +264,7 @@ img.logo {
 .help-block {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .help-block h2.sub-header {
