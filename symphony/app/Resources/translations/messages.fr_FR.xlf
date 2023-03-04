@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2023-03-03T03:25:21Z" source-language="en" target-language="fr_FR" datatype="plaintext" original="not.available">
+  <file date="2023-03-04T04:25:32Z" source-language="en" target-language="fr_FR" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -106,18 +106,6 @@
         <source>Amendment submitted with success!</source>
         <target>Amendment submitted with success!</target>
       </trans-unit>
-      <trans-unit id="0e524de0b8226a149e73a5ad0308dee279154e71" resname="Analyze">
-        <source>Analyze</source>
-        <target>Analyze</target>
-      </trans-unit>
-      <trans-unit id="606e26f487dcd77b1abd9f7ceb09b2ad08ec86a8" resname="Analyze Best Practice">
-        <source>Analyze Best Practice</source>
-        <target>Analyze Best Practice</target>
-      </trans-unit>
-      <trans-unit id="a6d7558ae5ba27352d597f8e265f726fc9947ee0" resname="Analyze best practice">
-        <source>Analyze best practice</source>
-        <target>Analyze best practice</target>
-      </trans-unit>
       <trans-unit id="a16a4eda7cb2c8e91d7edd25e809ae9d392c7498" resname="Answer">
         <source>Answer</source>
         <target>Answer</target>
@@ -221,6 +209,10 @@
       <trans-unit id="b0d5be39ae3904e3170e3f4b8d82f80ea03213d3" resname="Basic Information">
         <source>Basic Information</source>
         <target>Basic Information</target>
+      </trans-unit>
+      <trans-unit id="64e78b2bcef42982e20e75ed994f86e3fa88814f" resname="Basic Screening">
+        <source>Basic Screening</source>
+        <target>Basic Screening</target>
       </trans-unit>
       <trans-unit id="d8cb09e158212bf209b199530d94686ab9de6f8c" resname="Best Practice">
         <source>Best Practice</source>
@@ -398,9 +390,9 @@
         <source>Comments</source>
         <target>Comments</target>
       </trans-unit>
-      <trans-unit id="73b865787eb4d202e61bfe91ffdc0ac8a5f7b175" resname="Comments for PAHO">
-        <source>Comments for PAHO</source>
-        <target>Comments for PAHO</target>
+      <trans-unit id="92227d0386633ac999355333fc444b6bfa790676" resname="Comments for the Pan American Health Organization">
+        <source>Comments for the Pan American Health Organization</source>
+        <target>Comments for the Pan American Health Organization</target>
       </trans-unit>
       <trans-unit id="f43dba5677dfd5e3e6793095b56bfab6f533b68f" resname="Committee">
         <source>Committee</source>
@@ -710,9 +702,9 @@
         <source>Engagement Information</source>
         <target>Engagement Information</target>
       </trans-unit>
-      <trans-unit id="31a877b4355552a56d847363310741b7ef77fce8" resname="Engagement with the Cross-Cutting Priorities of the Organization">
-        <source>Engagement with the Cross-Cutting Priorities of the Organization</source>
-        <target>Engagement with the Cross-Cutting Priorities of the Organization</target>
+      <trans-unit id="a9def0dad96567e30caef550074c0e8cabf509e5" resname="Engagement with the Cross-Cutting themes of the Organization">
+        <source>Engagement with the Cross-Cutting themes of the Organization</source>
+        <target>Engagement with the Cross-Cutting themes of the Organization</target>
       </trans-unit>
       <trans-unit id="649df08a448ee3fa90f3746baaf6b0907df42c91" resname="English">
         <source>English</source>
@@ -946,6 +938,10 @@
         <source>In your opinion, PAHO played a neutral role in negotiations</source>
         <target>In your opinion, PAHO played a neutral role in negotiations</target>
       </trans-unit>
+      <trans-unit id="f56f9866bdc35f5ce3a6c4235ecfc684f4824ebe" resname="In your opinion, PAHO's Technical Cooperation was planned considering the Cross-Cutting themes (equity, gender, ethnicity, and human rights)">
+        <source>In your opinion, PAHO's Technical Cooperation was planned considering the Cross-Cutting themes (equity, gender, ethnicity, and human rights)</source>
+        <target>In your opinion, PAHO's Technical Cooperation was planned considering the Cross-Cutting themes (equity, gender, ethnicity, and human rights)</target>
+      </trans-unit>
       <trans-unit id="0565eb0bb010e043e113c1a7e634f22c33408a85" resname="In your opinion, PAHO's Technical Cooperation was planned considering the cross-cutting approach (Human Rights, Gender Equity and Ethnicity (Cultural Diversity))">
         <source>In your opinion, PAHO's Technical Cooperation was planned considering the cross-cutting approach (Human Rights, Gender Equity and Ethnicity (Cultural Diversity))</source>
         <target>In your opinion, PAHO's Technical Cooperation was planned considering the cross-cutting approach (Human Rights, Gender Equity and Ethnicity (Cultural Diversity))</target>
@@ -1066,10 +1062,6 @@
         <source>Last Update</source>
         <target>Last Update</target>
       </trans-unit>
-      <trans-unit id="57a818852e3c66c583dc19666957a43085a4a074" resname="Last best practices in which you are part of the research team">
-        <source>Last best practices in which you are part of the research team</source>
-        <target>Last best practices in which you are part of the research team</target>
-      </trans-unit>
       <trans-unit id="19ab1666077961d47c07654781ff53880e9c7b3d" resname="Last best practices that you reviewed">
         <source>Last best practices that you reviewed</source>
         <target>Last best practices that you reviewed</target>
@@ -1154,17 +1146,9 @@
         <source>Meetings</source>
         <target>Meetings</target>
       </trans-unit>
-      <trans-unit id="4f13f48c673e321605ea39070297d7099f85664a" resname="Member Ad Hoc">
-        <source>Member Ad Hoc</source>
-        <target>Member Ad Hoc</target>
-      </trans-unit>
       <trans-unit id="4014afc56173e7dda855348d627c2ccd839bf610" resname="Member has been removed with success!">
         <source>Member has been removed with success!</source>
         <target>Member has been removed with success!</target>
-      </trans-unit>
-      <trans-unit id="936801ef1325d7365e4f98476528231e2e64b5d9" resname="Member of Committee">
-        <source>Member of Committee</source>
-        <target>Member of Committee</target>
       </trans-unit>
       <trans-unit id="abc4f304a08a21ce7477f600961a7c5e317824c5" resname="Members added with success!">
         <source>Members added with success!</source>
@@ -1466,10 +1450,6 @@
         <source>Objectives of the Best Practice</source>
         <target>Objectives of the Best Practice</target>
       </trans-unit>
-      <trans-unit id="18015e598e5c3b536f5800eeb4ce0150fc0c602f" resname="Observations to address">
-        <source>Observations to address</source>
-        <target>Observations to address</target>
-      </trans-unit>
       <trans-unit id="2e0254c28e2b06c621fe3e5af23ceeb7e03e64e7" resname="Ongoing">
         <source>Ongoing</source>
         <target>Ongoing</target>
@@ -1574,6 +1554,14 @@
         <source>Please provide a short description to support your previous three answers (dissemination, adaptability/replicability and context)</source>
         <target>Please provide a short description to support your previous three answers (dissemination, adaptability/replicability and context)</target>
       </trans-unit>
+      <trans-unit id="9ef2201b7d04f47d119a5773a35e54291612ac22" resname="Please provide comments for the PAHO's Best Practices Secretariat (optional)">
+        <source>Please provide comments for the PAHO's Best Practices Secretariat (optional)</source>
+        <target>Please provide comments for the PAHO's Best Practices Secretariat (optional)</target>
+      </trans-unit>
+      <trans-unit id="99d1b5cb33b7b7fe1f7ec67d27d2e59e837b4877" resname="Please provide hyperlinks to sources/documents associated with the Best Practice">
+        <source>Please provide hyperlinks to sources/documents associated with the Best Practice</source>
+        <target>Please provide hyperlinks to sources/documents associated with the Best Practice</target>
+      </trans-unit>
       <trans-unit id="e6bbcd107e976fb8ba6a0d9cbd939618fa7c7806" resname="Please provide information">
         <source>Please provide information</source>
         <target>Please provide information</target>
@@ -1582,10 +1570,6 @@
         <source>Please provide information about products (resources, documents of the initiative/project) generated/associated to this Best Practice</source>
         <target>Please provide information about products (resources, documents of the initiative/project) generated/associated to this Best Practice</target>
       </trans-unit>
-      <trans-unit id="ae9562e69f06d9bea444634d62087e1c297daba7" resname="Please provide sources and documents of the initiative/project generated/associated to this Best Practice">
-        <source>Please provide sources and documents of the initiative/project generated/associated to this Best Practice</source>
-        <target>Please provide sources and documents of the initiative/project generated/associated to this Best Practice</target>
-      </trans-unit>
       <trans-unit id="6645a4fa2df1f0ed95118b279c5482574d8670c4" resname="Please provide support information about PAHO's Technical Cooperation recognition">
         <source>Please provide support information about PAHO's Technical Cooperation recognition</source>
         <target>Please provide support information about PAHO's Technical Cooperation recognition</target>
@@ -1593,6 +1577,10 @@
       <trans-unit id="b9d562d1e72303736f85f83ecf4a333a05a3e9be" resname="Please provide support information. For example, information on how PAHO's Technical Cooperation contributed to strengthen capacity and address health inequities and inequalities, and gender and culturally sensitive approaches to health within a human rights framework; to engage in an intersectoral action with an equity and rights focus">
         <source>Please provide support information. For example, information on how PAHO's Technical Cooperation contributed to strengthen capacity and address health inequities and inequalities, and gender and culturally sensitive approaches to health within a human rights framework; to engage in an intersectoral action with an equity and rights focus</source>
         <target>Please provide support information. For example, information on how PAHO's Technical Cooperation contributed to strengthen capacity and address health inequities and inequalities, and gender and culturally sensitive approaches to health within a human rights framework; to engage in an intersectoral action with an equity and rights focus</target>
+      </trans-unit>
+      <trans-unit id="50559057f3c5b02d5c786832ef284457a04c0903" resname="Please select from three to ten keywords that best describe your Best Practice">
+        <source>Please select from three to ten keywords that best describe your Best Practice</source>
+        <target>Please select from three to ten keywords that best describe your Best Practice</target>
       </trans-unit>
       <trans-unit id="e3fa8b0bee9c09c0f88f2bd00512e962fb62b30e" resname="Please select the most appropriate goal of the SHAA 2030:">
         <source>Please select the most appropriate goal of the SHAA 2030:</source>
@@ -1710,6 +1698,10 @@
         <source>Reason that this best practice was rejected</source>
         <target>Reason that this best practice was rejected</target>
       </trans-unit>
+      <trans-unit id="d41ef6b019647ac9205a81ebb8a1f63ec9403b0d" resname="Recent best practices">
+        <source>Recent best practices</source>
+        <target>Recent best practices</target>
+      </trans-unit>
       <trans-unit id="6197cbd5850188b4e4e269f8325b3b1753bd9ac5" resname="Recognition Information">
         <source>Recognition Information</source>
         <target>Recognition Information</target>
@@ -1814,6 +1806,10 @@
         <source>Revision</source>
         <target>Revision</target>
       </trans-unit>
+      <trans-unit id="30eeb3439ed7ffb59455890b116f749318a57d51" resname="Revisions required">
+        <source>Revisions required</source>
+        <target>Revisions required</target>
+      </trans-unit>
       <trans-unit id="c3f104d1365744b538bfde9f4adb6a6df4b80355" resname="Role">
         <source>Role</source>
         <target>Role</target>
@@ -1901,10 +1897,6 @@
       <trans-unit id="f4a5757a3cee255c8368db475f449f74e306828c" resname="See protocol">
         <source>See protocol</source>
         <target>See protocol</target>
-      </trans-unit>
-      <trans-unit id="348974b72cb4b86d4d7fa44f65eb5ad6713998fb" resname="Select DeCS descriptors (Health Sciences Descriptors)">
-        <source>Select DeCS descriptors (Health Sciences Descriptors)</source>
-        <target>Select DeCS descriptors (Health Sciences Descriptors)</target>
       </trans-unit>
       <trans-unit id="c135ca2ba6ef7f544f8d9e2e09088dd911ead717" resname="Select Members Ad Hoc">
         <source>Select Members Ad Hoc</source>
@@ -2138,6 +2130,10 @@
         <source>The private_key and index_key are required in the parameters.yml file</source>
         <target>The private_key and index_key are required in the parameters.yml file</target>
       </trans-unit>
+      <trans-unit id="7b8eb6f12124a71dc56daabf4a92f636e1daf83e" resname="The submitter must declare that each image provided has copyright permission to allow PAHO to use the image if the BP is approved. Please note that you might not be able to delete a file once uploaded.">
+        <source>The submitter must declare that each image provided has copyright permission to allow PAHO to use the image if the BP is approved. Please note that you might not be able to delete a file once uploaded.</source>
+        <target>The submitter must declare that each image provided has copyright permission to allow PAHO to use the image if the BP is approved. Please note that you might not be able to delete a file once uploaded.</target>
+      </trans-unit>
       <trans-unit id="80641d12b06bab66399479a096f095554b0710ae" resname="There is no help message set for this field.">
         <source>There is no help message set for this field.</source>
         <target>There is no help message set for this field.</target>
@@ -2328,9 +2324,13 @@
         <source>Value</source>
         <target>Value</target>
       </trans-unit>
-      <trans-unit id="19c86af493b2449f3bf5d1e82bb1693c006b1114" resname="Waiting for Committee">
-        <source>Waiting for Committee</source>
-        <target>Waiting for Committee</target>
+      <trans-unit id="69bd4ef9fbd0894a22759c3766b859defbdedbc8" resname="View">
+        <source>View</source>
+        <target>View</target>
+      </trans-unit>
+      <trans-unit id="6bdbd58311ef20ed172918d30df62df736442296" resname="Waiting for Technical Assessment">
+        <source>Waiting for Technical Assessment</source>
+        <target>Waiting for Technical Assessment</target>
       </trans-unit>
       <trans-unit id="c0dbc9647009c412d8233097b849a2ab76fc58c3" resname="Waiting for initial evaluation">
         <source>Waiting for initial evaluation</source>
@@ -2368,9 +2368,9 @@
         <source>What public health issue (or opportunity) led the Organization to participate/request this Technical Cooperation project/initiative</source>
         <target>What public health issue (or opportunity) led the Organization to participate/request this Technical Cooperation project/initiative</target>
       </trans-unit>
-      <trans-unit id="379baa7d81d5d5851cf268be243a2400ba50db94" resname="What were the lessons learned that will improve our expertise and add value to the Organization">
-        <source>What were the lessons learned that will improve our expertise and add value to the Organization</source>
-        <target>What were the lessons learned that will improve our expertise and add value to the Organization</target>
+      <trans-unit id="3470495967aa6e57a903412054d4c83b9b9beb6f" resname="What were the lessons learned you would consider important for an institution and for PAHO's Technical Cooperation to learn from and adapt the Best Practice">
+        <source>What were the lessons learned you would consider important for an institution and for PAHO's Technical Cooperation to learn from and adapt the Best Practice</source>
+        <target>What were the lessons learned you would consider important for an institution and for PAHO's Technical Cooperation to learn from and adapt the Best Practice</target>
       </trans-unit>
       <trans-unit id="e358dd01e8e48d60ea4f4148f7f7334aad8f7f6e" resname="What's your role on this Best Practice">
         <source>What's your role on this Best Practice</source>
