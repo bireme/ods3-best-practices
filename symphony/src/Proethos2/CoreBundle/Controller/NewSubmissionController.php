@@ -1701,12 +1701,14 @@ class NewSubmissionController extends Controller
                         // sending email
                         $baseurl = $request->getScheme() . '://' . $request->getHttpHost() . $request->getBasePath();
                         $url = $baseurl . $this->generateUrl('protocol_show_protocol', array("protocol_id" => $protocol->getId()));
+                        $edit_submission_url = $baseurl . $this->generateUrl('submission_new_first_created_protocol_step', array("submission_id" => $submission->getId()));
 
                         $help = $help_repository->find(201);
                         $translations = $trans_repository->findTranslations($help);
                         $text = $translations[$submission->getLanguage()];
                         $body = $text['message'];
                         $body = str_replace("%protocol_url%", $url, $body);
+                        $body = str_replace("%edit_submission_url%", $edit_submission_url, $body);
                         $body = str_replace("%protocol_code%", $protocol->getCode(), $body);
                         $body = str_replace("\r\n", "<br />", $body);
                         $body .= "<br /><br />";
@@ -1736,33 +1738,32 @@ class NewSubmissionController extends Controller
                         $baseurl = $request->getScheme() . '://' . $request->getHttpHost() . $request->getBasePath();
                         $home_url = $baseurl . $this->generateUrl('home');
                         $url = $baseurl . $this->generateUrl('protocol_show_protocol', array("protocol_id" => $protocol->getId()));
+                        $edit_submission_url = $baseurl . $this->generateUrl('submission_new_first_created_protocol_step', array("submission_id" => $submission->getId()));
 
                         // sending message to investigator
-                        $total_submissions = count($protocol->getSubmission());
-                        if ( $total_submissions == 1 ) {
-                            $help = $help_repository->find(202);
-                            $translations = $trans_repository->findTranslations($help);
-                            $text = $translations[$submission->getLanguage()];
-                            $body = $text['message'];
-                            $body = str_replace("%protocol_url%", $url, $body);
-                            $body = str_replace("%protocol_code%", $protocol->getCode(), $body);
-                            $body = str_replace("\r\n", "<br />", $body);
-                            $body .= "<br /><br />";
+                        $help = $help_repository->find(202);
+                        $translations = $trans_repository->findTranslations($help);
+                        $text = $translations[$submission->getLanguage()];
+                        $body = $text['message'];
+                        $body = str_replace("%protocol_url%", $url, $body);
+                        $body = str_replace("%edit_submission_url%", $edit_submission_url, $body);
+                        $body = str_replace("%protocol_code%", $protocol->getCode(), $body);
+                        $body = str_replace("\r\n", "<br />", $body);
+                        $body .= "<br /><br />";
 
-                            $recipient = $protocol->getMainSubmission()->getOwner();
+                        $recipient = $protocol->getMainSubmission()->getOwner();
 
-                            $message = \Swift_Message::newInstance()
-                            ->setSubject("[BP] " . $mail_translator->trans("Your best practice was sent to review."))
-                            ->setFrom($util->getConfiguration('committee.email'))
-                            ->setTo($recipient->getEmail())
-                            ->setBody(
-                                $body
-                                ,
-                                'text/html'
-                            );
+                        $message = \Swift_Message::newInstance()
+                        ->setSubject("[BP] " . $mail_translator->trans("Your best practice was sent to review."))
+                        ->setFrom($util->getConfiguration('committee.email'))
+                        ->setTo($recipient->getEmail())
+                        ->setBody(
+                            $body
+                            ,
+                            'text/html'
+                        );
 
-                            $send = $this->get('mailer')->send($message);
-                        }
+                        $send = $this->get('mailer')->send($message);
 
                         $help = $help_repository->find(217);
                         $translations = $trans_repository->findTranslations($help);
@@ -1770,6 +1771,7 @@ class NewSubmissionController extends Controller
                         $body = $text['message'];
                         $body = str_replace("%home_url%", $home_url, $body);
                         $body = str_replace("%protocol_url%", $url, $body);
+                        $body = str_replace("%edit_submission_url%", $edit_submission_url, $body);
                         $body = str_replace("%protocol_code%", $protocol->getCode(), $body);
                         $body = str_replace("\r\n", "<br />", $body);
                         $body .= "<br /><br />";

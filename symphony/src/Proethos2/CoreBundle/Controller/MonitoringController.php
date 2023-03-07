@@ -317,12 +317,14 @@ class MonitoringController extends Controller
             // sending email
             $baseurl = $request->getScheme() . '://' . $request->getHttpHost() . $request->getBasePath();
             $url = $baseurl . $this->generateUrl('protocol_show_protocol', array("protocol_id" => $protocol->getId()));
+            $edit_submission_url = $baseurl . $this->generateUrl('submission_new_first_created_protocol_step', array("submission_id" => $submission->getId()));
 
             $help = $help_repository->find(201);
             $translations = $trans_repository->findTranslations($help);
             $text = $translations[$submission->getLanguage()];
             $body = $text['message'];
             $body = str_replace("%protocol_url%", $url, $body);
+            $body = str_replace("%edit_submission_url%", $edit_submission_url, $body);
             $body = str_replace("%protocol_code%", $protocol->getCode(), $body);
             $body = str_replace("\r\n", "<br />", $body);
             $body .= "<br /><br />";
