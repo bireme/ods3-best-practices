@@ -296,13 +296,12 @@ class Protocol extends Base
         switch ($this->status) {
             case 'D': return "Draft"; break;
             case 'S': return "Submitted"; break;
-            case 'R': return "Rejected"; break;
             case 'I': return "Waiting for initial evaluation"; break;
             case 'E': return "Waiting for Technical Assessment"; break;
             case 'H': return "Scheduled"; break;
             case 'F': return "Exempted"; break;
             case 'A': return "Approved"; break;
-            case 'N': return "Not approved"; break;
+            case 'N': return "Rejected"; break;
             case 'C': return "Revisions required"; break;
             case 'X': return "Expedite Approval"; break;
             case 'T': return "Withdrawn"; break;

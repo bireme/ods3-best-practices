@@ -36,13 +36,12 @@
                             <select class='form-control selectpicker submit-on-change' id="select-filter-status" name="status" data-live-search="true">
                                 <option value="" {% if app.request.get('status') == "" %}selected{% endif %}>{% trans %}All{% endtrans %}</option>
                                 <option value="S" {% if app.request.get('status') == "S" %}selected{% endif %}>{% trans %}Submitted{% endtrans %}</option>
-                                <option value="R" {% if app.request.get('status') == "R" %}selected{% endif %}>{% trans %}Rejected{% endtrans %}</option>
                                 <option value="I" {% if app.request.get('status') == "I" %}selected{% endif %}>{% trans %}Waiting for initial evaluation{% endtrans %}</option>
                                 <option value="E" {% if app.request.get('status') == "E" %}selected{% endif %}>{% trans %}Waiting for Technical Assessment{% endtrans %}</option>
                                 <option value="H" {% if app.request.get('status') == "H" %}selected{% endif %}>{% trans %}Scheduled{% endtrans %}</option>
                                 <option value="T" {% if app.request.get('status') == "T" %}selected{% endif %}>{% trans %}Withdrawn{% endtrans %}</option>
                                 <option value="A" {% if app.request.get('status') == "A" %}selected{% endif %}>{% trans %}Approved{% endtrans %}</option>
-                                <option value="N" {% if app.request.get('status') == "N" %}selected{% endif %}>{% trans %}Not approved{% endtrans %}</option>
+                                <option value="N" {% if app.request.get('status') == "N" %}selected{% endif %}>{% trans %}Rejected{% endtrans %}</option>
                             </select>
                         </div>
                     </div>
