@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2023-03-07T01:37:14Z" source-language="en" target-language="pt_BR" datatype="plaintext" original="not.available">
+  <file date="2023-03-07T16:32:30Z" source-language="en" target-language="pt_BR" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -2446,9 +2446,9 @@
         <source>Your best practice was rejected</source>
         <target>Sua boa prática foi rejeitada.</target>
       </trans-unit>
-      <trans-unit id="0c0999951c554ef23c586394bfb5e650f70ca987" resname="Your best practice was sent to evaluation.">
-        <source>Your best practice was sent to evaluation.</source>
-        <target>Your best practice was sent to evaluation.</target>
+      <trans-unit id="9d0ff5827175e36a6776fbb58a37147f952c875e" resname="Your best practice was sent to Technical Assessment.">
+        <source>Your best practice was sent to Technical Assessment.</source>
+        <target>Your best practice was sent to Technical Assessment.</target>
       </trans-unit>
       <trans-unit id="8a9b2eb8c8ab7274265adae9fafb3a5cc104e3c0" resname="Your best practice was sent to review!">
         <source>Your best practice was sent to review!</source>
