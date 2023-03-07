@@ -131,9 +131,9 @@ class ProtocolController extends Controller
 
                 if ( !$post_data['new-comment-is-confidential'] ) {
                     $investigators = array();
-                    $investigators[] = $protocol->getMainSubmission()->getOwner()->getEmail();
+                    $investigators[] = $submission->getOwner()->getEmail();
 
-                    foreach($protocol->getMainSubmission()->getTeam() as $investigator) {
+                    foreach($submission->getTeam() as $investigator) {
                         $investigators[] = $investigator->getEmail();
                     }
 
@@ -242,9 +242,9 @@ class ProtocolController extends Controller
 
             if ( !$post_data['new-comment-is-confidential'] ) {
                 $investigators = array();
-                $investigators[] = $protocol->getMainSubmission()->getOwner()->getEmail();
+                $investigators[] = $submission->getOwner()->getEmail();
 
-                foreach($protocol->getMainSubmission()->getTeam() as $investigator) {
+                foreach($submission->getTeam() as $investigator) {
                     $investigators[] = $investigator->getEmail();
                 }
 
