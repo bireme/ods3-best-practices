@@ -650,7 +650,7 @@ class ProtocolController extends Controller
                     $body .= "<br /><br />";
 
                     $message = \Swift_Message::newInstance()
-                    ->setSubject("[BP] " . $mail_translator->trans("Your best practice was sent to Technical Assessment."))
+                    ->setSubject("[BP] " . $mail_translator->trans("Your best practice was sent for Technical Assessment."))
                     ->setFrom($util->getConfiguration('committee.email'))
                     ->setTo($investigators)
                     ->setBody(
