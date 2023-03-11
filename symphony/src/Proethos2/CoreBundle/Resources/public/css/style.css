@@ -279,6 +279,10 @@ img.logo {
     display: none;
 }
 
+.live-search .filter-field {
+    margin-top: 16px;
+}
+
 .navbar-default {
     background-color: #05548b !important;
     border-bottom: 5px solid #ed742c;

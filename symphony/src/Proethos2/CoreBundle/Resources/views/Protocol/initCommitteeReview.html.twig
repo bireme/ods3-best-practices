@@ -30,7 +30,7 @@
 
                 <div class='row'>
                     <div class="col-md-12">
-                        <div class="form-group" id='niec-manual'>
+                        <div class="form-group">
                             <label for="input-opinion-required">{% trans %}Opinions Required{% endtrans %}:</label>
                             <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 122} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                             <input type='number' class="form-control" id='input-opinion-required' name="opinion-required" min="0" value="{{ protocol.opinionRequired }}">
@@ -137,7 +137,19 @@
                         <h4 class="modal-title" id="myModalLabel">{% trans %}Select Reviewers (Committee/Ad Hoc){% endtrans %}</h4>
                     </div>
                     <div class="modal-body">
-                        <table class='table table-hover table-condensed'>
+                        <div class="live-search">
+                            <fieldset>
+                                <label for="select-filter">{% trans %}Filter by{% endtrans %}:</label>
+                                <select class='selectpicker' id="select-filter" name="select-filter">
+                                    <option value="name">{% trans %}Name{% endtrans %}</option>
+                                    <option value="institution">{% trans %}Institution{% endtrans %}</option>
+                                    <option value="email">{% trans %}Email{% endtrans %}</option>
+                                </select>
+                                <input type="text" class="form-control text-input filter-field" id="filter-field" value="" />
+                            </fieldset>
+                        </div>
+                        <hr />
+                        <table id="list-committee" class='table table-hover table-condensed'>
                             <thead>
                                 <tr>
                                     <td></td>
@@ -153,9 +165,9 @@
                                     {% if role_member_of_committee in member.proethos2Roles %}
                                         <tr>
                                             <td><input type='checkbox' name="select-members-of-committee[]" value="{{ member.id }}"></td>
-                                            <td>{{ member.name }}</td>
-                                            <td>{{ member.institution }}</td>
-                                            <td><a href='{{ member.email }}'>{{ member.email }}</a></td>
+                                            <td class="filter-name">{{ member.name }}</td>
+                                            <td class="filter-institution">{{ member.institution }}</td>
+                                            <td class="filter-email"><a href='{{ member.email }}'>{{ member.email }}</a></td>
                                             <td>{{ member.country }}</td>
                                         </tr>
                                     {% endif %}
@@ -309,6 +321,27 @@
 
             $('#button-confirm-submit-without-revisions').on('keypress click', function(e){
                 $('#form-action').submit();
+            });
+
+            $("input.filter-field").keyup(function(){
+                // Retrieve the input field text and reset the count to zero
+                var filter = $(this).val(), field = $('#select-filter').val(), count = 0;
+         
+                // Loop through the comment list
+                $("table#list-committee tbody tr").each(function(){
+                    // If the list item does not contain the text phrase fade it out
+                    if ($(this).find('td.filter-'+field).text().search(new RegExp(filter, "i")) < 0) {
+                        $(this).hide();
+                    // Show the list item if the phrase matches and increase the count by 1
+                    } else {
+                        $(this).show();
+                        count++;
+                    }
+                });
+         
+                // Update the count
+                var numberItems = count;
+                // $("#filter-count").text("Total: "+count);
             });
 
         });
