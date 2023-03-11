@@ -106,6 +106,13 @@ class Protocol extends Base
      *
      * @ORM\Column(type="text", nullable=true)
      */
+    private $notes;
+
+    /**
+     * @var text
+     *
+     * @ORM\Column(type="text", nullable=true)
+     */
     private $reject_reason;
 
     /**
@@ -298,7 +305,7 @@ class Protocol extends Base
             case 'S': return "Submitted"; break;
             case 'I': return "Waiting for initial evaluation"; break;
             case 'E': return "Waiting for Technical Assessment"; break;
-            case 'H': return "Scheduled"; break;
+            case 'H': return "Waiting for Final Decision"; break;
             case 'F': return "Exempted"; break;
             case 'A': return "Approved"; break;
             case 'N': return "Rejected"; break;
@@ -808,4 +815,28 @@ class Protocol extends Base
         return $contacts;
     }
 
+
+    /**
+     * Set notes
+     *
+     * @param string $notes
+     *
+     * @return Protocol
+     */
+    public function setNotes($notes)
+    {
+        $this->notes = $notes;
+
+        return $this;
+    }
+
+    /**
+     * Get notes
+     *
+     * @return string
+     */
+    public function getNotes()
+    {
+        return $this->notes;
+    }
 }

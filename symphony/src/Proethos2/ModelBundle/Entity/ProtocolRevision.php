@@ -57,12 +57,7 @@ class ProtocolRevision extends Base
      */
     private $is_final_revision = false;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="decision", type="string", length=255, nullable=true)
-     */
-    private $decision;   
+
 
     /**
      * @ORM\Column(type="text", nullable=true)
@@ -102,7 +97,13 @@ class ProtocolRevision extends Base
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    private $suggestions;   
+    private $suggestions;
+
+    /**
+     * @ORM\Column(type="string", length=1)
+     * @Assert\NotBlank
+     */
+    private $final_decision;
 
     /**
      * Get id
@@ -208,30 +209,6 @@ class ProtocolRevision extends Base
     public function getIsFinalRevision()
     {
         return $this->is_final_revision;
-    }
-
-    /**
-     * Set decision
-     *
-     * @param string $decision
-     *
-     * @return ProtocolRevision
-     */
-    public function setDecision($decision)
-    {
-        $this->decision = $decision;
-
-        return $this;
-    }
-
-    /**
-     * Get decision
-     *
-     * @return string
-     */
-    public function getDecision()
-    {
-        return $this->decision;
     }
 
     /**
@@ -424,5 +401,47 @@ class ProtocolRevision extends Base
     public function getSuggestions()
     {
         return $this->suggestions;
+    }
+
+    /**
+     * Set finalDecision
+     *
+     * @param string $finalDecision
+     *
+     * @return ProtocolRevision
+     */
+    public function setFinalDecision($finalDecision)
+    {
+        $this->final_decision = $finalDecision;
+
+        return $this;
+    }
+
+    /**
+     * Get finalDecision
+     *
+     * @return string
+     */
+    public function getFinalDecision()
+    {
+        return $this->final_decision;
+    }
+
+    public function getDecisionLabel()
+    {
+        switch ($this->final_decision) {
+            case 'D': return "Draft"; break;
+            case 'S': return "Submitted"; break;
+            case 'I': return "Waiting for initial evaluation"; break;
+            case 'E': return "Waiting for Technical Assessment"; break;
+            case 'H': return "Scheduled"; break;
+            case 'F': return "Exempted"; break;
+            case 'A': return "Approved"; break;
+            case 'N': return "Rejected"; break;
+            case 'C': return "Revisions required"; break;
+            case 'X': return "Expedite Approval"; break;
+            case 'T': return "Withdrawn"; break;
+        }
+        return $this->final_decision;
     }
 }

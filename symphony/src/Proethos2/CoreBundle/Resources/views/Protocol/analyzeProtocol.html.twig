@@ -33,26 +33,41 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <div class='radio'>
+                                <label for="input-approved-submission">
+                                    <input type='radio' id='input-approved-submission' name='action' value='E' /> {% trans %}Approved{% endtrans %}
+                                    <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 129} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                </label> 
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class='radio'>
+                                <label for="input-accept-submission">
+                                    <input type='radio' id='input-accept-submission' name='action' value='C' /> {% trans %}Revisions required{% endtrans %}
+                                    <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 129} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                </label> 
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class='radio'>
                                 <label for="input-reject-submission">
-                                    <input type='radio' id='input-reject-submission' name='action' value='accept' /> {% trans %}Reject Submission{% endtrans %}
+                                    <input type='radio' id='input-reject-submission' name='action' value='N' /> {% trans %}Rejected{% endtrans %}
                                     <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 127} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 </label> 
                             </div>
                         </div>
-                        
-                        <div class="form-group" id='group-reject-submission'>
-                            <label for="">{% trans %}Return reason{% endtrans %}:</label> 
+
+                        <div class="form-group" id='group-approved-submission'>
+                            <label for="textarea-notes">{% trans %}Comments{% endtrans %}:</label> 
                             <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 128} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                            <textarea class="form-control" id="textarea-reject-reason" name='reject-reason'></textarea>
+                            <textarea class="form-control" id="textarea-notes" name='notes'></textarea>
                         </div>
                         
-                        <div class="form-group">
-                            <div class='radio'>
-                                <label for="input-accept-submission">
-                                    <input type='radio' id='input-accept-submission' name='action' value='accept' /> {% trans %}Accept Submission{% endtrans %}
-                                    <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 129} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                </label> 
-                            </div>
+                        <div class="form-group" id='group-reject-submission'>
+                            <label for="textarea-reject-reason">{% trans %}Reject reasons{% endtrans %}:</label> 
+                            <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 128} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                            <textarea class="form-control" id="textarea-reject-reason" name='reject-reason'></textarea>
                         </div>
                     </div>
                 </div>
@@ -60,14 +75,10 @@
 
             <div class='row'>
                 <div class='submission-button-controls col-md-12'>
-                    <button type="button" class='btn btn-danger' id='button-reject-submission' data-toggle='modal' data-target='#modal-reject'>{% trans %}Send back to investigator{% endtrans %}</button>
+                    <button type="button" class='btn btn-primary' id='button-approved-submission'>{% trans %}Send to review{% endtrans %}</button>
+                    <button type="button" class='btn btn-primary' id='button-accept-submission'>{% trans %}Send back to Submitter{% endtrans %}</button>
+                    <button type="button" class='btn btn-danger' id='button-reject-submission' data-toggle='modal' data-target='#modal-reject'>{% trans %}Reject submission{% endtrans %}</button>
                     <!-- <button class='btn btn-primary' id='button-send-to-committee'>{% trans %}Send to committee to decide{% endtrans %}</button> -->
-                    <button class='btn btn-primary' id='button-send-to-ethical-revision'>{% trans %}Send to revision{% endtrans %}</button>
-                    {% if protocol.monitoringAction %}
-                        <span data-toggle='tooltip' data-placement='top' title="{% trans %}This monitoring action will not be reviewed by the committee{% endtrans %}">
-                            <button type='button' class='btn btn-success' data-toggle='modal' data-target='#modal-confirm' id='button-accept-as-notification'>{% trans %}Accept as Notification{% endtrans %}</button>
-                        </span>
-                    {% endif %}
                 </div>
             </div>
         </form>
@@ -123,21 +134,19 @@
 
             $("#form-action input[name='action']").on('ifChanged', function(){
                 var id = $(this).attr('id');
-                if(id.search("reject") >= 0) {
-                    reject();
-                } else {
-                    accept();
-                }
+                if(id.search("reject") >= 0) reject();
+                if(id.search("accept") >= 0) accept();
+                if(id.search("approved") >= 0) approved();
             });
-
-            $("body").on("click", "#button-send-to-committee", function(e){
-                $("#input-send-to").val('comittee');
+            
+            $("body").on("click", "#button-approved-submission", function(e){
+                $("#input-send-to").val('revision');
                 $("#input-is-reject").val('false');
                 $("#form-action").submit();
             });
-            
-            $("body").on("click", "#button-send-to-ethical-revision", function(e){
-                $("#input-send-to").val('ethical-revision');
+
+            $("body").on("click", "#button-accept-submission", function(e){
+                $("#input-send-to").val('submitter');
                 $("#input-is-reject").val('false');
                 $("#form-action").submit();
             });
@@ -145,39 +154,42 @@
             $("body").on("click", "#notification-reject", function(e){
                 $("#form-action").submit();
             });
-
-            {% if protocol.monitoringAction %}
-                $("body").on("click", "#notification-submit", function(e){
-                    $("#input-send-to").val('notification-only');
-                    $("#input-is-reject").val('false');
-                    $("#form-action").submit();
-                });                
-            {% endif %}
         });
 
         function reject() {
             $("#group-reject-submission").show();
             $("#button-reject-submission").show();
 
+            $("#textarea-notes").prop('required', false);
             $("#textarea-reject-reason").prop('required', true);
 
-            $("#button-send-to-committee").hide();
-            $("#button-send-to-ethical-revision").hide();
-            $("#button-accept-as-notification").hide();
+            $("#group-approved-submission").hide();
+            $("#button-approved-submission").hide();
+            $("#button-accept-submission").hide();
         }
 
         function accept() {
             $("#group-reject-submission").hide();
             $("#button-reject-submission").hide();
-            
+
+            $("#textarea-notes").prop('required', false);
             $("#textarea-reject-reason").prop('required', false);
 
-            $("#button-send-to-committee").show();
-            $("#button-send-to-ethical-revision").show();
+            $("#group-approved-submission").hide();
+            $("#button-approved-submission").hide();
+            $("#button-accept-submission").show();
+        }
 
-            {% if protocol.monitoringAction %}
-                $("#button-accept-as-notification").show();
-            {% endif %}
+        function approved() {
+            $("#group-reject-submission").hide();
+            $("#button-reject-submission").hide();
+            
+            $("#textarea-notes").prop('required', true);
+            $("#textarea-reject-reason").prop('required', false);
+
+            $("#group-approved-submission").show();
+            $("#button-approved-submission").show();
+            $("#button-accept-submission").hide();
         }
     </script>
 {% endblock %}

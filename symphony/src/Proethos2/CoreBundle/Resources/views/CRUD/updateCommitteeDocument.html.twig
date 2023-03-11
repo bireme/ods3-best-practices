@@ -34,7 +34,7 @@
                     <label for="select-role">{% trans %}Role{% endtrans %}:</label> 
                     <a href="{{ path("crud_admin_help_show", {help_id: 70} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                     <select class='form-control' id="select-role" name="roles[]" multiple>
-                        {% for role in roles %}
+                        {% for role in roles if role.slug not in ['member-ad-hoc'] %}
                             <option value="{{ role.id }}" {% if role in document.roles %}selected{% endif %}>{{ role.name }}</option>
                         {% endfor %}
                     </select>

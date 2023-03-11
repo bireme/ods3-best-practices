@@ -14,6 +14,26 @@
             </div>
         </div>
 
+        {% if protocol.status in ["A","E","H"] %}
+            <div class='row'>
+                <div class='col-md-12'>
+                    <div class='alert alert-success'>
+                        <b>{% trans %}Notes{% endtrans %}:</b> {{ protocol.notes }}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if protocol.status == "N" %}
+            <div class='row'>
+                <div class='col-md-12'>
+                    <div class='alert alert-danger'>
+                        <b>{% trans %}Notes{% endtrans %}:</b> {{ protocol.rejectReason }}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
         {% include 'Proethos2CoreBundle:Protocol:meta.html.twig' %}
 
     </div>

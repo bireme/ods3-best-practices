@@ -5,7 +5,7 @@
 <div class="modal-body">
 
     <h5>{% trans %}Decision{% endtrans %}</h5>
-    <p>{{ protocol_revision.decision }}</p>
+    <p>{{ protocol_revision.decisionLabel|trans }}</p>
 
     {% if protocol_revision.otherComments %}
         <h5>{% trans %}Comments{% endtrans %}</h5>
@@ -13,7 +13,7 @@
     {% endif %}
 
     {% if protocol_revision.suggestions %}
-        <h5>{% trans %}Suggestions{% endtrans %}</h5>
+        <h5>{% trans %}Recommendations{% endtrans %}</h5>
         <p>{{ protocol_revision.suggestions|nl2br }}</p>
     {% endif %}
 </div>

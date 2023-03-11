@@ -87,6 +87,11 @@ class SubmissionUpload extends Base
      */
     private $is_monitoring_action = false;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $is_confidential = false;
+
     public function __toString() {
         $filename = explode('_', $this->getFilename(), 2);
         return end($filename);
@@ -344,5 +349,29 @@ class SubmissionUpload extends Base
     public function getIsMonitoringAction()
     {
         return $this->is_monitoring_action;
+    }
+
+    /**
+     * Set isConfidential
+     *
+     * @param boolean $isConfidential
+     *
+     * @return SubmissionUpload
+     */
+    public function setIsConfidential($isConfidential)
+    {
+        $this->is_confidential = $isConfidential;
+
+        return $this;
+    }
+
+    /**
+     * Get isConfidential
+     *
+     * @return boolean
+     */
+    public function getIsConfidential()
+    {
+        return $this->is_confidential;
     }
 }

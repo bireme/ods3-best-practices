@@ -10,9 +10,9 @@
 
     <div class="modal-body">
         <div class="form-group">
-            <label for="select-new-atachment-type">{% trans %}Type{% endtrans %}:</label>
+            <label for="select-new-attachment-type">{% trans %}Type{% endtrans %}:</label>
             <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 11} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-            <select class='form-control' data-live-search="true" name='new-atachment-type' id='select-new-atachment-type' required>
+            <select class='form-control' data-live-search="true" name='new-attachment-type' id='select-new-attachment-type' required>
                 <option></option>
                 {% for type in upload_types %}
                     <option value="{{ type.id }}">{{ type.name }}</option>
@@ -21,10 +21,29 @@
         </div>
 
         <div class="form-group">
-            <label for="input-new-atachment-file">{% trans %}File{% endtrans %}:</label> 
+            <label for="input-new-attachment-file">{% trans %}File{% endtrans %}:</label> 
             <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 12} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-            <input type='file' class='form-control' name='new-atachment-file' id='input-new-atachment-file' required>
+            <input type='file' class='form-control' name='new-attachment-file' id='input-new-attachment-file' required>
         </div>
+
+        {# code that discover if should show the confidential option #}
+        {% set is_show_confidential_file = false %}
+        {% for role in app.user.getRolesSlug %}
+            {% if role in ['secretary', 'member-of-committee'] %}
+                {% set is_show_confidential_file = true %}
+            {% endif %}
+        {% endfor %}
+
+        {% if is_show_confidential_file and not protocol.mainSubmission.isOwner(app.user) %}
+            <div class="form-group">
+                <div class="checkbox">
+                    <label for="checkbox-new-file-is-confidential">
+                        <input type="checkbox" name='new-file-is-confidential' id='checkbox-new-file-is-confidential' value="yes">{% trans %}Is this a confidential file?{% endtrans %}
+                        <a href="{{ path("crud_admin_help_show", {help_id: 184} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                    </label>
+                </div>
+            </div>
+        {% endif %}
     </div>
 
     <div class="modal-footer">
@@ -36,7 +55,13 @@
 {% block script %}
     <script>
         $(function(){
-            $("#select-new-atachment-type").selectpicker();
+            $("#select-new-attachment-type").selectpicker();
+
+            $('input').iCheck({
+                checkboxClass: 'icheckbox_square-blue',
+                radioClass: 'iradio_square-blue',
+                // increaseArea: '20%'
+            });
         });
     </script>
 {% endblock %}

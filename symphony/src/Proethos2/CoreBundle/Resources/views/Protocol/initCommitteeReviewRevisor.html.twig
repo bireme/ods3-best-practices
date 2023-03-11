@@ -1,6 +1,6 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}{% trans %}Best Practice options{% endtrans %}{% endblock %}
+{% block title %}{% trans %}Technical Assessment{% endtrans %}{% endblock %}
 
 {% block content %}
     
@@ -8,9 +8,29 @@
 
         <div class="row">
             <div class='col-md-12'>
-                <h1 class="page-header">{% trans %}Initial committee review{% endtrans %}</h1>
+                <h1 class="page-header">{% trans %}Technical Assessment{% endtrans %}</h1>
             </div>
         </div>
+
+        {% if documents %}
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class='sub-header' style="margin-top: 0;">{% trans %}Reviewer{% endtrans %}</h2>
+                    <ul>
+                        {% for document in documents %}
+                            <li>
+                                <a href="{{ document.uri }}" target="_blank">
+                                    <span data-toggle="tooltip" data-placement="top" title="{{ document.description }}">
+                                        {{ document.title }}
+                                    </span>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <br />
+        {% endif %}
         
         {% include 'Proethos2CoreBundle:Protocol:meta.html.twig' %}
 
@@ -31,9 +51,14 @@
                 <div class='row'>
                     <div class="col-md-12">
                         <div class="form-group required">
-                            <label for="input-decision">{% trans %}Decision{% endtrans %}:</label> 
-                            <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 113} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                            <input type='text' class="form-control" id='input-decision' name="decision" value="{{ protocol_revision.decision }}" required {% if protocol_revision.isFinalRevision %}readonly{% endif %}>
+                            <label for="select-final-decision">Decisions:</label>
+                            <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 125} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                            <select class="form-control select2" id="select-final-decision" name="final-decision" required {% if protocol_revision.isFinalRevision %}disabled{% endif %}>
+                                <option value="">-</option>
+                                {% for key, option in decision_options %}
+                                    <option value="{{ key }}" {% if protocol_revision.finalDecision == key %}selected{% endif %}>{{ option }}</option>
+                                {% endfor %}
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -49,7 +74,7 @@
                 <div class='row'>
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label for="textarea-suggestions">{% trans %}Suggestions{% endtrans %}:</label> 
+                            <label for="textarea-suggestions">{% trans %}Recommendations{% endtrans %}:</label> 
                             <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 121} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                             <textarea class="form-control" id='textarea-suggestions' name="suggestions" rows="5" {% if protocol_revision.isFinalRevision %}readonly{% endif %}>{{ protocol_revision.suggestions }}</textarea>
                         </div>
@@ -60,7 +85,7 @@
             <div class='row'>
                 <div class='submission-button-controls col-md-12'>
                     <button type="submit" class='btn btn-primary' id='button-save' {% if protocol_revision.isFinalRevision %}disabled{% endif %}>{% trans %}Save{% endtrans %}</button>
-                    <button type="button" class='btn btn-primary' id='button-save-and-finish' {% if not protocol_revision.decision or protocol_revision.isFinalRevision %}disabled{% endif %}>
+                    <button type="button" class='btn btn-primary' id='button-save-and-finish' {% if not protocol_revision.finalDecision or protocol_revision.isFinalRevision %}disabled{% endif %}>
                         {% trans %}Save and mark as final revision{% endtrans %}
                     </button>
                 </div>

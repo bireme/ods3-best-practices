@@ -271,4 +271,14 @@ class Document extends Base
     {
         return $this->roles;
     }
+
+    public function getRolesSlug() {
+
+        $slugs = array();
+        foreach($this->getRoles() as $role) {
+            $slugs[] = $role->getSlug();
+        }
+
+        return $slugs;
+    }
 }

@@ -39,7 +39,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {% for file in submission.attachments %}
+                                        {% for file in submission.attachments if file.uploadType.slug not in ['protocol'] %}
                                             <tr>
                                                 <td>{% if file.uploadType.slug in ['protocol'] %}{{ file.simpleFilename }}{% else %}{{ file }}{% endif %}</td>
                                                 <td>{{ file.created|date("d/m/Y H:i") }}</td>

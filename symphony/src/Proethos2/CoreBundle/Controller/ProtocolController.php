@@ -316,7 +316,9 @@ class ProtocolController extends Controller
             // getting post data
             $post_data = $request->request->all();
 
-            $file = $request->files->get('new-atachment-file');
+            // echo "<pre>"; print_r($post_data); echo "</pre>"; die();
+
+            $file = $request->files->get('new-attachment-file');
             if(!empty($file)) {
 
                 $submittedToken = $request->request->get('token');
@@ -325,12 +327,12 @@ class ProtocolController extends Controller
                     throw $this->createNotFoundException($translator->trans('CSRF token not valid'));
                 }
 
-                if(!isset($post_data['new-atachment-type']) or empty($post_data['new-atachment-type'])) {
-                    $session->getFlashBag()->add('error', $translator->trans("Field 'new-atachment-type' is required."));
+                if(!isset($post_data['new-attachment-type']) or empty($post_data['new-attachment-type'])) {
+                    $session->getFlashBag()->add('error', $translator->trans("Field 'new-attachment-type' is required."));
                     return $this->redirect($referer, 301);
                 }
 
-                $upload_type = $upload_type_repository->find($post_data['new-atachment-type']);
+                $upload_type = $upload_type_repository->find($post_data['new-attachment-type']);
                 if (!$upload_type) {
                     throw $this->createNotFoundException($translator->trans('No upload type found'));
                     return $output;
@@ -349,6 +351,10 @@ class ProtocolController extends Controller
                 $submission_upload->setUser($user);
                 $submission_upload->setFile($file);
                 $submission_upload->setSubmissionNumber($submission->getNumber());
+
+                if(isset($post_data['new-file-is-confidential']) and $post_data['new-file-is-confidential'] == "yes") {
+                    $submission_upload->setIsConfidential(true);
+                }
 
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($submission_upload);
@@ -437,8 +443,18 @@ class ProtocolController extends Controller
 
             // getting post data
             $post_data = $request->request->all();
+            
+            // echo "<pre>"; print_r($post_data); echo "</pre>"; die();
 
             if(isset($post_data['is-reject']) and $post_data['is-reject'] == "true") {
+                
+                // generate the code
+                if ( !$protocol->getCode() ) {
+                    $committee_prefix = $util->getConfiguration('committee.prefix');
+                    $total_submissions = count($protocol->getSubmission());
+                    $protocol_code = sprintf('%s.%04d.%02d', $committee_prefix, $protocol->getId(), $total_submissions);
+                    $protocol->setCode($protocol_code);
+                }
 
                 // sending email
                 $baseurl = $request->getScheme() . '://' . $request->getHttpHost() . $request->getBasePath();
@@ -477,59 +493,15 @@ class ProtocolController extends Controller
 
                 $send = $this->get('mailer')->send($message);
 
-                if($protocol->getMonitoringAction()) {
-
-                    $protocol_history = new ProtocolHistory();
-                    $protocol_history->setProtocol($protocol);
-                    $protocol_history->setUser($user);
-                    $protocol_history->setMessage($translator->trans('Monitoring action was rejected by %user% with this justification "%justify%".',
-                        array(
-                            '%user%' => $user->getUsername(),
-                            '%justify%' => $post_data['reject-reason'],
-                        )
-                    ));
-                    $em->persist($protocol_history);
-                    $em->flush();
-
-                    $protocol->setStatus("A");
-                    $protocol->setMonitoringAction(NULL);
-
-                    $em->persist($protocol);
-                    $em->flush();
-
-                    $session->getFlashBag()->add('success', $translator->trans("Best practice rejected with success!"));
-                    return $this->redirectToRoute('protocol_show_protocol', array('protocol_id' => $protocol->getId()), 301);
-                }
-
-                // cloning submission
-                $new_submission = clone $submission;
-                $new_submission->setNumber($submission->getNumber() + 1);
-                $em->persist($new_submission);
-
-                // cloning translations
-                foreach($submission->getTranslations() as $translation) {
-                    $new_translation = clone $translation;
-                    $new_translation->setOriginalSubmission($new_submission);
-                    $new_translation->setNumber($translation->getNumber() + 1);
-                    $em->persist($new_translation);
-
-                    $new_submission->addTranslation($new_translation);
-                    $em->persist($new_submission);
-                }
-                $em->flush();
-
-                // setting new main submission
-                $protocol->setMainSubmission($new_submission);
-
-                // setting the Rejected status
-                $protocol->setStatus("R");
+                // setting status
+                $protocol->setStatus("N");
 
                 // setting protocool history
                 $protocol_history = new ProtocolHistory();
                 $protocol_history->setProtocol($protocol);
                 $protocol_history->setUser($user);
                 // $protocol_history->setMessage($translator->trans("Best practice was rejected by") ." ". $user . ".");
-                $protocol_history->setMessage($translator->trans('Best practice was rejected by %user% with this justification "%justify%".',
+                $protocol_history->setMessage($translator->trans('Best practice was rejected by %user% with this justification: "%justify%"',
                     array(
                         '%user%' => $user->getUsername(),
                         '%justify%' => $post_data['reject-reason'],
@@ -558,7 +530,7 @@ class ProtocolController extends Controller
 
                 if($post_data['send-to'] == "comittee") {
 
-                    // setting the Rejected status
+                    // setting status
                     $protocol->setStatus("I");
 
                     // setting protocool history
@@ -607,16 +579,19 @@ class ProtocolController extends Controller
                     return $this->redirectToRoute('protocol_initial_committee_screening', array('protocol_id' => $protocol->getId()), 301);
                 }
 
-                if($post_data['send-to'] == "ethical-revision") {
+                if($post_data['send-to'] == "revision") {
 
-                    // setting the Rejected status
+                    // setting status
                     $protocol->setStatus("E");
+
+                    // setting the notes
+                    $protocol->setNotes($post_data['notes']);
 
                     // setting protocool history
                     $protocol_history = new ProtocolHistory();
                     $protocol_history->setProtocol($protocol);
                     $protocol_history->setUser($user);
-                    $protocol_history->setMessage($translator->trans("Best practice accepted for review by %user% and investigators notified.", array("%user%" => $user->getUsername())));
+                    $protocol_history->setMessage($translator->trans("Best practice accepted for review by %user% and submitter notified.", array("%user%" => $user->getUsername())));
                     $em->persist($protocol_history);
                     $em->flush();
 
@@ -651,6 +626,84 @@ class ProtocolController extends Controller
 
                     $message = \Swift_Message::newInstance()
                     ->setSubject("[BP] " . $mail_translator->trans("Your best practice was sent for Technical Assessment."))
+                    ->setFrom($util->getConfiguration('committee.email'))
+                    ->setTo($investigators)
+                    ->setBody(
+                        $body
+                        ,
+                        'text/html'
+                    );
+
+                    $send = $this->get('mailer')->send($message);
+
+                    $session->getFlashBag()->add('success', $translator->trans("Best practice updated with success!"));
+                    return $this->redirectToRoute('protocol_show_protocol', array('protocol_id' => $protocol->getId()), 301);
+                }
+
+                if($post_data['send-to'] == "submitter") {
+
+                    // cloning submission
+                    $new_submission = clone $submission;
+                    $new_submission->setNumber($submission->getNumber() + 1);
+                    $em->persist($new_submission);
+
+                    // cloning translations
+                    foreach($submission->getTranslations() as $translation) {
+                        $new_translation = clone $translation;
+                        $new_translation->setOriginalSubmission($new_submission);
+                        $new_translation->setNumber($translation->getNumber() + 1);
+                        $em->persist($new_translation);
+
+                        $new_submission->addTranslation($new_translation);
+                        $em->persist($new_submission);
+                    }
+                    $em->flush();
+
+                    // setting new main submission
+                    $protocol->setMainSubmission($new_submission);
+
+                    // setting status
+                    $protocol->setStatus("C");
+
+                    // setting protocool history
+                    $protocol_history = new ProtocolHistory();
+                    $protocol_history->setProtocol($protocol);
+                    $protocol_history->setUser($user);
+                    $protocol_history->setMessage($translator->trans("Best practice updated by %user% and submitter notified for required revisions.", array("%user%" => $user->getUsername())));
+                    $em->persist($protocol_history);
+                    $em->flush();
+
+                    $em->persist($protocol);
+                    $em->flush();
+
+                    // sending message to investigators
+                    $investigators = array();
+                    $investigators[] = $protocol->getMainSubmission()->getOwner()->getEmail();
+                    foreach($protocol->getMainSubmission()->getTeam() as $investigator) {
+                        $investigators[] = $investigator->getEmail();
+                    }
+
+                    $contacts = $protocol->getContactsList();
+                    if ($contacts) {
+                        $investigators = array_values(array_unique(array_merge($investigators, $contacts)));
+                    }
+
+                    $baseurl = $request->getScheme() . '://' . $request->getHttpHost() . $request->getBasePath();
+                    $url = $baseurl . $this->generateUrl('protocol_show_protocol', array("protocol_id" => $protocol->getId()));
+                    $edit_submission_url = $baseurl . $this->generateUrl('submission_new_first_created_protocol_step', array("submission_id" => $submission->getId()));
+
+                    $help = $help_repository->find(211);
+                    $translations = $trans_repository->findTranslations($help);
+                    $text = $translations[$submission->getLanguage()];
+                    $body = $text['message'];
+                    $body = str_replace("%protocol_url%", $url, $body);
+                    $body = str_replace("%edit_submission_url%", $edit_submission_url, $body);
+                    $body = str_replace("%protocol_code%", $protocol->getCode(), $body);
+                    $body = str_replace("\r\n", "<br />", $body);
+                    $body .= "<br /><br />";
+
+                    $message = \Swift_Message::newInstance()
+                    ->setSubject("[BP] " . $mail_translator->trans("Your best practice needs some revisions."))
                     ->setFrom($util->getConfiguration('committee.email'))
                     ->setTo($investigators)
                     ->setBody(
@@ -753,7 +806,7 @@ class ProtocolController extends Controller
             // setting the Committee Screening
             $protocol->setCommitteeScreening($post_data['committee-screening']);
 
-            if($post_data['send-to'] == "ethical-revision") {
+            if($post_data['send-to'] == "revision") {
 
                 // setting the Rejected status
                 $protocol->setStatus("E");
@@ -1123,8 +1176,26 @@ class ProtocolController extends Controller
 
         $protocol_repository = $em->getRepository('Proethos2ModelBundle:Protocol');
         $user_repository = $em->getRepository('Proethos2ModelBundle:User');
-        $role_repository = $em->getRepository('Proethos2ModelBundle:Role');
         $protocol_revision_repository = $em->getRepository('Proethos2ModelBundle:ProtocolRevision');
+
+        $document_repository = $em->getRepository('Proethos2ModelBundle:Document');
+        $documents = $document_repository->findAll();
+        $docs = array();
+        foreach ($documents as $document) {
+            if ( in_array('member-of-committee', $document->getRolesSlug()) ) {
+                $docs[] = $document;
+            }
+        }
+        $output['documents'] = $docs;
+
+        $decision_options = array(
+            "A" => $translator->trans("Approved"),
+            'C' => $translator->trans('Revisions required'),
+            'N' => $translator->trans('Rejected'),
+            // 'X' => $translator->trans('Expedite approval'),
+            // 'F' => $translator->trans('Exempt'),
+        );
+        $output['decision_options'] = $decision_options;
 
         $util = new Util($this->container, $this->getDoctrine());
 
@@ -1165,11 +1236,13 @@ class ProtocolController extends Controller
             // getting post data
             $post_data = $request->request->all();
 
+            // echo "<pre>"; print_r($post_data); echo "</pre>"; die();
+
             // only change if is not final revision
             if(!$protocol_revision->getIsFinalRevision()) {
 
                 // checking required files
-                foreach(array('decision') as $field) {
+                foreach(array('final-decision') as $field) {
                     if(!isset($post_data[$field]) or empty($post_data[$field])) {
                         $session->getFlashBag()->add('error', $translator->trans("Field '%field%' is required.", array("%field%" => $field)));
                         return $output;
@@ -1180,7 +1253,8 @@ class ProtocolController extends Controller
                     $protocol_revision->setIsFinalRevision(true);
                 }
 
-                $protocol_revision->setDecision($post_data['decision']);
+                // $protocol_revision->setDecision($post_data['decision']);
+                $protocol_revision->setFinalDecision($post_data['final-decision']);
                 $protocol_revision->setOtherComments($post_data['other-comments']);
                 $protocol_revision->setSuggestions($post_data['suggestions']);
 
@@ -1279,8 +1353,8 @@ class ProtocolController extends Controller
 
         $finish_options = array(
             "A" => $translator->trans("Approved"),
-            'N' => $translator->trans('Rejected'),
             'C' => $translator->trans('Revisions required'),
+            'N' => $translator->trans('Rejected'),
             // 'X' => $translator->trans('Expedite approval'),
             // 'F' => $translator->trans('Exempt'),
         );
@@ -1442,7 +1516,9 @@ class ProtocolController extends Controller
             $url = $baseurl . $this->generateUrl('protocol_show_protocol', array("protocol_id" => $protocol->getId()));
             $edit_submission_url = $baseurl . $this->generateUrl('submission_new_first_created_protocol_step', array("submission_id" => $submission->getId()));
 
-            $help = $help_repository->find(216);
+            if ( 'A' == $post_data['final-decision'] ) $help = $help_repository->find(212); // Approved
+            if ( 'C' == $post_data['final-decision'] ) $help = $help_repository->find(213); // Revisions required
+            if ( 'N' == $post_data['final-decision'] ) $help = $help_repository->find(214); // Rejected
             $translations = $trans_repository->findTranslations($help);
             $text = $translations[$submission->getLanguage()];
             $body = $text['message'];

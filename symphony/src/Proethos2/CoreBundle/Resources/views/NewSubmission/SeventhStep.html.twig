@@ -22,27 +22,47 @@
                 <div class='block'>
                     <div class='row'>
                         <div class="col-md-12">
-                            <h2 class='sub-header'>{% trans %}Revision{% endtrans %}:</h2>
+                            <h2 class='sub-header'>{% trans %}Review your proposal{% endtrans %}:</h2>
                         </div>
                     </div>
 
                     <div class='row'>
                         <div class="col-md-12">
                             <table class='table table-hover table-condensed table-bordered'>
+                                <thead>
+                                    <tr>
+                                        <th colspan="2">{% trans %}Legend{% endtrans %}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class='center text-success'><i class='glyphicon glyphicon-ok'></i></td>
+                                        <td>{% trans %}The mandatory field has been properly filled.{% endtrans %}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class='center text-danger'><i class='glyphicon glyphicon-remove'></i></td>
+                                        <td>{% trans %}The mandatory field has been inadequately filled or left blank and requires your attention.{% endtrans %}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
 
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <table class='table table-hover table-condensed table-bordered'>
                                 <thead>
                                     <tr>
                                         <th class='center'>{% trans %}Fields{% endtrans %}</th>
                                         <th class='center'>{% trans %}Check{% endtrans %}</th>
                                     </tr>
                                 </thead>
-
                                 <tbody>
                                     {% for revision in revisions %}
-                                        <tr class='{% if not revision.status %}error{% endif %}'>
+                                        <tr class='{% if not revision.status %}text-danger{% endif %}'>
                                             <td>{{ revision.text|trans }}</td>
                                             {% if revision.status %}
-                                                <td class='center'><i class='glyphicon glyphicon-ok'></i></td>
+                                                <td class='center text-success'><i class='glyphicon glyphicon-ok'></i></td>
                                             {% else %}
                                                 <td class='center'><i class='glyphicon glyphicon-remove'></i></td>
                                             {% endif %}

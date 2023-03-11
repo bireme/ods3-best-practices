@@ -243,12 +243,12 @@
         {% for url in submission.productsInformationLinks %}
             <p><a href="{{ url }}" target="_blank">{{ url }}</a></p>
         {% endfor %}
-
+{#
         <h3>{% trans %}Other information sources{% endtrans %}:</h3>
         {% for url in submission.otherSourcesInformationLinks %}
             <p><a href="{{ url }}" target="_blank">{{ url }}</a></p>
         {% endfor %}
-
+#}
         <h3>{% trans %}Keywords{% endtrans %}:</h3>
         <p>{{ submission.descriptorsList|join('; ') }}</p>
 
@@ -275,6 +275,16 @@
 
         {% endif %}
 
+        <h3>{% trans %}Terms and conditions{% endtrans %}:</h3>
+        <p>{{ app.user.name }} agreed with the Terms of Use and Privacy Policy of PAHO's Best Practices Portal the {{ "now"|date("d/m/Y") }} at {{ "now"|date("H:i:s") }}, having read the following text:</p>
+        <p>{% trans %}I agree with the{% endtrans %} <a href="https://politicas.bireme.org/terminos/en/index.html" target="_blank">{% trans %}Terms of Use{% endtrans %}</a> {% trans %}and{% endtrans %} <a href="https://politicas.bireme.org/privacidad/en/index.html" target="_blank">{% trans %}Privacy Policy{% endtrans %}</a></p>
+        <ul>
+            <li>{% trans %}All contributions must be original. Contributors warrant that they have the necessary rights, including the necessary licenses, for the use of any copyrighted material in the submission. Furthermore, contributors warrant that all necessary permissions and consents have been obtained for all materials depicting identifiable human subjects.{% endtrans %}</li>
+            <li>{% trans %}By submitting a contribution, contributors grant PAHO and related partners a free perpetual non-exclusive license to use, edit and publish the contribution for noncommercial purposes.{% endtrans %}</li>
+            <li>{% trans %}Contributors agree to identify, defend, and hold PAHO and related partners harmless from any actions or claims brought against them pertaining to the alleged infringement arising in connection with the contribution.{% endtrans %}</li>
+            <li>{% trans %}PAHO and related partners reserve the right, at their sole discretion, to determine which contributions will be included in the portal or used in other institutional material.{% endtrans %}</li>
+            <li>{% trans %}By submitting this contribution, contributors confirm that they have read, understood, and accepted these conditions.{% endtrans %}</li>
+        </ul>
         <footer>{% trans %}Created in{% endtrans %} {{ "now"|date("d/m/Y H:i:s") }}</footer>
     </body>
 </html>
