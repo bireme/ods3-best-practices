@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2023-03-11T00:39:35Z" source-language="en" target-language="es_ES" datatype="plaintext" original="not.available">
+  <file date="2023-03-11T04:31:11Z" source-language="en" target-language="es_ES" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -205,6 +205,10 @@
       <trans-unit id="64e78b2bcef42982e20e75ed994f86e3fa88814f" resname="Basic Screening">
         <source>Basic Screening</source>
         <target>Revisión inicial</target>
+      </trans-unit>
+      <trans-unit id="c7b3255558c84f41c839dfa053ab1f90dd4f561f" resname="Before uploading please ensure you have selected the proper file, once uploaded you won't be able to delete it. By uploading a file, the Submitter attests that they hold the permission(s) to make use and disseminate its contents through the Best Practices Portal. If any document is mistakenly uploaded and requires deletion, please contact the Secretariat through the &quot;Comments&quot; function (available after sending the submission).">
+        <source>Before uploading please ensure you have selected the proper file, once uploaded you won't be able to delete it. By uploading a file, the Submitter attests that they hold the permission(s) to make use and disseminate its contents through the Best Practices Portal. If any document is mistakenly uploaded and requires deletion, please contact the Secretariat through the "Comments" function (available after sending the submission).</source>
+        <target>Before uploading please ensure you have selected the proper file, once uploaded you won't be able to delete it. By uploading a file, the Submitter attests that they hold the permission(s) to make use and disseminate its contents through the Best Practices Portal. If any document is mistakenly uploaded and requires deletion, please contact the Secretariat through the "Comments" function (available after sending the submission).</target>
       </trans-unit>
       <trans-unit id="d8cb09e158212bf209b199530d94686ab9de6f8c" resname="Best Practice">
         <source>Best Practice</source>
@@ -809,6 +813,10 @@
       <trans-unit id="647519f4a3c1523cb00f8ce1fa2221e927a5c4f0" resname="File uploaded with success.">
         <source>File uploaded with success.</source>
         <target>Documento cargado exitosamente.</target>
+      </trans-unit>
+      <trans-unit id="5b8d97f62835cae8ad5adb2bade60d98db86fa85" resname="Filter by">
+        <source>Filter by</source>
+        <target>Filter by</target>
       </trans-unit>
       <trans-unit id="a9660077b2bf17b83d5eb8b6dcc2a608c2102572" resname="Final Revision">
         <source>Final Revision</source>
