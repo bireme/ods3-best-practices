@@ -22,11 +22,7 @@
                 {% endif %}
 
                 {% if is_granted("ROLE_USER") and 'investigator' in app.user.rolesSlug %}
-                    <li>
-                        <p class="navbar-btn">
-                            <a href="{{ path('submission_new_first_step') }}" class="btn btn-primary">{% trans %}New submission{% endtrans %}</a>
-                        </p>
-                    </li>
+                    <li><a href="{{ path('submission_new_first_step') }}">{% trans %}New submission{% endtrans %}</a></li>
                 {% endif %}
 
                 {% if 'investigator' in app.user.rolesSlug or 'secretary' in app.user.rolesSlug or 'member-of-committee' in app.user.rolesSlug or 'member-ad-hoc' in app.user.rolesSlug %}
