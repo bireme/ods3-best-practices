@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2023-03-07T17:48:15Z" source-language="en" target-language="fr_FR" datatype="plaintext" original="not.available">
+  <file date="2023-03-11T00:39:36Z" source-language="en" target-language="fr_FR" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -45,14 +45,6 @@
       <trans-unit id="fe1f2c4d494fc40392e39bec35686602dd971e3b" resname="A new monitoring action has been submitted.">
         <source>A new monitoring action has been submitted.</source>
         <target>A new monitoring action has been submitted.</target>
-      </trans-unit>
-      <trans-unit id="f8305e030f96d910b8adfa5d7f1623ea1d07b001" resname="Accept Submission">
-        <source>Accept Submission</source>
-        <target>Accept Submission</target>
-      </trans-unit>
-      <trans-unit id="0182636f85cc5ca30cc8e676ea978384c7029bb8" resname="Accept as Notification">
-        <source>Accept as Notification</source>
-        <target>Accept as Notification</target>
       </trans-unit>
       <trans-unit id="1b1726908c1c87c027d7f7456dc496ddd7d8fcd3" resname="Accepted in">
         <source>Accepted in</source>
@@ -250,9 +242,9 @@
         <source>Best Practices</source>
         <target>Best Practices</target>
       </trans-unit>
-      <trans-unit id="1d0f623140067265033491d9a5de850affbd3159" resname="Best practice accepted for review by %user% and investigators notified.">
-        <source>Best practice accepted for review by %user% and investigators notified.</source>
-        <target>Best practice accepted for review by %user% and investigators notified.</target>
+      <trans-unit id="3947a290644318cdba3a5caa813eea15f19480c5" resname="Best practice accepted for review by %user% and submitter notified.">
+        <source>Best practice accepted for review by %user% and submitter notified.</source>
+        <target>Best practice accepted for review by %user% and submitter notified.</target>
       </trans-unit>
       <trans-unit id="b7e00139843cc412e84e3027d051454e8ee4d063" resname="Best practice finalized by %user% under option &quot;%option%&quot;.">
         <source>Best practice finalized by %user% under option "%option%".</source>
@@ -274,6 +266,10 @@
         <source>Best practice submitted with success!</source>
         <target>Best practice submitted with success!</target>
       </trans-unit>
+      <trans-unit id="f71b422235d268140784eca4c97e06f35017c4c5" resname="Best practice updated by %user% and submitter notified for required revisions.">
+        <source>Best practice updated by %user% and submitter notified for required revisions.</source>
+        <target>Best practice updated by %user% and submitter notified for required revisions.</target>
+      </trans-unit>
       <trans-unit id="9034bdeb699649396b3d09f711532e8c2cc136cf" resname="Best practice updated with success!">
         <source>Best practice updated with success!</source>
         <target>Best practice updated with success!</target>
@@ -286,9 +282,9 @@
         <source>Best practice was finalized with success!</source>
         <target>Best practice was finalized with success!</target>
       </trans-unit>
-      <trans-unit id="1f8d15fb786fb9d5d2432c6bd91adb13205668e3" resname="Best practice was rejected by %user% with this justification &quot;%justify%&quot;.">
-        <source>Best practice was rejected by %user% with this justification "%justify%".</source>
-        <target>Best practice was rejected by %user% with this justification "%justify%".</target>
+      <trans-unit id="37020418b16a28e55f176bda6ff47c40c5e3ced1" resname="Best practice was rejected by %user% with this justification: &quot;%justify%&quot;">
+        <source>Best practice was rejected by %user% with this justification: "%justify%"</source>
+        <target>Best practice was rejected by %user% with this justification: "%justify%"</target>
       </trans-unit>
       <trans-unit id="6333568eb51f6b87298cdff61d6d8ea9fd67c07a" resname="Best practice was removed with success!">
         <source>Best practice was removed with success!</source>
@@ -405,6 +401,10 @@
       <trans-unit id="e39262defe80a83fac1b793497417432c8b1a879" resname="Conclusion">
         <source>Conclusion</source>
         <target>Conclusion</target>
+      </trans-unit>
+      <trans-unit id="4f853c5181e0db9a73f6340bed7dcb766c6f9051" resname="Confidential">
+        <source>Confidential</source>
+        <target>Confidential</target>
       </trans-unit>
       <trans-unit id="fe94b8af05dd4894d73db1b0d03998be2568e24c" resname="Configuration updated with success.">
         <source>Configuration updated with success.</source>
@@ -654,13 +654,13 @@
         <source>Edit user's information</source>
         <target>Edit user's information</target>
       </trans-unit>
+      <trans-unit id="962918f9ce95310c7069b68b8e68d7c81f31c48a" resname="Effectiveness / Cost-Effectiveness / Efficiency / Adaptability / Replicability / Sustainability">
+        <source>Effectiveness / Cost-Effectiveness / Efficiency / Adaptability / Replicability / Sustainability</source>
+        <target>Effectiveness / Cost-Effectiveness / Efficiency / Adaptability / Replicability / Sustainability</target>
+      </trans-unit>
       <trans-unit id="d8cf69e75d0e94493dea09df29aeb2910d7fd1ab" resname="Effectiveness / Cost-Effectivess / Efficiency / Adaptability / Replicability">
         <source>Effectiveness / Cost-Effectivess / Efficiency / Adaptability / Replicability</source>
         <target>Effectiveness / Cost-Effectivess / Efficiency / Adaptability / Replicability</target>
-      </trans-unit>
-      <trans-unit id="12978a785778ae8bc63d49b77f5495a92bed6172" resname="Effectiveness / Cost-Effectivess / Efficiency / Adaptability / Replicability / Sustainability">
-        <source>Effectiveness / Cost-Effectivess / Efficiency / Adaptability / Replicability / Sustainability</source>
-        <target>Effectiveness / Cost-Effectivess / Efficiency / Adaptability / Replicability / Sustainability</target>
       </trans-unit>
       <trans-unit id="306ef6ab00e51c04ff850304467a14691bc859d9" resname="Effectiveness / Efficiency / Adaptability / Replicability">
         <source>Effectiveness / Efficiency / Adaptability / Replicability</source>
@@ -670,9 +670,9 @@
         <source>Effectiveness / Efficiency / Adaptability / Replicability / Sustainability</source>
         <target>Effectiveness / Efficiency / Adaptability / Replicability / Sustainability</target>
       </trans-unit>
-      <trans-unit id="b8b859843ca1f3b1f88a185696b67b5bf6861155" resname="Effectiveness, Cost-Effectivess and Efficiency">
-        <source>Effectiveness, Cost-Effectivess and Efficiency</source>
-        <target>Effectiveness, Cost-Effectivess and Efficiency</target>
+      <trans-unit id="e08edd6999ccc6d8eebbca44a82e4d9513760c84" resname="Effectiveness, Cost-Effectiveness and Efficiency">
+        <source>Effectiveness, Cost-Effectiveness and Efficiency</source>
+        <target>Effectiveness, Cost-Effectiveness and Efficiency</target>
       </trans-unit>
       <trans-unit id="84add5b2952787581cb9a8851eef63d1ec75d22b" resname="Email">
         <source>Email</source>
@@ -769,6 +769,10 @@
       <trans-unit id="269730af8d96cb165bdc6273f2f9c2457f2e4b2c" resname="Field 'new-atachment-type' is required.">
         <source>Field 'new-atachment-type' is required.</source>
         <target>Field 'new-atachment-type' is required.</target>
+      </trans-unit>
+      <trans-unit id="8ad11baaec603984962c0c9e8df1ff054bc4cf1c" resname="Field 'new-attachment-type' is required.">
+        <source>Field 'new-attachment-type' is required.</source>
+        <target>Field 'new-attachment-type' is required.</target>
       </trans-unit>
       <trans-unit id="e8b685271238adf161cffed3c91f54d97023262b" resname="Fields">
         <source>Fields</source>
@@ -966,10 +970,6 @@
         <source>Inclusion criteria</source>
         <target>Inclusion criteria</target>
       </trans-unit>
-      <trans-unit id="34af284908ff7b3e717d1a14042d2de27ef42327" resname="Initial Committee Review">
-        <source>Initial Committee Review</source>
-        <target>Initial Committee Review</target>
-      </trans-unit>
       <trans-unit id="91bf74d821f50065919a9c202be4787c9b3710b5" resname="Initial Committee Screening">
         <source>Initial Committee Screening</source>
         <target>Initial Committee Screening</target>
@@ -977,10 +977,6 @@
       <trans-unit id="b91714208b2a583fc023ea1270476f75bcca4c41" resname="Initial commitee screening">
         <source>Initial commitee screening</source>
         <target>Initial commitee screening</target>
-      </trans-unit>
-      <trans-unit id="1a3fae1a69fcdaab82d1737fcf3346a46cf50ac5" resname="Initial committee review">
-        <source>Initial committee review</source>
-        <target>Initial committee review</target>
       </trans-unit>
       <trans-unit id="618eea33ca57a4f3cc226f2f8dceec8fb290a1bd" resname="Initial committee screening">
         <source>Initial committee screening</source>
@@ -1034,6 +1030,10 @@
         <source>Is this a confidential comment?</source>
         <target>Is this a confidential comment?</target>
       </trans-unit>
+      <trans-unit id="bf6f14b99b31617475e829449fe1af011e4a4965" resname="Is this a confidential file?">
+        <source>Is this a confidential file?</source>
+        <target>Is this a confidential file?</target>
+      </trans-unit>
       <trans-unit id="a0c82c52808e161cd5b44fc9a52ce3065f662a50" resname="Item created with success.">
         <source>Item created with success.</source>
         <target>Item created with success.</target>
@@ -1069,6 +1069,10 @@
       <trans-unit id="19ab1666077961d47c07654781ff53880e9c7b3d" resname="Last best practices that you reviewed">
         <source>Last best practices that you reviewed</source>
         <target>Last best practices that you reviewed</target>
+      </trans-unit>
+      <trans-unit id="5846955db6bef539707c3590c701613c5f0cf50f" resname="Legend">
+        <source>Legend</source>
+        <target>Legend</target>
       </trans-unit>
       <trans-unit id="47d263da05d6890962e8877a8c9d6b6c81187ea8" resname="Lessons Information">
         <source>Lessons Information</source>
@@ -1193,10 +1197,6 @@
       <trans-unit id="969e7694204b9d26a3afbaaa5facadaef97b93b6" resname="Monitoring action was accepted by %user% as notification only.">
         <source>Monitoring action was accepted by %user% as notification only.</source>
         <target>Monitoring action was accepted by %user% as notification only.</target>
-      </trans-unit>
-      <trans-unit id="ccdc8acca39f0528e26738b31d65065c3b7244ee" resname="Monitoring action was rejected by %user% with this justification &quot;%justify%&quot;.">
-        <source>Monitoring action was rejected by %user% with this justification "%justify%".</source>
-        <target>Monitoring action was rejected by %user% with this justification "%justify%".</target>
       </trans-unit>
       <trans-unit id="ba0b049ecec7e4353432ec58d78e765dd9459bd4" resname="Monitoring period">
         <source>Monitoring period</source>
@@ -1442,9 +1442,9 @@
         <source>North-South</source>
         <target>North-South</target>
       </trans-unit>
-      <trans-unit id="1759be7d1ee5f0675567c09987cd4419ba474561" resname="Not approved">
-        <source>Not approved</source>
-        <target>Not approved</target>
+      <trans-unit id="70440046a3dc2e079f23ee1c57dfa76669b732aa" resname="Notes">
+        <source>Notes</source>
+        <target>Notes</target>
       </trans-unit>
       <trans-unit id="24d50592b70a997e82a3839de9c69ef0c75660a9" resname="Objectives">
         <source>Objectives</source>
@@ -1501,10 +1501,6 @@
       <trans-unit id="8f45a7c1d59f06b2be8fc48e87a712ec64e61b5f" resname="Other Role">
         <source>Other Role</source>
         <target>Other Role</target>
-      </trans-unit>
-      <trans-unit id="f87773db69357a19def39024a9e6ce18499fc611" resname="Other information sources">
-        <source>Other information sources</source>
-        <target>Other information sources</target>
       </trans-unit>
       <trans-unit id="d3f0610632bbef35bfaa389ca89023fd50c6dd62" resname="Outcome">
         <source>Outcome</source>
@@ -1698,10 +1694,6 @@
         <source>Question updated with success.</source>
         <target>Question updated with success.</target>
       </trans-unit>
-      <trans-unit id="8b1c7e97850b05bcba1cd6ef153c675442c63982" resname="Reason that this best practice was rejected">
-        <source>Reason that this best practice was rejected</source>
-        <target>Reason that this best practice was rejected</target>
-      </trans-unit>
       <trans-unit id="d41ef6b019647ac9205a81ebb8a1f63ec9403b0d" resname="Recent best practices">
         <source>Recent best practices</source>
         <target>Recent best practices</target>
@@ -1713,6 +1705,10 @@
       <trans-unit id="8e8545348ba9b270c8aa1a109110640a88376f3d" resname="Recognition of PAHO's Technical Cooperation Importance by the Counterpart">
         <source>Recognition of PAHO's Technical Cooperation Importance by the Counterpart</source>
         <target>Recognition of PAHO's Technical Cooperation Importance by the Counterpart</target>
+      </trans-unit>
+      <trans-unit id="4faa65b556f68207d69cb14bcae4acb71980a036" resname="Recommendations">
+        <source>Recommendations</source>
+        <target>Recommendations</target>
       </trans-unit>
       <trans-unit id="5405cefe81474c3ed7b2b319a6c073988bd214e8" resname="Recruitment Date">
         <source>Recruitment Date</source>
@@ -1738,13 +1734,17 @@
         <source>Reject</source>
         <target>Reject</target>
       </trans-unit>
-      <trans-unit id="819133f871d8e86af4cc2f170e04112a94a8799d" resname="Reject Submission">
-        <source>Reject Submission</source>
-        <target>Reject Submission</target>
-      </trans-unit>
       <trans-unit id="90b778a9cf57418e64290c77c0ce18430305be64" resname="Reject Submission?">
         <source>Reject Submission?</source>
         <target>Reject Submission?</target>
+      </trans-unit>
+      <trans-unit id="298dd9445550b24e010d05e139d4c323a52747f8" resname="Reject reasons">
+        <source>Reject reasons</source>
+        <target>Reject reasons</target>
+      </trans-unit>
+      <trans-unit id="9baed847cf0e77a99ed6e6f2f1cba6ab85af1d37" resname="Reject submission">
+        <source>Reject submission</source>
+        <target>Reject submission</target>
       </trans-unit>
       <trans-unit id="27eeb7a291bfc566447d9cd928e98caf90f70ee6" resname="Rejected">
         <source>Rejected</source>
@@ -1786,13 +1786,17 @@
         <source>Retrieve best practice</source>
         <target>Retrieve best practice</target>
       </trans-unit>
-      <trans-unit id="a5c6c50c2aa87d3ca138c44ec18716e67238d29e" resname="Return reason">
-        <source>Return reason</source>
-        <target>Return reason</target>
-      </trans-unit>
       <trans-unit id="e29a79fe0c349724caeaa1762fa917f5543248ca" resname="Review">
         <source>Review</source>
         <target>Review</target>
+      </trans-unit>
+      <trans-unit id="bbe307c81907e2596e2d8466d645b65ff51d6acc" resname="Review your proposal">
+        <source>Review your proposal</source>
+        <target>Review your proposal</target>
+      </trans-unit>
+      <trans-unit id="a74f16c11792da6a36979a58a1ba2b4333632f57" resname="Reviewer">
+        <source>Reviewer</source>
+        <target>Reviewer</target>
       </trans-unit>
       <trans-unit id="c2b90e0cf183a4d16219a17b8e74e556cc4b12c1" resname="Reviewer's evaluation">
         <source>Reviewer's evaluation</source>
@@ -1830,6 +1834,10 @@
         <source>Save and finish</source>
         <target>Save and finish</target>
       </trans-unit>
+      <trans-unit id="ae541895f465e76f153869ddc87a43863e48b76e" resname="Save and make Final Decision">
+        <source>Save and make Final Decision</source>
+        <target>Save and make Final Decision</target>
+      </trans-unit>
       <trans-unit id="ff708ddf466ae8a6d7c39a05291103bdfa5d0405" resname="Save and mark as final revision">
         <source>Save and mark as final revision</source>
         <target>Save and mark as final revision</target>
@@ -1837,10 +1845,6 @@
       <trans-unit id="934c58ad92629910173f22a51fc46fcb7b0719aa" resname="Save and next">
         <source>Save and next</source>
         <target>Save and next</target>
-      </trans-unit>
-      <trans-unit id="538417dd35d60b4f1597be368fed485f6fb14c9d" resname="Save and send to meeting">
-        <source>Save and send to meeting</source>
-        <target>Save and send to meeting</target>
       </trans-unit>
       <trans-unit id="6dc3f2fd7c2d22f3d99289b9991985cd631e0767" resname="Save and wait for comments">
         <source>Save and wait for comments</source>
@@ -1853,10 +1857,6 @@
       <trans-unit id="94b03c70b196c58604c0a7faf7218bf6901b8e0c" resname="Scalability">
         <source>Scalability</source>
         <target>Scalability</target>
-      </trans-unit>
-      <trans-unit id="1cd1bdad468f24f0cafe2226bfdd78b917ba7912" resname="Scheduled">
-        <source>Scheduled</source>
-        <target>Scheduled</target>
       </trans-unit>
       <trans-unit id="efb9234d17b6bdc26322f7104103574db219055f" resname="Scientific Title">
         <source>Scientific Title</source>
@@ -1902,13 +1902,9 @@
         <source>See protocol</source>
         <target>See protocol</target>
       </trans-unit>
-      <trans-unit id="c135ca2ba6ef7f544f8d9e2e09088dd911ead717" resname="Select Members Ad Hoc">
-        <source>Select Members Ad Hoc</source>
-        <target>Select Members Ad Hoc</target>
-      </trans-unit>
-      <trans-unit id="760f9df06db95a28b99e075c59b970b8685671a5" resname="Select Members Of Committee">
-        <source>Select Members Of Committee</source>
-        <target>Select Members Of Committee</target>
+      <trans-unit id="31d71b3e41b1335e952a100702394662ef464de1" resname="Select Reviewers (Committee/Ad Hoc)">
+        <source>Select Reviewers (Committee/Ad Hoc)</source>
+        <target>Select Reviewers (Committee/Ad Hoc)</target>
       </trans-unit>
       <trans-unit id="21995b67ba3b5423b41a9a2ad6ab3501814bfef9" resname="Select an action">
         <source>Select an action</source>
@@ -1934,9 +1930,9 @@
         <source>Send Message</source>
         <target>Send Message</target>
       </trans-unit>
-      <trans-unit id="ed0aad95adb0760d3cf37450799a0f8080dcc7dd" resname="Send back to investigator">
-        <source>Send back to investigator</source>
-        <target>Send back to investigator</target>
+      <trans-unit id="561c872007b3c54a9aa2ced1369f0ba2f2d5d8e3" resname="Send back to Submitter">
+        <source>Send back to Submitter</source>
+        <target>Send back to Submitter</target>
       </trans-unit>
       <trans-unit id="15813ff6c0a5d39159ffd2d7825e2107d26c27b2" resname="Send best practice revision">
         <source>Send best practice revision</source>
@@ -1962,9 +1958,9 @@
         <source>Send to committee to decide</source>
         <target>Send to committee to decide</target>
       </trans-unit>
-      <trans-unit id="5c7cc591f759f9fdfaee5bae2a0fe28b0d5df72c" resname="Send to revision">
-        <source>Send to revision</source>
-        <target>Send to revision</target>
+      <trans-unit id="8e788620ceae177369046eb1a1475b37d5d2b176" resname="Send to review">
+        <source>Send to review</source>
+        <target>Send to review</target>
       </trans-unit>
       <trans-unit id="b07eb00d111a743c92ecfbc78133c45b9f7d58c4" resname="Send us a message by entering the fields below, or write to us at">
         <source>Send us a message by entering the fields below, or write to us at</source>
@@ -2078,10 +2074,6 @@
         <source>Subregion</source>
         <target>Subregion</target>
       </trans-unit>
-      <trans-unit id="861edba00547bc9ce7a08df78d4378766418179f" resname="Suggestions">
-        <source>Suggestions</source>
-        <target>Suggestions</target>
-      </trans-unit>
       <trans-unit id="bda7dbdf25da49b74d2ce451f062424e9edabcbb" resname="Support information about the outcome and impact results">
         <source>Support information about the outcome and impact results</source>
         <target>Support information about the outcome and impact results</target>
@@ -2114,6 +2106,10 @@
         <source>Targets</source>
         <target>Targets</target>
       </trans-unit>
+      <trans-unit id="7572dfde6907ab496b55da962babdf625c6d2241" resname="Technical Assessment">
+        <source>Technical Assessment</source>
+        <target>Technical Assessment</target>
+      </trans-unit>
       <trans-unit id="860452b75c152ee2e3fcfc8671c049657bee284f" resname="Technical Matters">
         <source>Technical Matters</source>
         <target>Technical Matters</target>
@@ -2129,6 +2125,14 @@
       <trans-unit id="fb549f369a3b4a82fd868e5763cb56fd17809028" resname="The best practice review was finalized!">
         <source>The best practice review was finalized!</source>
         <target>The best practice review was finalized!</target>
+      </trans-unit>
+      <trans-unit id="a7f6850ccb40a0b10e8741fb501fb80715cc1c8b" resname="The mandatory field has been inadequately filled or left blank and requires your attention.">
+        <source>The mandatory field has been inadequately filled or left blank and requires your attention.</source>
+        <target>The mandatory field has been inadequately filled or left blank and requires your attention.</target>
+      </trans-unit>
+      <trans-unit id="04f77eeb60dad293d6746b6dfe033404045b3e86" resname="The mandatory field has been properly filled.">
+        <source>The mandatory field has been properly filled.</source>
+        <target>The mandatory field has been properly filled.</target>
       </trans-unit>
       <trans-unit id="0d09b05871f28db7c369b6e6b77eb0dcc99240b0" resname="The private_key and index_key are required in the parameters.yml file">
         <source>The private_key and index_key are required in the parameters.yml file</source>
@@ -2175,10 +2179,6 @@
       <trans-unit id="da372ea9fbc37de95b78e59d7ce18649f17f7682" resname="This is your first access! Please, for your security, you need to change your password.">
         <source>This is your first access! Please, for your security, you need to change your password.</source>
         <target>This is your first access! Please, for your security, you need to change your password.</target>
-      </trans-unit>
-      <trans-unit id="129c0fc1268fe11e4bea38a257012f307e2c3716" resname="This monitoring action will not be reviewed by the committee">
-        <source>This monitoring action will not be reviewed by the committee</source>
-        <target>This monitoring action will not be reviewed by the committee</target>
       </trans-unit>
       <trans-unit id="2d3c3f23df3464e5dbaf126f28ad1aff8083735e" resname="This submission has translations">
         <source>This submission has translations</source>
@@ -2332,6 +2332,10 @@
         <source>View</source>
         <target>View</target>
       </trans-unit>
+      <trans-unit id="3c7e58d7cfe31ccdeedc023be1747b10ab910ec9" resname="Waiting for Final Decision">
+        <source>Waiting for Final Decision</source>
+        <target>Waiting for Final Decision</target>
+      </trans-unit>
       <trans-unit id="6bdbd58311ef20ed172918d30df62df736442296" resname="Waiting for Technical Assessment">
         <source>Waiting for Technical Assessment</source>
         <target>Waiting for Technical Assessment</target>
@@ -2436,6 +2440,10 @@
         <source>Your best practice has been withdrawn</source>
         <target>Your best practice has been withdrawn</target>
       </trans-unit>
+      <trans-unit id="fdddf7b99531cf88ef334808ad029e3a2850922e" resname="Your best practice needs some revisions.">
+        <source>Your best practice needs some revisions.</source>
+        <target>Your best practice needs some revisions.</target>
+      </trans-unit>
       <trans-unit id="add0e520721b865787ab54e6de4beee6f3b92dbc" resname="Your best practice was concluded as Exempt.">
         <source>Your best practice was concluded as Exempt.</source>
         <target>Your best practice was concluded as Exempt.</target>
@@ -2455,6 +2463,10 @@
       <trans-unit id="ffa977aea57c1ff4184209ad64612b33a20436a8" resname="Your best practice was sent to review.">
         <source>Your best practice was sent to review.</source>
         <target>Your best practice was sent to review.</target>
+      </trans-unit>
+      <trans-unit id="9c7fb4b01f75b6a5c45da1a60800f04d3a689f4e" resname="Your session will automatically expire after two hours if the page is not manually saved. To avoid any loss of information, it is recommended to periodically save your progress using the Save and Next button.">
+        <source>Your session will automatically expire after two hours if the page is not manually saved. To avoid any loss of information, it is recommended to periodically save your progress using the Save and Next button.</source>
+        <target>Your session will automatically expire after two hours if the page is not manually saved. To avoid any loss of information, it is recommended to periodically save your progress using the Save and Next button.</target>
       </trans-unit>
       <trans-unit id="2bb6b986c5d6fb26dd9dd1054b545ce022371b0c" resname="active">
         <source>active</source>
@@ -2479,10 +2491,6 @@
       <trans-unit id="4c6dd761f24c4ac4fb95bb1bd183d4815802bfc7" resname="go on">
         <source>go on</source>
         <target>go on</target>
-      </trans-unit>
-      <trans-unit id="6d8f25398a851812efd240ea146e195345c106ae" resname="hyperlinks only">
-        <source>hyperlinks only</source>
-        <target>hyperlinks only</target>
       </trans-unit>
       <trans-unit id="d436a3f40e3ecce896010be99dcf00a577b909aa" resname="inactive">
         <source>inactive</source>
