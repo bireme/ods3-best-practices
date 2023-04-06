@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2023-03-11T04:31:11Z" source-language="en" target-language="pt_BR" datatype="plaintext" original="not.available">
+  <file date="2023-03-13T13:51:15Z" source-language="en" target-language="pt_BR" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -2476,7 +2476,7 @@
       </trans-unit>
       <trans-unit id="9c7fb4b01f75b6a5c45da1a60800f04d3a689f4e" resname="Your session will automatically expire after two hours if the page is not manually saved. To avoid any loss of information, it is recommended to periodically save your progress using the Save and Next button.">
         <source>Your session will automatically expire after two hours if the page is not manually saved. To avoid any loss of information, it is recommended to periodically save your progress using the Save and Next button.</source>
-        <target>Your session will automatically expire after two hours if the page is not manually saved. To avoid any loss of information, it is recommended to periodically save your progress using the Save and Next button.</target>
+        <target>Sua sessão expirará automaticamente após duas horas se a página não for salva manualmente. Para evitar qualquer perda de informação, recomenda-se salvar periodicamente seu progresso usando o botão Salvar e Avançar.</target>
       </trans-unit>
       <trans-unit id="2bb6b986c5d6fb26dd9dd1054b545ce022371b0c" resname="active">
         <source>active</source>

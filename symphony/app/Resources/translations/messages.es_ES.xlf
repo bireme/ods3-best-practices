@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2023-03-11T04:31:11Z" source-language="en" target-language="es_ES" datatype="plaintext" original="not.available">
+  <file date="2023-03-13T16:33:00Z" source-language="en" target-language="es_ES" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -208,7 +208,7 @@
       </trans-unit>
       <trans-unit id="c7b3255558c84f41c839dfa053ab1f90dd4f561f" resname="Before uploading please ensure you have selected the proper file, once uploaded you won't be able to delete it. By uploading a file, the Submitter attests that they hold the permission(s) to make use and disseminate its contents through the Best Practices Portal. If any document is mistakenly uploaded and requires deletion, please contact the Secretariat through the &quot;Comments&quot; function (available after sending the submission).">
         <source>Before uploading please ensure you have selected the proper file, once uploaded you won't be able to delete it. By uploading a file, the Submitter attests that they hold the permission(s) to make use and disseminate its contents through the Best Practices Portal. If any document is mistakenly uploaded and requires deletion, please contact the Secretariat through the "Comments" function (available after sending the submission).</source>
-        <target>Before uploading please ensure you have selected the proper file, once uploaded you won't be able to delete it. By uploading a file, the Submitter attests that they hold the permission(s) to make use and disseminate its contents through the Best Practices Portal. If any document is mistakenly uploaded and requires deletion, please contact the Secretariat through the "Comments" function (available after sending the submission).</target>
+        <target>Antes de subir un archivo, por favor asegúrese de que ha seleccionado el archivo adecuado; una vez subido, no podrá eliminarlo. Al subir un archivo, el remitente certifica que tiene permiso para utilizar y difundir su contenido a través del Portal de Buenas Prácticas. Si algún documento se ha subido por error y es necesario eliminarlo, póngase en contacto con la Secretaría a través de la función "Comentarios" (disponible después de enviar el formulario).</target>
       </trans-unit>
       <trans-unit id="d8cb09e158212bf209b199530d94686ab9de6f8c" resname="Best Practice">
         <source>Best Practice</source>
@@ -272,7 +272,7 @@
       </trans-unit>
       <trans-unit id="f71b422235d268140784eca4c97e06f35017c4c5" resname="Best practice updated by %user% and submitter notified for required revisions.">
         <source>Best practice updated by %user% and submitter notified for required revisions.</source>
-        <target>Best practice updated by %user% and submitter notified for required revisions.</target>
+        <target>Buena práctica actualizada por %user%; el remitente ha sido notificado de las revisiones requeridas.</target>
       </trans-unit>
       <trans-unit id="9034bdeb699649396b3d09f711532e8c2cc136cf" resname="Best practice updated with success!">
         <source>Best practice updated with success!</source>
@@ -288,7 +288,7 @@
       </trans-unit>
       <trans-unit id="37020418b16a28e55f176bda6ff47c40c5e3ced1" resname="Best practice was rejected by %user% with this justification: &quot;%justify%&quot;">
         <source>Best practice was rejected by %user% with this justification: "%justify%"</source>
-        <target>Best practice was rejected by %user% with this justification: "%justify%"</target>
+        <target>La buena práctica ha sido rechazada por %user% bajo la siguiente justificación: "%justify%"</target>
       </trans-unit>
       <trans-unit id="6333568eb51f6b87298cdff61d6d8ea9fd67c07a" resname="Best practice was removed with success!">
         <source>Best practice was removed with success!</source>
@@ -660,7 +660,7 @@
       </trans-unit>
       <trans-unit id="962918f9ce95310c7069b68b8e68d7c81f31c48a" resname="Effectiveness / Cost-Effectiveness / Efficiency / Adaptability / Replicability / Sustainability">
         <source>Effectiveness / Cost-Effectiveness / Efficiency / Adaptability / Replicability / Sustainability</source>
-        <target>Effectiveness / Cost-Effectiveness / Efficiency / Adaptability / Replicability / Sustainability</target>
+        <target>Efectividad / Costo-Efectividad / Eficiencia / Adaptabilidad / Replicabilidad / Sostenibilidad</target>
       </trans-unit>
       <trans-unit id="d8cf69e75d0e94493dea09df29aeb2910d7fd1ab" resname="Effectiveness / Cost-Effectivess / Efficiency / Adaptability / Replicability">
         <source>Effectiveness / Cost-Effectivess / Efficiency / Adaptability / Replicability</source>
@@ -776,7 +776,7 @@
       </trans-unit>
       <trans-unit id="8ad11baaec603984962c0c9e8df1ff054bc4cf1c" resname="Field 'new-attachment-type' is required.">
         <source>Field 'new-attachment-type' is required.</source>
-        <target>Field 'new-attachment-type' is required.</target>
+        <target>El campo "nuevo tipo de archivo adjunto" es requerido.</target>
       </trans-unit>
       <trans-unit id="e8b685271238adf161cffed3c91f54d97023262b" resname="Fields">
         <source>Fields</source>
@@ -804,7 +804,7 @@
       </trans-unit>
       <trans-unit id="429cb83fb83160c1eacc97d001b80d0930b15ee8" resname="File removed with success.">
         <source>File removed with success.</source>
-        <target>File removed with success.</target>
+        <target>Archivo removido exitosamente.</target>
       </trans-unit>
       <trans-unit id="014776fef86e430eda7cf9fc73a0619d4870f73e" resname="File submission">
         <source>File submission</source>
@@ -816,7 +816,7 @@
       </trans-unit>
       <trans-unit id="5b8d97f62835cae8ad5adb2bade60d98db86fa85" resname="Filter by">
         <source>Filter by</source>
-        <target>Filter by</target>
+        <target>Filtrar por</target>
       </trans-unit>
       <trans-unit id="a9660077b2bf17b83d5eb8b6dcc2a608c2102572" resname="Final Revision">
         <source>Final Revision</source>
@@ -1040,7 +1040,7 @@
       </trans-unit>
       <trans-unit id="bf6f14b99b31617475e829449fe1af011e4a4965" resname="Is this a confidential file?">
         <source>Is this a confidential file?</source>
-        <target>Is this a confidential file?</target>
+        <target>¿Es este un archivo confidencial?</target>
       </trans-unit>
       <trans-unit id="a0c82c52808e161cd5b44fc9a52ce3065f662a50" resname="Item created with success.">
         <source>Item created with success.</source>
@@ -1080,7 +1080,7 @@
       </trans-unit>
       <trans-unit id="5846955db6bef539707c3590c701613c5f0cf50f" resname="Legend">
         <source>Legend</source>
-        <target>Legend</target>
+        <target>Leyenda</target>
       </trans-unit>
       <trans-unit id="47d263da05d6890962e8877a8c9d6b6c81187ea8" resname="Lessons Information">
         <source>Lessons Information</source>
@@ -1312,7 +1312,7 @@
       </trans-unit>
       <trans-unit id="452333629400940f887e8af83175f4a51bd5b13d" resname="New Outcome">
         <source>New Outcome</source>
-        <target>New Outcome</target>
+        <target>Nuevo resultado</target>
       </trans-unit>
       <trans-unit id="4894cb39ee419a77b480060f3e4a6d0a4d0fa01f" resname="New Password">
         <source>New Password</source>
@@ -1372,7 +1372,7 @@
       </trans-unit>
       <trans-unit id="f0ad3f063101b02902dc58d837bddb977632f48e" resname="New user on Best Practices Portal">
         <source>New user on Best Practices Portal</source>
-        <target>New user on Best Practices Portal</target>
+        <target>Nuevo usuario en el Portal de Buenas Prácticas</target>
       </trans-unit>
       <trans-unit id="6353049937c27ac2f99e782658c52f29e91fd4f2" resname="New user? Start here.">
         <source>New user? Start here.</source>
@@ -1592,7 +1592,7 @@
       </trans-unit>
       <trans-unit id="e3fa8b0bee9c09c0f88f2bd00512e962fb62b30e" resname="Please select the most appropriate goal of the SHAA 2030:">
         <source>Please select the most appropriate goal of the SHAA 2030:</source>
-        <target>Por favor, seleccione el objetivo más apropiado de ASSA2030</target>
+        <target>Por favor, seleccione el objetivo más apropiado del ASSA 2030</target>
       </trans-unit>
       <trans-unit id="d5337a7b5942566108d876f6a2624cbd2cfb147e" resname="Please select the most appropriate outcome of the SP 20-25:">
         <source>Please select the most appropriate outcome of the SP 20-25:</source>
@@ -1748,11 +1748,11 @@
       </trans-unit>
       <trans-unit id="298dd9445550b24e010d05e139d4c323a52747f8" resname="Reject reasons">
         <source>Reject reasons</source>
-        <target>Reject reasons</target>
+        <target>Razones de rechazo</target>
       </trans-unit>
       <trans-unit id="9baed847cf0e77a99ed6e6f2f1cba6ab85af1d37" resname="Reject submission">
         <source>Reject submission</source>
-        <target>Reject submission</target>
+        <target>Rechazar propuesta</target>
       </trans-unit>
       <trans-unit id="27eeb7a291bfc566447d9cd928e98caf90f70ee6" resname="Rejected">
         <source>Rejected</source>
@@ -1800,11 +1800,11 @@
       </trans-unit>
       <trans-unit id="bbe307c81907e2596e2d8466d645b65ff51d6acc" resname="Review your proposal">
         <source>Review your proposal</source>
-        <target>Review your proposal</target>
+        <target>Revise su propuesta</target>
       </trans-unit>
       <trans-unit id="a74f16c11792da6a36979a58a1ba2b4333632f57" resname="Reviewer">
         <source>Reviewer</source>
-        <target>Reviewer</target>
+        <target>Revisor</target>
       </trans-unit>
       <trans-unit id="c2b90e0cf183a4d16219a17b8e74e556cc4b12c1" resname="Reviewer's evaluation">
         <source>Reviewer's evaluation</source>
@@ -1844,7 +1844,7 @@
       </trans-unit>
       <trans-unit id="ae541895f465e76f153869ddc87a43863e48b76e" resname="Save and make Final Decision">
         <source>Save and make Final Decision</source>
-        <target>Save and make Final Decision</target>
+        <target>Guardar y tomar la Decisión Final</target>
       </trans-unit>
       <trans-unit id="ff708ddf466ae8a6d7c39a05291103bdfa5d0405" resname="Save and mark as final revision">
         <source>Save and mark as final revision</source>
@@ -1912,7 +1912,7 @@
       </trans-unit>
       <trans-unit id="31d71b3e41b1335e952a100702394662ef464de1" resname="Select Reviewers (Committee/Ad Hoc)">
         <source>Select Reviewers (Committee/Ad Hoc)</source>
-        <target>Select Reviewers (Committee/Ad Hoc)</target>
+        <target>Seleccionar Revisores (Comité/Ad Hoc)</target>
       </trans-unit>
       <trans-unit id="21995b67ba3b5423b41a9a2ad6ab3501814bfef9" resname="Select an action">
         <source>Select an action</source>
@@ -1940,7 +1940,7 @@
       </trans-unit>
       <trans-unit id="561c872007b3c54a9aa2ced1369f0ba2f2d5d8e3" resname="Send back to Submitter">
         <source>Send back to Submitter</source>
-        <target>Send back to Submitter</target>
+        <target>Devolver al Remitente</target>
       </trans-unit>
       <trans-unit id="15813ff6c0a5d39159ffd2d7825e2107d26c27b2" resname="Send best practice revision">
         <source>Send best practice revision</source>
@@ -1968,7 +1968,7 @@
       </trans-unit>
       <trans-unit id="8e788620ceae177369046eb1a1475b37d5d2b176" resname="Send to review">
         <source>Send to review</source>
-        <target>Send to review</target>
+        <target>Enviar a revisión</target>
       </trans-unit>
       <trans-unit id="b07eb00d111a743c92ecfbc78133c45b9f7d58c4" resname="Send us a message by entering the fields below, or write to us at">
         <source>Send us a message by entering the fields below, or write to us at</source>
@@ -2000,7 +2000,7 @@
       </trans-unit>
       <trans-unit id="ac53882fd49039972721ef7b0a4a9ccbb10de03a" resname="Sources / Comments">
         <source>Sources / Comments</source>
-        <target>Fuentes/comentarios</target>
+        <target>Fuentes / Comentarios</target>
       </trans-unit>
       <trans-unit id="18264d135c5c3e77166e061b832cc9ffc55f4c64" resname="South-South">
         <source>South-South</source>
@@ -2116,7 +2116,7 @@
       </trans-unit>
       <trans-unit id="7572dfde6907ab496b55da962babdf625c6d2241" resname="Technical Assessment">
         <source>Technical Assessment</source>
-        <target>Technical Assessment</target>
+        <target>Valoración Técnica</target>
       </trans-unit>
       <trans-unit id="860452b75c152ee2e3fcfc8671c049657bee284f" resname="Technical Matters">
         <source>Technical Matters</source>
@@ -2136,11 +2136,11 @@
       </trans-unit>
       <trans-unit id="a7f6850ccb40a0b10e8741fb501fb80715cc1c8b" resname="The mandatory field has been inadequately filled or left blank and requires your attention.">
         <source>The mandatory field has been inadequately filled or left blank and requires your attention.</source>
-        <target>The mandatory field has been inadequately filled or left blank and requires your attention.</target>
+        <target>El campo obligatorio se ha rellenado inadecuadamente o se ha dejado en blanco y requiere su atención.</target>
       </trans-unit>
       <trans-unit id="04f77eeb60dad293d6746b6dfe033404045b3e86" resname="The mandatory field has been properly filled.">
         <source>The mandatory field has been properly filled.</source>
-        <target>The mandatory field has been properly filled.</target>
+        <target>El campo obligatorio se ha llenado correctamente.</target>
       </trans-unit>
       <trans-unit id="0d09b05871f28db7c369b6e6b77eb0dcc99240b0" resname="The private_key and index_key are required in the parameters.yml file">
         <source>The private_key and index_key are required in the parameters.yml file</source>
@@ -2337,15 +2337,15 @@
       </trans-unit>
       <trans-unit id="69bd4ef9fbd0894a22759c3766b859defbdedbc8" resname="View">
         <source>View</source>
-        <target>View</target>
+        <target>Visualizar</target>
       </trans-unit>
       <trans-unit id="3c7e58d7cfe31ccdeedc023be1747b10ab910ec9" resname="Waiting for Final Decision">
         <source>Waiting for Final Decision</source>
-        <target>Waiting for Final Decision</target>
+        <target>Esperando la Decisión Final</target>
       </trans-unit>
       <trans-unit id="6bdbd58311ef20ed172918d30df62df736442296" resname="Waiting for Technical Assessment">
         <source>Waiting for Technical Assessment</source>
-        <target>Esperando la valoración técnica</target>
+        <target>Esperando la Valoración Técnica</target>
       </trans-unit>
       <trans-unit id="c0dbc9647009c412d8233097b849a2ab76fc58c3" resname="Waiting for initial evaluation">
         <source>Waiting for initial evaluation</source>
@@ -2473,7 +2473,7 @@
       </trans-unit>
       <trans-unit id="9c7fb4b01f75b6a5c45da1a60800f04d3a689f4e" resname="Your session will automatically expire after two hours if the page is not manually saved. To avoid any loss of information, it is recommended to periodically save your progress using the Save and Next button.">
         <source>Your session will automatically expire after two hours if the page is not manually saved. To avoid any loss of information, it is recommended to periodically save your progress using the Save and Next button.</source>
-        <target>Your session will automatically expire after two hours if the page is not manually saved. To avoid any loss of information, it is recommended to periodically save your progress using the Save and Next button.</target>
+        <target>Su sesión expirará automáticamente al cabo de dos horas si la página no se guarda manualmente. Para evitar cualquier pérdida de información, se recomienda guardar periódicamente su progreso utilizando el botón Guardar y Continuar.</target>
       </trans-unit>
       <trans-unit id="2bb6b986c5d6fb26dd9dd1054b545ce022371b0c" resname="active">
         <source>active</source>
