@@ -665,6 +665,9 @@ class ProtocolController extends Controller
                     // setting status
                     $protocol->setStatus("C");
 
+                    // setting the reason
+                    $protocol->setReturnReason($post_data['return-reason']);
+
                     // setting protocool history
                     $protocol_history = new ProtocolHistory();
                     $protocol_history->setProtocol($protocol);
@@ -703,7 +706,7 @@ class ProtocolController extends Controller
                     $body .= "<br /><br />";
 
                     $message = \Swift_Message::newInstance()
-                    ->setSubject("[BP] " . $mail_translator->trans("Your best practice needs some revisions."))
+                    ->setSubject("[BP] " . $mail_translator->trans("Your Best Practice is in need of revisions."))
                     ->setFrom($util->getConfiguration('committee.email'))
                     ->setTo($investigators)
                     ->setBody(
@@ -1454,6 +1457,9 @@ class ProtocolController extends Controller
 */
             // setting the Scheduled status
             $protocol->setStatus($post_data['final-decision']);
+            $protocol->setRejectReason(NULL);
+            $protocol->setReturnReason(NULL);
+            $protocol->setNotes(NULL);
             $protocol->setMonitoringAction(NULL);
 
             if(!empty($post_data['monitoring-period'])) {

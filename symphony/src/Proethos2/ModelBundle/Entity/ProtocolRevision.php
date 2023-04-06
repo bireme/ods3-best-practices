@@ -57,8 +57,6 @@ class ProtocolRevision extends Base
      */
     private $is_final_revision = false;
 
-
-
     /**
      * @ORM\Column(type="text", nullable=true)
      */
@@ -100,7 +98,7 @@ class ProtocolRevision extends Base
     private $suggestions;
 
     /**
-     * @ORM\Column(type="string", length=1)
+     * @ORM\Column(type="string", length=1, nullable=true)
      * @Assert\NotBlank
      */
     private $final_decision;

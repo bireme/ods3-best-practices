@@ -14,7 +14,7 @@
             </div>
         </div>
 
-        {% if protocol.status in ["A","E","H"] %}
+        {% if protocol.status in ["A","E","H"] and protocol.notes != "" %}
             <div class='row'>
                 <div class='col-md-12'>
                     <div class='alert alert-success'>
@@ -24,11 +24,21 @@
             </div>
         {% endif %}
 
-        {% if protocol.status == "N" %}
+        {% if protocol.status == "N" and protocol.rejectReason != "" %}
             <div class='row'>
                 <div class='col-md-12'>
                     <div class='alert alert-danger'>
                         <b>{% trans %}Notes{% endtrans %}:</b> {{ protocol.rejectReason }}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if protocol.status == "C" and protocol.returnReason != "" %}
+            <div class='row'>
+                <div class='col-md-12'>
+                    <div class='alert alert-warning'>
+                        <b>{% trans %}Notes{% endtrans %}:</b> {{ protocol.returnReason }}
                     </div>
                 </div>
             </div>

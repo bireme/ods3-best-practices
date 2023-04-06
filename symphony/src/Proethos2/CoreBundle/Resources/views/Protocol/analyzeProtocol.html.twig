@@ -69,6 +69,12 @@
                             <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 128} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                             <textarea class="form-control" id="textarea-reject-reason" name='reject-reason'></textarea>
                         </div>
+
+                        <div class="form-group" id='group-return-submission'>
+                            <label for="textarea-return-reason">{% trans %}Return reasons{% endtrans %}:</label> 
+                            <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 128} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                            <textarea class="form-control" id="textarea-return-reason" name='return-reason'></textarea>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -162,8 +168,10 @@
 
             $("#textarea-notes").prop('required', false);
             $("#textarea-reject-reason").prop('required', true);
+            $("#textarea-return-reason").prop('required', false);
 
             $("#group-approved-submission").hide();
+            $("#group-return-submission").hide();
             $("#button-approved-submission").hide();
             $("#button-accept-submission").hide();
         }
@@ -174,8 +182,10 @@
 
             $("#textarea-notes").prop('required', false);
             $("#textarea-reject-reason").prop('required', false);
+            $("#textarea-return-reason").prop('required', true);
 
             $("#group-approved-submission").hide();
+            $("#group-return-submission").show();
             $("#button-approved-submission").hide();
             $("#button-accept-submission").show();
         }
@@ -186,8 +196,10 @@
             
             $("#textarea-notes").prop('required', true);
             $("#textarea-reject-reason").prop('required', false);
+            $("#textarea-return-reason").prop('required', false);
 
             $("#group-approved-submission").show();
+            $("#group-return-submission").hide();
             $("#button-approved-submission").show();
             $("#button-accept-submission").hide();
         }

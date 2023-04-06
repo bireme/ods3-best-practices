@@ -120,6 +120,13 @@ class Protocol extends Base
      *
      * @ORM\Column(type="text", nullable=true)
      */
+    private $return_reason;
+
+    /**
+     * @var text
+     *
+     * @ORM\Column(type="text", nullable=true)
+     */
     private $committee_screening;
 
     /**
@@ -838,5 +845,29 @@ class Protocol extends Base
     public function getNotes()
     {
         return $this->notes;
+    }
+
+    /**
+     * Set returnReason
+     *
+     * @param string $returnReason
+     *
+     * @return Protocol
+     */
+    public function setReturnReason($returnReason)
+    {
+        $this->return_reason = $returnReason;
+
+        return $this;
+    }
+
+    /**
+     * Get returnReason
+     *
+     * @return string
+     */
+    public function getReturnReason()
+    {
+        return $this->return_reason;
     }
 }

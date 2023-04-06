@@ -1,4 +1,14 @@
-{% if submission.protocol.status == "N" %}
+{% if submission.protocol.status == "C" and submission.protocol.returnReason != "" %}
+    <div class='row'>
+        <div class='col-md-12'>
+            <div class='alert alert-warning'>
+                <b>{% trans %}Notes{% endtrans %}:</b> {{ submission.protocol.returnReason }}
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% if submission.protocol.status == "N" and submission.protocol.rejectReason != "" %}
     <div class='row'>
         <div class='col-md-12'>
             <div class='alert alert-danger'>
@@ -8,7 +18,7 @@
     </div>
 {% endif %}
 
-{% if submission.protocol.status in ["A","E","H"] %}
+{% if submission.protocol.status in ["A","E","H"] and submission.protocol.notes != "" %}
     <div class='row'>
         <div class='col-md-12'>
             <div class='alert alert-success'>
