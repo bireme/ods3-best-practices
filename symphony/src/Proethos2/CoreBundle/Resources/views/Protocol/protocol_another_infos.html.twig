@@ -22,31 +22,42 @@
                         <th>{% trans %}Submitted by{% endtrans %}</th>
                         <th>{% trans %}File name{% endtrans %}</th>
                         <th>{% trans %}Date & Time{% endtrans %}</th>
-                        {% if 'secretary' in app.user.rolesSlug or 'member-of-committee' in app.user.rolesSlug %}<th>{% trans %}Confidential{% endtrans %}</th>{% endif %}
+                        {% if 'secretary' in app.user.rolesSlug %}<th>{% trans %}Confidential{% endtrans %}</th>{% endif %}
                         <th>{% trans %}Actions{% endtrans %}</th>
                     </tr>
                 </thead>
                 
                 <tbody>
                     {% for file in protocol.mainSubmission.attachments if not file.isMonitoringAction %}
-                        <tr>
-                            <td>{{ file.uploadType }}</td>
-                            <td>{{ file.submissionNumber }}</td>
-                            <td>{{ file.user }}</td>
-                            <td>{% if file.uploadType.slug in ['protocol'] %}{{ file.simpleFilename }}{% else %}{{ file }}{% endif %}</td> 
-                            <td>{{ file.created|date("d/m/Y H:i") }}</td> 
-                            {% if 'secretary' in app.user.rolesSlug or 'member-of-committee' in app.user.rolesSlug %}<td>{% if file.isConfidential %}<i class='glyphicon glyphicon-ok'></i>{% endif %}</td>{% endif %}
-                            <td>
-                                <a href='{{ asset(file.uri) }}' target="_blank" class='btn btn-default btn-xs' target="_blank">
-                                    <i class='glyphicon glyphicon-eye-open'></i>
-                                </a>
-                                {% if is_granted("ROLE_USER") and 'secretary' in app.user.rolesSlug %}
-                                    <a href='#' class='btn btn-default btn-xs button-delete-attachment' data-id='{{ file.id }}' data-toggle="modal" data-target="#modal-delete-attachment">
-                                        <i class='glyphicon glyphicon-trash'></i>
+                        {% set is_show_file = true %}
+                        {% if file.isConfidential %}
+                            {% if 'secretary' in app.user.rolesSlug %}
+                                {% set is_show_file = true %}
+                            {% else %}
+                                {% set is_show_file = false %}
+                            {% endif %}
+                        {% endif %}
+
+                        {% if is_show_file %}
+                            <tr>
+                                <td>{{ file.uploadType }}</td>
+                                <td>{{ file.submissionNumber }}</td>
+                                <td>{{ file.user }}</td>
+                                <td>{% if file.uploadType.slug in ['protocol'] %}{{ file.simpleFilename }}{% else %}{{ file }}{% endif %}</td> 
+                                <td>{{ file.created|date("d/m/Y H:i") }}</td> 
+                                {% if 'secretary' in app.user.rolesSlug %}<td>{% if file.isConfidential %}<i class='glyphicon glyphicon-ok'></i>{% endif %}</td>{% endif %}
+                                <td>
+                                    <a href='{{ asset(file.uri) }}' target="_blank" class='btn btn-default btn-xs' target="_blank">
+                                        <i class='glyphicon glyphicon-eye-open'></i>
                                     </a>
-                                {% endif %}
-                            </td> 
-                        </tr>
+                                    {% if is_granted("ROLE_USER") and 'secretary' in app.user.rolesSlug %}
+                                        <a href='#' class='btn btn-default btn-xs button-delete-attachment' data-id='{{ file.id }}' data-toggle="modal" data-target="#modal-delete-attachment">
+                                            <i class='glyphicon glyphicon-trash'></i>
+                                        </a>
+                                    {% endif %}
+                                </td> 
+                            </tr>
+                        {% endif %}
                     {% endfor %}
                 </tbody>
             </table>
