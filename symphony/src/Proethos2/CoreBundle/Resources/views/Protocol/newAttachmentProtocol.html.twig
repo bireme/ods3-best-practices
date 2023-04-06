@@ -28,7 +28,7 @@
 
         {# code that discover if should show the confidential option #}
         {% set is_show_confidential_file = false %}
-        {% for role in app.user.getRolesSlug %}
+        {% for role in app.user.rolesSlug %}
             {% if role in ['secretary', 'member-of-committee'] %}
                 {% set is_show_confidential_file = true %}
             {% endif %}

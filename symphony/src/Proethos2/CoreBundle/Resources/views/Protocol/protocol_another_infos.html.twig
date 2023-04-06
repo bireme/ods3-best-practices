@@ -22,7 +22,7 @@
                         <th>{% trans %}Submitted by{% endtrans %}</th>
                         <th>{% trans %}File name{% endtrans %}</th>
                         <th>{% trans %}Date & Time{% endtrans %}</th>
-                        {% if 'secretary' in app.user.getRolesSlug or 'member-of-committee' in app.user.getRolesSlug %}<th>{% trans %}Confidential{% endtrans %}</th>{% endif %}
+                        {% if 'secretary' in app.user.rolesSlug or 'member-of-committee' in app.user.rolesSlug %}<th>{% trans %}Confidential{% endtrans %}</th>{% endif %}
                         <th>{% trans %}Actions{% endtrans %}</th>
                     </tr>
                 </thead>
@@ -35,7 +35,7 @@
                             <td>{{ file.user }}</td>
                             <td>{% if file.uploadType.slug in ['protocol'] %}{{ file.simpleFilename }}{% else %}{{ file }}{% endif %}</td> 
                             <td>{{ file.created|date("d/m/Y H:i") }}</td> 
-                            {% if 'secretary' in app.user.getRolesSlug or 'member-of-committee' in app.user.getRolesSlug %}<td>{% if file.isConfidential %}<i class='glyphicon glyphicon-ok'></i>{% endif %}</td>{% endif %}
+                            {% if 'secretary' in app.user.rolesSlug or 'member-of-committee' in app.user.rolesSlug %}<td>{% if file.isConfidential %}<i class='glyphicon glyphicon-ok'></i>{% endif %}</td>{% endif %}
                             <td>
                                 <a href='{{ asset(file.uri) }}' target="_blank" class='btn btn-default btn-xs' target="_blank">
                                     <i class='glyphicon glyphicon-eye-open'></i>
@@ -119,18 +119,18 @@
                     <tr>
                         <th width="15%">{% trans %}Date & Time{% endtrans %}</th>
                         <th width="15%">{% trans %}Author{% endtrans %}</th>
-                        {% if 'secretary' in app.user.getRolesSlug or 'member-of-committee' in app.user.getRolesSlug %}<th width="15%">{% trans %}Confidential{% endtrans %}</th>{% endif %}
+                        {% if 'secretary' in app.user.rolesSlug or 'member-of-committee' in app.user.rolesSlug %}<th width="15%">{% trans %}Confidential{% endtrans %}</th>{% endif %}
                         <th>{% trans %}Message{% endtrans %}</th>
                     </tr>
                 </thead>
                  
                 <tbody>
                     {% for comment in protocol.comment %}
-                        {% if not comment.isConfidential or 'investigator' not in app.user.getRolesSlug or not protocol.mainSubmission.isOwner(app.user) %}
+                        {% if not comment.isConfidential or 'investigator' not in app.user.rolesSlug or not protocol.mainSubmission.isOwner(app.user) %}
                             <tr>
                                <th>{{ comment.created|date('d/m/Y H:i:s') }}</th>
                                <td>{{ comment.owner }}</td> 
-                               {% if 'secretary' in app.user.getRolesSlug or 'member-of-committee' in app.user.getRolesSlug %}<td>{% if comment.isConfidential %}<i class='glyphicon glyphicon-ok'></i>{% endif %}</td>{% endif %}
+                               {% if 'secretary' in app.user.rolesSlug or 'member-of-committee' in app.user.rolesSlug %}<td>{% if comment.isConfidential %}<i class='glyphicon glyphicon-ok'></i>{% endif %}</td>{% endif %}
                                <td>{{ comment.message }}</td> 
                             </tr>
                         {% endif %}
@@ -165,7 +165,7 @@
 
                         {# code that discover if should show the confidential option #}
                         {% set is_show_confidential_field = false %}
-                        {% for role in app.user.getRolesSlug %}
+                        {% for role in app.user.rolesSlug %}
                             {% if role in ['secretary', 'member-of-committee'] %}
                                 {% set is_show_confidential_field = true %}
                             {% endif %}
