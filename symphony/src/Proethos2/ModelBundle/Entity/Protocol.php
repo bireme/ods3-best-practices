@@ -192,6 +192,12 @@ class Protocol extends Base
     private $contacts;
 
     /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank()
+     */
+    private $referer;
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -869,5 +875,29 @@ class Protocol extends Base
     public function getReturnReason()
     {
         return $this->return_reason;
+    }
+
+    /**
+     * Set referer
+     *
+     * @param string $referer
+     *
+     * @return Protocol
+     */
+    public function setReferer($referer)
+    {
+        $this->referer = $referer;
+
+        return $this;
+    }
+
+    /**
+     * Get referer
+     *
+     * @return string
+     */
+    public function getReferer()
+    {
+        return $this->referer;
     }
 }

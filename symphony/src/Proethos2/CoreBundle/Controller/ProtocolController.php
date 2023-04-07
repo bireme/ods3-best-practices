@@ -496,6 +496,9 @@ class ProtocolController extends Controller
                 // setting status
                 $protocol->setStatus("N");
 
+                // setting referer
+                $protocol->setReferer("protocol_analyze_protocol");
+
                 // setting protocool history
                 $protocol_history = new ProtocolHistory();
                 $protocol_history->setProtocol($protocol);
@@ -532,6 +535,9 @@ class ProtocolController extends Controller
 
                     // setting status
                     $protocol->setStatus("I");
+
+                    // setting referer
+                    $protocol->setReferer("protocol_analyze_protocol");
 
                     // setting protocool history
                     $protocol_history = new ProtocolHistory();
@@ -583,6 +589,9 @@ class ProtocolController extends Controller
 
                     // setting status
                     $protocol->setStatus("E");
+
+                    // setting referer
+                    $protocol->setReferer("protocol_analyze_protocol");
 
                     // setting the notes
                     $protocol->setNotes($post_data['notes']);
@@ -665,6 +674,9 @@ class ProtocolController extends Controller
                     // setting status
                     $protocol->setStatus("C");
 
+                    // setting referer
+                    $protocol->setReferer("protocol_analyze_protocol");
+
                     // setting the reason
                     $protocol->setReturnReason($post_data['return-reason']);
 
@@ -725,6 +737,9 @@ class ProtocolController extends Controller
 
                     $protocol->setStatus("A");
                     $protocol->setMonitoringAction(NULL);
+
+                    // setting referer
+                    $protocol->setReferer("protocol_analyze_protocol");
 
                     // setting protocool history
                     $protocol_history = new ProtocolHistory();
@@ -811,8 +826,11 @@ class ProtocolController extends Controller
 
             if($post_data['send-to'] == "revision") {
 
-                // setting the Rejected status
+                // setting status
                 $protocol->setStatus("E");
+
+                // setting referer
+                $protocol->setReferer("protocol_initial_committee_screening");
 
                 // setting protocool history
                 $protocol_history = new ProtocolHistory();
@@ -915,8 +933,11 @@ class ProtocolController extends Controller
                     $em->flush();
                 }
 
-                // setting the Rejected status
+                // setting status
                 $protocol->setStatus("F");
+
+                // setting referer
+                $protocol->setReferer("protocol_initial_committee_screening");
 
                 // setting protocool history
                 $protocol_history = new ProtocolHistory();
@@ -1146,9 +1167,12 @@ class ProtocolController extends Controller
                 $meeting = $meeting_repository->find($post_data['meeting']);
                 $protocol->setMeeting($meeting);
 
-                // setting the Scheduled status
+                // setting status
                 $protocol->setStatus("H");
                 $protocol->setRevisedIn(new \DateTime());
+
+                // setting referer
+                $protocol->setReferer("protocol_initial_committee_review");
 
                 $em->persist($protocol);
                 $em->flush();
@@ -1455,12 +1479,15 @@ class ProtocolController extends Controller
                 // }
             }
 */
-            // setting the Scheduled status
+            // setting status
             $protocol->setStatus($post_data['final-decision']);
             $protocol->setRejectReason(NULL);
             $protocol->setReturnReason(NULL);
             $protocol->setNotes(NULL);
             $protocol->setMonitoringAction(NULL);
+
+            // setting referer
+            $protocol->setReferer("protocol_end_review");
 
             if(!empty($post_data['monitoring-period'])) {
                 $monitoring_action_next_date = new \DateTime();
@@ -1606,7 +1633,7 @@ class ProtocolController extends Controller
             if($post_data['are-you-sure'] == 'yes') {
                 $status = $protocol->getStatus();
 
-                if ( 'R' == $status ) {
+                if ( 'protocol_analyze_protocol' == $protocol->getReferer() ) {
                     $protocol->setStatus("S");
                 } else {
                     $protocol->setStatus("H");
