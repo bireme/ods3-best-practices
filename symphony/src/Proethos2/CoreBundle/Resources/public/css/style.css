@@ -283,6 +283,19 @@ img.logo {
     margin-top: 16px;
 }
 
+.field-desc {
+    display: flex;
+    align-items: center;
+}
+
+.field-desc a {
+    margin-left: 5px;
+}
+
+.form-radio .iradio_square-blue {
+    margin-right: 5px;
+}
+
 .navbar-default {
     background-color: #05548b !important;
     border-bottom: 5px solid #ed742c;

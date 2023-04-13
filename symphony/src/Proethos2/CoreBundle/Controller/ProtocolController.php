@@ -1280,10 +1280,68 @@ class ProtocolController extends Controller
                     $protocol_revision->setIsFinalRevision(true);
                 }
 
+                $protocol_revision->setEffectivenessScoring($post_data['effectiveness-scoring']);
+                $protocol_revision->setEffectivenessFeedback($post_data['option-effectiveness-feedback']);
+                if ( 'yes' == $post_data['option-effectiveness-feedback'] )
+                    $protocol_revision->setEffectivenessRevisions($post_data['effectiveness-feedback']);
+                else
+                    $protocol_revision->setEffectivenessRevisions(NULL);
+
+                $protocol_revision->setCostEffectivenessScoring($post_data['cost-effectiveness-scoring']);
+                $protocol_revision->setCostEffectivenessFeedback($post_data['option-cost-effectiveness-feedback']);
+                if ( 'yes' == $post_data['option-cost-effectiveness-feedback'] )
+                    $protocol_revision->setCostEffectivenessRevisions($post_data['cost-effectiveness-feedback']);
+                else
+                    $protocol_revision->setCostEffectivenessRevisions(NULL);
+
+                $protocol_revision->setEfficiencyScoring($post_data['efficiency-scoring']);
+                $protocol_revision->setEfficiencyFeedback($post_data['option-efficiency-feedback']);
+                if ( 'yes' == $post_data['option-efficiency-feedback'] )
+                    $protocol_revision->setEfficiencyRevisions($post_data['efficiency-feedback']);
+                else
+                    $protocol_revision->setEfficiencyRevisions(NULL);
+
+                $protocol_revision->setSustainabilityScoring($post_data['sustainability-scoring']);
+                $protocol_revision->setSustainabilityFeedback($post_data['option-sustainability-feedback']);
+                if ( 'yes' == $post_data['option-sustainability-feedback'] )
+                    $protocol_revision->setSustainabilityRevisions($post_data['sustainability-feedback']);
+                else
+                    $protocol_revision->setSustainabilityRevisions(NULL);
+
+                $protocol_revision->setReplicabilityAdaptabilityScoring($post_data['replicability-adaptability-scoring']);
+                $protocol_revision->setReplicabilityAdaptabilityFeedback($post_data['option-replicability-adaptability-feedback']);
+                if ( 'yes' == $post_data['option-replicability-adaptability-feedback'] )
+                    $protocol_revision->setReplicabilityAdaptabilityRevisions($post_data['replicability-adaptability-feedback']);
+                else
+                    $protocol_revision->setReplicabilityAdaptabilityRevisions(NULL);
+
+                $protocol_revision->setInnovationScoring($post_data['innovation-scoring']);
+                $protocol_revision->setInnovationFeedback($post_data['option-innovation-feedback']);
+                if ( 'yes' == $post_data['option-innovation-feedback'] )
+                    $protocol_revision->setInnovationRevisions($post_data['innovation-feedback']);
+                else
+                    $protocol_revision->setInnovationRevisions(NULL);
+
+                $protocol_revision->setParticipationScoring($post_data['participation-scoring']);
+                $protocol_revision->setParticipationFeedback($post_data['option-participation-feedback']);
+                if ( 'yes' == $post_data['option-participation-feedback'] )
+                    $protocol_revision->setParticipationRevisions($post_data['participation-feedback']);
+                else
+                    $protocol_revision->setParticipationRevisions(NULL);
+
+                $protocol_revision->setCrossCuttingThemesScoring($post_data['cross-cutting-themes-scoring']);
+                $protocol_revision->setCrossCuttingThemesFeedback($post_data['option-cross-cutting-themes-feedback']);
+                if ( 'yes' == $post_data['option-cross-cutting-themes-feedback'] )
+                    $protocol_revision->setCrossCuttingThemesRevisions($post_data['cross-cutting-themes-feedback']);
+                else
+                    $protocol_revision->setCrossCuttingThemesRevisions(NULL);
+
                 // $protocol_revision->setDecision($post_data['decision']);
                 $protocol_revision->setFinalDecision($post_data['final-decision']);
                 $protocol_revision->setOtherComments($post_data['other-comments']);
-                $protocol_revision->setSuggestions($post_data['suggestions']);
+                $protocol_revision->setAverageScore($post_data['average-score']);
+                $protocol_revision->setZeroScores($post_data['zero-scores']);
+                // $protocol_revision->setSuggestions($post_data['suggestions']);
 
                 $protocol_revision->setAnswered(true);
 

@@ -41,42 +41,800 @@
             <input type="hidden" id="input-is-final-revision" name="is-final-revision" value="false">
 
             <div class='block action'>
-                <a name='action'></a>
                 <div class='row'>
                     <div class="col-md-12">
                         <h2 class='sub-header'>{% trans %}Reviewer's evaluation{% endtrans %}:</h2>
                     </div>
                 </div>
 
-                <div class='row'>
-                    <div class="col-md-12">
-                        <div class="form-group required">
-                            <label for="select-final-decision">Decisions:</label>
-                            <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 125} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                            <select class="form-control select2" id="select-final-decision" name="final-decision" required {% if protocol_revision.isFinalRevision %}disabled{% endif %}>
-                                <option value="">-</option>
-                                {% for key, option in decision_options %}
-                                    <option value="{{ key }}" {% if protocol_revision.finalDecision == key %}selected{% endif %}>{{ option }}</option>
-                                {% endfor %}
-                            </select>
+                <div class='block'>
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <h4>{% trans %}Notes{% endtrans %}:</h4>
+                                <ul>
+                                    <li>{% trans %}Per attribute, please select one Scoring option and one Feedback option.{% endtrans %}</li>
+                                    <li>{% trans %}If any zero scores are selected, you’ll be requested to confirm them at the end.{% endtrans %}</li>
+                                    <li>{% trans %}If Revisions required is selected as Feedback, please input your revisions.{% endtrans %}</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class='row'>
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="textarea-other-comments">{% trans %}Comments{% endtrans %}:</label> 
-                            <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 120} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                            <textarea class="form-control" id='textarea-other-comments' name="other-comments" rows="5" {% if protocol_revision.isFinalRevision %}readonly{% endif %}>{{ protocol_revision.otherComments }}</textarea>
+
+                <hr />
+
+                <div class='block'>
+                    <div class='row'>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="field-desc">
+                                    <h4>{% trans %}Effectiveness{% endtrans %}</h4>
+                                    <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Evidence of successfully achieving its objectives. This evidence may include results sustained over time, tangible products, and methodologies.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                </div>
+                                <p>{% trans %}Form sections up to review{% endtrans %}: <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Information on objective completion: Objectives and Main Results can be compared to see if objectives (particularly SMART objectives) were reached; Evidence/Proposals on project objective fulfillment.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a></p>
+                                <ul>
+                                    <li>{% trans %}Objectives of the Best Practice{% endtrans %}</li>
+                                    <li>{% trans %}Implementation/Activities{% endtrans %}</li>
+                                    <li>{% trans %}Main Results/Products and Impact{% endtrans %}</li>
+                                    <li>{% trans %}Limitations and Obstacles{% endtrans %}</li>
+                                    <li>{% trans %}In your opinion, the resources assigned to the accomplishment of this Best Practice (financial, technological and/or manpower) were implement in an efficient way? Support information about the outcome and impact results{% endtrans %}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-radio">
+                                <h4>Scoring:</h4>
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='effectiveness-scoring' class="radio-scoring" value='0' required {% if protocol_revision.effectivenessScoring is not null and protocol_revision.effectivenessScoring == 0 %}checked{% endif %} /> 0 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Attribute unsupported; Contents do not provide information able to be assessed.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='effectiveness-scoring' class="radio-scoring" value='2' {% if protocol_revision.effectivenessScoring == 2 %}checked{% endif %} /> 2 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Attribute empirically supported; Proposal is in ideation stage.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='effectiveness-scoring' class="radio-scoring" value='3' {% if protocol_revision.effectivenessScoring == 3 %}checked{% endif %} /> 3 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Attribute supported with external evidence; Contents show a partial achievement.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='effectiveness-scoring' class="radio-scoring" value='4' {% if protocol_revision.effectivenessScoring == 4 %}checked{% endif %} /> 4 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Attribute supported with evidence collected through the activities; Contents show a complete achievement.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <hr />
+
+                                <h4>{% trans %}Feedback{% endtrans %}:</h4>
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='option-effectiveness-feedback' value='yes' required {% if protocol_revision.effectivenessFeedback == 'yes' %}checked{% endif %} /> {% trans %}Revisions required{% endtrans %}
+                                        </label> 
+                                    </div>
+                                </div>
+
+                                <div class="form-group {% if not protocol_revision.effectivenessFeedback or protocol_revision.effectivenessFeedback == 'no' %}hide{% endif %}">
+                                    <label for="textarea-effectiveness-feedback">{% trans %}Please describe the revisions to be made{% endtrans %}:</label> 
+                                    <textarea class="form-control" id="textarea-effectiveness-feedback" name='effectiveness-feedback' {% if protocol_revision.isFinalRevision %}readonly{% endif %}>{{ protocol_revision.effectivenessRevisions }}</textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='option-effectiveness-feedback' value='no' {% if protocol_revision.effectivenessFeedback == 'no' %}checked{% endif %} /> {% trans %}No revisions required{% endtrans %}
+                                        </label> 
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class='row'>
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="textarea-suggestions">{% trans %}Recommendations{% endtrans %}:</label> 
-                            <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 121} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                            <textarea class="form-control" id='textarea-suggestions' name="suggestions" rows="5" {% if protocol_revision.isFinalRevision %}readonly{% endif %}>{{ protocol_revision.suggestions }}</textarea>
+
+                <hr />
+
+                <div class='block'>
+                    <div class='row'>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="field-desc">
+                                    <h4>{% trans %}Cost-Effectiveness{% endtrans %}</h4>
+                                    <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Evidence of an economic approach that is financially realistic and accessible to the necessary actors.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                </div>
+                                <p>{% trans %}Form sections up to review{% endtrans %}: <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Information on the presence of a financial management structure. Information on a budgetary strategy. Evidence regarding budget ability to reach objectives.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a></p>
+                                <ul>
+                                    <li>{% trans %}Objectives of the Best Practice{% endtrans %}</li>
+                                    <li>{% trans %}Implementation/Activities{% endtrans %}</li>
+                                    <li>{% trans %}Main Results/Products and Impact{% endtrans %}</li>
+                                    <li>{% trans %}Limitations and Obstacles{% endtrans %}</li>
+                                    <li>{% trans %}In your opinion, the resources assigned to the accomplishment of this Best Practice (financial, technological and/or manpower) were implement in an efficient way? Support information about the outcome and impact results{% endtrans %}</li>
+                                    <li>{% trans %}What obstacles or challenges were faced during the implementation of this best practice/initiative?{% endtrans %}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-radio">
+                                <h4>Scoring:</h4>
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='cost-effectiveness-scoring' class="radio-scoring" value='0' required {% if protocol_revision.costEffectivenessScoring is not null and protocol_revision.costEffectivenessScoring == 0 %}checked{% endif %} /> 0 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Attribute unsupported; Contents do not provide information able to be assessed.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='cost-effectiveness-scoring' class="radio-scoring" value='1' {% if protocol_revision.costEffectivenessScoring == 1 %}checked{% endif %} /> 1 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Attribute empirically supported; Proposal is in ideation stage.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='cost-effectiveness-scoring' class="radio-scoring" value='2' {% if protocol_revision.costEffectivenessScoring == 2 %}checked{% endif %} /> 2 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Attribute supported with external evidence; Contents show a partial achievement.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='cost-effectiveness-scoring' class="radio-scoring" value='3' {% if protocol_revision.costEffectivenessScoring == 3 %}checked{% endif %} /> 3 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Attribute supported with evidence collected through the activities; Contents show a complete achievement.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <hr />
+
+                                <h4>{% trans %}Feedback{% endtrans %}:</h4>
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='option-cost-effectiveness-feedback' value='yes' required {% if protocol_revision.costEffectivenessFeedback == 'yes' %}checked{% endif %} /> {% trans %}Revisions required{% endtrans %}
+                                        </label> 
+                                    </div>
+                                </div>
+
+                                <div class="form-group {% if not protocol_revision.costEffectivenessFeedback or protocol_revision.costEffectivenessFeedback == 'no' %}hide{% endif %}">
+                                    <label for="textarea-cost-effectiveness-feedback">{% trans %}Please describe the revisions to be made{% endtrans %}:</label> 
+                                    <textarea class="form-control" id="textarea-cost-effectiveness-feedback" name='cost-effectiveness-feedback' {% if protocol_revision.isFinalRevision %}readonly{% endif %}>{{ protocol_revision.costEffectivenessRevisions }}</textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='option-cost-effectiveness-feedback' value='no' {% if protocol_revision.costEffectivenessFeedback == 'no' %}checked{% endif %} /> {% trans %}No revisions required{% endtrans %}
+                                        </label> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr />
+
+                <div class='block'>
+                    <div class='row'>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="field-desc">
+                                    <h4>{% trans %}Efficiency{% endtrans %}</h4>
+                                    <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Evidence of a responsible and fiscal approach to implementing resources toward achieving the desired results.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                </div>
+                                <p>{% trans %}Form sections up to review{% endtrans %}: <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Information on the presence of a financial management structure. Information on a budgetary strategy. Evidence regarding budget ability to reach objectives.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a></p>
+                                <ul>
+                                    <li>{% trans %}Objectives of the Best Practice{% endtrans %}</li>
+                                    <li>{% trans %}Implementation/Activities{% endtrans %}</li>
+                                    <li>{% trans %}Main Results/Products and Impact{% endtrans %}</li>
+                                    <li>{% trans %}Limitations and Obstacles{% endtrans %}</li>
+                                    <li>{% trans %}In your opinion, the resources assigned to the accomplishment of this Best Practice (financial, technological and/or manpower) were implement in an efficient way? Support information about the outcome and impact results{% endtrans %}</li>
+                                    <li>{% trans %}What obstacles or challenges were faced during the implementation of this best practice/initiative?{% endtrans %}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-radio">
+                                <h4>Scoring:</h4>
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='efficiency-scoring' class="radio-scoring" value='0' required {% if protocol_revision.efficiencyScoring is not null and protocol_revision.efficiencyScoring == 0 %}checked{% endif %} /> 0 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Attribute unsupported; Contents do not provide information able to be assessed.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='efficiency-scoring' class="radio-scoring" value='2' {% if protocol_revision.efficiencyScoring == 2 %}checked{% endif %} /> 2 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Attribute empirically supported; Proposal is in ideation stage.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='efficiency-scoring' class="radio-scoring" value='3' {% if protocol_revision.efficiencyScoring == 3 %}checked{% endif %} /> 3 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Attribute supported with external evidence; Contents show a partial achievement.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='efficiency-scoring' class="radio-scoring" value='4' {% if protocol_revision.efficiencyScoring == 4 %}checked{% endif %} /> 4 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Attribute supported with evidence collected through the activities; Contents show a complete achievement.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <hr />
+
+                                <h4>{% trans %}Feedback{% endtrans %}:</h4>
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='option-efficiency-feedback' value='yes' required {% if protocol_revision.efficiencyFeedback == 'yes' %}checked{% endif %} /> {% trans %}Revisions required{% endtrans %}
+                                        </label> 
+                                    </div>
+                                </div>
+
+                                <div class="form-group {% if not protocol_revision.efficiencyFeedback or protocol_revision.efficiencyFeedback == 'no' %}hide{% endif %}">
+                                    <label for="textarea-efficiency-feedback">{% trans %}Please describe the revisions to be made{% endtrans %}:</label> 
+                                    <textarea class="form-control" id="textarea-efficiency-feedback" name='efficiency-feedback' {% if protocol_revision.isFinalRevision %}readonly{% endif %}>{{ protocol_revision.efficiencyRevisions }}</textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='option-efficiency-feedback' value='no' {% if protocol_revision.efficiencyFeedback == 'no' %}checked{% endif %} /> {% trans %}No revisions required{% endtrans %}
+                                        </label> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr />
+
+                <div class='block'>
+                    <div class='row'>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="field-desc">
+                                    <h4>{% trans %}Sustainability{% endtrans %}</h4>
+                                    <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Evidence of maintaining the results achieved over time. It should generate the essential tools needed to confront future challenges.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                </div>
+                                <p>{% trans %}Form sections up to review{% endtrans %}: <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Information that shows that the outlined limitations and hindrances have been met with concrete solutions or strategies to mitigate similar issues in the future. Information on monitoring and evaluation strategies are defined. Evidence on the scalability potential of the project. Information on strategies to secure resources for the intended lifespan of the proposal. Information that proves the financial, economic, social, environmental and/or institutional capacity necessary to sustain itself over time.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a></p>
+                                <ul>
+                                    <li>{% trans %}Objectives of the Best Practice{% endtrans %}</li>
+                                    <li>{% trans %}Implementation/Activities{% endtrans %}</li>
+                                    <li>{% trans %}Main Results/Products and Impact{% endtrans %}</li>
+                                    <li>{% trans %}Limitations and Obstacles{% endtrans %}</li>
+                                    <li>{% trans %}Was the BP able to transfer technologies, and/or to disseminate useful knowledge adaptable to other realities, and could it be scaled up? Please describe how{% endtrans %}</li>
+                                    <li>{% trans %}Sustainability{% endtrans %}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-radio">
+                                <h4>Scoring:</h4>
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='sustainability-scoring' class="radio-scoring" value='0' required {% if protocol_revision.sustainabilityScoring is not null and protocol_revision.sustainabilityScoring == 0 %}checked{% endif %} /> 0 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Attribute unsupported; Contents do not provide information able to be assessed.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='sustainability-scoring' class="radio-scoring" value='3' {% if protocol_revision.sustainabilityScoring == 3 %}checked{% endif %} /> 3 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Attribute empirically supported; Proposal is in ideation stage.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='sustainability-scoring' class="radio-scoring" value='4' {% if protocol_revision.sustainabilityScoring == 4 %}checked{% endif %} /> 4 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Attribute supported with external evidence; Contents show a partial achievement.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='sustainability-scoring' class="radio-scoring" value='5' {% if protocol_revision.sustainabilityScoring == 5 %}checked{% endif %} /> 5 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Attribute supported with evidence collected through the activities ; Contents show a proven and/or fully developed strategy.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <hr />
+
+                                <h4>{% trans %}Feedback{% endtrans %}:</h4>
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='option-sustainability-feedback' value='yes' required {% if protocol_revision.sustainabilityFeedback == 'yes' %}checked{% endif %} /> {% trans %}Revisions required{% endtrans %}
+                                        </label> 
+                                    </div>
+                                </div>
+
+                                <div class="form-group {% if not protocol_revision.sustainabilityFeedback or protocol_revision.sustainabilityFeedback == 'no' %}hide{% endif %}">
+                                    <label for="textarea-sustainability-feedback">{% trans %}Please describe the revisions to be made{% endtrans %}:</label> 
+                                    <textarea class="form-control" id="textarea-sustainability-feedback" name='sustainability-feedback' {% if protocol_revision.isFinalRevision %}readonly{% endif %}>{{ protocol_revision.sustainabilityRevisions }}</textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='option-sustainability-feedback' value='no' {% if protocol_revision.sustainabilityFeedback == 'no' %}checked{% endif %} /> {% trans %}No revisions required{% endtrans %}
+                                        </label> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr />
+
+                <div class='block'>
+                    <div class='row'>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="field-desc">
+                                    <h4>{% trans %}Replicability{% endtrans %}/{% trans %}Adaptability{% endtrans %}</h4>
+                                    <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Evidence of the potential to replicate or adapt to other contexts and situations.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                </div>
+                                <p>{% trans %}Form sections up to review{% endtrans %}: <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Information that outlines the capacity for the Best Practice to be replicated and/or adapted to other contexts. Information regarding the range of replicability and/or adaptability.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a></p>
+                                <ul>
+                                    <li>{% trans %}Limitations and Obstacles{% endtrans %}</li>
+                                    <li>{% trans %}Was the BP able to transfer technologies, and/or to disseminate useful knowledge adaptable to other realities, and could it be scaled up? Please describe how{% endtrans %}</li>
+                                    <li>{% trans %}What obstacles or challenges were faced during the implementation of this best practice/initiative?{% endtrans %}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-radio">
+                                <h4>Scoring:</h4>
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='replicability-adaptability-scoring' class="radio-scoring" value='0' required {% if protocol_revision.replicabilityAdaptabilityScoring is not null and protocol_revision.replicabilityAdaptabilityScoring == 0 %}checked{% endif %} /> 0 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Attribute unsupported; Contents do not provide information able to be assessed.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='replicability-adaptability-scoring' class="radio-scoring" value='2' {% if protocol_revision.replicabilityAdaptabilityScoring == 2 %}checked{% endif %} /> 2 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Attribute empirically supported; Contents limit R/A to a local/national setting.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='replicability-adaptability-scoring' class="radio-scoring" value='3' {% if protocol_revision.replicabilityAdaptabilityScoring == 3 %}checked{% endif %} /> 3 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Attribute supported with external evidence; Contents limit R/A to a sub-regional setting.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='replicability-adaptability-scoring' class="radio-scoring" value='4' {% if protocol_revision.replicabilityAdaptabilityScoring == 4 %}checked{% endif %} /> 4 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Attribute supported with evidence collected through the activities ; Contents show R/A can be extended to the whole Region of the Americas.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <hr />
+
+                                <h4>{% trans %}Feedback{% endtrans %}:</h4>
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='option-replicability-adaptability-feedback' value='yes' required {% if protocol_revision.replicabilityAdaptabilityFeedback == 'yes' %}checked{% endif %} /> {% trans %}Revisions required{% endtrans %}
+                                        </label> 
+                                    </div>
+                                </div>
+
+                                <div class="form-group {% if not protocol_revision.replicabilityAdaptabilityFeedback or protocol_revision.replicabilityAdaptabilityFeedback == 'no' %}hide{% endif %}">
+                                    <label for="textarea-replicability-adaptability-feedback">{% trans %}Please describe the revisions to be made{% endtrans %}:</label> 
+                                    <textarea class="form-control" id="textarea-replicability-adaptability-feedback" name='replicability-adaptability-feedback' {% if protocol_revision.isFinalRevision %}readonly{% endif %}>{{ protocol_revision.replicabilityAdaptabilityRevisions }}</textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='option-replicability-adaptability-feedback' value='no' {% if protocol_revision.replicabilityAdaptabilityFeedback == 'no' %}checked{% endif %} /> {% trans %}No revisions required{% endtrans %}
+                                        </label> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr />
+
+                <div class='block'>
+                    <div class='row'>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="field-desc">
+                                    <h4>{% trans %}Innovation{% endtrans %}</h4>
+                                    <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Evidence of taking, promoting, or creating an entirely new technology or approach to a problem or encouraging innovation by its users to collaboratively develop new solutions to common issues.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                </div>
+                                <p>{% trans %}Form sections up to review{% endtrans %}: <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Description of any innovation – defined as any product, action, service, partnership that has the potential to enhance health outcomes. Information on how the proposed elements are to be considered innovative either in the national and/or international context.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a></p>
+                                <ul>
+                                    <li>{% trans %}Brief Introduction{% endtrans %}</li>
+                                    <li>{% trans %}Objectives of the Best Practice{% endtrans %}</li>
+                                    <li>{% trans %}Implementation/Activities{% endtrans %}</li>
+                                    <li>{% trans %}Main Results/Products and Impact{% endtrans %}</li>
+                                    <li>{% trans %}Limitations and Obstacles{% endtrans %}</li>
+                                    <li>{% trans %}What are the lessons learned that will improve our expertise and add value to the Organization?{% endtrans %}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-radio">
+                                <h4>Scoring:</h4>
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='innovation-scoring' class="radio-scoring" value='0' required {% if protocol_revision.innovationScoring is not null and protocol_revision.innovationScoring == 0 %}checked{% endif %} /> 0 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Attribute unsupported; Contents do not provide information able to be assessed; Contents allude to an existing innovation.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='innovation-scoring' class="radio-scoring" value='1' {% if protocol_revision.innovationScoring == 1 %}checked{% endif %} /> 1 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Attribute empirically supported; Innovation is in ideation stage and/or is skimmed over.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='innovation-scoring' class="radio-scoring" value='2' {% if protocol_revision.innovationScoring == 2 %}checked{% endif %} /> 2 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Attribute empirically supported but the innovation aspect is clearly described/argued for; Innovation relevant in a local context.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='innovation-scoring' class="radio-scoring" value='3' {% if protocol_revision.innovationScoring == 3 %}checked{% endif %} /> 3 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Attribute supported with external evidences or those collected through the activities; Innovation aspect is clearly described/argued for; Innovation relevant in an international context.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <hr />
+
+                                <h4>{% trans %}Feedback{% endtrans %}:</h4>
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='option-innovation-feedback' value='yes' required {% if protocol_revision.innovationFeedback == 'yes' %}checked{% endif %} /> {% trans %}Revisions required{% endtrans %}
+                                        </label> 
+                                    </div>
+                                </div>
+
+                                <div class="form-group {% if not protocol_revision.innovationFeedback or protocol_revision.innovationFeedback == 'no' %}hide{% endif %}">
+                                    <label for="textarea-innovation-feedback">{% trans %}Please describe the revisions to be made{% endtrans %}:</label> 
+                                    <textarea class="form-control" id="textarea-innovation-feedback" name='innovation-feedback' {% if protocol_revision.isFinalRevision %}readonly{% endif %}>{{ protocol_revision.innovationRevisions }}</textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='option-innovation-feedback' value='no' {% if protocol_revision.innovationFeedback == 'no' %}checked{% endif %} /> {% trans %}No revisions required{% endtrans %}
+                                        </label> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr />
+
+                <div class='block'>
+                    <div class='row'>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="field-desc">
+                                    <h4>{% trans %}Participation{% endtrans %}</h4>
+                                    <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Evidence of the involvement of key stakeholders and partners (particularly the primary beneficiaries) in important decisions and actions related to the intervention and the adoption of a participative approach.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                </div>
+                                <p>{% trans %}Form sections up to review{% endtrans %}: <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Information on relevant and key stakeholders and/or partnerships. Description of the engagement strategy. Evidence on primary beneficiary engagement.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a></p>
+                                <ul>
+                                    <li>{% trans %}Brief Introduction{% endtrans %}</li>
+                                    <li>{% trans %}Objectives of the Best Practice{% endtrans %}</li>
+                                    <li>{% trans %}Implementation/Activities{% endtrans %}</li>
+                                    <li>{% trans %}Main Results/Products and Impact{% endtrans %}</li>
+                                    <li>{% trans %}Limitations and Obstacles{% endtrans %}</li>
+                                    <li>{% trans %}Was the BP able to transfer technologies, and/or to disseminate useful knowledge adaptable to other realities, and could it be scaled up? Please describe how{% endtrans %}</li>
+                                    <li>{% trans %}Sustainability{% endtrans %}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-radio">
+                                <h4>Scoring:</h4>
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='participation-scoring' class="radio-scoring" value='0' required {% if protocol_revision.participationScoring is not null and protocol_revision.participationScoring == 0 %}checked{% endif %} /> 0 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Attribute unsupported; Contents do not provide information able to be assessed.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='participation-scoring' class="radio-scoring" value='1' {% if protocol_revision.participationScoring == 1 %}checked{% endif %} /> 1 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Stakeholders/Partners vaguely or clearly identified; No details on their engagement.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='participation-scoring' class="radio-scoring" value='2' {% if protocol_revision.participationScoring == 2 %}checked{% endif %} /> 2 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Stakeholders/Partners are clearly identified; Details on their engagement are vague or they have not been engaged yet.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='participation-scoring' class="radio-scoring" value='3' {% if protocol_revision.participationScoring == 3 %}checked{% endif %} /> 3 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Stakeholders/Partners are clearly identified; Details on their engagement is clearly defined and active.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <hr />
+
+                                <h4>{% trans %}Feedback{% endtrans %}:</h4>
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='option-participation-feedback' value='yes' required {% if protocol_revision.participationFeedback == 'yes' %}checked{% endif %} /> {% trans %}Revisions required{% endtrans %}
+                                        </label> 
+                                    </div>
+                                </div>
+
+                                <div class="form-group {% if not protocol_revision.participationFeedback or protocol_revision.participationFeedback == 'no' %}hide{% endif %}">
+                                    <label for="textarea-participation-feedback">{% trans %}Please describe the revisions to be made{% endtrans %}:</label> 
+                                    <textarea class="form-control" id="textarea-participation-feedback" name='participation-feedback' {% if protocol_revision.isFinalRevision %}readonly{% endif %}>{{ protocol_revision.innovationRevisions }}</textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='option-participation-feedback' value='no' {% if protocol_revision.participationFeedback == 'no' %}checked{% endif %} /> {% trans %}No revisions required{% endtrans %}
+                                        </label> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr />
+
+                <div class='block'>
+                    <div class='row'>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="field-desc">
+                                    <h4>{% trans %}Focus on Cross-Cutting Themes{% endtrans %} {% trans %}(equity, gender, ethnicity, and human rights){% endtrans %}</h4>
+                                    <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}PAHO's Strategic Plan 2020-2015 addresses four cross-cutting themes: equity, gender, ethnicity, and human rights. Given the centrality of the themes to PAHO's technical cooperation, the best practice should demonstrate the capacity to analyze and propose changes in the vulnerabilities, diversities, or gaps that interfere with the population's health conditions.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                </div>
+                                <p>{% trans %}Form sections up to review{% endtrans %}: <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Information on strategies to approach cross-cutting themes. Information on the Best Practice’s impact on cross-cutting themes.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a></p>
+                                <ul>
+                                    <li>{% trans %}Any specific population group?{% endtrans %}</li>
+                                    <li>{% trans %}Brief Introduction{% endtrans %}</li>
+                                    <li>{% trans %}Objectives of the Best Practice{% endtrans %}</li>
+                                    <li>{% trans %}Implementation/Activities{% endtrans %}</li>
+                                    <li>{% trans %}Main Results/Products and Impact{% endtrans %}</li>
+                                    <li>{% trans %}Limitations and Obstacles{% endtrans %}</li>
+                                    <li>{% trans %}What obstacles or challenges were faced during the implementation of this best practice/initiative?{% endtrans %}</li>
+                                    <li>{% trans %}What are the lessons learned that will improve our expertise and add value to the Organization?{% endtrans %}</li>
+                                </ul>
+
+                                <p>{% trans %}If the proposal is a PAHO Technical Cooperation, also review the following items (Only visible for Technical Cooperation submissions){% endtrans %}:</p>
+                                <ul>
+                                    <li>{% trans %}Is the BP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization?{% endtrans %}</li>
+                                    <li>{% trans %}Was the Technical Cooperation planned considering the health situation of the target population?{% endtrans %}</li>
+                                    <li>{% trans %}In your opinion, PAHO's Technical Cooperation was planned considering the cross-cutting approach (Human Rights, Gender Equity and Ethnicity (Cultural Diversity)?{% endtrans %}</li>
+                                    <li>{% trans %}Please provide supporting information. For example, information on how PAHO's Technical Cooperation contributed to strengthening capacity and addressing health inequities and inequalities, and gender and culturally sensitive approaches to health within a human rights framework; to engage in an intersectoral action with an equity and rights focus{% endtrans %}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-radio">
+                                <h4>Scoring:</h4>
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='cross-cutting-themes-scoring' class="radio-scoring" value='0' required {% if protocol_revision.crossCuttingThemesScoring is not null and protocol_revision.crossCuttingThemesScoring == 0 %}checked{% endif %} /> 0 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Attribute unsupported; Contents do not provide information able to be assessed.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='cross-cutting-themes-scoring' class="radio-scoring" value='1' {% if protocol_revision.crossCuttingThemesScoring == 1 %}checked{% endif %} /> 1 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Proposal describes engagement in at least one cross-cutting themes; Provides no information on impact or describes failure to produce impact.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='cross-cutting-themes-scoring' class="radio-scoring" value='2' {% if protocol_revision.crossCuttingThemesScoring == 2 %}checked{% endif %} /> 2 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Proposal describes engagement in at least one cross-cutting themes; Describes superficial and/or partial impact.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='cross-cutting-themes-scoring' class="radio-scoring" value='3' {% if protocol_revision.crossCuttingThemesScoring == 3 %}checked{% endif %} /> 3 {% trans %}Points{% endtrans %}
+                                        </label>
+                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{% trans %}Proposal describes engagement in at least one cross-cutting themes; Describes substantial impact.{% endtrans %}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                    </div>
+                                </div>
+
+                                <hr />
+
+                                <h4>{% trans %}Feedback{% endtrans %}:</h4>
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='option-cross-cutting-themes-feedback' value='yes' required {% if protocol_revision.crossCuttingThemesFeedback == 'yes' %}checked{% endif %} /> {% trans %}Revisions required{% endtrans %}
+                                        </label> 
+                                    </div>
+                                </div>
+
+                                <div class="form-group {% if not protocol_revision.crossCuttingThemesFeedback or protocol_revision.crossCuttingThemesFeedback == 'no' %}hide{% endif %}">
+                                    <label for="textarea-cross-cutting-themes-feedback">{% trans %}Please describe the revisions to be made{% endtrans %}:</label> 
+                                    <textarea class="form-control" id="textarea-cross-cutting-themes-feedback" name='cross-cutting-themes-feedback' {% if protocol_revision.isFinalRevision %}readonly{% endif %}>{{ protocol_revision.crossCuttingThemesRevisions }}</textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='option-cross-cutting-themes-feedback' value='no' {% if protocol_revision.crossCuttingThemesFeedback == 'no' %}checked{% endif %} /> {% trans %}No revisions required{% endtrans %}
+                                        </label> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr />
+
+                <div class='block'>
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <h2 class='sub-header'>{% trans %}Reviewer's decision{% endtrans %}:</h2>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="input-average-score">{% trans %}Average score{% endtrans %}:</label>
+                                <input type="text" class="form-control" name='average-score' id='input-average-score' value="{% if protocol_revision.averageScore %}{{ protocol_revision.averageScore }}{% else %}0{% endif %}" style="width: auto; display: inline" readonly>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="zero-scores" class='row' {% if not protocol_revision.zeroScores or protocol_revision.zeroScores == 'no' %}style="display: none;"{% endif %}>
+                        <div class="col-md-12">
+                            <p>{% trans %}Zero scores{% endtrans %}: {% trans %}One or more attributes have been scored as a zero. Is this correct?{% endtrans %}</p>
+                            <div class="form-inline">
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='zero-scores' id="zero-scores-yes" value='yes' {% if protocol_revision.zeroScores == 'yes' %}checked{% endif %} /> {% trans %}Yes{% endtrans %}
+                                        </label> 
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class='radio'>
+                                        <label>
+                                            <input type='radio' name='zero-scores' value='no' id="zero-scores-no" {% if not protocol_revision.zeroScores or protocol_revision.zeroScores == 'no' %}checked{% endif %} /> {% trans %}No{% endtrans %}
+                                        </label> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br />
+
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <div class="form-group required">
+                                <label for="select-final-decision">Decision:</label>
+                                <select class="form-control select2" id="select-final-decision" name="final-decision" required {% if protocol_revision.isFinalRevision %}disabled{% endif %}>
+                                    <option value="">-</option>
+                                    {% for key, option in decision_options %}
+                                        <option value="{{ key }}" {% if protocol_revision.finalDecision == key %}selected{% endif %}>{{ option }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="textarea-other-comments">{% trans %}Decision Rationale{% endtrans %}/{% trans %}Comments{% endtrans %}:</label> 
+                                <textarea class="form-control" id='textarea-other-comments' name="other-comments" rows="5" {% if protocol_revision.isFinalRevision %}readonly{% endif %}>{{ protocol_revision.otherComments }}</textarea>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -85,25 +843,156 @@
             <div class='row'>
                 <div class='submission-button-controls col-md-12'>
                     <button type="submit" class='btn btn-primary' id='button-save' {% if protocol_revision.isFinalRevision %}disabled{% endif %}>{% trans %}Save{% endtrans %}</button>
-                    <button type="button" class='btn btn-primary' id='button-save-and-finish' {% if not protocol_revision.finalDecision or protocol_revision.isFinalRevision %}disabled{% endif %}>
-                        {% trans %}Save and mark as final revision{% endtrans %}
+                    <button type="button" class='btn btn-primary' id='button-save-and-finish' data-toggle="modal" data-target="#modal-confirm-send-review" {% if not protocol_revision.finalDecision or protocol_revision.isFinalRevision %}disabled{% endif %}>
+                        {% trans %}Send review{% endtrans %}
                     </button>
                 </div>
             </div>
         </form>
     </div>
 
-    
+    <!-- Modal Help Text -->
+    <div class="modal fade" id="modal-help-text" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">{% trans %}Help Text{% endtrans %}</h4>
+                </div>
+
+                <div class="modal-body">
+                    <p class="modal-body-text"></p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">{% trans %}Close{% endtrans %}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Confirm Send Review -->
+    <div class="modal fade" id="modal-confirm-send-review" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">{% trans %}Send Review{% endtrans %}</h4>
+                </div>
+                <div class="modal-body">
+                    <p>{% trans %}Are you sure you want to send this review?{% endtrans %}</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">{% trans %}Close{% endtrans %}</button>
+                    <button type="button" class="btn btn-primary" id="button-confirm-send-review">{% trans %}Confirm{% endtrans %}</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
 
 {% block script %}
     <script>
         $(function(){
-            $("body").on("click", "#button-save-and-finish", function(e){
+            var decision = {% if protocol_revision.finalDecision %}true{% else %}false{% endif %};
+            var is_final_decision = {% if protocol_revision.isFinalRevision %}true{% else %}false{% endif %};
+
+            if ( is_final_decision ) {
+                $('input').iCheck('disable'); // change input's state to 'disabled'
+            }
+
+            $('.radio-scoring').on('ifChecked', function(event){
+                zeroScores();
+            });
+
+            $('input[name=zero-scores]').on('ifChecked', function(event){
+                var val = $('input[name=zero-scores]:checked').val();
+
+                if ( "yes" == val ) {
+                    $("#button-save").prop("disabled", false);
+                    if ( decision ) $("#button-save-and-finish").prop("disabled", false);
+                } else {
+                    $("#button-save").prop("disabled", true);
+                    if ( decision ) $("#button-save-and-finish").prop("disabled", true);
+                }
+            });
+
+            $( 'input[name$=feedback]' ).on( 'ifChecked', function() {
+                var val = $(this).val();
+                var name = $(this).attr('name');
+                var prefix = name.substring(0, name.indexOf('-'));
+                var textarea = name.replace(prefix,'textarea');
+
+                if ( 'yes' == val ) {
+                    $("#"+textarea).parent().removeClass("hide");
+                    $("#"+textarea).prop('required',true);
+                } else {
+                    $("#"+textarea).parent().addClass("hide");
+                    $("#"+textarea).prop('required',false);
+                }
+            });
+
+            $("body").on("click", "#button-confirm-send-review", function(e){
                 $("#input-is-final-revision").val('true');
                 $("#form-action").submit();
             });
+
+            $("body").on("click", ".modal-help-text", function(e){
+                var text = $(this).data('text');
+                $(".modal-body-text").text(text);
+            });
+/*
+            $('#zero-scores-no').on('ifChecked', function(event){
+                alert("{% trans %}Please check the attributes that were scored as zero{% endtrans %}");
+            });
+*/
         });
+
+        function zeroScores() {
+            var scoring = [];
+            var scoring1 = $('input[name=effectiveness-scoring]:checked').val();
+            var scoring2 = $('input[name=cost-effectiveness-scoring]:checked').val();
+            var scoring3 = $('input[name=efficiency-scoring]:checked').val();
+            var scoring4 = $('input[name=sustainability-scoring]:checked').val();
+            var scoring5 = $('input[name=replicability-adaptability-scoring]:checked').val();
+            var scoring6 = $('input[name=innovation-scoring]:checked').val();
+            var scoring7 = $('input[name=participation-scoring]:checked').val();
+            var scoring8 = $('input[name=cross-cutting-themes-scoring]:checked').val();
+
+            scoring.push(scoring1);
+            scoring.push(scoring2);
+            scoring.push(scoring3);
+            scoring.push(scoring4);
+            scoring.push(scoring5);
+            scoring.push(scoring6);
+            scoring.push(scoring7);
+            scoring.push(scoring8);
+
+            var scoring = scoring.reduce( (acc, x ) => acc.concat(+x), []);
+            const sum = scoring.reduce((a, b) => a + b, 0);
+            const avg = (sum / scoring.length) || 0;
+            var rounded = Math.round(avg * 10) / 10
+
+            $("#input-average-score").val(rounded); // average score
+
+            var decision = {% if protocol_revision.finalDecision %}true{% else %}false{% endif %};
+
+            if($.inArray(0, scoring) !== -1) {
+                var val = $('input[name=zero-scores]:checked').val();
+                if ( "no" == val ) {
+                    $("#zero-scores").show();
+                    $("#zero-scores-no").iCheck("check");
+                    $("#button-save").prop("disabled", true);
+                    if ( decision ) $("#button-save-and-finish").prop("disabled", true);
+                }
+            } else {
+                $("#zero-scores").hide();
+                $("#zero-scores-no").iCheck("check");
+                $("#button-save").prop("disabled", false);
+                if ( decision ) $("#button-save-and-finish").prop("disabled", false);
+            }
+        }
     </script>
 {% endblock %}

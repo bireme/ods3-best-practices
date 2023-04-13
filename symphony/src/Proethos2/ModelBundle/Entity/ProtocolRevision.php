@@ -104,6 +104,154 @@ class ProtocolRevision extends Base
     private $final_decision;
 
     /**
+     * @ORM\Column(type="integer", nullable=true)
+     * @Assert\NotBlank
+     */
+    private $effectiveness_scoring;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank
+     */
+    private $effectiveness_feedback;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $effectiveness_revisions;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     * @Assert\NotBlank
+     */
+    private $cost_effectiveness_scoring;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank
+     */
+    private $cost_effectiveness_feedback;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $cost_effectiveness_revisions;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     * @Assert\NotBlank
+     */
+    private $efficiency_scoring;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank
+     */
+    private $efficiency_feedback;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $efficiency_revisions;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     * @Assert\NotBlank
+     */
+    private $sustainability_scoring;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank
+     */
+    private $sustainability_feedback;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $sustainability_revisions;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     * @Assert\NotBlank
+     */
+    private $replicability_adaptability_scoring;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank
+     */
+    private $replicability_adaptability_feedback;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $replicability_adaptability_revisions;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     * @Assert\NotBlank
+     */
+    private $innovation_scoring;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank
+     */
+    private $innovation_feedback;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $innovation_revisions;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     * @Assert\NotBlank
+     */
+    private $participation_scoring;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank
+     */
+    private $participation_feedback;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $participation_revisions;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     * @Assert\NotBlank
+     */
+    private $cross_cutting_themes_scoring;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank
+     */
+    private $cross_cutting_themes_feedback;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $cross_cutting_themes_revisions;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     * @Assert\NotBlank
+     */
+    private $average_score;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank
+     */
+    private $zero_scores;
+
+    /**
      * Get id
      *
      * @return integer
@@ -441,5 +589,629 @@ class ProtocolRevision extends Base
             case 'T': return "Withdrawn"; break;
         }
         return $this->final_decision;
+    }
+
+    /**
+     * Set effectivenessScoring
+     *
+     * @param integer $effectivenessScoring
+     *
+     * @return ProtocolRevision
+     */
+    public function setEffectivenessScoring($effectivenessScoring)
+    {
+        $this->effectiveness_scoring = $effectivenessScoring;
+
+        return $this;
+    }
+
+    /**
+     * Get effectivenessScoring
+     *
+     * @return integer
+     */
+    public function getEffectivenessScoring()
+    {
+        return $this->effectiveness_scoring;
+    }
+
+    /**
+     * Set effectivenessFeedback
+     *
+     * @param string $effectivenessFeedback
+     *
+     * @return ProtocolRevision
+     */
+    public function setEffectivenessFeedback($effectivenessFeedback)
+    {
+        $this->effectiveness_feedback = $effectivenessFeedback;
+
+        return $this;
+    }
+
+    /**
+     * Get effectivenessFeedback
+     *
+     * @return string
+     */
+    public function getEffectivenessFeedback()
+    {
+        return $this->effectiveness_feedback;
+    }
+
+    /**
+     * Set effectivenessRevisions
+     *
+     * @param string $effectivenessRevisions
+     *
+     * @return ProtocolRevision
+     */
+    public function setEffectivenessRevisions($effectivenessRevisions)
+    {
+        $this->effectiveness_revisions = $effectivenessRevisions;
+
+        return $this;
+    }
+
+    /**
+     * Get effectivenessRevisions
+     *
+     * @return string
+     */
+    public function getEffectivenessRevisions()
+    {
+        return $this->effectiveness_revisions;
+    }
+
+    /**
+     * Set costEffectivenessScoring
+     *
+     * @param integer $costEffectivenessScoring
+     *
+     * @return ProtocolRevision
+     */
+    public function setCostEffectivenessScoring($costEffectivenessScoring)
+    {
+        $this->cost_effectiveness_scoring = $costEffectivenessScoring;
+
+        return $this;
+    }
+
+    /**
+     * Get costEffectivenessScoring
+     *
+     * @return integer
+     */
+    public function getCostEffectivenessScoring()
+    {
+        return $this->cost_effectiveness_scoring;
+    }
+
+    /**
+     * Set costEffectivenessFeedback
+     *
+     * @param string $costEffectivenessFeedback
+     *
+     * @return ProtocolRevision
+     */
+    public function setCostEffectivenessFeedback($costEffectivenessFeedback)
+    {
+        $this->cost_effectiveness_feedback = $costEffectivenessFeedback;
+
+        return $this;
+    }
+
+    /**
+     * Get costEffectivenessFeedback
+     *
+     * @return string
+     */
+    public function getCostEffectivenessFeedback()
+    {
+        return $this->cost_effectiveness_feedback;
+    }
+
+    /**
+     * Set costEffectivenessRevisions
+     *
+     * @param string $costEffectivenessRevisions
+     *
+     * @return ProtocolRevision
+     */
+    public function setCostEffectivenessRevisions($costEffectivenessRevisions)
+    {
+        $this->cost_effectiveness_revisions = $costEffectivenessRevisions;
+
+        return $this;
+    }
+
+    /**
+     * Get costEffectivenessRevisions
+     *
+     * @return string
+     */
+    public function getCostEffectivenessRevisions()
+    {
+        return $this->cost_effectiveness_revisions;
+    }
+
+    /**
+     * Set efficiencyScoring
+     *
+     * @param integer $efficiencyScoring
+     *
+     * @return ProtocolRevision
+     */
+    public function setEfficiencyScoring($efficiencyScoring)
+    {
+        $this->efficiency_scoring = $efficiencyScoring;
+
+        return $this;
+    }
+
+    /**
+     * Get efficiencyScoring
+     *
+     * @return integer
+     */
+    public function getEfficiencyScoring()
+    {
+        return $this->efficiency_scoring;
+    }
+
+    /**
+     * Set efficiencyFeedback
+     *
+     * @param string $efficiencyFeedback
+     *
+     * @return ProtocolRevision
+     */
+    public function setEfficiencyFeedback($efficiencyFeedback)
+    {
+        $this->efficiency_feedback = $efficiencyFeedback;
+
+        return $this;
+    }
+
+    /**
+     * Get efficiencyFeedback
+     *
+     * @return string
+     */
+    public function getEfficiencyFeedback()
+    {
+        return $this->efficiency_feedback;
+    }
+
+    /**
+     * Set efficiencyRevisions
+     *
+     * @param string $efficiencyRevisions
+     *
+     * @return ProtocolRevision
+     */
+    public function setEfficiencyRevisions($efficiencyRevisions)
+    {
+        $this->efficiency_revisions = $efficiencyRevisions;
+
+        return $this;
+    }
+
+    /**
+     * Get efficiencyRevisions
+     *
+     * @return string
+     */
+    public function getEfficiencyRevisions()
+    {
+        return $this->efficiency_revisions;
+    }
+
+    /**
+     * Set sustainabilityScoring
+     *
+     * @param integer $sustainabilityScoring
+     *
+     * @return ProtocolRevision
+     */
+    public function setSustainabilityScoring($sustainabilityScoring)
+    {
+        $this->sustainability_scoring = $sustainabilityScoring;
+
+        return $this;
+    }
+
+    /**
+     * Get sustainabilityScoring
+     *
+     * @return integer
+     */
+    public function getSustainabilityScoring()
+    {
+        return $this->sustainability_scoring;
+    }
+
+    /**
+     * Set sustainabilityFeedback
+     *
+     * @param string $sustainabilityFeedback
+     *
+     * @return ProtocolRevision
+     */
+    public function setSustainabilityFeedback($sustainabilityFeedback)
+    {
+        $this->sustainability_feedback = $sustainabilityFeedback;
+
+        return $this;
+    }
+
+    /**
+     * Get sustainabilityFeedback
+     *
+     * @return string
+     */
+    public function getSustainabilityFeedback()
+    {
+        return $this->sustainability_feedback;
+    }
+
+    /**
+     * Set sustainabilityRevisions
+     *
+     * @param string $sustainabilityRevisions
+     *
+     * @return ProtocolRevision
+     */
+    public function setSustainabilityRevisions($sustainabilityRevisions)
+    {
+        $this->sustainability_revisions = $sustainabilityRevisions;
+
+        return $this;
+    }
+
+    /**
+     * Get sustainabilityRevisions
+     *
+     * @return string
+     */
+    public function getSustainabilityRevisions()
+    {
+        return $this->sustainability_revisions;
+    }
+
+    /**
+     * Set replicabilityAdaptabilityScoring
+     *
+     * @param integer $replicabilityAdaptabilityScoring
+     *
+     * @return ProtocolRevision
+     */
+    public function setReplicabilityAdaptabilityScoring($replicabilityAdaptabilityScoring)
+    {
+        $this->replicability_adaptability_scoring = $replicabilityAdaptabilityScoring;
+
+        return $this;
+    }
+
+    /**
+     * Get replicabilityAdaptabilityScoring
+     *
+     * @return integer
+     */
+    public function getReplicabilityAdaptabilityScoring()
+    {
+        return $this->replicability_adaptability_scoring;
+    }
+
+    /**
+     * Set replicabilityAdaptabilityFeedback
+     *
+     * @param string $replicabilityAdaptabilityFeedback
+     *
+     * @return ProtocolRevision
+     */
+    public function setReplicabilityAdaptabilityFeedback($replicabilityAdaptabilityFeedback)
+    {
+        $this->replicability_adaptability_feedback = $replicabilityAdaptabilityFeedback;
+
+        return $this;
+    }
+
+    /**
+     * Get replicabilityAdaptabilityFeedback
+     *
+     * @return string
+     */
+    public function getReplicabilityAdaptabilityFeedback()
+    {
+        return $this->replicability_adaptability_feedback;
+    }
+
+    /**
+     * Set replicabilityAdaptabilityRevisions
+     *
+     * @param string $replicabilityAdaptabilityRevisions
+     *
+     * @return ProtocolRevision
+     */
+    public function setReplicabilityAdaptabilityRevisions($replicabilityAdaptabilityRevisions)
+    {
+        $this->replicability_adaptability_revisions = $replicabilityAdaptabilityRevisions;
+
+        return $this;
+    }
+
+    /**
+     * Get replicabilityAdaptabilityRevisions
+     *
+     * @return string
+     */
+    public function getReplicabilityAdaptabilityRevisions()
+    {
+        return $this->replicability_adaptability_revisions;
+    }
+
+    /**
+     * Set innovationScoring
+     *
+     * @param integer $innovationScoring
+     *
+     * @return ProtocolRevision
+     */
+    public function setInnovationScoring($innovationScoring)
+    {
+        $this->innovation_scoring = $innovationScoring;
+
+        return $this;
+    }
+
+    /**
+     * Get innovationScoring
+     *
+     * @return integer
+     */
+    public function getInnovationScoring()
+    {
+        return $this->innovation_scoring;
+    }
+
+    /**
+     * Set innovationFeedback
+     *
+     * @param string $innovationFeedback
+     *
+     * @return ProtocolRevision
+     */
+    public function setInnovationFeedback($innovationFeedback)
+    {
+        $this->innovation_feedback = $innovationFeedback;
+
+        return $this;
+    }
+
+    /**
+     * Get innovationFeedback
+     *
+     * @return string
+     */
+    public function getInnovationFeedback()
+    {
+        return $this->innovation_feedback;
+    }
+
+    /**
+     * Set innovationRevisions
+     *
+     * @param string $innovationRevisions
+     *
+     * @return ProtocolRevision
+     */
+    public function setInnovationRevisions($innovationRevisions)
+    {
+        $this->innovation_revisions = $innovationRevisions;
+
+        return $this;
+    }
+
+    /**
+     * Get innovationRevisions
+     *
+     * @return string
+     */
+    public function getInnovationRevisions()
+    {
+        return $this->innovation_revisions;
+    }
+
+    /**
+     * Set participationScoring
+     *
+     * @param integer $participationScoring
+     *
+     * @return ProtocolRevision
+     */
+    public function setParticipationScoring($participationScoring)
+    {
+        $this->participation_scoring = $participationScoring;
+
+        return $this;
+    }
+
+    /**
+     * Get participationScoring
+     *
+     * @return integer
+     */
+    public function getParticipationScoring()
+    {
+        return $this->participation_scoring;
+    }
+
+    /**
+     * Set participationFeedback
+     *
+     * @param string $participationFeedback
+     *
+     * @return ProtocolRevision
+     */
+    public function setParticipationFeedback($participationFeedback)
+    {
+        $this->participation_feedback = $participationFeedback;
+
+        return $this;
+    }
+
+    /**
+     * Get participationFeedback
+     *
+     * @return string
+     */
+    public function getParticipationFeedback()
+    {
+        return $this->participation_feedback;
+    }
+
+    /**
+     * Set participationRevisions
+     *
+     * @param string $participationRevisions
+     *
+     * @return ProtocolRevision
+     */
+    public function setParticipationRevisions($participationRevisions)
+    {
+        $this->participation_revisions = $participationRevisions;
+
+        return $this;
+    }
+
+    /**
+     * Get participationRevisions
+     *
+     * @return string
+     */
+    public function getParticipationRevisions()
+    {
+        return $this->participation_revisions;
+    }
+
+    /**
+     * Set crossCuttingThemesScoring
+     *
+     * @param integer $crossCuttingThemesScoring
+     *
+     * @return ProtocolRevision
+     */
+    public function setCrossCuttingThemesScoring($crossCuttingThemesScoring)
+    {
+        $this->cross_cutting_themes_scoring = $crossCuttingThemesScoring;
+
+        return $this;
+    }
+
+    /**
+     * Get crossCuttingThemesScoring
+     *
+     * @return integer
+     */
+    public function getCrossCuttingThemesScoring()
+    {
+        return $this->cross_cutting_themes_scoring;
+    }
+
+    /**
+     * Set crossCuttingThemesFeedback
+     *
+     * @param string $crossCuttingThemesFeedback
+     *
+     * @return ProtocolRevision
+     */
+    public function setCrossCuttingThemesFeedback($crossCuttingThemesFeedback)
+    {
+        $this->cross_cutting_themes_feedback = $crossCuttingThemesFeedback;
+
+        return $this;
+    }
+
+    /**
+     * Get crossCuttingThemesFeedback
+     *
+     * @return string
+     */
+    public function getCrossCuttingThemesFeedback()
+    {
+        return $this->cross_cutting_themes_feedback;
+    }
+
+    /**
+     * Set crossCuttingThemesRevisions
+     *
+     * @param string $crossCuttingThemesRevisions
+     *
+     * @return ProtocolRevision
+     */
+    public function setCrossCuttingThemesRevisions($crossCuttingThemesRevisions)
+    {
+        $this->cross_cutting_themes_revisions = $crossCuttingThemesRevisions;
+
+        return $this;
+    }
+
+    /**
+     * Get crossCuttingThemesRevisions
+     *
+     * @return string
+     */
+    public function getCrossCuttingThemesRevisions()
+    {
+        return $this->cross_cutting_themes_revisions;
+    }
+
+    /**
+     * Set averageScore
+     *
+     * @param float $averageScore
+     *
+     * @return ProtocolRevision
+     */
+    public function setAverageScore($averageScore)
+    {
+        $this->average_score = $averageScore;
+
+        return $this;
+    }
+
+    /**
+     * Get averageScore
+     *
+     * @return float
+     */
+    public function getAverageScore()
+    {
+        return $this->average_score;
+    }
+
+    /**
+     * Set zeroScores
+     *
+     * @param string $zeroScores
+     *
+     * @return ProtocolRevision
+     */
+    public function setZeroScores($zeroScores)
+    {
+        $this->zero_scores = $zeroScores;
+
+        return $this;
+    }
+
+    /**
+     * Get zeroScores
+     *
+     * @return string
+     */
+    public function getZeroScores()
+    {
+        return $this->zero_scores;
     }
 }
