@@ -17,3 +17,5 @@ REPLACE INTO `upload_type` (`id`, `created`, `updated`, `name`, `slug`, `status`
 REPLACE INTO `upload_type` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (39,'1970-01-01 00:00:00','1970-01-01 00:00:00','Executive Summary','executive-summary',1);
 REPLACE INTO `upload_type` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (40,'1970-01-01 00:00:00','1970-01-01 00:00:00','Informed consent','informed-consent',1);
 REPLACE INTO `upload_type` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (41,'2021-07-05 17:46:09','2021-07-05 17:46:09','Image','image',1);
+REPLACE INTO `upload_type` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (42,'1970-01-01 00:00:00','1970-01-01 00:00:00','FENSA','fensa',1);
+REPLACE INTO `upload_type` (`id`, `created`, `updated`, `name`, `slug`, `status`) VALUES (43,'1970-01-01 00:00:00','1970-01-01 00:00:00','FENSA Tobacco/Arms','fensa-tobacco-arms',1);
