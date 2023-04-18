@@ -21,19 +21,19 @@
                 <div class='block'>
                     <div class='row'>
                         <div class="col-md-12">
-                            <h2 class='sub-header'>{% trans %}Relevance{% endtrans %}</h2>
+                            <h2 class='sub-header'>{% trans %}Effectiveness, Cost-Effectiveness and Efficiency{% endtrans %}</h2>
                         </div>
                     </div>
 
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="select-health-system-contribution">*{% trans %}Did it contribute to strengthen the health system, the achievement of the Pan American Health Organization Strategic Plan 2020-2025 (SP 20-25) and/or the Sustainable Health Agenda for the Americas 2018-2030 (SHAA 2030){% endtrans %}?</label>
+                                <label for="select-resources-assigned">*{% trans %}In your opinion, the resources assigned to the accomplishment of this Best Practice (financial, technological and/or manpower) were implement in an efficient way{% endtrans %}?</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <select class='form-control selectpicker' id='select-health-system-contribution' name='health_system_contribution' data-size="6" data-live-search="true" required>
+                                <select class='form-control selectpicker' id='select-resources-assigned' name='resources_assigned' data-size="6" data-live-search="true" required>
                                     <option value="">-</option>
                                     {% for code, name in likert %}
-                                        <option value="{{ code }}" {% if submission.healthSystemContribution == code %}selected{% endif %}>{{ name }}</option>
+                                        <option value="{{ code }}" {% if submission.resourcesAssigned == code %}selected{% endif %}>{{ name }}</option>
                                     {% endfor %}
                                 </select>
                             </div>
@@ -43,138 +43,9 @@
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="select-outcomes">*{% trans %}Please select the most appropriate outcome of the SP 20-25:{% endtrans %}</label>
-                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <select class='form-control selectpicker' id='select-outcomes' name='outcomes' data-size="5" data-live-search="true" required>
-                                    <option value="">-</option>
-                                    {% for ocm in outcomes %}
-                                        <option value="{{ ocm.id }}" data-slug="{{ ocm.slug }}" {% if submission.outcomes.id == ocm.id %}selected{% endif %}>{{ ocm.name }}</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class='row'>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="select-goals">*{% trans %}Please select the most appropriate goal of the SHAA 2030:{% endtrans %}</label>
-                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <select class='form-control selectpicker' id='select-goals' name='goals' data-size="5" data-live-search="true" required>
-                                    <option value="">-</option>
-                                    {% for goal in goals %}
-                                        <option value="{{ goal.id }}" data-slug="{{ goal.slug }}" {% if submission.goals.id == goal.id %}selected{% endif %}>{{ goal.name }}</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class='row'>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="select-value-chain-organization">*{% trans %}Is the BP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization{% endtrans %}?</label>
-                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <select class='form-control selectpicker' id='select-value-chain-organization' name='value_chain_organization' data-size="6" data-live-search="true" required>
-                                    <option value="">-</option>
-                                    {% for code, name in likert %}
-                                        <option value="{{ code }}" {% if submission.valueChainOrganization == code %}selected{% endif %}>{{ name }}</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class='row'>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="textarea-public-health-issue">{% trans %}What public health issue (or opportunity) led PAHO to participate on this Technical Cooperation project/initiative{% endtrans %}?</label>
+                                <label for="textarea-outcome-information">*{% trans %}Please provide a short description to support your answer{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <textarea rows="6" class="form-control" name='public_health_issue' id='textarea-public-health-issue' placeholder="{% trans %}500 words maximum{% endtrans%}">{{ submission.publicHealthIssue }}</textarea>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class='row'>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="textarea-planning-information">{% trans %}Was the TC planned considering the health situation of the target population{% endtrans %}? {% trans %}Please provide information{% endtrans %}.</label>
-                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <textarea rows="6" class="form-control" name='planning_information' id='textarea-planning-information' placeholder="{% trans %}500 words maximum{% endtrans%}">{{ submission.planningInformation }}</textarea>
-                            </div>
-                        </div>
-                    </div>
-{#
-                    <div class='row'>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="textarea-relevance-information">*{% trans %}Please provide additional information about the relevance{% endtrans %}:</label>
-                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <textarea rows="6" class="form-control" name='relevance_information' id='textarea-relevance-information' placeholder="{% trans %}500 words maximum{% endtrans%}" required>{{ submission.relevanceInformation }}</textarea>
-                            </div>
-                        </div>
-                    </div>
-#}
-                </div>
-
-                <div class='block'>
-                    <div class='row'>
-                        <div class="col-md-12">
-                            <h2 class='sub-header'>{% trans %}Recognition of PAHO's Technical Cooperation Importance by the Counterpart{% endtrans %}</h2>
-                        </div>
-                    </div>
-
-                    <div class='row'>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="select-counterpart-recognized">*{% trans %}In your opinion, the counterpart(s) recognized PAHO's Technical Cooperation{% endtrans %}?</label>
-                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <select class='form-control selectpicker' id='select-counterpart-recognized' name='counterpart_recognized' data-size="6" data-live-search="true" required>
-                                    <option value="">-</option>
-                                    {% for code, name in likert %}
-                                        <option value="{{ code }}" {% if submission.counterpartRecognized == code %}selected{% endif %}>{{ name }}</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class='row'>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="select-catalytic-role">*{% trans %}In your opinion, PAHO played a catalytic role on the added value of Technical Cooperation{% endtrans %}?</label>
-                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <select class='form-control selectpicker' id='select-catalytic-role' name='catalytic_role' data-size="6" data-live-search="true" required>
-                                    <option value="">-</option>
-                                    {% for code, name in likert %}
-                                        <option value="{{ code }}" {% if submission.catalyticRole == code %}selected{% endif %}>{{ name }}</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class='row'>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="select-neutral-role">*{% trans %}In your opinion, PAHO played a neutral role in negotiations{% endtrans %}?</label>
-                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <select class='form-control selectpicker' id='select-neutral-role' name='neutral_role' data-size="6" data-live-search="true" required>
-                                    <option value="">-</option>
-                                    {% for code, name in likert %}
-                                        <option value="{{ code }}" {% if submission.neutralRole == code %}selected{% endif %}>{{ name }}</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class='row'>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="textarea-recognition-information">*{% trans %}Please provide support information about PAHO's Technical Cooperation recognition{% endtrans %}:</label>
-                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <textarea rows="6" class="form-control" name='recognition_information' id='textarea-recognition-information' placeholder="{% trans %}500 words maximum{% endtrans%}" required>{{ submission.recognitionInformation }}</textarea>
+                                <textarea rows="6" class="form-control" name='outcome_information' id='textarea-outcome-information' placeholder="{% trans %}500 words maximum{% endtrans%}" required>{{ submission.outcomeInformation }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -183,19 +54,19 @@
                 <div class='block'>
                     <div class='row'>
                         <div class="col-md-12">
-                            <h2 class='sub-header'>{% trans %}Engagement with the Cross-Cutting themes of the Organization{% endtrans %}</h2>
+                            <h2 class='sub-header'>{% trans %}Adaptability & Replicability{% endtrans %}</h2>
                         </div>
                     </div>
 
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="select-cross-cutting-approach">*{% trans %}In your opinion, PAHO's Technical Cooperation was planned considering the Cross-Cutting themes (equity, gender, ethnicity, and human rights){% endtrans %}?</label>
+                                <label for="select-scalability">*{% trans %}Was the BP able to transfer technologies, and/or to disseminate useful knowledge adaptable to other realities, and could it be scaled up{% endtrans %}?</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <select class='form-control selectpicker' id='select-cross-cutting-approach' name='cross_cutting_approach' data-size="6" data-live-search="true" required>
+                                <select class='form-control selectpicker' id='select-scalability' name='scalability' data-size="6" data-live-search="true" required>
                                     <option value="">-</option>
                                     {% for code, name in likert %}
-                                        <option value="{{ code }}" {% if submission.crossCuttingApproach == code %}selected{% endif %}>{{ name }}</option>
+                                        <option value="{{ code }}" {% if submission.scalability == code %}selected{% endif %}>{{ name }}</option>
                                     {% endfor %}
                                 </select>
                             </div>
@@ -205,9 +76,57 @@
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="textarea-engagement-information">*{% trans %}Please provide support information. For example, information on how PAHO's Technical Cooperation contributed to strengthen capacity and address health inequities and inequalities, and gender and culturally sensitive approaches to health within a human rights framework; to engage in an intersectoral action with an equity and rights focus{% endtrans %}:</label>
+                                <label for="select-adaptability-replicability">*{% trans %}Does the development of this BP have adaptability and replicability potential{% endtrans %}?</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <select class='form-control selectpicker' id='select-adaptability-replicability' name='adaptability_replicability' data-size="6" data-live-search="true" required>
+                                    <option value="">-</option>
+                                    {% for code, name in likert %}
+                                        <option value="{{ code }}" {% if submission.adaptabilityReplicability == code %}selected{% endif %}>{{ name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="select-other-contexts-demo">*{% trans %}Could these successful BP be demonstrated in other contexts{% endtrans %}?</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <select class='form-control selectpicker' id='select-other-contexts-demo' name='other_contexts_demo' data-size="6" data-live-search="true" required>
+                                    <option value="">-</option>
+                                    {% for code, name in likert %}
+                                        <option value="{{ code }}" {% if submission.otherContextsDemo == code %}selected{% endif %}>{{ name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="textarea-describe-how">{% trans %}Please provide a short description to support your previous three answers (dissemination, adaptability/replicability and context){% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <textarea rows="6" class="form-control" name='engagement_information' id='textarea-engagement-information' placeholder="{% trans %}500 words maximum{% endtrans%}" required>{{ submission.engagementInformation }}</textarea>
+                                <textarea rows="6" class="form-control" name='describe_how' id='textarea-describe-how' placeholder="{% trans %}500 words maximum{% endtrans%}">{{ submission.describeHow }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='block'>
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <h2 class='sub-header'>{% trans %}Sustainability{% endtrans %}</h2>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="textarea-sustainability">{% trans %}Please, describe the sustainability aspect of the project/initiative being described in this Best Practice{% endtrans %}:</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <textarea rows="6" class="form-control" name='sustainability' id='textarea-sustainability' placeholder="{% trans %}500 words maximum{% endtrans%}">{{ submission.sustainability }}</textarea>
                             </div>
                         </div>
                     </div>

@@ -202,8 +202,13 @@ class NewSubmissionController extends Controller
             $protocol_code = sprintf('%s.%04d.%02d', $committee_prefix, $protocol->getId(), $total_submissions);
             $protocol->setCode($protocol_code);
 
+            $route = 'submission_new_third_step';
+            if ( in_array($submission->getInstitution()->getSlug(), array("civil-society-organization", "academic-institution", "scientific-community", "private-sector", "philanthropic-organization", "other")) ) {
+                $route = 'submission_new_second_step';
+            }
+
             $session->getFlashBag()->add('success', $translator->trans("Submission started with success."));
-            return $this->redirectToRoute('submission_new_second_step', array('submission_id' => $submission->getId()), 301);
+            return $this->redirectToRoute($route, array('submission_id' => $submission->getId()), 301);
         }
 
         return $output;
@@ -363,8 +368,13 @@ class NewSubmissionController extends Controller
             $em->persist($submission);
             $em->flush();
 
+            $route = 'submission_new_third_step';
+            if ( in_array($submission->getInstitution()->getSlug(), array("civil-society-organization", "academic-institution", "scientific-community", "private-sector", "philanthropic-organization", "other")) ) {
+                $route = 'submission_new_second_step';
+            }
+
             $session->getFlashBag()->add('success', $translator->trans("First step saved with success."));
-            return $this->redirectToRoute('submission_new_second_step', array('submission_id' => $submission->getId()), 301);
+            return $this->redirectToRoute($route, array('submission_id' => $submission->getId()), 301);
         }
 
         return $output;
@@ -446,12 +456,17 @@ class NewSubmissionController extends Controller
             $em->persist($new_submission);
             $em->flush();
 
-            $submission->addTranlsation($new_submission);
+            $submission->addTranslation($new_submission);
             $em->persist($submission);
             $em->flush();
 
+            $route = 'submission_new_third_step';
+            if ( in_array($submission->getInstitution()->getSlug(), array("civil-society-organization", "academic-institution", "scientific-community", "private-sector", "philanthropic-organization", "other")) ) {
+                $route = 'submission_new_second_step';
+            }
+
             $session->getFlashBag()->add('success', $translator->trans("First step saved with success."));
-            return $this->redirectToRoute('submission_new_second_step', array('submission_id' => $new_submission->getId()), 301);
+            return $this->redirectToRoute($route, array('submission_id' => $new_submission->getId()), 301);
         }
 
         return $output;
@@ -462,6 +477,113 @@ class NewSubmissionController extends Controller
      * @Template()
      */
     public function SecondStepAction($submission_id)
+    {
+        $output = array();
+        $request = $this->getRequest();
+        $session = $request->getSession();
+        $translator = $this->get('translator');
+        $em = $this->getDoctrine()->getManager();
+
+        $user = $this->get('security.token_storage')->getToken()->getUser();
+
+        $submission_repository = $em->getRepository('Proethos2ModelBundle:Submission');
+        $upload_type_repository = $em->getRepository('Proethos2ModelBundle:UploadType');
+        $submission_upload_repository = $em->getRepository('Proethos2ModelBundle:SubmissionUpload');
+
+        // getting the current submission
+        $submission = $submission_repository->find($submission_id);
+        $output['submission'] = $submission;
+
+        $upload_types = $upload_type_repository->findByStatus(true);
+        $output['upload_types'] = $upload_types;
+
+        $upload_type = $upload_type_repository->findBy(array('slug' => 'fensa'));
+        $upload_type_id = $upload_type[0]->getId();
+        $fensa_upload = $submission_upload_repository->findBy(array('submission' => $submission->getId(), 'upload_type' => $upload_type_id));
+        $output['fensa_upload'] = $fensa_upload;
+
+        $upload_type = $upload_type_repository->findBy(array('slug' => 'fensa-tobacco-arms'));
+        $upload_type_id = $upload_type[0]->getId();
+        $tobacco_arms_upload = $submission_upload_repository->findBy(array('submission' => $submission->getId(), 'upload_type' => $upload_type_id));
+        $output['tobacco_arms_upload'] = $tobacco_arms_upload;
+
+        if (!$submission or $submission->getCanBeEdited() == false) {
+            if(!$submission or ($submission->getProtocol()->getIsMigrated() and !in_array('administrator', $user->getRolesSlug()))) {
+                throw $this->createNotFoundException($translator->trans('No submission found'));
+            }
+        }
+
+        // checking if was a post request
+        if($this->getRequest()->isMethod('POST')) {
+
+            $submittedToken = $request->request->get('token');
+
+            if (!$this->isCsrfTokenValid('submission-second-step', $submittedToken)) {
+                throw $this->createNotFoundException($translator->trans('CSRF token not valid'));
+            }
+
+            // getting post data
+            $post_data = $request->request->all();
+
+            // echo "<pre>"; print_r($post_data); echo "</pre>"; die();
+
+            $file = $request->files->get('new-attachment-file');
+            if(!empty($file)) {
+
+                $upload_type = $upload_type_repository->findOneBy(array("slug" => $post_data['upload_type']));
+
+                $file_ext = '.'.$file->getClientOriginalExtension();
+                $ext_formats = $upload_type->getExtensionsFormat();
+                if ( !in_array($file_ext, $ext_formats) ) {
+                    $session->getFlashBag()->add('error', $translator->trans("File extension not allowed"));
+                    return $output;
+                }
+
+                $submission_upload = new SubmissionUpload();
+                $submission_upload->setSubmission($submission);
+                $submission_upload->setUploadType($upload_type);
+                $submission_upload->setUser($user);
+                $submission_upload->setFile($file);
+                $submission_upload->setSubmissionNumber($submission->getNumber());
+
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($submission_upload);
+                $em->flush();
+
+                $submission->addAttachment($submission_upload);
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($submission);
+                $em->flush();
+
+                $session->getFlashBag()->add('success', $translator->trans("File uploaded with success."));
+                return $this->redirectToRoute('submission_new_second_step', array('submission_id' => $submission->getId()), 301);
+
+            }
+
+            if(isset($post_data['delete-attachment-id']) and !empty($post_data['delete-attachment-id'])) {
+
+                $submission_upload = $submission_upload_repository->find($post_data['delete-attachment-id']);
+                if($submission_upload) {
+
+                    $em->remove($submission_upload);
+                    $em->flush();
+                    $session->getFlashBag()->add('success', $translator->trans("File removed with success."));
+                    return $this->redirectToRoute('submission_new_second_step', array('submission_id' => $submission->getId()), 301);
+                }
+            }
+
+            $session->getFlashBag()->add('success', $translator->trans("Second step saved with success."));
+            return $this->redirectToRoute('submission_new_third_step', array('submission_id' => $submission->getId()), 301);
+        }
+
+        return $output;
+    }
+
+    /**
+     * @Route("/submission/new/{submission_id}/third", name="submission_new_third_step")
+     * @Template()
+     */
+    public function ThirdStepAction($submission_id)
     {
         $output = array();
         $request = $this->getRequest();
@@ -529,7 +651,7 @@ class NewSubmissionController extends Controller
 
             $submittedToken = $request->request->get('token');
 
-            if (!$this->isCsrfTokenValid('submission-second-step', $submittedToken)) {
+            if (!$this->isCsrfTokenValid('submission-third-step', $submittedToken)) {
                 throw $this->createNotFoundException($translator->trans('CSRF token not valid'));
             }
 
@@ -658,18 +780,23 @@ class NewSubmissionController extends Controller
             $em->persist($submission);
             $em->flush();
 
-            $session->getFlashBag()->add('success', $translator->trans("Second step saved with success."));
-            return $this->redirectToRoute('submission_new_third_step', array('submission_id' => $submission->getId()), 301);
+            $msg = $translator->trans("Second step saved with success.");
+            if ( in_array($submission->getInstitution()->getSlug(), array("civil-society-organization", "academic-institution", "scientific-community", "private-sector", "philanthropic-organization", "other")) ) {
+                $msg = $translator->trans("Third step saved with success.");
+            }
+
+            $session->getFlashBag()->add('success', $msg);
+            return $this->redirectToRoute('submission_new_fourth_step', array('submission_id' => $submission->getId()), 301);
         }
 
         return $output;
     }
 
     /**
-     * @Route("/submission/new/{submission_id}/third", name="submission_new_third_step")
+     * @Route("/submission/new/{submission_id}/fourth", name="submission_new_fourth_step")
      * @Template()
      */
-    public function ThirdStepAction($submission_id)
+    public function FourthStepAction($submission_id)
     {
         $output = array();
         $request = $this->getRequest();
@@ -708,7 +835,7 @@ class NewSubmissionController extends Controller
 
             $submittedToken = $request->request->get('token');
 
-            if (!$this->isCsrfTokenValid('submission-third-step', $submittedToken)) {
+            if (!$this->isCsrfTokenValid('submission-fourth-step', $submittedToken)) {
                 throw $this->createNotFoundException($translator->trans('CSRF token not valid'));
             }
 
@@ -738,12 +865,14 @@ class NewSubmissionController extends Controller
             $em->persist($submission);
             $em->flush();
 
-            $route = 'submission_new_fifth_step';
+            $route = 'submission_new_sixth_step';
+            $msg = $translator->trans("Third step saved with success.");
             if ( 'paho-who-technical-cooperation' == $submission->getType()->getSlug() ) {
-                $route = 'submission_new_fourth_step';
+                $route = 'submission_new_fifth_step';
+                $msg = $translator->trans("Fourth step saved with success.");
             }
 
-            $session->getFlashBag()->add('success', $translator->trans("Third step saved with success."));
+            $session->getFlashBag()->add('success', $msg);
             return $this->redirectToRoute($route, array('submission_id' => $submission->getId()), 301);
         }
 
@@ -751,10 +880,10 @@ class NewSubmissionController extends Controller
     }
 
     /**
-     * @Route("/submission/new/{submission_id}/fourth", name="submission_new_fourth_step")
+     * @Route("/submission/new/{submission_id}/fifth", name="submission_new_fifth_step")
      * @Template()
      */
-    public function FourthStepAction($submission_id)
+    public function FifthStepAction($submission_id)
     {
         $output = array();
         $request = $this->getRequest();
@@ -803,7 +932,7 @@ class NewSubmissionController extends Controller
 
             $submittedToken = $request->request->get('token');
 
-            if (!$this->isCsrfTokenValid('submission-fourth-step', $submittedToken)) {
+            if (!$this->isCsrfTokenValid('submission-fifth-step', $submittedToken)) {
                 throw $this->createNotFoundException($translator->trans('CSRF token not valid'));
             }
 
@@ -857,18 +986,18 @@ class NewSubmissionController extends Controller
             $em->persist($submission);
             $em->flush();
 
-            $session->getFlashBag()->add('success', $translator->trans("Fourth step saved with success."));
-            return $this->redirectToRoute('submission_new_fifth_step', array('submission_id' => $submission->getId()), 301);
+            $session->getFlashBag()->add('success', $translator->trans("Fifth step saved with success."));
+            return $this->redirectToRoute('submission_new_sixth_step', array('submission_id' => $submission->getId()), 301);
         }
 
         return $output;
     }
 
     /**
-     * @Route("/submission/new/{submission_id}/fifth", name="submission_new_fifth_step")
+     * @Route("/submission/new/{submission_id}/sixth", name="submission_new_sixth_step")
      * @Template()
      */
-    public function FifthStepAction($submission_id)
+    public function SixthStepAction($submission_id)
     {
         $output = array();
         $request = $this->getRequest();
@@ -900,7 +1029,7 @@ class NewSubmissionController extends Controller
 
             $submittedToken = $request->request->get('token');
 
-            if (!$this->isCsrfTokenValid('submission-fifth-step', $submittedToken)) {
+            if (!$this->isCsrfTokenValid('submission-sixth-step', $submittedToken)) {
                 throw $this->createNotFoundException($translator->trans('CSRF token not valid'));
             }
 
@@ -948,7 +1077,7 @@ class NewSubmissionController extends Controller
                     $em->remove($submission_upload);
                     $em->flush();
                     $session->getFlashBag()->add('success', $translator->trans("File removed with success."));
-                    return $this->redirectToRoute('submission_new_fifth_step', array('submission_id' => $submission->getId()), 301);
+                    return $this->redirectToRoute('submission_new_sixth_step', array('submission_id' => $submission->getId()), 301);
                 }
             }
 
@@ -971,8 +1100,8 @@ class NewSubmissionController extends Controller
             $em->flush();
 
             $msg = $translator->trans("Fourth step saved with success.");
-            if ( 'paho-who-technical-cooperation' == $submission->getType()->getSlug() ) {
-                $msg = $translator->trans("Fifth step saved with success.");
+            if ( in_array($submission->getInstitution()->getSlug(), array("civil-society-organization", "academic-institution", "scientific-community", "private-sector", "philanthropic-organization", "other")) ) {
+                $msg = $translator->trans("Sixth step saved with success.");
             }
 
             $session->getFlashBag()->add('success', $msg);
@@ -983,10 +1112,10 @@ class NewSubmissionController extends Controller
     }
 
     /**
-     * @Route("/submission/new/{submission_id}/sixth", name="submission_new_sixth_step")
+     * @Route("/submission/new/{submission_id}/seventh", name="submission_new_seventh_step")
      * @Template()
      */
-    public function SixthStepAction($submission_id)
+    public function SeventhStepAction($submission_id)
     {
         $output = array();
         $request = $this->getRequest();
@@ -1015,7 +1144,7 @@ class NewSubmissionController extends Controller
 
             $submittedToken = $request->request->get('token');
 
-            if (!$this->isCsrfTokenValid('submission-sixth-step', $submittedToken)) {
+            if (!$this->isCsrfTokenValid('submission-seventh-step', $submittedToken)) {
                 throw $this->createNotFoundException($translator->trans('CSRF token not valid'));
             }
 
@@ -1040,22 +1169,22 @@ class NewSubmissionController extends Controller
             $em->flush();
 
             $msg = $translator->trans("Fifth step saved with success.");
-            if ( 'paho-who-technical-cooperation' == $submission->getType()->getSlug() ) {
-                $msg = $translator->trans("Sixth step saved with success.");
+            if ( in_array($submission->getInstitution()->getSlug(), array("civil-society-organization", "academic-institution", "scientific-community", "private-sector", "philanthropic-organization", "other")) ) {
+                $msg = $translator->trans("Seventh step saved with success.");
             }
 
             $session->getFlashBag()->add('success', $msg);
-            return $this->redirectToRoute('submission_new_seventh_step', array('submission_id' => $submission->getId()), 301);
+            return $this->redirectToRoute('submission_new_eighth_step', array('submission_id' => $submission->getId()), 301);
         }
 
         return $output;
     }
 
     /**
-     * @Route("/submission/new/{submission_id}/seventh", name="submission_new_seventh_step")
+     * @Route("/submission/new/{submission_id}/eighth", name="submission_new_eighth_step")
      * @Template()
      */
-    public function SeventhStepAction($submission_id)
+    public function EighthStepAction($submission_id)
     {
         $output = array();
         $request = $this->getRequest();
@@ -1198,6 +1327,30 @@ class NewSubmissionController extends Controller
 
         }
 
+        // checking required fensa attachment
+        $text = $translator->trans('FENSA');
+        $item = array('text' => $text, 'status' => true);
+        $upload_type = $upload_type_repository->findBy(array('slug' => 'fensa'));
+        $upload_type_id = $upload_type[0]->getId();
+        $fensa_upload = $submission_upload_repository->findBy(array('submission' => $submission->getId(), 'upload_type' => $upload_type_id));
+        if( !$fensa_upload or count($fensa_upload) != 1 ) {
+            $item = array('text' => $text, 'status' => false);
+            $final_status = false;
+        }
+        $revisions[] = $item;
+
+        // checking required tobacco/arms attachment
+        $text = $translator->trans('FENSA Tobacco/Arms');
+        $item = array('text' => $text, 'status' => true);
+        $upload_type = $upload_type_repository->findBy(array('slug' => 'fensa-tobacco-arms'));
+        $upload_type_id = $upload_type[0]->getId();
+        $tobacco_arms_upload = $submission_upload_repository->findBy(array('submission' => $submission->getId(), 'upload_type' => $upload_type_id));
+        if( !$tobacco_arms_upload or count($tobacco_arms_upload) != 1 ) {
+            $item = array('text' => $text, 'status' => false);
+            $final_status = false;
+        }
+        $revisions[] = $item;
+
         $text = $translator->trans('Technical Matters');
         $item = array('text' => $text, 'status' => true);
         if(empty($submission->getTechnicalMatterList())) {
@@ -1221,15 +1374,7 @@ class NewSubmissionController extends Controller
             $final_status = false;
         }
         $revisions[] = $item;
-/*
-        $text = $translator->trans('End Date');
-        $item = array('text' => $text, 'status' => true);
-        if(empty($submission->getEndDate())) {
-            $item = array('text' => $text, 'status' => false);
-            $final_status = false;
-        }
-        $revisions[] = $item;
-*/
+
         $text = $translator->trans('Country');
         $item = array('text' => $text, 'status' => true);
         if(empty($submission->getCountryList())) {
@@ -1277,15 +1422,7 @@ class NewSubmissionController extends Controller
             $final_status = false;
         }
         $revisions[] = $item;
-/*
-        $text = $translator->trans('Activities');
-        $item = array('text' => $text, 'status' => true);
-        if(empty($submission->getActivities())) {
-            $item = array('text' => $text, 'status' => false);
-            $final_status = false;
-        }
-        $revisions[] = $item;
-*/
+
         $text = $translator->trans('Main Results');
         $item = array('text' => $text, 'status' => true);
         if(empty($submission->getMainResults())) {
@@ -1293,15 +1430,7 @@ class NewSubmissionController extends Controller
             $final_status = false;
         }
         $revisions[] = $item;
-/*
-        $text = $translator->trans('Factors');
-        $item = array('text' => $text, 'status' => true);
-        if(empty($submission->getFactors())) {
-            $item = array('text' => $text, 'status' => false);
-            $final_status = false;
-        }
-        $revisions[] = $item;
-*/
+
         $text = $translator->trans('Resources Assigned');
         $item = array('text' => $text, 'status' => true);
         if(empty($submission->getResourcesAssigned())) {
@@ -1309,15 +1438,7 @@ class NewSubmissionController extends Controller
             $final_status = false;
         }
         $revisions[] = $item;
-/*
-        $text = $translator->trans('Outcome Information');
-        $item = array('text' => $text, 'status' => true);
-        if(empty($submission->getOutcomeInformation())) {
-            $item = array('text' => $text, 'status' => false);
-            $final_status = false;
-        }
-        $revisions[] = $item;
-*/
+
         $text = $translator->trans('Scalability');
         $item = array('text' => $text, 'status' => true);
         if(empty($submission->getScalability())) {
@@ -1341,15 +1462,7 @@ class NewSubmissionController extends Controller
             $final_status = false;
         }
         $revisions[] = $item;
-/*
-        $text = $translator->trans('Describe How');
-        $item = array('text' => $text, 'status' => true);
-        if(empty($submission->getDescribeHow())) {
-            $item = array('text' => $text, 'status' => false);
-            $final_status = false;
-        }
-        $revisions[] = $item;
-*/
+
         if ( 'paho-who-technical-cooperation' == $submission->getType()->getSlug() ) {
 
             $text = $translator->trans('Health System Contribution');
@@ -1383,31 +1496,7 @@ class NewSubmissionController extends Controller
                 $final_status = false;
             }
             $revisions[] = $item;
-/*
-            $text = $translator->trans('Public Health Issue');
-            $item = array('text' => $text, 'status' => true);
-            if(empty($submission->getPublicHealthIssue())) {
-                $item = array('text' => $text, 'status' => false);
-                $final_status = false;
-            }
-            $revisions[] = $item;
 
-            $text = $translator->trans('Planning Information');
-            $item = array('text' => $text, 'status' => true);
-            if(empty($submission->getPlanningInformation())) {
-                $item = array('text' => $text, 'status' => false);
-                $final_status = false;
-            }
-            $revisions[] = $item;
-
-            $text = $translator->trans('Relevance Information');
-            $item = array('text' => $text, 'status' => true);
-            if(empty($submission->getRelevanceInformation())) {
-                $item = array('text' => $text, 'status' => false);
-                $final_status = false;
-            }
-            $revisions[] = $item;
-*/
             $text = $translator->trans('Counterpart');
             $item = array('text' => $text, 'status' => true);
             if(empty($submission->getCounterpartRecognized())) {
@@ -1468,22 +1557,6 @@ class NewSubmissionController extends Controller
             $final_status = false;
         }
         $revisions[] = $item;
-
-        $text = $translator->trans('Products Information');
-        $item = array('text' => $text, 'status' => true);
-        if(empty($submission->getProductsInformation())) {
-            $item = array('text' => $text, 'status' => false);
-            $final_status = false;
-        }
-        $revisions[] = $item;
-
-        $text = $translator->trans('Other Sources Information');
-        $item = array('text' => $text, 'status' => true);
-        if(empty($submission->getOtherSourcesInformation())) {
-            $item = array('text' => $text, 'status' => false);
-            $final_status = false;
-        }
-        $revisions[] = $item;
 */
         $text = $translator->trans('Challenges Information');
         $item = array('text' => $text, 'status' => true);
@@ -1500,15 +1573,7 @@ class NewSubmissionController extends Controller
             $final_status = false;
         }
         $revisions[] = $item;
-/*
-        $text = $translator->trans('PAHO Comments');
-        $item = array('text' => $text, 'status' => true);
-        if(empty($submission->getPahoComments())) {
-            $item = array('text' => $text, 'status' => false);
-            $final_status = false;
-        }
-        $revisions[] = $item;
-*/
+
         $output['revisions'] = $revisions;
         $output['final_status'] = $final_status;
 
@@ -1517,7 +1582,7 @@ class NewSubmissionController extends Controller
 
             $submittedToken = $request->request->get('token');
 
-            if (!$this->isCsrfTokenValid('submission-seventy-step', $submittedToken)) {
+            if (!$this->isCsrfTokenValid('submission-eighth-step', $submittedToken)) {
                 throw $this->createNotFoundException($translator->trans('CSRF token not valid'));
             }
 

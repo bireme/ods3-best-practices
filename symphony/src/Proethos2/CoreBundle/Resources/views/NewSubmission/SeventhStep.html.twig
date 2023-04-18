@@ -13,168 +13,62 @@
         {% include 'Proethos2CoreBundle:NewSubmission:meta.html.twig' %}
 
         <div class='new-submission-tab-content'>
-            <form class='form' method='POST' action='{{ path("submission_new_seventh_step", {submission_id: submission.id}) }}'>
+            <form class='form' method='POST' id='form-seventh' action='{{ path("submission_new_seventh_step", {submission_id: submission.id}) }}'>
 
-                <input type="hidden" name="token" value="{{ csrf_token('submission-seventy-step') }}"/>
+                <input type="hidden" name="token" value="{{ csrf_token('submission-seventh-step') }}"/>
                 <input type='hidden' name='submission_id' value='{{ submission.id }}'>
-                <input type='hidden' name='accept-terms' value="off">
 
                 <div class='block'>
                     <div class='row'>
                         <div class="col-md-12">
-                            <h2 class='sub-header'>{% trans %}Review your proposal{% endtrans %}:</h2>
-                        </div>
-                    </div>
-
-                    <div class='row'>
-                        <div class="col-md-12">
-                            <table class='table table-hover table-condensed table-bordered'>
-                                <thead>
-                                    <tr>
-                                        <th colspan="2">{% trans %}Legend{% endtrans %}</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class='center text-success'><i class='glyphicon glyphicon-ok'></i></td>
-                                        <td>{% trans %}The mandatory field has been properly filled.{% endtrans %}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class='center text-danger'><i class='glyphicon glyphicon-remove'></i></td>
-                                        <td>{% trans %}The mandatory field has been inadequately filled or left blank and requires your attention.{% endtrans %}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <div class='row'>
-                        <div class="col-md-12">
-                            <table class='table table-hover table-condensed table-bordered'>
-                                <thead>
-                                    <tr>
-                                        <th class='center'>{% trans %}Fields{% endtrans %}</th>
-                                        <th class='center'>{% trans %}Check{% endtrans %}</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {% for revision in revisions %}
-                                        <tr class='{% if not revision.status %}text-danger{% endif %}'>
-                                            <td>{{ revision.text|trans }}</td>
-                                            {% if revision.status %}
-                                                <td class='center text-success'><i class='glyphicon glyphicon-ok'></i></td>
-                                            {% else %}
-                                                <td class='center'><i class='glyphicon glyphicon-remove'></i></td>
-                                            {% endif %}
-                                        </tr>
-                                    {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class='block'>
-                    <div class='row'>
-                        <div class="col-md-12">
-                            <h2 class='sub-header'>{% trans %}Conflicts of Interest{% endtrans %}</h2>
+                            <h2 class='sub-header'>{% trans %}Sources{% endtrans %}</h2>
                         </div>
                     </div>
 
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="select-interest-conflicts">*{% trans %}Do you have any Conflicts of Interest to disclose regarding the contents of your submission (Including personal/professional interests and funding sources){% endtrans %}?</label>
-                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <select class='form-control selectpicker' id='select-interest-conflicts' name='interest_conflicts' data-size="6" data-live-search="true" required>
-                                    <option value="">-</option>
-                                    <option value="yes">{% trans %}Yes{% endtrans %}</option>
-                                    <option value="no">{% trans %}No{% endtrans %}</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class='row'>
-                        <div class="col-md-12">
-                            <div class="form-group hide">
-                                <label for="textarea-other-interest-conflicts">{% trans %}Please specify{% endtrans %}:</label>
+                                <label for="textarea-products-information">{% trans %}Please provide hyperlinks to sources/documents associated with the Best Practice{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <textarea rows="6" class="form-control" name='other_interest_conflicts' id='textarea-other-interest-conflicts' placeholder="{% trans %}500 words maximum{% endtrans%}"></textarea>
+                                <textarea rows="6" class="form-control" name='products_information' id='textarea-products-information' placeholder="{% trans %}Please add one hyperlink per line{% endtrans %}">{{ submission.productsInformation }}</textarea>
                             </div>
                         </div>
                     </div>
+{#
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="textarea-other-sources-information">{% trans %}Other information sources{% endtrans %} ({% trans %}hyperlinks only{% endtrans %}):</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <textarea rows="6" class="form-control" name='other_sources_information' id='textarea-other-sources-information' placeholder="{% trans %}Please add one hyperlink per line{% endtrans %}">{{ submission.otherSourcesInformation }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+#}
                 </div>
 
                 <div class='block'>
                     <div class='row'>
                         <div class="col-md-12">
-                            <h2 class='sub-header'>{% trans %}Terms and conditions{% endtrans %}:</h2>
+                            <h2 class='sub-header'>{% trans %}Comments for the Pan American Health Organization{% endtrans %}</h2>
                         </div>
                     </div>
 
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <div class="checkbox">
-                                    <label for='input-accept-terms'>
-                                        <input type='checkbox' name='accept-terms' id='input-accept-terms'>
-                                        {% trans %}I agree with the{% endtrans %} <a href="https://politicas.bireme.org/terminos/en/index.html" target="_blank">{% trans %}Terms of Use{% endtrans %}</a> {% trans %}and{% endtrans %} <a href="https://politicas.bireme.org/privacidad/en/index.html" target="_blank">{% trans %}Privacy Policy{% endtrans %}</a>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class='row'>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <ul>
-                                    <li>{% trans %}All contributions must be original. Contributors warrant that they have the necessary rights, including the necessary licenses, for the use of any copyrighted material in the submission. Furthermore, contributors warrant that all necessary permissions and consents have been obtained for all materials depicting identifiable human subjects.{% endtrans %}</li>
-                                    <li>{% trans %}By submitting a contribution, contributors grant PAHO and related partners a free perpetual non-exclusive license to use, edit and publish the contribution for noncommercial purposes.{% endtrans %}</li>
-                                    <li>{% trans %}Contributors agree to identify, defend, and hold PAHO and related partners harmless from any actions or claims brought against them pertaining to the alleged infringement arising in connection with the contribution.{% endtrans %}</li>
-                                    <li>{% trans %}PAHO and related partners reserve the right, at their sole discretion, to determine which contributions will be included in the portal or used in other institutional material.{% endtrans %}</li>
-                                    <li>{% trans %}By submitting this contribution, contributors confirm that they have read, understood, and accepted these conditions.{% endtrans %}</li>
-                                </ul>
+                                <label for="textarea-paho-comments">{% trans %}Please provide comments for the PAHO's Best Practices Secretariat (optional){% endtrans %}:</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <textarea rows="6" class="form-control" name='paho_comments' id='textarea-paho-comments' placeholder="{% trans %}500 words maximum{% endtrans%}">{{ submission.pahoComments }}</textarea>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class='submission-button-controls'>
-                    <a href='{{ path("submission_generate_pdf", {submission_id: submission.id}) }}' class='btn btn-default' target='_blank'>{% trans %}Create PDF{% endtrans %}</a>
-                    {% if final_status %}
-                        {% if submission.isTranslation %}
-                            <a href='{{ path("submission_new_first_translation_protocol_step", {submission_id: submission.originalSubmission.id}) }}' class='btn btn-default'>{% trans %}Submit translation{% endtrans %}</a>
-                        {% else %}
-                            <!-- <a href='{{ path("submission_new_first_translation_protocol_step", {submission_id: submission.id}) }}' class='btn btn-default'>{% trans %}Submit translation{% endtrans %}</a> -->
-                        {% endif %}
-                    {% endif %}
-                    {% if submission.isTranslation %}
-                        <a href='{{ path("submission_new_seventh_step", {submission_id: submission.originalSubmission.id}) }}' class='btn btn-default'>{% trans %}Back to original to save and finish{% endtrans %}</a>
-                    {% else %}
-                        <button type='submit' class='btn btn-primary {% if not final_status %}disabled{% endif %}'>{% trans %}Save and finish{% endtrans %}</button>
-                    {% endif %}
+                    <button type='submit' class='btn btn-primary'>{% trans %}Save and next{% endtrans %}</button>
                 </div>
             </form>
         </div>
     </div>
-
-{% endblock %}
-
-{% block script %}
-    <script>
-        $(function(){
-
-            $( "#select-interest-conflicts" ).on( "change", function() {
-                var val = $(this).val();
-                if ( 'yes' == val ) {
-                    $("#textarea-other-interest-conflicts").parent().removeClass("hide");
-                } else {
-                    $("#textarea-other-interest-conflicts").parent().addClass("hide");
-                }
-            });
-
-        });
-    </script>
 {% endblock %}

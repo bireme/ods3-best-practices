@@ -231,7 +231,7 @@
                 <th>{% trans %}Date{% endtrans %}</th>
             </tr>
 
-            {% for file in submission.attachments %}
+            {% for file in submission.attachments if file.uploadType.slug not in ['fensa', 'fensa-tobacco-arms'] %}
                 <tr>
                     <td><a href='{{ home_url }}{{ asset(file.uri) }}' target="_blank">{% if file.uploadType.slug in ['protocol'] %}{{ file.simpleFilename }}{% else %}{{ file }}{% endif %}</a></td>
                     <td>{{ file.created|date("d/m/Y H:i:s") }}</td>

@@ -73,25 +73,30 @@
             <li role="presentation" {% if app.request.get('_route') == "submission_new_first_created_protocol_step" %}class='active'{% endif %}>
                 <a href="{{ path('submission_new_first_created_protocol_step', {'submission_id': submission.id }) }}" title="{% trans %}Basic Information{% endtrans %}">{% trans %}Basic Information{% endtrans %}</a>
             </li>
-            <li role="presentation" {% if app.request.get('_route') == "submission_new_second_step" %}class='active'{% endif %}>
-                <a href="{{ path('submission_new_second_step', {'submission_id': submission.id }) }}" title="{% trans %}Type / Description{% endtrans %}">{% trans %}Type / Description{% endtrans %}</a>
-            </li>
-            <li role="presentation" {% if app.request.get('_route') == "submission_new_third_step" %}class='active'{% endif %}>
-                <a href="{{ path('submission_new_third_step', {'submission_id': submission.id }) }}" title='{% trans %}Effectiveness / Efficiency / Adaptability / Replicability{% endtrans %}'>{% trans %}Effectiveness / Cost-Effectiveness / Efficiency / Adaptability / Replicability / Sustainability{% endtrans %}</a>
-            </li>
-            {% if submission.type.slug == "paho-who-technical-cooperation" %}
-                <li role="presentation" {% if app.request.get('_route') == "submission_new_fourth_step" %}class='active'{% endif %}>
-                    <a href="{{ path('submission_new_fourth_step', {'submission_id': submission.id }) }}" title='{% trans %}Relevance / Recognition / Engagement{% endtrans %}'>{% trans %}Relevance / Recognition / Engagement{% endtrans %}</a>
+            {% if submission.institution.slug in ["civil-society-organization", "academic-institution", "scientific-community", "private-sector", "philanthropic-organization", "other"] %}
+                <li role="presentation" {% if app.request.get('_route') == "submission_new_second_step" %}class='active'{% endif %}>
+                    <a href="{{ path('submission_new_second_step', {'submission_id': submission.id }) }}" title='{% trans %}Institutional Review{% endtrans %}'>{% trans %}Institutional Review{% endtrans %}</a>
                 </li>
             {% endif %}
-            <li role="presentation" {% if app.request.get('_route') == "submission_new_fifth_step" %}class='active'{% endif %}>
-                <a href="{{ path('submission_new_fifth_step', {'submission_id': submission.id }) }}" title='{% trans %}Multimedia / Conclusion{% endtrans %}'>{% trans %}Multimedia / Conclusion{% endtrans %}</a>
+            <li role="presentation" {% if app.request.get('_route') == "submission_new_third_step" %}class='active'{% endif %}>
+                <a href="{{ path('submission_new_third_step', {'submission_id': submission.id }) }}" title="{% trans %}Type / Description{% endtrans %}">{% trans %}Type / Description{% endtrans %}</a>
             </li>
+            <li role="presentation" {% if app.request.get('_route') == "submission_new_fourth_step" %}class='active'{% endif %}>
+                <a href="{{ path('submission_new_fourth_step', {'submission_id': submission.id }) }}" title='{% trans %}Effectiveness / Efficiency / Adaptability / Replicability{% endtrans %}'>{% trans %}Effectiveness / Cost-Effectiveness / Efficiency / Adaptability / Replicability / Sustainability{% endtrans %}</a>
+            </li>
+            {% if submission.type.slug == "paho-who-technical-cooperation" %}
+                <li role="presentation" {% if app.request.get('_route') == "submission_new_fifth_step" %}class='active'{% endif %}>
+                    <a href="{{ path('submission_new_fifth_step', {'submission_id': submission.id }) }}" title='{% trans %}Relevance / Recognition / Engagement{% endtrans %}'>{% trans %}Relevance / Recognition / Engagement{% endtrans %}</a>
+                </li>
+            {% endif %}
             <li role="presentation" {% if app.request.get('_route') == "submission_new_sixth_step" %}class='active'{% endif %}>
-                <a href="{{ path('submission_new_sixth_step', {'submission_id': submission.id }) }}" title='{% trans %}Sources / Comments{% endtrans %}'>{% trans %}Sources / Comments{% endtrans %}</a>
+                <a href="{{ path('submission_new_sixth_step', {'submission_id': submission.id }) }}" title='{% trans %}Multimedia / Conclusion{% endtrans %}'>{% trans %}Multimedia / Conclusion{% endtrans %}</a>
             </li>
             <li role="presentation" {% if app.request.get('_route') == "submission_new_seventh_step" %}class='active'{% endif %}>
-                <a href="{{ path('submission_new_seventh_step', {'submission_id': submission.id }) }}" title='{% trans %}Review{% endtrans %}'>{% trans %}Review{% endtrans %}</a>
+                <a href="{{ path('submission_new_seventh_step', {'submission_id': submission.id }) }}" title='{% trans %}Sources / Comments{% endtrans %}'>{% trans %}Sources / Comments{% endtrans %}</a>
+            </li>
+            <li role="presentation" {% if app.request.get('_route') == "submission_new_eighth_step" %}class='active'{% endif %}>
+                <a href="{{ path('submission_new_eighth_step', {'submission_id': submission.id }) }}" title='{% trans %}Review{% endtrans %}'>{% trans %}Review{% endtrans %}</a>
             </li>
         </ul>
     </div>

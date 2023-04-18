@@ -20,22 +20,24 @@
 
                 <div class='block'>
                     <div class='row'>
-                        <div class="col-md-12">
-                            <h2 class='sub-header'>{% trans %}Effectiveness, Cost-Effectiveness and Efficiency{% endtrans %}</h2>
+                        <div class="col-md-12 help-block">
+                            <h2 class='sub-header'>{% trans %}Type{% endtrans %}</h2>
+                            <a href="{{ path("crud_admin_help_show", {help_id: 222} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                         </div>
                     </div>
 
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="select-resources-assigned">*{% trans %}In your opinion, the resources assigned to the accomplishment of this Best Practice (financial, technological and/or manpower) were implement in an efficient way{% endtrans %}?</label>
+                                <label for="select-technical-matter">*{% trans %}Main Topics/Themes{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <select class='form-control selectpicker' id='select-resources-assigned' name='resources_assigned' data-size="6" data-live-search="true" required>
-                                    <option value="">-</option>
-                                    {% for code, name in likert %}
-                                        <option value="{{ code }}" {% if submission.resourcesAssigned == code %}selected{% endif %}>{{ name }}</option>
-                                    {% endfor %}
-                                </select>
+                                <div>
+                                    <select class='form-control selectpicker' id='select-technical-matter' name='technical_matter[]' data-size="5" data-width="fit" data-live-search="true" title="{% trans %}Choose one of the following...{% endtrans %}" multiple required>
+                                        {% for tm in technical_matter %}
+                                            <option value="{{ tm.id }}" {% if tm in submission.technicalMatter %}selected{% endif %}>{{ tm.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -43,9 +45,35 @@
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="textarea-outcome-information">*{% trans %}Please provide a short description to support your answer{% endtrans %}:</label>
-                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <textarea rows="6" class="form-control" name='outcome_information' id='textarea-outcome-information' placeholder="{% trans %}500 words maximum{% endtrans%}" required>{{ submission.outcomeInformation }}</textarea>
+                                <label for="input_other_technical_matter">{% trans %}Other Main Topics/Themes{% endtrans %} {% trans %}(please specify){% endtrans %}:</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <input type="text" class="form-control" name='other_technical_matter' id='input_other_technical_matter' value="{{ submission.otherTechnicalMatter }}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="select-intervention">*{% trans %}Interventions{% endtrans %}:</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <div>
+                                    <select class='form-control selectpicker' id='select-intervention' name='intervention[]' data-size="5" data-width="fit" data-live-search="true" title="{% trans %}Choose one of the following...{% endtrans %}" multiple required>
+                                        {% for inter in intervention %}
+                                            <option value="{{ inter.id }}" {% if inter in submission.intervention %}selected{% endif %}>{{ inter.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="input_other_intervention">{% trans %}Other Interventions{% endtrans %} {% trans %}(please specify){% endtrans %}:</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <input type="text" class="form-control" name='other_intervention' id='input_other_intervention' value="{{ submission.otherIntervention }}">
                             </div>
                         </div>
                     </div>
@@ -54,21 +82,24 @@
                 <div class='block'>
                     <div class='row'>
                         <div class="col-md-12">
-                            <h2 class='sub-header'>{% trans %}Adaptability & Replicability{% endtrans %}</h2>
+                            <h2 class='sub-header'>{% trans %}Description{% endtrans %}</h2>
                         </div>
                     </div>
 
                     <div class='row'>
-                        <div class="col-md-12">
+                        <div class="col-md-2">
                             <div class="form-group">
-                                <label for="select-scalability">*{% trans %}Was the BP able to transfer technologies, and/or to disseminate useful knowledge adaptable to other realities, and could it be scaled up{% endtrans %}?</label>
-                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <select class='form-control selectpicker' id='select-scalability' name='scalability' data-size="6" data-live-search="true" required>
-                                    <option value="">-</option>
-                                    {% for code, name in likert %}
-                                        <option value="{{ code }}" {% if submission.scalability == code %}selected{% endif %}>{{ name }}</option>
-                                    {% endfor %}
-                                </select>
+                                <label for="input-start-date">*{% trans %}Start Date{% endtrans %}:</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 25} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <input type="text" class='form-control datepicker' id='input-start-date' name='start-date' value='{% if submission.startDate %}{{ submission.startDate|date("Y-m-d") }}{% endif %}' required>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="input-end-date">{% trans %}End Date{% endtrans %} / {% trans %}Ongoing{% endtrans %}:</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 25} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <input type="text" class='form-control datepicker' id='input-end-date' name='end-date' value='{% if submission.endDate %}{{ submission.endDate|date("Y-m-d") }}{% endif %}'>
                             </div>
                         </div>
                     </div>
@@ -76,14 +107,15 @@
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="select-adaptability-replicability">*{% trans %}Does the development of this BP have adaptability and replicability potential{% endtrans %}?</label>
+                                <label for="select-country">*{% trans %}Country/Territory receiving/providing the cooperation{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <select class='form-control selectpicker' id='select-adaptability-replicability' name='adaptability_replicability' data-size="6" data-live-search="true" required>
-                                    <option value="">-</option>
-                                    {% for code, name in likert %}
-                                        <option value="{{ code }}" {% if submission.adaptabilityReplicability == code %}selected{% endif %}>{{ name }}</option>
-                                    {% endfor %}
-                                </select>
+                                <div>
+                                    <select class='form-control selectpicker' id='select-country' name='country[]' data-size="5" data-width="fit" data-live-search="true" title="{% trans %}Choose one of the following...{% endtrans %}" multiple required>
+                                        {% for country in countries %}
+                                            <option value="{{ country.id }}" {% if country in submission.country %}selected{% endif %}>{{ country.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -91,14 +123,15 @@
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="select-other-contexts-demo">*{% trans %}Could these successful BP be demonstrated in other contexts{% endtrans %}?</label>
+                                <label for="select-subregion">*{% trans %}Subregion{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <select class='form-control selectpicker' id='select-other-contexts-demo' name='other_contexts_demo' data-size="6" data-live-search="true" required>
-                                    <option value="">-</option>
-                                    {% for code, name in likert %}
-                                        <option value="{{ code }}" {% if submission.otherContextsDemo == code %}selected{% endif %}>{{ name }}</option>
-                                    {% endfor %}
-                                </select>
+                                <div>
+                                    <select class='form-control selectpicker' id='select-subregion' name='subregion[]' data-size="5" data-width="fit" data-live-search="true" title="{% trans %}Choose one of the following...{% endtrans %}" multiple required>
+                                        {% for sr in subregion %}
+                                            <option value="{{ sr.id }}" {% if sr in submission.subregion %}selected{% endif %}>{{ sr.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -106,27 +139,91 @@
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="textarea-describe-how">{% trans %}Please provide a short description to support your previous three answers (dissemination, adaptability/replicability and context){% endtrans %}:</label>
+                                <label for="select-target">*{% trans %}Sustainable Development Goals (and targets){% endtrans %}:</label>
+                                <a href="{{ path("crud_admin_help_show", {help_id: 223} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <div>
+                                    <select class='form-control selectpicker' id='select-target' name='target[]' data-size="5" data-width="fit" data-live-search="true" title="{% trans %}Choose one of the following...{% endtrans %}" multiple required>
+                                        {% for t in target %}
+                                            <option value="{{ t.id }}" data-subtext="{{ t.subtext }}" {% if t in submission.target %}selected{% endif %}>{{ t.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="select-population-group">*{% trans %}Specific/Target population group{% endtrans %}:</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <div>
+                                    <select class='form-control selectpicker' id='select-population-group' name='population_group[]' data-size="5" data-width="fit" data-live-search="true" title="{% trans %}Choose one of the following...{% endtrans %}" multiple required>
+                                        {% for pg in population_group %}
+                                            <option value="{{ pg.id }}" data-slug="{{ pg.slug }}" {% if pg in submission.populationGroup %}selected{% endif %}>{{ pg.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="input_other_population_group">{% trans %}Other Population Group{% endtrans %} {% trans %}(please specify){% endtrans %}:</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <input type="text" class="form-control" name='other_population_group' id='input_other_population_group' value="{{ submission.otherPopulationGroup }}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="textarea-introduction">*{% trans %}Brief Introduction{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <textarea rows="6" class="form-control" name='describe_how' id='textarea-describe-how' placeholder="{% trans %}500 words maximum{% endtrans%}">{{ submission.describeHow }}</textarea>
+                                <textarea rows="6" class="form-control" name='introduction' id='textarea-introduction' placeholder="{% trans %}500 words maximum{% endtrans%}" required>{{ submission.introduction }}</textarea>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class='block'>
-                    <div class='row'>
-                        <div class="col-md-12">
-                            <h2 class='sub-header'>{% trans %}Sustainability{% endtrans %}</h2>
                         </div>
                     </div>
 
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="textarea-sustainability">{% trans %}Please, describe the sustainability aspect of the project/initiative being described in this Best Practice{% endtrans %}:</label>
+                                <label for="textarea-objectives">*{% trans %}Main Objectives{% endtrans %}:</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <textarea rows="6" class="form-control" name='sustainability' id='textarea-sustainability' placeholder="{% trans %}500 words maximum{% endtrans%}">{{ submission.sustainability }}</textarea>
+                                <textarea rows="6" class="form-control" name='objectives' id='textarea-objectives' placeholder="{% trans %}500 words maximum{% endtrans%}" required>{{ submission.objectives }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="textarea-activities">{% trans %}Implementation{% endtrans %}/{% trans %}Activities{% endtrans %}:</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <textarea rows="6" class="form-control" name='activities' id='textarea-activities' placeholder="{% trans %}500 words maximum{% endtrans%}">{{ submission.activities }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="textarea-main-results">*{% trans %}Main results: Please describe the Products, Impact, and Innovation. If applicable, describe whether the practice used a participatory approach and whether it was planned considering the cross-cutting themes (equity, gender, ethnicity, and human rights){% endtrans %}</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <textarea rows="6" class="form-control" name='main_results' id='textarea-main-results' placeholder="{% trans %}500 words maximum{% endtrans%}" required>{{ submission.mainResults }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="textarea-factors">{% trans %}Limitations and Obstacles{% endtrans %}:</label>
+                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                <textarea rows="6" class="form-control" name='factors' id='textarea-factors' placeholder="{% trans %}500 words maximum{% endtrans%}">{{ submission.factors }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -142,4 +239,16 @@
             </form>
         </div>
     </div>
+{% endblock %}
+
+{% block script %}
+    <script>
+        $(function(){
+            $('.selectpicker').selectpicker({
+                multipleSeparator: '; '
+            }).on('changed.bs.select', function() {
+                $(this).selectpicker('refresh');
+            });
+        });
+    </script>
 {% endblock %}

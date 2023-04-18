@@ -28,7 +28,7 @@
                 </thead>
                 
                 <tbody>
-                    {% for file in protocol.mainSubmission.attachments if not file.isMonitoringAction %}
+                    {% for file in protocol.mainSubmission.attachments if file.uploadType.slug not in ['fensa', 'fensa-tobacco-arms'] and not file.isMonitoringAction %}
                         {% set is_show_file = true %}
                         {% if file.isConfidential %}
                             {% if 'secretary' in app.user.rolesSlug %}
@@ -108,6 +108,57 @@
         </div>
     </div>
 </div>
+
+{% if is_granted("ROLE_USER") and ('secretary' in app.user.rolesSlug or 'administrator' in app.user.rolesSlug) %}
+    <div class='block'>
+        <div class='row'>
+            <div class="col-md-12">
+                <h2 class='sub-header toggle-block'>
+                    <small class='pull-right'>
+                        <i class='glyphicon glyphicon-minus'></i>
+                    </small>
+                    
+                    {% trans %}Institutional Review{% endtrans %}:
+                </h2>
+            </div>
+        </div>
+
+        <div class='row'>
+            <div class="col-md-12">
+                <table class='table table-hover table-condensed' id='table-attachment'>
+                    
+                    <thead>
+                        <tr>
+                            <th>{% trans %}Type{% endtrans %}</th>
+                            <th>{% trans %}Original Submission{% endtrans %}</th>
+                            <th>{% trans %}Submitted by{% endtrans %}</th>
+                            <th>{% trans %}File name{% endtrans %}</th>
+                            <th>{% trans %}Date & Time{% endtrans %}</th>
+                            <th>{% trans %}Actions{% endtrans %}</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        {% for file in protocol.mainSubmission.attachments if file.uploadType.slug in ['fensa', 'fensa-tobacco-arms'] %}
+                            <tr>
+                                <td>{{ file.uploadType }}</td>
+                                <td>{{ file.submissionNumber }}</td>
+                                <td>{{ file.user }}</td>
+                                <td>{{ file }}</td> 
+                                <td>{{ file.created|date("d/m/Y H:i") }}</td> 
+                                <td>
+                                    <a href='{{ asset(file.uri) }}' target="_blank" class='btn btn-default btn-xs' target="_blank">
+                                        <i class='glyphicon glyphicon-eye-open'></i>
+                                    </a>
+                                </td> 
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endif %}
 
 <div class='block'>
     <div class='row'>

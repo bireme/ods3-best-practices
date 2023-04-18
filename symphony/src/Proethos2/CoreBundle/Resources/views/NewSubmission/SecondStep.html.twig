@@ -13,221 +13,122 @@
         {% include 'Proethos2CoreBundle:NewSubmission:meta.html.twig' %}
 
         <div class='new-submission-tab-content'>
-            <form class='form' method='POST' id='form-second' action='{{ path("submission_new_second_step", {submission_id: submission.id}) }}'>
+            <form class='form' method='POST' id="form-second" action='{{ path("submission_new_second_step", {submission_id: submission.id}) }}'>
 
                 <input type="hidden" name="token" value="{{ csrf_token('submission-second-step') }}"/>
                 <input type='hidden' name='submission_id' value='{{ submission.id }}'>
 
                 <div class='block'>
                     <div class='row'>
-                        <div class="col-md-12 help-block">
-                            <h2 class='sub-header'>{% trans %}Type{% endtrans %}</h2>
-                            <a href="{{ path("crud_admin_help_show", {help_id: 222} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                        <div class="col-md-12">
+                            <h2 class='sub-header'>{% trans %}Institutional Review{% endtrans %}</h2>
                         </div>
                     </div>
 
                     <div class='row'>
                         <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="select-technical-matter">*{% trans %}Main Topics/Themes{% endtrans %}:</label>
-                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <div>
-                                    <select class='form-control selectpicker' id='select-technical-matter' name='technical_matter[]' data-size="5" data-width="fit" data-live-search="true" title="{% trans %}Choose one of the following...{% endtrans %}" multiple required>
-                                        {% for tm in technical_matter %}
-                                            <option value="{{ tm.id }}" {% if tm in submission.technicalMatter %}selected{% endif %}>{{ tm.name }}</option>
-                                        {% endfor %}
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class='row'>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="input_other_technical_matter">{% trans %}Other Main Topics/Themes{% endtrans %} {% trans %}(please specify){% endtrans %}:</label>
-                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <input type="text" class="form-control" name='other_technical_matter' id='input_other_technical_matter' value="{{ submission.otherTechnicalMatter }}">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class='row'>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="select-intervention">*{% trans %}Interventions{% endtrans %}:</label>
-                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <div>
-                                    <select class='form-control selectpicker' id='select-intervention' name='intervention[]' data-size="5" data-width="fit" data-live-search="true" title="{% trans %}Choose one of the following...{% endtrans %}" multiple required>
-                                        {% for inter in intervention %}
-                                            <option value="{{ inter.id }}" {% if inter in submission.intervention %}selected{% endif %}>{{ inter.name }}</option>
-                                        {% endfor %}
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class='row'>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="input_other_intervention">{% trans %}Other Interventions{% endtrans %} {% trans %}(please specify){% endtrans %}:</label>
-                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <input type="text" class="form-control" name='other_intervention' id='input_other_intervention' value="{{ submission.otherIntervention }}">
-                            </div>
+                            <h4>{% trans %}Welcome, please take a moment to review the following requirements{% endtrans %}</h4>
+                            <p>{% trans %}In this step, you will be requested to submit information about your institution that will remain confidential and shared only with PAHO’s Legal Office for review as per PAHO’s normative regarding engagements with Non-State Actors.{% endtrans %}</p>
+                            <p>{% trans %}For more information about this process, please refer to the{% endtrans %} <a href="https://apps.who.int/iris/bitstream/handle/10665/329431/9789241565608-eng.pdf?sequence=1&isAllowed=y" target="_blank">{% trans %}Handbook For NonState Actors on Engagement with the World Health Organization{% endtrans %}</a>.</p>
                         </div>
                     </div>
                 </div>
+
+                <hr />
 
                 <div class='block'>
                     <div class='row'>
                         <div class="col-md-12">
-                            <h2 class='sub-header'>{% trans %}Description{% endtrans %}</h2>
-                        </div>
-                    </div>
-
-                    <div class='row'>
-                        <div class="col-md-2">
-                            <div class="form-group">
-                                <label for="input-start-date">*{% trans %}Start Date{% endtrans %}:</label>
-                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 25} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <input type="text" class='form-control datepicker' id='input-start-date' name='start-date' value='{% if submission.startDate %}{{ submission.startDate|date("Y-m-d") }}{% endif %}' required>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2">
-                            <div class="form-group">
-                                <label for="input-end-date">{% trans %}End Date{% endtrans %} / {% trans %}Ongoing{% endtrans %}:</label>
-                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 25} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <input type="text" class='form-control datepicker' id='input-end-date' name='end-date' value='{% if submission.endDate %}{{ submission.endDate|date("Y-m-d") }}{% endif %}'>
-                            </div>
+                            <h4>{% trans %}Information Requested from Non-State Actors for Engagement with PAHO/WHO{% endtrans %}</h4>
+                            <p>{% trans %}*Please upload the form using the New Attachment button{% endtrans %}</p>
+                            <p>{% trans %}Download the form here:{% endtrans %} <a href="https://admin.bestpractices.bvsalud.org/uploads/documents/fensa-eng.pdf" target="_blank">{% trans %}English{% endtrans %}</a>, <a href="https://admin.bestpractices.bvsalud.org/uploads/documents/fensa-esp.pdf" target="_blank">{% trans %}Español{% endtrans %}</a>, <a href="https://admin.bestpractices.bvsalud.org/uploads/documents/fensa-por.pdf" target="_blank">{% trans %}Português{% endtrans %}</a></p>
+                            <p>{% trans %}The system only allows a single PDF document to be uploaded. Please merge the form with all the required attachments into a single document.{% endtrans %}</p>
                         </div>
                     </div>
 
                     <div class='row'>
                         <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="select-country">*{% trans %}Country/Territory receiving/providing the cooperation{% endtrans %}:</label>
-                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <div>
-                                    <select class='form-control selectpicker' id='select-country' name='country[]' data-size="5" data-width="fit" data-live-search="true" title="{% trans %}Choose one of the following...{% endtrans %}" multiple required>
-                                        {% for country in countries %}
-                                            <option value="{{ country.id }}" {% if country in submission.country %}selected{% endif %}>{{ country.name }}</option>
+                            <fieldset>
+                                <table class='table table-hover table-condensed table-attachment'>
+                                    <thead>
+                                        <tr>
+                                            <th>{% trans %}File name{% endtrans %}</th>
+                                            <th>{% trans %}Date & Time{% endtrans %}</th>
+                                            <th>{% trans %}View{% endtrans %}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for file in submission.attachments if file.uploadType.slug in ['fensa'] %}
+                                            <tr>
+                                                <td>{{ file }}</td>
+                                                <td>{{ file.created|date("d/m/Y H:i") }}</td>
+                                                <td>
+                                                    <a href='{{ asset(file.uri) }}' class='btn btn-default btn-xs' target="_blank"><i class='glyphicon glyphicon-eye-open'></i></a>
+                                                    {% if file.created > submission.protocol.decisionIn %}
+                                                        <a href='#' class='btn btn-default btn-xs button-delete-attachment' data-id='{{ file.id }}' data-toggle="modal" data-target="#modal-delete-attachment">
+                                                        <i class='glyphicon glyphicon-trash'></i>
+                                                    {% endif %}
+                                                    </a>
+                                                </td>
+                                            </tr>
                                         {% endfor %}
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                    </tbody>
+                                </table>
+                            </fieldset>
 
-                    <div class='row'>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="select-subregion">*{% trans %}Subregion{% endtrans %}:</label>
-                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <div>
-                                    <select class='form-control selectpicker' id='select-subregion' name='subregion[]' data-size="5" data-width="fit" data-live-search="true" title="{% trans %}Choose one of the following...{% endtrans %}" multiple required>
-                                        {% for sr in subregion %}
-                                            <option value="{{ sr.id }}" {% if sr in submission.subregion %}selected{% endif %}>{{ sr.name }}</option>
-                                        {% endfor %}
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class='row'>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="select-target">*{% trans %}Sustainable Development Goals (and targets){% endtrans %}:</label>
-                                <a href="{{ path("crud_admin_help_show", {help_id: 223} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <div>
-                                    <select class='form-control selectpicker' id='select-target' name='target[]' data-size="5" data-width="fit" data-live-search="true" title="{% trans %}Choose one of the following...{% endtrans %}" multiple required>
-                                        {% for t in target %}
-                                            <option value="{{ t.id }}" data-subtext="{{ t.subtext }}" {% if t in submission.target %}selected{% endif %}>{{ t.name }}</option>
-                                        {% endfor %}
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class='row'>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="select-population-group">*{% trans %}Specific/Target population group{% endtrans %}:</label>
-                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 21} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <div>
-                                    <select class='form-control selectpicker' id='select-population-group' name='population_group[]' data-size="5" data-width="fit" data-live-search="true" title="{% trans %}Choose one of the following...{% endtrans %}" multiple required>
-                                        {% for pg in population_group %}
-                                            <option value="{{ pg.id }}" data-slug="{{ pg.slug }}" {% if pg in submission.populationGroup %}selected{% endif %}>{{ pg.name }}</option>
-                                        {% endfor %}
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class='row'>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="input_other_population_group">{% trans %}Other Population Group{% endtrans %} {% trans %}(please specify){% endtrans %}:</label>
-                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 16} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <input type="text" class="form-control" name='other_population_group' id='input_other_population_group' value="{{ submission.otherPopulationGroup }}">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class='row'>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="textarea-introduction">*{% trans %}Brief Introduction{% endtrans %}:</label>
-                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <textarea rows="6" class="form-control" name='introduction' id='textarea-introduction' placeholder="{% trans %}500 words maximum{% endtrans%}" required>{{ submission.introduction }}</textarea>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class='row'>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="textarea-objectives">*{% trans %}Main Objectives{% endtrans %}:</label>
-                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <textarea rows="6" class="form-control" name='objectives' id='textarea-objectives' placeholder="{% trans %}500 words maximum{% endtrans%}" required>{{ submission.objectives }}</textarea>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class='row'>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="textarea-activities">{% trans %}Implementation{% endtrans %}/{% trans %}Activities{% endtrans %}:</label>
-                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <textarea rows="6" class="form-control" name='activities' id='textarea-activities' placeholder="{% trans %}500 words maximum{% endtrans%}">{{ submission.activities }}</textarea>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class='row'>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="textarea-main-results">*{% trans %}Main results: Please describe the Products, Impact, and Innovation. If applicable, describe whether the practice used a participatory approach and whether it was planned considering the cross-cutting themes (equity, gender, ethnicity, and human rights){% endtrans %}</label>
-                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <textarea rows="6" class="form-control" name='main_results' id='textarea-main-results' placeholder="{% trans %}500 words maximum{% endtrans%}" required>{{ submission.mainResults }}</textarea>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class='row'>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="textarea-factors">{% trans %}Limitations and Obstacles{% endtrans %}:</label>
-                                <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                                <textarea rows="6" class="form-control" name='factors' id='textarea-factors' placeholder="{% trans %}500 words maximum{% endtrans%}">{{ submission.factors }}</textarea>
-                            </div>
+                            <a href='#' class='btn btn-default btn-modal' data-toggle="modal" data-target="#modal-new-file" data-upload-type='fensa' {% if fensa_upload|length > 0 %}disabled{% endif %}>{% trans %}New Attachment{% endtrans %}</a>
                         </div>
                     </div>
                 </div>
+
+                <hr />
+
+                <div class='block'>
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <h4>{% trans %}Upload the Tobacco / Arms related disclosure statement for Non-State Actors{% endtrans %}</h4>
+                            <p>{% trans %}*Please upload the form using the New Attachment button{% endtrans %}</p>
+                            <p>{% trans %}Download the form here:{% endtrans %} <a href="https://admin.bestpractices.bvsalud.org/uploads/documents/tobaccoarms-eng.pdf" target="_blank">{% trans %}English{% endtrans %}</a>, <a href="https://admin.bestpractices.bvsalud.org/uploads/documents/tobaccoarms-esp.pdf" target="_blank">{% trans %}Español{% endtrans %}</a>, <a href="https://admin.bestpractices.bvsalud.org/uploads/documents/tobaccoarms-por.pdf" target="_blank">{% trans %}Português{% endtrans %}</a></p>
+                            <p>{% trans %}The system only allows a single PDF document to be uploaded. Please merge the form with all the required attachments into a single document.{% endtrans %}</p>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <fieldset>
+                                <table class='table table-hover table-condensed table-attachment'>
+                                    <thead>
+                                        <tr>
+                                            <th>{% trans %}File name{% endtrans %}</th>
+                                            <th>{% trans %}Date & Time{% endtrans %}</th>
+                                            <th>{% trans %}View{% endtrans %}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for file in submission.attachments if file.uploadType.slug in ['fensa-tobacco-arms'] %}
+                                            <tr>
+                                                <td>{{ file }}</td>
+                                                <td>{{ file.created|date("d/m/Y H:i") }}</td>
+                                                <td>
+                                                    <a href='{{ asset(file.uri) }}' class='btn btn-default btn-xs' target="_blank"><i class='glyphicon glyphicon-eye-open'></i></a>
+                                                    {% if file.created > submission.protocol.decisionIn %}
+                                                        <a href='#' class='btn btn-default btn-xs button-delete-attachment' data-id='{{ file.id }}' data-toggle="modal" data-target="#modal-delete-attachment">
+                                                        <i class='glyphicon glyphicon-trash'></i>
+                                                    {% endif %}
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </fieldset>
+
+                            <a href='#' class='btn btn-default btn-modal' data-toggle="modal" data-target="#modal-new-file" data-upload-type='fensa-tobacco-arms' {% if tobacco_arms_upload|length > 0 %}disabled{% endif %}>{% trans %}New Attachment{% endtrans %}</a>
+                        </div>
+                    </div>
+                </div>
+
+                <hr />
 
                 <div class='row top-buffer bottom-buffer'>
                     <div class="col-md-12">*{% trans %}Mandatory fields{% endtrans %}</div>
@@ -239,15 +140,89 @@
             </form>
         </div>
     </div>
+
+    <!-- Modal Novo Arquivo -->
+    <div class="modal fade" id="modal-new-file" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <form method="POST" id='form-new-attachment' enctype="multipart/form-data" action="{{ path("submission_new_second_step", {submission_id: submission.id}) }}">
+
+                <input type="hidden" name="token" value="{{ csrf_token('submission-second-step') }}"/>
+                <input type="hidden" name="MAX_FILE_SIZE" value="{{ 50*1024*1024 }}" />
+                <input type='hidden' id="hidden-upload-type" name='upload_type' value=''>
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">{% trans %}New Attachment{% endtrans %}</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="input-new-attachment-file">{% trans %}File{% endtrans %}:</label> 
+                            <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 12} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
+                            <input type='file' class='form-control' name='new-attachment-file' id='input-new-attachment-file' required>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">{% trans %}Close{% endtrans %}</button>
+                        <button type="submit" class="btn btn-primary">{% trans %}Send{% endtrans %}</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Confirmar Exclusão -->
+    <div class="modal fade" id="modal-delete-attachment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <form method="POST" id='form-delete-attachment' action="{{ path("submission_new_second_step", {submission_id: submission.id}) }}">
+                
+                <input type="hidden" name="token" value="{{ csrf_token('submission-second-step') }}"/>
+                <input type="hidden" name="delete-attachment-id" id='hidden-delete-attachment' value="" />
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">{% trans %}Delete Attachment{% endtrans %}</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <p>{% trans %}Do you confirm the exclusion of this attachment?{% endtrans %}</p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">{% trans %}Close{% endtrans %}</button>
+                        <button type="submit" class="btn btn-danger">{% trans %}Confirm{% endtrans %}</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
 {% endblock %}
 
 {% block script %}
     <script>
         $(function(){
-            $('.selectpicker').selectpicker({
-                multipleSeparator: '; '
-            }).on('changed.bs.select', function() {
-                $(this).selectpicker('refresh');
+            $(".table-attachment").on("click", ".button-delete-attachment", function(e){
+                var id = $(this).data('id');
+                $("#hidden-delete-attachment").val(id);
+            });
+
+            $(".btn-modal").on("click", function(e){
+                var upload_type = $(this).data('upload-type');
+                $("#hidden-upload-type").val(upload_type);
+            });
+
+            $('#modal-delete-attachment').on('hidden.bs.modal', function () {
+                $("#hidden-delete-attachment").val("");
+            });
+
+            $('#modal-new-file').on('hidden.bs.modal', function () {
+                $("#hidden-upload-type").val("");
             });
         });
     </script>
