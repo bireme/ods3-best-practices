@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2023-04-13T19:12:34Z" source-language="en" target-language="pt_BR" datatype="plaintext" original="not.available">
+  <file date="2023-04-18T01:30:24Z" source-language="en" target-language="pt_BR" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -13,6 +13,10 @@
       <trans-unit id="9c6014edd87406246968b687073a3900ecbac4ab" resname="(please specify)">
         <source>(please specify)</source>
         <target>(por favor especifique)</target>
+      </trans-unit>
+      <trans-unit id="973bd16032b2826744d921a34737f09a45efd7e4" resname="*Please upload the form using the New Attachment button">
+        <source>*Please upload the form using the New Attachment button</source>
+        <target>*Please upload the form using the New Attachment button</target>
       </trans-unit>
       <trans-unit id="f7fae9b58ef582a295b2bbe3ffcf73705281cd4b" resname="12 months">
         <source>12 months</source>
@@ -710,6 +714,10 @@
         <source>Does the development of this BP have adaptability and replicability potential</source>
         <target>O desenvolvimento desta Boa Prática tem potencial de replicabilidade e adaptabilidade</target>
       </trans-unit>
+      <trans-unit id="11f354970f33d3d59979810a8e9515bd918d2d52" resname="Download the form here:">
+        <source>Download the form here:</source>
+        <target>Download the form here:</target>
+      </trans-unit>
       <trans-unit id="23d33e22acfcb9ecddb4a85f10607dc4ff49e23c" resname="Draft">
         <source>Draft</source>
         <target>Rascunho</target>
@@ -822,6 +830,10 @@
         <source>Entity (PAHO)</source>
         <target>Entidade (OPAS)</target>
       </trans-unit>
+      <trans-unit id="2001ca082b2d2742765d8ac9182678bfe0374fbf" resname="Español">
+        <source>Español</source>
+        <target>Español</target>
+      </trans-unit>
       <trans-unit id="de84c6a03697e058ca921b8cc68aefced20e72b4" resname="Estimated date of initial recruitment">
         <source>Estimated date of initial recruitment</source>
         <target>Data prevista para o início do recrutamento.</target>
@@ -878,6 +890,14 @@
       <trans-unit id="03688ba6aa340b87549088aa5739944cb6b1dc73" resname="FAQ">
         <source>FAQ</source>
         <target>Perguntas mais frequentes</target>
+      </trans-unit>
+      <trans-unit id="92f2b3075798e78a55d722533ef780774f504329" resname="FENSA">
+        <source>FENSA</source>
+        <target>FENSA</target>
+      </trans-unit>
+      <trans-unit id="90db8f7363e06cc306bfe7758dfab798a719d74a" resname="FENSA Tobacco/Arms">
+        <source>FENSA Tobacco/Arms</source>
+        <target>FENSA Tobacco/Arms</target>
       </trans-unit>
       <trans-unit id="c8d7677e19495f21da984fe4e2829b7ca91b27c7" resname="Feedback">
         <source>Feedback</source>
@@ -959,6 +979,10 @@
         <source>Focus on Cross-Cutting Themes</source>
         <target>Focus on Cross-Cutting Themes</target>
       </trans-unit>
+      <trans-unit id="ad6d00187c68d4dc08b6c15fbefb2504b97e6018" resname="For more information about this process, please refer to the">
+        <source>For more information about this process, please refer to the</source>
+        <target>For more information about this process, please refer to the</target>
+      </trans-unit>
       <trans-unit id="ac5a8da5a06d99f0081933da88851572f26389a9" resname="Forgot My Password">
         <source>Forgot My Password</source>
         <target>Esqueci minha senha</target>
@@ -1006,6 +1030,10 @@
       <trans-unit id="48d8c627be3c12fac8a0a9ddb9ceaa5e126cf358" resname="Goals">
         <source>Goals</source>
         <target>Goals</target>
+      </trans-unit>
+      <trans-unit id="11b7ffd7674b7f00bd13238991e3d42508a87143" resname="Handbook For NonState Actors on Engagement with the World Health Organization">
+        <source>Handbook For NonState Actors on Engagement with the World Health Organization</source>
+        <target>Handbook For NonState Actors on Engagement with the World Health Organization</target>
       </trans-unit>
       <trans-unit id="9d8ba69ea37ad3dd3008e8b89eb6046f51780130" resname="Have an error with captcha. Please try again.">
         <source>Have an error with captcha. Please try again.</source>
@@ -1091,6 +1119,10 @@
         <source>Implementation/Activities</source>
         <target>Implementação/Atividades</target>
       </trans-unit>
+      <trans-unit id="86614555e3af44e6a8e61bc03ff121e286586ad7" resname="In this step, you will be requested to submit information about your institution that will remain confidential and shared only with PAHO’s Legal Office for review as per PAHO’s normative regarding engagements with Non-State Actors.">
+        <source>In this step, you will be requested to submit information about your institution that will remain confidential and shared only with PAHO’s Legal Office for review as per PAHO’s normative regarding engagements with Non-State Actors.</source>
+        <target>In this step, you will be requested to submit information about your institution that will remain confidential and shared only with PAHO’s Legal Office for review as per PAHO’s normative regarding engagements with Non-State Actors.</target>
+      </trans-unit>
       <trans-unit id="4c05835cf89afee841c2033dbc84eb128aafbb79" resname="In your opinion, PAHO played a catalytic role on the added value of Technical Cooperation">
         <source>In your opinion, PAHO played a catalytic role on the added value of Technical Cooperation</source>
         <target>Na sua opinião, a OPAS desempenhou um papel catalisador no valor agregado da cooperação técnica</target>
@@ -1130,6 +1162,10 @@
       <trans-unit id="15782c7351818e74c159d0530853a5e7f4ff1be2" resname="Inclusion criteria">
         <source>Inclusion criteria</source>
         <target>Critério de inclusão.</target>
+      </trans-unit>
+      <trans-unit id="b6a65f57c35cf7ea7b1388e6ef13bfccee6a6c08" resname="Information Requested from Non-State Actors for Engagement with PAHO/WHO">
+        <source>Information Requested from Non-State Actors for Engagement with PAHO/WHO</source>
+        <target>Information Requested from Non-State Actors for Engagement with PAHO/WHO</target>
       </trans-unit>
       <trans-unit id="b00437194b37e2157cec2561fb31a5564a0e1eab" resname="Information on objective completion: Objectives and Main Results can be compared to see if objectives (particularly SMART objectives) were reached; Evidence/Proposals on project objective fulfillment.">
         <source>Information on objective completion: Objectives and Main Results can be compared to see if objectives (particularly SMART objectives) were reached; Evidence/Proposals on project objective fulfillment.</source>
@@ -1178,6 +1214,10 @@
       <trans-unit id="9bdded06e81fa16253537c5e2398044318410aeb" resname="Institution's Name">
         <source>Institution's Name</source>
         <target>Nome da Instituição</target>
+      </trans-unit>
+      <trans-unit id="f43c36d19c14f2fb7eaf94157c11cad5822f8c10" resname="Institutional Review">
+        <source>Institutional Review</source>
+        <target>Institutional Review</target>
       </trans-unit>
       <trans-unit id="dcd439a7322864e79ebb16b566f6870d846c27d2" resname="Institutions">
         <source>Institutions</source>
@@ -1847,6 +1887,10 @@
         <source>Portuguese message</source>
         <target>Mensagem em português</target>
       </trans-unit>
+      <trans-unit id="053aa1d851d84866a6ba3bcdfa6baca8a8c71411" resname="Português">
+        <source>Português</source>
+        <target>Português</target>
+      </trans-unit>
       <trans-unit id="9db108ba6b7f6571356060929e37dae65878cfca" resname="Privacy Policy">
         <source>Privacy Policy</source>
         <target>Política de Privacidade</target>
@@ -2231,6 +2275,10 @@
         <source>Set your password</source>
         <target>Defina sua senha</target>
       </trans-unit>
+      <trans-unit id="63168acc7c4b5060e4ec704a16d994225a3c12ef" resname="Seventh step saved with success.">
+        <source>Seventh step saved with success.</source>
+        <target>Seventh step saved with success.</target>
+      </trans-unit>
       <trans-unit id="e2331d9a6bf7b5cbf88547b1adf2cfa99eadbefd" resname="Show Best Practice">
         <source>Show Best Practice</source>
         <target>Mostrar Boa Prática</target>
@@ -2408,6 +2456,10 @@
         <source>The private_key and index_key are required in the parameters.yml file</source>
         <target>A private_key e index_key são necessárias no arquivo parameters.yml</target>
       </trans-unit>
+      <trans-unit id="f471cd0b03e34174f54afc318b04aa5c1ad2c746" resname="The system only allows a single PDF document to be uploaded. Please merge the form with all the required attachments into a single document.">
+        <source>The system only allows a single PDF document to be uploaded. Please merge the form with all the required attachments into a single document.</source>
+        <target>The system only allows a single PDF document to be uploaded. Please merge the form with all the required attachments into a single document.</target>
+      </trans-unit>
       <trans-unit id="80641d12b06bab66399479a096f095554b0710ae" resname="There is no help message set for this field.">
         <source>There is no help message set for this field.</source>
         <target>Não há nenhuma mensagem de ajuda definida para este campo.</target>
@@ -2554,6 +2606,10 @@
         <source>Upload Types</source>
         <target>Tipos de upload</target>
       </trans-unit>
+      <trans-unit id="b0bf2d0196410a77296c4e972ad238a6b10237cb" resname="Upload the Tobacco / Arms related disclosure statement for Non-State Actors">
+        <source>Upload the Tobacco / Arms related disclosure statement for Non-State Actors</source>
+        <target>Upload the Tobacco / Arms related disclosure statement for Non-State Actors</target>
+      </trans-unit>
       <trans-unit id="dfbff40e0380406fc9e4129026791082174263ee" resname="User created with success.">
         <source>User created with success.</source>
         <target>Usuário criado com sucesso.</target>
@@ -2633,6 +2689,10 @@
       <trans-unit id="f01899bfa26597e1f43dcb313aae1087efc4bdd8" resname="Welcome to the Best Practices Portal!">
         <source>Welcome to the Best Practices Portal!</source>
         <target>Welcome to the Best Practices Portal!</target>
+      </trans-unit>
+      <trans-unit id="63ffd7013f11b07631d2ace9e5b378b74a9a5e7c" resname="Welcome, please take a moment to review the following requirements">
+        <source>Welcome, please take a moment to review the following requirements</source>
+        <target>Welcome, please take a moment to review the following requirements</target>
       </trans-unit>
       <trans-unit id="e963862c68a22182c57f2c2ad1f84d8c3b35293e" resname="What are the lessons learned that will improve our expertise and add value to the Organization">
         <source>What are the lessons learned that will improve our expertise and add value to the Organization</source>
