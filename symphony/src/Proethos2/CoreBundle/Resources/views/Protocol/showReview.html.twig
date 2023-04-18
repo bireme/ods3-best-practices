@@ -49,5 +49,6 @@
 </div>
 
 <div class="modal-footer">
+    <a href='{{ path("protocol_generate_review_pdf", {protocol_id: protocol_revision.protocol.id, protocol_revision_id: protocol_revision.id}) }}' class='btn btn-primary pull-left' target='_blank'>{% trans %}Create PDF{% endtrans %}</a>
     <button type="button" class="btn btn-default" data-dismiss="modal">{% trans %}Close{% endtrans %}</button>
 </div>

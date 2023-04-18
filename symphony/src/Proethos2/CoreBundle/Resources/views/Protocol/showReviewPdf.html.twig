@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            .modal {
+                font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+                font-size: 14px;
+                line-height: 1.42857143;
+            }
+            .modal-header {
+                padding: 15px;
+                border-bottom: 1px solid #e5e5e5;
+            }
+            .modal-title {
+                margin: 0;
+                text-align: center;
+            }
+            .modal-body {
+                padding: 20px;
+            }
+            .modal-footer {
+                padding: 20px;
+                text-align: right;
+                border-top: 1px solid #e5e5e5;
+            }
+            h3, .h3 {
+                font-size: 24px;
+            }
+            h4, .h4 {
+                font-size: 18px;
+            }
+            h5, .h5 {
+                border-bottom: 1px solid #e5e5e5;
+                font-size: 12pt;
+                padding-bottom: 5px;
+                margin-top: 2rem;
+                margin-bottom: 1rem;
+            }
+            p {
+                margin: 0 0 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="modal" id="modal-parecer-reviewer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">{% trans %}Revision{% endtrans %} -  {{ protocol_revision.protocol.code }}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <h5>{% trans %}Effectiveness{% endtrans %}</h5>
+                        <p><b>{% trans %}Scoring{% endtrans %}:</b> {{ protocol_revision.effectivenessScoring }} {% trans %}Points{% endtrans %}</p>
+                        <p><b>{% trans %}Feedback{% endtrans %}:</b> {{ protocol_revision.effectivenessRevisions|nl2br }}</p>
+
+                        <h5>{% trans %}Cost-Effectiveness{% endtrans %}</h5>
+                        <p><b>{% trans %}Scoring{% endtrans %}:</b> {{ protocol_revision.costEffectivenessScoring }} {% trans %}Points{% endtrans %}</p>
+                        <p><b>{% trans %}Feedback{% endtrans %}:</b> {{ protocol_revision.costEffectivenessRevisions|nl2br }}</p>
+
+                        <h5>{% trans %}Efficiency{% endtrans %}</h5>
+                        <p><b>{% trans %}Scoring{% endtrans %}:</b> {{ protocol_revision.efficiencyScoring }} {% trans %}Points{% endtrans %}</p>
+                        <p><b>{% trans %}Feedback{% endtrans %}:</b> {{ protocol_revision.efficiencyRevisions|nl2br }}</p>
+
+                        <h5>{% trans %}Sustainability{% endtrans %}</h5>
+                        <p><b>{% trans %}Scoring{% endtrans %}:</b> {{ protocol_revision.sustainabilityScoring }} {% trans %}Points{% endtrans %}</p>
+                        <p><b>{% trans %}Feedback{% endtrans %}:</b> {{ protocol_revision.sustainabilityRevisions|nl2br }}</p>
+
+                        <h5>{% trans %}Replicability{% endtrans %}/{% trans %}Adaptability{% endtrans %}</h5>
+                        <p><b>{% trans %}Scoring{% endtrans %}:</b> {{ protocol_revision.replicabilityAdaptabilityScoring }} {% trans %}Points{% endtrans %}</p>
+                        <p><b>{% trans %}Feedback{% endtrans %}:</b> {{ protocol_revision.replicabilityAdaptabilityRevisions|nl2br }}</p>
+
+                        <h5>{% trans %}Innovation{% endtrans %}</h5>
+                        <p><b>{% trans %}Scoring{% endtrans %}:</b> {{ protocol_revision.innovationScoring }} {% trans %}Points{% endtrans %}</p>
+                        <p><b>{% trans %}Feedback{% endtrans %}:</b> {{ protocol_revision.innovationRevisions|nl2br }}</p>
+
+                        <h5>{% trans %}Participation{% endtrans %}</h5>
+                        <p><b>{% trans %}Scoring{% endtrans %}:</b> {{ protocol_revision.participationScoring }} {% trans %}Points{% endtrans %}</p>
+                        <p><b>{% trans %}Feedback{% endtrans %}:</b> {{ protocol_revision.participationRevisions|nl2br }}</p>
+
+                        <h5>{% trans %}Focus on Cross-Cutting Themes{% endtrans %} {% trans %}(equity, gender, ethnicity, and human rights){% endtrans %}</h5>
+                        <p><b>{% trans %}Scoring{% endtrans %}:</b> {{ protocol_revision.crossCuttingThemesScoring }} {% trans %}Points{% endtrans %}</p>
+                        <p><b>{% trans %}Feedback{% endtrans %}:</b> {{ protocol_revision.crossCuttingThemesRevisions|nl2br }}</p>
+
+                        <h5>{% trans %}Average score{% endtrans %}</h5>
+                        <p>{{ protocol_revision.averageScore }} {% trans %}Points{% endtrans %}</p>
+
+                        <h5>{% trans %}Decision{% endtrans %}</h5>
+                        <p>{{ protocol_revision.decisionLabel|trans }}</p>
+
+                        {% if protocol_revision.otherComments %}
+                            <h5>{% trans %}Decision Rationale{% endtrans %}/{% trans %}Comments{% endtrans %}</h5>
+                            <p>{{ protocol_revision.otherComments|nl2br }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="modal-footer">
+                        {% trans %}Created in{% endtrans %} {{ "now"|date("d/m/Y H:i:s") }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
