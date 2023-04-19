@@ -1065,7 +1065,7 @@ class NewSubmissionController extends Controller
                 $em->flush();
 
                 $session->getFlashBag()->add('success', $translator->trans("File uploaded with success."));
-                return $this->redirectToRoute('submission_new_fifth_step', array('submission_id' => $submission->getId()), 301);
+                return $this->redirectToRoute('submission_new_sixth_step', array('submission_id' => $submission->getId()), 301);
 
             }
 
@@ -1105,7 +1105,7 @@ class NewSubmissionController extends Controller
             }
 
             $session->getFlashBag()->add('success', $msg);
-            return $this->redirectToRoute('submission_new_sixth_step', array('submission_id' => $submission->getId()), 301);
+            return $this->redirectToRoute('submission_new_seventh_step', array('submission_id' => $submission->getId()), 301);
         }
 
         return $output;
@@ -1327,29 +1327,33 @@ class NewSubmissionController extends Controller
 
         }
 
-        // checking required fensa attachment
-        $text = $translator->trans('FENSA');
-        $item = array('text' => $text, 'status' => true);
-        $upload_type = $upload_type_repository->findBy(array('slug' => 'fensa'));
-        $upload_type_id = $upload_type[0]->getId();
-        $fensa_upload = $submission_upload_repository->findBy(array('submission' => $submission->getId(), 'upload_type' => $upload_type_id));
-        if( !$fensa_upload or count($fensa_upload) != 1 ) {
-            $item = array('text' => $text, 'status' => false);
-            $final_status = false;
-        }
-        $revisions[] = $item;
+        if ( in_array($submission->getInstitution()->getSlug(), array("civil-society-organization", "academic-institution", "scientific-community", "private-sector", "philanthropic-organization", "other")) ) {
 
-        // checking required tobacco/arms attachment
-        $text = $translator->trans('FENSA Tobacco/Arms');
-        $item = array('text' => $text, 'status' => true);
-        $upload_type = $upload_type_repository->findBy(array('slug' => 'fensa-tobacco-arms'));
-        $upload_type_id = $upload_type[0]->getId();
-        $tobacco_arms_upload = $submission_upload_repository->findBy(array('submission' => $submission->getId(), 'upload_type' => $upload_type_id));
-        if( !$tobacco_arms_upload or count($tobacco_arms_upload) != 1 ) {
-            $item = array('text' => $text, 'status' => false);
-            $final_status = false;
+            // checking required fensa attachment
+            $text = $translator->trans('FENSA');
+            $item = array('text' => $text, 'status' => true);
+            $upload_type = $upload_type_repository->findBy(array('slug' => 'fensa'));
+            $upload_type_id = $upload_type[0]->getId();
+            $fensa_upload = $submission_upload_repository->findBy(array('submission' => $submission->getId(), 'upload_type' => $upload_type_id));
+            if( !$fensa_upload or count($fensa_upload) != 1 ) {
+                $item = array('text' => $text, 'status' => false);
+                $final_status = false;
+            }
+            $revisions[] = $item;
+
+            // checking required tobacco/arms attachment
+            $text = $translator->trans('FENSA Tobacco/Arms');
+            $item = array('text' => $text, 'status' => true);
+            $upload_type = $upload_type_repository->findBy(array('slug' => 'fensa-tobacco-arms'));
+            $upload_type_id = $upload_type[0]->getId();
+            $tobacco_arms_upload = $submission_upload_repository->findBy(array('submission' => $submission->getId(), 'upload_type' => $upload_type_id));
+            if( !$tobacco_arms_upload or count($tobacco_arms_upload) != 1 ) {
+                $item = array('text' => $text, 'status' => false);
+                $final_status = false;
+            }
+            $revisions[] = $item;
+
         }
-        $revisions[] = $item;
 
         $text = $translator->trans('Technical Matters');
         $item = array('text' => $text, 'status' => true);

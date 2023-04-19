@@ -50,6 +50,8 @@ class ProtocolController extends Controller
 
         $protocol_repository = $em->getRepository('Proethos2ModelBundle:Protocol');
         $user_repository = $em->getRepository('Proethos2ModelBundle:User');
+        $upload_type_repository = $em->getRepository('Proethos2ModelBundle:UploadType');
+        $submission_upload_repository = $em->getRepository('Proethos2ModelBundle:SubmissionUpload');
 
         $util = new Util($this->container, $this->getDoctrine());
 
@@ -57,6 +59,19 @@ class ProtocolController extends Controller
         $protocol = $protocol_repository->find($protocol_id);
         $submission = $protocol->getMainSubmission();
         $output['protocol'] = $protocol;
+
+        $upload_types = $upload_type_repository->findByStatus(true);
+        $output['upload_types'] = $upload_types;
+
+        $upload_type = $upload_type_repository->findBy(array('slug' => 'fensa'));
+        $upload_type_id = $upload_type[0]->getId();
+        $fensa_upload = $submission_upload_repository->findBy(array('submission' => $submission->getId(), 'upload_type' => $upload_type_id));
+        $output['fensa_upload'] = $fensa_upload;
+
+        $upload_type = $upload_type_repository->findBy(array('slug' => 'fensa-tobacco-arms'));
+        $upload_type_id = $upload_type[0]->getId();
+        $tobacco_arms_upload = $submission_upload_repository->findBy(array('submission' => $submission->getId(), 'upload_type' => $upload_type_id));
+        $output['tobacco_arms_upload'] = $tobacco_arms_upload;
 
         $trans_repository = $em->getRepository('Gedmo\\Translatable\\Entity\\Translation');
         $help_repository = $em->getRepository('Proethos2ModelBundle:Help');
