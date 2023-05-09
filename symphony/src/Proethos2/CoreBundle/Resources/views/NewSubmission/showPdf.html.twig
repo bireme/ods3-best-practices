@@ -94,11 +94,13 @@
 
         {% endif %}
 
-        <h3>{% trans %}Entity (PAHO){% endtrans %}:</h3>
-        <p>{{ submission.entity|join('; ') }}</p>
+        {% if submission.type.slug == "paho-who-technical-cooperation" %}
+            <h3>{% trans %}Entity (PAHO){% endtrans %}:</h3>
+            <p>{{ submission.entity|join('; ') }}</p>
 
-        <h3>{% trans %}Reference Number of the Technical Cooperation{% endtrans %}:</h3>
-        <p>{{ submission.referenceNumber }}</p>
+            <h3>{% trans %}Reference Number of the Technical Cooperation{% endtrans %}:</h3>
+            <p>{{ submission.referenceNumber }}</p>
+        {% endif %}
 
         <h3>{% trans %}Main Topics/Themes{% endtrans %}:</h3>
         <p>{{ submission.technicalMatter|join('; ') }}</p>
@@ -238,11 +240,6 @@
                 </tr>
             {% endfor %}
         </table>
-
-        <h3>{% trans %}Please provide information about products (resources, documents of the initiative/project) generated/associated to this Best Practice{% endtrans %}:</h3>
-        {% for url in submission.productsInformationLinks %}
-            <p><a href="{{ url }}" target="_blank">{{ url }}</a></p>
-        {% endfor %}
 {#
         <h3>{% trans %}Other information sources{% endtrans %}:</h3>
         {% for url in submission.otherSourcesInformationLinks %}
@@ -258,7 +255,12 @@
         <h3>{% trans %}What are the lessons learned that will improve our expertise and add value to the Organization{% endtrans %}?</h3>
         <p>{{ submission.lessonsInformation }}</p>
 
-        <h3>{% trans %}Any comment to the Secretariat of PAHO's Best Practice Portal{% endtrans %}?</h3>
+        <h3>{% trans %}Please provide hyperlinks to sources/documents associated with the Best Practice{% endtrans %}:</h3>
+        {% for url in submission.productsInformationLinks %}
+            <p><a href="{{ url }}" target="_blank">{{ url }}</a></p>
+        {% endfor %}
+
+        <h3>{% trans %}Please provide comments for the PAHO's Best Practices Secretariat{% endtrans %}:</h3>
         <p>{{ submission.pahoComments }}</p>
 
         <h3>{% trans %}Do you have any Conflicts of Interest to disclose regarding the contents of your submission (Including personal/professional interests and funding sources){% endtrans %}?</h3>
