@@ -15,7 +15,7 @@
             <div class='block'>
                 <div class='row'>
                     <div class="col-md-12">
-                        <h2 class="sub-header">{% trans %}Recent best practices{% endtrans %}</h2>
+                        <h2 class="sub-header">{% trans %}Recent good practices{% endtrans %}</h2>
                     </div>
                 </div>
 
@@ -51,7 +51,7 @@
                                             <td>{{ protocol.updatedIn|date("d/m/Y") }}</td>
                                             <td>{{ protocol.statusLabel|trans }}</td> 
                                             <td>
-                                                <a href='{{ path("protocol_show_protocol", {protocol_id: protocol.id}) }}' class='btn btn-default btn-xs' data-toggle="tooltip" data-placement="top" title="{% trans %}See best practice{% endtrans %}"><i class='glyphicon glyphicon-eye-open'></i></a>
+                                                <a href='{{ path("protocol_show_protocol", {protocol_id: protocol.id}) }}' class='btn btn-default btn-xs' data-toggle="tooltip" data-placement="top" title="{% trans %}See good practice{% endtrans %}"><i class='glyphicon glyphicon-eye-open'></i></a>
                                                 <a href='{{ path("submission_new_second_step", {submission_id: protocol.mainSubmission.id}) }}' class='btn btn-default btn-xs {% if protocol.status not in ["R","D","C"] %}disabled{% endif %}' data-toggle="tooltip" data-placement="top" title="{% trans %}Edit submission{% endtrans %}"><i class='glyphicon glyphicon-pencil'></i></a>
                                             </td>
                                         </tr>
@@ -68,7 +68,7 @@
             <div class='block'>
                 <div class='row'>
                     <div class="col-md-12">
-                        <h2 class="sub-header">{% trans %}Last best practices that you reviewed{% endtrans %}</h2>
+                        <h2 class="sub-header">{% trans %}Last good practices that you reviewed{% endtrans %}</h2>
                     </div>
                 </div>
 
@@ -104,8 +104,8 @@
                                             <td>{{ revision.updatedIn|date("d/m/Y") }}</td>
                                             <td>{{ revision.statusLabel }}</td>
                                             <td>
-                                                <a href='{{ path("protocol_show_protocol", {protocol_id: revision.id}) }}' class='btn btn-default btn-xs' data-toggle="tooltip" data-placement="top" title="{% trans %}See best practice{% endtrans %}"><i class='glyphicon glyphicon-eye-open'></i></a>
-                                                {% if revision.status in ["E","H"] and app.user in revision.revisionUsers %}<a href='{{ path("protocol_initial_committee_review_revisor", {protocol_id: revision.id}) }}' class='btn btn-default btn-xs' data-toggle="tooltip" data-placement="top" title="{% trans %}Send best practice revision{% endtrans %}"><i class='glyphicon glyphicon-list-alt'></i></a>{% endif %}
+                                                <a href='{{ path("protocol_show_protocol", {protocol_id: revision.id}) }}' class='btn btn-default btn-xs' data-toggle="tooltip" data-placement="top" title="{% trans %}See good practice{% endtrans %}"><i class='glyphicon glyphicon-eye-open'></i></a>
+                                                {% if revision.status in ["E","H"] and app.user in revision.revisionUsers %}<a href='{{ path("protocol_initial_committee_review_revisor", {protocol_id: revision.id}) }}' class='btn btn-default btn-xs' data-toggle="tooltip" data-placement="top" title="{% trans %}Send good practice revision{% endtrans %}"><i class='glyphicon glyphicon-list-alt'></i></a>{% endif %}
                                             </td>
                                         </tr>
                                     {% endfor %}

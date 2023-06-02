@@ -203,7 +203,7 @@ class SecurityController extends Controller
                         }
 
                         $message = \Swift_Message::newInstance()
-                        ->setSubject("[BP] " . $translator->trans("New user on Best Practices Portal"))
+                        ->setSubject("[BP] " . $translator->trans("New user on Good Practices Portal"))
                         ->setFrom($util->getConfiguration('committee.email'))
                         ->setTo($secretaries_emails)
                         ->setBody(
@@ -718,7 +718,7 @@ class SecurityController extends Controller
 
             // send email to the user
             $message = \Swift_Message::newInstance()
-            ->setSubject("[BP] " . $translator->trans("Welcome to the Best Practices Portal!"))
+            ->setSubject("[BP] " . $translator->trans("Welcome to the Good Practices Portal!"))
             ->setFrom($util->getConfiguration('committee.email'))
             ->setTo($post_data['email'])
             ->setBody(
@@ -746,7 +746,7 @@ class SecurityController extends Controller
             }
 
             $message = \Swift_Message::newInstance()
-            ->setSubject("[BP] " . $translator->trans("New user on Best Practices Portal"))
+            ->setSubject("[BP] " . $translator->trans("New user on Good Practices Portal"))
             ->setFrom($util->getConfiguration('committee.email'))
             ->setTo($secretaries_emails)
             ->setBody(

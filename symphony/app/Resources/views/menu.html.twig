@@ -30,7 +30,7 @@
                 {% endif %}
 
                 {% if is_granted("ROLE_USER") and 'investigator' in app.user.rolesSlug %}
-                    <li class=""><a href="{{ path("crud_investigator_protocol_list") }}">{% trans %}Best Practices{% endtrans %}</a></li>
+                    <li class=""><a href="{{ path("crud_investigator_protocol_list") }}">{% trans %}Good Practices{% endtrans %}</a></li>
                 {% endif %}
 
                 {% if is_granted("ROLE_USER") and ('secretary' in app.user.rolesSlug or 'member-of-committee' in app.user.rolesSlug)  %}
@@ -41,7 +41,7 @@
                         </a>
 
                         <ul class="dropdown-menu">
-                            <li><a href="{{ path('crud_committee_protocol_list') }}">{% trans %}Best Practices{% endtrans %}</a></li>
+                            <li><a href="{{ path('crud_committee_protocol_list') }}">{% trans %}Good Practices{% endtrans %}</a></li>
                             {% if 'secretary' in app.user.rolesSlug %}
                                 <li role="separator" class="divider"></li>
                                 <li><a href="{{ path('crud_committee_faq_list') }}">{% trans %}FAQ{% endtrans %}</a></li>
@@ -78,10 +78,10 @@
                             <li class="dropdown-submenu">
                                 <a tabindex="-1" href="#">{% trans %}Controlled Lists{% endtrans %}</a>
                                 <ul class="dropdown-menu">
-                                    <li><a tabindex="-1" href="{{ path('crud_admin_controlled_list_best_practice_type_list') }}">{% trans %}Best Practice Types{% endtrans %}</a></li>
-                                    <li><a tabindex="-1" href="{{ path('crud_admin_controlled_list_best_practice_role_list') }}">{% trans %}Best Practice Roles{% endtrans %}</a></li>
-                                    <li><a tabindex="-1" href="{{ path('crud_admin_controlled_list_best_practice_entity_list') }}">{% trans %}Best Practice Entities{% endtrans %}</a></li>
-                                    <li><a tabindex="-1" href="{{ path('crud_admin_controlled_list_call_list') }}">{% trans %}Calls for Best Practices{% endtrans %}</a></li>
+                                    <li><a tabindex="-1" href="{{ path('crud_admin_controlled_list_best_practice_type_list') }}">{% trans %}Good Practice Types{% endtrans %}</a></li>
+                                    <li><a tabindex="-1" href="{{ path('crud_admin_controlled_list_best_practice_role_list') }}">{% trans %}Good Practice Roles{% endtrans %}</a></li>
+                                    <li><a tabindex="-1" href="{{ path('crud_admin_controlled_list_best_practice_entity_list') }}">{% trans %}Good Practice Entities{% endtrans %}</a></li>
+                                    <li><a tabindex="-1" href="{{ path('crud_admin_controlled_list_call_list') }}">{% trans %}Calls for Good Practices{% endtrans %}</a></li>
                                     <li><a tabindex="-1" href="{{ path('crud_admin_controlled_list_institution_list') }}">{% trans %}Institutions{% endtrans %}</a></li>
                                     <li><a tabindex="-1" href="{{ path('crud_admin_controlled_list_stakeholder_list') }}">{% trans %}Stakeholders{% endtrans %}</a></li>
                                     <li><a tabindex="-1" href="{{ path('crud_admin_controlled_list_technical_matter_list') }}">{% trans %}Technical Matters{% endtrans %}</a></li>

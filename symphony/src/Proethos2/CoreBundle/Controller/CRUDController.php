@@ -294,12 +294,12 @@ class CRUDController extends Controller
 
         $protocol_repository = $em->getRepository('Proethos2ModelBundle:Protocol');
 
-        // getting best practice type list
+        // getting good practice type list
         $best_practice_type_repository = $em->getRepository('Proethos2ModelBundle:BestPracticeType');
         $best_practice_type = $best_practice_type_repository->findByStatus(true);
         $output['best_practice_type'] = $best_practice_type;
 
-        // getting calls for best practices
+        // getting calls for good practices
         $best_practice_call_repository = $em->getRepository('Proethos2ModelBundle:Call');
         $best_practice_call = $best_practice_call_repository->findByStatus(true);
         $output['best_practice_call'] = $best_practice_call;
@@ -366,7 +366,7 @@ class CRUDController extends Controller
                 if ( 'paho-who-technical-cooperation' == $protocol->getMainSubmission()->getType()->getSlug() ) {
                     $type = "Technical Cooperation";
                 } else {
-                    $type = "Best Practice";
+                    $type = "Good Practice";
                 }
 
                 $current_line = array();
@@ -424,7 +424,7 @@ class CRUDController extends Controller
         $trans_repository = $em->getRepository('Gedmo\\Translatable\\Entity\\Translation');
         $configuration_repository = $em->getRepository('Proethos2ModelBundle:Configuration');
 
-        // getting calls for best practices
+        // getting calls for good practices
         $best_practice_call_repository = $em->getRepository('Proethos2ModelBundle:Call');
         $best_practice_call = $best_practice_call_repository->findByStatus(true);
         $output['best_practice_call'] = $best_practice_call;
@@ -1370,7 +1370,7 @@ class CRUDController extends Controller
                 $body .= "<br /><br />";
 
                 $message = \Swift_Message::newInstance()
-                ->setSubject("[BP] " . $translator->trans("Confirmation of valid access to the Best Practices Portal"))
+                ->setSubject("[BP] " . $translator->trans("Confirmation of valid access to the Good Practices Portal"))
                 ->setFrom($util->getConfiguration('committee.email'))
                 ->setTo($user->getEmail())
                 ->setBody(

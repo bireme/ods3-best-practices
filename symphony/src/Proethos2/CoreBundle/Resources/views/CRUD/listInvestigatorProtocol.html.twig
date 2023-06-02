@@ -1,6 +1,6 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}{% trans %}Best Practices{% endtrans %}{% endblock %}
+{% block title %}{% trans %}Good Practices{% endtrans %}{% endblock %}
 
 {% block content %}
 
@@ -9,7 +9,7 @@
         <div class="row">
             <div class='col-md-12'>
                 <h1 class="page-header">
-                    {% trans %}Your Best Practices{% endtrans %}
+                    {% trans %}Your Good Practices{% endtrans %}
                 </h1>
             </div>
         </div>
@@ -21,7 +21,7 @@
                 <div class='row'>
                     <div class="col-md-7">
                         <div class="form-group">
-                            <label for="input-filter-q">{% trans %}Find best practices{% endtrans %}:</label>
+                            <label for="input-filter-q">{% trans %}Find good practices{% endtrans %}:</label>
                             <a href="{{ path("crud_admin_help_show", {help_id: 72} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                             <input type='text' class='form-control' id='input-filter-q' name='q' value="{{ app.request.get('q') }}">
                         </div>
@@ -99,10 +99,10 @@
                                     <td>{{ protocol.updatedIn|date("d/m/Y") }}</td>
                                     <td><span class='label {% if protocol.status == 'N' %}label-danger{% else %}label-default{% endif %}'>{{ protocol.statusLabel|trans }}</span></td>
                                     <td>
-                                        <a href='{{ path("protocol_show_protocol", {protocol_id: protocol.id}) }}' class='btn btn-default btn-xs' data-toggle="tooltip" data-placement="top" title="{% trans %}See best practice{% endtrans %}"><i class='glyphicon glyphicon-eye-open'></i></a>
+                                        <a href='{{ path("protocol_show_protocol", {protocol_id: protocol.id}) }}' class='btn btn-default btn-xs' data-toggle="tooltip" data-placement="top" title="{% trans %}See good practice{% endtrans %}"><i class='glyphicon glyphicon-eye-open'></i></a>
                                         <a href='{{ path("submission_new_first_created_protocol_step", {submission_id: protocol.mainSubmission.id}) }}' class='btn btn-default btn-xs {% if protocol.status not in ["R","D","C"] %}disabled{% endif %}' data-toggle="tooltip" data-placement="top" title="{% trans %}Edit submission{% endtrans %}"><i class='glyphicon glyphicon-pencil'></i></a>
                                         {% if protocol.status in ['D','A'] %}
-                                            <span data-toggle="tooltip" data-placement="top" title="{% trans %}Delete this best practice{% endtrans %}"><a href='{{ path("protocol_delete", {protocol_id: protocol.id} ) }}' class='btn btn-danger btn-xs' data-toggle='modal' data-target='#modalBaseAjax'><i class='glyphicon glyphicon-trash'></i></a></span>
+                                            <span data-toggle="tooltip" data-placement="top" title="{% trans %}Delete this good practice{% endtrans %}"><a href='{{ path("protocol_delete", {protocol_id: protocol.id} ) }}' class='btn btn-danger btn-xs' data-toggle='modal' data-target='#modalBaseAjax'><i class='glyphicon glyphicon-trash'></i></a></span>
                                         {% endif %}
                                         <!--
                                         <span data-toggle="tooltip" data-placement="top" title="{% trans %}Add a monitoring action{% endtrans %}">
@@ -113,7 +113,7 @@
                                 </tr>
                             {% else %}
                                 <tr>
-                                    <td colspan="8"><i>{% trans %}You haven't submitted any best practice yet.{% endtrans %}</i></td>
+                                    <td colspan="8"><i>{% trans %}You haven't submitted any good practice yet.{% endtrans %}</i></td>
                                 </tr>
                             {% endfor %}
                         </tbody>

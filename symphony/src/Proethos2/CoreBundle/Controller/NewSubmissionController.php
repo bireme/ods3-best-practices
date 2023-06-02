@@ -57,25 +57,25 @@ class NewSubmissionController extends Controller
 
         $util = new Util($this->container, $this->getDoctrine());
 
-        // getting best practice type list
+        // getting good practice type list
         $best_practice_type_repository = $em->getRepository('Proethos2ModelBundle:BestPracticeType');
         $best_practice_type = $best_practice_type_repository->findByStatus(true);
         // $best_practice_type = $best_practice_type_repository->findBy(array('status' => true), array('name' => 'ASC'));
         $output['best_practice_type'] = $best_practice_type;
 
-        // getting best practice role list
+        // getting good practice role list
         $best_practice_role_repository = $em->getRepository('Proethos2ModelBundle:BestPracticeRole');
         $best_practice_role = $best_practice_role_repository->findByStatus(true);
         // $best_practice_role = $best_practice_role_repository->findBy(array('status' => true), array('name' => 'ASC'));
         $output['best_practice_role'] = $best_practice_role;
 
-        // getting best practice entity list
+        // getting good practice entity list
         $best_practice_entity_repository = $em->getRepository('Proethos2ModelBundle:BestPracticeEntity');
         $best_practice_entity = $best_practice_entity_repository->findByStatus(true);
         // $best_practice_entity = $best_practice_entity_repository->findBy(array('status' => true), array('name' => 'ASC'));
         $output['best_practice_entity'] = $best_practice_entity;
 
-        // getting calls for best practices
+        // getting calls for good practices
         $best_practice_call_repository = $em->getRepository('Proethos2ModelBundle:Call');
         $best_practice_call = $best_practice_call_repository->findByStatus(true);
         // $best_practice_call = $best_practice_call_repository->findBy(array('status' => true), array('name' => 'ASC'));
@@ -144,15 +144,15 @@ class NewSubmissionController extends Controller
 
             $submission->setOwner($user);
 
-            // best practice type
+            // good practice type
             $selected_best_practice_type = $best_practice_type_repository->find($post_data['best_practice_type']);
             $submission->setType($selected_best_practice_type);
 
-            // best practice role
+            // good practice role
             $selected_best_practice_role = $best_practice_role_repository->find($post_data['best_practice_role']);
             $submission->setRole($selected_best_practice_role);
 
-            // call for best practices
+            // call for good practices
             $selected_call = $best_practice_call_repository->find($post_data['best_practice_call']);
             $submission->setCall($selected_call);
 
@@ -232,25 +232,25 @@ class NewSubmissionController extends Controller
 
         $user = $this->get('security.token_storage')->getToken()->getUser();
 
-        // getting best practice type list
+        // getting good practice type list
         $best_practice_type_repository = $em->getRepository('Proethos2ModelBundle:BestPracticeType');
         $best_practice_type = $best_practice_type_repository->findByStatus(true);
         // $best_practice_type = $best_practice_type_repository->findBy(array('status' => true), array('name' => 'ASC'));
         $output['best_practice_type'] = $best_practice_type;
 
-        // getting best practice role list
+        // getting good practice role list
         $best_practice_role_repository = $em->getRepository('Proethos2ModelBundle:BestPracticeRole');
         $best_practice_role = $best_practice_role_repository->findByStatus(true);
         // $best_practice_role = $best_practice_role_repository->findBy(array('status' => true), array('name' => 'ASC'));
         $output['best_practice_role'] = $best_practice_role;
 
-        // getting best practice entity list
+        // getting good practice entity list
         $best_practice_entity_repository = $em->getRepository('Proethos2ModelBundle:BestPracticeEntity');
         $best_practice_entity = $best_practice_entity_repository->findByStatus(true);
         // $best_practice_entity = $best_practice_entity_repository->findBy(array('status' => true), array('name' => 'ASC'));
         $output['best_practice_entity'] = $best_practice_entity;
 
-        // getting calls for best practices
+        // getting calls for good practices
         $best_practice_call_repository = $em->getRepository('Proethos2ModelBundle:Call');
         $best_practice_call = $best_practice_call_repository->findByStatus(true);
         // $best_practice_call = $best_practice_call_repository->findBy(array('status' => true), array('name' => 'ASC'));
@@ -321,15 +321,15 @@ class NewSubmissionController extends Controller
             $submission->setReferenceNumber($post_data['reference_number']);
             $submission->setLanguage(($post_data['language']) ? $post_data['language'] : $locale);
 
-            // best practice type
+            // good practice type
             $selected_best_practice_type = $best_practice_type_repository->find($post_data['best_practice_type']);
             $submission->setType($selected_best_practice_type);
 
-            // best practice role
+            // good practice role
             $selected_best_practice_role = $best_practice_role_repository->find($post_data['best_practice_role']);
             $submission->setRole($selected_best_practice_role);
 
-            // call for best practices
+            // call for good practices
             $selected_call = $best_practice_call_repository->find($post_data['best_practice_call']);
             $submission->setCall($selected_call);
 
@@ -1271,7 +1271,7 @@ class NewSubmissionController extends Controller
 
         }
 
-        $text = $translator->trans('Type of institution reporting the Best Practice');
+        $text = $translator->trans('Type of institution reporting the Good Practice');
         $item = array('text' => $text, 'status' => true);
         if(empty($submission->getInstitution())) {
             $item = array('text' => $text, 'status' => false);
@@ -1732,7 +1732,7 @@ class NewSubmissionController extends Controller
                         $em->persist($submission);
                         $em->flush();
 
-                        $session->getFlashBag()->add('success', $translator->trans("Best practice submitted with success!"));
+                        $session->getFlashBag()->add('success', $translator->trans("Good practice submitted with success!"));
                         return $this->redirectToRoute('protocol_show_protocol', array('protocol_id' => $submission->getProtocol()->getId()), 301);
                     }
 
@@ -1762,7 +1762,7 @@ class NewSubmissionController extends Controller
                     $protocol_history = new ProtocolHistory();
                     $protocol_history->setProtocol($protocol);
                     $protocol_history->setUser($user);
-                    $protocol_history->setMessage($translator->trans("Submission of best practice."));
+                    $protocol_history->setMessage($translator->trans("Submission of good practice."));
                     $em->persist($protocol_history);
                     $em->flush();
 
@@ -1823,7 +1823,7 @@ class NewSubmissionController extends Controller
                         $recipient = $protocol->getMainSubmission()->getOwner();
 
                         $message = \Swift_Message::newInstance()
-                        ->setSubject("[BP] " . $mail_translator->trans("Your best practice was sent to review."))
+                        ->setSubject("[BP] " . $mail_translator->trans("Your good practice was sent to review."))
                         ->setFrom($util->getConfiguration('committee.email'))
                         ->setTo($recipient->getEmail())
                         ->setBody(
@@ -1853,7 +1853,7 @@ class NewSubmissionController extends Controller
                         }
 
                         $message = \Swift_Message::newInstance()
-                        ->setSubject("[BP] " . $mail_translator->trans("A new best practice has been submitted."))
+                        ->setSubject("[BP] " . $mail_translator->trans("A new good practice has been submitted."))
                         ->setFrom($util->getConfiguration('committee.email'))
                         ->setTo($secretaries_emails)
                         ->setBody(
@@ -1864,7 +1864,7 @@ class NewSubmissionController extends Controller
 
                         $send = $this->get('mailer')->send($message);
 
-                        $session->getFlashBag()->add('success', $translator->trans("Best practice submitted with success!"));
+                        $session->getFlashBag()->add('success', $translator->trans("Good practice submitted with success!"));
                     }
 
                     return $this->redirectToRoute('protocol_show_protocol', array('protocol_id' => $protocol->getId()), 301);

@@ -23,7 +23,7 @@
                         <div class="col-md-12 help-block">
                             <h2 class='sub-header'>{% trans %}Multimedia{% endtrans %}</h2>
                             <a href="{{ path("crud_admin_help_show", {help_id: 224} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
-                            <p>{% trans %}Before uploading please ensure you have selected the proper file, once uploaded you won't be able to delete it. By uploading a file, the Submitter attests that they hold the permission(s) to make use and disseminate its contents through the Best Practices Portal. If any document is mistakenly uploaded and requires deletion, please contact the Secretariat through the "Comments" function (available after sending the submission).{% endtrans %}</p>
+                            <p>{% trans %}Before uploading please ensure you have selected the proper file, once uploaded you won't be able to delete it. By uploading a file, the Submitter attests that they hold the permission(s) to make use and disseminate its contents through the Good Practices Portal. If any document is mistakenly uploaded and requires deletion, please contact the Secretariat through the "Comments" function (available after sending the submission).{% endtrans %}</p>
                         </div>
                     </div>
 
@@ -74,7 +74,7 @@
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="input_descriptors">{% trans %}Please select from three to ten keywords that best describe your Best Practice{% endtrans %}:</label>
+                                <label for="input_descriptors">{% trans %}Please select from three to ten keywords that best describe your Good Practice{% endtrans %}:</label>
                                 <a href="{{ path("crud_admin_help_show", {help_id: 221} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <input type="text" class="form-control" name='descriptors' id='input_descriptors' value="{{ submission.descriptors }}" />
                             </div>
@@ -94,7 +94,7 @@
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="textarea-challenges-information">*{% trans %}What obstacles or challenges were faced during the implementation of this best practice/initiative{% endtrans %}?</label>
+                                <label for="textarea-challenges-information">*{% trans %}What obstacles or challenges were faced during the implementation of this good practice/initiative{% endtrans %}?</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <textarea rows="6" class="form-control" name='challenges_information' id='textarea-challenges-information' placeholder="{% trans %}500 words maximum{% endtrans%}" required>{{ submission.challengesInformation }}</textarea>
                             </div>
@@ -104,7 +104,7 @@
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="textarea-lessons-information">*{% trans %}What were the lessons learned you would consider important for an institution and for PAHO's Technical Cooperation to learn from and adapt the Best Practice{% endtrans %}?</label>
+                                <label for="textarea-lessons-information">*{% trans %}What were the lessons learned you would consider important for an institution and for PAHO's Technical Cooperation to learn from and adapt the Good Practice{% endtrans %}?</label>
                                 <a class="help-text" href="{{ path("crud_admin_help_show", {help_id: 3} ) }}" data-toggle="modal" data-target="#modal-help"><i class='glyphicon glyphicon-question-sign'></i></a>
                                 <textarea rows="6" class="form-control" name='lessons_information' id='textarea-lessons-information' placeholder="{% trans %}500 words maximum{% endtrans%}" required>{{ submission.lessonsInformation }}</textarea>
                             </div>

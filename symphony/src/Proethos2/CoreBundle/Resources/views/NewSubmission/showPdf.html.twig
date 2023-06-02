@@ -37,11 +37,11 @@
         <h1>{{ submission.title }}</h1>
 
         {% if protocol_code %}
-            <h3>{% trans %}Best Practice Code{% endtrans %}</h3>
+            <h3>{% trans %}Good Practice Code{% endtrans %}</h3>
             <p>{{ protocol_code }}</p>
         {% endif %}
 
-        <h3>{% trans %}Is this Best Practice being submitted in response to a call for proposals{% endtrans %}?</h3>
+        <h3>{% trans %}Is this Good Practice being submitted in response to a call for proposals{% endtrans %}?</h3>
         {% if submission.proposal == "yes" %}
             <p>{% trans %}Yes{% endtrans %}</p>
         {% else %}
@@ -55,13 +55,13 @@
 
         {% endif %}
 
-        <h3>{% trans %}This Best Practice is related to{% endtrans %}:</h3>
+        <h3>{% trans %}This Good Practice is related to{% endtrans %}:</h3>
         <p>{{ submission.type.name }}</p>
 
         <h3>{% trans %}Modality of Cooperation{% endtrans %}:</h3>
         <p>{{ coop_modality[submission.coopModality] }}</p>
 
-        <h3>{% trans %}What's your role on this Best Practice{% endtrans %}?</h3>
+        <h3>{% trans %}What's your role on this Good Practice{% endtrans %}?</h3>
         <p>{{ submission.role.name }}</p>
 
         {% if submission.role.slug == "other" %}
@@ -71,7 +71,7 @@
 
         {% endif %}
 
-        <h3>{% trans %}Type of institution reporting the Best Practice{% endtrans %}:</h3>
+        <h3>{% trans %}Type of institution reporting the Good Practice{% endtrans %}:</h3>
         <p>{{ submission.institution.name }}</p>
 
         {% if submission.institution.slug == "other" %}
@@ -150,7 +150,7 @@
         <h3>{% trans %}Brief Introduction{% endtrans %}:</h3>
         <p>{{ submission.introduction }}</p>
 
-        <h3>{% trans %}Objectives of the Best Practice{% endtrans %}:</h3>
+        <h3>{% trans %}Objectives of the Good Practice{% endtrans %}:</h3>
         <p>{{ submission.objectives }}</p>
 
         <h3>{% trans %}Implementation/Activities{% endtrans %}:</h3>
@@ -162,7 +162,7 @@
         <h3>{% trans %}Limitations and Obstacles{% endtrans %}:</h3>
         <p>{{ submission.factors }}</p>
 
-        <h3>{% trans %}In your opinion, the resources assigned to the accomplishment of this Best Practice (financial, technological and/or manpower) were implement in an efficient way{% endtrans %}?</h3>
+        <h3>{% trans %}In your opinion, the resources assigned to the accomplishment of this Good Practice (financial, technological and/or manpower) were implement in an efficient way{% endtrans %}?</h3>
         <p>{{ likert[submission.resourcesAssigned] }}</p>
 
         <h3>{% trans %}Support information about the outcome and impact results{% endtrans %}:</h3>
@@ -249,18 +249,18 @@
         <h3>{% trans %}Keywords{% endtrans %}:</h3>
         <p>{{ submission.descriptorsList|join('; ') }}</p>
 
-        <h3>{% trans %}What obstacles or challenges were faced during the implementation of this best practice/initiative{% endtrans %}?</h3>
+        <h3>{% trans %}What obstacles or challenges were faced during the implementation of this good practice/initiative{% endtrans %}?</h3>
         <p>{{ submission.challengesInformation }}</p>
 
         <h3>{% trans %}What are the lessons learned that will improve our expertise and add value to the Organization{% endtrans %}?</h3>
         <p>{{ submission.lessonsInformation }}</p>
 
-        <h3>{% trans %}Please provide hyperlinks to sources/documents associated with the Best Practice{% endtrans %}:</h3>
+        <h3>{% trans %}Please provide hyperlinks to sources/documents associated with the Good Practice{% endtrans %}:</h3>
         {% for url in submission.productsInformationLinks %}
             <p><a href="{{ url }}" target="_blank">{{ url }}</a></p>
         {% endfor %}
 
-        <h3>{% trans %}Please provide comments for the PAHO's Best Practices Secretariat{% endtrans %}:</h3>
+        <h3>{% trans %}Please provide comments for the PAHO's Good Practices Secretariat{% endtrans %}:</h3>
         <p>{{ submission.pahoComments }}</p>
 
         <h3>{% trans %}Do you have any Conflicts of Interest to disclose regarding the contents of your submission (Including personal/professional interests and funding sources){% endtrans %}?</h3>
@@ -278,7 +278,7 @@
         {% endif %}
 
         <h3>{% trans %}Terms and conditions{% endtrans %}:</h3>
-        <p>{{ app.user.name }} agreed with the Terms of Use and Privacy Policy of PAHO's Best Practices Portal the {{ "now"|date("d/m/Y") }} at {{ "now"|date("H:i:s") }}, having read the following text:</p>
+        <p>{{ app.user.name }} agreed with the Terms of Use and Privacy Policy of PAHO's Good Practices Portal the {{ "now"|date("d/m/Y") }} at {{ "now"|date("H:i:s") }}, having read the following text:</p>
         <p>{% trans %}I agree with the{% endtrans %} <a href="https://politicas.bireme.org/terminos/en/index.html" target="_blank">{% trans %}Terms of Use{% endtrans %}</a> {% trans %}and{% endtrans %} <a href="https://politicas.bireme.org/privacidad/en/index.html" target="_blank">{% trans %}Privacy Policy{% endtrans %}</a></p>
         <ul>
             <li>{% trans %}All contributions must be original. Contributors warrant that they have the necessary rights, including the necessary licenses, for the use of any copyrighted material in the submission. Furthermore, contributors warrant that all necessary permissions and consents have been obtained for all materials depicting identifiable human subjects.{% endtrans %}</li>
