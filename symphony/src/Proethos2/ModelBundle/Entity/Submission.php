@@ -1613,8 +1613,9 @@ class Submission extends Base
         $_links = explode("\r\n", $this->products_information);
 
         foreach ($_links as $link) {
-            if (filter_var($link, FILTER_VALIDATE_URL)) {
-                $links[] = $link;
+            $_link = strpos($link, 'http') === 0 ? $link : "https://".$link;
+            if (filter_var($_link, FILTER_VALIDATE_URL)) {
+                $links[] = $_link;
             }
         }
 
@@ -1656,8 +1657,9 @@ class Submission extends Base
         $_links = explode("\r\n", $this->other_sources_information);
 
         foreach ($_links as $link) {
-            if (filter_var($link, FILTER_VALIDATE_URL)) {
-                $links[] = $link;
+            $_link = strpos($link, 'http') === 0 ? $link : "https://".$link;
+            if (filter_var($_link, FILTER_VALIDATE_URL)) {
+                $links[] = $_link;
             }
         }
 
