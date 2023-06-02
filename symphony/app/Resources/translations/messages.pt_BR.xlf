@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2023-06-02T15:07:27Z" source-language="en" target-language="pt_BR" datatype="plaintext" original="not.available">
+  <file date="2023-06-02T16:14:54Z" source-language="en" target-language="pt_BR" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -1145,7 +1145,7 @@
       </trans-unit>
       <trans-unit id="c433efdf47e7793dbc4758cd7c335103d1d166bb" resname="In your opinion, the resources assigned to the accomplishment of this Good Practice (financial, technological and/or manpower) were implement in an efficient way">
         <source>In your opinion, the resources assigned to the accomplishment of this Good Practice (financial, technological and/or manpower) were implement in an efficient way</source>
-        <target>In your opinion, the resources assigned to the accomplishment of this Good Practice (financial, technological and/or manpower) were implement in an efficient way</target>
+        <target>Na sua opinião, os recursos atribuídos à realização desta Boa Prática (financeiros, tecnológicos e/ou humanos) foram implementados de forma eficiente</target>
       </trans-unit>
       <trans-unit id="729a80a18dad604648ec38c089fc2fa5c530bfec" resname="In your opinion, the resources assigned to the accomplishment of this Good Practice (financial, technological and/or manpower) were implement in an efficient way? Support information about the outcome and impact results">
         <source>In your opinion, the resources assigned to the accomplishment of this Good Practice (financial, technological and/or manpower) were implement in an efficient way? Support information about the outcome and impact results</source>
@@ -1253,7 +1253,7 @@
       </trans-unit>
       <trans-unit id="9982850d366df96dd8fed261a4e4ac13cc0e2474" resname="Is this Good Practice being submitted in response to a call for proposals">
         <source>Is this Good Practice being submitted in response to a call for proposals</source>
-        <target>Is this Good Practice being submitted in response to a call for proposals</target>
+        <target>Esta Boa Prática está sendo submetida em resposta a uma chamada</target>
       </trans-unit>
       <trans-unit id="76a38180859b3024f9cb90bc039aee77b0e5e7d5" resname="Is this a confidential comment?">
         <source>Is this a confidential comment?</source>
@@ -1729,7 +1729,7 @@
       </trans-unit>
       <trans-unit id="4865ff13402600ac8f02e3c44c76cb15c89eb4a3" resname="Other Main Topics/Themes">
         <source>Other Main Topics/Themes</source>
-        <target>Outros Principais Tópicos/Temas</target>
+        <target>Outros Tópicos/Temas</target>
       </trans-unit>
       <trans-unit id="68e2a1e0230efc5edc8fd67df99569e90858afc6" resname="Other Population Group">
         <source>Other Population Group</source>
@@ -2377,7 +2377,7 @@
       </trans-unit>
       <trans-unit id="4b07b9b5cd278a1f3e3c2bdd3ff955acb456a72f" resname="Submitted Good Practices">
         <source>Submitted Good Practices</source>
-        <target>Submitted Good Practices</target>
+        <target>Boas práticas submetidas</target>
       </trans-unit>
       <trans-unit id="046485aa309a8f023e2e4f75a5e5856f99c1dde8" resname="Submitted by">
         <source>Submitted by</source>
@@ -2469,7 +2469,7 @@
       </trans-unit>
       <trans-unit id="7599bd094d956e9f7dc3eef96dc65541a72a80f7" resname="This Good Practice is related to">
         <source>This Good Practice is related to</source>
-        <target>This Good Practice is related to</target>
+        <target>Esta Boa Prática está relacionada com</target>
       </trans-unit>
       <trans-unit id="e23f30065162ef493f6673db9d2a80a148cc4f50" resname="This is a migrated good practice. You can edit some informations.">
         <source>This is a migrated good practice. You can edit some informations.</source>
@@ -2507,7 +2507,7 @@
       </trans-unit>
       <trans-unit id="56029695c2c3d193b7214c1b45b3907e7b2cdb97" resname="Title of the Good Practice">
         <source>Title of the Good Practice</source>
-        <target>Title of the Good Practice</target>
+        <target>Título da Boa Prática</target>
       </trans-unit>
       <trans-unit id="7daa14977c986dc3336a31cdcf7b037d87109179" resname="Triangular Cooperation">
         <source>Triangular Cooperation</source>
@@ -2523,7 +2523,7 @@
       </trans-unit>
       <trans-unit id="99e2c0fe90b6fd96e30152e99e0d318325a47fbe" resname="Type of institution reporting the Good Practice">
         <source>Type of institution reporting the Good Practice</source>
-        <target>Type of institution reporting the Good Practice</target>
+        <target>Tipo de instituição que relata a Boa Prática</target>
       </trans-unit>
       <trans-unit id="0e2d9b0777a485c1276de0803c12a7d76fbc5c39" resname="URL">
         <source>URL</source>
@@ -2719,7 +2719,7 @@
       </trans-unit>
       <trans-unit id="6de336fd6ec1a7b758e00900607bf9a83a5a32df" resname="What's your role on this Good Practice">
         <source>What's your role on this Good Practice</source>
-        <target>What's your role on this Good Practice</target>
+        <target>Qual é o seu papel nesta Boa Prática</target>
       </trans-unit>
       <trans-unit id="4e953bc80cc1456b2f4ec105bd42205b478350d4" resname="Withdraw good practice">
         <source>Withdraw good practice</source>

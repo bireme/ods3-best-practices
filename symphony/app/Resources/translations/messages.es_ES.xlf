@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2023-06-02T15:07:28Z" source-language="en" target-language="es_ES" datatype="plaintext" original="not.available">
+  <file date="2023-06-02T16:29:46Z" source-language="en" target-language="es_ES" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -16,7 +16,7 @@
       </trans-unit>
       <trans-unit id="973bd16032b2826744d921a34737f09a45efd7e4" resname="*Please upload the form using the New Attachment button">
         <source>*Please upload the form using the New Attachment button</source>
-        <target>* Cargue el formulario utilizando el botón Adjunto Nuevo</target>
+        <target>* Cargue el formulario utilizando el botón Nuevo Adjunto</target>
       </trans-unit>
       <trans-unit id="f7fae9b58ef582a295b2bbe3ffcf73705281cd4b" resname="12 months">
         <source>12 months</source>
@@ -40,11 +40,11 @@
       </trans-unit>
       <trans-unit id="62caf0c50e282dbcd0459999b3b0426cda34d7b6" resname="A new good practice has been submitted.">
         <source>A new good practice has been submitted.</source>
-        <target>A new good practice has been submitted.</target>
+        <target>Una nueva buena práctica ha sido recibida.</target>
       </trans-unit>
       <trans-unit id="d3b30d0a372865377d57589e57a8cf77b615b63f" resname="A new good practice needs your analysis.">
         <source>A new good practice needs your analysis.</source>
-        <target>A new good practice needs your analysis.</target>
+        <target>Una nueva buena práctica requiere de su análisis.</target>
       </trans-unit>
       <trans-unit id="1131f04b6fda8ee170b77c66b96b09d5c10e9d13" resname="A new good practice review was submitted">
         <source>A new good practice review was submitted</source>
