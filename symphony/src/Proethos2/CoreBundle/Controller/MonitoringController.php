@@ -127,7 +127,7 @@ class MonitoringController extends Controller
                 //
                 // foreach($recipients as $recipient) {
                 //     $message = \Swift_Message::newInstance()
-                //     ->setSubject("[BP] " . $translator->trans("A new monitoring action has been submitted."))
+                //     ->setSubject($translator->trans("[GP]") . " " . $translator->trans("A new monitoring action has been submitted."))
                 //     ->setFrom($util->getConfiguration('committee.email'))
                 //     ->setTo($recipient->getEmail())
                 //     ->setBody(
@@ -338,7 +338,7 @@ class MonitoringController extends Controller
 
             foreach($recipients as $recipient) {
                 $message = \Swift_Message::newInstance()
-                ->setSubject("[BP] " . $mail_translator->trans("A new monitoring action has been submitted."))
+                ->setSubject($translator->trans("[GP]") . " " . $mail_translator->trans("A new monitoring action has been submitted."))
                 ->setFrom($util->getConfiguration('committee.email'))
                 ->setTo($recipient->getEmail())
                 ->setBody(

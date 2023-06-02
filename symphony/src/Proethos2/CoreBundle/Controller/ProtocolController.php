@@ -156,7 +156,7 @@ class ProtocolController extends Controller
                 }
 
                 $message = \Swift_Message::newInstance()
-                ->setSubject("[BP] " . $translator->trans("New comment on Good Practices Portal"))
+                ->setSubject($translator->trans("[GP]") . " " . $translator->trans("New comment on Good Practices Portal"))
                 ->setFrom($util->getConfiguration('committee.email'))
                 ->setTo($secretaries_emails)
                 ->setBody(
@@ -267,7 +267,7 @@ class ProtocolController extends Controller
             }
 
             $message = \Swift_Message::newInstance()
-            ->setSubject("[BP] " . $translator->trans("New comment on Good Practices Portal"))
+            ->setSubject($translator->trans("[GP]") . " " . $translator->trans("New comment on Good Practices Portal"))
             ->setFrom($util->getConfiguration('committee.email'))
             ->setTo($secretaries_emails)
             ->setBody(
@@ -497,7 +497,7 @@ class ProtocolController extends Controller
                 }
 
                 $message = \Swift_Message::newInstance()
-                ->setSubject("[BP] " . $mail_translator->trans("Your good practice was rejected"))
+                ->setSubject($translator->trans("[GP]") . " " . $mail_translator->trans("Your good practice was rejected"))
                 ->setFrom($util->getConfiguration('committee.email'))
                 ->setTo($recipients)
                 ->setBody(
@@ -582,7 +582,7 @@ class ProtocolController extends Controller
                             if(in_array($role, $member->getRolesSlug())) {
 
                                 $message = \Swift_Message::newInstance()
-                                ->setSubject("[BP] " . $mail_translator->trans("A new good practice needs your analysis."))
+                                ->setSubject($translator->trans("[GP]") . " " . $mail_translator->trans("A new good practice needs your analysis."))
                                 ->setFrom($util->getConfiguration('committee.email'))
                                 ->setTo($member->getEmail())
                                 ->setBody(
@@ -649,7 +649,7 @@ class ProtocolController extends Controller
                     $body .= "<br /><br />";
 
                     $message = \Swift_Message::newInstance()
-                    ->setSubject("[BP] " . $mail_translator->trans("Your good practice was sent for Technical Assessment."))
+                    ->setSubject($translator->trans("[GP]") . " " . $mail_translator->trans("Your good practice was sent for Technical Assessment."))
                     ->setFrom($util->getConfiguration('committee.email'))
                     ->setTo($investigators)
                     ->setBody(
@@ -733,7 +733,7 @@ class ProtocolController extends Controller
                     $body .= "<br /><br />";
 
                     $message = \Swift_Message::newInstance()
-                    ->setSubject("[BP] " . $mail_translator->trans("Your Good Practice is in need of revisions."))
+                    ->setSubject($translator->trans("[GP]") . " " . $mail_translator->trans("Your Good Practice is in need of revisions."))
                     ->setFrom($util->getConfiguration('committee.email'))
                     ->setTo($investigators)
                     ->setBody(
@@ -898,7 +898,7 @@ class ProtocolController extends Controller
                 }
 
                 $message = \Swift_Message::newInstance()
-                ->setSubject("[BP] " . $mail_translator->trans("Your good practice was sent to review!"))
+                ->setSubject($translator->trans("[GP]") . " " . $mail_translator->trans("Your good practice was sent to review!"))
                 ->setFrom($util->getConfiguration('committee.email'))
                 ->setTo($investigators)
                 ->setBody(
@@ -988,7 +988,7 @@ class ProtocolController extends Controller
                 $body .= "<br /><br />";
 
                 $message = \Swift_Message::newInstance()
-                ->setSubject("[BP] " . $mail_translator->trans("Your good practice was concluded as Exempt."))
+                ->setSubject($translator->trans("[GP]") . " " . $mail_translator->trans("Your good practice was concluded as Exempt."))
                 ->setFrom($util->getConfiguration('committee.email'))
                 ->setTo($investigators)
                 ->setBody(
@@ -1139,7 +1139,7 @@ class ProtocolController extends Controller
                             $body .= "<br /><br />";
 
                             $message = \Swift_Message::newInstance()
-                            ->setSubject("[BP] " . $mail_translator->trans("You were assigned to review a good practice"))
+                            ->setSubject($translator->trans("[GP]") . " " . $mail_translator->trans("You were assigned to review a good practice"))
                             ->setFrom($util->getConfiguration('committee.email'))
                             ->setTo($member->getEmail())
                             ->setBody(
@@ -1387,7 +1387,7 @@ class ProtocolController extends Controller
                     }
 
                     $message = \Swift_Message::newInstance()
-                    ->setSubject("[BP] " . $mail_translator->trans("A new good practice review was submitted"))
+                    ->setSubject($translator->trans("[GP]") . " " . $mail_translator->trans("A new good practice review was submitted"))
                     ->setFrom($util->getConfiguration('committee.email'))
                     ->setTo($secretaries_emails)
                     ->setBody(
@@ -1635,7 +1635,7 @@ class ProtocolController extends Controller
             $body .= "<br /><br />";
 
             $message = \Swift_Message::newInstance()
-            ->setSubject("[BP] " . $mail_translator->trans("The good practice review was finalized!"))
+            ->setSubject($translator->trans("[GP]") . " " . $mail_translator->trans("The good practice review was finalized!"))
             ->setFrom($util->getConfiguration('committee.email'))
             ->setTo($investigators)
             ->setBody(

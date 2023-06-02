@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2023-06-02T15:07:29Z" source-language="en" target-language="fr_FR" datatype="plaintext" original="not.available">
+  <file date="2023-06-02T18:15:21Z" source-language="en" target-language="fr_FR" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -258,10 +258,6 @@
         <source>Average score</source>
         <target>Average score</target>
       </trans-unit>
-      <trans-unit id="03b8a126d8f0c1f381ca5c129acc029d3c436ab0" resname="BP">
-        <source>BP</source>
-        <target>BP</target>
-      </trans-unit>
       <trans-unit id="b7b1912e68e770be70d934e37738c3ace052e09c" resname="Back to original to save and finish">
         <source>Back to original to save and finish</source>
         <target>Retourner à l'original pour sauvegarder et terminer</target>
@@ -442,9 +438,9 @@
         <source>Cost-Effectiveness</source>
         <target>Cost-Effectiveness</target>
       </trans-unit>
-      <trans-unit id="c3041c97d5858cc44b6c247f11607669a0ec010a" resname="Could these successful BP be demonstrated in other contexts">
-        <source>Could these successful BP be demonstrated in other contexts</source>
-        <target>Est-ce que ces BP réussies pourraient être démontrées dans d'autres contextes ?</target>
+      <trans-unit id="afbf4e40040747c36923ed559738787ab3a0c55d" resname="Could these successful GP be demonstrated in other contexts">
+        <source>Could these successful GP be demonstrated in other contexts</source>
+        <target>Could these successful GP be demonstrated in other contexts</target>
       </trans-unit>
       <trans-unit id="8a8a5babf4649d70c303eed31a0e144e4fc47302" resname="Counterpart">
         <source>Counterpart</source>
@@ -618,9 +614,9 @@
         <source>Documents</source>
         <target>Documents</target>
       </trans-unit>
-      <trans-unit id="49e9d459d43aba2f8f42b0c866b0932fd1513b3b" resname="Does the development of this BP have adaptability and replicability potential">
-        <source>Does the development of this BP have adaptability and replicability potential</source>
-        <target>Le développement de cette BP présente-t-il un potentiel d'adaptabilité et de reproductibilité ?</target>
+      <trans-unit id="81378b1014c56a263aa48d34ee9b3a7f8b7e80d1" resname="Does the development of this GP have adaptability and replicability potential">
+        <source>Does the development of this GP have adaptability and replicability potential</source>
+        <target>Does the development of this GP have adaptability and replicability potential</target>
       </trans-unit>
       <trans-unit id="11f354970f33d3d59979810a8e9515bd918d2d52" resname="Download the form here:">
         <source>Download the form here:</source>
@@ -917,6 +913,10 @@
       <trans-unit id="64346b483c0adcfb6e6d4c2e4ce19f1cd2cde025" resname="Full Name">
         <source>Full Name</source>
         <target>Nom complet</target>
+      </trans-unit>
+      <trans-unit id="32da67dd40a93c62a68b2ad9daeb9f2c124165ed" resname="GP">
+        <source>GP</source>
+        <target>GP</target>
       </trans-unit>
       <trans-unit id="8a754c61c2ced0c5ff79a1827e02c9d643d6d926" resname="Gender">
         <source>Gender</source>
@@ -1242,13 +1242,13 @@
         <source>Invalid state.</source>
         <target>État non valide.</target>
       </trans-unit>
-      <trans-unit id="84aef2d04caf4e6d39cfef13093c4ee6252c4e82" resname="Is the BP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization">
-        <source>Is the BP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization</source>
-        <target>La BP est-elle alignée sur la chaîne de valeur de l'Organisation (mission, vision, mandats et stratégies) et montre-t-elle l'importance du projet non simplement pour l'entité en question, mais pour l'Organisation ?</target>
+      <trans-unit id="6b29d07d7c10df7f7cb6c8702b2df1203181b234" resname="Is the GP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization">
+        <source>Is the GP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization</source>
+        <target>Is the GP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization</target>
       </trans-unit>
-      <trans-unit id="9db2b7e5f4a3d2a8f951090eec1a8b3126511246" resname="Is the BP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization?">
-        <source>Is the BP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization?</source>
-        <target>Is the BP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization?</target>
+      <trans-unit id="dd337820d1f3e43136f5052b72cbe0bdaf4745ab" resname="Is the GP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization?">
+        <source>Is the GP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization?</source>
+        <target>Is the GP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization?</target>
       </trans-unit>
       <trans-unit id="9982850d366df96dd8fed261a4e4ac13cc0e2474" resname="Is this Good Practice being submitted in response to a call for proposals">
         <source>Is this Good Practice being submitted in response to a call for proposals</source>
@@ -2659,13 +2659,13 @@
         <source>Waiting for initial evaluation</source>
         <target>Attendant l'évaluation initiale</target>
       </trans-unit>
-      <trans-unit id="a1e9ffe709b8851a2df91210212c0f7ab4ff53ed" resname="Was the BP able to transfer technologies, and/or to disseminate useful knowledge adaptable to other realities, and could it be scaled up">
-        <source>Was the BP able to transfer technologies, and/or to disseminate useful knowledge adaptable to other realities, and could it be scaled up</source>
-        <target>La BP a-t-elle permis de transférer des technologies et/ou de diffuser des connaissances utiles et adaptables à d'autres réalités, et peut-elle être transposée à plus grande échelle ?</target>
+      <trans-unit id="78a2b7591769ffe2f5c3e2e78728d8c5b5e3e84a" resname="Was the GP able to transfer technologies, and/or to disseminate useful knowledge adaptable to other realities, and could it be scaled up">
+        <source>Was the GP able to transfer technologies, and/or to disseminate useful knowledge adaptable to other realities, and could it be scaled up</source>
+        <target>Was the GP able to transfer technologies, and/or to disseminate useful knowledge adaptable to other realities, and could it be scaled up</target>
       </trans-unit>
-      <trans-unit id="35ef361d376ecb8c42d0bebe425b3521f5c5af3e" resname="Was the BP able to transfer technologies, and/or to disseminate useful knowledge adaptable to other realities, and could it be scaled up? Please describe how">
-        <source>Was the BP able to transfer technologies, and/or to disseminate useful knowledge adaptable to other realities, and could it be scaled up? Please describe how</source>
-        <target>Was the BP able to transfer technologies, and/or to disseminate useful knowledge adaptable to other realities, and could it be scaled up? Please describe how</target>
+      <trans-unit id="163c684223d2c36fba27087cb86566c7d28a7159" resname="Was the GP able to transfer technologies, and/or to disseminate useful knowledge adaptable to other realities, and could it be scaled up? Please describe how">
+        <source>Was the GP able to transfer technologies, and/or to disseminate useful knowledge adaptable to other realities, and could it be scaled up? Please describe how</source>
+        <target>Was the GP able to transfer technologies, and/or to disseminate useful knowledge adaptable to other realities, and could it be scaled up? Please describe how</target>
       </trans-unit>
       <trans-unit id="6bb998bf794b7bf71004a9b20c4adfb0b9e6b6f8" resname="Was the TC planned considering the health situation of the target population">
         <source>Was the TC planned considering the health situation of the target population</source>
@@ -2806,6 +2806,10 @@
       <trans-unit id="739ddf4f74a414d32270c2e19b677dff0a76c766" resname="Zero scores">
         <source>Zero scores</source>
         <target>Zero scores</target>
+      </trans-unit>
+      <trans-unit id="446af54bc236975603b895d21313ca8959c7f2a9" resname="[GP]">
+        <source>[GP]</source>
+        <target>[GP]</target>
       </trans-unit>
       <trans-unit id="2bb6b986c5d6fb26dd9dd1054b545ce022371b0c" resname="active">
         <source>active</source>

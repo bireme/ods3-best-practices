@@ -1790,7 +1790,7 @@ class NewSubmissionController extends Controller
                         }
 
                         $message = \Swift_Message::newInstance()
-                        ->setSubject("[BP] " . $mail_translator->trans("A new monitoring action has been submitted."))
+                        ->setSubject($translator->trans("[GP]") . " " . $mail_translator->trans("A new monitoring action has been submitted."))
                         ->setFrom($util->getConfiguration('committee.email'))
                         ->setTo($secretaries_emails)
                         ->setBody(
@@ -1823,7 +1823,7 @@ class NewSubmissionController extends Controller
                         $recipient = $protocol->getMainSubmission()->getOwner();
 
                         $message = \Swift_Message::newInstance()
-                        ->setSubject("[BP] " . $mail_translator->trans("Your good practice was sent to review."))
+                        ->setSubject($translator->trans("[GP]") . " " . $mail_translator->trans("Your good practice was sent to review."))
                         ->setFrom($util->getConfiguration('committee.email'))
                         ->setTo($recipient->getEmail())
                         ->setBody(
@@ -1853,7 +1853,7 @@ class NewSubmissionController extends Controller
                         }
 
                         $message = \Swift_Message::newInstance()
-                        ->setSubject("[BP] " . $mail_translator->trans("A new good practice has been submitted."))
+                        ->setSubject($translator->trans("[GP]") . " " . $mail_translator->trans("A new good practice has been submitted."))
                         ->setFrom($util->getConfiguration('committee.email'))
                         ->setTo($secretaries_emails)
                         ->setBody(

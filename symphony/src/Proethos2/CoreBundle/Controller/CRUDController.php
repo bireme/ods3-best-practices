@@ -1175,7 +1175,7 @@ class CRUDController extends Controller
             $body .= "<br /><br />";
 
             $message = \Swift_Message::newInstance()
-            ->setSubject("[BP] " . $translator->trans("Set your password"))
+            ->setSubject($translator->trans("[GP]") . " " . $translator->trans("Set your password"))
             ->setFrom($util->getConfiguration('committee.email'))
             ->setTo($post_data['email'])
             ->setBody(
@@ -1370,7 +1370,7 @@ class CRUDController extends Controller
                 $body .= "<br /><br />";
 
                 $message = \Swift_Message::newInstance()
-                ->setSubject("[BP] " . $translator->trans("Confirmation of valid access to the Good Practices Portal"))
+                ->setSubject($translator->trans("[GP]") . " " . $translator->trans("Confirmation of valid access to the Good Practices Portal"))
                 ->setFrom($util->getConfiguration('committee.email'))
                 ->setTo($user->getEmail())
                 ->setBody(
@@ -1611,7 +1611,7 @@ class CRUDController extends Controller
             $body .= "<br /><br />";
 
             $message = \Swift_Message::newInstance()
-            ->setSubject("[BP] " . $translator->trans("Message from plataform."))
+            ->setSubject($translator->trans("[GP]") . " " . $translator->trans("Message from plataform."))
             ->setFrom($output['committee_email'])
             ->setTo($output['committee_email'])
             ->setBody(
