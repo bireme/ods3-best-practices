@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2023-06-02T18:15:21Z" source-language="en" target-language="fr_FR" datatype="plaintext" original="not.available">
+  <file date="2023-06-02T22:37:09Z" source-language="en" target-language="fr_FR" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -2589,15 +2589,15 @@
       </trans-unit>
       <trans-unit id="e4f5ab3e4ba546452c4b692be1731319f9c28629" resname="Upload Extension Types">
         <source>Upload Extension Types</source>
-        <target>Télécharger les types d'extension</target>
+        <target>Types d'extension pour téléchargements</target>
       </trans-unit>
       <trans-unit id="4bf2cc96cb544b6d8e7250f77a3b6511a4e4e008" resname="Upload Files">
         <source>Upload Files</source>
-        <target>Télécharger les fichiers</target>
+        <target>Télécharger des fichiers</target>
       </trans-unit>
       <trans-unit id="3b18bc46aee1ae14253e66f6f0c4d015e4ad80d5" resname="Upload Types">
         <source>Upload Types</source>
-        <target>Télécharger les types </target>
+        <target>Types de téléchargements</target>
       </trans-unit>
       <trans-unit id="b0bf2d0196410a77296c4e972ad238a6b10237cb" resname="Upload the Tobacco / Arms related disclosure statement for Non-State Actors">
         <source>Upload the Tobacco / Arms related disclosure statement for Non-State Actors</source>
