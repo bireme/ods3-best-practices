@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2023-06-02T22:37:45Z" source-language="en" target-language="es_ES" datatype="plaintext" original="not.available">
+  <file date="2023-07-12T14:20:25Z" source-language="en" target-language="es_ES" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -640,11 +640,11 @@
       </trans-unit>
       <trans-unit id="9a5b8cc4be6810a0c84ade9ad505cd6d3b7e8e26" resname="Edit submission">
         <source>Edit submission</source>
-        <target>Editar formulario de envío</target>
+        <target>Editar formulario de propuesta</target>
       </trans-unit>
       <trans-unit id="7f7f15dca9c250747ccd12c724b62be671cdbf92" resname="Edit submission URL">
         <source>Edit submission URL</source>
-        <target>Editar el URL del formulario de envío</target>
+        <target>Editar el URL del formulario de propuesta</target>
       </trans-unit>
       <trans-unit id="c26487a385ea3c0881132590cfba21b092c56074" resname="Edit user's information">
         <source>Edit user's information</source>
@@ -852,7 +852,7 @@
       </trans-unit>
       <trans-unit id="014776fef86e430eda7cf9fc73a0619d4870f73e" resname="File submission">
         <source>File submission</source>
-        <target>Envío de documento</target>
+        <target>Archivos adjuntos</target>
       </trans-unit>
       <trans-unit id="647519f4a3c1523cb00f8ce1fa2221e927a5c4f0" resname="File uploaded with success.">
         <source>File uploaded with success.</source>
@@ -1100,7 +1100,7 @@
       </trans-unit>
       <trans-unit id="1f84eeb4d0987e617ac351c862c0f06dca0cf590" resname="If the proposal is a PAHO Technical Cooperation, also review the following items (Only visible for Technical Cooperation submissions)">
         <source>If the proposal is a PAHO Technical Cooperation, also review the following items (Only visible for Technical Cooperation submissions)</source>
-        <target>Si la propuesta es una Cooperación Técnica de la OPS, también revise los siguientes elementos (Solo visible para presentaciones de Cooperación Técnica)</target>
+        <target>Si la propuesta es una Cooperación Técnica de la OPS, también revise los siguientes elementos (Solo visible para propuestas de buena práctica de Cooperación Técnica)</target>
       </trans-unit>
       <trans-unit id="54e395627944c39217d738df697d9e0731bf9951" resname="If you do not see the confirmation email in your inbox, please check your junk mail folder or spam folder. If you do not receive any email, then write to bp@paho.org. The Good Practices Portal team will do their best to answer your request as soon as possible.">
         <source>If you do not see the confirmation email in your inbox, please check your junk mail folder or spam folder. If you do not receive any email, then write to bp@paho.org. The Good Practices Portal team will do their best to answer your request as soon as possible.</source>
@@ -1116,7 +1116,7 @@
       </trans-unit>
       <trans-unit id="86614555e3af44e6a8e61bc03ff121e286586ad7" resname="In this step, you will be requested to submit information about your institution that will remain confidential and shared only with PAHO’s Legal Office for review as per PAHO’s normative regarding engagements with Non-State Actors.">
         <source>In this step, you will be requested to submit information about your institution that will remain confidential and shared only with PAHO’s Legal Office for review as per PAHO’s normative regarding engagements with Non-State Actors.</source>
-        <target>En este paso, se le solicitará que envíe información sobre su institución que se mantendrá confidencial y se compartirá solo con la Oficina Jurídica de la OPS para su revisión según la normativa de la OPS con respecto a los compromisos con actores no estatales.</target>
+        <target>En este paso, se le solicitará que envíe información sobre su institución que se mantendrá confidencial y se compartirá solo con la Oficina de Asuntos Jurídicos de la OPS para su revisión según la normativa de la OPS con respecto a los compromisos con actores no estatales.</target>
       </trans-unit>
       <trans-unit id="4c05835cf89afee841c2033dbc84eb128aafbb79" resname="In your opinion, PAHO played a catalytic role on the added value of Technical Cooperation">
         <source>In your opinion, PAHO played a catalytic role on the added value of Technical Cooperation</source>
@@ -1252,7 +1252,7 @@
       </trans-unit>
       <trans-unit id="9982850d366df96dd8fed261a4e4ac13cc0e2474" resname="Is this Good Practice being submitted in response to a call for proposals">
         <source>Is this Good Practice being submitted in response to a call for proposals</source>
-        <target>¿Esta buena práctica siendo enviada en respuesta a una convocatoria?</target>
+        <target>¿Esta buena práctica siendo enviada en respuesta a una convocatoria</target>
       </trans-unit>
       <trans-unit id="76a38180859b3024f9cb90bc039aee77b0e5e7d5" resname="Is this a confidential comment?">
         <source>Is this a confidential comment?</source>
@@ -1588,7 +1588,7 @@
       </trans-unit>
       <trans-unit id="505235c949c23571ad04e474dce1649c0dd150e7" resname="New submission">
         <source>New submission</source>
-        <target>Nueva presentación</target>
+        <target>Nueva propuesta</target>
       </trans-unit>
       <trans-unit id="96d92434ca24b1eb148740dedb0e5737c67ea9d0" resname="New user on Good Practices Portal">
         <source>New user on Good Practices Portal</source>
@@ -1652,7 +1652,7 @@
       </trans-unit>
       <trans-unit id="7ed9bc59568cbb6845386079a65a0975cd9cd4c1" resname="No submission found">
         <source>No submission found</source>
-        <target>Ninguna presentación encontrada</target>
+        <target>Ninguna propuesta encontrada</target>
       </trans-unit>
       <trans-unit id="b504161e87eb362b1ce1b9d056018075ebe17881" resname="No type found">
         <source>No type found</source>
@@ -1708,7 +1708,7 @@
       </trans-unit>
       <trans-unit id="177cc7fa458f92130089c4a70af303ff1fd54c73" resname="Original Submission">
         <source>Original Submission</source>
-        <target>Presentación original</target>
+        <target>Propuesta original</target>
       </trans-unit>
       <trans-unit id="01429eba5f01b4607805135ebd7aaf61ef360001" resname="Other Contexts">
         <source>Other Contexts</source>
@@ -2012,7 +2012,7 @@
       </trans-unit>
       <trans-unit id="90b778a9cf57418e64290c77c0ce18430305be64" resname="Reject Submission?">
         <source>Reject Submission?</source>
-        <target>¿Rechazar envío?</target>
+        <target>¿Rechazar propuesta?</target>
       </trans-unit>
       <trans-unit id="298dd9445550b24e010d05e139d4c323a52747f8" resname="Reject reasons">
         <source>Reject reasons</source>
@@ -2348,7 +2348,7 @@
       </trans-unit>
       <trans-unit id="8d546420978213d489174be5f512f6925301318f" resname="Submission Language">
         <source>Submission Language</source>
-        <target>Idioma del envío</target>
+        <target>Idioma de la propuesta</target>
       </trans-unit>
       <trans-unit id="1a2193e9d1190521fb8df705d3b304acb61ae53b" resname="Submission of good practice.">
         <source>Submission of good practice.</source>
@@ -2376,7 +2376,7 @@
       </trans-unit>
       <trans-unit id="4b07b9b5cd278a1f3e3c2bdd3ff955acb456a72f" resname="Submitted Good Practices">
         <source>Submitted Good Practices</source>
-        <target>Buenas prácticas enviadas</target>
+        <target>Buenas prácticas recibidas</target>
       </trans-unit>
       <trans-unit id="046485aa309a8f023e2e4f75a5e5856f99c1dde8" resname="Submitted by">
         <source>Submitted by</source>
@@ -2493,7 +2493,7 @@
       </trans-unit>
       <trans-unit id="2d3c3f23df3464e5dbaf126f28ad1aff8083735e" resname="This submission has translations">
         <source>This submission has translations</source>
-        <target>Este formulario de envío tiene traducciones.</target>
+        <target>Este formulario de propuesta tiene traducciones.</target>
       </trans-unit>
       <trans-unit id="768e0c1c69573fb588f61f1308a015c11468e05f" resname="Title">
         <source>Title</source>
@@ -2521,7 +2521,7 @@
       </trans-unit>
       <trans-unit id="99e2c0fe90b6fd96e30152e99e0d318325a47fbe" resname="Type of institution reporting the Good Practice">
         <source>Type of institution reporting the Good Practice</source>
-        <target>Tipo de institución reportando la buena práctica</target>
+        <target>Tipo de institución que reporta la buena práctica</target>
       </trans-unit>
       <trans-unit id="0e2d9b0777a485c1276de0803c12a7d76fbc5c39" resname="URL">
         <source>URL</source>
@@ -2749,7 +2749,7 @@
       </trans-unit>
       <trans-unit id="cd833c8999e606a2878e038f9250a2fe0fc7bbd7" resname="You haven't submitted any good practice yet.">
         <source>You haven't submitted any good practice yet.</source>
-        <target>Aún no ha enviado una buena práctica.</target>
+        <target>Aún no ha enviado alguna buena práctica.</target>
       </trans-unit>
       <trans-unit id="287ad1915f74ae42ce209a189bd00e21548e38a6" resname="You must accept the terms and conditions.">
         <source>You must accept the terms and conditions.</source>
