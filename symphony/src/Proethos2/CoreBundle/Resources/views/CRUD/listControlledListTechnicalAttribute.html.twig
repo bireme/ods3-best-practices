@@ -1,0 +1,219 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{% trans %}Technical Attributes (Submitter){% endtrans %}{% endblock %}
+
+{% block content %}
+
+    <div class="container-fluid main-content see-submission">
+        <div class="row">
+            <div class='col-md-12'>
+                <h1 class="page-header">
+                    {% trans %}Technical Attributes (Submitter){% endtrans %}
+                    <a href='#' class='btn btn-primary' data-toggle='modal' data-target='#modal-new-item'>{% trans %}New Attribute{% endtrans %}</a>
+                </h1>
+            </div>
+        </div>
+
+        <div class='block'>
+            <div class='row'>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="select-filter-call">{% trans %}Filter by call{% endtrans %}:</label>
+                        <select class='form-control selectpicker' id="select-filter-call" name="filter-call" data-size="5">
+                            <option value="">-</option>
+                            {% for call in calls %}
+                                <option value="{{ call.name }}">{{ call.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form class="form-group" id='form-search' method="POST">
+            <input type="hidden" name="output" id="input-output" value="html" />
+            <div class='block'>
+                <div class='row'>
+                    <div class="col-md-12">
+                        <table class='table table-hover table-condensed' id='table-data'>
+                            <thead>
+                                <tr>
+                                    <th width="40%">{% trans %}Title{% endtrans %}</th>
+                                    <th width="40%">{% trans %}Call{% endtrans %}</th>
+                                    <th width="">{% trans %}Status{% endtrans %}</th>
+                                    <th>{% trans %}Actions{% endtrans %}</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                {% for item in items %}
+                                    <tr>
+                                        <td>{{ item.title }}</td>
+                                        <td class="filter">{{ item.call.name }}</td>
+                                        <td>
+                                            {% if item.status %}
+                                                <span class='label label-success'>{% trans %}active{% endtrans %}</span>
+                                            {% else %}
+                                                <span class='label label-default'>{% trans %}inactive{% endtrans %}</span>
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            <a href="{{ path("crud_admin_controlled_list_technical_attribute_update", {item_id: item.id}) }}" data-toggle="modal" data-target="#modal-ajax-item" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-pencil"></i></a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Modal New Call for Good Practices -->
+    <div class="modal fade" id="modal-new-item" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="item">
+            <div class="modal-content">
+                <form class='form' method="POST" id='form-new-item'>
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">{% trans %}New Attribute{% endtrans %}</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class='row'>
+                            <div class='col-md-12'> 
+                                <div class="form-group">
+                                    <label for="select-collection">{% trans %}Call{% endtrans %}:</label>
+                                    <select class='form-control selectpicker' id='select-call' name='call' data-size="5" required>
+                                        <option value="">-</option>
+                                        {% for call in calls %}
+                                            <option value="{{ call.id }}">{{ call.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <div class='row'>
+                            <div class='col-md-12'>
+                                <div class="form-group">
+                                    <label for="input-title">{% trans %}Title in English{% endtrans %}:</label> 
+                                    <input type='text' class='form-control' id="input-title" name="title" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='row'>
+                            <div class='col-md-12'>
+                                <div class="form-group">
+                                    <label for="input-title-es_ES">{% trans %}Title in Spanish{% endtrans %}:</label> 
+                                    <input type='text' class='form-control' id="input-title-es_ES" name="title-es_ES">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='row'>
+                            <div class='col-md-12'>
+                                <div class="form-group">
+                                    <label for="input-title-pt_BR">{% trans %}Title in Portuguese{% endtrans %}:</label> 
+                                    <input type='text' class='form-control' id="input-title-pt_BR" name="title-pt_BR">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='row'>
+                            <div class='col-md-12'>
+                                <div class="form-group">
+                                    <label for="input-title-fr_FR">{% trans %}Title in French{% endtrans %}:</label> 
+                                    <input type='text' class='form-control' id="input-title-fr_FR" name="title-fr_FR">
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <div class='row'>
+                            <div class='col-md-12'>
+                                <div class="form-group">
+                                    <label for="input-subtitle">{% trans %}Subtitle in English{% endtrans %}:</label> 
+                                    <input type='text' class='form-control' id="input-subtitle" name="subtitle" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='row'>
+                            <div class='col-md-12'>
+                                <div class="form-group">
+                                    <label for="input-subtitle-es_ES">{% trans %}Subtitle in Spanish{% endtrans %}:</label> 
+                                    <input type='text' class='form-control' id="input-subtitle-es_ES" name="subtitle-es_ES">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='row'>
+                            <div class='col-md-12'>
+                                <div class="form-group">
+                                    <label for="input-subtitle-pt_BR">{% trans %}Subtitle in Portuguese{% endtrans %}:</label> 
+                                    <input type='text' class='form-control' id="input-subtitle-pt_BR" name="subtitle-pt_BR">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='row'>
+                            <div class='col-md-12'>
+                                <div class="form-group">
+                                    <label for="input-subtitle-fr_FR">{% trans %}Subtitle in French{% endtrans %}:</label> 
+                                    <input type='text' class='form-control' id="input-subtitle-fr_FR" name="subtitle-fr_FR">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">{% trans %}Close{% endtrans %}</button>
+                        <button type="submit" class="btn btn-primary">{% trans %}Save{% endtrans %}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal ajax Technical Attributes -->
+    <div class="modal fade" id="modal-ajax-item" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="item">
+            <div class="modal-content"></div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block script %}
+    <script>
+        $(function(){
+            $("#select-filter-call").change(function(){
+                // retrieve the input field text and reset the count to zero
+                var count = 0;
+                var filter = $(this).val();
+
+                // filter by collection
+                $("#table-data tbody tr").each(function(){
+                    // if the list item does not contain the text phrase fade it out
+                    if ($(this).find('td.filter').text().search(new RegExp(filter, "i")) < 0) {
+                        $(this).hide();
+                    // show the list item if the phrase matches and increase the count by 1
+                    } else {
+                        $(this).show();
+                        count++;
+                    }
+                });
+         
+                // update the count
+                var numberItems = count;
+                // $("#filter-count").text("Total: "+count);
+            });
+        });
+    </script>
+{% endblock %}

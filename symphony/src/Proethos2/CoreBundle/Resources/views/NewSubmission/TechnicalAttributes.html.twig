@@ -1,0 +1,58 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{% trans %}New submission{% endtrans %}{% endblock %}
+
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="row">
+            <div class='col-md-12'>
+                <h1 class="page-header">{% trans %}New submission{% endtrans %}</h1>
+            </div>
+        </div>
+
+        {% include 'Proethos2CoreBundle:NewSubmission:meta.html.twig' %}
+
+        <div class='new-submission-tab-content'>
+            <form class='form' method='POST' id='form-technical-attributes' action='{{ path("submission_new_technical_attributes", {submission_id: submission.id}) }}'>
+
+                <input type="hidden" name="token" value="{{ csrf_token('submission-technical-attributes') }}"/>
+                <input type='hidden' name='submission_id' value='{{ submission.id }}'>
+
+                {% if attributes %}
+                    <div class='block'>
+                        <div class='row'>
+                            <div class="col-md-12">
+                                <h2 class='sub-header'>{% trans %}Call Specific Information{% endtrans %}</h2>
+                            </div>
+                        </div>
+
+                        {% for attr in attributes %}
+                            {% if submission_attributes %}
+                                {% set submission_attribute = {} %}
+                                {% for sa in submission_attributes if sa.attribute == attr %}
+                                    {% set submission_attribute = sa %}
+                                {% endfor %}
+                            {% endif %}
+
+                            <input type="hidden" id="input-attribute" name="input-attribute-{{ attr.id }}" value="{{ attr.id }}">
+
+                            <div class='row'>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <h4>{{ attr.title }}</h4>
+                                        <label for="textarea-attribute-{{ attr.id }}-value">{{ attr.subtitle }}</label> 
+                                        <textarea class="form-control" id="textarea-attribute-{{ attr.id }}-value" name='attribute-{{ attr.id }}-value'>{{ submission_attribute.value }}</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                <div class='submission-button-controls'>
+                    <button type='submit' class='btn btn-primary'>{% trans %}Save and next{% endtrans %}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,125 @@
+<form class='form' method="POST" id='form-update-item' action="{{ path('crud_admin_controlled_list_technical_attribute_update', {item_id: item.id} ) }}">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">{% trans %}Update Item{% endtrans %}</h4>
+    </div>
+    <div class="modal-body">
+
+        <div class='row'>
+            <div class='col-md-12'> 
+                <div class="form-group">
+                    <label for="select-collection">{% trans %}Call{% endtrans %}:</label>
+                    <select class='form-control' id='select-call' name='call' data-size="5" required>
+                        <option value="">-</option>
+                        {% for call in calls %}
+                            <option value="{{ call.id }}" {% if item.call.id == call.id %}selected{% endif %}>{{ call.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class='row'>
+            <div class='col-md-12'>
+                <div class="form-group">
+                    <label for="input-title">{% trans %}Title{% endtrans %}:</label> 
+                    <input type='text' class='form-control' id="input-title" name="title" value="{% if translations.en is defined %}{{ translations.en.title }}{% else %}{{ item.title }}{% endif %}" required>
+                </div>
+            </div>
+        </div>
+
+        <div class='row'>
+            <div class='col-md-12'>
+                <div class="form-group">
+                    <label for="input-title-es_ES">{% trans %}Title in Spanish{% endtrans %}:</label> 
+                    <input type='text' class='form-control' id="input-title-es_ES" name="title-es_ES" value="{% if translations.es_ES is defined %}{{ translations.es_ES.title }}{% endif %}">
+                </div>
+            </div>
+        </div>
+
+        <div class='row'>
+            <div class='col-md-12'>
+                <div class="form-group">
+                    <label for="input-title-pt_BR">{% trans %}Title in Portuguese{% endtrans %}:</label> 
+                    <input type='text' class='form-control' id="input-title-pt_BR" name="title-pt_BR" value="{% if translations.pt_BR is defined %}{{ translations.pt_BR.title }}{% endif %}">
+                </div>
+            </div>
+        </div>
+
+        <div class='row'>
+            <div class='col-md-12'>
+                <div class="form-group">
+                    <label for="input-title-fr_FR">{% trans %}Title in French{% endtrans %}:</label> 
+                    <input type='text' class='form-control' id="input-title-fr_FR" name="title-fr_FR" value="{% if translations.fr_FR is defined %}{{ translations.fr_FR.title }}{% endif %}">
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class='row'>
+            <div class='col-md-12'>
+                <div class="form-group">
+                    <label for="input-subtitle">{% trans %}Subtitle{% endtrans %}:</label> 
+                    <input type='text' class='form-control' id="input-subtitle" name="subtitle" value="{% if translations.en is defined %}{{ translations.en.subtitle }}{% else %}{{ item.subtitle }}{% endif %}" required>
+                </div>
+            </div>
+        </div>
+
+        <div class='row'>
+            <div class='col-md-12'>
+                <div class="form-group">
+                    <label for="input-subtitle-es_ES">{% trans %}Subtitle in Spanish{% endtrans %}:</label> 
+                    <input type='text' class='form-control' id="input-subtitle-es_ES" name="subtitle-es_ES" value="{% if translations.es_ES is defined %}{{ translations.es_ES.subtitle }}{% endif %}">
+                </div>
+            </div>
+        </div>
+
+        <div class='row'>
+            <div class='col-md-12'>
+                <div class="form-group">
+                    <label for="input-subtitle-pt_BR">{% trans %}Subtitle in Portuguese{% endtrans %}:</label> 
+                    <input type='text' class='form-control' id="input-subtitle-pt_BR" name="subtitle-pt_BR" value="{% if translations.pt_BR is defined %}{{ translations.pt_BR.subtitle }}{% endif %}">
+                </div>
+            </div>
+        </div>
+
+        <div class='row'>
+            <div class='col-md-12'>
+                <div class="form-group">
+                    <label for="input-subtitle-fr_FR">{% trans %}Subtitle in French{% endtrans %}:</label> 
+                    <input type='text' class='form-control' id="input-subtitle-fr_FR" name="subtitle-fr_FR" value="{% if translations.fr_FR is defined %}{{ translations.fr_FR.subtitle }}{% endif %}">
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class='row'>
+            <div class='col-md-12'> 
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label for="input-status">
+                            <input type="checkbox" id='input-status' name='status' value="true" {% if item.status %}checked{% endif %}> {% trans %}Active?{% endtrans %}
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">{% trans %}Close{% endtrans %}</button>
+        <button type="submit" class="btn btn-primary">{% trans %}Save{% endtrans %}</button>
+    </div>
+</form>
+
+{% block script %}
+    <script>
+        $(function(){
+            $('select').selectpicker();
+        });
+    </script>
+{% endblock %}

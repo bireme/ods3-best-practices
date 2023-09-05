@@ -226,6 +226,19 @@
 
         {% endif %}
 
+        {% if attributes %}
+            {% for attr in attributes %}
+                {% if submission_attributes %}
+                    {% set submission_attribute = {} %}
+                    {% for sa in submission_attributes if sa.attribute == attr %}
+                        {% set submission_attribute = sa %}
+                        <h3>{{ attr.title }}</h3>
+                        <p>{{ submission_attribute.value|nl2br }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+
         <h3>{% trans %}Upload Files{% endtrans %}:</h3>
         <table>
             <tr>

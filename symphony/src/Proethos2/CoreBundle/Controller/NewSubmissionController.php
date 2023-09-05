@@ -37,6 +37,7 @@ use Proethos2\ModelBundle\Entity\Protocol;
 use Proethos2\ModelBundle\Entity\ProtocolHistory;
 use Proethos2\ModelBundle\Entity\SubmissionClinicalTrial;
 use Proethos2\ModelBundle\Entity\SubmissionClinicalStudy;
+use Proethos2\ModelBundle\Entity\SubmissionTechnicalAttribute;
 
 
 class NewSubmissionController extends Controller
@@ -272,6 +273,11 @@ class NewSubmissionController extends Controller
         $submission = $submission_repository->find($submission_id);
         $output['submission'] = $submission;
 
+        // getting technical attribute list
+        $attribute_repository = $em->getRepository('Proethos2ModelBundle:TechnicalAttribute');
+        $attributes = $attribute_repository->findByCall($submission->getCall());
+        $output['attributes'] = $attributes;
+
         if (!$submission or !$submission->getCanBeEdited() or ($submission->getCanBeEdited() and !in_array('investigator', $user->getRolesSlug()))) {
             throw $this->createNotFoundException($translator->trans('No submission found'));
         }
@@ -373,7 +379,7 @@ class NewSubmissionController extends Controller
                 $route = 'submission_new_second_step';
             }
 
-            $session->getFlashBag()->add('success', $translator->trans("First step saved with success."));
+            $session->getFlashBag()->add('success', $translator->trans("Submission saved with success."));
             return $this->redirectToRoute($route, array('submission_id' => $submission->getId()), 301);
         }
 
@@ -400,6 +406,11 @@ class NewSubmissionController extends Controller
         // getting the current submission
         $submission = $submission_repository->find($submission_id);
         $output['submission'] = $submission;
+
+        // getting technical attribute list
+        $attribute_repository = $em->getRepository('Proethos2ModelBundle:TechnicalAttribute');
+        $attributes = $attribute_repository->findByCall($submission->getCall());
+        $output['attributes'] = $attributes;
 
         if (!$submission) {
             throw $this->createNotFoundException($translator->trans('No submission found'));
@@ -465,7 +476,7 @@ class NewSubmissionController extends Controller
                 $route = 'submission_new_second_step';
             }
 
-            $session->getFlashBag()->add('success', $translator->trans("First step saved with success."));
+            $session->getFlashBag()->add('success', $translator->trans("Submission saved with success."));
             return $this->redirectToRoute($route, array('submission_id' => $new_submission->getId()), 301);
         }
 
@@ -493,6 +504,11 @@ class NewSubmissionController extends Controller
         // getting the current submission
         $submission = $submission_repository->find($submission_id);
         $output['submission'] = $submission;
+
+        // getting technical attribute list
+        $attribute_repository = $em->getRepository('Proethos2ModelBundle:TechnicalAttribute');
+        $attributes = $attribute_repository->findByCall($submission->getCall());
+        $output['attributes'] = $attributes;
 
         $upload_types = $upload_type_repository->findByStatus(true);
         $output['upload_types'] = $upload_types;
@@ -572,7 +588,7 @@ class NewSubmissionController extends Controller
                 }
             }
 
-            $session->getFlashBag()->add('success', $translator->trans("Second step saved with success."));
+            $session->getFlashBag()->add('success', $translator->trans("Submission saved with success."));
             return $this->redirectToRoute('submission_new_third_step', array('submission_id' => $submission->getId()), 301);
         }
 
@@ -636,6 +652,11 @@ class NewSubmissionController extends Controller
         // getting the current submission
         $submission = $submission_repository->find($submission_id);
         $output['submission'] = $submission;
+
+        // getting technical attribute list
+        $attribute_repository = $em->getRepository('Proethos2ModelBundle:TechnicalAttribute');
+        $attributes = $attribute_repository->findByCall($submission->getCall());
+        $output['attributes'] = $attributes;
 
         if (!$submission or $submission->getCanBeEdited() == false) {
             if(!$submission or ($submission->getProtocol()->getIsMigrated() and !in_array('administrator', $user->getRolesSlug()))) {
@@ -780,12 +801,7 @@ class NewSubmissionController extends Controller
             $em->persist($submission);
             $em->flush();
 
-            $msg = $translator->trans("Second step saved with success.");
-            if ( in_array($submission->getInstitution()->getSlug(), array("civil-society-organization", "academic-institution", "scientific-community", "private-sector", "philanthropic-organization", "other")) ) {
-                $msg = $translator->trans("Third step saved with success.");
-            }
-
-            $session->getFlashBag()->add('success', $msg);
+            $session->getFlashBag()->add('success', "Submission saved with success.");
             return $this->redirectToRoute('submission_new_fourth_step', array('submission_id' => $submission->getId()), 301);
         }
 
@@ -823,6 +839,11 @@ class NewSubmissionController extends Controller
         // getting the current submission
         $submission = $submission_repository->find($submission_id);
         $output['submission'] = $submission;
+
+        // getting technical attribute list
+        $attribute_repository = $em->getRepository('Proethos2ModelBundle:TechnicalAttribute');
+        $attributes = $attribute_repository->findByCall($submission->getCall());
+        $output['attributes'] = $attributes;
 
         if (!$submission or $submission->getCanBeEdited() == false) {
             if(!$submission or ($submission->getProtocol()->getIsMigrated() and !in_array('administrator', $user->getRolesSlug()))) {
@@ -865,14 +886,15 @@ class NewSubmissionController extends Controller
             $em->persist($submission);
             $em->flush();
 
-            $route = 'submission_new_sixth_step';
-            $msg = $translator->trans("Third step saved with success.");
             if ( 'paho-who-technical-cooperation' == $submission->getType()->getSlug() ) {
                 $route = 'submission_new_fifth_step';
-                $msg = $translator->trans("Fourth step saved with success.");
+            } elseif ( $attributes ) {
+                $route = 'submission_new_technical_attributes';
+            } else {
+                $route = 'submission_new_sixth_step';
             }
 
-            $session->getFlashBag()->add('success', $msg);
+            $session->getFlashBag()->add('success', "Submission saved with success.");
             return $this->redirectToRoute($route, array('submission_id' => $submission->getId()), 301);
         }
 
@@ -920,6 +942,11 @@ class NewSubmissionController extends Controller
         // getting the current submission
         $submission = $submission_repository->find($submission_id);
         $output['submission'] = $submission;
+
+        // getting technical attribute list
+        $attribute_repository = $em->getRepository('Proethos2ModelBundle:TechnicalAttribute');
+        $attributes = $attribute_repository->findByCall($submission->getCall());
+        $output['attributes'] = $attributes;
 
         if (!$submission or $submission->getCanBeEdited() == false) {
             if(!$submission or ($submission->getProtocol()->getIsMigrated() and !in_array('administrator', $user->getRolesSlug()))) {
@@ -986,8 +1013,13 @@ class NewSubmissionController extends Controller
             $em->persist($submission);
             $em->flush();
 
-            $session->getFlashBag()->add('success', $translator->trans("Fifth step saved with success."));
-            return $this->redirectToRoute('submission_new_sixth_step', array('submission_id' => $submission->getId()), 301);
+            $route = 'submission_new_sixth_step';
+            if ( $attributes ) {
+                $route = 'submission_new_technical_attributes';
+            }
+
+            $session->getFlashBag()->add('success', $translator->trans("Submission saved with success."));
+            return $this->redirectToRoute($route, array('submission_id' => $submission->getId()), 301);
         }
 
         return $output;
@@ -1014,6 +1046,11 @@ class NewSubmissionController extends Controller
         // getting the current submission
         $submission = $submission_repository->find($submission_id);
         $output['submission'] = $submission;
+
+        // getting technical attribute list
+        $attribute_repository = $em->getRepository('Proethos2ModelBundle:TechnicalAttribute');
+        $attributes = $attribute_repository->findByCall($submission->getCall());
+        $output['attributes'] = $attributes;
 
         $upload_types = $upload_type_repository->findByStatus(true);
         $output['upload_types'] = $upload_types;
@@ -1099,12 +1136,7 @@ class NewSubmissionController extends Controller
             $em->persist($submission);
             $em->flush();
 
-            $msg = $translator->trans("Fourth step saved with success.");
-            if ( in_array($submission->getInstitution()->getSlug(), array("civil-society-organization", "academic-institution", "scientific-community", "private-sector", "philanthropic-organization", "other")) ) {
-                $msg = $translator->trans("Sixth step saved with success.");
-            }
-
-            $session->getFlashBag()->add('success', $msg);
+            $session->getFlashBag()->add('success', "Submission saved with success.");
             return $this->redirectToRoute('submission_new_seventh_step', array('submission_id' => $submission->getId()), 301);
         }
 
@@ -1132,6 +1164,11 @@ class NewSubmissionController extends Controller
         // getting the current submission
         $submission = $submission_repository->find($submission_id);
         $output['submission'] = $submission;
+
+        // getting technical attribute list
+        $attribute_repository = $em->getRepository('Proethos2ModelBundle:TechnicalAttribute');
+        $attributes = $attribute_repository->findByCall($submission->getCall());
+        $output['attributes'] = $attributes;
 
         if (!$submission or $submission->getCanBeEdited() == false) {
             if(!$submission or ($submission->getProtocol()->getIsMigrated() and !in_array('administrator', $user->getRolesSlug()))) {
@@ -1168,12 +1205,7 @@ class NewSubmissionController extends Controller
             $em->persist($submission);
             $em->flush();
 
-            $msg = $translator->trans("Fifth step saved with success.");
-            if ( in_array($submission->getInstitution()->getSlug(), array("civil-society-organization", "academic-institution", "scientific-community", "private-sector", "philanthropic-organization", "other")) ) {
-                $msg = $translator->trans("Seventh step saved with success.");
-            }
-
-            $session->getFlashBag()->add('success', $msg);
+            $session->getFlashBag()->add('success', "Submission saved with success.");
             return $this->redirectToRoute('submission_new_eighth_step', array('submission_id' => $submission->getId()), 301);
         }
 
@@ -1204,6 +1236,11 @@ class NewSubmissionController extends Controller
         // getting the current submission
         $submission = $submission_repository->find($submission_id);
         $output['submission'] = $submission;
+
+        // getting technical attribute list
+        $attribute_repository = $em->getRepository('Proethos2ModelBundle:TechnicalAttribute');
+        $attributes = $attribute_repository->findByCall($submission->getCall());
+        $output['attributes'] = $attributes;
 
         $mail_translator = $this->get('translator');
         $mail_translator->setLocale($submission->getLanguage());
@@ -1881,6 +1918,100 @@ class NewSubmissionController extends Controller
     }
 
     /**
+     * @Route("/submission/new/{submission_id}/technical-attributes", name="submission_new_technical_attributes")
+     * @Template()
+     */
+    public function TechnicalAttributesAction($submission_id)
+    {
+        $output = array();
+        $request = $this->getRequest();
+        $session = $request->getSession();
+        $translator = $this->get('translator');
+        $em = $this->getDoctrine()->getManager();
+
+        $submission_repository = $em->getRepository('Proethos2ModelBundle:Submission');
+        $user_repository = $em->getRepository('Proethos2ModelBundle:User');
+
+        $user = $this->get('security.token_storage')->getToken()->getUser();
+
+        // getting the current submission
+        $submission = $submission_repository->find($submission_id);
+        $output['submission'] = $submission;
+
+        if (!$submission or $submission->getCanBeEdited() == false) {
+            if(!$submission or ($submission->getProtocol()->getIsMigrated() and !in_array('administrator', $user->getRolesSlug()))) {
+                throw $this->createNotFoundException($translator->trans('No submission found'));
+            }
+        }
+
+        // getting technical attribute list
+        $attribute_repository = $em->getRepository('Proethos2ModelBundle:TechnicalAttribute');
+        $attributes = $attribute_repository->findByCall($submission->getCall());
+        $output['attributes'] = $attributes;
+
+        // getting submission_attribute
+        $submission_attribute_repository = $em->getRepository('Proethos2ModelBundle:SubmissionTechnicalAttribute');
+        $submission_attributes = $submission_attribute_repository->findBy(array("submission" => $submission));
+        $output['submission_attributes'] = $submission_attributes;
+
+        // checking if was a post request
+        if($this->getRequest()->isMethod('POST')) {
+
+            $submittedToken = $request->request->get('token');
+
+            if (!$this->isCsrfTokenValid('submission-technical-attributes', $submittedToken)) {
+                throw $this->createNotFoundException($translator->trans('CSRF token not valid'));
+            }
+
+            // getting post data
+            $post_data = $request->request->all();
+
+            // echo "<pre>"; print_r($post_data); echo "</pre>"; die();
+
+            $technical_attributes = array_filter( $post_data, function ($key) { 
+                return(strpos($key,'input-attribute') !== false);
+            }, ARRAY_FILTER_USE_KEY );
+
+            if ( $technical_attributes ) {
+                foreach ($technical_attributes as $attr) {
+                    // getting the technical_attribute
+                    $technical_attribute = $attribute_repository->find($attr);
+
+                    // getting the submission_technical_attribute
+                    $submission_technical_attribute = $submission_attribute_repository->findOneBy(array(
+                        "submission" => $submission,
+                        "attribute" => $technical_attribute
+                    ));
+
+                    if ( $submission_technical_attribute ) {
+                        $submission_technical_attribute->setValue($post_data['attribute-'.$attr.'-value']);
+                        
+                        $em->persist($submission_technical_attribute);
+                        $em->flush();
+                    } else {
+                        $submission_technical_attribute = new SubmissionTechnicalAttribute();
+                        $submission_technical_attribute->setSubmission($submission);
+                        $submission_technical_attribute->setAttribute($technical_attribute);
+                        $submission_technical_attribute->setValue($post_data['attribute-'.$attr.'-value']);
+                        
+                        $em->persist($submission_technical_attribute);
+                        $em->flush();
+                    }
+                }
+            }
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($submission);
+            $em->flush();
+
+            $session->getFlashBag()->add('success', "Submission saved with success.");
+            return $this->redirectToRoute('submission_new_sixth_step', array('submission_id' => $submission->getId()), 301);
+        }
+
+        return $output;
+    }
+
+    /**
      * @Route("/submission/new/{submission_id}/pdf", name="submission_generate_pdf")
      * @Template()
      */
@@ -1930,6 +2061,16 @@ class NewSubmissionController extends Controller
             "D" => $translator->trans("Triangular Cooperation"),
         );
         $output['coop_modality'] = $coop_modality;
+
+        // getting technical attribute list
+        $attribute_repository = $em->getRepository('Proethos2ModelBundle:TechnicalAttribute');
+        $attributes = $attribute_repository->findByCall($submission->getCall());
+        $output['attributes'] = $attributes;
+
+        // getting submission_attribute
+        $submission_attribute_repository = $em->getRepository('Proethos2ModelBundle:SubmissionTechnicalAttribute');
+        $submission_attributes = $submission_attribute_repository->findBy(array("submission" => $submission));
+        $output['submission_attributes'] = $submission_attributes;
 
         if (!$submission or ($submission->getCanBeEdited() and !in_array('investigator', $user->getRolesSlug()))) {
             throw $this->createNotFoundException($translator->trans('No submission found'));

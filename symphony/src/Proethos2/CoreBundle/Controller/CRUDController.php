@@ -4997,4 +4997,155 @@ class CRUDController extends Controller
 
         return $output;
     }
+
+    /**
+     * @Route("/admin/controlled-list/technical-attribute", name="crud_admin_controlled_list_technical_attribute_list")
+     * @Template()
+     */
+    public function listControlledListTechnicalAttributeAction()
+    {
+        $output = array();
+        $request = $this->getRequest();
+        $session = $request->getSession();
+        $translator = $this->get('translator');
+        $em = $this->getDoctrine()->getManager();
+
+        // getting call list
+        $call_repository = $em->getRepository('Proethos2ModelBundle:Call');
+        $call = $call_repository->findByStatus(true);
+        $output['calls'] = $call;
+
+        $item_repository = $em->getRepository('Proethos2ModelBundle:TechnicalAttribute');
+        $trans_repository = $em->getRepository('Gedmo\\Translatable\\Entity\\Translation');
+
+        $items = $item_repository->findAll();
+        $output['items'] = $items;
+
+        // checking if was a post request
+        if($this->getRequest()->isMethod('POST')) {
+
+            // getting post data
+            $post_data = $request->request->all();
+
+            // echo "<pre>"; print_r($post_data); echo "</pre>"; die();
+
+            // checking required files
+            foreach(array('title') as $field) {
+                if(!isset($post_data[$field]) or empty($post_data[$field])) {
+                    $session->getFlashBag()->add('error', $translator->trans("Field '%field%' is required.", array("%field%" => $field)));
+                    return $output;
+                }
+            }
+
+            $item = new TechnicalAttribute();
+            $item->setTranslatableLocale('en');
+
+            // call
+            $selected_call = $call_repository->find($post_data['call']);
+            $item->setCall($selected_call);
+            
+            $item->setTitle($post_data['title']);
+            foreach(array('pt_BR', 'es_ES', 'fr_FR') as $locale) {
+                if(!empty($post_data["title-$locale"])) {
+                    $trans_repository = $trans_repository->translate($item, 'title', $locale, $post_data["title-$locale"]);
+                }
+            }
+
+            $item->setSubtitle($post_data['subtitle']);
+            foreach(array('pt_BR', 'es_ES', 'fr_FR') as $locale) {
+                if(!empty($post_data["subtitle-$locale"])) {
+                    $trans_repository = $trans_repository->translate($item, 'subtitle', $locale, $post_data["subtitle-$locale"]);
+                }
+            }
+
+            $em->persist($item);
+            $em->flush();
+
+            $session->getFlashBag()->add('success', $translator->trans("Item created with success."));
+            return $this->redirectToRoute('crud_admin_controlled_list_technical_attribute_list', array(), 301);
+        }
+
+        return $output;
+    }
+
+    /**
+     * @Route("/admin/controlled-list/technical-attribute/{item_id}", name="crud_admin_controlled_list_technical_attribute_update")
+     * @Template()
+     */
+    public function updateControlledListTechnicalAttributeAction($item_id)
+    {
+        $output = array();
+        $request = $this->getRequest();
+        $session = $request->getSession();
+        $translator = $this->get('translator');
+        $em = $this->getDoctrine()->getManager();
+
+        // getting call list
+        $call_repository = $em->getRepository('Proethos2ModelBundle:Call');
+        $call = $call_repository->findByStatus(true);
+        $output['calls'] = $call;
+
+        $item_repository = $em->getRepository('Proethos2ModelBundle:TechnicalAttribute');
+        $trans_repository = $em->getRepository('Gedmo\\Translatable\\Entity\\Translation');
+
+        $item = $item_repository->find($item_id);
+
+        if (!$item) {
+            throw $this->createNotFoundException($translator->trans('No item found'));
+        }
+        $output['item'] = $item;
+
+        $translations = $trans_repository->findTranslations($item);
+        $output['translations'] = $translations;
+
+        // checking if was a post request
+        if($this->getRequest()->isMethod('POST')) {
+
+            // getting post data
+            $post_data = $request->request->all();
+
+            // echo "<pre>"; print_r($post_data); echo "</pre>"; die();
+
+            // checking required files
+            foreach(array('title') as $field) {
+                if(!isset($post_data[$field]) or empty($post_data[$field])) {
+                    $session->getFlashBag()->add('error', $translator->trans("Field '%field%' is required.", array("%field%" => $field)));
+                    return $output;
+                }
+            }
+
+            $item->setTranslatableLocale('en');
+
+            // call
+            $selected_call = $call_repository->find($post_data['call']);
+            $item->setCall($selected_call);
+            
+            $item->setTitle($post_data['title']);
+            foreach(array('pt_BR', 'es_ES', 'fr_FR') as $locale) {
+                if(!empty($post_data["title-$locale"])) {
+                    $trans_repository = $trans_repository->translate($item, 'title', $locale, $post_data["title-$locale"]);
+                }
+            }
+
+            $item->setSubtitle($post_data['subtitle']);
+            foreach(array('pt_BR', 'es_ES', 'fr_FR') as $locale) {
+                if(!empty($post_data["subtitle-$locale"])) {
+                    $trans_repository = $trans_repository->translate($item, 'subtitle', $locale, $post_data["subtitle-$locale"]);
+                }
+            }
+
+            $item->setStatus(false);
+            if(isset($post_data['status']) and $post_data['status'] == "true") {
+                $item->setStatus(true);
+            }
+
+            $em->persist($item);
+            $em->flush();
+
+            $session->getFlashBag()->add('success', $translator->trans("Item updated with success."));
+            return $this->redirectToRoute('crud_admin_controlled_list_technical_attribute_list', array(), 301);
+        }
+
+        return $output;
+    }
 }

@@ -89,6 +89,11 @@
                     <a href="{{ path('submission_new_fifth_step', {'submission_id': submission.id }) }}" title='{% trans %}Relevance / Recognition / Engagement{% endtrans %}'>{% trans %}Relevance / Recognition / Engagement{% endtrans %}</a>
                 </li>
             {% endif %}
+            {% if attributes %}
+                <li role="presentation" {% if app.request.get('_route') == "submission_new_technical_attributes" %}class='active'{% endif %}>
+                    <a href="{{ path('submission_new_technical_attributes', {'submission_id': submission.id }) }}" title='{% trans %}Call Specific Information{% endtrans %}'>{% trans %}Call Specific Information{% endtrans %}</a>
+                </li>
+            {% endif %}
             <li role="presentation" {% if app.request.get('_route') == "submission_new_sixth_step" %}class='active'{% endif %}>
                 <a href="{{ path('submission_new_sixth_step', {'submission_id': submission.id }) }}" title='{% trans %}Multimedia / Conclusion{% endtrans %}'>{% trans %}Multimedia / Conclusion{% endtrans %}</a>
             </li>
