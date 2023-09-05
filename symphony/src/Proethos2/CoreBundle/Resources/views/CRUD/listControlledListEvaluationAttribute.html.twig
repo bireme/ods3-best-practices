@@ -1,0 +1,504 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{% trans %}Technical Attributes (Reviewer){% endtrans %}{% endblock %}
+
+{% block content %}
+
+    <div class="container-fluid main-content see-submission">
+        <div class="row">
+            <div class='col-md-12'>
+                <h1 class="page-header">
+                    {% trans %}Technical Attributes (Reviewer){% endtrans %}
+                    <a href='#' class='btn btn-primary' data-toggle='modal' data-target='#modal-new-item'>{% trans %}New Attribute{% endtrans %}</a>
+                </h1>
+            </div>
+        </div>
+
+        <div class='block'>
+            <div class='row'>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="select-filter-call">{% trans %}Filter by call{% endtrans %}:</label>
+                        <select class='form-control selectpicker' id="select-filter-call" name="filter-call" data-size="5">
+                            <option value="">-</option>
+                            {% for call in calls %}
+                                <option value="{{ call.name }}">{{ call.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form class="form-group" id='form-search' method="POST">
+            <input type="hidden" name="output" id="input-output" value="html" />
+            <div class='block'>
+                <div class='row'>
+                    <div class="col-md-12">
+                        <table class='table table-hover table-condensed' id='table-data'>
+                            <thead>
+                                <tr>
+                                    <th width="40%">{% trans %}Name{% endtrans %}</th>
+                                    <th width="40%">{% trans %}Call{% endtrans %}</th>
+                                    <th width="">{% trans %}Status{% endtrans %}</th>
+                                    <th>{% trans %}Actions{% endtrans %}</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                {% for item in items %}
+                                    <tr>
+                                        <td>{{ item.name }}</td>
+                                        <td class="filter">{{ item.call.name }}</td>
+                                        <td>
+                                            {% if item.status %}
+                                                <span class='label label-success'>{% trans %}active{% endtrans %}</span>
+                                            {% else %}
+                                                <span class='label label-default'>{% trans %}inactive{% endtrans %}</span>
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            <a href="{{ path("crud_admin_controlled_list_evaluation_attribute_update", {item_id: item.id}) }}" data-toggle="modal" data-target="#modal-ajax-item" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-pencil"></i></a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Modal New Call for Good Practices -->
+    <div class="modal fade" id="modal-new-item" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="item">
+            <div class="modal-content">
+                <form class='form' method="POST" id='form-new-item'>
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">{% trans %}New Attribute{% endtrans %}</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <ul class="nav nav-tabs">
+                            <li id="modal-tab1" class="active"><a data-toggle="tab" href="#tab1">{% trans %}Attributes{% endtrans %}</a></li>
+                            <li id="modal-tab2"><a data-toggle="tab" href="#tab2">{% trans %}Help Text{% endtrans %}</a></li>
+                            <li id="modal-tab3"><a data-toggle="tab" href="#tab3">{% trans %}Scoring{% endtrans %} 1 - {% trans %}Help Text{% endtrans %}</a></li>
+                            <li id="modal-tab4"><a data-toggle="tab" href="#tab4">{% trans %}Scoring{% endtrans %} 2 - {% trans %}Help Text{% endtrans %}</a></li>
+                            <li id="modal-tab5"><a data-toggle="tab" href="#tab5">{% trans %}Scoring{% endtrans %} 3 - {% trans %}Help Text{% endtrans %}</a></li>
+                            <li id="modal-tab6"><a data-toggle="tab" href="#tab6">{% trans %}Scoring{% endtrans %} 4 - {% trans %}Help Text{% endtrans %}</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div id="tab1" class="tab-pane fade in active">
+                                <div class='row'>
+                                    <div class='col-md-12'> 
+                                        <div class="form-group">
+                                            <label for="select-collection">{% trans %}Call{% endtrans %}:</label>
+                                            <select class='form-control selectpicker' id='select-call' name='call' data-size="5" required>
+                                                <option value="">-</option>
+                                                {% for call in calls %}
+                                                    <option value="{{ call.id }}">{{ call.name }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr />
+
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="input-name">{% trans %}Name in English{% endtrans %}:</label> 
+                                            <input type='text' class='form-control' id="input-name" name="name" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="input-name-es_ES">{% trans %}Name in Spanish{% endtrans %}:</label> 
+                                            <input type='text' class='form-control' id="input-name-es_ES" name="name-es_ES">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="input-name-pt_BR">{% trans %}Name in Portuguese{% endtrans %}:</label> 
+                                            <input type='text' class='form-control' id="input-name-pt_BR" name="name-pt_BR">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="input-name-fr_FR">{% trans %}Name in French{% endtrans %}:</label> 
+                                            <input type='text' class='form-control' id="input-name-fr_FR" name="name-fr_FR">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr />
+
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="textarea-description-en">{% trans %}Description{% endtrans %}:</label> 
+                                            <textarea rows="3" class='form-control summernote' id="textarea-description" name="description" required></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="textarea-description-es_ES">{% trans %}Description in Spanish{% endtrans %}:</label> 
+                                            <textarea rows="3" class='form-control summernote' id="textarea-description-es_ES" name="description-es_ES"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="textarea-description-pt_BR">{% trans %}Description in Portuguese{% endtrans %}:</label> 
+                                            <textarea rows="3" class='form-control summernote' id="textarea-description-pt_BR" name="description-pt_BR"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="textarea-description-fr_FR">{% trans %}Description in French{% endtrans %}:</label> 
+                                            <textarea rows="3" class='form-control summernote' id="textarea-description-fr_FR" name="description-fr_FR"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr />
+
+                                <div class='row'>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="input-scoring1">{% trans %}Scoring{% endtrans %} - {% trans %}Option{% endtrans %} 1:</label>
+                                            <input type="number" class="form-control" placeholder="" min="0" value="" id='input-scoring1' name='scoring1' required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="input-scoring2">{% trans %}Scoring{% endtrans %} - {% trans %}Option{% endtrans %} 2:</label>
+                                            <input type="number" class="form-control" placeholder="" min="0" value="" id='input-scoring2' name='scoring2' required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="input-scoring3">{% trans %}Scoring{% endtrans %} - {% trans %}Option{% endtrans %} 3:</label>
+                                            <input type="number" class="form-control" placeholder="" min="0" value="" id='input-scoring3' name='scoring3' required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="input-scoring4">{% trans %}Scoring{% endtrans %} - {% trans %}Option{% endtrans %} 4:</label>
+                                            <input type="number" class="form-control" placeholder="" min="0" value="" id='input-scoring4' name='scoring4' required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="tab2" class="tab-pane fade">
+
+                                <h5>{% trans %}Attribute{% endtrans %}</h5>
+
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="textarea-attribute-help-text">{% trans %}Message{% endtrans %}:</label> 
+                                            <textarea rows="3" class='form-control' id="textarea-attribute-help-text" name="attribute-help-text"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="textarea-attribute-help-text-es_ES">{% trans %}Message in Spanish{% endtrans %}:</label> 
+                                            <textarea rows="3" class='form-control' id="textarea-attribute-help-text-es_ES" name="attribute-help-text-es_ES"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="textarea-attribute-help-text-pt_BR">{% trans %}Message in Portuguese{% endtrans %}:</label> 
+                                            <textarea rows="3" class='form-control' id="textarea-attribute-help-text-pt_BR" name="attribute-help-text-pt_BR"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="textarea-attribute-help-text-fr_FR">{% trans %}Message in French{% endtrans %}:</label> 
+                                            <textarea rows="3" class='form-control' id="textarea-attribute-help-text-fr_FR" name="attribute-help-text-fr_FR"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h5>{% trans %}Description{% endtrans %}</h5>
+
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="textarea-description-help-text">{% trans %}Message{% endtrans %}:</label> 
+                                            <textarea rows="3" class='form-control' id="textarea-description-help-text" name="description-help-text"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="textarea-description-help-text-es_ES">{% trans %}Message in Spanish{% endtrans %}:</label> 
+                                            <textarea rows="3" class='form-control' id="textarea-description-help-text-es_ES" name="description-help-text-es_ES"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="textarea-description-help-text-pt_BR">{% trans %}Message in Portuguese{% endtrans %}:</label> 
+                                            <textarea rows="3" class='form-control' id="textarea-description-help-text-pt_BR" name="description-help-text-pt_BR"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="textarea-description-help-text-fr_FR">{% trans %}Message in French{% endtrans %}:</label> 
+                                            <textarea rows="3" class='form-control' id="textarea-description-help-text-fr_FR" name="description-help-text-fr_FR"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div id="tab3" class="tab-pane fade">
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="textarea-help-text-scoring1">{% trans %}Message{% endtrans %}:</label> 
+                                            <textarea rows="3" class='form-control' id="textarea-help-text-scoring1" name="help-text-scoring1"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="textarea-help-text-scoring1-es_ES">{% trans %}Message in Spanish{% endtrans %}:</label> 
+                                            <textarea rows="3" class='form-control' id="textarea-help-text-scoring1-es_ES" name="help-text-scoring1-es_ES"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="textarea-help-text-scoring1-pt_BR">{% trans %}Message in Portuguese{% endtrans %}:</label> 
+                                            <textarea rows="3" class='form-control' id="textarea-help-text-scoring1-pt_BR" name="help-text-scoring1-pt_BR"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="textarea-help-text-scoring1-fr_FR">{% trans %}Message in French{% endtrans %}:</label> 
+                                            <textarea rows="3" class='form-control' id="textarea-help-text-scoring1-fr_FR" name="help-text-scoring1-fr_FR"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="tab4" class="tab-pane fade">
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="textarea-help-text-scoring2">{% trans %}Message{% endtrans %}:</label> 
+                                            <textarea rows="3" class='form-control' id="textarea-help-text-scoring2" name="help-text-scoring2"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="textarea-help-text-scoring2-es_ES">{% trans %}Message in Spanish{% endtrans %}:</label> 
+                                            <textarea rows="3" class='form-control' id="textarea-help-text-scoring2-es_ES" name="help-text-scoring2-es_ES"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="textarea-help-text-scoring2-pt_BR">{% trans %}Message in Portuguese{% endtrans %}:</label> 
+                                            <textarea rows="3" class='form-control' id="textarea-help-text-scoring2-pt_BR" name="help-text-scoring2-pt_BR"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="textarea-help-text-scoring2-fr_FR">{% trans %}Message in French{% endtrans %}:</label> 
+                                            <textarea rows="3" class='form-control' id="textarea-help-text-scoring2-fr_FR" name="help-text-scoring2-fr_FR"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="tab5" class="tab-pane fade">
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="textarea-help-text-scoring3">{% trans %}Message{% endtrans %}:</label> 
+                                            <textarea rows="3" class='form-control' id="textarea-help-text-scoring3" name="help-text-scoring3"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="textarea-help-text-scoring3-es_ES">{% trans %}Message in Spanish{% endtrans %}:</label> 
+                                            <textarea rows="3" class='form-control' id="textarea-help-text-scoring3-es_ES" name="help-text-scoring3-es_ES"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="textarea-help-text-scoring3-pt_BR">{% trans %}Message in Portuguese{% endtrans %}:</label> 
+                                            <textarea rows="3" class='form-control' id="textarea-help-text-scoring3-pt_BR" name="help-text-scoring3-pt_BR"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="textarea-help-text-scoring3-fr_FR">{% trans %}Message in French{% endtrans %}:</label> 
+                                            <textarea rows="3" class='form-control' id="textarea-help-text-scoring3-fr_FR" name="help-text-scoring3-fr_FR"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="tab6" class="tab-pane fade">
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="textarea-help-text-scoring4">{% trans %}Message{% endtrans %}:</label> 
+                                            <textarea rows="3" class='form-control' id="textarea-help-text-scoring4" name="help-text-scoring4"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="textarea-help-text-scoring4-es_ES">{% trans %}Message in Spanish{% endtrans %}:</label> 
+                                            <textarea rows="3" class='form-control' id="textarea-help-text-scoring4-es_ES" name="help-text-scoring4-es_ES"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="textarea-help-text-scoring4-pt_BR">{% trans %}Message in Portuguese{% endtrans %}:</label> 
+                                            <textarea rows="3" class='form-control' id="textarea-help-text-scoring4-pt_BR" name="help-text-scoring4-pt_BR"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class='row'>
+                                    <div class='col-md-12'>
+                                        <div class="form-group">
+                                            <label for="textarea-help-text-scoring4-fr_FR">{% trans %}Message in French{% endtrans %}:</label> 
+                                            <textarea rows="3" class='form-control' id="textarea-help-text-scoring4-fr_FR" name="help-text-scoring4-fr_FR"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">{% trans %}Close{% endtrans %}</button>
+                        <button type="submit" class="btn btn-primary">{% trans %}Save{% endtrans %}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal ajax Evaluation Attributes -->
+    <div class="modal fade" id="modal-ajax-item" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="item">
+            <div class="modal-content"></div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block script %}
+    <script>
+        $(function(){
+            $("#select-filter-call").change(function(){
+                // retrieve the input field text and reset the count to zero
+                var count = 0;
+                var filter = $(this).val();
+
+                // filter by collection
+                $("#table-data tbody tr").each(function(){
+                    // if the list item does not contain the text phrase fade it out
+                    if ($(this).find('td.filter').text().search(new RegExp(filter, "i")) < 0) {
+                        $(this).hide();
+                    // show the list item if the phrase matches and increase the count by 1
+                    } else {
+                        $(this).show();
+                        count++;
+                    }
+                });
+         
+                // update the count
+                var numberItems = count;
+                // $("#filter-count").text("Total: "+count);
+            });
+
+            $('#form-new-item textarea.summernote').summernote({
+                height: 150,
+                dialogsInBody: true,
+                lang: '{% if 'en' == app.request.locale %}en-US{% else %}{{ app.request.locale|replace({ '_': '-' }) }}{% endif %}',
+                popover: {
+                    image: [],
+                    link: [],
+                    air: []
+                }
+            });
+        });
+    </script>
+{% endblock %}

@@ -222,6 +222,10 @@ img.logo {
 
 .modal { overflow-y: auto !important; }
 
+.nav-tabs {
+    margin-bottom: 2rem;
+}
+
 .panel-heading.note-toolbar {
     position: static !important;
 }

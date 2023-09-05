@@ -660,7 +660,7 @@
 
                                 <div class="form-group {% if not protocol_revision.participationFeedback or protocol_revision.participationFeedback == 'no' %}hide{% endif %}">
                                     <label for="textarea-participation-feedback">{% trans %}Please describe the revisions to be made{% endtrans %}:</label> 
-                                    <textarea class="form-control" id="textarea-participation-feedback" name='participation-feedback' {% if protocol_revision.isFinalRevision %}readonly{% endif %}>{{ protocol_revision.innovationRevisions }}</textarea>
+                                    <textarea class="form-control" id="textarea-participation-feedback" name='participation-feedback' {% if protocol_revision.isFinalRevision %}readonly{% endif %}>{{ protocol_revision.participationRevisions }}</textarea>
                                 </div>
 
                                 <div class="form-group">
@@ -775,6 +775,129 @@
 
                 <hr />
 
+                {% if attributes %}
+                    <div class='row'>
+                        <div class="col-md-12">
+                            <h2 class='sub-header'>{% trans %}Technical Atributes{% endtrans %}:</h2>
+                        </div>
+                    </div>
+
+                    {% for attr in attributes %}
+                        {% if protocol_attributes %}
+                            {% set protocol_attribute = {} %}
+                            {% for pa in protocol_attributes if pa.attribute == attr %}
+                                {% set protocol_attribute = pa %}
+                            {% endfor %}
+                        {% endif %}
+
+                        <input type="hidden" id="input-attribute" name="input-attribute-{{ attr.id }}" value="{{ attr.id }}">
+                        
+                        <div class='block'>
+                            <div class='row'>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="field-desc">
+                                            <h4>{{ attr.name }}</h4>
+                                            {% if attr.attributeHelpText %}
+                                                <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{{ attr.attributeHelpText }}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                            {% endif %}
+                                        </div>
+                                        <p>{% trans %}Form sections up to review{% endtrans %}:
+                                            {% if attr.descriptionHelpText %}
+                                                <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{{ attr.descriptionHelpText }}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                            {% endif %}
+                                        </p>
+                                        {{ attr.description }}
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group form-radio">
+                                        <h4>{% trans %}Scoring{% endtrans %}:</h4>
+
+                                        {% if attr.scoring1 is defined %}
+                                            <div class="form-group">
+                                                <div class='radio'>
+                                                    <label>
+                                                        <input type='radio' name='attribute-{{ attr.id }}-scoring' class="radio-scoring" value='{{ attr.scoring1 }}' required {% if protocol_attribute and protocol_attribute.scoring is not null and protocol_attribute.scoring == attr.scoring1 %}checked{% endif %} /> {{ attr.scoring1 }} {% trans %}Points{% endtrans %}
+                                                    </label>
+                                                    {% if attr.helpTextScoring1 %}
+                                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{{ attr.helpTextScoring1 }}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        {% endif %}
+
+                                        {% if attr.scoring2 is defined %}
+                                            <div class="form-group">
+                                                <div class='radio'>
+                                                    <label>
+                                                        <input type='radio' name='attribute-{{ attr.id }}-scoring' class="radio-scoring" value='{{ attr.scoring2 }}' required {% if protocol_attribute and protocol_attribute.scoring is not null and protocol_attribute.scoring == attr.scoring2 %}checked{% endif %} /> {{ attr.scoring2 }} {% trans %}Points{% endtrans %}
+                                                    </label>
+                                                    {% if attr.helpTextScoring2 %}
+                                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{{ attr.helpTextScoring2 }}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        {% endif %}
+
+                                        {% if attr.scoring3 is defined %}
+                                            <div class="form-group">
+                                                <div class='radio'>
+                                                    <label>
+                                                        <input type='radio' name='attribute-{{ attr.id }}-scoring' class="radio-scoring" value='{{ attr.scoring3 }}' required {% if protocol_attribute and protocol_attribute.scoring is not null and protocol_attribute.scoring == attr.scoring3 %}checked{% endif %} /> {{ attr.scoring3 }} {% trans %}Points{% endtrans %}
+                                                    </label>
+                                                    {% if attr.helpTextScoring3 %}
+                                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{{ attr.helpTextScoring3 }}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        {% endif %}
+
+                                        {% if attr.scoring4 is defined %}
+                                            <div class="form-group">
+                                                <div class='radio'>
+                                                    <label>
+                                                        <input type='radio' name='attribute-{{ attr.id }}-scoring' class="radio-scoring" value='{{ attr.scoring4 }}' required {% if protocol_attribute and protocol_attribute.scoring is not null and protocol_attribute.scoring == attr.scoring4 %}checked{% endif %} /> {{ attr.scoring4 }} {% trans %}Points{% endtrans %}
+                                                    </label>
+                                                    {% if attr.helpTextScoring4 %}
+                                                        <a href="#" class="modal-help-text" data-toggle="modal" data-target="#modal-help-text" data-text="{{ attr.helpTextScoring4 }}"><i class='glyphicon glyphicon-question-sign'></i></a>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        {% endif %}
+
+                                        <hr />
+
+                                        <h4>{% trans %}Feedback{% endtrans %}:</h4>
+                                        <div class="form-group">
+                                            <div class='radio'>
+                                                <label>
+                                                    <input type='radio' name='option-attribute-{{ attr.id }}-feedback' value='yes' required {% if protocol_attribute and protocol_attribute.feedback == 'yes' %}checked{% endif %} /> {% trans %}Revisions required{% endtrans %}
+                                                </label> 
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group {% if not protocol_attribute or not protocol_attribute.feedback or protocol_attribute.feedback == 'no' %}hide{% endif %}">
+                                            <label for="textarea-attribute-{{ attr.id }}-feedback">{% trans %}Please describe the revisions to be made{% endtrans %}:</label> 
+                                            <textarea class="form-control" id="textarea-attribute-{{ attr.id }}-feedback" name='attribute-{{ attr.id }}-feedback' {% if protocol_revision.isFinalRevision %}readonly{% endif %}>{{ protocol_attribute.revisions }}</textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class='radio'>
+                                                <label>
+                                                    <input type='radio' name='option-attribute-{{ attr.id }}-feedback' value='no' {% if protocol_attribute and protocol_attribute.feedback == 'no' %}checked{% endif %} /> {% trans %}No revisions required{% endtrans %}
+                                                </label> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <hr />
+                    {% endfor %}
+                {% endif %}
+
                 <div class='block'>
                     <div class='row'>
                         <div class="col-md-12">
@@ -783,11 +906,23 @@
                     </div>
 
                     <div class='row'>
-                        <div class="col-md-12">
-                            <div class="form-group">
+                        <div class="form-inline">
+                            <div class="form-group col-md-4">
                                 <label for="input-average-score">{% trans %}Average score{% endtrans %}:</label>
                                 <input type="text" class="form-control" name='average-score' id='input-average-score' value="{% if protocol_revision.averageScore %}{{ protocol_revision.averageScore }}{% else %}0{% endif %}" style="width: auto; display: inline" readonly>
                             </div>
+
+                            {% if attributes %}
+                                <div class="form-group col-md-4">
+                                    <label for="input-core-average-score">{% trans %}Core average score{% endtrans %}:</label>
+                                    <input type="text" class="form-control" name='core-average-score' id='input-core-average-score' value="{% if protocol_revision.coreAverageScore %}{{ protocol_revision.coreAverageScore }}{% else %}0{% endif %}" style="width: auto; display: inline" readonly>
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <label for="input-tech-average-score">{% trans %}Technical average score{% endtrans %}:</label>
+                                    <input type="text" class="form-control" name='tech-average-score' id='input-tech-average-score' value="{% if protocol_revision.technicalAverageScore %}{{ protocol_revision.technicalAverageScore }}{% else %}0{% endif %}" style="width: auto; display: inline" readonly>
+                                </div>
+                            {% endif %}
                         </div>
                     </div>
 
@@ -951,6 +1086,7 @@
         });
 
         function zeroScores() {
+            // core attributes
             var scoring = [];
             var scoring1 = $('input[name=effectiveness-scoring]:checked').val();
             var scoring2 = $('input[name=cost-effectiveness-scoring]:checked').val();
@@ -970,12 +1106,28 @@
             scoring.push(scoring7);
             scoring.push(scoring8);
 
-            var scoring = scoring.reduce( (acc, x ) => acc.concat(+x), []);
+            var scoring = scoring.reduce((acc, x) => acc.concat(+x), []);
             const sum = scoring.reduce((a, b) => a + b, 0);
             const avg = (sum / scoring.length) || 0;
-            var rounded = Math.round(avg * 10) / 10
+            var rounded = Math.round(avg * 10) / 10;
+            $("#input-core-average-score").val(rounded); // core average score
 
-            $("#input-average-score").val(rounded); // average score
+            {% if attributes %}
+                // technical attributes
+                var _scoring = [];
+                $('input[type=radio][name^=attribute]:checked').each(function() {
+                    _scoring.push($(this).val());
+                });
+
+                var _scoring = _scoring.reduce((acc, x) => acc.concat(+x), []);
+                const _sum = _scoring.reduce((a, b) => a + b, 0);
+                const _avg = (_sum / _scoring.length) || 0;
+                var _rounded = Math.round(_avg * 10) / 10;
+                $("#input-tech-average-score").val(_rounded); // technical average score
+
+                var avg_score = (rounded + _rounded) / 2;
+                $("#input-average-score").val(avg_score); // average score
+            {% endif %}
 
             var decision = {% if protocol_revision.finalDecision %}true{% else %}false{% endif %};
 

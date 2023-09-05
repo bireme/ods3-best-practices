@@ -246,6 +246,18 @@ class ProtocolRevision extends Base
     private $average_score;
 
     /**
+     * @ORM\Column(type="float", nullable=true)
+     * @Assert\NotBlank
+     */
+    private $core_average_score;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     * @Assert\NotBlank
+     */
+    private $technical_average_score;
+
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\NotBlank
      */
@@ -1213,5 +1225,53 @@ class ProtocolRevision extends Base
     public function getZeroScores()
     {
         return $this->zero_scores;
+    }
+
+    /**
+     * Set coreAverageScore
+     *
+     * @param float $coreAverageScore
+     *
+     * @return ProtocolRevision
+     */
+    public function setCoreAverageScore($coreAverageScore)
+    {
+        $this->core_average_score = $coreAverageScore;
+
+        return $this;
+    }
+
+    /**
+     * Get coreAverageScore
+     *
+     * @return float
+     */
+    public function getCoreAverageScore()
+    {
+        return $this->core_average_score;
+    }
+
+    /**
+     * Set technicalAverageScore
+     *
+     * @param float $technicalAverageScore
+     *
+     * @return ProtocolRevision
+     */
+    public function setTechnicalAverageScore($technicalAverageScore)
+    {
+        $this->technical_average_score = $technicalAverageScore;
+
+        return $this;
+    }
+
+    /**
+     * Get technicalAverageScore
+     *
+     * @return float
+     */
+    public function getTechnicalAverageScore()
+    {
+        return $this->technical_average_score;
     }
 }

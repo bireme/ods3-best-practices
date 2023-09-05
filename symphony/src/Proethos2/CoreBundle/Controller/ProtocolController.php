@@ -29,6 +29,7 @@ use Proethos2\CoreBundle\Util\Solr;
 use Proethos2\ModelBundle\Entity\ProtocolComment;
 use Proethos2\ModelBundle\Entity\ProtocolHistory;
 use Proethos2\ModelBundle\Entity\ProtocolRevision;
+use Proethos2\ModelBundle\Entity\ProtocolEvaluationAttribute;
 use Proethos2\ModelBundle\Entity\Submission;
 use Proethos2\ModelBundle\Entity\SubmissionUpload;
 
@@ -1246,6 +1247,16 @@ class ProtocolController extends Controller
         $submission = $protocol->getMainSubmission();
         $output['protocol'] = $protocol;
 
+        // getting evaluation attribute list
+        $attribute_repository = $em->getRepository('Proethos2ModelBundle:EvaluationAttribute');
+        $attributes = $attribute_repository->findByCall($submission->getCall());
+        $output['attributes'] = $attributes;
+
+        // getting protocol_attribute
+        $protocol_attribute_repository = $em->getRepository('Proethos2ModelBundle:ProtocolEvaluationAttribute');
+        $protocol_attributes = $protocol_attribute_repository->findBy(array("protocol" => $protocol, "member" => $user));
+        $output['protocol_attributes'] = $protocol_attributes;
+
         $mail_translator = $this->get('translator');
         $mail_translator->setLocale($submission->getLanguage());
 
@@ -1258,7 +1269,7 @@ class ProtocolController extends Controller
             throw $this->createNotFoundException($translator->trans('No good practice found'));
         }
 
-        // getting the protocol_revisiion
+        // getting the protocol_revision
         $protocol_revision = $protocol_revision_repository->findOneBy(array("protocol" => $protocol, "member" => $user));
         $output['protocol_revision'] = $protocol_revision;
 
@@ -1351,10 +1362,58 @@ class ProtocolController extends Controller
                 else
                     $protocol_revision->setCrossCuttingThemesRevisions(NULL);
 
+                $evaluation_attributes = array_filter( $post_data, function ($key) { 
+                    return(strpos($key,'input-attribute') !== false);
+                }, ARRAY_FILTER_USE_KEY );
+
+                if ( $evaluation_attributes ) {
+                    foreach ($evaluation_attributes as $attr) {
+                        // getting the evaluation_attribute
+                        $evaluation_attribute = $attribute_repository->find($attr);
+
+                        // getting the protocol_evaluation_attribute
+                        $protocol_evaluation_attribute = $protocol_attribute_repository->findOneBy(array(
+                            "protocol" => $protocol,
+                            "member" => $user,
+                            "attribute" => $evaluation_attribute
+                        ));
+
+                        if ( $protocol_evaluation_attribute ) {
+                            $protocol_evaluation_attribute->setScoring($post_data['attribute-'.$attr.'-scoring']);
+                            $protocol_evaluation_attribute->setFeedback($post_data['option-attribute-'.$attr.'-feedback']);
+                            if ( 'yes' == $post_data['option-attribute-'.$attr.'-feedback'] )
+                                $protocol_evaluation_attribute->setRevisions($post_data['attribute-'.$attr.'-feedback']);
+                            else
+                                $protocol_evaluation_attribute->setRevisions(NULL);
+                            
+                            $em->persist($protocol_evaluation_attribute);
+                            $em->flush();
+                        } else {
+                            $protocol_evaluation_attribute = new ProtocolEvaluationAttribute();
+                            $protocol_evaluation_attribute->setProtocol($protocol);
+                            $protocol_evaluation_attribute->setMember($user);
+                            $protocol_evaluation_attribute->setAttribute($evaluation_attribute);
+                            $protocol_evaluation_attribute->setScoring($post_data['attribute-'.$attr.'-scoring']);
+                            $protocol_evaluation_attribute->setFeedback($post_data['option-attribute-'.$attr.'-feedback']);
+                            if ( 'yes' == $post_data['option-attribute-'.$attr.'-feedback'] )
+                                $protocol_evaluation_attribute->setRevisions($post_data['attribute-'.$attr.'-feedback']);
+                            else
+                                $protocol_evaluation_attribute->setRevisions(NULL);
+                            
+                            $em->persist($protocol_evaluation_attribute);
+                            $em->flush();
+                        }
+                    }
+                }
+
                 // $protocol_revision->setDecision($post_data['decision']);
                 $protocol_revision->setFinalDecision($post_data['final-decision']);
                 $protocol_revision->setOtherComments($post_data['other-comments']);
                 $protocol_revision->setAverageScore($post_data['average-score']);
+                if ( array_key_exists('core-average-score', $post_data) )
+                    $protocol_revision->setCoreAverageScore($post_data['core-average-score']);
+                if ( array_key_exists('tech-average-score', $post_data) )
+                    $protocol_revision->setTechnicalAverageScore($post_data['tech-average-score']);
                 $protocol_revision->setZeroScores($post_data['zero-scores']);
                 // $protocol_revision->setSuggestions($post_data['suggestions']);
 
@@ -1423,11 +1482,26 @@ class ProtocolController extends Controller
 
         $user = $this->get('security.token_storage')->getToken()->getUser();
 
-        $protocol_revision_repository = $em->getRepository('Proethos2ModelBundle:ProtocolRevision');
-
         // getting the current submission
+        $protocol_repository = $em->getRepository('Proethos2ModelBundle:Protocol');
+        $protocol = $protocol_repository->find($protocol_id);
+        $submission = $protocol->getMainSubmission();
+        $output['protocol'] = $protocol;
+
+        // getting the protocol_revision
+        $protocol_revision_repository = $em->getRepository('Proethos2ModelBundle:ProtocolRevision');
         $protocol_revision = $protocol_revision_repository->find($protocol_revision_id);
         $output['protocol_revision'] = $protocol_revision;
+
+        // getting evaluation attribute list
+        $attribute_repository = $em->getRepository('Proethos2ModelBundle:EvaluationAttribute');
+        $attributes = $attribute_repository->findByCall($submission->getCall());
+        $output['attributes'] = $attributes;
+
+        // getting protocol_attribute
+        $protocol_attribute_repository = $em->getRepository('Proethos2ModelBundle:ProtocolEvaluationAttribute');
+        $protocol_attributes = $protocol_attribute_repository->findBy(array("protocol" => $protocol, "member" => $user));
+        $output['protocol_attributes'] = $protocol_attributes;
 
         return $output;
     }
@@ -1946,11 +2020,26 @@ class ProtocolController extends Controller
 
         $user = $this->get('security.token_storage')->getToken()->getUser();
 
-        $protocol_revision_repository = $em->getRepository('Proethos2ModelBundle:ProtocolRevision');
+        // getting the current submission
+        $protocol_repository = $em->getRepository('Proethos2ModelBundle:Protocol');
+        $protocol = $protocol_repository->find($protocol_id);
+        $submission = $protocol->getMainSubmission();
+        $output['protocol'] = $protocol;
 
         // getting the protocol_revision
+        $protocol_revision_repository = $em->getRepository('Proethos2ModelBundle:ProtocolRevision');
         $protocol_revision = $protocol_revision_repository->find($protocol_revision_id);
         $output['protocol_revision'] = $protocol_revision;
+
+        // getting evaluation attribute list
+        $attribute_repository = $em->getRepository('Proethos2ModelBundle:EvaluationAttribute');
+        $attributes = $attribute_repository->findByCall($submission->getCall());
+        $output['attributes'] = $attributes;
+
+        // getting protocol_attribute
+        $protocol_attribute_repository = $em->getRepository('Proethos2ModelBundle:ProtocolEvaluationAttribute');
+        $protocol_attributes = $protocol_attribute_repository->findBy(array("protocol" => $protocol, "member" => $user));
+        $output['protocol_attributes'] = $protocol_attributes;
 
         $roles = array('secretary', 'member-of-committee', 'administrator');
         if (!$protocol_revision or !array_intersect($roles, $user->getRolesSlug())) {

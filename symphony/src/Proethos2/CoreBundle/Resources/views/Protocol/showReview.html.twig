@@ -4,6 +4,10 @@
 </div>
 <div class="modal-body">
 
+    <h4>{% trans %}Core Attributes{% endtrans %}:</h4>
+
+    <hr />
+
     <h5>{% trans %}Effectiveness{% endtrans %}</h5>
     <p><b>{% trans %}Scoring{% endtrans %}:</b> {{ protocol_revision.effectivenessScoring }} {% trans %}Points{% endtrans %}</p>
     <p><b>{% trans %}Feedback{% endtrans %}:</b> {{ protocol_revision.effectivenessRevisions|nl2br }}</p>
@@ -36,8 +40,35 @@
     <p><b>{% trans %}Scoring{% endtrans %}:</b> {{ protocol_revision.crossCuttingThemesScoring }} {% trans %}Points{% endtrans %}</p>
     <p><b>{% trans %}Feedback{% endtrans %}:</b> {{ protocol_revision.crossCuttingThemesRevisions|nl2br }}</p>
 
+    {% if attributes %}
+        <br />
+        <h4>{% trans %}Technical Attributes{% endtrans %}:</h4>
+        <hr />
+        {% for attr in attributes %}
+            {% if protocol_attributes %}
+                {% set protocol_attribute = {} %}
+                {% for pa in protocol_attributes if pa.attribute == attr %}
+                    {% set protocol_attribute = pa %}
+
+                    <h5>{{ attr.name }}</h5>
+                    <p><b>{% trans %}Scoring{% endtrans %}:</b> {{ protocol_attribute.scoring }} {% trans %}Points{% endtrans %}</p>
+                    <p><b>{% trans %}Feedback{% endtrans %}:</b> {{ protocol_attribute.revisions|nl2br }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+        <hr />
+    {% endif %}
+
     <h5>{% trans %}Average score{% endtrans %}</h5>
     <p>{{ protocol_revision.averageScore }} {% trans %}Points{% endtrans %}</p>
+
+    {% if attributes %}
+        <h5>{% trans %}Core average score{% endtrans %}</h5>
+        <p>{{ protocol_revision.coreAverageScore }} {% trans %}Points{% endtrans %}</p>
+
+        <h5>{% trans %}Technical average score{% endtrans %}</h5>
+        <p>{{ protocol_revision.technicalAverageScore }} {% trans %}Points{% endtrans %}</p>
+    {% endif %}
 
     <h5>{% trans %}Decision{% endtrans %}</h5>
     <p>{{ protocol_revision.decisionLabel|trans }}</p>
