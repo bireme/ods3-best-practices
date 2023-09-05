@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2023-06-02T22:37:09Z" source-language="en" target-language="fr_FR" datatype="plaintext" original="not.available">
+  <file date="2023-09-05T01:20:21Z" source-language="en" target-language="fr_FR" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -198,6 +198,10 @@
         <source>Assigned</source>
         <target>Attribué</target>
       </trans-unit>
+      <trans-unit id="a086d942884a301b827479029ba19c2746237425" resname="Attribute">
+        <source>Attribute</source>
+        <target>Attribute</target>
+      </trans-unit>
       <trans-unit id="cb823c8ae8446378c95b2db5079825405b81a21b" resname="Attribute empirically supported but the innovation aspect is clearly described/argued for; Innovation relevant in a local context.">
         <source>Attribute empirically supported but the innovation aspect is clearly described/argued for; Innovation relevant in a local context.</source>
         <target>Attribute empirically supported but the innovation aspect is clearly described/argued for; Innovation relevant in a local context.</target>
@@ -246,6 +250,10 @@
         <source>Attribute unsupported; Contents do not provide information able to be assessed; Contents allude to an existing innovation.</source>
         <target>Attribute unsupported; Contents do not provide information able to be assessed; Contents allude to an existing innovation.</target>
       </trans-unit>
+      <trans-unit id="a6652617f2c799eb11ee727b16c5646c48af6905" resname="Attributes">
+        <source>Attributes</source>
+        <target>Attributes</target>
+      </trans-unit>
       <trans-unit id="6e89f4e5fd8a00366a1ce436153a6bcc3f939578" resname="Authentication type not valid">
         <source>Authentication type not valid</source>
         <target>Le type d'authentification n'est pas valide</target>
@@ -293,6 +301,10 @@
       <trans-unit id="291a0a58dfa6c640a90c1d868d2af190775ea219" resname="Call">
         <source>Call</source>
         <target>Appel</target>
+      </trans-unit>
+      <trans-unit id="512a613e70547687ec925f62285de602741dbf70" resname="Call Specific Information">
+        <source>Call Specific Information</source>
+        <target>Call Specific Information</target>
       </trans-unit>
       <trans-unit id="992c9ec7646a21f459d6278b5e2b7f76753ca9d7" resname="Call for Good Practices">
         <source>Call for Good Practices</source>
@@ -433,6 +445,14 @@
       <trans-unit id="c63d7dc26fc32ada5170c80598c4c75aefdcc105" resname="Controlled Lists">
         <source>Controlled Lists</source>
         <target>Listes contrôlées</target>
+      </trans-unit>
+      <trans-unit id="6de1e9a8dd7f7a7ec28f823fee23376f015e2ff5" resname="Core Attributes">
+        <source>Core Attributes</source>
+        <target>Core Attributes</target>
+      </trans-unit>
+      <trans-unit id="5c33aea589750f4e9cb1c99392a06288eaa5c761" resname="Core average score">
+        <source>Core average score</source>
+        <target>Core average score</target>
       </trans-unit>
       <trans-unit id="8f4321bf4cad4c9d362987bdde72ede6879654ea" resname="Cost-Effectiveness">
         <source>Cost-Effectiveness</source>
@@ -830,10 +850,6 @@
         <source>Fields answered with success!</source>
         <target>Les champs ont été répondus avec succès !</target>
       </trans-unit>
-      <trans-unit id="86c8dc33250a9cfdbb164a6b52e2712adf345c87" resname="Fifth step saved with success.">
-        <source>Fifth step saved with success.</source>
-        <target>Cinquième étape sauvée avec succès.</target>
-      </trans-unit>
       <trans-unit id="2c3cafa4db3f3e1e51b3dff4303502dbe42b7a89" resname="File">
         <source>File</source>
         <target>Fichier</target>
@@ -862,6 +878,10 @@
         <source>Filter by</source>
         <target>Filtrer par</target>
       </trans-unit>
+      <trans-unit id="892ac643fc4ac92689af1bbac7f6daed11dabff2" resname="Filter by call">
+        <source>Filter by call</source>
+        <target>Filter by call</target>
+      </trans-unit>
       <trans-unit id="a9660077b2bf17b83d5eb8b6dcc2a608c2102572" resname="Final Revision">
         <source>Final Revision</source>
         <target>Révision finale</target>
@@ -873,10 +893,6 @@
       <trans-unit id="0b2524216fdd23203c0429eb00e528a14e18fdfc" resname="First Author">
         <source>First Author</source>
         <target>Premier auteur</target>
-      </trans-unit>
-      <trans-unit id="e6aa62241a28ff638a1f8e537203ff4d5f651876" resname="First step saved with success.">
-        <source>First step saved with success.</source>
-        <target>La première étape a été sauvegardée avec succès.</target>
       </trans-unit>
       <trans-unit id="63b9bf1fe4b255b1f7cc9afa38fd55be44753c30" resname="Focus on Cross-Cutting Themes">
         <source>Focus on Cross-Cutting Themes</source>
@@ -897,10 +913,6 @@
       <trans-unit id="077bf108c773b211084cb356a4c34d79032515b0" resname="Form sections up to review">
         <source>Form sections up to review</source>
         <target>Form sections up to review</target>
-      </trans-unit>
-      <trans-unit id="e43268269e7edeb3cfcac1024e0ff4c1cb9363a6" resname="Fourth step saved with success.">
-        <source>Fourth step saved with success.</source>
-        <target>Quatrième étape sauvegardée avec succès.</target>
       </trans-unit>
       <trans-unit id="cec7d6c2129c9fe6a0dc554c6a825727af0a1055" resname="French message">
         <source>French message</source>
@@ -1398,6 +1410,18 @@
         <source>Message from plataform.</source>
         <target>Message de la plateforme.</target>
       </trans-unit>
+      <trans-unit id="1935af836fe13ee851ad1392b3d75d9a6a6f414d" resname="Message in French">
+        <source>Message in French</source>
+        <target>Message in French</target>
+      </trans-unit>
+      <trans-unit id="47ead2a370a75f6611d7c68676b3ed330ca73ea5" resname="Message in Portuguese">
+        <source>Message in Portuguese</source>
+        <target>Message in Portuguese</target>
+      </trans-unit>
+      <trans-unit id="d7e01fc5dd71f18886177cdb6b678031aa8f5c6e" resname="Message in Spanish">
+        <source>Message in Spanish</source>
+        <target>Message in Spanish</target>
+      </trans-unit>
       <trans-unit id="d378cd32935cd41425f00181812285372e78a72b" resname="Message sent to administrators.">
         <source>Message sent to administrators.</source>
         <target>Message envoyé aux administrateurs.</target>
@@ -1469,6 +1493,10 @@
       <trans-unit id="fb373941a47807ada47e699f5a809b28bf546761" resname="New Attachment">
         <source>New Attachment</source>
         <target>Nouvelle pièce jointe</target>
+      </trans-unit>
+      <trans-unit id="495e84de86d2633b612d85e749822fdd23d37a65" resname="New Attribute">
+        <source>New Attribute</source>
+        <target>New Attribute</target>
       </trans-unit>
       <trans-unit id="306fe2789904f1b757b6973ea3fe462ccc1cecd0" resname="New Call">
         <source>New Call</source>
@@ -1697,6 +1725,10 @@
       <trans-unit id="81a66b042f92ae09dec0fc1a1d5fccf4d2f6d252" resname="Opinions Required">
         <source>Opinions Required</source>
         <target>Avis requis</target>
+      </trans-unit>
+      <trans-unit id="e31d972229de381b461860014dd710856361917a" resname="Option">
+        <source>Option</source>
+        <target>Option</target>
       </trans-unit>
       <trans-unit id="798b5a742317d1ee7d4e7f9950b5af9c1f78759e" resname="Options have been saved with success!">
         <source>Options have been saved with success!</source>
@@ -2170,10 +2202,6 @@
         <source>Search for a user</source>
         <target>Chercher un utilisateur</target>
       </trans-unit>
-      <trans-unit id="74453d8d1933ee6bbcb1602df730b0cd1e8b7fb2" resname="Second step saved with success.">
-        <source>Second step saved with success.</source>
-        <target>Deuxième étape sauvegardée avec succès.</target>
-      </trans-unit>
       <trans-unit id="d6f96d0b20c5a986b22e3ff61a87a9beeb246259" resname="See Good Practice">
         <source>See Good Practice</source>
         <target>See Good Practice</target>
@@ -2270,10 +2298,6 @@
         <source>Set your password</source>
         <target>Choisissez votre mot de passe</target>
       </trans-unit>
-      <trans-unit id="63168acc7c4b5060e4ec704a16d994225a3c12ef" resname="Seventh step saved with success.">
-        <source>Seventh step saved with success.</source>
-        <target>Seventh step saved with success.</target>
-      </trans-unit>
       <trans-unit id="8dbb6c93559a43ed1374e30d3d74630574e6978c" resname="Show Good Practice">
         <source>Show Good Practice</source>
         <target>Show Good Practice</target>
@@ -2281,10 +2305,6 @@
       <trans-unit id="56860002c2285b9bff80391678937a3f082e20e5" resname="Sincerely">
         <source>Sincerely</source>
         <target>Sincèrement</target>
-      </trans-unit>
-      <trans-unit id="da581f85e0b26a16cba2c19d07dc95d9cdc81d4f" resname="Sixth step saved with success.">
-        <source>Sixth step saved with success.</source>
-        <target>Sixième étape sauvegardée avec succès.</target>
       </trans-unit>
       <trans-unit id="2eb56be3c2d93cdab0c52e677e3167dfddb30ac5" resname="Sources">
         <source>Sources</source>
@@ -2354,6 +2374,10 @@
         <source>Submission of good practice.</source>
         <target>Submission of good practice.</target>
       </trans-unit>
+      <trans-unit id="8de035545d6fa226da2b0642c2d790629bcd0695" resname="Submission saved with success.">
+        <source>Submission saved with success.</source>
+        <target>Submission saved with success.</target>
+      </trans-unit>
       <trans-unit id="c5eafe1a51b80e934915ccfb1d0afbde2967b915" resname="Submission started with success.">
         <source>Submission started with success.</source>
         <target>La proposition a démarré avec succès.</target>
@@ -2385,6 +2409,26 @@
       <trans-unit id="e3fc6e92f405dce30b18e6fab32a474d7ebafa45" resname="Subregion">
         <source>Subregion</source>
         <target>Sous-région</target>
+      </trans-unit>
+      <trans-unit id="e159d05a124cfbe60229903bf1f8e6a61682bee5" resname="Subtitle">
+        <source>Subtitle</source>
+        <target>Subtitle</target>
+      </trans-unit>
+      <trans-unit id="bdda5da88ffbc73ea3313af7bdf2c9f7f2ef4f0f" resname="Subtitle in English">
+        <source>Subtitle in English</source>
+        <target>Subtitle in English</target>
+      </trans-unit>
+      <trans-unit id="f76d287d04c5b96669b921d84c84b61cfe94b55a" resname="Subtitle in French">
+        <source>Subtitle in French</source>
+        <target>Subtitle in French</target>
+      </trans-unit>
+      <trans-unit id="7b9fc5fe9fe1393f9e7d9b7fc15c74eaf94816a7" resname="Subtitle in Portuguese">
+        <source>Subtitle in Portuguese</source>
+        <target>Subtitle in Portuguese</target>
+      </trans-unit>
+      <trans-unit id="876df5a8b69122e611553f6cda468dd98215a75a" resname="Subtitle in Spanish">
+        <source>Subtitle in Spanish</source>
+        <target>Subtitle in Spanish</target>
       </trans-unit>
       <trans-unit id="bda7dbdf25da49b74d2ce451f062424e9edabcbb" resname="Support information about the outcome and impact results">
         <source>Support information about the outcome and impact results</source>
@@ -2422,9 +2466,29 @@
         <source>Technical Assessment</source>
         <target>Évaluation technique</target>
       </trans-unit>
+      <trans-unit id="2c3da0568441161c7c88ee8caff918581e2f8638" resname="Technical Atributes">
+        <source>Technical Atributes</source>
+        <target>Technical Atributes</target>
+      </trans-unit>
+      <trans-unit id="25d8d8035f824149f440bcefbb9d47dbb7dd1e66" resname="Technical Attributes">
+        <source>Technical Attributes</source>
+        <target>Technical Attributes</target>
+      </trans-unit>
+      <trans-unit id="d34e083684d23890b79b25645151c1a66d4e8c41" resname="Technical Attributes (Reviewer)">
+        <source>Technical Attributes (Reviewer)</source>
+        <target>Technical Attributes (Reviewer)</target>
+      </trans-unit>
+      <trans-unit id="06578556d37637efa8f72479c98c31b4715725b2" resname="Technical Attributes (Submitter)">
+        <source>Technical Attributes (Submitter)</source>
+        <target>Technical Attributes (Submitter)</target>
+      </trans-unit>
       <trans-unit id="860452b75c152ee2e3fcfc8671c049657bee284f" resname="Technical Matters">
         <source>Technical Matters</source>
         <target>Questions techniques</target>
+      </trans-unit>
+      <trans-unit id="702cf8a44902e1a5ee2655ea9cb54aa9918ba006" resname="Technical average score">
+        <source>Technical average score</source>
+        <target>Technical average score</target>
       </trans-unit>
       <trans-unit id="92d0286da122f925192755a952e521131270bd5f" resname="Terms and conditions">
         <source>Terms and conditions</source>
@@ -2462,10 +2526,6 @@
         <source>There is no mail message set for this field.</source>
         <target>Il n'y a pas de message défini pour ce champ.</target>
       </trans-unit>
-      <trans-unit id="f7aa244befd5f0608d69214b90bbdd3cd00b3b82" resname="Third step saved with success.">
-        <source>Third step saved with success.</source>
-        <target>Troisième étape sauvegardée avec succès.</target>
-      </trans-unit>
       <trans-unit id="7599bd094d956e9f7dc3eef96dc65541a72a80f7" resname="This Good Practice is related to">
         <source>This Good Practice is related to</source>
         <target>This Good Practice is related to</target>
@@ -2502,6 +2562,22 @@
       <trans-unit id="2333cc69e478ce646eebb2603e8a1e6bf389efa9" resname="Title Acronym">
         <source>Title Acronym</source>
         <target>Sigle du titre</target>
+      </trans-unit>
+      <trans-unit id="1911076959e0d9e049c9e3129f07dd31eff212f9" resname="Title in English">
+        <source>Title in English</source>
+        <target>Title in English</target>
+      </trans-unit>
+      <trans-unit id="09e91476cc474de515669dccd0680ef94fd77452" resname="Title in French">
+        <source>Title in French</source>
+        <target>Title in French</target>
+      </trans-unit>
+      <trans-unit id="80002c8e85de266447cfc76206b9206a99545c94" resname="Title in Portuguese">
+        <source>Title in Portuguese</source>
+        <target>Title in Portuguese</target>
+      </trans-unit>
+      <trans-unit id="72af4205703196c960afe62bfcf6560728f85954" resname="Title in Spanish">
+        <source>Title in Spanish</source>
+        <target>Title in Spanish</target>
       </trans-unit>
       <trans-unit id="56029695c2c3d193b7214c1b45b3907e7b2cdb97" resname="Title of the Good Practice">
         <source>Title of the Good Practice</source>
