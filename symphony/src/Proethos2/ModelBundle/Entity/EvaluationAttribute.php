@@ -50,7 +50,7 @@ class EvaluationAttribute extends Base
 
     /**
      * @Gedmo\Translatable
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=1020)
      */
     private $name;
 
