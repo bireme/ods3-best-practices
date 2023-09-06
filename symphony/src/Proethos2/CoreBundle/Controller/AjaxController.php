@@ -119,7 +119,7 @@ class AjaxController extends Controller
                 if ( $tech_attributes ) {
                     $json = $serializer->serialize($data, 'json');
                     $data = json_decode($json, true);
-                    $data[0]['atributes'] = $tech_attributes;
+                    $data[0]['attributes'] = $tech_attributes;
                 }
             }
         } else {
