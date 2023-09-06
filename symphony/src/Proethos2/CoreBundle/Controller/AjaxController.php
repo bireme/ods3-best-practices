@@ -97,9 +97,31 @@ class AjaxController extends Controller
 
         $em = $this->getDoctrine()->getManager();
         $protocol_repository = $em->getRepository('Proethos2ModelBundle:Protocol');
+        $attribute_repository = $em->getRepository('Proethos2ModelBundle:TechnicalAttribute');
+        $submission_attribute_repository = $em->getRepository('Proethos2ModelBundle:SubmissionTechnicalAttribute');
 
         if ( $protocol_id ) {
             $data = $protocol_repository->findBy(array('id' => $protocol_id, 'status' => 'A'));
+            $submission = $data[0]->getMainSubmission();
+            $attributes = $attribute_repository->findByCall($submission->getCall());
+            
+            if ( $attributes ) {
+                $tech_attributes = array();
+
+                foreach ($attributes as $attr) {
+                    $submission_attributes = $submission_attribute_repository->findOneBy(array("submission" => $submission, "attribute" => $attr));
+                    $tech_attributes[] = array(
+                        'title' => $attr->getTitle(),
+                        'value' => $submission_attributes->getValue(),
+                    );
+                }
+
+                if ( $tech_attributes ) {
+                    $json = $serializer->serialize($data, 'json');
+                    $data = json_decode($json, true);
+                    $data[0]['atributes'] = $tech_attributes;
+                }
+            }
         } else {
             $protocols = $protocol_repository->findBy(array('status' => 'A'), $orderBy, $limit, $offset);
             $data['total'] = count($protocols);
