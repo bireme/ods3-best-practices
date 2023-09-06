@@ -1675,6 +1675,8 @@ class NewSubmissionController extends Controller
                         );
                         $output['coop_modality'] = $coop_modality;
 
+                        $output['attributes'] = $attributes;
+
                         $html = $this->renderView(
                             'Proethos2CoreBundle:NewSubmission:showPdf.html.twig',
                             $output
