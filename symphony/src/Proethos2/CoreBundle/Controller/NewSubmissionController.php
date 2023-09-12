@@ -1242,6 +1242,11 @@ class NewSubmissionController extends Controller
         $attributes = $attribute_repository->findByCall($submission->getCall());
         $output['attributes'] = $attributes;
 
+        // getting submission_attribute
+        $submission_attribute_repository = $em->getRepository('Proethos2ModelBundle:SubmissionTechnicalAttribute');
+        $submission_attributes = $submission_attribute_repository->findBy(array("submission" => $submission));
+        $output['submission_attributes'] = $submission_attributes;
+
         $mail_translator = $this->get('translator');
         $mail_translator->setLocale($submission->getLanguage());
 
@@ -1674,8 +1679,6 @@ class NewSubmissionController extends Controller
                             "D" => $translator->trans("Triangular Cooperation"),
                         );
                         $output['coop_modality'] = $coop_modality;
-
-                        $output['attributes'] = $attributes;
 
                         $html = $this->renderView(
                             'Proethos2CoreBundle:NewSubmission:showPdf.html.twig',
