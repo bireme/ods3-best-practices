@@ -91,7 +91,7 @@
             {% endif %}
             {% if attributes %}
                 <li role="presentation" {% if app.request.get('_route') == "submission_new_technical_attributes" %}class='active'{% endif %}>
-                    <a href="{{ path('submission_new_technical_attributes', {'submission_id': submission.id }) }}" title='{% trans %}Call Specific Information{% endtrans %}'>{% trans %}Call Specific Information{% endtrans %}</a>
+                    <a href="{{ path('submission_new_technical_attributes', {'submission_id': submission.id }) }}" title='{% trans %}Specific Questions of a Call for Good Practices{% endtrans %}'>{% trans %}Specific Questions of a Call for Good Practices{% endtrans %}</a>
                 </li>
             {% endif %}
             <li role="presentation" {% if app.request.get('_route') == "submission_new_sixth_step" %}class='active'{% endif %}>
