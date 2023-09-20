@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2023-09-15T20:54:02Z" source-language="en" target-language="es_ES" datatype="plaintext" original="not.available">
+  <file date="2023-09-20T19:33:27Z" source-language="en" target-language="es_ES" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -1162,6 +1162,10 @@
         <source>In your opinion, the resources assigned to the accomplishment of this Good Practice (financial, technological and/or manpower) were implement in an efficient way? Support information about the outcome and impact results</source>
         <target>En su opinión, ¿Los recursos asignados a la realización de esta Buena Práctica (financieros, tecnológicos y/o humanos) fueron implementados de manera eficiente? Apoye con información sobre los resultados y el impacto</target>
       </trans-unit>
+      <trans-unit id="d60a7e0a67e990aa3109a61622c10a0fba9189fa" resname="In your opinion, the resources assigned to the accomplishment of this Good Practice (financial, technological and/or manpower) were implemented in an efficient way">
+        <source>In your opinion, the resources assigned to the accomplishment of this Good Practice (financial, technological and/or manpower) were implemented in an efficient way</source>
+        <target>In your opinion, the resources assigned to the accomplishment of this Good Practice (financial, technological and/or manpower) were implemented in an efficient way</target>
+      </trans-unit>
       <trans-unit id="013dcdb66b14b0fbb2f5393c8f52a72509f21819" resname="Inactive account. Please try again later.">
         <source>Inactive account. Please try again later.</source>
         <target>Cuenta inactiva. Por favor intente más tarde.</target>
@@ -1189,6 +1193,10 @@
       <trans-unit id="50c1e4d62d2b57fbcef2a9174595f2c41f06c9ed" resname="Information on the presence of a financial management structure. Information on a budgetary strategy. Evidence regarding budget ability to reach objectives.">
         <source>Information on the presence of a financial management structure. Information on a budgetary strategy. Evidence regarding budget ability to reach objectives.</source>
         <target>Información sobre la presencia de una estructura de gestión financiera. Información sobre una estrategia presupuestaria. Evidencia sobre la capacidad del presupuesto para alcanzar los objetivos.</target>
+      </trans-unit>
+      <trans-unit id="e639a04dc6ea69b401c4727ee6b370cc3fe9cf1d" resname="Information regarding resource adjustments. Information that shows that any surplus of resources was a result of strategic decisions to increase efficiency and not mismanagement. Information regarding strategies to augment/ensure efficiency.">
+        <source>Information regarding resource adjustments. Information that shows that any surplus of resources was a result of strategic decisions to increase efficiency and not mismanagement. Information regarding strategies to augment/ensure efficiency.</source>
+        <target>Information regarding resource adjustments. Information that shows that any surplus of resources was a result of strategic decisions to increase efficiency and not mismanagement. Information regarding strategies to augment/ensure efficiency.</target>
       </trans-unit>
       <trans-unit id="3bc8ce949b55b2ea56610f85a5be64545034c6a9" resname="Information that outlines the capacity for the Good Practice to be replicated and/or adapted to other contexts. Information regarding the range of replicability and/or adaptability.">
         <source>Information that outlines the capacity for the Good Practice to be replicated and/or adapted to other contexts. Information regarding the range of replicability and/or adaptability.</source>
