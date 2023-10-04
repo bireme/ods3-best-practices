@@ -297,6 +297,25 @@ class Solr {
             }
         }
 
+        // call field
+        $call = $submission->getCall();
+        if ( $call ) {
+            $call->setTranslatableLocale('en');
+            $em->refresh($call);
+            // call translations
+            $translations = $trans_repository->findTranslations($call);
+            $texts = array();
+            $texts['en'] = 'en^'.$call->getName();
+            foreach(array('pt_BR', 'es_ES', 'fr_FR') as $_locale) {
+                if ( array_key_exists($_locale, $translations) ) {
+                    $text = $translations[$_locale];
+                    $_locale = substr($_locale, 0, 2);
+                    $texts[$_locale] = $_locale.'^'.$text['name'];
+                }
+            }
+            $data['call'] = implode('|', $texts);
+        }
+
         $json = json_encode($data);
 
         $ch = curl_init($this->solr_service.'/json/docs?commit=true');
