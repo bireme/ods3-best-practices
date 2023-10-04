@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2023-09-20T19:33:26Z" source-language="en" target-language="pt_BR" datatype="plaintext" original="not.available">
+  <file date="2023-09-26T12:21:41Z" source-language="en" target-language="pt_BR" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -200,7 +200,7 @@
       </trans-unit>
       <trans-unit id="a086d942884a301b827479029ba19c2746237425" resname="Attribute">
         <source>Attribute</source>
-        <target>Attribute</target>
+        <target>Atributo</target>
       </trans-unit>
       <trans-unit id="cb823c8ae8446378c95b2db5079825405b81a21b" resname="Attribute empirically supported but the innovation aspect is clearly described/argued for; Innovation relevant in a local context.">
         <source>Attribute empirically supported but the innovation aspect is clearly described/argued for; Innovation relevant in a local context.</source>
@@ -252,7 +252,7 @@
       </trans-unit>
       <trans-unit id="a6652617f2c799eb11ee727b16c5646c48af6905" resname="Attributes">
         <source>Attributes</source>
-        <target>Attributes</target>
+        <target>Atributos</target>
       </trans-unit>
       <trans-unit id="6e89f4e5fd8a00366a1ce436153a6bcc3f939578" resname="Authentication type not valid">
         <source>Authentication type not valid</source>
@@ -304,7 +304,7 @@
       </trans-unit>
       <trans-unit id="512a613e70547687ec925f62285de602741dbf70" resname="Call Specific Information">
         <source>Call Specific Information</source>
-        <target>Call Specific Information</target>
+        <target>Informações específicas da chamada</target>
       </trans-unit>
       <trans-unit id="992c9ec7646a21f459d6278b5e2b7f76753ca9d7" resname="Call for Good Practices">
         <source>Call for Good Practices</source>
@@ -448,11 +448,11 @@
       </trans-unit>
       <trans-unit id="6de1e9a8dd7f7a7ec28f823fee23376f015e2ff5" resname="Core Attributes">
         <source>Core Attributes</source>
-        <target>Core Attributes</target>
+        <target>Principais atributos</target>
       </trans-unit>
       <trans-unit id="5c33aea589750f4e9cb1c99392a06288eaa5c761" resname="Core average score">
         <source>Core average score</source>
-        <target>Core average score</target>
+        <target>Pontuação média básica</target>
       </trans-unit>
       <trans-unit id="8f4321bf4cad4c9d362987bdde72ede6879654ea" resname="Cost-Effectiveness">
         <source>Cost-Effectiveness</source>
@@ -881,7 +881,7 @@
       </trans-unit>
       <trans-unit id="892ac643fc4ac92689af1bbac7f6daed11dabff2" resname="Filter by call">
         <source>Filter by call</source>
-        <target>Filter by call</target>
+        <target>Filtrar por chamada</target>
       </trans-unit>
       <trans-unit id="a9660077b2bf17b83d5eb8b6dcc2a608c2102572" resname="Final Revision">
         <source>Final Revision</source>
@@ -1165,7 +1165,7 @@
       </trans-unit>
       <trans-unit id="d60a7e0a67e990aa3109a61622c10a0fba9189fa" resname="In your opinion, the resources assigned to the accomplishment of this Good Practice (financial, technological and/or manpower) were implemented in an efficient way">
         <source>In your opinion, the resources assigned to the accomplishment of this Good Practice (financial, technological and/or manpower) were implemented in an efficient way</source>
-        <target>In your opinion, the resources assigned to the accomplishment of this Good Practice (financial, technological and/or manpower) were implemented in an efficient way</target>
+        <target>Na sua opinião, os recursos destinados à realização desta Boa Prática (financeiros, tecnológicos e/ou humanos) foram implementados de forma eficiente? Suporte com informações sobre resultados e impactos</target>
       </trans-unit>
       <trans-unit id="013dcdb66b14b0fbb2f5393c8f52a72509f21819" resname="Inactive account. Please try again later.">
         <source>Inactive account. Please try again later.</source>
@@ -1197,7 +1197,8 @@
       </trans-unit>
       <trans-unit id="e639a04dc6ea69b401c4727ee6b370cc3fe9cf1d" resname="Information regarding resource adjustments. Information that shows that any surplus of resources was a result of strategic decisions to increase efficiency and not mismanagement. Information regarding strategies to augment/ensure efficiency.">
         <source>Information regarding resource adjustments. Information that shows that any surplus of resources was a result of strategic decisions to increase efficiency and not mismanagement. Information regarding strategies to augment/ensure efficiency.</source>
-        <target>Information regarding resource adjustments. Information that shows that any surplus of resources was a result of strategic decisions to increase efficiency and not mismanagement. Information regarding strategies to augment/ensure efficiency.</target>
+        <target xml:space="preserve">Informações sobre ajustes de recursos. Informações que demonstram que qualquer excedente de recursos foi resultado de decisões estratégicas para aumentar a eficiência e não de má administração. Informações sobre estratégias para aumentar/garantir a eficiência.
+</target>
       </trans-unit>
       <trans-unit id="3bc8ce949b55b2ea56610f85a5be64545034c6a9" resname="Information that outlines the capacity for the Good Practice to be replicated and/or adapted to other contexts. Information regarding the range of replicability and/or adaptability.">
         <source>Information that outlines the capacity for the Good Practice to be replicated and/or adapted to other contexts. Information regarding the range of replicability and/or adaptability.</source>
@@ -1421,15 +1422,15 @@
       </trans-unit>
       <trans-unit id="1935af836fe13ee851ad1392b3d75d9a6a6f414d" resname="Message in French">
         <source>Message in French</source>
-        <target>Message in French</target>
+        <target>Mensagem em francês</target>
       </trans-unit>
       <trans-unit id="47ead2a370a75f6611d7c68676b3ed330ca73ea5" resname="Message in Portuguese">
         <source>Message in Portuguese</source>
-        <target>Message in Portuguese</target>
+        <target>Mensagem em português</target>
       </trans-unit>
       <trans-unit id="d7e01fc5dd71f18886177cdb6b678031aa8f5c6e" resname="Message in Spanish">
         <source>Message in Spanish</source>
-        <target>Message in Spanish</target>
+        <target>Mensagem em espanhol</target>
       </trans-unit>
       <trans-unit id="d378cd32935cd41425f00181812285372e78a72b" resname="Message sent to administrators.">
         <source>Message sent to administrators.</source>
@@ -1505,7 +1506,7 @@
       </trans-unit>
       <trans-unit id="495e84de86d2633b612d85e749822fdd23d37a65" resname="New Attribute">
         <source>New Attribute</source>
-        <target>New Attribute</target>
+        <target>Novo atributo</target>
       </trans-unit>
       <trans-unit id="306fe2789904f1b757b6973ea3fe462ccc1cecd0" resname="New Call">
         <source>New Call</source>
@@ -1737,7 +1738,7 @@
       </trans-unit>
       <trans-unit id="e31d972229de381b461860014dd710856361917a" resname="Option">
         <source>Option</source>
-        <target>Option</target>
+        <target>Opção</target>
       </trans-unit>
       <trans-unit id="798b5a742317d1ee7d4e7f9950b5af9c1f78759e" resname="Options have been saved with success!">
         <source>Options have been saved with success!</source>
@@ -2337,7 +2338,7 @@
       </trans-unit>
       <trans-unit id="4502354a2b12013824497671833474ce392fd0b5" resname="Specific Questions of a Call for Good Practices">
         <source>Specific Questions of a Call for Good Practices</source>
-        <target>Specific Questions of a Call for Good Practices</target>
+        <target>Perguntas específicas de uma chamada para boas práticas</target>
       </trans-unit>
       <trans-unit id="fda17c6e3e035285877348bdd116685dfef47c8b" resname="Specific/Target population group">
         <source>Specific/Target population group</source>
@@ -2425,23 +2426,23 @@
       </trans-unit>
       <trans-unit id="e159d05a124cfbe60229903bf1f8e6a61682bee5" resname="Subtitle">
         <source>Subtitle</source>
-        <target>Subtitle</target>
+        <target>Legenda</target>
       </trans-unit>
       <trans-unit id="bdda5da88ffbc73ea3313af7bdf2c9f7f2ef4f0f" resname="Subtitle in English">
         <source>Subtitle in English</source>
-        <target>Subtitle in English</target>
+        <target>Legenda em inglês</target>
       </trans-unit>
       <trans-unit id="f76d287d04c5b96669b921d84c84b61cfe94b55a" resname="Subtitle in French">
         <source>Subtitle in French</source>
-        <target>Subtitle in French</target>
+        <target>Legenda em francês</target>
       </trans-unit>
       <trans-unit id="7b9fc5fe9fe1393f9e7d9b7fc15c74eaf94816a7" resname="Subtitle in Portuguese">
         <source>Subtitle in Portuguese</source>
-        <target>Subtitle in Portuguese</target>
+        <target>Legenda em português</target>
       </trans-unit>
       <trans-unit id="876df5a8b69122e611553f6cda468dd98215a75a" resname="Subtitle in Spanish">
         <source>Subtitle in Spanish</source>
-        <target>Subtitle in Spanish</target>
+        <target>Legenda em espanhol</target>
       </trans-unit>
       <trans-unit id="bda7dbdf25da49b74d2ce451f062424e9edabcbb" resname="Support information about the outcome and impact results">
         <source>Support information about the outcome and impact results</source>
@@ -2481,19 +2482,19 @@
       </trans-unit>
       <trans-unit id="2c3da0568441161c7c88ee8caff918581e2f8638" resname="Technical Atributes">
         <source>Technical Atributes</source>
-        <target>Technical Atributes</target>
+        <target>Atributos técnicos</target>
       </trans-unit>
       <trans-unit id="25d8d8035f824149f440bcefbb9d47dbb7dd1e66" resname="Technical Attributes">
         <source>Technical Attributes</source>
-        <target>Technical Attributes</target>
+        <target>Atributos técnicos</target>
       </trans-unit>
       <trans-unit id="d34e083684d23890b79b25645151c1a66d4e8c41" resname="Technical Attributes (Reviewer)">
         <source>Technical Attributes (Reviewer)</source>
-        <target>Technical Attributes (Reviewer)</target>
+        <target>Atributos técnicos (Revisor)</target>
       </trans-unit>
       <trans-unit id="06578556d37637efa8f72479c98c31b4715725b2" resname="Technical Attributes (Submitter)">
         <source>Technical Attributes (Submitter)</source>
-        <target>Technical Attributes (Submitter)</target>
+        <target>Atributos técnicos (Remetente)</target>
       </trans-unit>
       <trans-unit id="860452b75c152ee2e3fcfc8671c049657bee284f" resname="Technical Matters">
         <source>Technical Matters</source>
@@ -2501,7 +2502,7 @@
       </trans-unit>
       <trans-unit id="702cf8a44902e1a5ee2655ea9cb54aa9918ba006" resname="Technical average score">
         <source>Technical average score</source>
-        <target>Technical average score</target>
+        <target>Pontuação técnica média</target>
       </trans-unit>
       <trans-unit id="92d0286da122f925192755a952e521131270bd5f" resname="Terms and conditions">
         <source>Terms and conditions</source>
@@ -2579,19 +2580,19 @@
       </trans-unit>
       <trans-unit id="1911076959e0d9e049c9e3129f07dd31eff212f9" resname="Title in English">
         <source>Title in English</source>
-        <target>Title in English</target>
+        <target>Título em inglês</target>
       </trans-unit>
       <trans-unit id="09e91476cc474de515669dccd0680ef94fd77452" resname="Title in French">
         <source>Title in French</source>
-        <target>Title in French</target>
+        <target>Título em francês</target>
       </trans-unit>
       <trans-unit id="80002c8e85de266447cfc76206b9206a99545c94" resname="Title in Portuguese">
         <source>Title in Portuguese</source>
-        <target>Title in Portuguese</target>
+        <target>Título em português</target>
       </trans-unit>
       <trans-unit id="72af4205703196c960afe62bfcf6560728f85954" resname="Title in Spanish">
         <source>Title in Spanish</source>
-        <target>Title in Spanish</target>
+        <target>Título em espanhol</target>
       </trans-unit>
       <trans-unit id="56029695c2c3d193b7214c1b45b3907e7b2cdb97" resname="Title of the Good Practice">
         <source>Title of the Good Practice</source>
