@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2023-09-20T20:46:37Z" source-language="en" target-language="es_ES" datatype="plaintext" original="not.available">
+  <file date="2023-11-08T14:58:42Z" source-language="en" target-language="es_ES" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -2749,7 +2749,7 @@
       </trans-unit>
       <trans-unit id="78a2b7591769ffe2f5c3e2e78728d8c5b5e3e84a" resname="Was the GP able to transfer technologies, and/or to disseminate useful knowledge adaptable to other realities, and could it be scaled up">
         <source>Was the GP able to transfer technologies, and/or to disseminate useful knowledge adaptable to other realities, and could it be scaled up</source>
-        <target>¿Pudo la BP transferir tecnologías y/o difundir conocimientos útiles adaptables a otras realidades, y podría esta escalarse?</target>
+        <target>¿Pudo la BP transferir tecnologías y/o difundir conocimientos útiles adaptables a otras realidades, y podría esta escalarse</target>
       </trans-unit>
       <trans-unit id="163c684223d2c36fba27087cb86566c7d28a7159" resname="Was the GP able to transfer technologies, and/or to disseminate useful knowledge adaptable to other realities, and could it be scaled up? Please describe how">
         <source>Was the GP able to transfer technologies, and/or to disseminate useful knowledge adaptable to other realities, and could it be scaled up? Please describe how</source>

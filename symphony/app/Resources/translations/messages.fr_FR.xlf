@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2023-09-20T19:33:28Z" source-language="en" target-language="fr_FR" datatype="plaintext" original="not.available">
+  <file date="2023-11-08T15:07:28Z" source-language="en" target-language="fr_FR" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -8,7 +8,7 @@
     <body>
       <trans-unit id="512a320c65c60502039202acfbd99c760574fedd" resname="(equity, gender, ethnicity, and human rights)">
         <source>(equity, gender, ethnicity, and human rights)</source>
-        <target>(equity, gender, ethnicity, and human rights)</target>
+        <target>(équité, genre, ethnicité et droits de l'homme)</target>
       </trans-unit>
       <trans-unit id="9c6014edd87406246968b687073a3900ecbac4ab" resname="(please specify)">
         <source>(please specify)</source>
@@ -16,7 +16,7 @@
       </trans-unit>
       <trans-unit id="973bd16032b2826744d921a34737f09a45efd7e4" resname="*Please upload the form using the New Attachment button">
         <source>*Please upload the form using the New Attachment button</source>
-        <target>*Please upload the form using the New Attachment button</target>
+        <target>*Veuillez télécharger le formulaire en utilisant le bouton Nouvelle pièce jointe.</target>
       </trans-unit>
       <trans-unit id="f7fae9b58ef582a295b2bbe3ffcf73705281cd4b" resname="12 months">
         <source>12 months</source>
@@ -40,19 +40,19 @@
       </trans-unit>
       <trans-unit id="62caf0c50e282dbcd0459999b3b0426cda34d7b6" resname="A new good practice has been submitted.">
         <source>A new good practice has been submitted.</source>
-        <target>A new good practice has been submitted.</target>
+        <target>Une nouvelle bonne pratique a été envoyée.</target>
       </trans-unit>
       <trans-unit id="d3b30d0a372865377d57589e57a8cf77b615b63f" resname="A new good practice needs your analysis.">
         <source>A new good practice needs your analysis.</source>
-        <target>A new good practice needs your analysis.</target>
+        <target>Une nouvelle bonne pratique nécessite votre analyse.</target>
       </trans-unit>
       <trans-unit id="1131f04b6fda8ee170b77c66b96b09d5c10e9d13" resname="A new good practice review was submitted">
         <source>A new good practice review was submitted</source>
-        <target>A new good practice review was submitted</target>
+        <target>Un nouvel examen des bonnes pratiques a été envoyé</target>
       </trans-unit>
       <trans-unit id="fe1f2c4d494fc40392e39bec35686602dd971e3b" resname="A new monitoring action has been submitted.">
         <source>A new monitoring action has been submitted.</source>
-        <target>Une nouvelle action de surveillance a été soumise.</target>
+        <target>Une nouvelle action de surveillance a été envoyée.</target>
       </trans-unit>
       <trans-unit id="1b1726908c1c87c027d7f7456dc496ddd7d8fcd3" resname="Accepted in">
         <source>Accepted in</source>
@@ -76,7 +76,7 @@
       </trans-unit>
       <trans-unit id="9af0a8d8d4020e3d65aedbff3752022a011a0889" resname="Adaptability">
         <source>Adaptability</source>
-        <target>Adaptability</target>
+        <target>Adaptabilité</target>
       </trans-unit>
       <trans-unit id="0007bbcb150c3dd5e7be6b1cfb9b0d9c6423d79e" resname="Adaptability &amp; Replicability">
         <source><![CDATA[Adaptability & Replicability]]></source>
@@ -136,7 +136,7 @@
       </trans-unit>
       <trans-unit id="80db690407b3937e9641fdb32e01b5ee51900657" resname="Any specific population group?">
         <source>Any specific population group?</source>
-        <target>Any specific population group?</target>
+        <target>Y a-t-il un groupe de population spécifique ?</target>
       </trans-unit>
       <trans-unit id="41b81eb8db1b97e812a8fc182e3a5b3ce0f3aacb" resname="Approved">
         <source>Approved</source>
@@ -144,11 +144,11 @@
       </trans-unit>
       <trans-unit id="2ee0b4674dbdffd3c03e1697e56c1054affc77b4" resname="Are you sure that you want to delete this good practice?">
         <source>Are you sure that you want to delete this good practice?</source>
-        <target>Are you sure that you want to delete this good practice?</target>
+        <target>Êtes-vous sûr de vouloir supprimer cette bonne pratique ?</target>
       </trans-unit>
       <trans-unit id="09ea3b8157d9eb5637cc6ebe27a58b75e5136315" resname="Are you sure that you want to end this good practice evaluation?">
         <source>Are you sure that you want to end this good practice evaluation?</source>
-        <target>Are you sure that you want to end this good practice evaluation?</target>
+        <target>Êtes-vous sûr de vouloir mettre fin à l'examen de cette bonne pratique ?</target>
       </trans-unit>
       <trans-unit id="82a015d57a9b653f5938e233e81618c31955e00e" resname="Are you sure that you want to end this protocol evaluation?">
         <source>Are you sure that you want to end this protocol evaluation?</source>
@@ -168,15 +168,15 @@
       </trans-unit>
       <trans-unit id="ee1e830a987d2296cb1be365bf01cef55b5ca9ad" resname="Are you sure that you want to retrieve this good practice?">
         <source>Are you sure that you want to retrieve this good practice?</source>
-        <target>Are you sure that you want to retrieve this good practice?</target>
+        <target>Êtes-vous sûr de vouloir récupérer cette bonne pratique ?</target>
       </trans-unit>
       <trans-unit id="875862dcfcb2c2cac85eba041943ba2d50434127" resname="Are you sure that you want to set this good practice as Exempt?">
         <source>Are you sure that you want to set this good practice as Exempt?</source>
-        <target>Are you sure that you want to set this good practice as Exempt?</target>
+        <target>Êtes-vous sûr de vouloir classer cette bonne pratique comme Exempté ?</target>
       </trans-unit>
       <trans-unit id="15162d03c329606a478f3ad122d8cb33cb6a93a4" resname="Are you sure that you want to withdraw this good practice?">
         <source>Are you sure that you want to withdraw this good practice?</source>
-        <target>Are you sure that you want to withdraw this good practice?</target>
+        <target>Êtes-vous sûr de vouloir retirer cette bonne pratique ?</target>
       </trans-unit>
       <trans-unit id="8de6e73ba7b7e7a2c5f18e2bc38d0a44a17be1d3" resname="Are you sure you want to continue?">
         <source>Are you sure you want to continue?</source>
@@ -188,7 +188,7 @@
       </trans-unit>
       <trans-unit id="1dae80a23c59e3a22a1730955d2847972fd28e28" resname="Are you sure you want to send this review?">
         <source>Are you sure you want to send this review?</source>
-        <target>Are you sure you want to send this review?</target>
+        <target>Êtes-vous sûr de vouloir envoyer cette révision ?</target>
       </trans-unit>
       <trans-unit id="410bf23a3f080def9c7a976a16305bcde7943ed1" resname="Are you sure?">
         <source>Are you sure?</source>
@@ -200,59 +200,59 @@
       </trans-unit>
       <trans-unit id="a086d942884a301b827479029ba19c2746237425" resname="Attribute">
         <source>Attribute</source>
-        <target>Attribute</target>
+        <target>Attribut</target>
       </trans-unit>
       <trans-unit id="cb823c8ae8446378c95b2db5079825405b81a21b" resname="Attribute empirically supported but the innovation aspect is clearly described/argued for; Innovation relevant in a local context.">
         <source>Attribute empirically supported but the innovation aspect is clearly described/argued for; Innovation relevant in a local context.</source>
-        <target>Attribute empirically supported but the innovation aspect is clearly described/argued for; Innovation relevant in a local context.</target>
+        <target>Attribut justifié de manière empirique, mais l'aspect de l'innovation est clairement décrit/argumenté ; innovation pertinente dans un contexte local.</target>
       </trans-unit>
       <trans-unit id="ed66505ceec6cedb59db48f9781dcd1bd3443082" resname="Attribute empirically supported; Contents limit R/A to a local/national setting.">
         <source>Attribute empirically supported; Contents limit R/A to a local/national setting.</source>
-        <target>Attribute empirically supported; Contents limit R/A to a local/national setting.</target>
+        <target>Attribut justifié de manière empirique ; le contenu limite la R/A au cadre local/national.</target>
       </trans-unit>
       <trans-unit id="ccd6a0fb4e3ccd06adb7dd1103ef1871ca67b896" resname="Attribute empirically supported; Innovation is in ideation stage and/or is skimmed over.">
         <source>Attribute empirically supported; Innovation is in ideation stage and/or is skimmed over.</source>
-        <target>Attribute empirically supported; Innovation is in ideation stage and/or is skimmed over.</target>
+        <target>Attribut justifié de manière empirique ; l'innovation est au stade de l'idéation et/ou est superficiellement abordée.</target>
       </trans-unit>
       <trans-unit id="6fa2b09843647688c1feafe708729e504c3fd91b" resname="Attribute empirically supported; Proposal is in ideation stage.">
         <source>Attribute empirically supported; Proposal is in ideation stage.</source>
-        <target>Attribute empirically supported; Proposal is in ideation stage.</target>
+        <target>Attribut justifié empiriquement ; la proposition en est au stade de l'idéation.</target>
       </trans-unit>
       <trans-unit id="df0152f809d243484d552ad210db01c0a5ada6c0" resname="Attribute supported with evidence collected through the activities ; Contents show R/A can be extended to the whole Region of the Americas.">
         <source>Attribute supported with evidence collected through the activities ; Contents show R/A can be extended to the whole Region of the Americas.</source>
-        <target>Attribute supported with evidence collected through the activities ; Contents show R/A can be extended to the whole Region of the Americas.</target>
+        <target>Attribut justifié par des évidences collectées à travers les activités ; Le contenu montre que la R/A peut être étendue à l'ensemble de la Région des Amériques.</target>
       </trans-unit>
       <trans-unit id="2909d3f50795b0d4e4fff87a3c2ab52e3a07087e" resname="Attribute supported with evidence collected through the activities ; Contents show a proven and/or fully developed strategy.">
         <source>Attribute supported with evidence collected through the activities ; Contents show a proven and/or fully developed strategy.</source>
-        <target>Attribute supported with evidence collected through the activities ; Contents show a proven and/or fully developed strategy.</target>
+        <target>Attribut justifié par des évidences collectées lors des activités ; le contenu montre une stratégie éprouvée et/ou entièrement développée.</target>
       </trans-unit>
       <trans-unit id="869376e5d8f3a9d8cd9b19414c08d908b089ca25" resname="Attribute supported with evidence collected through the activities; Contents show a complete achievement.">
         <source>Attribute supported with evidence collected through the activities; Contents show a complete achievement.</source>
-        <target>Attribute supported with evidence collected through the activities; Contents show a complete achievement.</target>
+        <target>Attribut justifié par des évidences collectées lors des activités ; le contenu montre une réalisation complète.</target>
       </trans-unit>
       <trans-unit id="5a7b087f66543d143a955b4f20050b7ef0e47964" resname="Attribute supported with external evidence; Contents limit R/A to a sub-regional setting.">
         <source>Attribute supported with external evidence; Contents limit R/A to a sub-regional setting.</source>
-        <target>Attribute supported with external evidence; Contents limit R/A to a sub-regional setting.</target>
+        <target>Attribut justifié par des évidences externes ; le contenu limite la R/A au cadre sous-régional.</target>
       </trans-unit>
       <trans-unit id="71caa96a7c9c51f6c43a8ea7c5e0ae63896550e7" resname="Attribute supported with external evidence; Contents show a partial achievement.">
         <source>Attribute supported with external evidence; Contents show a partial achievement.</source>
-        <target>Attribute supported with external evidence; Contents show a partial achievement.</target>
+        <target>Attribut justifié par des évidences externes ; le contenu montre une réalisation partielle.</target>
       </trans-unit>
       <trans-unit id="7e416772182be7cdd5db56898530d81ad54d584a" resname="Attribute supported with external evidences or those collected through the activities; Innovation aspect is clearly described/argued for; Innovation relevant in an international context.">
         <source>Attribute supported with external evidences or those collected through the activities; Innovation aspect is clearly described/argued for; Innovation relevant in an international context.</source>
-        <target>Attribute supported with external evidences or those collected through the activities; Innovation aspect is clearly described/argued for; Innovation relevant in an international context.</target>
+        <target>Attribut justifié par des évidences externes ou collectées à travers les activités ; l'aspect innovation est clairement décrit/argumenté ; l'innovation est pertinente dans un contexte international.</target>
       </trans-unit>
       <trans-unit id="4897995cc2521dfb60736b2e90668831c05b46f9" resname="Attribute unsupported; Contents do not provide information able to be assessed.">
         <source>Attribute unsupported; Contents do not provide information able to be assessed.</source>
-        <target>Attribute unsupported; Contents do not provide information able to be assessed.</target>
+        <target>Attribut non étayé ; le contenu ne fournit pas d'informations susceptibles d'être évaluées.</target>
       </trans-unit>
       <trans-unit id="df6237e45e22a19143108cdbbce776a9b251690b" resname="Attribute unsupported; Contents do not provide information able to be assessed; Contents allude to an existing innovation.">
         <source>Attribute unsupported; Contents do not provide information able to be assessed; Contents allude to an existing innovation.</source>
-        <target>Attribute unsupported; Contents do not provide information able to be assessed; Contents allude to an existing innovation.</target>
+        <target>Attribut non étayé ; le contenu ne fournit pas d'informations susceptibles d'être évaluées ; le contenu fait allusion à une innovation déjà en place.</target>
       </trans-unit>
       <trans-unit id="a6652617f2c799eb11ee727b16c5646c48af6905" resname="Attributes">
         <source>Attributes</source>
-        <target>Attributes</target>
+        <target>Attributs</target>
       </trans-unit>
       <trans-unit id="6e89f4e5fd8a00366a1ce436153a6bcc3f939578" resname="Authentication type not valid">
         <source>Authentication type not valid</source>
@@ -264,7 +264,7 @@
       </trans-unit>
       <trans-unit id="f7b9aa7bda7e225443b0caea270e890a6fdfc147" resname="Average score">
         <source>Average score</source>
-        <target>Average score</target>
+        <target>Note moyenne</target>
       </trans-unit>
       <trans-unit id="b7b1912e68e770be70d934e37738c3ace052e09c" resname="Back to original to save and finish">
         <source>Back to original to save and finish</source>
@@ -280,7 +280,7 @@
       </trans-unit>
       <trans-unit id="b6725c560eb4f8abffa227411bbb4f19f06a73ab" resname="Before uploading please ensure you have selected the proper file, once uploaded you won't be able to delete it. By uploading a file, the Submitter attests that they hold the permission(s) to make use and disseminate its contents through the Good Practices Portal. If any document is mistakenly uploaded and requires deletion, please contact the Secretariat through the &quot;Comments&quot; function (available after sending the submission).">
         <source>Before uploading please ensure you have selected the proper file, once uploaded you won't be able to delete it. By uploading a file, the Submitter attests that they hold the permission(s) to make use and disseminate its contents through the Good Practices Portal. If any document is mistakenly uploaded and requires deletion, please contact the Secretariat through the "Comments" function (available after sending the submission).</source>
-        <target>Before uploading please ensure you have selected the proper file, once uploaded you won't be able to delete it. By uploading a file, the Submitter attests that they hold the permission(s) to make use and disseminate its contents through the Good Practices Portal. If any document is mistakenly uploaded and requires deletion, please contact the Secretariat through the "Comments" function (available after sending the submission).</target>
+        <target>Avant de télécharger, veuillez vous assurer que vous avez sélectionné le bon fichier. Une fois  téléchargé, vous ne pourrez plus le supprimer. En téléchargeant un fichier, le déposant atteste qu'il possède l'autorisation d'utiliser et de diffuser son contenu par l'intermédiaire du portail des bonnes pratiques. Si un document est téléchargé par erreur et doit être supprimé, veuillez contacter le Secrétariat via la fonction "Commentaires" (disponible après l'envoi de la proposition).</target>
       </trans-unit>
       <trans-unit id="34748fd115780943acf491b51433c429e5545276" resname="Brief Introduction">
         <source>Brief Introduction</source>
@@ -304,15 +304,15 @@
       </trans-unit>
       <trans-unit id="512a613e70547687ec925f62285de602741dbf70" resname="Call Specific Information">
         <source>Call Specific Information</source>
-        <target>Call Specific Information</target>
+        <target>Informations spécifiques à l'appel</target>
       </trans-unit>
       <trans-unit id="992c9ec7646a21f459d6278b5e2b7f76753ca9d7" resname="Call for Good Practices">
         <source>Call for Good Practices</source>
-        <target>Call for Good Practices</target>
+        <target>Appel de bonnes pratiques</target>
       </trans-unit>
       <trans-unit id="c803aab754e540086cc052790bf3097e7e629ad8" resname="Calls for Good Practices">
         <source>Calls for Good Practices</source>
-        <target>Calls for Good Practices</target>
+        <target>Appels de bonnes pratiques</target>
       </trans-unit>
       <trans-unit id="77dfd2135f4db726c47299bb55be26f7f4525a46" resname="Cancel">
         <source>Cancel</source>
@@ -420,7 +420,7 @@
       </trans-unit>
       <trans-unit id="c00b95724bf892db5174a1b3a2a80b643d46a39a" resname="Confirmation of valid access to the Good Practices Portal">
         <source>Confirmation of valid access to the Good Practices Portal</source>
-        <target>Confirmation of valid access to the Good Practices Portal</target>
+        <target>Confirmation de la validité de l'accès au portail des bonnes pratiques</target>
       </trans-unit>
       <trans-unit id="184822ecb4734c964a62ae2e06e95f198b762b22" resname="Conflicts of Interest">
         <source>Conflicts of Interest</source>
@@ -436,7 +436,7 @@
       </trans-unit>
       <trans-unit id="4f9be057f0ea5d2ba72fd2c810e8d7b9aa98b469" resname="Content">
         <source>Content</source>
-        <target>Content</target>
+        <target>Contenu</target>
       </trans-unit>
       <trans-unit id="5ce5873edb578221b4a6880fd3d605b63da91d7e" resname="Contributors agree to identify, defend, and hold PAHO and related partners harmless from any actions or claims brought against them pertaining to the alleged infringement arising in connection with the contribution.">
         <source>Contributors agree to identify, defend, and hold PAHO and related partners harmless from any actions or claims brought against them pertaining to the alleged infringement arising in connection with the contribution.</source>
@@ -448,19 +448,19 @@
       </trans-unit>
       <trans-unit id="6de1e9a8dd7f7a7ec28f823fee23376f015e2ff5" resname="Core Attributes">
         <source>Core Attributes</source>
-        <target>Core Attributes</target>
+        <target>Attributs fondamentaux</target>
       </trans-unit>
       <trans-unit id="5c33aea589750f4e9cb1c99392a06288eaa5c761" resname="Core average score">
         <source>Core average score</source>
-        <target>Core average score</target>
+        <target>Note moyenne de base (Attributs fondamentaux)</target>
       </trans-unit>
       <trans-unit id="8f4321bf4cad4c9d362987bdde72ede6879654ea" resname="Cost-Effectiveness">
         <source>Cost-Effectiveness</source>
-        <target>Cost-Effectiveness</target>
+        <target>Coût-efficacité</target>
       </trans-unit>
       <trans-unit id="afbf4e40040747c36923ed559738787ab3a0c55d" resname="Could these successful GP be demonstrated in other contexts">
         <source>Could these successful GP be demonstrated in other contexts</source>
-        <target>Could these successful GP be demonstrated in other contexts</target>
+        <target>Est-ce que le succès de cette BP pourrait-il être démontré dans d'autres contextes</target>
       </trans-unit>
       <trans-unit id="8a8a5babf4649d70c303eed31a0e144e4fc47302" resname="Counterpart">
         <source>Counterpart</source>
@@ -580,7 +580,7 @@
       </trans-unit>
       <trans-unit id="ee47a6cbeab72065905b37fd76db0d6cba702ceb" resname="Delete this good practice">
         <source>Delete this good practice</source>
-        <target>Delete this good practice</target>
+        <target>Supprimer cette bonne pratique</target>
       </trans-unit>
       <trans-unit id="55f8ebc805e65b5b71ddafdae390e3be2bcd69af" resname="Description">
         <source>Description</source>
@@ -596,7 +596,7 @@
       </trans-unit>
       <trans-unit id="d7cc2ebc013edff660bb7e782e237ba5a8752727" resname="Description in Portuguese">
         <source>Description in Portuguese</source>
-        <target>Description in Portuguese</target>
+        <target>Description en portugais</target>
       </trans-unit>
       <trans-unit id="508d877710ccfcc5225e8ced5d46fb25dfa63fa2" resname="Description in Spanish">
         <source>Description in Spanish</source>
@@ -604,7 +604,7 @@
       </trans-unit>
       <trans-unit id="a890f912d1a0c5c5540b18193c8dfd392ecfbc11" resname="Description of any innovation – defined as any product, action, service, partnership that has the potential to enhance health outcomes. Information on how the proposed elements are to be considered innovative either in the national and/or international context.">
         <source>Description of any innovation – defined as any product, action, service, partnership that has the potential to enhance health outcomes. Information on how the proposed elements are to be considered innovative either in the national and/or international context.</source>
-        <target>Description of any innovation – defined as any product, action, service, partnership that has the potential to enhance health outcomes. Information on how the proposed elements are to be considered innovative either in the national and/or international context.</target>
+        <target>Description d'une innovation - définie comme tout produit, action, service ou partenariat susceptible d'améliorer les résultats en matière de santé. Informations sur la manière dont les éléments proposés peuvent être considérés comme innovateurs dans le contexte national et/ou international.</target>
       </trans-unit>
       <trans-unit id="c14bcb61daff86c092aaca32637236471f31ce12" resname="Did it contribute to strengthen the health system, the achievement of PAHO SP 20-25 and SHAA 2030">
         <source>Did it contribute to strengthen the health system, the achievement of PAHO SP 20-25 and SHAA 2030</source>
@@ -636,11 +636,11 @@
       </trans-unit>
       <trans-unit id="81378b1014c56a263aa48d34ee9b3a7f8b7e80d1" resname="Does the development of this GP have adaptability and replicability potential">
         <source>Does the development of this GP have adaptability and replicability potential</source>
-        <target>Does the development of this GP have adaptability and replicability potential</target>
+        <target>Est-ce que le développement de cette BP a-t-il un potentiel d'adaptabilité et de reproductibilité ?</target>
       </trans-unit>
       <trans-unit id="11f354970f33d3d59979810a8e9515bd918d2d52" resname="Download the form here:">
         <source>Download the form here:</source>
-        <target>Download the form here:</target>
+        <target>Téléchargez le formulaire ici :</target>
       </trans-unit>
       <trans-unit id="23d33e22acfcb9ecddb4a85f10607dc4ff49e23c" resname="Draft">
         <source>Draft</source>
@@ -672,7 +672,7 @@
       </trans-unit>
       <trans-unit id="df02200bdb6fb7108b9ec4d035c267d5a1011852" resname="Effectiveness">
         <source>Effectiveness</source>
-        <target>Effectiveness</target>
+        <target>Efficacité</target>
       </trans-unit>
       <trans-unit id="962918f9ce95310c7069b68b8e68d7c81f31c48a" resname="Effectiveness / Cost-Effectiveness / Efficiency / Adaptability / Replicability / Sustainability">
         <source>Effectiveness / Cost-Effectiveness / Efficiency / Adaptability / Replicability / Sustainability</source>
@@ -696,7 +696,7 @@
       </trans-unit>
       <trans-unit id="12c4ffe1d987164a4bedf6ab2aac597a113e181c" resname="Efficiency">
         <source>Efficiency</source>
-        <target>Efficiency</target>
+        <target>Efficience</target>
       </trans-unit>
       <trans-unit id="84add5b2952787581cb9a8851eef63d1ec75d22b" resname="Email">
         <source>Email</source>
@@ -716,7 +716,7 @@
       </trans-unit>
       <trans-unit id="84b1478125890bad1cc4b36d6d3781773b3fde5a" resname="End Date">
         <source>End Date</source>
-        <target>Date de fin</target>
+        <target>Date de la fin</target>
       </trans-unit>
       <trans-unit id="e55d313325bffb54c173c2b24b2c71a494954346" resname="End Review">
         <source>End Review</source>
@@ -724,7 +724,7 @@
       </trans-unit>
       <trans-unit id="d4f432cb3d15248df5f929af0f82451089d47027" resname="End good practice review">
         <source>End good practice review</source>
-        <target>End good practice review</target>
+        <target>Terminer l'examen de la bonne pratique</target>
       </trans-unit>
       <trans-unit id="9a9a2120f83b9825c6e620b55639ee6d880797e6" resname="Engagement Information">
         <source>Engagement Information</source>
@@ -756,7 +756,7 @@
       </trans-unit>
       <trans-unit id="2001ca082b2d2742765d8ac9182678bfe0374fbf" resname="Español">
         <source>Español</source>
-        <target>Español</target>
+        <target>Espagnol</target>
       </trans-unit>
       <trans-unit id="de84c6a03697e058ca921b8cc68aefced20e72b4" resname="Estimated date of initial recruitment">
         <source>Estimated date of initial recruitment</source>
@@ -764,31 +764,31 @@
       </trans-unit>
       <trans-unit id="033a74c81e3d529c1c9a65ef363184ac6e0f4aa2" resname="Evidence of a responsible and fiscal approach to implementing resources toward achieving the desired results.">
         <source>Evidence of a responsible and fiscal approach to implementing resources toward achieving the desired results.</source>
-        <target>Evidence of a responsible and fiscal approach to implementing resources toward achieving the desired results.</target>
+        <target>L'évidence d'une approche responsable et fiscale de la mise en œuvre des ressources en vue d'atteindre les résultats souhaités.</target>
       </trans-unit>
       <trans-unit id="c00d8a530f4660e9feb8ce22158c7dc2fd2a41e1" resname="Evidence of an economic approach that is financially realistic and accessible to the necessary actors.">
         <source>Evidence of an economic approach that is financially realistic and accessible to the necessary actors.</source>
-        <target>Evidence of an economic approach that is financially realistic and accessible to the necessary actors.</target>
+        <target>L'évidence d'une approche économique financièrement réaliste et accessible aux acteurs nécessaires.</target>
       </trans-unit>
       <trans-unit id="6272b61e3c4d248317717a58786177ff7ded9107" resname="Evidence of maintaining the results achieved over time. It should generate the essential tools needed to confront future challenges.">
         <source>Evidence of maintaining the results achieved over time. It should generate the essential tools needed to confront future challenges.</source>
-        <target>Evidence of maintaining the results achieved over time. It should generate the essential tools needed to confront future challenges.</target>
+        <target>L'évidence du maintien des résultats obtenus au fil du temps. Il devrait générer les outils essentiels pour faire face aux défis futurs.</target>
       </trans-unit>
       <trans-unit id="9ff7563ee3168a017e21a14fc06c5e0e230ac11a" resname="Evidence of successfully achieving its objectives. This evidence may include results sustained over time, tangible products, and methodologies.">
         <source>Evidence of successfully achieving its objectives. This evidence may include results sustained over time, tangible products, and methodologies.</source>
-        <target>Evidence of successfully achieving its objectives. This evidence may include results sustained over time, tangible products, and methodologies.</target>
+        <target>L'évidence d'avoir atteint ses objectifs avec succès. Ces évidences peuvent inclure des résultats obtenus au fil du temps, des produits tangibles et des méthodologies.</target>
       </trans-unit>
       <trans-unit id="c8024c078b6406ef87b8694802b74a661c11299b" resname="Evidence of taking, promoting, or creating an entirely new technology or approach to a problem or encouraging innovation by its users to collaboratively develop new solutions to common issues.">
         <source>Evidence of taking, promoting, or creating an entirely new technology or approach to a problem or encouraging innovation by its users to collaboratively develop new solutions to common issues.</source>
-        <target>Evidence of taking, promoting, or creating an entirely new technology or approach to a problem or encouraging innovation by its users to collaboratively develop new solutions to common issues.</target>
+        <target>Evidence de l'adoption, de la promotion ou de la création d'une technologie ou d'une approche entièrement nouvelle pour traiter un problème, ou pour encourager l'innovation des utilisateurs pour développer en collaboration de nouvelles solutions à des problèmes communs.</target>
       </trans-unit>
       <trans-unit id="d3caf364a41b11cae33711cf8cb1f750081cae87" resname="Evidence of the involvement of key stakeholders and partners (particularly the primary beneficiaries) in important decisions and actions related to the intervention and the adoption of a participative approach.">
         <source>Evidence of the involvement of key stakeholders and partners (particularly the primary beneficiaries) in important decisions and actions related to the intervention and the adoption of a participative approach.</source>
-        <target>Evidence of the involvement of key stakeholders and partners (particularly the primary beneficiaries) in important decisions and actions related to the intervention and the adoption of a participative approach.</target>
+        <target>Evidence de l'implication des principales parties prenantes et des partenaires (en particulier les principaux bénéficiaires) dans les décisions et actions importantes liées à l'intervention et l'adoption d'une approche participative.</target>
       </trans-unit>
       <trans-unit id="ab5d10965e661c61cc0973c9458335086105f976" resname="Evidence of the potential to replicate or adapt to other contexts and situations.">
         <source>Evidence of the potential to replicate or adapt to other contexts and situations.</source>
-        <target>Evidence of the potential to replicate or adapt to other contexts and situations.</target>
+        <target>L'évidence du potentiel de reproduction ou d'adaptation à d'autres contextes et situations.</target>
       </trans-unit>
       <trans-unit id="67690c75c03cd0e07da2b8ad46be269eb2c39a62" resname="Exclude user">
         <source>Exclude user</source>
@@ -820,11 +820,11 @@
       </trans-unit>
       <trans-unit id="90db8f7363e06cc306bfe7758dfab798a719d74a" resname="FENSA Tobacco/Arms">
         <source>FENSA Tobacco/Arms</source>
-        <target>FENSA Tobacco/Arms</target>
+        <target>FENSA Tabac/Armes</target>
       </trans-unit>
       <trans-unit id="c8d7677e19495f21da984fe4e2829b7ca91b27c7" resname="Feedback">
         <source>Feedback</source>
-        <target>Feedback</target>
+        <target>Commentaires</target>
       </trans-unit>
       <trans-unit id="29edab558d15607b66e55efa5a814497a53ee8c9" resname="Field '%field%' is required.">
         <source>Field '%field%' is required.</source>
@@ -880,15 +880,15 @@
       </trans-unit>
       <trans-unit id="892ac643fc4ac92689af1bbac7f6daed11dabff2" resname="Filter by call">
         <source>Filter by call</source>
-        <target>Filter by call</target>
+        <target>Filtrer par appel</target>
       </trans-unit>
       <trans-unit id="a9660077b2bf17b83d5eb8b6dcc2a608c2102572" resname="Final Revision">
         <source>Final Revision</source>
-        <target>Révision finale</target>
+        <target>Examen final</target>
       </trans-unit>
       <trans-unit id="50bb4edd014153cfd6a5d75e55ecfd225f599501" resname="Find good practices">
         <source>Find good practices</source>
-        <target>Find good practices</target>
+        <target>Trouver une bonne pratique</target>
       </trans-unit>
       <trans-unit id="0b2524216fdd23203c0429eb00e528a14e18fdfc" resname="First Author">
         <source>First Author</source>
@@ -896,11 +896,11 @@
       </trans-unit>
       <trans-unit id="63b9bf1fe4b255b1f7cc9afa38fd55be44753c30" resname="Focus on Cross-Cutting Themes">
         <source>Focus on Cross-Cutting Themes</source>
-        <target>Focus on Cross-Cutting Themes</target>
+        <target>Focus sur les thèmes transversaux</target>
       </trans-unit>
       <trans-unit id="ad6d00187c68d4dc08b6c15fbefb2504b97e6018" resname="For more information about this process, please refer to the">
         <source>For more information about this process, please refer to the</source>
-        <target>For more information about this process, please refer to the</target>
+        <target>Pour plus d'informations sur ce processus, veuillez vous référer à</target>
       </trans-unit>
       <trans-unit id="ac5a8da5a06d99f0081933da88851572f26389a9" resname="Forgot My Password">
         <source>Forgot My Password</source>
@@ -912,7 +912,7 @@
       </trans-unit>
       <trans-unit id="077bf108c773b211084cb356a4c34d79032515b0" resname="Form sections up to review">
         <source>Form sections up to review</source>
-        <target>Form sections up to review</target>
+        <target>Sections du formulaire à examiner</target>
       </trans-unit>
       <trans-unit id="cec7d6c2129c9fe6a0dc554c6a825727af0a1055" resname="French message">
         <source>French message</source>
@@ -928,7 +928,7 @@
       </trans-unit>
       <trans-unit id="32da67dd40a93c62a68b2ad9daeb9f2c124165ed" resname="GP">
         <source>GP</source>
-        <target>GP</target>
+        <target>BP</target>
       </trans-unit>
       <trans-unit id="8a754c61c2ced0c5ff79a1827e02c9d643d6d926" resname="Gender">
         <source>Gender</source>
@@ -952,95 +952,95 @@
       </trans-unit>
       <trans-unit id="c494832163603a21e6c192d6abf7b834324cd615" resname="Good Practice">
         <source>Good Practice</source>
-        <target>Good Practice</target>
+        <target>Bonne pratique</target>
       </trans-unit>
       <trans-unit id="6ee0b1f9d0c14d610c6beb07d9eaf8d4962c0b4d" resname="Good Practice Code">
         <source>Good Practice Code</source>
-        <target>Good Practice Code</target>
+        <target>Code de bonne pratique</target>
       </trans-unit>
       <trans-unit id="e35d34353e4ea2211e10fc3b3e70daed033e215b" resname="Good Practice Entities">
         <source>Good Practice Entities</source>
-        <target>Good Practice Entities</target>
+        <target>Bonnes pratiques - Entités</target>
       </trans-unit>
       <trans-unit id="ee0f26399457013dc0a15b2ea919b48e805d2358" resname="Good Practice Roles">
         <source>Good Practice Roles</source>
-        <target>Good Practice Roles</target>
+        <target>Bonnes pratiques - Rôles</target>
       </trans-unit>
       <trans-unit id="4a257dd9c2c4ee469f2fe81d66fbf76d35f27ba1" resname="Good Practice Title">
         <source>Good Practice Title</source>
-        <target>Good Practice Title</target>
+        <target>Titre de la bonne pratique</target>
       </trans-unit>
       <trans-unit id="95c10ae5b53204014aa8c5c7e7a2c2c9ce4df042" resname="Good Practice Type">
         <source>Good Practice Type</source>
-        <target>Good Practice Type</target>
+        <target>Type de bonne pratique</target>
       </trans-unit>
       <trans-unit id="c326b1b387aac29332b0b9aad2e98f01329cf7ac" resname="Good Practice Types">
         <source>Good Practice Types</source>
-        <target>Good Practice Types</target>
+        <target>Types de bonne pratique</target>
       </trans-unit>
       <trans-unit id="82eded61b13a1d9c8ff6fa4e6ee2076d21d2ac3e" resname="Good Practice options">
         <source>Good Practice options</source>
-        <target>Good Practice options</target>
+        <target>Options de bonnes pratiques</target>
       </trans-unit>
       <trans-unit id="4a647f902e0d765ea12195a96e4829f8b1e8aa9f" resname="Good Practices">
         <source>Good Practices</source>
-        <target>Good Practices</target>
+        <target>Bonnes pratiques</target>
       </trans-unit>
       <trans-unit id="3fcc072dfde8435957ca40a8fbd3176bb59859c4" resname="Good practice accepted for review by %user% and submitter notified.">
         <source>Good practice accepted for review by %user% and submitter notified.</source>
-        <target>Good practice accepted for review by %user% and submitter notified.</target>
+        <target>Bonne pratique acceptée pour examen par %user% et l'auteur a été informé.</target>
       </trans-unit>
       <trans-unit id="16b595f008da71973c57459e262eb93ed8b3b1d9" resname="Good practice finalized by %user% under option &quot;%option%&quot;.">
         <source>Good practice finalized by %user% under option "%option%".</source>
-        <target>Good practice finalized by %user% under option "%option%".</target>
+        <target>Bonne pratique finalisée par %user% sous l'option "%option%".</target>
       </trans-unit>
       <trans-unit id="924555d5995e5d4ab316eda61204f8a8b5299234" resname="Good practice rejected with success!">
         <source>Good practice rejected with success!</source>
-        <target>Good practice rejected with success!</target>
+        <target>Bonne pratique rejetée avec succès !</target>
       </trans-unit>
       <trans-unit id="4b35fbe81972a2006a05c24131289ea20cfcf419" resname="Good practice status has been modified.">
         <source>Good practice status has been modified.</source>
-        <target>Good practice status has been modified.</target>
+        <target>Le statut de bonne pratique a été modifié.</target>
       </trans-unit>
       <trans-unit id="4f94db1950f8e86388ba6e4fa9c549c3480b0a4a" resname="Good practice status modified by %user%.">
         <source>Good practice status modified by %user%.</source>
-        <target>Good practice status modified by %user%.</target>
+        <target>Statut de bonne pratique modifié par %user%.</target>
       </trans-unit>
       <trans-unit id="cbf8dbc1689d2b871b0baf669911c87cba46689f" resname="Good practice submitted with success!">
         <source>Good practice submitted with success!</source>
-        <target>Good practice submitted with success!</target>
+        <target>Bonne pratique envoyée avec succès !</target>
       </trans-unit>
       <trans-unit id="124491fb071ec803f2f562de46767f96299357ef" resname="Good practice updated by %user% and submitter notified for required revisions.">
         <source>Good practice updated by %user% and submitter notified for required revisions.</source>
-        <target>Good practice updated by %user% and submitter notified for required revisions.</target>
+        <target>Bonne pratique mise à jour par %user% et l'auteur a été notifié pour les révisions nécessaires.</target>
       </trans-unit>
       <trans-unit id="6aca192adde9d96e3454e99b6ef2607f9b2b4381" resname="Good practice updated with success!">
         <source>Good practice updated with success!</source>
-        <target>Good practice updated with success!</target>
+        <target>Bonne pratique mise à jour avec succès !</target>
       </trans-unit>
       <trans-unit id="c2e87e20a8acd6c6b0b8f2b3d87fe8cce399e7b5" resname="Good practice was concluded as Exempt.">
         <source>Good practice was concluded as Exempt.</source>
-        <target>Good practice was concluded as Exempt.</target>
+        <target>La bonne pratique a été jugée exempte.</target>
       </trans-unit>
       <trans-unit id="33db63cc3e65776d6ad0b910cf92e5c29b9a1ea2" resname="Good practice was finalized with success!">
         <source>Good practice was finalized with success!</source>
-        <target>Good practice was finalized with success!</target>
+        <target>La bonne pratique a été finalisée avec succès !</target>
       </trans-unit>
       <trans-unit id="ba490e0761d7ad59a3caedf40cedbf9d72f63d61" resname="Good practice was rejected by %user% with this justification: &quot;%justify%&quot;">
         <source>Good practice was rejected by %user% with this justification: "%justify%"</source>
-        <target>Good practice was rejected by %user% with this justification: "%justify%"</target>
+        <target>La bonne pratique a été rejetée par %user% avec cette justification : "%justify%"</target>
       </trans-unit>
       <trans-unit id="2756905ba2da8dde12eeb1ba2dd446ca209c9aef" resname="Good practice was removed with success!">
         <source>Good practice was removed with success!</source>
-        <target>Good practice was removed with success!</target>
+        <target>La bonne pratique a été supprimée avec succès !</target>
       </trans-unit>
       <trans-unit id="9f97d75f37afe9f6d60f563c36ad6bed275b3002" resname="Good practice was sent to comittee for initial analysis by %user%.">
         <source>Good practice was sent to comittee for initial analysis by %user%.</source>
-        <target>Good practice was sent to comittee for initial analysis by %user%.</target>
+        <target>La bonne pratique a été envoyée au comité pour une analyse initiale par %user%.</target>
       </trans-unit>
       <trans-unit id="11b7ffd7674b7f00bd13238991e3d42508a87143" resname="Handbook For NonState Actors on Engagement with the World Health Organization">
         <source>Handbook For NonState Actors on Engagement with the World Health Organization</source>
-        <target>Handbook For NonState Actors on Engagement with the World Health Organization</target>
+        <target>Guide à l’intention des acteurs non étatiques s’engageant dans une collaboration avec l’Organisation mondiale de la Santé</target>
       </trans-unit>
       <trans-unit id="9d8ba69ea37ad3dd3008e8b89eb6046f51780130" resname="Have an error with captcha. Please try again.">
         <source>Have an error with captcha. Please try again.</source>
@@ -1060,7 +1060,7 @@
       </trans-unit>
       <trans-unit id="4a7871199a76e020c2f63105f00dd0640f20f290" resname="Help Text">
         <source>Help Text</source>
-        <target>Help Text</target>
+        <target>Texte d'aide</target>
       </trans-unit>
       <trans-unit id="7ea305782f9c411ea93b2689186299fdf991e42a" resname="Help updated with success.">
         <source>Help updated with success.</source>
@@ -1104,19 +1104,19 @@
       </trans-unit>
       <trans-unit id="0f997c2e7d3f432ae70ffb5a8ac47e5e776dc963" resname="If Revisions required is selected as Feedback, please input your revisions.">
         <source>If Revisions required is selected as Feedback, please input your revisions.</source>
-        <target>If Revisions required is selected as Feedback, please input your revisions.</target>
+        <target>Si l'option Révisions nécessaires est sélectionnée comme Commentaires, veuillez saisir vos révisions.</target>
       </trans-unit>
       <trans-unit id="aaefc229bf79b569d6c37129791c2af17b2566e8" resname="If any zero scores are selected, you’ll be requested to confirm them at the end.">
         <source>If any zero scores are selected, you’ll be requested to confirm them at the end.</source>
-        <target>If any zero scores are selected, you’ll be requested to confirm them at the end.</target>
+        <target>Si des notes nulles sont sélectionnées, vous serez prié de les confirmer à la fin.</target>
       </trans-unit>
       <trans-unit id="1f84eeb4d0987e617ac351c862c0f06dca0cf590" resname="If the proposal is a PAHO Technical Cooperation, also review the following items (Only visible for Technical Cooperation submissions)">
         <source>If the proposal is a PAHO Technical Cooperation, also review the following items (Only visible for Technical Cooperation submissions)</source>
-        <target>If the proposal is a PAHO Technical Cooperation, also review the following items (Only visible for Technical Cooperation submissions)</target>
+        <target>S'il s'agit d'une proposition de coopération technique de l'OPS, examinez également les points suivants (visibles uniquement pour les propositions de coopération technique)</target>
       </trans-unit>
       <trans-unit id="54e395627944c39217d738df697d9e0731bf9951" resname="If you do not see the confirmation email in your inbox, please check your junk mail folder or spam folder. If you do not receive any email, then write to bp@paho.org. The Good Practices Portal team will do their best to answer your request as soon as possible.">
         <source>If you do not see the confirmation email in your inbox, please check your junk mail folder or spam folder. If you do not receive any email, then write to bp@paho.org. The Good Practices Portal team will do their best to answer your request as soon as possible.</source>
-        <target>If you do not see the confirmation email in your inbox, please check your junk mail folder or spam folder. If you do not receive any email, then write to bp@paho.org. The Good Practices Portal team will do their best to answer your request as soon as possible.</target>
+        <target>Si vous ne voyez pas l'e-mail de confirmation dans votre boîte de réception, veuillez vérifier votre dossier de courrier indésirable ou de spam. Si vous ne recevez pas d'e-mail, écrivez à bp@paho.org. L'équipe du portail des bonnes pratiques fera de son mieux pour répondre à votre demande dans les plus brefs délais.</target>
       </trans-unit>
       <trans-unit id="8781d615fd77be9578225c40ac67b9471394cced" resname="Implementation">
         <source>Implementation</source>
@@ -1128,19 +1128,19 @@
       </trans-unit>
       <trans-unit id="86614555e3af44e6a8e61bc03ff121e286586ad7" resname="In this step, you will be requested to submit information about your institution that will remain confidential and shared only with PAHO’s Legal Office for review as per PAHO’s normative regarding engagements with Non-State Actors.">
         <source>In this step, you will be requested to submit information about your institution that will remain confidential and shared only with PAHO’s Legal Office for review as per PAHO’s normative regarding engagements with Non-State Actors.</source>
-        <target>In this step, you will be requested to submit information about your institution that will remain confidential and shared only with PAHO’s Legal Office for review as per PAHO’s normative regarding engagements with Non-State Actors.</target>
+        <target>Dans cette étape, il vous sera demandé de fournir des informations sur votre institution qui resteront confidentielles et ne seront partagées qu'avec le bureau juridique de l'OPS pour examen, conformément aux normes de l'OPS concernant les engagements avec des acteurs non étatiques.</target>
       </trans-unit>
       <trans-unit id="4c05835cf89afee841c2033dbc84eb128aafbb79" resname="In your opinion, PAHO played a catalytic role on the added value of Technical Cooperation">
         <source>In your opinion, PAHO played a catalytic role on the added value of Technical Cooperation</source>
-        <target>Selon vous, l'OPS a joué un rôle catalyseur dans la valeur ajoutée de la coopération technique</target>
+        <target>À votre avis, l'OPS a joué un rôle catalyseur dans la valeur ajoutée de la coopération technique</target>
       </trans-unit>
       <trans-unit id="9898a929c3693b2bf954cf6a828ff25cbeb70622" resname="In your opinion, PAHO played a neutral role in negotiations">
         <source>In your opinion, PAHO played a neutral role in negotiations</source>
-        <target>Selon vous, l'OPS a joué un rôle neutre dans les négociations</target>
+        <target>À votre avis, l'OPS a joué un rôle neutre dans les négociations</target>
       </trans-unit>
       <trans-unit id="f56f9866bdc35f5ce3a6c4235ecfc684f4824ebe" resname="In your opinion, PAHO's Technical Cooperation was planned considering the Cross-Cutting themes (equity, gender, ethnicity, and human rights)">
         <source>In your opinion, PAHO's Technical Cooperation was planned considering the Cross-Cutting themes (equity, gender, ethnicity, and human rights)</source>
-        <target>Selon vous, la coopération technique de l'OPS a été planifiée en tenant compte les thèmes transversaux (équité, genre, ethnicité et droits de l'homme)</target>
+        <target>À votre avis, la coopération technique de l'OPS a été planifiée en tenant compte les thèmes transversaux (équité, genre, ethnicité et droits de l'homme)</target>
       </trans-unit>
       <trans-unit id="0565eb0bb010e043e113c1a7e634f22c33408a85" resname="In your opinion, PAHO's Technical Cooperation was planned considering the cross-cutting approach (Human Rights, Gender Equity and Ethnicity (Cultural Diversity))">
         <source>In your opinion, PAHO's Technical Cooperation was planned considering the cross-cutting approach (Human Rights, Gender Equity and Ethnicity (Cultural Diversity))</source>
@@ -1148,23 +1148,23 @@
       </trans-unit>
       <trans-unit id="8d754e4cab9490cf241d7fc22e0a6fcf2f51a2e0" resname="In your opinion, PAHO's Technical Cooperation was planned considering the cross-cutting approach (Human Rights, Gender Equity and Ethnicity (Cultural Diversity)?">
         <source>In your opinion, PAHO's Technical Cooperation was planned considering the cross-cutting approach (Human Rights, Gender Equity and Ethnicity (Cultural Diversity)?</source>
-        <target>In your opinion, PAHO's Technical Cooperation was planned considering the cross-cutting approach (Human Rights, Gender Equity and Ethnicity (Cultural Diversity)?</target>
+        <target>À votre avis, la coopération technique de l'OPS a été planifiée en tenant compte de l'approche transversale (droits de l'homme, égalité des sexes et ethnicité (diversité culturelle)) ?</target>
       </trans-unit>
       <trans-unit id="1c9d3be359166a4a6ebcdddc7205d25945ea0c25" resname="In your opinion, the counterpart(s) recognized PAHO's Technical Cooperation">
         <source>In your opinion, the counterpart(s) recognized PAHO's Technical Cooperation</source>
-        <target>Selon vous, la/les contrepartie(s) a/ont reconnu la coopération technique de l'OPS</target>
+        <target>À votre avis, la/les contrepartie(s) a/ont reconnu la coopération technique de l'OPS</target>
       </trans-unit>
       <trans-unit id="c433efdf47e7793dbc4758cd7c335103d1d166bb" resname="In your opinion, the resources assigned to the accomplishment of this Good Practice (financial, technological and/or manpower) were implement in an efficient way">
         <source>In your opinion, the resources assigned to the accomplishment of this Good Practice (financial, technological and/or manpower) were implement in an efficient way</source>
-        <target>In your opinion, the resources assigned to the accomplishment of this Good Practice (financial, technological and/or manpower) were implement in an efficient way</target>
+        <target>A votre avis, les moyens consacrés à la réalisation de cette Bonne Pratique (financiers, technologiques et/ou humains) ont été mis en œuvre de manière efficace</target>
       </trans-unit>
       <trans-unit id="729a80a18dad604648ec38c089fc2fa5c530bfec" resname="In your opinion, the resources assigned to the accomplishment of this Good Practice (financial, technological and/or manpower) were implement in an efficient way? Support information about the outcome and impact results">
         <source>In your opinion, the resources assigned to the accomplishment of this Good Practice (financial, technological and/or manpower) were implement in an efficient way? Support information about the outcome and impact results</source>
-        <target>In your opinion, the resources assigned to the accomplishment of this Good Practice (financial, technological and/or manpower) were implement in an efficient way? Support information about the outcome and impact results</target>
+        <target>A votre avis, les moyens consacrés à la réalisation de cette Bonne Pratique (financiers, technologiques et/ou humains) ont-ils été mis en œuvre de manière efficace ? Justifier les informations sur les résultats et l'impact des résultats</target>
       </trans-unit>
       <trans-unit id="d60a7e0a67e990aa3109a61622c10a0fba9189fa" resname="In your opinion, the resources assigned to the accomplishment of this Good Practice (financial, technological and/or manpower) were implemented in an efficient way">
         <source>In your opinion, the resources assigned to the accomplishment of this Good Practice (financial, technological and/or manpower) were implemented in an efficient way</source>
-        <target>In your opinion, the resources assigned to the accomplishment of this Good Practice (financial, technological and/or manpower) were implemented in an efficient way</target>
+        <target>À votre avis, les moyens consacrés à la réalisation de cette bonne pratique (financiers, technologiques et/ou humains) ont été mis en œuvre de manière efficace</target>
       </trans-unit>
       <trans-unit id="013dcdb66b14b0fbb2f5393c8f52a72509f21819" resname="Inactive account. Please try again later.">
         <source>Inactive account. Please try again later.</source>
@@ -1176,35 +1176,35 @@
       </trans-unit>
       <trans-unit id="b6a65f57c35cf7ea7b1388e6ef13bfccee6a6c08" resname="Information Requested from Non-State Actors for Engagement with PAHO/WHO">
         <source>Information Requested from Non-State Actors for Engagement with PAHO/WHO</source>
-        <target>Information Requested from Non-State Actors for Engagement with PAHO/WHO</target>
+        <target>Informations demandées aux acteurs non étatiques en vue d'un engagement avec l'OPS/OMS</target>
       </trans-unit>
       <trans-unit id="b00437194b37e2157cec2561fb31a5564a0e1eab" resname="Information on objective completion: Objectives and Main Results can be compared to see if objectives (particularly SMART objectives) were reached; Evidence/Proposals on project objective fulfillment.">
         <source>Information on objective completion: Objectives and Main Results can be compared to see if objectives (particularly SMART objectives) were reached; Evidence/Proposals on project objective fulfillment.</source>
-        <target>Information on objective completion: Objectives and Main Results can be compared to see if objectives (particularly SMART objectives) were reached; Evidence/Proposals on project objective fulfillment.</target>
+        <target>Informations sur la réalisation des objectifs : Les objectifs et les résultats principaux peuvent être comparés pour voir si les objectifs (en particulier les objectifs SMART) ont été atteints ; Éléments de preuve/propositions sur la réalisation des objectifs du projet.</target>
       </trans-unit>
       <trans-unit id="6015b4d5a31eb50f3c261cde2ff9b668138cce90" resname="Information on relevant and key stakeholders and/or partnerships. Description of the engagement strategy. Evidence on primary beneficiary engagement.">
         <source>Information on relevant and key stakeholders and/or partnerships. Description of the engagement strategy. Evidence on primary beneficiary engagement.</source>
-        <target>Information on relevant and key stakeholders and/or partnerships. Description of the engagement strategy. Evidence on primary beneficiary engagement.</target>
+        <target>Informations sur les parties prenantes et/ou les partenariats pertinents et clés. Description de la stratégie d'engagement. Évidences sur l'engagement du bénéficiaire principal.</target>
       </trans-unit>
       <trans-unit id="39f6174ca8cf252252ccf5b5e501bc8721528697" resname="Information on strategies to approach cross-cutting themes. Information on the Good Practice’s impact on cross-cutting themes.">
         <source>Information on strategies to approach cross-cutting themes. Information on the Good Practice’s impact on cross-cutting themes.</source>
-        <target>Information on strategies to approach cross-cutting themes. Information on the Good Practice’s impact on cross-cutting themes.</target>
+        <target>Informations sur les stratégies d'approche des thèmes transversaux. Informations sur l'impact de la bonne pratique sur les thèmes transversaux.</target>
       </trans-unit>
       <trans-unit id="50c1e4d62d2b57fbcef2a9174595f2c41f06c9ed" resname="Information on the presence of a financial management structure. Information on a budgetary strategy. Evidence regarding budget ability to reach objectives.">
         <source>Information on the presence of a financial management structure. Information on a budgetary strategy. Evidence regarding budget ability to reach objectives.</source>
-        <target>Information on the presence of a financial management structure. Information on a budgetary strategy. Evidence regarding budget ability to reach objectives.</target>
+        <target>Informations sur la présence d'une structure de gestion financière. Informations sur la stratégie budgétaire. Évidence concernant la capacité du budget à atteindre les objectifs.</target>
       </trans-unit>
       <trans-unit id="e639a04dc6ea69b401c4727ee6b370cc3fe9cf1d" resname="Information regarding resource adjustments. Information that shows that any surplus of resources was a result of strategic decisions to increase efficiency and not mismanagement. Information regarding strategies to augment/ensure efficiency.">
         <source>Information regarding resource adjustments. Information that shows that any surplus of resources was a result of strategic decisions to increase efficiency and not mismanagement. Information regarding strategies to augment/ensure efficiency.</source>
-        <target>Information regarding resource adjustments. Information that shows that any surplus of resources was a result of strategic decisions to increase efficiency and not mismanagement. Information regarding strategies to augment/ensure efficiency.</target>
+        <target>Informations concernant l'ajustement des ressources. Informations montrant que tout excédent de ressources est le résultat de décisions stratégiques visant à accroître l'efficacité et non d'une mauvaise gestion. Informations concernant les stratégies visant à accroître/garantir l'efficacité.</target>
       </trans-unit>
       <trans-unit id="3bc8ce949b55b2ea56610f85a5be64545034c6a9" resname="Information that outlines the capacity for the Good Practice to be replicated and/or adapted to other contexts. Information regarding the range of replicability and/or adaptability.">
         <source>Information that outlines the capacity for the Good Practice to be replicated and/or adapted to other contexts. Information regarding the range of replicability and/or adaptability.</source>
-        <target>Information that outlines the capacity for the Good Practice to be replicated and/or adapted to other contexts. Information regarding the range of replicability and/or adaptability.</target>
+        <target>Informations sur la capacité de la bonne pratique à être reproduite et/ou adaptée à d'autres contextes. Informations concernant l'étendue de la reproductibilité et/ou de l'adaptabilité.</target>
       </trans-unit>
       <trans-unit id="07b3e1b3e5070e315e2a42b984c83e4e2f7aca96" resname="Information that shows that the outlined limitations and hindrances have been met with concrete solutions or strategies to mitigate similar issues in the future. Information on monitoring and evaluation strategies are defined. Evidence on the scalability potential of the project. Information on strategies to secure resources for the intended lifespan of the proposal. Information that proves the financial, economic, social, environmental and/or institutional capacity necessary to sustain itself over time.">
         <source>Information that shows that the outlined limitations and hindrances have been met with concrete solutions or strategies to mitigate similar issues in the future. Information on monitoring and evaluation strategies are defined. Evidence on the scalability potential of the project. Information on strategies to secure resources for the intended lifespan of the proposal. Information that proves the financial, economic, social, environmental and/or institutional capacity necessary to sustain itself over time.</source>
-        <target>Information that shows that the outlined limitations and hindrances have been met with concrete solutions or strategies to mitigate similar issues in the future. Information on monitoring and evaluation strategies are defined. Evidence on the scalability potential of the project. Information on strategies to secure resources for the intended lifespan of the proposal. Information that proves the financial, economic, social, environmental and/or institutional capacity necessary to sustain itself over time.</target>
+        <target>Des informations montrant que les limitations et les obstacles décrits ont été résolus par des solutions ou des stratégies concrètes visant à atténuer des problèmes similaires à l'avenir. Des informations sur les stratégies de suivi et d'évaluation qui sont définies. Des évidences sur le potentiel de scalabilité du projet. Des informations sur les stratégies visant à obtenir des ressources pour la durée de vie prévue de la proposition. Informations prouvant la capacité financière, économique, sociale, environnementale et/ou institutionnelle nécessaire pour se maintenir dans le temps.</target>
       </trans-unit>
       <trans-unit id="91bf74d821f50065919a9c202be4787c9b3710b5" resname="Initial Committee Screening">
         <source>Initial Committee Screening</source>
@@ -1232,7 +1232,7 @@
       </trans-unit>
       <trans-unit id="f43c36d19c14f2fb7eaf94157c11cad5822f8c10" resname="Institutional Review">
         <source>Institutional Review</source>
-        <target>Institutional Review</target>
+        <target>Examen institutionnel</target>
       </trans-unit>
       <trans-unit id="dcd439a7322864e79ebb16b566f6870d846c27d2" resname="Institutions">
         <source>Institutions</source>
@@ -1264,15 +1264,15 @@
       </trans-unit>
       <trans-unit id="6b29d07d7c10df7f7cb6c8702b2df1203181b234" resname="Is the GP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization">
         <source>Is the GP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization</source>
-        <target>Is the GP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization</target>
+        <target>La BP est-elle alignée sur la chaîne de valeur de l'organisation (mission, vision, mandats et stratégies) et montre-t-elle l'importance du projet non seulement pour l'entité en particulier, mais pour l'Organisation ?</target>
       </trans-unit>
       <trans-unit id="dd337820d1f3e43136f5052b72cbe0bdaf4745ab" resname="Is the GP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization?">
         <source>Is the GP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization?</source>
-        <target>Is the GP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization?</target>
+        <target>La BP est-elle alignée sur la chaîne de valeur de l'organisation (mission, vision, mandats et stratégies) et montre-t-elle l'importance du projet non pour l'entité en particulier, mais pour l'organisation ?</target>
       </trans-unit>
       <trans-unit id="9982850d366df96dd8fed261a4e4ac13cc0e2474" resname="Is this Good Practice being submitted in response to a call for proposals">
         <source>Is this Good Practice being submitted in response to a call for proposals</source>
-        <target>Is this Good Practice being submitted in response to a call for proposals</target>
+        <target>Est-ce que cette bonne pratique est envoyée comme réponse d'un appel à propositions ?</target>
       </trans-unit>
       <trans-unit id="76a38180859b3024f9cb90bc039aee77b0e5e7d5" resname="Is this a confidential comment?">
         <source>Is this a confidential comment?</source>
@@ -1316,7 +1316,7 @@
       </trans-unit>
       <trans-unit id="f398f6fa7646d8e2970e91c53f79a68707a76d54" resname="Last good practices that you reviewed">
         <source>Last good practices that you reviewed</source>
-        <target>Last good practices that you reviewed</target>
+        <target>Dernières bonnes pratiques que vous avez examinées</target>
       </trans-unit>
       <trans-unit id="5846955db6bef539707c3590c701613c5f0cf50f" resname="Legend">
         <source>Legend</source>
@@ -1420,15 +1420,15 @@
       </trans-unit>
       <trans-unit id="1935af836fe13ee851ad1392b3d75d9a6a6f414d" resname="Message in French">
         <source>Message in French</source>
-        <target>Message in French</target>
+        <target>Message en français</target>
       </trans-unit>
       <trans-unit id="47ead2a370a75f6611d7c68676b3ed330ca73ea5" resname="Message in Portuguese">
         <source>Message in Portuguese</source>
-        <target>Message in Portuguese</target>
+        <target>Message en portugais</target>
       </trans-unit>
       <trans-unit id="d7e01fc5dd71f18886177cdb6b678031aa8f5c6e" resname="Message in Spanish">
         <source>Message in Spanish</source>
-        <target>Message in Spanish</target>
+        <target>Message en espagnol</target>
       </trans-unit>
       <trans-unit id="d378cd32935cd41425f00181812285372e78a72b" resname="Message sent to administrators.">
         <source>Message sent to administrators.</source>
@@ -1504,11 +1504,11 @@
       </trans-unit>
       <trans-unit id="495e84de86d2633b612d85e749822fdd23d37a65" resname="New Attribute">
         <source>New Attribute</source>
-        <target>New Attribute</target>
+        <target>Nouveau attribut</target>
       </trans-unit>
       <trans-unit id="306fe2789904f1b757b6973ea3fe462ccc1cecd0" resname="New Call">
         <source>New Call</source>
-        <target>Nouvel appel</target>
+        <target>Nouveau appel</target>
       </trans-unit>
       <trans-unit id="361196c7eb76a27c9bf49e06dd1c649149961e16" resname="New Clinical Trial Name">
         <source>New Clinical Trial Name</source>
@@ -1540,15 +1540,15 @@
       </trans-unit>
       <trans-unit id="f3f9ad0cb334be329918be7ad0c0b688a6d2b848" resname="New Good Practice Entity">
         <source>New Good Practice Entity</source>
-        <target>New Good Practice Entity</target>
+        <target>Nouvelle entité</target>
       </trans-unit>
       <trans-unit id="fdf69679ddb46ddac5995d6bf639404839687dd4" resname="New Good Practice Role">
         <source>New Good Practice Role</source>
-        <target>New Good Practice Role</target>
+        <target>Nouveau rôle</target>
       </trans-unit>
       <trans-unit id="3920f1d1c64d3e1908e36a40c630105af1a5dd24" resname="New Good Practice Type">
         <source>New Good Practice Type</source>
-        <target>New Good Practice Type</target>
+        <target>Nouveau type de bonne pratique</target>
       </trans-unit>
       <trans-unit id="947ce86bed0a9a05a460ce619418ca795e6b44b0" resname="New Institution">
         <source>New Institution</source>
@@ -1596,7 +1596,7 @@
       </trans-unit>
       <trans-unit id="67dc05bac4fb2befd45ecf6c0ce101f1aaa0443b" resname="New Target">
         <source>New Target</source>
-        <target>Nouveau but</target>
+        <target>Nouveau objectif</target>
       </trans-unit>
       <trans-unit id="f628b203ef54492424712efbe6ee57221a5e857a" resname="New Technical Matter">
         <source>New Technical Matter</source>
@@ -1620,7 +1620,7 @@
       </trans-unit>
       <trans-unit id="84d5c03ee21523b39453b4b39d12a21ff747e93b" resname="New comment on Good Practices Portal">
         <source>New comment on Good Practices Portal</source>
-        <target>New comment on Good Practices Portal</target>
+        <target>Nouveau commentaire sur le Portail des Bonnes Pratiques</target>
       </trans-unit>
       <trans-unit id="505235c949c23571ad04e474dce1649c0dd150e7" resname="New submission">
         <source>New submission</source>
@@ -1628,7 +1628,7 @@
       </trans-unit>
       <trans-unit id="96d92434ca24b1eb148740dedb0e5737c67ea9d0" resname="New user on Good Practices Portal">
         <source>New user on Good Practices Portal</source>
-        <target>New user on Good Practices Portal</target>
+        <target>Nouvel utilisateur sur le Portail des Bonnes Pratiques</target>
       </trans-unit>
       <trans-unit id="6353049937c27ac2f99e782658c52f29e91fd4f2" resname="New user? Start here.">
         <source>New user? Start here.</source>
@@ -1640,7 +1640,7 @@
       </trans-unit>
       <trans-unit id="816c52fd2bdd94a63cd0944823a6c0aa9384c103" resname="No">
         <source>No</source>
-        <target>No</target>
+        <target>Non</target>
       </trans-unit>
       <trans-unit id="7e77d31ff101ea5dad7c57ff4831d6b6746607a2" resname="No FAQ found">
         <source>No FAQ found</source>
@@ -1660,7 +1660,7 @@
       </trans-unit>
       <trans-unit id="7115a354bb371f634a259a49827f8e47da50a277" resname="No good practice found">
         <source>No good practice found</source>
-        <target>No good practice found</target>
+        <target>Aucune bonne pratique trouvée</target>
       </trans-unit>
       <trans-unit id="0b5a3ecc12a9230d875b069694504a5a1ed2cd8c" resname="No help found">
         <source>No help found</source>
@@ -1684,7 +1684,7 @@
       </trans-unit>
       <trans-unit id="1d50f2ecaac6cdc80824ee5335d7b35016ad22f1" resname="No revisions required">
         <source>No revisions required</source>
-        <target>No revisions required</target>
+        <target>Pas de révision nécessaire</target>
       </trans-unit>
       <trans-unit id="7ed9bc59568cbb6845386079a65a0975cd9cd4c1" resname="No submission found">
         <source>No submission found</source>
@@ -1720,11 +1720,11 @@
       </trans-unit>
       <trans-unit id="d1931bbcef5cd4369f97427d4a51012892b4314d" resname="Objectives of the Good Practice">
         <source>Objectives of the Good Practice</source>
-        <target>Objectives of the Good Practice</target>
+        <target>Objectifs de la bonne pratique</target>
       </trans-unit>
       <trans-unit id="7eef032920804923d519772572e40a14c4080fe2" resname="One or more attributes have been scored as a zero. Is this correct?">
         <source>One or more attributes have been scored as a zero. Is this correct?</source>
-        <target>One or more attributes have been scored as a zero. Is this correct?</target>
+        <target>Un ou plusieurs attributs ont été notés zéro. Est-ce correct ?</target>
       </trans-unit>
       <trans-unit id="2e0254c28e2b06c621fe3e5af23ceeb7e03e64e7" resname="Ongoing">
         <source>Ongoing</source>
@@ -1792,7 +1792,7 @@
       </trans-unit>
       <trans-unit id="5dfc9b7679cd9399b469b900c75334041ab302c4" resname="PAHO's Strategic Plan 2020-2015 addresses four cross-cutting themes: equity, gender, ethnicity, and human rights. Given the centrality of the themes to PAHO's technical cooperation, the good practice should demonstrate the capacity to analyze and propose changes in the vulnerabilities, diversities, or gaps that interfere with the population's health conditions.">
         <source>PAHO's Strategic Plan 2020-2015 addresses four cross-cutting themes: equity, gender, ethnicity, and human rights. Given the centrality of the themes to PAHO's technical cooperation, the good practice should demonstrate the capacity to analyze and propose changes in the vulnerabilities, diversities, or gaps that interfere with the population's health conditions.</source>
-        <target>PAHO's Strategic Plan 2020-2015 addresses four cross-cutting themes: equity, gender, ethnicity, and human rights. Given the centrality of the themes to PAHO's technical cooperation, the good practice should demonstrate the capacity to analyze and propose changes in the vulnerabilities, diversities, or gaps that interfere with the population's health conditions.</target>
+        <target>Le plan stratégique 2020-2015 de l'OPS aborde quatre thèmes transversaux : l'équité, le genre, l'ethnicité et les droits de l'homme. Compte tenu de la centralité de ces thèmes pour la coopération technique de l'OPS, la bonne pratique doit démontrer la capacité d'analyser et de proposer des changements dans les vulnérabilités, les diversités ou les lacunes qui interfèrent avec les conditions de santé de la population.</target>
       </trans-unit>
       <trans-unit id="97fdd5490df99ffa64c2b7a0a31614eff19d9a8e" resname="PAHOERC Secretariat">
         <source>PAHOERC Secretariat</source>
@@ -1820,7 +1820,7 @@
       </trans-unit>
       <trans-unit id="34f7a2f926ea1b01b1f14f23851cc343f9a9973b" resname="Per attribute, please select one Scoring option and one Feedback option.">
         <source>Per attribute, please select one Scoring option and one Feedback option.</source>
-        <target>Per attribute, please select one Scoring option and one Feedback option.</target>
+        <target>Par attribut, veuillez sélectionner une option de note et une option de commentaire.</target>
       </trans-unit>
       <trans-unit id="b5b07f718c694688f631936da9ccc95edaf5ca54" resname="Please access your account in the system to present your monitoring action.">
         <source>Please access your account in the system to present your monitoring action.</source>
@@ -1832,7 +1832,7 @@
       </trans-unit>
       <trans-unit id="b39dd030d1e859977b79db0376512a388999245d" resname="Please check the attributes that were scored as zero">
         <source>Please check the attributes that were scored as zero</source>
-        <target>Please check the attributes that were scored as zero</target>
+        <target>Veuillez vérifier les attributs qui ont été évalués à zéro.</target>
       </trans-unit>
       <trans-unit id="8e5c3fce472d6051baed9946de73d57ad0479dc3" resname="Please describe how">
         <source>Please describe how</source>
@@ -1840,7 +1840,7 @@
       </trans-unit>
       <trans-unit id="460cc1c6bf4c4f61602a40f231bb1bfda4207732" resname="Please describe the revisions to be made">
         <source>Please describe the revisions to be made</source>
-        <target>Please describe the revisions to be made</target>
+        <target>Veuillez décrire les révisions à effectuer</target>
       </trans-unit>
       <trans-unit id="9659d2209800df4696b83c11b5eecd2978cbec8e" resname="Please provide a short description to support your answer">
         <source>Please provide a short description to support your answer</source>
@@ -1852,15 +1852,15 @@
       </trans-unit>
       <trans-unit id="a3f29fd83a9d1e7d82d4bbb8208c954422d79425" resname="Please provide comments for the PAHO's Good Practices Secretariat">
         <source>Please provide comments for the PAHO's Good Practices Secretariat</source>
-        <target>Please provide comments for the PAHO's Good Practices Secretariat</target>
+        <target>Veuillez faire part de vos commentaires au Secrétariat des bonnes pratiques de l'OPS</target>
       </trans-unit>
       <trans-unit id="94156c4c6b958a5edabae5df894f285e8a3c7644" resname="Please provide comments for the PAHO's Good Practices Secretariat (optional)">
         <source>Please provide comments for the PAHO's Good Practices Secretariat (optional)</source>
-        <target>Please provide comments for the PAHO's Good Practices Secretariat (optional)</target>
+        <target>S'il vous plaît, veuillez fournir des commentaires pour le Secrétariat des Bonnes Pratiques de l'OPS (facultatif)</target>
       </trans-unit>
       <trans-unit id="5958ec6070561bc8e5751e890f6a0ce7b9d7bb41" resname="Please provide hyperlinks to sources/documents associated with the Good Practice">
         <source>Please provide hyperlinks to sources/documents associated with the Good Practice</source>
-        <target>Please provide hyperlinks to sources/documents associated with the Good Practice</target>
+        <target>Veuillez fournir des liens hypertextes vers les sources/documents associés à la bonne pratique</target>
       </trans-unit>
       <trans-unit id="e6bbcd107e976fb8ba6a0d9cbd939618fa7c7806" resname="Please provide information">
         <source>Please provide information</source>
@@ -1876,11 +1876,11 @@
       </trans-unit>
       <trans-unit id="255ba08b1c4486971f0d66ff3c914d1e61d0360d" resname="Please provide supporting information. For example, information on how PAHO's Technical Cooperation contributed to strengthening capacity and addressing health inequities and inequalities, and gender and culturally sensitive approaches to health within a human rights framework; to engage in an intersectoral action with an equity and rights focus">
         <source>Please provide supporting information. For example, information on how PAHO's Technical Cooperation contributed to strengthening capacity and addressing health inequities and inequalities, and gender and culturally sensitive approaches to health within a human rights framework; to engage in an intersectoral action with an equity and rights focus</source>
-        <target>Please provide supporting information. For example, information on how PAHO's Technical Cooperation contributed to strengthening capacity and addressing health inequities and inequalities, and gender and culturally sensitive approaches to health within a human rights framework; to engage in an intersectoral action with an equity and rights focus</target>
+        <target>Veuillez justifier votre réponse. Par exemple, avec des informations sur la manière dont la coopération technique de l'OPS a contribué au renforcement des capacités et à la lutte contre les inégalités en matière de santé, ainsi qu'à des approches de la santé sensibles au genre et à la culture dans le cadre des droits de l'homme ; à l'engagement d'une action intersectorielle axée sur l'équité et les droits.</target>
       </trans-unit>
       <trans-unit id="a495b9fc20f46412254e750db835709897ccf4f6" resname="Please select from three to ten keywords that best describe your Good Practice">
         <source>Please select from three to ten keywords that best describe your Good Practice</source>
-        <target>Please select from three to ten keywords that best describe your Good Practice</target>
+        <target>Veuillez sélectionner de trois à dix mots-clés qui décrivent le mieux votre bonne pratique</target>
       </trans-unit>
       <trans-unit id="e3fa8b0bee9c09c0f88f2bd00512e962fb62b30e" resname="Please select the most appropriate goal of the SHAA 2030:">
         <source>Please select the most appropriate goal of the SHAA 2030:</source>
@@ -1900,7 +1900,7 @@
       </trans-unit>
       <trans-unit id="3144e27a5fefec22f2cdabdd254bbc21724ea071" resname="Please, describe the sustainability aspect of the project/initiative being described in this Good Practice">
         <source>Please, describe the sustainability aspect of the project/initiative being described in this Good Practice</source>
-        <target>Please, describe the sustainability aspect of the project/initiative being described in this Good Practice</target>
+        <target>Veuillez décrire l'aspect soutenabilité du projet/initiative décrit dans cette bonne pratique</target>
       </trans-unit>
       <trans-unit id="4b2a6a3149566c8245fa37ec86bac6c047004de2" resname="Points">
         <source>Points</source>
@@ -1940,39 +1940,39 @@
       </trans-unit>
       <trans-unit id="f2f01e6249a5ad459e77f133a7e3b40627bb5617" resname="Project Title">
         <source>Project Title</source>
-        <target>Project Title</target>
+        <target>Titre du projet</target>
       </trans-unit>
       <trans-unit id="929017ada05ac8077c3ebc10b0f695a210b9db02" resname="Proposal">
         <source>Proposal</source>
-        <target>Proposal</target>
+        <target>Proposition</target>
       </trans-unit>
       <trans-unit id="d8490390a3fbf2978406094e6cb24b5b59b7090a" resname="Proposal describes engagement in at least one cross-cutting themes; Describes substantial impact.">
         <source>Proposal describes engagement in at least one cross-cutting themes; Describes substantial impact.</source>
-        <target>Proposal describes engagement in at least one cross-cutting themes; Describes substantial impact.</target>
+        <target>La proposition décrit l'engagement d'au moins un thème transversal ; elle décrit un impact substantiel.</target>
       </trans-unit>
       <trans-unit id="78ea3a141c5c9520534323bcc34d659d3a9a1177" resname="Proposal describes engagement in at least one cross-cutting themes; Describes superficial and/or partial impact.">
         <source>Proposal describes engagement in at least one cross-cutting themes; Describes superficial and/or partial impact.</source>
-        <target>Proposal describes engagement in at least one cross-cutting themes; Describes superficial and/or partial impact.</target>
+        <target>La proposition décrit l'engagement d'au moins un thème transversal ; l'impact est superficiel et/ou partiel.</target>
       </trans-unit>
       <trans-unit id="e5b945a2ba6c60f58d87eb6f9600ed70d55f292a" resname="Proposal describes engagement in at least one cross-cutting themes; Provides no information on impact or describes failure to produce impact.">
         <source>Proposal describes engagement in at least one cross-cutting themes; Provides no information on impact or describes failure to produce impact.</source>
-        <target>Proposal describes engagement in at least one cross-cutting themes; Provides no information on impact or describes failure to produce impact.</target>
+        <target>La proposition décrit l'engagement d'au moins un thème transversal ; elle ne fournit aucune information sur l'impact ou décrit l'incapacité à produire un impact.</target>
       </trans-unit>
       <trans-unit id="ae5a2f232ea1d568ed630dedbe448ace8256dd9d" resname="Protocol Checklist">
         <source>Protocol Checklist</source>
-        <target>Protocol Checklist</target>
+        <target>Liste de contrôle du protocole</target>
       </trans-unit>
       <trans-unit id="44e3634965bb62f4183e6d899dc917019e8f33d8" resname="Protocol URL">
         <source>Protocol URL</source>
-        <target>Protocol URL</target>
+        <target>URL du protocole</target>
       </trans-unit>
       <trans-unit id="60618464d0e228199bb5056dcd89efa413f1c209" resname="Protocol checklist updated with success.">
         <source>Protocol checklist updated with success.</source>
-        <target>Protocol checklist updated with success.</target>
+        <target>La liste de contrôle du protocole a été mise à jour avec succès.</target>
       </trans-unit>
       <trans-unit id="d80090c23fb5ce21ada4e04d747c32da5a0ec75c" resname="Protocol code">
         <source>Protocol code</source>
-        <target>Protocol code</target>
+        <target>Code du protocole</target>
       </trans-unit>
       <trans-unit id="4bea7947798fd846780936ca8c6f733addadeb61" resname="Protocol withdrawn by %user%.">
         <source>Protocol withdrawn by %user%.</source>
@@ -2016,7 +2016,7 @@
       </trans-unit>
       <trans-unit id="41f7c1e0086b40ec04fdf587c5f1822a4675266e" resname="Recent good practices">
         <source>Recent good practices</source>
-        <target>Recent good practices</target>
+        <target>Bonnes pratiques récentes</target>
       </trans-unit>
       <trans-unit id="6197cbd5850188b4e4e269f8325b3b1753bd9ac5" resname="Recognition Information">
         <source>Recognition Information</source>
@@ -2028,11 +2028,11 @@
       </trans-unit>
       <trans-unit id="5405cefe81474c3ed7b2b319a6c073988bd214e8" resname="Recruitment Date">
         <source>Recruitment Date</source>
-        <target>Recruitment Date</target>
+        <target>Date de recrutement</target>
       </trans-unit>
       <trans-unit id="1e09d6baa08eee9735606efb79ac7f275094a921" resname="Recruitment Status">
         <source>Recruitment Status</source>
-        <target>Recruitment Status</target>
+        <target>Statut de recrutement</target>
       </trans-unit>
       <trans-unit id="74195db59dc952198d5d68fc10b1cd7cca01a3a0" resname="Reference Number">
         <source>Reference Number</source>
@@ -2080,7 +2080,7 @@
       </trans-unit>
       <trans-unit id="485fd4df3540ab256ab2c353e5385237e697fafb" resname="Replicability">
         <source>Replicability</source>
-        <target>Replicability</target>
+        <target>Reproductibilité</target>
       </trans-unit>
       <trans-unit id="be601df25eea91eaaf0d5e80263930143af345be" resname="Research">
         <source>Research</source>
@@ -2100,15 +2100,15 @@
       </trans-unit>
       <trans-unit id="cd78077e58c44f25e53bcd83903b32c524bf46cc" resname="Respondent Name">
         <source>Respondent Name</source>
-        <target>Respondent Name</target>
+        <target>Nom du répondant</target>
       </trans-unit>
       <trans-unit id="3b28a9acad7dfe0657653e831f48746e49062fc6" resname="Retrieve good practice">
         <source>Retrieve good practice</source>
-        <target>Retrieve good practice</target>
+        <target>Récupérer la bonne pratique</target>
       </trans-unit>
       <trans-unit id="42edc37173b0ad4742bb1d046c8bbc646cabfdd2" resname="Return reasons">
         <source>Return reasons</source>
-        <target>Return reasons</target>
+        <target>Motifs du refus</target>
       </trans-unit>
       <trans-unit id="e29a79fe0c349724caeaa1762fa917f5543248ca" resname="Review">
         <source>Review</source>
@@ -2124,7 +2124,7 @@
       </trans-unit>
       <trans-unit id="18be365fcd211804390f0f9695d8184f80f587c5" resname="Reviewer's decision">
         <source>Reviewer's decision</source>
-        <target>Reviewer's decision</target>
+        <target>Décision de l'examinateur</target>
       </trans-unit>
       <trans-unit id="c2b90e0cf183a4d16219a17b8e74e556cc4b12c1" resname="Reviewer's evaluation">
         <source>Reviewer's evaluation</source>
@@ -2180,15 +2180,15 @@
       </trans-unit>
       <trans-unit id="94b03c70b196c58604c0a7faf7218bf6901b8e0c" resname="Scalability">
         <source>Scalability</source>
-        <target>Évolutivité</target>
+        <target>Scalabilité</target>
       </trans-unit>
       <trans-unit id="efb9234d17b6bdc26322f7104103574db219055f" resname="Scientific Title">
         <source>Scientific Title</source>
-        <target>Scientific Title</target>
+        <target>Titre scientifique</target>
       </trans-unit>
       <trans-unit id="a6e081bd4fc687e97f2a3c1767e01a47d8d0d090" resname="Scoring">
         <source>Scoring</source>
-        <target>Scoring</target>
+        <target>Notation</target>
       </trans-unit>
       <trans-unit id="bce06414177f72ab70e6387b6af9f8ceef0d6049" resname="Search">
         <source>Search</source>
@@ -2212,11 +2212,11 @@
       </trans-unit>
       <trans-unit id="d6f96d0b20c5a986b22e3ff61a87a9beeb246259" resname="See Good Practice">
         <source>See Good Practice</source>
-        <target>See Good Practice</target>
+        <target>Voir la bonne pratique</target>
       </trans-unit>
       <trans-unit id="e07a3e1fa1ddae08d61a8adaee3f14cef76ae183" resname="See good practice">
         <source>See good practice</source>
-        <target>See good practice</target>
+        <target>Voir la bonne pratique</target>
       </trans-unit>
       <trans-unit id="2fce269c0372ec6b495feaefdd72011592276c2f" resname="See original">
         <source>See original</source>
@@ -2256,7 +2256,7 @@
       </trans-unit>
       <trans-unit id="d45c5afda3061b22ec4f24bb62483872ec8d862b" resname="Send Review">
         <source>Send Review</source>
-        <target>Send Review</target>
+        <target>Envoyer examen</target>
       </trans-unit>
       <trans-unit id="561c872007b3c54a9aa2ced1369f0ba2f2d5d8e3" resname="Send back to Submitter">
         <source>Send back to Submitter</source>
@@ -2272,7 +2272,7 @@
       </trans-unit>
       <trans-unit id="ce523f364efb0e76160c83c87865bebd07504cf9" resname="Send good practice revision">
         <source>Send good practice revision</source>
-        <target>Send good practice revision</target>
+        <target>Envoyer l'examen de la bonne pratique</target>
       </trans-unit>
       <trans-unit id="8c86d73c34f67918b3131fa1eb594dbbeafac78e" resname="Send me instructions">
         <source>Send me instructions</source>
@@ -2280,15 +2280,15 @@
       </trans-unit>
       <trans-unit id="f4cfa14ce92336c819274e6d0feabf6ea55b8f81" resname="Send review">
         <source>Send review</source>
-        <target>Send review</target>
+        <target>Envoyer examen</target>
       </trans-unit>
       <trans-unit id="f4150af6b13029b733c888779a3d9c66fd5853e8" resname="Send to Ethical Review">
         <source>Send to Ethical Review</source>
-        <target>Send to Ethical Review</target>
+        <target>Envoyer à la Revue éthique</target>
       </trans-unit>
       <trans-unit id="d7ec62cd2e6527cce3320a981c4467ac06d66775" resname="Send to committee to decide">
         <source>Send to committee to decide</source>
-        <target>Send to committee to decide</target>
+        <target>Envoyer au comité pour décider</target>
       </trans-unit>
       <trans-unit id="8e788620ceae177369046eb1a1475b37d5d2b176" resname="Send to review">
         <source>Send to review</source>
@@ -2300,7 +2300,7 @@
       </trans-unit>
       <trans-unit id="73d3a279130bb9918b1bb8fbe645480863c50181" resname="Set good practice as exempt">
         <source>Set good practice as exempt</source>
-        <target>Set good practice as exempt</target>
+        <target>Définir la bonne pratique en tant d'exemption</target>
       </trans-unit>
       <trans-unit id="4f9f9c131024bbda7e9be202a9e7c43f4d05fbe4" resname="Set your password">
         <source>Set your password</source>
@@ -2308,7 +2308,7 @@
       </trans-unit>
       <trans-unit id="8dbb6c93559a43ed1374e30d3d74630574e6978c" resname="Show Good Practice">
         <source>Show Good Practice</source>
-        <target>Show Good Practice</target>
+        <target>Montrer la bonne pratique</target>
       </trans-unit>
       <trans-unit id="56860002c2285b9bff80391678937a3f082e20e5" resname="Sincerely">
         <source>Sincerely</source>
@@ -2336,7 +2336,7 @@
       </trans-unit>
       <trans-unit id="4502354a2b12013824497671833474ce392fd0b5" resname="Specific Questions of a Call for Good Practices">
         <source>Specific Questions of a Call for Good Practices</source>
-        <target>Specific Questions of a Call for Good Practices</target>
+        <target>Questions spécifiques d'un appel à de bonnes pratiques</target>
       </trans-unit>
       <trans-unit id="fda17c6e3e035285877348bdd116685dfef47c8b" resname="Specific/Target population group">
         <source>Specific/Target population group</source>
@@ -2344,19 +2344,19 @@
       </trans-unit>
       <trans-unit id="5493e68cb4d6d088d7665c093d2ba3aed447c1b2" resname="Stakeholders">
         <source>Stakeholders</source>
-        <target>Stakeholders</target>
+        <target>Parties prenantes</target>
       </trans-unit>
       <trans-unit id="b896ab97cfab15a7185bfcb256f766779a08f65c" resname="Stakeholders/Partners are clearly identified; Details on their engagement are vague or they have not been engaged yet.">
         <source>Stakeholders/Partners are clearly identified; Details on their engagement are vague or they have not been engaged yet.</source>
-        <target>Stakeholders/Partners are clearly identified; Details on their engagement are vague or they have not been engaged yet.</target>
+        <target>Les parties prenantes/partenaires sont clairement identifiés ; les détails de leur engagement sont vagues ou ils n'ont pas encore été engagés.</target>
       </trans-unit>
       <trans-unit id="10558ebf4d68fab8846f664d0cc716cdf3bad378" resname="Stakeholders/Partners are clearly identified; Details on their engagement is clearly defined and active.">
         <source>Stakeholders/Partners are clearly identified; Details on their engagement is clearly defined and active.</source>
-        <target>Stakeholders/Partners are clearly identified; Details on their engagement is clearly defined and active.</target>
+        <target>Les parties prenantes/partenaires sont clairement identifiés ; les détails de leur engagement sont clairement définis et actifs.</target>
       </trans-unit>
       <trans-unit id="2cbff00ebeff44274ed12be9ddcb3cfc00dd7a0a" resname="Stakeholders/Partners vaguely or clearly identified; No details on their engagement.">
         <source>Stakeholders/Partners vaguely or clearly identified; No details on their engagement.</source>
-        <target>Stakeholders/Partners vaguely or clearly identified; No details on their engagement.</target>
+        <target>Parties prenantes/partenaires vaguement ou clairement identifiés ; pas de détails sur leur engagement.</target>
       </trans-unit>
       <trans-unit id="9d7ab1a557965be0eae6205c2d860c45a3eafc11" resname="Start Date">
         <source>Start Date</source>
@@ -2384,11 +2384,11 @@
       </trans-unit>
       <trans-unit id="1a2193e9d1190521fb8df705d3b304acb61ae53b" resname="Submission of good practice.">
         <source>Submission of good practice.</source>
-        <target>Submission of good practice.</target>
+        <target>Envoi d'une bonne pratique</target>
       </trans-unit>
       <trans-unit id="8de035545d6fa226da2b0642c2d790629bcd0695" resname="Submission saved with success.">
         <source>Submission saved with success.</source>
-        <target>Submission saved with success.</target>
+        <target>La proposition a été enregistrée avec succès.</target>
       </trans-unit>
       <trans-unit id="c5eafe1a51b80e934915ccfb1d0afbde2967b915" resname="Submission started with success.">
         <source>Submission started with success.</source>
@@ -2412,7 +2412,7 @@
       </trans-unit>
       <trans-unit id="4b07b9b5cd278a1f3e3c2bdd3ff955acb456a72f" resname="Submitted Good Practices">
         <source>Submitted Good Practices</source>
-        <target>Submitted Good Practices</target>
+        <target>Bonnes pratiques envoyées</target>
       </trans-unit>
       <trans-unit id="046485aa309a8f023e2e4f75a5e5856f99c1dde8" resname="Submitted by">
         <source>Submitted by</source>
@@ -2424,23 +2424,23 @@
       </trans-unit>
       <trans-unit id="e159d05a124cfbe60229903bf1f8e6a61682bee5" resname="Subtitle">
         <source>Subtitle</source>
-        <target>Subtitle</target>
+        <target>Sous-titre</target>
       </trans-unit>
       <trans-unit id="bdda5da88ffbc73ea3313af7bdf2c9f7f2ef4f0f" resname="Subtitle in English">
         <source>Subtitle in English</source>
-        <target>Subtitle in English</target>
+        <target>Sous-titre en anglais</target>
       </trans-unit>
       <trans-unit id="f76d287d04c5b96669b921d84c84b61cfe94b55a" resname="Subtitle in French">
         <source>Subtitle in French</source>
-        <target>Subtitle in French</target>
+        <target>Sous-titre en français</target>
       </trans-unit>
       <trans-unit id="7b9fc5fe9fe1393f9e7d9b7fc15c74eaf94816a7" resname="Subtitle in Portuguese">
         <source>Subtitle in Portuguese</source>
-        <target>Subtitle in Portuguese</target>
+        <target>Sous-titre en portugais</target>
       </trans-unit>
       <trans-unit id="876df5a8b69122e611553f6cda468dd98215a75a" resname="Subtitle in Spanish">
         <source>Subtitle in Spanish</source>
-        <target>Subtitle in Spanish</target>
+        <target>Sous-titre en espagnol</target>
       </trans-unit>
       <trans-unit id="bda7dbdf25da49b74d2ce451f062424e9edabcbb" resname="Support information about the outcome and impact results">
         <source>Support information about the outcome and impact results</source>
@@ -2460,7 +2460,7 @@
       </trans-unit>
       <trans-unit id="276f33cf6970c5e6d0e901826df14204875496c6" resname="TC">
         <source>TC</source>
-        <target>TC</target>
+        <target>CT</target>
       </trans-unit>
       <trans-unit id="61ad50a9b9189cc3cf1874568e35e7901ff4c982" resname="Target">
         <source>Target</source>
@@ -2480,19 +2480,19 @@
       </trans-unit>
       <trans-unit id="2c3da0568441161c7c88ee8caff918581e2f8638" resname="Technical Atributes">
         <source>Technical Atributes</source>
-        <target>Technical Atributes</target>
+        <target>Attributs techniques</target>
       </trans-unit>
       <trans-unit id="25d8d8035f824149f440bcefbb9d47dbb7dd1e66" resname="Technical Attributes">
         <source>Technical Attributes</source>
-        <target>Technical Attributes</target>
+        <target>Attributs techniques</target>
       </trans-unit>
       <trans-unit id="d34e083684d23890b79b25645151c1a66d4e8c41" resname="Technical Attributes (Reviewer)">
         <source>Technical Attributes (Reviewer)</source>
-        <target>Technical Attributes (Reviewer)</target>
+        <target>Attributs techniques (Évaluateur)</target>
       </trans-unit>
       <trans-unit id="06578556d37637efa8f72479c98c31b4715725b2" resname="Technical Attributes (Submitter)">
         <source>Technical Attributes (Submitter)</source>
-        <target>Technical Attributes (Submitter)</target>
+        <target>Attributs techniques (Déposant)</target>
       </trans-unit>
       <trans-unit id="860452b75c152ee2e3fcfc8671c049657bee284f" resname="Technical Matters">
         <source>Technical Matters</source>
@@ -2500,7 +2500,7 @@
       </trans-unit>
       <trans-unit id="702cf8a44902e1a5ee2655ea9cb54aa9918ba006" resname="Technical average score">
         <source>Technical average score</source>
-        <target>Technical average score</target>
+        <target>Note technique moyenne</target>
       </trans-unit>
       <trans-unit id="92d0286da122f925192755a952e521131270bd5f" resname="Terms and conditions">
         <source>Terms and conditions</source>
@@ -2512,7 +2512,7 @@
       </trans-unit>
       <trans-unit id="4ce708df24881f343e9c3648be6f50360af79e36" resname="The good practice review was finalized!">
         <source>The good practice review was finalized!</source>
-        <target>The good practice review was finalized!</target>
+        <target>L'examen des bonnes pratiques a été finalisé !</target>
       </trans-unit>
       <trans-unit id="a7f6850ccb40a0b10e8741fb501fb80715cc1c8b" resname="The mandatory field has been inadequately filled or left blank and requires your attention.">
         <source>The mandatory field has been inadequately filled or left blank and requires your attention.</source>
@@ -2528,7 +2528,7 @@
       </trans-unit>
       <trans-unit id="f471cd0b03e34174f54afc318b04aa5c1ad2c746" resname="The system only allows a single PDF document to be uploaded. Please merge the form with all the required attachments into a single document.">
         <source>The system only allows a single PDF document to be uploaded. Please merge the form with all the required attachments into a single document.</source>
-        <target>The system only allows a single PDF document to be uploaded. Please merge the form with all the required attachments into a single document.</target>
+        <target>Le système ne permet de télécharger qu'un seul document PDF. Veuillez fusionner le formulaire et toutes les pièces jointes requises en un seul document.</target>
       </trans-unit>
       <trans-unit id="80641d12b06bab66399479a096f095554b0710ae" resname="There is no help message set for this field.">
         <source>There is no help message set for this field.</source>
@@ -2540,11 +2540,11 @@
       </trans-unit>
       <trans-unit id="7599bd094d956e9f7dc3eef96dc65541a72a80f7" resname="This Good Practice is related to">
         <source>This Good Practice is related to</source>
-        <target>This Good Practice is related to</target>
+        <target>Cette bonne pratique est en rapport avec</target>
       </trans-unit>
       <trans-unit id="e23f30065162ef493f6673db9d2a80a148cc4f50" resname="This is a migrated good practice. You can edit some informations.">
         <source>This is a migrated good practice. You can edit some informations.</source>
-        <target>This is a migrated good practice. You can edit some informations.</target>
+        <target>Il s'agit d'une bonne pratique migrée. Vous pouvez modifier certaines informations.</target>
       </trans-unit>
       <trans-unit id="57482c5aaff1ec5281be4a8390934b2a15263f7a" resname="This is a translated version.">
         <source>This is a translated version.</source>
@@ -2565,7 +2565,7 @@
       </trans-unit>
       <trans-unit id="2d3c3f23df3464e5dbaf126f28ad1aff8083735e" resname="This submission has translations">
         <source>This submission has translations</source>
-        <target>This submission has translations</target>
+        <target>Cette proposition comporte des traductions</target>
       </trans-unit>
       <trans-unit id="768e0c1c69573fb588f61f1308a015c11468e05f" resname="Title">
         <source>Title</source>
@@ -2577,23 +2577,23 @@
       </trans-unit>
       <trans-unit id="1911076959e0d9e049c9e3129f07dd31eff212f9" resname="Title in English">
         <source>Title in English</source>
-        <target>Title in English</target>
+        <target>Titre en anglais</target>
       </trans-unit>
       <trans-unit id="09e91476cc474de515669dccd0680ef94fd77452" resname="Title in French">
         <source>Title in French</source>
-        <target>Title in French</target>
+        <target>Titre en français</target>
       </trans-unit>
       <trans-unit id="80002c8e85de266447cfc76206b9206a99545c94" resname="Title in Portuguese">
         <source>Title in Portuguese</source>
-        <target>Title in Portuguese</target>
+        <target>Titre en portugais</target>
       </trans-unit>
       <trans-unit id="72af4205703196c960afe62bfcf6560728f85954" resname="Title in Spanish">
         <source>Title in Spanish</source>
-        <target>Title in Spanish</target>
+        <target>Titre en espagnol</target>
       </trans-unit>
       <trans-unit id="56029695c2c3d193b7214c1b45b3907e7b2cdb97" resname="Title of the Good Practice">
         <source>Title of the Good Practice</source>
-        <target>Title of the Good Practice</target>
+        <target>Titre de la bonne pratique</target>
       </trans-unit>
       <trans-unit id="7daa14977c986dc3336a31cdcf7b037d87109179" resname="Triangular Cooperation">
         <source>Triangular Cooperation</source>
@@ -2609,11 +2609,11 @@
       </trans-unit>
       <trans-unit id="99e2c0fe90b6fd96e30152e99e0d318325a47fbe" resname="Type of institution reporting the Good Practice">
         <source>Type of institution reporting the Good Practice</source>
-        <target>Type of institution reporting the Good Practice</target>
+        <target>Type d'institution rapportant la bonne pratique</target>
       </trans-unit>
       <trans-unit id="0e2d9b0777a485c1276de0803c12a7d76fbc5c39" resname="URL">
         <source>URL</source>
-        <target>URL</target>
+        <target>Lien</target>
       </trans-unit>
       <trans-unit id="fb91e24fa52d8d2b32937bf04d843f730319a902" resname="Update">
         <source>Update</source>
@@ -2689,7 +2689,7 @@
       </trans-unit>
       <trans-unit id="b0bf2d0196410a77296c4e972ad238a6b10237cb" resname="Upload the Tobacco / Arms related disclosure statement for Non-State Actors">
         <source>Upload the Tobacco / Arms related disclosure statement for Non-State Actors</source>
-        <target>Upload the Tobacco / Arms related disclosure statement for Non-State Actors</target>
+        <target>Télécharger la déclaration de divulgation d'informations sur le tabac/armes pour les acteurs non étatiques</target>
       </trans-unit>
       <trans-unit id="dfbff40e0380406fc9e4129026791082174263ee" resname="User created with success.">
         <source>User created with success.</source>
@@ -2749,11 +2749,11 @@
       </trans-unit>
       <trans-unit id="78a2b7591769ffe2f5c3e2e78728d8c5b5e3e84a" resname="Was the GP able to transfer technologies, and/or to disseminate useful knowledge adaptable to other realities, and could it be scaled up">
         <source>Was the GP able to transfer technologies, and/or to disseminate useful knowledge adaptable to other realities, and could it be scaled up</source>
-        <target>Was the GP able to transfer technologies, and/or to disseminate useful knowledge adaptable to other realities, and could it be scaled up</target>
+        <target>La bonne pratique a-t-elle permis de transférer des technologies et/ou de diffuser des connaissances utiles et adaptables à d'autres réalités, et peut-elle être transposée à plus grande échelle</target>
       </trans-unit>
       <trans-unit id="163c684223d2c36fba27087cb86566c7d28a7159" resname="Was the GP able to transfer technologies, and/or to disseminate useful knowledge adaptable to other realities, and could it be scaled up? Please describe how">
         <source>Was the GP able to transfer technologies, and/or to disseminate useful knowledge adaptable to other realities, and could it be scaled up? Please describe how</source>
-        <target>Was the GP able to transfer technologies, and/or to disseminate useful knowledge adaptable to other realities, and could it be scaled up? Please describe how</target>
+        <target>La bonne pratique a-t-elle permis de transférer des technologies et/ou de diffuser des connaissances utiles et adaptables à d'autres réalités, et peut-elle être transposée à plus grande échelle ? Veuillez décrire comment</target>
       </trans-unit>
       <trans-unit id="6bb998bf794b7bf71004a9b20c4adfb0b9e6b6f8" resname="Was the TC planned considering the health situation of the target population">
         <source>Was the TC planned considering the health situation of the target population</source>
@@ -2765,15 +2765,15 @@
       </trans-unit>
       <trans-unit id="9deebce8e5598ebe71896d94f91561faf05f5b57" resname="Was the Technical Cooperation planned considering the health situation of the target population?">
         <source>Was the Technical Cooperation planned considering the health situation of the target population?</source>
-        <target>Was the Technical Cooperation planned considering the health situation of the target population?</target>
+        <target>La coopération technique a-t-elle été planifiée en tenant compte de la situation sanitaire de la population cible ?</target>
       </trans-unit>
       <trans-unit id="e91df0c8c2edcc2299182a182a4ae86659f8e535" resname="Welcome to the Good Practices Portal!">
         <source>Welcome to the Good Practices Portal!</source>
-        <target>Welcome to the Good Practices Portal!</target>
+        <target>Bienvenue au Portail des Bonnes Pratiques !</target>
       </trans-unit>
       <trans-unit id="63ffd7013f11b07631d2ace9e5b378b74a9a5e7c" resname="Welcome, please take a moment to review the following requirements">
         <source>Welcome, please take a moment to review the following requirements</source>
-        <target>Welcome, please take a moment to review the following requirements</target>
+        <target>Bienvenue, veuillez prendre quelques instants pour prendre connaissance des exigences suivantes</target>
       </trans-unit>
       <trans-unit id="e963862c68a22182c57f2c2ad1f84d8c3b35293e" resname="What are the lessons learned that will improve our expertise and add value to the Organization">
         <source>What are the lessons learned that will improve our expertise and add value to the Organization</source>
@@ -2781,15 +2781,15 @@
       </trans-unit>
       <trans-unit id="6e72a7bbf193a93ac50770fe92c404eb5af459ae" resname="What are the lessons learned that will improve our expertise and add value to the Organization?">
         <source>What are the lessons learned that will improve our expertise and add value to the Organization?</source>
-        <target>What are the lessons learned that will improve our expertise and add value to the Organization?</target>
+        <target>Quels sont les enseignements tirés qui permettront d'améliorer notre expertise et d'apporter une valeur ajoutée à l'Organisation ?</target>
       </trans-unit>
       <trans-unit id="3453d0110abfee46c19f64bf569247a9445b0be2" resname="What obstacles or challenges were faced during the implementation of this good practice/initiative">
         <source>What obstacles or challenges were faced during the implementation of this good practice/initiative</source>
-        <target>What obstacles or challenges were faced during the implementation of this good practice/initiative</target>
+        <target>Quels sont les obstacles ou les défis rencontrés lors de la mise en œuvre de cette bonne pratique/initiative ?</target>
       </trans-unit>
       <trans-unit id="4b4cefb3d1de5e1518d3a3736d5be057e75a0e6d" resname="What obstacles or challenges were faced during the implementation of this good practice/initiative?">
         <source>What obstacles or challenges were faced during the implementation of this good practice/initiative?</source>
-        <target>What obstacles or challenges were faced during the implementation of this good practice/initiative?</target>
+        <target>Quels sont les obstacles ou les défis rencontrés lors de la mise en œuvre de cette bonne pratique/initiative ?</target>
       </trans-unit>
       <trans-unit id="14d520f5f1495b8af101e1fb1034b8b58c1391cd" resname="What public health issue (or opportunity) led PAHO to participate on this Technical Cooperation project/initiative">
         <source>What public health issue (or opportunity) led PAHO to participate on this Technical Cooperation project/initiative</source>
@@ -2801,15 +2801,15 @@
       </trans-unit>
       <trans-unit id="b4ca1c67e94d161c5228d3f9af853bd0f1ddfb90" resname="What were the lessons learned you would consider important for an institution and for PAHO's Technical Cooperation to learn from and adapt the Good Practice">
         <source>What were the lessons learned you would consider important for an institution and for PAHO's Technical Cooperation to learn from and adapt the Good Practice</source>
-        <target>What were the lessons learned you would consider important for an institution and for PAHO's Technical Cooperation to learn from and adapt the Good Practice</target>
+        <target>Quelles sont les leçons apprises que vous jugeriez importantes pour une institution et pour la coopération technique de l'OPS à tenir compte afin d'apprendre et d'adapter la bonne pratique ?</target>
       </trans-unit>
       <trans-unit id="6de336fd6ec1a7b758e00900607bf9a83a5a32df" resname="What's your role on this Good Practice">
         <source>What's your role on this Good Practice</source>
-        <target>What's your role on this Good Practice</target>
+        <target>Quel est votre rôle dans cette bonne pratique</target>
       </trans-unit>
       <trans-unit id="4e953bc80cc1456b2f4ec105bd42205b478350d4" resname="Withdraw good practice">
         <source>Withdraw good practice</source>
-        <target>Withdraw good practice</target>
+        <target>Retirer la bonne pratique</target>
       </trans-unit>
       <trans-unit id="ab014c3271737b4543fd454e943e9e1066532f7a" resname="Withdrawn">
         <source>Withdrawn</source>
@@ -2821,7 +2821,7 @@
       </trans-unit>
       <trans-unit id="3ecb5039ed1fe542547af970ffbe3cfa265e28aa" resname="You cannot edit this good practice">
         <source>You cannot edit this good practice</source>
-        <target>You cannot edit this good practice</target>
+        <target>Vous ne pouvez pas modifier cette bonne pratique</target>
       </trans-unit>
       <trans-unit id="696751f041de5e60a1187c72223bdd4aa7d6f40c" resname="You don't have access to do this">
         <source>You don't have access to do this</source>
@@ -2837,7 +2837,7 @@
       </trans-unit>
       <trans-unit id="cd833c8999e606a2878e038f9250a2fe0fc7bbd7" resname="You haven't submitted any good practice yet.">
         <source>You haven't submitted any good practice yet.</source>
-        <target>You haven't submitted any good practice yet.</target>
+        <target>Vous n'avez pas encore envoyé de bonnes pratiques.</target>
       </trans-unit>
       <trans-unit id="287ad1915f74ae42ce209a189bd00e21548e38a6" resname="You must accept the terms and conditions.">
         <source>You must accept the terms and conditions.</source>
@@ -2845,15 +2845,15 @@
       </trans-unit>
       <trans-unit id="67f09896114a59ef874724c3668b9a565aefa9a3" resname="You were assigned to review a good practice">
         <source>You were assigned to review a good practice</source>
-        <target>You were assigned to review a good practice</target>
+        <target>Vous avez été chargé d'examiner une bonne pratique</target>
       </trans-unit>
       <trans-unit id="03518e8f9217bfa34321e349bd8ed130d2d30010" resname="Your Good Practice is in need of revisions.">
         <source>Your Good Practice is in need of revisions.</source>
-        <target>Your Good Practice is in need of revisions.</target>
+        <target>Votre bonne pratique a besoin d'être corrigée.</target>
       </trans-unit>
       <trans-unit id="ef5ba482b7a2fade633a31f30e00b19250904865" resname="Your Good Practices">
         <source>Your Good Practices</source>
-        <target>Your Good Practices</target>
+        <target>Vos bonnes pratiques</target>
       </trans-unit>
       <trans-unit id="21c7fe92b8e2c31b06b3e871a2c2e9c168813a64" resname="Your Profile">
         <source>Your Profile</source>
@@ -2861,31 +2861,31 @@
       </trans-unit>
       <trans-unit id="bb21528098a08b7e47287448955e5b87361c40af" resname="Your good practice has been accepted for ethics review. The committee's decision will be informed when the process is finalized.">
         <source>Your good practice has been accepted for ethics review. The committee's decision will be informed when the process is finalized.</source>
-        <target>Your good practice has been accepted for ethics review. The committee's decision will be informed when the process is finalized.</target>
+        <target>Votre bonne pratique a été acceptée pour une évaluation éthique. La décision du comité vous sera communiquée lorsque le processus sera finalisé.</target>
       </trans-unit>
       <trans-unit id="d49712a00de17fa80f3197c04aec053ab067e5dc" resname="Your good practice has been withdrawn">
         <source>Your good practice has been withdrawn</source>
-        <target>Your good practice has been withdrawn</target>
+        <target>Votre bonne pratique a été retirée</target>
       </trans-unit>
       <trans-unit id="79bbace30866ec5357c55ae08fe0a8409b843e85" resname="Your good practice was concluded as Exempt.">
         <source>Your good practice was concluded as Exempt.</source>
-        <target>Your good practice was concluded as Exempt.</target>
+        <target>Votre bonne pratique a été jugée exempte.</target>
       </trans-unit>
       <trans-unit id="3d7cce88cd7b6ab065cfe6a6b7eef3406350a367" resname="Your good practice was rejected">
         <source>Your good practice was rejected</source>
-        <target>Your good practice was rejected</target>
+        <target>Votre bonne pratique a été refusée</target>
       </trans-unit>
       <trans-unit id="902cd8712def2d6c75ade43071eaf2cdfacdadea" resname="Your good practice was sent for Technical Assessment.">
         <source>Your good practice was sent for Technical Assessment.</source>
-        <target>Your good practice was sent for Technical Assessment.</target>
+        <target>Votre bonne pratique a été envoyée pour évaluation technique.</target>
       </trans-unit>
       <trans-unit id="20d7f260caa389c28ea875569b79fbf72b0d877d" resname="Your good practice was sent to review!">
         <source>Your good practice was sent to review!</source>
-        <target>Your good practice was sent to review!</target>
+        <target>Votre bonne pratique a été envoyée à l'examen !</target>
       </trans-unit>
       <trans-unit id="da9a8a20f1576d2ab8534e370d81bc536e0f60c7" resname="Your good practice was sent to review.">
         <source>Your good practice was sent to review.</source>
-        <target>Your good practice was sent to review.</target>
+        <target>Votre bonne pratique a été envoyée à l'examen.</target>
       </trans-unit>
       <trans-unit id="9c7fb4b01f75b6a5c45da1a60800f04d3a689f4e" resname="Your session will automatically expire after two hours if the page is not manually saved. To avoid any loss of information, it is recommended to periodically save your progress using the Save and Next button.">
         <source>Your session will automatically expire after two hours if the page is not manually saved. To avoid any loss of information, it is recommended to periodically save your progress using the Save and Next button.</source>
@@ -2893,11 +2893,11 @@
       </trans-unit>
       <trans-unit id="739ddf4f74a414d32270c2e19b677dff0a76c766" resname="Zero scores">
         <source>Zero scores</source>
-        <target>Zero scores</target>
+        <target>Notes nulles</target>
       </trans-unit>
       <trans-unit id="446af54bc236975603b895d21313ca8959c7f2a9" resname="[GP]">
         <source>[GP]</source>
-        <target>[GP]</target>
+        <target>[BP]</target>
       </trans-unit>
       <trans-unit id="2bb6b986c5d6fb26dd9dd1054b545ce022371b0c" resname="active">
         <source>active</source>
