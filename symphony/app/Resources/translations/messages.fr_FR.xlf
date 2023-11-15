@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2023-11-08T15:07:28Z" source-language="en" target-language="fr_FR" datatype="plaintext" original="not.available">
+  <file date="2023-11-13T16:46:59Z" source-language="en" target-language="fr_FR" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -608,11 +608,11 @@
       </trans-unit>
       <trans-unit id="c14bcb61daff86c092aaca32637236471f31ce12" resname="Did it contribute to strengthen the health system, the achievement of PAHO SP 20-25 and SHAA 2030">
         <source>Did it contribute to strengthen the health system, the achievement of PAHO SP 20-25 and SHAA 2030</source>
-        <target>A-t-il contribué au renforcement du système de santé, à la réalisation du SP 20-25 de l'OPS et de la SHAA 2030 ?</target>
+        <target>La pratique a-t-elle contribuée au renforcement du système de santé, à la réalisation du SP 20-25 de l'OPS et de la SHAA 2030 </target>
       </trans-unit>
       <trans-unit id="2c31e917929ab86580f758f11da1fa2a7320a388" resname="Did it contribute to strengthen the health system, the achievement of the Pan American Health Organization Strategic Plan 2020-2025 (SP 20-25) and/or the Sustainable Health Agenda for the Americas 2018-2030 (SHAA 2030)">
         <source>Did it contribute to strengthen the health system, the achievement of the Pan American Health Organization Strategic Plan 2020-2025 (SP 20-25) and/or the Sustainable Health Agenda for the Americas 2018-2030 (SHAA 2030)</source>
-        <target>A-t-il contribué au renforcement du système de santé, à la réalisation du Plan stratégique de l'Organisation panaméricaine de la santé 2020-2025 (SP 20-25) et/ou du Programme de santé durable pour les Amériques 2018-2030 (SHAA 2030) ?</target>
+        <target>La pratique a-t-elle contribuée au renforcement du système de santé, à la réalisation du Plan stratégique de l'Organisation panaméricaine de la santé 2020-2025 (SP 20-25) et/ou du Programme de santé durable pour les Amériques 2018-2030 (SHAA 2030)</target>
       </trans-unit>
       <trans-unit id="961f36de4c326fdd7cb4cc66ab04a5bd2188e0c3" resname="Do you confirm the exclusion of this attachment?">
         <source>Do you confirm the exclusion of this attachment?</source>
@@ -620,7 +620,7 @@
       </trans-unit>
       <trans-unit id="2ce9a9f037338665c39c344b68f75203bd6a1906" resname="Do you have any Conflicts of Interest to disclose regarding the contents of your submission (Including personal/professional interests and funding sources)">
         <source>Do you have any Conflicts of Interest to disclose regarding the contents of your submission (Including personal/professional interests and funding sources)</source>
-        <target>Avez-vous des conflits d'intérêts à signaler concernant le contenu de votre proposition (y compris les intérêts personnels/professionnels et les sources de financement) ?</target>
+        <target>Avez-vous des conflits d'intérêts à signaler concernant le contenu de votre proposition (y compris les intérêts personnels/professionnels et les sources de financement)</target>
       </trans-unit>
       <trans-unit id="1ba3f7b24b33d4429e8627ee88886fafbcf3a27e" resname="Document deleted with success.">
         <source>Document deleted with success.</source>
@@ -948,7 +948,7 @@
       </trans-unit>
       <trans-unit id="48d8c627be3c12fac8a0a9ddb9ceaa5e126cf358" resname="Goals">
         <source>Goals</source>
-        <target>Objectifs</target>
+        <target>Objectifs (OPS)</target>
       </trans-unit>
       <trans-unit id="c494832163603a21e6c192d6abf7b834324cd615" resname="Good Practice">
         <source>Good Practice</source>
@@ -1076,7 +1076,7 @@
       </trans-unit>
       <trans-unit id="1ef32f06f0721d026545a2bf2b164efbd5064b88" resname="I agree with the">
         <source>I agree with the</source>
-        <target>Je suis d'accord avec le</target>
+        <target>Je suis d'accord avec les</target>
       </trans-unit>
       <trans-unit id="898f163d287922a3bb76998856c38620f1f408fc" resname="I can't say">
         <source>I can't say</source>
@@ -1264,15 +1264,15 @@
       </trans-unit>
       <trans-unit id="6b29d07d7c10df7f7cb6c8702b2df1203181b234" resname="Is the GP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization">
         <source>Is the GP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization</source>
-        <target>La BP est-elle alignée sur la chaîne de valeur de l'organisation (mission, vision, mandats et stratégies) et montre-t-elle l'importance du projet non seulement pour l'entité en particulier, mais pour l'Organisation ?</target>
+        <target>La BP est-elle alignée sur la chaîne de valeur de l'organisation (mission, vision, mandats et stratégies) et montre-t-elle l'importance du projet non seulement pour l'entité en particulier, mais pour l'Organisation</target>
       </trans-unit>
       <trans-unit id="dd337820d1f3e43136f5052b72cbe0bdaf4745ab" resname="Is the GP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization?">
         <source>Is the GP aligned with the Organization’s value chain (mission, vision, mandates and strategies) and shows the importance of the project not for the particular entity, but for the Organization?</source>
-        <target>La BP est-elle alignée sur la chaîne de valeur de l'organisation (mission, vision, mandats et stratégies) et montre-t-elle l'importance du projet non pour l'entité en particulier, mais pour l'organisation ?</target>
+        <target>La BP est-elle alignée sur la chaîne de valeur de l'organisation (mission, vision, mandats et stratégies) et montre-t-elle l'importance du projet non pour l'entité en particulier, mais pour l'organisation</target>
       </trans-unit>
       <trans-unit id="9982850d366df96dd8fed261a4e4ac13cc0e2474" resname="Is this Good Practice being submitted in response to a call for proposals">
         <source>Is this Good Practice being submitted in response to a call for proposals</source>
-        <target>Est-ce que cette bonne pratique est envoyée comme réponse d'un appel à propositions ?</target>
+        <target>Est-ce que cette bonne pratique est envoyée comme réponse d'un appel à propositions</target>
       </trans-unit>
       <trans-unit id="76a38180859b3024f9cb90bc039aee77b0e5e7d5" resname="Is this a confidential comment?">
         <source>Is this a confidential comment?</source>
@@ -1364,7 +1364,7 @@
       </trans-unit>
       <trans-unit id="c1fed26979361d06c848030502536d84a52e6a13" resname="Main Type">
         <source>Main Type</source>
-        <target>Type principal</target>
+        <target>Principal type</target>
       </trans-unit>
       <trans-unit id="e4df7e48e273a6e13b66ee5e7d52acd48e0bf7a6" resname="Main results: Please describe the Products, Impact, and Innovation. If applicable, describe whether the practice used a participatory approach and whether it was planned considering the cross-cutting themes (equity, gender, ethnicity, and human rights)">
         <source>Main results: Please describe the Products, Impact, and Innovation. If applicable, describe whether the practice used a participatory approach and whether it was planned considering the cross-cutting themes (equity, gender, ethnicity, and human rights)</source>
@@ -1868,15 +1868,15 @@
       </trans-unit>
       <trans-unit id="6645a4fa2df1f0ed95118b279c5482574d8670c4" resname="Please provide support information about PAHO's Technical Cooperation recognition">
         <source>Please provide support information about PAHO's Technical Cooperation recognition</source>
-        <target>Veuillez fournir des informations complémentaires sur la reconnaissance de la coopération technique de l'OPS.</target>
+        <target>Veuillez fournir des informations complémentaires sur la reconnaissance de la coopération technique de l'OPS</target>
       </trans-unit>
       <trans-unit id="b9d562d1e72303736f85f83ecf4a333a05a3e9be" resname="Please provide support information. For example, information on how PAHO's Technical Cooperation contributed to strengthen capacity and address health inequities and inequalities, and gender and culturally sensitive approaches to health within a human rights framework; to engage in an intersectoral action with an equity and rights focus">
         <source>Please provide support information. For example, information on how PAHO's Technical Cooperation contributed to strengthen capacity and address health inequities and inequalities, and gender and culturally sensitive approaches to health within a human rights framework; to engage in an intersectoral action with an equity and rights focus</source>
-        <target>Veuillez fournir des informations à l'appui. Par exemple, des informations sur la manière dont la coopération technique de l'OPS a contribué à renforcer les capacités et à traiter les inégalités en matière de santé, ainsi que les approches de la santé sensibles au genre et à la culture dans un cadre de droits de l'homme ; à s'engager dans une action intersectorielle axée sur l'équité et les droits.</target>
+        <target>Veuillez fournir des informations à l'appui. Par exemple, des informations sur la manière dont la coopération technique de l'OPS a contribué à renforcer les capacités et à traiter les inégalités en matière de santé, ainsi que les approches de la santé sensibles au genre et à la culture dans un cadre de droits de l'homme ; à s'engager dans une action intersectorielle axée sur l'équité et les droits</target>
       </trans-unit>
       <trans-unit id="255ba08b1c4486971f0d66ff3c914d1e61d0360d" resname="Please provide supporting information. For example, information on how PAHO's Technical Cooperation contributed to strengthening capacity and addressing health inequities and inequalities, and gender and culturally sensitive approaches to health within a human rights framework; to engage in an intersectoral action with an equity and rights focus">
         <source>Please provide supporting information. For example, information on how PAHO's Technical Cooperation contributed to strengthening capacity and addressing health inequities and inequalities, and gender and culturally sensitive approaches to health within a human rights framework; to engage in an intersectoral action with an equity and rights focus</source>
-        <target>Veuillez justifier votre réponse. Par exemple, avec des informations sur la manière dont la coopération technique de l'OPS a contribué au renforcement des capacités et à la lutte contre les inégalités en matière de santé, ainsi qu'à des approches de la santé sensibles au genre et à la culture dans le cadre des droits de l'homme ; à l'engagement d'une action intersectorielle axée sur l'équité et les droits.</target>
+        <target>Veuillez justifier votre réponse. Par exemple, avec des informations sur la manière dont la coopération technique de l'OPS a contribué au renforcement des capacités et à la lutte contre les inégalités en matière de santé, ainsi qu'à des approches de la santé sensibles au genre et à la culture dans le cadre des droits de l'homme ; à l'engagement d'une action intersectorielle axée sur l'équité et les droits</target>
       </trans-unit>
       <trans-unit id="a495b9fc20f46412254e750db835709897ccf4f6" resname="Please select from three to ten keywords that best describe your Good Practice">
         <source>Please select from three to ten keywords that best describe your Good Practice</source>
@@ -2472,7 +2472,7 @@
       </trans-unit>
       <trans-unit id="d35260a00f655f27edcc35a7eb16da44a4f671a6" resname="Targets">
         <source>Targets</source>
-        <target>Objectifs</target>
+        <target>Objectifs (SDG)</target>
       </trans-unit>
       <trans-unit id="7572dfde6907ab496b55da962babdf625c6d2241" resname="Technical Assessment">
         <source>Technical Assessment</source>
@@ -2757,7 +2757,7 @@
       </trans-unit>
       <trans-unit id="6bb998bf794b7bf71004a9b20c4adfb0b9e6b6f8" resname="Was the TC planned considering the health situation of the target population">
         <source>Was the TC planned considering the health situation of the target population</source>
-        <target>La CT a-t-elle été planifiée en tenant compte de la situation sanitaire de la population cible</target>
+        <target>La cooperation téchnique a-t-elle été planifiée en tenant compte de la situation sanitaire de la population cible</target>
       </trans-unit>
       <trans-unit id="0c69e6db46da6784db175fbfa8ca808935e02e8c" resname="Was the Technical Cooperation planned considering the health situation of the target population">
         <source>Was the Technical Cooperation planned considering the health situation of the target population</source>
@@ -2785,11 +2785,11 @@
       </trans-unit>
       <trans-unit id="3453d0110abfee46c19f64bf569247a9445b0be2" resname="What obstacles or challenges were faced during the implementation of this good practice/initiative">
         <source>What obstacles or challenges were faced during the implementation of this good practice/initiative</source>
-        <target>Quels sont les obstacles ou les défis rencontrés lors de la mise en œuvre de cette bonne pratique/initiative ?</target>
+        <target>Quels sont les obstacles ou les défis rencontrés lors de la mise en œuvre de cette bonne pratique/initiative</target>
       </trans-unit>
       <trans-unit id="4b4cefb3d1de5e1518d3a3736d5be057e75a0e6d" resname="What obstacles or challenges were faced during the implementation of this good practice/initiative?">
         <source>What obstacles or challenges were faced during the implementation of this good practice/initiative?</source>
-        <target>Quels sont les obstacles ou les défis rencontrés lors de la mise en œuvre de cette bonne pratique/initiative ?</target>
+        <target>Quels sont les obstacles ou les défis rencontrés lors de la mise en œuvre de cette bonne pratique/initiative</target>
       </trans-unit>
       <trans-unit id="14d520f5f1495b8af101e1fb1034b8b58c1391cd" resname="What public health issue (or opportunity) led PAHO to participate on this Technical Cooperation project/initiative">
         <source>What public health issue (or opportunity) led PAHO to participate on this Technical Cooperation project/initiative</source>
@@ -2905,7 +2905,7 @@
       </trans-unit>
       <trans-unit id="cffa50a32cb13a240d705317bcec65dd1f31b6ad" resname="and">
         <source>and</source>
-        <target>et</target>
+        <target>et la</target>
       </trans-unit>
       <trans-unit id="34356a0bb97032d85b905883f666dba5e56cfece" resname="clinical trial">
         <source>clinical trial</source>
