@@ -1110,14 +1110,20 @@
             const sum = scoring.reduce((a, b) => a + b, 0);
             const avg = (sum / scoring.length) || 0;
             var rounded = Math.round(avg * 10) / 10;
-            $("#input-core-average-score").val(rounded); // core average score
 
             {% if attributes %}
                 // technical attributes
                 var _scoring = [];
-                $('input[type=radio][name^=attribute]:checked').each(function() {
-                    _scoring.push($(this).val());
-                });
+                {% for attr in attributes %}
+                    var radio = $('input[type=radio][name=attribute-{{ attr.id }}-scoring]:checked');
+                    if ( radio.is(':checked') ) {
+                        _scoring.push(radio.val());
+                    } else {
+                        _scoring.push('0');
+                    }
+                {% endfor %}
+
+                $("#input-core-average-score").val(rounded); // core average score
 
                 var _scoring = _scoring.reduce((acc, x) => acc.concat(+x), []);
                 const _sum = _scoring.reduce((a, b) => a + b, 0);
@@ -1126,7 +1132,9 @@
                 $("#input-tech-average-score").val(_rounded); // technical average score
 
                 var avg_score = (rounded + _rounded) / 2;
-                $("#input-average-score").val(avg_score); // average score
+                $("#input-average-score").val(avg_score); // average score                
+            {% else %}
+                $("#input-average-score").val(rounded); // average score
             {% endif %}
 
             var decision = {% if protocol_revision.finalDecision %}true{% else %}false{% endif %};

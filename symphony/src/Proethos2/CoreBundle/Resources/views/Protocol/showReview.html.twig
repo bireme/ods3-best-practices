@@ -60,14 +60,14 @@
     {% endif %}
 
     <h5>{% trans %}Average score{% endtrans %}</h5>
-    <p>{{ protocol_revision.averageScore }} {% trans %}Points{% endtrans %}</p>
+    <p>{{ protocol_revision.averageScore|default('0') }} {% trans %}Points{% endtrans %}</p>
 
     {% if attributes %}
         <h5>{% trans %}Core average score{% endtrans %}</h5>
-        <p>{{ protocol_revision.coreAverageScore }} {% trans %}Points{% endtrans %}</p>
+        <p>{{ protocol_revision.coreAverageScore|default('0') }} {% trans %}Points{% endtrans %}</p>
 
         <h5>{% trans %}Technical average score{% endtrans %}</h5>
-        <p>{{ protocol_revision.technicalAverageScore }} {% trans %}Points{% endtrans %}</p>
+        <p>{{ protocol_revision.technicalAverageScore|default('0') }} {% trans %}Points{% endtrans %}</p>
     {% endif %}
 
     <h5>{% trans %}Decision{% endtrans %}</h5>
