@@ -98,6 +98,7 @@
                                 <th width="50%">{% trans %}Title{% endtrans %}</th>
                                 <th>{% trans %}Type{% endtrans %}</th>
                                 <th>{% trans %}Last Update{% endtrans %}</th>
+                                <th>{% trans %}Access Level{% endtrans %}</th>
                                 <th>{% trans %}Status{% endtrans %}</th>
                                 <th>{% trans %}Actions{% endtrans %}</th>
                             </tr>
@@ -116,6 +117,13 @@
                                         {% endif %}
                                     </td>
                                     <td>{{ protocol.updatedIn|date("d/m/Y") }}</td>
+                                    <td>
+                                        {% if protocol.isPrivate %}
+                                            <span class='label label-default'>{% trans %}Private{% endtrans %}</span>
+                                        {% else %}
+                                            <span class='label label-primary'>{% trans %}Public{% endtrans %}</span>
+                                        {% endif %}
+                                    </td>
                                     <td>{{ protocol.statusLabel|trans }}</td>
                                     <td>
                                         {% if 'administrator' in app.user.getRolesSlug and protocol.isMigrated %}<a href='{{ path("submission_new_second_step", {submission_id: protocol.mainSubmission.id}) }}' class='btn btn-warning btn-xs' data-toggle="tooltip" data-placement="top" title="{% trans %}This is a migrated good practice. You can edit some informations.{% endtrans %}"><i class='glyphicon glyphicon-pencil'></i></a>{% endif %}
@@ -130,6 +138,13 @@
                                         {% if protocol.status in ["R","C"] and 'secretary' in app.user.getRolesSlug %}<span data-toggle="tooltip" data-placement="top" title="{% trans %}Retrieve good practice{% endtrans %}"><a href='{{ path("protocol_retrieve", {protocol_id: protocol.id} ) }}' class='btn btn-default btn-xs' data-toggle='modal' data-target='#modalBaseAjax'><i class='glyphicon glyphicon-transfer'></i></a></span>{% endif %}
                                         {% if protocol.status in ["S","I","E","H"] and 'secretary' in app.user.getRolesSlug %}<span data-toggle="tooltip" data-placement="top" title="{% trans %}Withdraw good practice{% endtrans %}"><a href='{{ path("protocol_withdraw", {protocol_id: protocol.id} ) }}' class='btn btn-default btn-xs' data-toggle='modal' data-target='#modalBaseAjax'><i class='glyphicon glyphicon-stop'></i></a></span>{% endif %}
                                         {% if protocol.status in ["E","H"] and app.user in protocol.revisionUsers %}<a href='{{ path("protocol_initial_committee_review_revisor", {protocol_id: protocol.id}) }}' class='btn btn-default btn-xs' data-toggle="tooltip" data-placement="top" title="{% trans %}Send good practice revision{% endtrans %}"><i class='glyphicon glyphicon-list-alt'></i></a>{% endif %}
+                                        {% if protocol.status == "A" and 'secretary' in app.user.getRolesSlug %}
+                                            {% if protocol.isPrivate %}
+                                                <span data-toggle="tooltip" data-placement="top" title="{% trans %}Make non-private{% endtrans %}"><a href='{{ path("protocol_make_private", {protocol_id: protocol.id}) }}' class='btn btn-default btn-xs' data-toggle='modal' data-target='#modalBaseAjax'><i class='glyphicon glyphicon-star-empty'></i></a></span>
+                                            {% else %}
+                                                <span data-toggle="tooltip" data-placement="top" title="{% trans %}Make private{% endtrans %}"><a href='{{ path("protocol_make_private", {protocol_id: protocol.id}) }}' class='btn btn-default btn-xs' data-toggle='modal' data-target='#modalBaseAjax'><i class='glyphicon glyphicon-star'></i></a>
+                                            {% endif %}
+                                        {% endif %}
                                     </td>
                                 </tr>
                             {% endfor %}

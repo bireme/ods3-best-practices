@@ -198,6 +198,11 @@ class Protocol extends Base
     private $referer;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    private $is_private = false;
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -899,5 +904,29 @@ class Protocol extends Base
     public function getReferer()
     {
         return $this->referer;
+    }
+
+    /**
+     * Set isPrivate
+     *
+     * @param boolean $isPrivate
+     *
+     * @return Protocol
+     */
+    public function setIsPrivate($isPrivate)
+    {
+        $this->is_private = $isPrivate;
+
+        return $this;
+    }
+
+    /**
+     * Get isPrivate
+     *
+     * @return boolean
+     */
+    public function getIsPrivate()
+    {
+        return $this->is_private;
     }
 }

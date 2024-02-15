@@ -48,6 +48,7 @@ class Solr {
         $data['lessons_information'] = $submission->getLessonsInformation();
         $data['sustainability'] = $submission->getSustainability();
         $data['keywords'] = $submission->getDescriptorsList();
+        $data['is_private'] = $submission->getIsPrivate();
         $data['start_date'] = $submission->getStartDate()->format('Y-m-d H:i:s');
         if ( $submission->getEndDate() ) $data['end_date'] = $submission->getEndDate()->format('Y-m-d H:i:s');
 

@@ -1611,7 +1611,7 @@ class ProtocolController extends Controller
                 $em->persist($protocol->getMainSubmission());
                 $em->flush();
             }
-/*
+
             // send data to Solr index
             if ( 'A' == $post_data['final-decision'] ) {
                 $solr = new Solr();
@@ -1625,9 +1625,10 @@ class ProtocolController extends Controller
                 //     throw $this->createNotFoundException('['.$responseCode.'] Solr query time: '.$response->responseHeader->QTime.'ms');
                 // }
             }
-*/
+
             // setting status
             $protocol->setStatus($post_data['final-decision']);
+            $protocol->setIsPrivate(true);
             $protocol->setRejectReason(NULL);
             $protocol->setReturnReason(NULL);
             $protocol->setNotes(NULL);
@@ -1885,6 +1886,71 @@ class ProtocolController extends Controller
     }
 
     /**
+     * @Route("/protocol/{protocol_id}/make-private", name="protocol_make_private")
+     * @Template()
+     */
+    public function makePrivateAction($protocol_id)
+    {
+
+        $output = array();
+        $request = $this->getRequest();
+        $session = $request->getSession();
+        $translator = $this->get('translator');
+        $em = $this->getDoctrine()->getManager();
+
+        $user = $this->get('security.token_storage')->getToken()->getUser();
+
+        $protocol_repository = $em->getRepository('Proethos2ModelBundle:Protocol');
+
+        // getting the current submission
+        $protocol = $protocol_repository->find($protocol_id);
+        $output['protocol'] = $protocol;
+
+        if (!$protocol or !(in_array('secretary', $user->getRolesSlug())) or 'A' != $protocol->getStatus()) {
+            throw $this->createNotFoundException($translator->trans('No good practice found'));
+        }
+
+        // checking if was a post request
+        if($this->getRequest()->isMethod('POST')) {
+
+            $submittedToken = $request->request->get('token');
+
+            if (!$this->isCsrfTokenValid('private-protocol', $submittedToken)) {
+                throw $this->createNotFoundException($translator->trans('CSRF token not valid'));
+            }
+
+            // getting post data
+            $post_data = $request->request->all();
+
+            // checking required files
+            $required_fields = array('are-you-sure');
+            foreach($required_fields as $field) {
+                if(!isset($post_data[$field]) or empty($post_data[$field])) {
+                    $session->getFlashBag()->add('error', $translator->trans("Field '%field%' is required.", array("%field%" => $field)));
+                    return $output;
+                }
+            }
+
+            if($post_data['are-you-sure'] == 'yes') {
+                if ( $protocol->getIsPrivate() ) {
+                    $protocol->setIsPrivate(false);
+                } else {
+                    $protocol->setIsPrivate(true);
+                }
+
+                $em->persist($protocol);
+                $em->flush();
+
+                $session->getFlashBag()->add('success', $translator->trans("Good practice updated with success!"));
+                return $this->redirectToRoute('crud_committee_protocol_list', array(), 301);
+            }
+
+        }
+
+        return $output;
+    }
+
+    /**
      * @Route("/protocol/{protocol_id}/delete", name="protocol_delete")
      * @Template()
      */
@@ -1932,7 +1998,7 @@ class ProtocolController extends Controller
             }
 
             if($post_data['are-you-sure'] == 'yes') {
-/*
+
                 // send data to Solr index
                 $solr = new Solr();
                 list($response, $responseCode) = $solr->delete($protocol);
@@ -1944,7 +2010,7 @@ class ProtocolController extends Controller
                 // if ($responseCode == 200) {
                 //     throw $this->createNotFoundException('['.$responseCode.'] Solr query time: '.$response->responseHeader->QTime.'ms');
                 // }
-*/
+
                 $em->remove($protocol);
                 $em->flush();
 
