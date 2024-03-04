@@ -123,7 +123,7 @@ class AjaxController extends Controller
                 }
             }
         } else {
-            $is_private = ( $post_data["is_private"] && 'true' = strtolower($post_data["is_private"]) ) ? true : false;
+            $is_private = ( $post_data["is_private"] && 'true' == strtolower($post_data["is_private"]) ) ? true : false;
 
             if ( $is_private ) {
                 $protocols = $protocol_repository->findBy(array('status' => 'A', 'is_private' => true), $orderBy, $limit, $offset);
