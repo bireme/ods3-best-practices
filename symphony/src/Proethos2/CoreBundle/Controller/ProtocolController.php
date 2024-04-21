@@ -1938,6 +1938,18 @@ class ProtocolController extends Controller
                     $protocol->setIsPrivate(true);
                 }
 
+                // send data to Solr index
+                $solr = new Solr();
+                list($response, $responseCode) = $solr->update($protocol);
+
+                if ($responseCode != 200) {
+                    throw $this->createNotFoundException('['.$responseCode.'] Solr error: '.$response->error->msg);
+                }
+
+                // if ($responseCode == 200) {
+                //     throw $this->createNotFoundException('['.$responseCode.'] Solr query time: '.$response->responseHeader->QTime.'ms');
+                // }
+
                 $em->persist($protocol);
                 $em->flush();
 
