@@ -1953,8 +1953,10 @@ class ProtocolController extends Controller
                 $em->persist($protocol);
                 $em->flush();
 
+                $referer = $request->headers->get('referer');
+
                 $session->getFlashBag()->add('success', $translator->trans("Good practice updated with success!"));
-                return $this->redirectToRoute('crud_committee_protocol_list', array(), 301);
+                return $this->redirect($referer, 301);
             }
 
         }
