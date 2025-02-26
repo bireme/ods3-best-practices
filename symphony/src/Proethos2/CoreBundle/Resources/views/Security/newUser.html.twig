@@ -4,8 +4,7 @@
 
 {% block extrahead %}
     
-    <!--<script src='https://www.google.com/recaptcha/api.js?hl={{ app.request.locale|replace({ '_': '-' }) }}'></script>-->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src='https://www.google.com/recaptcha/api.js?hl={{ app.request.locale|replace({ '_': '-' }) }}'></script>
 
 {% endblock %}
 
@@ -150,7 +149,7 @@
                 {% if recaptcha_secret %}
                     <div class='row'>
                         <div class='col-md-12'>
-                            <div class="g-recaptcha" data-sitekey="6Les0SwqAAAAAMrW1MDoWe5H9kDrkH-iDe5uwVQa"></div>
+                            <div class="g-recaptcha" data-sitekey="{{ recaptcha_secret }}"></div>
                         </div>
                     </div>
                 {% endif %}
