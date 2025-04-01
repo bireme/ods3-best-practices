@@ -626,6 +626,8 @@ class SecurityController extends Controller
             $post_data = $request->request->all();
             $output['content'] = $post_data;
 
+            echo "<pre>"; print_r($post_data); echo "</pre>"; die();
+
             // checking required fields
             foreach(array('name', 'username', 'email', 'country', 'password', 'confirm-password') as $field) {   
                 if(!isset($post_data[$field]) or empty($post_data[$field])) {
