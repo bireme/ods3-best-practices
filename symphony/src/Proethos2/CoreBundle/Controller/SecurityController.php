@@ -634,7 +634,6 @@ class SecurityController extends Controller
                     return $output;
                 }
             }
-            echo "<pre>"; var_dump($post_data); echo "</pre>"; die();
 
             // only check captcha if not in dev
             $secret = $output['recaptcha_secret'];
