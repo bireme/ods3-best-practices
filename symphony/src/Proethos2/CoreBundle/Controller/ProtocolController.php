@@ -1611,7 +1611,7 @@ class ProtocolController extends Controller
                 $em->persist($protocol->getMainSubmission());
                 $em->flush();
             }
-
+/*
             // send data to Solr index
             if ( 'A' == $post_data['final-decision'] ) {
                 $solr = new Solr();
@@ -1625,7 +1625,7 @@ class ProtocolController extends Controller
                 //     throw $this->createNotFoundException('['.$responseCode.'] Solr query time: '.$response->responseHeader->QTime.'ms');
                 // }
             }
-
+*/
             // setting status
             $protocol->setStatus($post_data['final-decision']);
             $protocol->setIsPrivate(true);
