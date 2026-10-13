@@ -59,6 +59,9 @@
 
     {% endblock %}
 
+    {% set lang = (app.request.locale | split('_'))[0] %}
+    {% set lang = (lang == 'fr') ? 'en' : lang %}
+
     <footer class="navbar main-footer">
         {% if render(controller('Proethos2CoreBundle:Index:getLogoFooter')) %}
         <div class='row'>
@@ -75,8 +78,9 @@
         {% endif %}
         <div class='row'>
             <div class='col-sm-12'>
-                <a href="https://politicas.bireme.org/terminos/en/index.html" target="_blank">{% trans %}Terms of Use{% endtrans %}</a> |
-                <a href="https://politicas.bireme.org/privacidad/en/index.html" target="_blank">{% trans %}Privacy Policy{% endtrans %}</a>
+                <a href="https://politicas.bireme.org/terminos/{{ lang }}/index.html" target="_blank">{% trans %}Terms of Use{% endtrans %}</a> |
+                <a href="https://politicas.bireme.org/privacidad/{{ lang }}/index.html" target="_blank">{% trans %}Privacy Policy{% endtrans %}</a> |
+                <a href="https://www.paho.org/en/paho-personal-data-protection-policy" target="_blank">{% trans %}Personal Data Protection Policy{% endtrans %}</a>
             </div>
         </div>
         <div class='row'>
