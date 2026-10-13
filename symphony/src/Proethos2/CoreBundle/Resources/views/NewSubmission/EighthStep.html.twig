@@ -113,13 +113,15 @@
                         </div>
                     </div>
 
+                    {% set lang = (app.request.locale | split('_'))[0] %}
+
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <div class="checkbox">
                                     <label for='input-accept-terms'>
                                         <input type='checkbox' name='accept-terms' id='input-accept-terms'>
-                                        {% trans %}I agree with the{% endtrans %} <a href="https://politicas.bireme.org/terminos/en/index.html" target="_blank">{% trans %}Terms of Use{% endtrans %}</a> {% trans %}and{% endtrans %} <a href="https://politicas.bireme.org/privacidad/en/index.html" target="_blank">{% trans %}Privacy Policy{% endtrans %}</a>
+                                        {% trans %}I agree with the{% endtrans %} <a href="https://politicas.bireme.org/terminos/{{ lang }}/index.html" target="_blank">{% trans %}Terms of Use{% endtrans %}</a>, <a href="{% if lang == 'fr' %}https://www.paho.org/fr/politique-confidentialite{% else %}https://politicas.bireme.org/privacidad/{{ lang }}/index.html{% endif %}" target="_blank">{% trans %}Privacy Policy{% endtrans %}</a> {% trans %}and{% endtrans %} {% trans %}the{% endtrans %} <a href="https://www.paho.org/en/paho-personal-data-protection-policy" target="_blank">{% trans %}Personal Data Protection Policy{% endtrans %}</a>
                                     </label>
                                 </div>
                             </div>
